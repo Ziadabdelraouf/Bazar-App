@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/features/onboarding/presentation/onboarding_one.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,10 +15,12 @@ class MyApp extends StatelessWidget {
       title: 'Bazar App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: Scaffold(
+      home:OnboardingOne(),
+      
+      /* Scaffold(
         appBar: AppBar(title: Text("Bazar App")),
         body: Center(child: Center(child: Text("Home Page"))),
-      ),
+      ),*/
     );
   }
 }
