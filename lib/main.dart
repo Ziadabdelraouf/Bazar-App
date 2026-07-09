@@ -1,5 +1,7 @@
-import 'package:bazar_group_1/features/onboarding/presentation/onboarding_one.dart';
+
 import 'package:flutter/material.dart';
+import 'core/routes/app_router.dart';
+import 'core/routes/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bazar App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home:OnboardingOne(),
+      initialRoute: AppRoutes.onboardingOne,
+      routes: AppRouter.routes,
       
       /* Scaffold(
         appBar: AppBar(title: Text("Bazar App")),
