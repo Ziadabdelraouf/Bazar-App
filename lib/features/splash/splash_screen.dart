@@ -1,4 +1,3 @@
-import 'package:bazar_group_1/features/home/presentation/home_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -13,11 +12,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (_) => const HomePage(),
-        ), // غيّرها لصفحتك الرئيسية
-      );
+      if (!mounted) return;
+      Navigator.of(context).pushReplacementNamed('/home');
     });
   }
 
@@ -26,19 +22,24 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Color(0xFF54408C),
       body: Stack(
+        // clipBehavior: Clip.none,
         children: [
           Positioned(
-            bottom: 0,
-            left: 0,
-            child: Image.asset(
-              'assets/images/splash_watermark_preview_on_purple.png',
+            top: MediaQuery.of(context).size.height * (495 / 812),
+            left: MediaQuery.of(context).size.width * (-30 / 375),
+            child: Transform.rotate(
+              angle: -90 * 3.1415926535 / 180,
+              child: Image.asset(
+                'assets/images/splash_vector_faded.png',
+                width: MediaQuery.of(context).size.width * (316.61 / 375),
+                height: MediaQuery.of(context).size.height * (315.86 / 812),
+              ),
             ),
-            width: MediaQuery.of(context).size.width * 0.9,
           ),
           Center(
             child: Image.asset(
               'assets/images/splash_logo_transparent_final.png',
-              width: 200,
+              width: MediaQuery.of(context).size.width * (200 / 375),
             ),
           ),
         ],
