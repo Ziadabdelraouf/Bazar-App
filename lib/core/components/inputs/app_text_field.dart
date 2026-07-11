@@ -11,13 +11,17 @@ import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 /// ```
 ///
 /// Password field: set `obscureText: true` — adds a show/hide icon automatically.
-/// Field with leading icon (e.g. Phone Number): pass `prefixIconAsset`.
+/// Field with leading icon (e.g. Phone Number): pass `prefixIcon`.
+/// Set `keyboardType`/`textInputAction` to control the on-screen keyboard
+/// (e.g. `TextInputType.emailAddress`, `TextInputAction.next`).
 class AppTextField extends StatefulWidget {
   final String label;
   final String placeholder;
   final TextEditingController controller;
   final bool obscureText;
-  final String? prefixIconAsset;
+  final String? prefixIcon;
+  final TextInputType? keyboardType;
+  final TextInputAction? textInputAction;
 
   const AppTextField({
     super.key,
@@ -25,7 +29,9 @@ class AppTextField extends StatefulWidget {
     required this.placeholder,
     required this.controller,
     this.obscureText = false,
-    this.prefixIconAsset,
+    this.prefixIcon,
+    this.keyboardType,
+    this.textInputAction,
   });
 
   @override
@@ -69,6 +75,8 @@ class _AppTextFieldState extends State<AppTextField> {
         TextField(
           controller: widget.controller,
           obscureText: widget.obscureText ? _obscureText : false,
+          keyboardType: widget.keyboardType,
+          textInputAction: widget.textInputAction,
           style: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900),
           decoration: InputDecoration(
             hintText: widget.placeholder,
@@ -78,9 +86,9 @@ class _AppTextFieldState extends State<AppTextField> {
             contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
 
             // Leading icon (only if provided)
-            prefixIcon: widget.prefixIconAsset != null
+            prefixIcon: widget.prefixIcon != null
                 ? _FieldPrefixIcon(
-                    assetPath: widget.prefixIconAsset!,
+                    assetPath: widget.prefixIcon!,
                     isActive: hasText,
                   )
                 : null,
