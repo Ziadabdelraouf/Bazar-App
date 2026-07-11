@@ -1,3 +1,5 @@
+import 'package:bazar_group_1/features/home/presentation/home_page.dart';
+import 'package:bazar_group_1/features/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,11 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bazar App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: Scaffold(
-        appBar: AppBar(title: Text("Bazar App")),
-        body: Center(child: Center(child: Text("Home Page"))),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      home: const SplashScreen(),
+      routes: {'/home': (context) => const HomePage()},
     );
   }
 }
