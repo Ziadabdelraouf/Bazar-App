@@ -1,4 +1,4 @@
-import 'package:bazar_group_1/core/theme/onboarding_textstyle.dart';
+import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_buttons.dart';
 import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_dot.dart';
 import 'package:flutter/material.dart';

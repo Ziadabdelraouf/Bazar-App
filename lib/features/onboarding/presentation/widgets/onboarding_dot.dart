@@ -1,4 +1,4 @@
-import 'package:bazar_group_1/core/theme/onboarding_colors.dart';
+import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingDot extends StatelessWidget {

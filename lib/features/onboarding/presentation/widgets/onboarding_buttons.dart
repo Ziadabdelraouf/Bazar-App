@@ -1,5 +1,5 @@
-import 'package:bazar_group_1/core/theme/onboarding_colors.dart';
-import 'package:bazar_group_1/core/theme/onboarding_textstyle.dart';
+import 'package:bazar_group_1/core/theme/app_colors.dart';
+import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingButtons extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'onboarding_colors.dart';
+import 'app_colors.dart';
 
 class OnboardingTextstyle {
   static const TextStyle skip = TextStyle(
