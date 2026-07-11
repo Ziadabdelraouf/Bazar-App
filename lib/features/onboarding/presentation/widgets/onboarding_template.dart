@@ -1,4 +1,4 @@
-import 'package:bazar_group_1/core/theme/onboarding_textstyle.dart';
+import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_buttons.dart';
 import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_dot.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +51,7 @@ class OnboardingTemplate extends StatelessWidget {
                 //padding: EdgeInsets.symmetric(horizontal:16,vertical: 8),
                 child: InkWell(
                   onTap: onSkip,
-                  child: Text("Skip",style:OnboardingTextstyle.skip,))
+                  child: Text("Skip",style:AppTextStyles.body14Regular,))
                 ),),
             ),
            
@@ -63,7 +63,7 @@ class OnboardingTemplate extends StatelessWidget {
               child: SizedBox(
                 width: screensize.width*0.64,
                 height: screensize.height*0.1,
-                child: Text(title,style: OnboardingTextstyle.onboardingTitle,textAlign: TextAlign.center,)),
+                child: Text(title,style: AppTextStyles.h3,textAlign: TextAlign.center,)),
             ),
            
               
@@ -72,7 +72,7 @@ class OnboardingTemplate extends StatelessWidget {
               child: SizedBox(
                 width: screensize.width*0.77,
                 height: screensize.height*0.15,
-                child: Text(description, style: OnboardingTextstyle.onboardingDescription,textAlign: TextAlign.center,)),
+                child: Text(description, style: app_text_styles.body14Regular,textAlign: TextAlign.center,)),
             ),
             //const SizedBox(height: 32),
                

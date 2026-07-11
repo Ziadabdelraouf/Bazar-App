@@ -1,5 +1,5 @@
-import 'package:bazar_group_1/core/theme/onboarding_colors.dart';
-import 'package:bazar_group_1/core/theme/onboarding_textstyle.dart';
+import 'package:bazar_group_1/core/theme/app_colors.dart';
+import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingButtons extends StatelessWidget {
@@ -33,11 +33,11 @@ class OnboardingButtons extends StatelessWidget {
                         height: screensize.height*0.068,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          color: OnboardingColors.primary,
+                          color: AppColors.primary500,
                           borderRadius: BorderRadius.circular(12),
                           
                         ),
-                        child: Text(firstButtonLabel,style: OnboardingTextstyle.firstButton,textAlign: TextAlign.center,),
+                        child: Text(firstButtonLabel,style: AppTextStyles.h6,textAlign: TextAlign.center,),
                                       
                       ),
                     ),
@@ -48,11 +48,11 @@ class OnboardingButtons extends StatelessWidget {
                         height: screensize.height*0.068,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          color:OnboardingColors.secondaryButtonBackground,
+                          color:AppColors.primary50,
                           borderRadius: BorderRadius.circular(12),
                           
                         ),
-                        child: Text(secondButtonLabel,style:  OnboardingTextstyle.secondButton,textAlign: TextAlign.center,),
+                        child: Text(secondButtonLabel,style:  AppTextStyles.h6,textAlign: TextAlign.center,),
                                       
                       ),
                     ),

@@ -1,5 +1,5 @@
 import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_template.dart';
-import '../../../core/routes/app_routes.dart';
+import '../../../../core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
 
