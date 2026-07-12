@@ -1,4 +1,7 @@
+
 import 'package:flutter/material.dart';
+import 'core/router/app_router.dart';
+import 'core/router/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +16,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bazar App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: Scaffold(
+      initialRoute: AppRoutes.onboardingOne,
+      routes: AppRouter.routes,
+      
+      /* Scaffold(
         appBar: AppBar(title: Text("Bazar App")),
         body: Center(child: Center(child: Text("Home Page"))),
-      ),
+      ),*/
     );
   }
 }
