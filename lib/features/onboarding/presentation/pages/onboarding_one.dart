@@ -25,7 +25,9 @@ class OnboardingOne extends StatelessWidget {
         Navigator.pushNamed(context, AppRoutes.onboardingThree);
        
       },
+      
          );
+    
 
     
     }}

@@ -1,5 +1,8 @@
+import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
+import 'package:bazar_group_1/core/components/buttons/large_secondary_button.dart';
+import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
-import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_buttons.dart';
+//import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_buttons.dart';
 import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_dot.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +54,7 @@ class OnboardingTemplate extends StatelessWidget {
                 //padding: EdgeInsets.symmetric(horizontal:16,vertical: 8),
                 child: InkWell(
                   onTap: onSkip,
-                  child: Text("Skip",style:AppTextStyles.body14Regular,))
+                  child: Text("Skip",style:AppTextStyles.body14Regular.copyWith(color: AppColors.primary500),))
                 ),),
             ),
            
@@ -63,7 +66,7 @@ class OnboardingTemplate extends StatelessWidget {
               child: SizedBox(
                 width: screensize.width*0.64,
                 height: screensize.height*0.1,
-                child: Text(title,style: AppTextStyles.h3,textAlign: TextAlign.center,)),
+                child: Text(title,style: AppTextStyles.h3.copyWith(color: AppColors.grey900),textAlign: TextAlign.center,)),
             ),
            
               
@@ -71,8 +74,8 @@ class OnboardingTemplate extends StatelessWidget {
               padding:  EdgeInsets.only(top: screensize.height*0.037),
               child: SizedBox(
                 width: screensize.width*0.77,
-                height: screensize.height*0.15,
-                child: Text(description, style: app_text_styles.body14Regular,textAlign: TextAlign.center,)),
+                height: screensize.height*0.12,
+                child: Text(description, style: AppTextStyles.body16Regular.copyWith(color: AppColors.grey500),textAlign: TextAlign.center,)),
             ),
             //const SizedBox(height: 32),
                
@@ -81,7 +84,18 @@ class OnboardingTemplate extends StatelessWidget {
               child: OnboardingDot(activeIndex: activeDotIndex),
             ),
 
-            OnboardingButtons(firstButtonLabel: firstButton, firstButtonOnPressed: onFirstButtonTap, secondButtonLabel: secondButton, secondButtonOnPressed: onSecondButtonTap)
+            //OnboardingButtons(firstButtonLabel: firstButton, firstButtonOnPressed: onFirstButtonTap, secondButtonLabel: secondButton, secondButtonOnPressed: onSecondButtonTap)
+            Padding(
+              padding: EdgeInsets.only(top: screensize.height*0.039,right: screensize.width*0.064,left: screensize.width*0.064),
+              child: Column(
+                children: [
+                  LargePrimaryButton(label: firstButton, onPressed: onFirstButtonTap,borderRadius: 12,height: screensize.height*0.068),
+                  LargeSecondaryButton(label: secondButton, onPressed: onSecondButtonTap,borderRadius: 12,height: screensize.height*0.068),
+              
+                ],
+              ),
+            ),
+            
           ],
         ),
       ),
