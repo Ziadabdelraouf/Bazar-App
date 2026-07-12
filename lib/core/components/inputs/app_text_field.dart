@@ -12,8 +12,7 @@ import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 ///
 /// Password field: set `obscureText: true` — adds a show/hide icon automatically.
 /// Field with leading icon (e.g. Phone Number): pass `prefixIcon`.
-/// Set `keyboardType`/`textInputAction` to control the on-screen keyboard
-/// (e.g. `TextInputType.emailAddress`, `TextInputAction.next`).
+/// Set `keyboardType`/`textInputAction` to control the on-screen keyboard.
 class AppTextField extends StatefulWidget {
   final String label;
   final String placeholder;
@@ -39,26 +38,38 @@ class AppTextField extends StatefulWidget {
 }
 
 class _AppTextFieldState extends State<AppTextField> {
-  late bool _obscureText; // current show/hide state, toggled by the eye icon
+  late bool _obscureText;
+  late FocusNode _focusNode;
+  bool _isFocused = false;
 
   @override
   void initState() {
     super.initState();
     _obscureText = widget.obscureText;
-    widget.controller.addListener(_onTextChanged); // rebuild on every keystroke
+    widget.controller.addListener(_onTextChanged);
+
+    _focusNode = FocusNode();
+    _focusNode.addListener(_onFocusChanged);
   }
 
   void _onTextChanged() => setState(() {});
 
+  void _onFocusChanged() {
+    setState(() => _isFocused = _focusNode.hasFocus);
+  }
+
   @override
   void dispose() {
-    widget.controller.removeListener(_onTextChanged); // avoid memory leaks
+    widget.controller.removeListener(_onTextChanged);
+    _focusNode.removeListener(_onFocusChanged);
+    _focusNode.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final hasText = widget.controller.text.isNotEmpty; // controls prefix icon color
+    final hasText = widget.controller.text.isNotEmpty;
+    final hasPrefixIcon = widget.prefixIcon != null;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,76 +82,68 @@ class _AppTextFieldState extends State<AppTextField> {
 
         const SizedBox(height: 6),
 
-        // Input box
-        TextField(
-          controller: widget.controller,
-          obscureText: widget.obscureText ? _obscureText : false,
-          keyboardType: widget.keyboardType,
-          textInputAction: widget.textInputAction,
-          style: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900),
-          decoration: InputDecoration(
-            hintText: widget.placeholder,
-            hintStyle: AppTextStyles.body16Regular.copyWith(color: AppColors.grey400),
-            filled: true,
-            fillColor: AppColors.grey50,
-            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-
-            // Leading icon (only if provided)
-            prefixIcon: widget.prefixIcon != null
-                ? _FieldPrefixIcon(
-                    assetPath: widget.prefixIcon!,
-                    isActive: hasText,
-                  )
+        // Manually built input box
+        Container(
+          height: 48,
+          decoration: BoxDecoration(
+            color: AppColors.grey50,
+            borderRadius: BorderRadius.circular(8),
+            border: _isFocused
+                ? Border.all(color: AppColors.primary500, width: 1)
                 : null,
+          ),
+          child: Row(
+            children: [
+              SizedBox(width: hasPrefixIcon ? 12 : 16),
 
-            // Show/hide password toggle (only if obscureText is true)
-            suffixIcon: widget.obscureText
-                ? _PasswordToggleIcon(
-                    obscureText: _obscureText,
-                    onPressed: () => setState(() => _obscureText = !_obscureText),
-                  )
-                : null,
+              if (hasPrefixIcon) ...[
+                Padding(
+                  padding: const EdgeInsets.all(2.5),
+                  child: SvgPicture.asset(
+                    widget.prefixIcon!,
+                    width: 19,
+                    height: 19,
+                    colorFilter: ColorFilter.mode(
+                      hasText ? AppColors.primary500 : AppColors.grey400,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 16),
+              ],
 
-            // Default border: no visible line
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide.none,
-            ),
+              // The actual editable text
+              Expanded(
+                child: TextField(
+                  controller: widget.controller,
+                  focusNode: _focusNode,
+                  obscureText: widget.obscureText ? _obscureText : false,
+                  keyboardType: widget.keyboardType,
+                  textInputAction: widget.textInputAction,
+                  style: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900),
+                  decoration: InputDecoration(
+                    hintText: widget.placeholder,
+                    hintStyle: AppTextStyles.body16Regular.copyWith(color: AppColors.grey400),
+                    border: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    isDense: true,
+                    contentPadding: EdgeInsets.zero,
+                  ),
+                ),
+              ),
 
-            // Focused border: purple outline, applied automatically by Flutter
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(color: AppColors.primary500, width: 1),
-            ),
+              if (widget.obscureText)
+                _PasswordToggleIcon(
+                  obscureText: _obscureText,
+                  onPressed: () => setState(() => _obscureText = !_obscureText),
+                ),
+
+              const SizedBox(width: 16),
+            ],
           ),
         ),
       ],
-    );
-  }
-}
-
-/// The leading icon shown inside fields like Phone Number.
-/// Color switches automatically based on whether the field has content.
-class _FieldPrefixIcon extends StatelessWidget {
-  final String assetPath;
-  final bool isActive;
-
-  const _FieldPrefixIcon({
-    required this.assetPath,
-    required this.isActive,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: SvgPicture.asset(
-        assetPath,
-        colorFilter: ColorFilter.mode(
-          isActive ? AppColors.primary500 : AppColors.grey400,
-          BlendMode.srcIn,
-        ),
-      ),
     );
   }
 }
