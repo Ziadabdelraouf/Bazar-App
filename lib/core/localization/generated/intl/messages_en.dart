@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
             "Now reading books will be easier"),
         "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
-        "skipButton": MessageLookupByLibrary.simpleMessage("Skip")
+        "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
+        "someRandom": MessageLookupByLibrary.simpleMessage("Some Random")
       };
 }

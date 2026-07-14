@@ -62,6 +62,16 @@ class S {
     );
   }
 
+  /// `Some Random`
+  String get someRandom {
+    return Intl.message(
+      'Some Random',
+      name: 'someRandom',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sign in`
   String get signInButton {
     return Intl.message(
