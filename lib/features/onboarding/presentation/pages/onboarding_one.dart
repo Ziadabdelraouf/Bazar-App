@@ -1,7 +1,7 @@
 import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_template.dart';
 import '../../../../core/router/app_routes.dart';
 import 'package:flutter/material.dart';
-import '../../../../generated/l10n.dart';
+import '../../../../core/localization/generated/l10n.dart';
 
 class OnboardingOne extends StatelessWidget {
   const OnboardingOne({super.key});

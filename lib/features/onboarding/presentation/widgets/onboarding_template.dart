@@ -1,4 +1,4 @@
-import 'package:bazar_group_1/generated/l10n.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
 import 'package:bazar_group_1/core/components/buttons/large_secondary_button.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
