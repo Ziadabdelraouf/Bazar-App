@@ -1,9 +1,11 @@
 to use the localization in the project:
 
--Import this line in the file where you want to use the localization:
-   import 'package:bazar_group_1/generated/l10n.dart';
+- Download flutter intl extension to create keys autoamtically when saving .arb file instead of running generation commands.
 
-- When adding texts go to lib/l10n/ and use intl_en.arb for english and intl_ar.arb for arabic.
+-Import this line in the file where you want to use the localization:
+ import 'package:bazar_group_1/core/localization/generated/l10n.dart'
+
+- When adding texts go to lib/core/localization/l10n/ and use intl_en.arb for english and intl_ar.arb for arabic.
 
 - Add the new text to both files in the same format (camelCase) just like the example in the file 
 
