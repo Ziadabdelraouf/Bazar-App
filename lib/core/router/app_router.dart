@@ -13,8 +13,8 @@ class AppRouter {
     AppRoutes.onboardingTwo: (context) => const OnboardingTwo(),
     AppRoutes.onboardingThree: (context) => const OnboardingThree(),
     AppRoutes.successfulLogin: (context) =>
-        const SuccessPage(flow: Success.successfulLogin),
+        const SuccessPage(flow: SuccessPageFlow.successfulLogin),
     AppRoutes.passwordChange: (context) =>
-        const SuccessPage(flow: Success.passwordChange),
+        const SuccessPage(flow: SuccessPageFlow.passwordChange),
   };
 }

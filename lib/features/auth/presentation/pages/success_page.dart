@@ -5,7 +5,7 @@ import 'package:bazar_group_1/core/constants/enums.dart';
 
 class SuccessPage extends StatelessWidget {
   const SuccessPage({super.key, required this.flow});
-  final Success flow;
+  final SuccessPageFlow flow;
   @override
   Widget build(BuildContext context) {
     final screensize = MediaQuery.of(context).size;
@@ -16,7 +16,7 @@ class SuccessPage extends StatelessWidget {
           right: screensize.width * 0.07,
           left: screensize.width * 0.07,
         ),
-        child: flow == Success.successfulLogin
+        child: flow == SuccessPageFlow.successfulLogin
             ? SuccessfulLogin()
             : PasswordChange(),
       ),
