@@ -26,6 +26,18 @@ class VerificationCodeNotifier extends StateNotifier<VerificationCodeState> {
     state = state.copyWith(code: state.code.substring(0, state.code.length - 1));
   }
 
+  void enterDigitFromKeypad(String digit) {
+    if (state.code.length >= 4) return;
+    final newCode = state.code + digit;
+    state = state.copyWith(code: newCode, activeIndex: newCode.length);
+  }
+
+  void deleteDigitFromKeypad() {
+    if (state.code.isEmpty) return;
+    final newCode = state.code.substring(0, state.code.length - 1);
+    state = state.copyWith(code: newCode, activeIndex: newCode.length);
+  }
+
   Future<void> submitCode() async {
     state = state.copyWith(isLoading: true, errorMessage: null);
 
