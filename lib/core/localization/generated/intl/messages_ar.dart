@@ -22,13 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "PasswordChanged":
+            MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور!"),
+        "PasswordChangedBody": MessageLookupByLibrary.simpleMessage(
+            "تم تغيير كلمة المرور بنجاح، يمكنك تسجيل الدخول مرة أخرى باستخدام كلمة مرور جديدة."),
+        "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
         "continueButton": MessageLookupByLibrary.simpleMessage("استمر"),
+        "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
+        "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
             "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا."),
         "onboardingOneTitle":
             MessageLookupByLibrary.simpleMessage("الان اصبحت القرأه اسهل"),
         "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
-        "someRandom": MessageLookupByLibrary.simpleMessage("عشوائي")
+        "successBody": MessageLookupByLibrary.simpleMessage(
+            "تم اكتمال حسابك، يرجى الاستمتاع بأفضل قائمة عندنا.")
       };
 }

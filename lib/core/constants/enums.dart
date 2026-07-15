@@ -1,0 +1,1 @@
+enum Success { successfulLogin, passwordChange }
