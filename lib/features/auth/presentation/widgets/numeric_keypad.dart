@@ -31,18 +31,25 @@ class NumericKeypad extends StatelessWidget {
       width: double.infinity,
       height: 357,
       color: backgroundColor,
-      child: GridView.count(
-        crossAxisCount: 3,
-        childAspectRatio: 125 / 80,
-        physics: const NeverScrollableScrollPhysics(),
-        children: _keys.map((key) {
-          return _KeypadButton(
-            keyValue: key,
-            foregroundColor: foregroundColor,
-            onDigitPressed: onDigitPressed,
-            onDeletePressed: onDeletePressed,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final cellWidth = constraints.maxWidth / 3;
+          final cellHeight = constraints.maxHeight / 4;
+
+          return GridView.count(
+            crossAxisCount: 3,
+            childAspectRatio: cellWidth / cellHeight,
+            physics: const NeverScrollableScrollPhysics(),
+            children: _keys.map((key) {
+              return _KeypadButton(
+                keyValue: key,
+                foregroundColor: foregroundColor,
+                onDigitPressed: onDigitPressed,
+                onDeletePressed: onDeletePressed,
+              );
+            }).toList(),
           );
-        }).toList(),
+        },
       ),
     );
   }
