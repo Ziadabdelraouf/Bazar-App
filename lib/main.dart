@@ -1,10 +1,11 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/router/app_router.dart';
 import 'core/router/app_routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ProviderScope(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bazar App',
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.onboardingOne,
+      initialRoute: AppRoutes.onboardingPage,
       routes: AppRouter.routes,
       
       /* Scaffold(
