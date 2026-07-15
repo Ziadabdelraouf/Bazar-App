@@ -22,13 +22,51 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "continueButton": MessageLookupByLibrary.simpleMessage("استمر"),
-        "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
-            "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا."),
-        "onboardingOneTitle":
-            MessageLookupByLibrary.simpleMessage("الان اصبحت القرأه اسهل"),
-        "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
-        "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
-        "someRandom": MessageLookupByLibrary.simpleMessage("عشوائي")
-      };
+    "continueButton": MessageLookupByLibrary.simpleMessage("استمر"),
+    "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال رقم هاتفك",
+    ),
+    "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
+      "الكود غير صحيح، حاول مرة أخرى.",
+    ),
+    "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال رقم هاتف صحيح",
+    ),
+    "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
+      "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
+    ),
+    "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
+      "الان اصبحت القرأه اسهل",
+    ),
+    "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال رقم هاتفك، حتى نتمكن من توصيل طلبك بسهولة أكبر",
+    ),
+    "phoneNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "رقم الهاتف",
+    ),
+    "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "resendButton": MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
+    "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
+      "لم تستلم الكود؟ ",
+    ),
+    "searchCountryHint": MessageLookupByLibrary.simpleMessage(
+      "ابحث عن الدولة أو الكود",
+    ),
+    "selectCountryTitle": MessageLookupByLibrary.simpleMessage("اختر الدولة"),
+    "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "verificationCodeTitle": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
+    "verificationEmailTitle": MessageLookupByLibrary.simpleMessage(
+      "تحقق البريد الإلكتروني",
+    ),
+    "verificationPhoneTitle": MessageLookupByLibrary.simpleMessage(
+      "تحقق الهاتف",
+    ),
+    "verificationSentToEmail": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال الكود الذي أرسلناه إلى البريد الإلكتروني ",
+    ),
+    "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال الكود الذي أرسلناه إلى رقم الهاتف ",
+    ),
+  };
 }

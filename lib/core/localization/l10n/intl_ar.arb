@@ -3,8 +3,29 @@
     "continueButton": "استمر",
     "signInButton": "تسجيل الدخول",
     "skipButton": "تخطي",
+
     "//OnBoarding one Screen Strings//": "",
     "onboardingOneTitle": "الان اصبحت القرأه اسهل",
     "onboardingOneDescription": "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
-    "//OnBoarding Two Screen Strings//": ""
+
+    "//OnBoarding Two Screen Strings//": "",
+
+    "//Verification Screen Strings//": "",
+    "verificationCodeTitle": "رمز التحقق",
+    "verificationEmailTitle": "تحقق البريد الإلكتروني",
+    "verificationPhoneTitle": "تحقق الهاتف",
+    "verificationSentToEmail": "الرجاء إدخال الكود الذي أرسلناه إلى البريد الإلكتروني ",
+    "verificationSentToPhone": "الرجاء إدخال الكود الذي أرسلناه إلى رقم الهاتف ",
+    "resendCodePrompt": "لم تستلم الكود؟ ",
+    "resendButton": "إعادة الإرسال",
+    "incorrectCodeError": "الكود غير صحيح، حاول مرة أخرى.",
+
+    "//Phone Number Screen Strings//": "",
+    "phoneNumberTitle": "رقم الهاتف",
+    "phoneNumberDescription": "الرجاء إدخال رقم هاتفك، حتى نتمكن من توصيل طلبك بسهولة أكبر",
+    "phoneNumberPlaceholder": "رقم الهاتف",
+    "emptyPhoneNumberError": "الرجاء إدخال رقم هاتفك",
+    "invalidPhoneNumberError": "الرجاء إدخال رقم هاتف صحيح",
+    "selectCountryTitle": "اختر الدولة",
+    "searchCountryHint": "ابحث عن الدولة أو الكود"
 }

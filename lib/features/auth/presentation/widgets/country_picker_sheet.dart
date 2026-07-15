@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/features/auth/domain/country.dart';
 
 Future<Country?> showCountryPicker(BuildContext context) {
@@ -27,6 +28,7 @@ class _CountryPickerContentState extends State<_CountryPickerContent> {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final filtered = kCountries.where((country) {
       return country.name.toLowerCase().contains(_query.toLowerCase()) ||
           country.dialCode.contains(_query);
@@ -38,7 +40,7 @@ class _CountryPickerContentState extends State<_CountryPickerContent> {
         children: [
           const SizedBox(height: 16),
           Text(
-            'Select Country',
+            s.selectCountryTitle,
             style: AppTextStyles.h6.copyWith(color: AppColors.grey900),
           ),
           const SizedBox(height: 16),
@@ -47,7 +49,7 @@ class _CountryPickerContentState extends State<_CountryPickerContent> {
             child: TextField(
               onChanged: (value) => setState(() => _query = value),
               decoration: InputDecoration(
-                hintText: 'Search country or code',
+                hintText: s.searchCountryHint,
                 filled: true,
                 fillColor: AppColors.grey50,
                 border: OutlineInputBorder(

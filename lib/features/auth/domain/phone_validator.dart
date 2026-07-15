@@ -1,12 +1,15 @@
-String? validatePhoneNumber(String value) {
+String? validatePhoneNumber(String value, {
+  required String emptyError,
+  required String invalidError,
+}) {
   if (value.trim().isEmpty) {
-    return 'Please enter your phone number';
+    return emptyError;
   }
 
   final digitsOnly = value.replaceAll(RegExp(r'[^0-9]'), '');
 
   if (digitsOnly.length < 7) {
-    return 'Please enter a valid phone number';
+    return invalidError;
   }
 
   return null;

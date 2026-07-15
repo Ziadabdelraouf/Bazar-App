@@ -22,13 +22,55 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
-        "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
-            " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us."),
-        "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
-            "Now reading books will be easier"),
-        "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
-        "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
-        "someRandom": MessageLookupByLibrary.simpleMessage("Some Random")
-      };
+    "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
+    "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
+      "Please enter your phone number",
+    ),
+    "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
+      "Incorrect code, please try again.",
+    ),
+    "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid phone number",
+    ),
+    "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
+      " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
+    ),
+    "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
+      "Now reading books will be easier",
+    ),
+    "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
+      "Please enter your phone number, so we can more easily deliver your order",
+    ),
+    "phoneNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Phone number",
+    ),
+    "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "resendButton": MessageLookupByLibrary.simpleMessage("Resend"),
+    "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
+      "If you didn\'t receive a code? ",
+    ),
+    "searchCountryHint": MessageLookupByLibrary.simpleMessage(
+      "Search country or code",
+    ),
+    "selectCountryTitle": MessageLookupByLibrary.simpleMessage(
+      "Select Country",
+    ),
+    "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
+    "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
+    "verificationCodeTitle": MessageLookupByLibrary.simpleMessage(
+      "Verification Code",
+    ),
+    "verificationEmailTitle": MessageLookupByLibrary.simpleMessage(
+      "Verification Email",
+    ),
+    "verificationPhoneTitle": MessageLookupByLibrary.simpleMessage(
+      "Verification Phone",
+    ),
+    "verificationSentToEmail": MessageLookupByLibrary.simpleMessage(
+      "Please enter the code we just sent to email ",
+    ),
+    "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
+      "Please enter the code we just sent to phone number ",
+    ),
+  };
 }

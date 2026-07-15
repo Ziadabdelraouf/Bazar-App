@@ -29,27 +29,28 @@ class VerificationCodeNotifier extends StateNotifier<VerificationCodeState> {
   void enterDigitFromKeypad(String digit) {
     if (state.code.length >= 4) return;
     final newCode = state.code + digit;
-    state = state.copyWith(code: newCode, activeIndex: newCode.length);
+    state = state.copyWith(code: newCode, activeIndex: newCode.length, isFocused: true);
   }
 
   void deleteDigitFromKeypad() {
     if (state.code.isEmpty) return;
     final newCode = state.code.substring(0, state.code.length - 1);
-    state = state.copyWith(code: newCode, activeIndex: newCode.length);
+    state = state.copyWith(code: newCode, activeIndex: newCode.length, isFocused: true);
+  }
+
+  void setFocused(bool focused) {
+    state = state.copyWith(isFocused: focused);
   }
 
   Future<void> submitCode() async {
-    state = state.copyWith(isLoading: true, errorMessage: null);
+    state = state.copyWith(isLoading: true);
 
     final isCorrect = await _repository.verifyCode(state.code);
 
     if (isCorrect) {
       state = state.copyWith(isLoading: false);
     } else {
-      state = state.copyWith(
-        isLoading: false,
-        errorMessage: 'Incorrect code, please try again.',
-      );
+      state = state.copyWith(isLoading: false, hasError: true);
     }
   }
 

@@ -17,49 +17,58 @@ class PhoneNumberDisplay extends ConsumerWidget {
     final hasDigits = state.digits.isNotEmpty;
     final textColor = hasDigits ? AppColors.grey900 : AppColors.grey400;
 
-    return Container(
-      width: double.infinity,
-      height: 48,
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      decoration: BoxDecoration(
-        color: AppColors.grey50,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(2.5),
-            child: SvgPicture.asset(
-              AppIcons.phoneOutline,
-              width: 19,
-              height: 19,
-              colorFilter: ColorFilter.mode(textColor, BlendMode.srcIn),
+    return GestureDetector(
+      onTap: () {
+        ref.read(phoneNumberNotifierProvider.notifier).setFocused(true);
+      },
+      child: Container(
+        width: double.infinity,
+        height: 48,
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        decoration: BoxDecoration(
+          color: AppColors.grey50,
+          borderRadius: BorderRadius.circular(8),
+          border: state.isFocused
+              ? Border.all(color: AppColors.primary500, width: 1)
+              : null,
+        ),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(2.5),
+              child: SvgPicture.asset(
+                AppIcons.phoneOutline,
+                width: 19,
+                height: 19,
+                colorFilter: ColorFilter.mode(textColor, BlendMode.srcIn),
+              ),
             ),
-          ),
-          const SizedBox(width: 16),
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: '(${state.selectedCountry.dialCode})',
-                  style: AppTextStyles.body16Medium.copyWith(color: textColor),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () async {
-                      final selected = await showCountryPicker(context);
-                      if (selected != null) {
-                        ref.read(phoneNumberNotifierProvider.notifier).selectCountry(selected);
-                      }
-                    },
-                ),
-                if (hasDigits)
+            const SizedBox(width: 16),
+            RichText(
+              text: TextSpan(
+                children: [
                   TextSpan(
-                    text: ' ${state.digits}',
-                    style: AppTextStyles.body16Regular.copyWith(color: textColor),
+                    text: '(${state.selectedCountry.dialCode})',
+                    style: AppTextStyles.body16Medium.copyWith(color: textColor),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () async {
+                        ref.read(phoneNumberNotifierProvider.notifier).setFocused(true);
+                        final selected = await showCountryPicker(context);
+                        if (selected != null) {
+                          ref.read(phoneNumberNotifierProvider.notifier).selectCountry(selected);
+                        }
+                      },
                   ),
-              ],
+                  if (hasDigits)
+                    TextSpan(
+                      text: ' ${state.digits}',
+                      style: AppTextStyles.body16Regular.copyWith(color: textColor),
+                    ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

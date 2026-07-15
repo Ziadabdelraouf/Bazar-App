@@ -5,6 +5,7 @@ class PhoneNumberState {
   final Country selectedCountry;
   final bool isLoading;
   final String? errorMessage;
+  final bool isFocused;
 
   PhoneNumberState({
     this.digits = '',
@@ -16,6 +17,7 @@ class PhoneNumberState {
     ),
     this.isLoading = false,
     this.errorMessage,
+    this.isFocused = false,
   });
 
   PhoneNumberState copyWith({
@@ -23,12 +25,14 @@ class PhoneNumberState {
     Country? selectedCountry,
     bool? isLoading,
     String? errorMessage,
+    bool? isFocused,
   }) {
     return PhoneNumberState(
       digits: digits ?? this.digits,
       selectedCountry: selectedCountry ?? this.selectedCountry,
       isLoading: isLoading ?? this.isLoading,
       errorMessage: errorMessage,
+      isFocused: isFocused ?? this.isFocused,
     );
   }
 }

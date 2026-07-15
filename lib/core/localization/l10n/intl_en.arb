@@ -3,8 +3,29 @@
     "continueButton": "Continue",
     "signInButton": "Sign in",
     "skipButton": "Skip",
+
     "//OnBoarding one Screen Strings//": "",
     "onboardingOneTitle": "Now reading books will be easier",
     "onboardingOneDescription": " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
-    "//OnBoarding Two Screen Strings//": ""
+
+    "//OnBoarding Two Screen Strings//": "",
+
+    "//Verification Screen Strings//": "",
+    "verificationCodeTitle": "Verification Code",
+    "verificationEmailTitle": "Verification Email",
+    "verificationPhoneTitle": "Verification Phone",
+    "verificationSentToEmail": "Please enter the code we just sent to email ",
+    "verificationSentToPhone": "Please enter the code we just sent to phone number ",
+    "resendCodePrompt": "If you didn't receive a code? ",
+    "resendButton": "Resend",
+    "incorrectCodeError": "Incorrect code, please try again.",
+
+    "//Phone Number Screen Strings//": "",
+    "phoneNumberTitle": "Phone Number",
+    "phoneNumberDescription": "Please enter your phone number, so we can more easily deliver your order",
+    "phoneNumberPlaceholder": "Phone number",
+    "emptyPhoneNumberError": "Please enter your phone number",
+    "invalidPhoneNumberError": "Please enter a valid phone number",
+    "selectCountryTitle": "Select Country",
+    "searchCountryHint": "Search country or code"
 }
