@@ -2,10 +2,11 @@ import 'package:bazar_group_1/features/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/localization/generated/l10n.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/router/app_router.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ProviderScope(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SplashScreen(),
+      initialRoute: AppRoutes.onboardingPage,
       routes: AppRouter.routes,
     );
   }
