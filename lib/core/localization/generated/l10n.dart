@@ -165,6 +165,277 @@ class S {
       args: [],
     );
   }
+  /// `Your Bookish Soulmate Awaits`
+String get onboardingTwoTitle {
+  return Intl.message(
+    'Your Bookish Soulmate Awaits',
+    name: 'onboardingTwoTitle',
+    desc: '',
+    args: [],
+  );
+}
+
+/// `Let us guide you to the perfect book. Discover books tailored to your taste.`
+String get onboardingTwoDescription {
+  return Intl.message(
+    'Let us guide you to the perfect book. Discover books tailored to your taste.',
+    name: 'onboardingTwoDescription',
+    desc: '',
+    args: [],
+  );
+}
+
+/// `Start Your Adventure`
+String get onboardingThreeTitle {
+  return Intl.message(
+    'Start Your Adventure',
+    name: 'onboardingThreeTitle',
+    desc: '',
+    args: [],
+  );
+}
+
+  /// `Your reading adventure begins now. Let's go!`
+  String get onboardingThreeDescription {
+    return Intl.message(
+      'Your reading adventure begins now. Let\'s go!',
+      name: 'onboardingThreeDescription',
+      desc: '',
+      args: [],
+    );
+  }
+  // Sign Up Page Strings
+
+  /// `Sign Up`
+  String get signUpTitle {
+    return Intl.message(
+      'Sign Up',
+      name: 'signUpTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create account and choose favorite menu`
+  String get signUpSubtitle {
+    return Intl.message(
+      'Create account and choose favorite menu',
+      name: 'signUpSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get nameLabel {
+    return Intl.message(
+      'Name',
+      name: 'nameLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Name`
+  String get namePlaceholder {
+    return Intl.message(
+      'Your Name',
+      name: 'namePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name is required`
+  String get nameRequired {
+    return Intl.message(
+      'Name is required',
+      name: 'nameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name must be at least 2 characters`
+  String get nameMinimumLength {
+    return Intl.message(
+      'Name must be at least 2 characters',
+      name: 'nameMinimumLength',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get emailLabel {
+    return Intl.message(
+      'Email',
+      name: 'emailLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Email`
+  String get emailPlaceholder {
+    return Intl.message(
+      'Your Email',
+      name: 'emailPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email is required`
+  String get emailRequired {
+    return Intl.message(
+      'Email is required',
+      name: 'emailRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a valid email`
+  String get invalidEmail {
+    return Intl.message(
+      'Enter a valid email',
+      name: 'invalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get passwordLabel {
+    return Intl.message(
+      'Password',
+      name: 'passwordLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Password`
+  String get passwordPlaceholder {
+    return Intl.message(
+      'Your Password',
+      name: 'passwordPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password is required`
+  String get passwordRequired {
+    return Intl.message(
+      'Password is required',
+      name: 'passwordRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least 8 characters`
+  String get passwordMinimumLength {
+    return Intl.message(
+      'Password must contain at least 8 characters',
+      name: 'passwordMinimumLength',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least one number`
+  String get passwordNumberRequired {
+    return Intl.message(
+      'Password must contain at least one number',
+      name: 'passwordNumberRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least one letter`
+  String get passwordLetterRequired {
+    return Intl.message(
+      'Password must contain at least one letter',
+      name: 'passwordLetterRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Minimum 8 characters`
+  String get minimumEightCharacters {
+    return Intl.message(
+      'Minimum 8 characters',
+      name: 'minimumEightCharacters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `At least 1 number (1-9)`
+  String get atLeastOneNumber {
+    return Intl.message(
+      'At least 1 number (1-9)',
+      name: 'atLeastOneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `At least lowercase or uppercase letters`
+  String get atLeastOneLetter {
+    return Intl.message(
+      'At least lowercase or uppercase letters',
+      name: 'atLeastOneLetter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get registerButton {
+    return Intl.message(
+      'Register',
+      name: 'registerButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have an account?`
+  String get haveAccount {
+    return Intl.message(
+      'Have an account?',
+      name: 'haveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By clicking Register, you agree to our`
+  String get registerAgreement {
+    return Intl.message(
+      'By clicking Register, you agree to our',
+      name: 'registerAgreement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms, Data Policy.`
+  String get termsAndDataPolicy {
+    return Intl.message(
+      'Terms, Data Policy.',
+      name: 'termsAndDataPolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
 
   // skipped getter for the '//OnBoarding Two Screen Strings//' key
 }
