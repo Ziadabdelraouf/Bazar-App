@@ -1,4 +1,5 @@
-import 'package:bazar_group_1/features/splash/splash_screen.dart';
+import 'package:bazar_group_1/features/forgot_password/presentation/pages/forgot_password_page.dart';
+import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'core/router/app_router.dart';
 
