@@ -1,3 +1,5 @@
+import 'package:bazar_group_1/core/constants/enums.dart';
+import 'package:bazar_group_1/features/auth/presentation/pages/success_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/onboarding/presentation/pages/onboarding_page.dart';
@@ -5,6 +7,10 @@ import 'app_routes.dart';
 
 class AppRouter {
   static Map<String, WidgetBuilder> routes = {
+    AppRoutes.successfulLogin: (context) =>
+        const SuccessPage(flow: SuccessPageFlow.successfulLogin),
+    AppRoutes.passwordChange: (context) =>
+        const SuccessPage(flow: SuccessPageFlow.passwordChange),
     AppRoutes.onboardingPage: (context) => const OnboardingPage(),
   };
 }
