@@ -28,15 +28,35 @@ class MessageLookup extends MessageLookupByLibrary {
             "تم تغيير كلمة المرور بنجاح، يمكنك تسجيل الدخول مرة أخرى باستخدام كلمة مرور جديدة."),
         "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
         "continueButton": MessageLookupByLibrary.simpleMessage("استمر"),
+        "dontHaveAccountText":
+            MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+        "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "emailPlaceholder":
+            MessageLookupByLibrary.simpleMessage("أدخل بريدك الإلكتروني"),
+        "forgotPasswordButton":
+            MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
         "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
             "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا."),
         "onboardingOneTitle":
             MessageLookupByLibrary.simpleMessage("الان اصبحت القرأه اسهل"),
+        "orSeparator": MessageLookupByLibrary.simpleMessage("أو"),
+        "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "passwordPlaceholder":
+            MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
         "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "signInSubtitle":
+            MessageLookupByLibrary.simpleMessage("سجّل الدخول إلى حسابك"),
+        "signInWithAppleButton":
+            MessageLookupByLibrary.simpleMessage("سجّل الدخول باستخدام Apple"),
+        "signInWithGoogleButton":
+            MessageLookupByLibrary.simpleMessage("سجّل الدخول باستخدام Google"),
+        "signUpButton": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
         "successBody": MessageLookupByLibrary.simpleMessage(
-            "تم اكتمال حسابك، يرجى الاستمتاع بأفضل قائمة عندنا.")
+            "تم اكتمال حسابك، يرجى الاستمتاع بأفضل قائمة عندنا."),
+        "welcomeBackTitle":
+            MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك ")
       };
 }

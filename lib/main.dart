@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/features/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
