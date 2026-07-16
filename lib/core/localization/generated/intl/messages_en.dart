@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
     "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number",

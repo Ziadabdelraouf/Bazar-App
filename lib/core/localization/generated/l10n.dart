@@ -172,6 +172,16 @@ class S {
     );
   }
 
+  /// `Code resent!`
+  String get codeResentMessage {
+    return Intl.message(
+      'Code resent!',
+      name: 'codeResentMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the '//Phone Number Screen Strings//' key
 
   /// `Phone Number`

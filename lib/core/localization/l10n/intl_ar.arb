@@ -19,6 +19,7 @@
     "resendCodePrompt": "لم تستلم الكود؟ ",
     "resendButton": "إعادة الإرسال",
     "incorrectCodeError": "الكود غير صحيح، حاول مرة أخرى.",
+    "codeResentMessage": "تم إعادة إرسال الكود!",
 
     "//Phone Number Screen Strings//": "",
     "phoneNumberTitle": "رقم الهاتف",

@@ -93,7 +93,7 @@ class _VerificationCodeScreenState extends ConsumerState<VerificationCodeScreen>
     if (mounted) {
       setState(() => _isResending = false);
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Code resent!')),
+        SnackBar(content: Text(S.of(context).codeResentMessage)),
       );
     }
   }
