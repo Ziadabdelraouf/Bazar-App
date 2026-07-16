@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/features/forgot_password/presentation/pages/forgot_password_page.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       locale: Locale("ar"),
-      // locale: Locale("en"),
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -31,7 +31,6 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SplashScreen(),
-      initialRoute: AppRoutes.onboardingPage,
       routes: AppRouter.routes,
     );
   }
