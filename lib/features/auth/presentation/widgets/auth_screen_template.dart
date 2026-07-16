@@ -36,6 +36,11 @@ class AuthScreenTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    // Figma's reference: keypad (357px) as a fraction of its full frame.
+    // Using a screen-relative percentage instead of a fixed pixel value
+    // keeps this same visual ratio consistent across different device sizes.
+    final screenHeight = MediaQuery.of(context).size.height;
+    final keypadHeight = screenHeight * 0.42;
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
@@ -52,7 +57,7 @@ class AuthScreenTemplate extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                child: SingleChildScrollView(
+                child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,7 +92,7 @@ class AuthScreenTemplate extends StatelessWidget {
                           ),
                         ),
                       ],
-                      const SizedBox(height: 24),
+                      const Spacer(),
                       isLoading
                           ? const Center(
                               child: SizedBox(
@@ -105,11 +110,14 @@ class AuthScreenTemplate extends StatelessWidget {
                   ),
                 ),
               ),
-              NumericKeypad(
-                backgroundColor: keypadBackgroundColor,
-                foregroundColor: keypadForegroundColor,
-                onDigitPressed: onDigitPressed,
-                onDeletePressed: onDeletePressed,
+              SizedBox(
+                height: keypadHeight,
+                child: NumericKeypad(
+                  backgroundColor: keypadBackgroundColor,
+                  foregroundColor: keypadForegroundColor,
+                  onDigitPressed: onDigitPressed,
+                  onDeletePressed: onDeletePressed,
+                ),
               ),
             ],
           ),

@@ -28,7 +28,6 @@ class NumericKeypad extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 357,
       color: backgroundColor,
       child: LayoutBuilder(
         builder: (context, constraints) {
