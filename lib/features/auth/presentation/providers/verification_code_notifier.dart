@@ -1,41 +1,38 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/features/auth/domain/verification_repository.dart';
-import 'package:bazar_group_1/features/auth/data/mock_verification_repository.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/repository_providers.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/verification_code_state.dart';
-
-final verificationRepositoryProvider = Provider<VerificationRepository>(
-  (ref) => MockVerificationRepository(),
-);
 
 class VerificationCodeNotifier extends StateNotifier<VerificationCodeState> {
   final VerificationRepository _repository;
 
   VerificationCodeNotifier(this._repository) : super(VerificationCodeState());
 
-  void updateDigit(int index, String value) {
-    final digits = state.code.split('');
-    while (digits.length < 4) {
-      digits.add('');
-    }
-    digits[index] = value;
-    state = state.copyWith(code: digits.join());
-  }
-
-  void deleteLastDigit() {
-    if (state.code.isEmpty) return;
-    state = state.copyWith(code: state.code.substring(0, state.code.length - 1));
+  void reset() {
+    state = VerificationCodeState();
   }
 
   void enterDigitFromKeypad(String digit) {
+    if (!RegExp(r'^[0-9]$').hasMatch(digit)) return;
     if (state.code.length >= 4) return;
     final newCode = state.code + digit;
-    state = state.copyWith(code: newCode, activeIndex: newCode.length, isFocused: true);
+    state = state.copyWith(
+      code: newCode,
+      activeIndex: newCode.length,
+      isFocused: true,
+      hasError: false,
+    );
   }
 
   void deleteDigitFromKeypad() {
     if (state.code.isEmpty) return;
     final newCode = state.code.substring(0, state.code.length - 1);
-    state = state.copyWith(code: newCode, activeIndex: newCode.length, isFocused: true);
+    state = state.copyWith(
+      code: newCode,
+      activeIndex: newCode.length,
+      isFocused: true,
+      hasError: false,
+    );
   }
 
   void setFocused(bool focused) {

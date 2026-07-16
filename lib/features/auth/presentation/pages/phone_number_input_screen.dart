@@ -7,11 +7,50 @@ import 'package:bazar_group_1/features/auth/presentation/providers/phone_number_
 import 'package:bazar_group_1/features/auth/presentation/widgets/phone_number_display.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/auth_screen_template.dart';
 
-class PhoneNumberInputScreen extends ConsumerWidget {
-  const PhoneNumberInputScreen({super.key});
+/// Phone number collection screen — used during Sign Up when the user
+/// registers with a phone number instead of an email.
+///
+/// Not used during Forgot Password: that flow collects contact info via
+/// a separate screen (owned by another feature), and calls
+/// [VerificationCodeScreen] directly with the result.
+///
+/// Shares its overall layout with [VerificationCodeScreen] via
+/// [AuthScreenTemplate] — only the middle content (a single tappable
+/// phone display here, 4 code boxes there) differs.
+///
+/// Usage:
+/// ```dart
+/// PhoneNumberInputScreen(
+///   onSubmitted: (phoneNumber) {
+///     // Navigate to VerificationCodeScreen, passing phoneNumber
+///     // as contactValue.
+///   },
+/// )
+/// ```
+
+class PhoneNumberInputScreen extends ConsumerStatefulWidget {
+  final void Function(String fullPhoneNumber) onSubmitted;
+
+  const PhoneNumberInputScreen({
+    super.key,
+    required this.onSubmitted,
+  });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<PhoneNumberInputScreen> createState() => _PhoneNumberInputScreenState();
+}
+
+class _PhoneNumberInputScreenState extends ConsumerState<PhoneNumberInputScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(phoneNumberNotifierProvider.notifier).reset();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final s = S.of(context);
     final state = ref.watch(phoneNumberNotifierProvider);
 
@@ -36,7 +75,8 @@ class PhoneNumberInputScreen extends ConsumerWidget {
                 invalidError: s.invalidPhoneNumberError,
               );
           if (success) {
-            // Navigate to Verification Phone screen, once routing is wired up.
+            final fullNumber = '(${state.selectedCountry.dialCode}) ${state.digits}';
+            widget.onSubmitted(fullNumber);
           }
         },
         keypadBackgroundColor: AppColors.primary500,

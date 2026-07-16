@@ -26,7 +26,7 @@ class VerificationCodeState {
     return VerificationCodeState(
       code: code ?? this.code,
       isLoading: isLoading ?? this.isLoading,
-      hasError: hasError ?? false,
+      hasError: hasError ?? this.hasError,
       resendCooldownSeconds: resendCooldownSeconds ?? this.resendCooldownSeconds,
       activeIndex: activeIndex ?? this.activeIndex,
       isFocused: isFocused ?? this.isFocused,
