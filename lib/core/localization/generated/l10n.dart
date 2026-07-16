@@ -62,16 +62,6 @@ class S {
     );
   }
 
-  /// `Some Random`
-  String get someRandom {
-    return Intl.message(
-      'Some Random',
-      name: 'someRandom',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Sign in`
   String get signInButton {
     return Intl.message(
@@ -82,11 +72,73 @@ class S {
     );
   }
 
+  /// `Login`
+  String get loginButton {
+    return Intl.message(
+      'Login',
+      name: 'loginButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Skip`
   String get skipButton {
     return Intl.message(
       'Skip',
       name: 'skipButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get Started`
+  String get getStartedButton {
+    return Intl.message(
+      'Get Started',
+      name: 'getStartedButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  // skipped getter for the '//SuccessPage//' key
+
+  /// `Congratulations!`
+  String get congratulations {
+    return Intl.message(
+      'Congratulations!',
+      name: 'congratulations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `your account is complete, Please enjoy the best menu from us.`
+  String get successBody {
+    return Intl.message(
+      'your account is complete, Please enjoy the best menu from us.',
+      name: 'successBody',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password Changed!`
+  String get PasswordChanged {
+    return Intl.message(
+      'Password Changed!',
+      name: 'PasswordChanged',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your password changed successfully, you can login again with a new password`
+  String get PasswordChangedBody {
+    return Intl.message(
+      'Your password changed successfully, you can login again with a new password',
+      name: 'PasswordChangedBody',
       desc: '',
       args: [],
     );

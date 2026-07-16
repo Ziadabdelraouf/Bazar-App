@@ -22,13 +22,22 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "PasswordChanged":
+            MessageLookupByLibrary.simpleMessage("Password Changed!"),
+        "PasswordChangedBody": MessageLookupByLibrary.simpleMessage(
+            "Your password changed successfully, you can login again with a new password"),
+        "congratulations":
+            MessageLookupByLibrary.simpleMessage("Congratulations!"),
         "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
+        "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
         "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
             " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us."),
         "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
             "Now reading books will be easier"),
         "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
         "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
-        "someRandom": MessageLookupByLibrary.simpleMessage("Some Random")
+        "successBody": MessageLookupByLibrary.simpleMessage(
+            "your account is complete, Please enjoy the best menu from us.")
       };
 }
