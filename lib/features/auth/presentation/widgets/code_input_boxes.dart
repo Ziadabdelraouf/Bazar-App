@@ -17,35 +17,38 @@ class CodeInputBoxes extends ConsumerWidget {
       onTap: () {
         ref.read(verificationCodeNotifierProvider.notifier).setFocused(true);
       },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: List.generate(4, (index) {
-          final isActive = index == activeIndex && state.isFocused;
-          final digit = index < code.length ? code[index] : '';
+      child: Directionality(
+        textDirection: TextDirection.ltr,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(4, (index) {
+            final isActive = index == activeIndex && state.isFocused;
+            final digit = index < code.length ? code[index] : '';
 
-          return Padding(
-            padding: EdgeInsets.only(right: index < 3 ? 16 : 0),
-            child: Container(
-              width: 52,
-              height: 52,
-              decoration: BoxDecoration(
-                color: AppColors.grey50,
-                borderRadius: BorderRadius.circular(8),
-                border: isActive
-                    ? Border.all(color: AppColors.primary500, width: 1)
-                    : null,
+            return Padding(
+              padding: EdgeInsets.only(right: index < 3 ? 16 : 0),
+              child: Container(
+                width: 52,
+                height: 52,
+                decoration: BoxDecoration(
+                  color: AppColors.grey50,
+                  borderRadius: BorderRadius.circular(8),
+                  border: isActive
+                      ? Border.all(color: AppColors.primary500, width: 1)
+                      : null,
+                ),
+                child: Center(
+                  child: digit.isNotEmpty
+                      ? Text(
+                          digit,
+                          style: AppTextStyles.h3.copyWith(color: AppColors.grey900),
+                        )
+                      : (isActive ? const _BlinkingCursor() : null),
+                ),
               ),
-              child: Center(
-                child: digit.isNotEmpty
-                    ? Text(
-                        digit,
-                        style: AppTextStyles.h3.copyWith(color: AppColors.grey900),
-                      )
-                    : (isActive ? const _BlinkingCursor() : null),
-              ),
-            ),
-          );
-        }),
+            );
+          }),
+        ),
       ),
     );
   }
