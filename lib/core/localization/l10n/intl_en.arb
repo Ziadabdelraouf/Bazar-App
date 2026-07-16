@@ -24,6 +24,7 @@
     "//Phone Number Screen Strings//": "",
     "phoneNumberTitle": "Phone Number",
     "phoneNumberDescription": "Please enter your phone number, so we can more easily deliver your order",
+    "phoneNumberFieldLabel": "Phone Number",
     "phoneNumberPlaceholder": "Phone number",
     "emptyPhoneNumberError": "Please enter your phone number",
     "invalidPhoneNumberError": "Please enter a valid phone number",

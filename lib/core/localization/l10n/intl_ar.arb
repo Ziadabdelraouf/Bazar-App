@@ -24,6 +24,7 @@
     "//Phone Number Screen Strings//": "",
     "phoneNumberTitle": "رقم الهاتف",
     "phoneNumberDescription": "الرجاء إدخال رقم هاتفك، حتى نتمكن من توصيل طلبك بسهولة أكبر",
+    "phoneNumberFieldLabel": "رقم الهاتف",
     "phoneNumberPlaceholder": "رقم الهاتف",
     "emptyPhoneNumberError": "الرجاء إدخال رقم هاتفك",
     "invalidPhoneNumberError": "الرجاء إدخال رقم هاتف صحيح",

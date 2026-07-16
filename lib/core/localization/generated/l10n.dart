@@ -204,6 +204,16 @@ class S {
     );
   }
 
+  /// `Phone Number`
+  String get phoneNumberFieldLabel {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumberFieldLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Phone number`
   String get phoneNumberPlaceholder {
     return Intl.message(

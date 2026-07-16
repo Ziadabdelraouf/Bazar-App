@@ -42,6 +42,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number, so we can more easily deliver your order",
     ),
+    "phoneNumberFieldLabel": MessageLookupByLibrary.simpleMessage(
+      "Phone Number",
+    ),
     "phoneNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Phone number",
     ),

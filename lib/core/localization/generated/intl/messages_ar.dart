@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتفك، حتى نتمكن من توصيل طلبك بسهولة أكبر",
     ),
+    "phoneNumberFieldLabel": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "phoneNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
       "رقم الهاتف",
     ),
