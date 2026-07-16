@@ -14,6 +14,8 @@ class PhoneNumberState {
       isoCode: 'EG',
       dialCode: '+20',
       flagEmoji: '🇪🇬',
+      minDigits: 10,
+      maxDigits: 10,
     ),
     this.isLoading = false,
     this.errorMessage,

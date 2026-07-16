@@ -1,4 +1,8 @@
-String? validatePhoneNumber(String value, {
+import 'package:bazar_group_1/features/auth/domain/country.dart';
+
+String? validatePhoneNumber(
+  String value,
+  Country country, {
   required String emptyError,
   required String invalidError,
 }) {
@@ -8,7 +12,7 @@ String? validatePhoneNumber(String value, {
 
   final digitsOnly = value.replaceAll(RegExp(r'[^0-9]'), '');
 
-  if (digitsOnly.length < 7) {
+  if (digitsOnly.length < country.minDigits || digitsOnly.length > country.maxDigits) {
     return invalidError;
   }
 

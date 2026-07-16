@@ -16,19 +16,12 @@ class PhoneNumberNotifier extends StateNotifier<PhoneNumberState> {
 
   void enterDigit(String digit) {
     if (!RegExp(r'^[0-9]$').hasMatch(digit)) return;
-    state = state.copyWith(
-      digits: state.digits + digit,
-      errorMessage: null,
-      isFocused: true,
-    );
+    state = state.copyWith(digits: state.digits + digit, errorMessage: null);
   }
 
   void deleteDigit() {
     if (state.digits.isEmpty) return;
-    state = state.copyWith(
-      digits: state.digits.substring(0, state.digits.length - 1),
-      isFocused: true,
-    );
+    state = state.copyWith(digits: state.digits.substring(0, state.digits.length - 1));
   }
 
   void selectCountry(Country country) {
@@ -45,6 +38,7 @@ class PhoneNumberNotifier extends StateNotifier<PhoneNumberState> {
   }) async {
     final validationError = validatePhoneNumber(
       state.digits,
+      state.selectedCountry,
       emptyError: emptyError,
       invalidError: invalidError,
     );
