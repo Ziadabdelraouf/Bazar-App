@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/components/navigation/app_back_button.dart';
 import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/numeric_keypad.dart';
@@ -33,6 +34,8 @@ class AuthScreenTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -85,7 +88,7 @@ class AuthScreenTemplate extends StatelessWidget {
                             ),
                           )
                         : LargePrimaryButton(
-                            label: 'Continue',
+                            label: s.continueButton,
                             onPressed: onContinuePressed,
                           ),
                     const SizedBox(height: 24),
