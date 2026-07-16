@@ -38,6 +38,57 @@ class MessageLookup extends MessageLookupByLibrary {
         "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
         "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
         "successBody": MessageLookupByLibrary.simpleMessage(
-            "your account is complete, Please enjoy the best menu from us.")
-      };
+            "your account is complete, Please enjoy the best menu from us."),
+        "onboardingTwoTitle": MessageLookupByLibrary.simpleMessage(
+            "Your Bookish Soulmate Awaits"),
+        "onboardingTwoDescription": MessageLookupByLibrary.simpleMessage(
+            "Let us guide you to the perfect book. Discover books tailored to your taste."),
+        "onboardingThreeTitle": MessageLookupByLibrary.simpleMessage(
+            "Start Your Adventure"),
+        "onboardingThreeDescription": MessageLookupByLibrary.simpleMessage(
+            "Your reading adventure begins now. Let's go!"),
+          "signUpTitle":MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "signUpSubtitle": MessageLookupByLibrary.simpleMessage(
+          "Create account and choose favorite menu"),
+        "nameLabel":
+            MessageLookupByLibrary.simpleMessage("Name"),
+        "namePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Your Name"),
+        "nameRequired":
+            MessageLookupByLibrary.simpleMessage("Name is required"),
+        "nameMinimumLength": MessageLookupByLibrary.simpleMessage(
+          "Name must be at least 2 characters"),
+        "emailLabel":
+            MessageLookupByLibrary.simpleMessage("Email"),
+        "emailPlaceholder":
+            MessageLookupByLibrary.simpleMessage("Your Email"),
+        "emailRequired":
+            MessageLookupByLibrary.simpleMessage("Email is required"),
+        "invalidEmail":
+            MessageLookupByLibrary.simpleMessage("Enter a valid email"),
+        "passwordLabel":
+            MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordPlaceholder":
+            MessageLookupByLibrary.simpleMessage("Your Password"),
+        "passwordRequired":
+            MessageLookupByLibrary.simpleMessage("Password is required"),
+        "passwordMinimumLength": MessageLookupByLibrary.simpleMessage(
+          "Password must contain at least 8 characters"),
+        "passwordNumberRequired": MessageLookupByLibrary.simpleMessage(
+          "Password must contain at least one number"),
+        "passwordLetterRequired": MessageLookupByLibrary.simpleMessage(
+          "Password must contain at least one letter"),
+        "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
+          "Minimum 8 characters"),
+        "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
+          "At least 1 number (1-9)"),
+        "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
+          "At least lowercase or uppercase letters"),
+        "registerButton": MessageLookupByLibrary.simpleMessage("Register"),
+        "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
+        "registerAgreement": MessageLookupByLibrary.simpleMessage(
+          "By clicking Register, you agree to our"),
+        "termsAndDataPolicy": MessageLookupByLibrary.simpleMessage(
+          "Terms, Data Policy."),
+        };
 }
