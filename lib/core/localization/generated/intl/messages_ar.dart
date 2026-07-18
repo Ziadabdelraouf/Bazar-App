@@ -22,19 +22,28 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "PasswordChanged": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير كلمة المرور!",
+    ),
+    "PasswordChangedBody": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير كلمة المرور بنجاح، يمكنك تسجيل الدخول مرة أخرى باستخدام كلمة مرور جديدة.",
+    ),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
     ),
+    "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
     "continueButton": MessageLookupByLibrary.simpleMessage("استمر"),
     "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتفك",
     ),
+    "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
       "الكود غير صحيح، حاول مرة أخرى.",
     ),
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتف صحيح",
     ),
+    "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
     ),
@@ -59,6 +68,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage("اختر الدولة"),
     "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "successBody": MessageLookupByLibrary.simpleMessage(
+      "تم اكتمال حسابك، يرجى الاستمتاع بأفضل قائمة عندنا.",
+    ),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "verificationEmailTitle": MessageLookupByLibrary.simpleMessage(
       "تحقق البريد الإلكتروني",

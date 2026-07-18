@@ -22,17 +22,26 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "PasswordChanged": MessageLookupByLibrary.simpleMessage(
+      "Password Changed!",
+    ),
+    "PasswordChangedBody": MessageLookupByLibrary.simpleMessage(
+      "Your password changed successfully, you can login again with a new password",
+    ),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
+    "congratulations": MessageLookupByLibrary.simpleMessage("Congratulations!"),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
     "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number",
     ),
+    "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
       "Incorrect code, please try again.",
     ),
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid phone number",
     ),
+    "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
     ),
@@ -61,6 +70,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
     "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
+    "successBody": MessageLookupByLibrary.simpleMessage(
+      "your account is complete, Please enjoy the best menu from us.",
+    ),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage(
       "Verification Code",
     ),

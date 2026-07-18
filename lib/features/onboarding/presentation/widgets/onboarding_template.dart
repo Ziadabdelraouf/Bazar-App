@@ -20,6 +20,7 @@ class OnboardingTemplate extends StatelessWidget {
     required this.onSecondButtonTap,
     this.onSkip,
   });
+
   final String imagePath;
   final String title;
   final String description;
@@ -33,6 +34,7 @@ class OnboardingTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screensize = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -46,7 +48,6 @@ class OnboardingTemplate extends StatelessWidget {
                 ),
                 child: Align(
                   alignment: Alignment.topLeft,
-
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
@@ -64,29 +65,32 @@ class OnboardingTemplate extends StatelessWidget {
                   ),
                 ),
               ),
-
               Image.asset(
                 imagePath,
                 width: screensize.width * 0.853,
                 height: screensize.height * 0.394,
                 fit: BoxFit.contain,
               ),
-
               Padding(
-                padding: EdgeInsets.only(top: screensize.height * 0.017),
+                padding: EdgeInsets.only(
+                  top: screensize.height * 0.017,
+                ),
                 child: SizedBox(
                   width: screensize.width * 0.64,
                   height: screensize.height * 0.1,
                   child: Text(
                     title,
-                    style: AppTextStyles.h3.copyWith(color: AppColors.grey900),
+                    style: AppTextStyles.h3.copyWith(
+                      color: AppColors.grey900,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),
               ),
-
               Padding(
-                padding: EdgeInsets.only(top: screensize.height * 0.037),
+                padding: EdgeInsets.only(
+                  top: screensize.height * 0.037,
+                ),
                 child: SizedBox(
                   width: screensize.width * 0.77,
                   height: screensize.height * 0.12,
@@ -99,13 +103,15 @@ class OnboardingTemplate extends StatelessWidget {
                   ),
                 ),
               ),
-
               //const SizedBox(height: 32),
               Padding(
-                padding: EdgeInsets.only(top: screensize.height * 0.0344),
-                child: OnboardingDot(activeIndex: activeDotIndex),
+                padding: EdgeInsets.only(
+                  top: screensize.height * 0.0344,
+                ),
+                child: OnboardingDot(
+                  activeIndex: activeDotIndex,
+                ),
               ),
-
               //OnboardingButtons(firstButtonLabel: firstButton, firstButtonOnPressed: onFirstButtonTap, secondButtonLabel: secondButton, secondButtonOnPressed: onSecondButtonTap)
               Padding(
                 padding: EdgeInsets.only(
