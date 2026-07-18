@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
@@ -6,7 +7,6 @@ import 'package:bazar_group_1/features/forgot_password/presentation/pages/reset_
 import 'package:bazar_group_1/features/forgot_password/presentation/widgets/contact_method_card.dart';
 import 'package:bazar_group_1/features/forgot_password/presentation/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:bazar_group_1/features/forgot_password/presentation/providers/contact_method_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -25,15 +25,7 @@ class _ForgotPasswordPageState extends ConsumerState<ForgotPasswordPage> {
       textDirection: TextDirection.ltr,
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: SvgPicture.asset(AppIcons.arrowLeftOutline),
-          ),
-        ),
+        appBar: const AppBackBar(),
         body: Padding(
           padding: EdgeInsets.only(
             left: MediaQuery.of(context).size.width * (24 / 375),

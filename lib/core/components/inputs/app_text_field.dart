@@ -120,10 +120,14 @@ class _AppTextFieldState extends State<AppTextField> {
                   obscureText: widget.obscureText ? _obscureText : false,
                   keyboardType: widget.keyboardType,
                   textInputAction: widget.textInputAction,
-                  style: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900),
+                  style: AppTextStyles.body16Medium.copyWith(
+                    color: AppColors.grey900,
+                  ),
                   decoration: InputDecoration(
-                    hintText: widget.placeholder,
-                    hintStyle: AppTextStyles.body16Regular.copyWith(color: AppColors.grey400),
+                    hintText: _isFocused ? null : widget.placeholder,
+                    hintStyle: AppTextStyles.body16Regular.copyWith(
+                      color: AppColors.grey400,
+                    ),
                     border: InputBorder.none,
                     enabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none,

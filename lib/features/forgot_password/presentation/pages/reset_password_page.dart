@@ -1,3 +1,5 @@
+import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
+import 'package:bazar_group_1/core/components/inputs/app_text_field.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
@@ -6,7 +8,6 @@ import 'package:bazar_group_1/features/forgot_password/presentation/providers/co
 import 'package:bazar_group_1/features/forgot_password/presentation/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/svg.dart';
 
 class ResetPasswordPage extends ConsumerStatefulWidget {
   const ResetPasswordPage({super.key});
@@ -16,14 +17,11 @@ class ResetPasswordPage extends ConsumerStatefulWidget {
 }
 
 class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
-  final FocusNode _focusNode = FocusNode();
-
+  final TextEditingController _contactController = TextEditingController();
   @override
-  void initState() {
-    super.initState();
-    _focusNode.addListener(() {
-      setState(() {});
-    });
+  void dispose() {
+    _contactController.dispose();
+    super.dispose();
   }
 
   @override
@@ -36,15 +34,7 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
           FocusScope.of(context).unfocus();
         },
         child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.white,
-            leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: SvgPicture.asset(AppIcons.arrowLeftOutline),
-            ),
-          ),
+          appBar: const AppBackBar(),
           backgroundColor: Colors.white,
           body: Padding(
             padding: EdgeInsets.only(
@@ -72,70 +62,23 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * (18 / 812),
                 ),
-                Text(
-                  selectedMethod == ContactMethod.email
+                const SizedBox(height: 8),
+                AppTextField(
+                  label: selectedMethod == ContactMethod.email
                       ? 'Email'
                       : 'Phone Number',
-                  style: AppTextStyles.body14Medium.copyWith(
-                    color: AppColors.grey900,
-                  ),
+                  placeholder: selectedMethod == ContactMethod.email
+                      ? 'example@email.com'
+                      : '(+965) 123 435 7565',
+                  controller: _contactController,
+                  keyboardType: selectedMethod == ContactMethod.email
+                      ? TextInputType.emailAddress
+                      : TextInputType.phone,
+                  prefixIcon: selectedMethod == ContactMethod.phone
+                      ? AppIcons.phoneFill
+                      : null,
                 ),
-                const SizedBox(height: 8),
-                Container(
-                  height: MediaQuery.of(context).size.height * (48 / 812),
-                  decoration: BoxDecoration(
-                    color: AppColors.grey50,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: TextField(
-                    focusNode: _focusNode,
-                    keyboardType: selectedMethod == ContactMethod.email
-                        ? TextInputType.emailAddress
-                        : TextInputType.phone,
-                    style: AppTextStyles.body16Medium.copyWith(
-                      color: AppColors.grey900,
-                    ),
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      contentPadding: EdgeInsets.symmetric(
-                        horizontal:
-                            MediaQuery.of(context).size.width * (16 / 375),
-                      ),
-                      hintText: _focusNode.hasFocus
-                          ? null
-                          : (selectedMethod == ContactMethod.email
-                                ? 'example@email.com'
-                                : '(+965) 123 435 7565'),
-                      hintStyle: AppTextStyles.body16Medium.copyWith(
-                        color: AppColors.grey900,
-                      ),
-                      prefixIcon: selectedMethod == ContactMethod.phone
-                          ? Padding(
-                              padding: EdgeInsets.only(
-                                left:
-                                    MediaQuery.of(context).size.width *
-                                    (16 / 375),
-                                right:
-                                    MediaQuery.of(context).size.width *
-                                    (8 / 375),
-                              ),
-                              child: SvgPicture.asset(
-                                AppIcons.phoneFill,
-                                colorFilter: const ColorFilter.mode(
-                                  AppColors.primary500,
-                                  BlendMode.srcIn,
-                                ),
-                              ),
-                            )
-                          : null,
-                      prefixIconConstraints: const BoxConstraints(),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * (327 / 375),
-                  height: 48,
-                ),
+                const SizedBox(height: 64),
                 PrimaryButton(text: 'Send', onPressed: () {}),
               ],
             ),

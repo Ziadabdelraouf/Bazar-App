@@ -1,5 +1,7 @@
 import 'package:bazar_group_1/core/router/app_routes.dart';
+import 'package:bazar_group_1/features/forgot_password/presentation/pages/create_new_password_page.dart';
 import 'package:bazar_group_1/features/forgot_password/presentation/pages/forgot_password_page.dart';
+import 'package:bazar_group_1/features/forgot_password/presentation/pages/reset_password_page.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const ForgotPasswordPage(),
+      home: CreateNewPasswordPage(),
       routes: AppRouter.routes,
     );
   }
