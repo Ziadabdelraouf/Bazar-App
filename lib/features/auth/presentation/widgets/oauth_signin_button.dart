@@ -1,39 +1,32 @@
+import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class OAuthSignInButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String text;
-  final Widget? icon;
-  final Color backgroundColor;
-  final Color textColor;
-  final Color borderColor;
-  final double height;
-  final double elevation;
+  final String icon;
 
   const OAuthSignInButton({
     super.key,
     required this.onPressed,
     required this.text,
-    this.icon,
-    this.backgroundColor = Colors.white,
-    this.textColor = Colors.black87,
-    this.borderColor = Colors.transparent,
-    this.height = 48.0,
-    this.elevation = 0.0,
+    required this.icon,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height,
+      height: 48,
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor,
-          foregroundColor: textColor,
-          elevation: elevation,
+          backgroundColor: AppColors.white,
+          foregroundColor: AppColors.grey900,
+
+          elevation: 0,
           shape: StadiumBorder(
-            side: BorderSide(color: borderColor, width: 1.0),
+            side: BorderSide(color: AppColors.grey200, width: 1.0),
           ),
           padding: const EdgeInsets.symmetric(horizontal: 24),
         ),
@@ -42,13 +35,13 @@ class OAuthSignInButton extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (icon != null) ...[icon!, const SizedBox(width: 12)],
+            SvgPicture.asset(icon, height: 16, width: 16),
             Text(
               text,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: textColor,
+                color: AppColors.grey900,
               ),
             ),
           ],

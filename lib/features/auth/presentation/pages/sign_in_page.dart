@@ -1,6 +1,8 @@
 import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
 import 'package:bazar_group_1/core/components/inputs/app_text_field.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/core/router/app_router.dart';
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/oauth_signin_button.dart';
@@ -27,24 +29,17 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(backgroundColor: AppColors.white),
       backgroundColor: AppColors.white,
       resizeToAvoidBottomInset: false,
       body: Padding(
-        padding: const EdgeInsets.all(32.0),
+        padding: const EdgeInsets.only(left: 24.0, right: 24.0, top: 16),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // will be replaced with the reusable back button component once it's implemented
-            IconButton(
-              onPressed: () {
-                //Navigator.pop(context);
-              },
-              alignment: AlignmentGeometry.topLeft,
-              icon: Icon(Icons.arrow_back),
-            ),
             Text(
-              S.of(context).welcomeBackTitle + "👋",
+              '${S.of(context).welcomeBackTitle}👋',
               style: AppTextStyles.h3,
               textAlign: TextAlign.start,
             ),
@@ -56,7 +51,7 @@ class _SignInPageState extends State<SignInPage> {
               ),
               textAlign: TextAlign.start,
             ),
-            SizedBox(height: 32),
+            SizedBox(height: 24),
             AppTextField(
               label: S.of(context).emailLabel,
               placeholder: S.of(context).emailPlaceholder,
@@ -68,13 +63,13 @@ class _SignInPageState extends State<SignInPage> {
               controller: passwordController,
               obscureText: true,
             ),
-            SizedBox(height: 16),
+            // SizedBox(height: 16),
             TextButton(
               onPressed: () {},
               style: TextButton.styleFrom(alignment: Alignment.centerLeft),
               child: Text(
                 S.of(context).forgotPasswordButton,
-                style: AppTextStyles.body16Regular.copyWith(
+                style: AppTextStyles.body14SemiBold.copyWith(
                   color: AppColors.primary600,
                 ),
                 textAlign: TextAlign.start,
@@ -108,7 +103,7 @@ class _SignInPageState extends State<SignInPage> {
                 ),
               ],
             ),
-            SizedBox(height: 24),
+            SizedBox(height: 16),
             Row(
               children: [
                 Expanded(child: Divider(color: AppColors.grey200)),
@@ -128,27 +123,13 @@ class _SignInPageState extends State<SignInPage> {
             OAuthSignInButton(
               onPressed: () {},
               text: S.of(context).signInWithGoogleButton,
-              icon: SvgPicture.asset(
-                'assets/icons/google_logo.svg',
-                height: 16,
-                width: 16,
-              ),
-              backgroundColor: Colors.white,
-              textColor: Colors.black87,
-              borderColor: AppColors.grey200,
+              icon: 'assets/icons/google_logo.svg',
             ),
             SizedBox(height: 16),
             OAuthSignInButton(
               onPressed: () {},
               text: S.of(context).signInWithAppleButton,
-              icon: SvgPicture.asset(
-                'assets/icons/apple_logo.svg',
-                height: 16,
-                width: 16,
-              ),
-              backgroundColor: Colors.white,
-              textColor: Colors.black87,
-              borderColor: AppColors.grey200,
+              icon: 'assets/icons/apple_logo.svg',
             ),
           ],
         ),

@@ -24,18 +24,18 @@ class OnboardingPage extends ConsumerWidget {
       secondButton: "Sign in",
       onFirstButtonTap: () {
         if (isLastPage) {
-          Navigator.pushReplacementNamed(context, AppRoutes.signInPage);
+          Navigator.pushNamed(context, AppRoutes.signInPage);
         } else {
           ref.read(onboardingProvider.notifier).nextPage();
         }
       },
       onSecondButtonTap: () {
         ref.read(onboardingProvider.notifier).reset();
-        Navigator.pushReplacementNamed(context, AppRoutes.signInPage);
+        Navigator.pushNamed(context, AppRoutes.signInPage);
       },
       onSkip: () {
         ref.read(onboardingProvider.notifier).reset();
-        Navigator.pushReplacementNamed(context, AppRoutes.signInPage);
+        Navigator.pushNamed(context, AppRoutes.signInPage);
       },
     );
   }
