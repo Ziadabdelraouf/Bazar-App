@@ -33,8 +33,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
     "continueButton": MessageLookupByLibrary.simpleMessage("استمر"),
+    "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
+      "ليس لديك حساب؟",
+    ),
+    "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "emailPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "أدخل بريدك الإلكتروني",
+    ),
     "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتفك",
+    ),
+    "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
+      "هل نسيت كلمة المرور؟",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
@@ -49,6 +59,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
       "الان اصبحت القرأه اسهل",
+    ),
+    "orSeparator": MessageLookupByLibrary.simpleMessage("أو"),
+    "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "passwordPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "أدخل كلمة المرور",
     ),
     "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتفك، حتى نتمكن من توصيل طلبك بسهولة أكبر",
@@ -67,6 +82,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage("اختر الدولة"),
     "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "signInSubtitle": MessageLookupByLibrary.simpleMessage(
+      "سجّل الدخول إلى حسابك",
+    ),
+    "signInWithAppleButton": MessageLookupByLibrary.simpleMessage(
+      "سجّل الدخول باستخدام Apple",
+    ),
+    "signInWithGoogleButton": MessageLookupByLibrary.simpleMessage(
+      "سجّل الدخول باستخدام Google",
+    ),
+    "signUpButton": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
     "successBody": MessageLookupByLibrary.simpleMessage(
       "تم اكتمال حسابك، يرجى الاستمتاع بأفضل قائمة عندنا.",
@@ -84,5 +109,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال الكود الذي أرسلناه إلى رقم الهاتف ",
     ),
+    "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك "),
   };
 }

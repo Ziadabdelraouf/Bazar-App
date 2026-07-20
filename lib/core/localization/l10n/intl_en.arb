@@ -6,6 +6,20 @@
     "skipButton": "Skip",
     "getStartedButton":"Get Started",
 
+    "//SignInPage Strings//": "",
+    "welcomeBackTitle": "Welcome Back ",
+    "signInSubtitle": "Sign in to your account",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "forgotPasswordButton": "Forgot Password?",
+    "dontHaveAccountText": "Don't have an account?",
+    "signUpButton": "Sign Up",
+    "orSeparator": "or",
+    "signInWithGoogleButton": "Sign in with Google",
+    "signInWithAppleButton": "Sign in with Apple",
+
     "//SuccessPage//":"",
     "congratulations":"Congratulations!",
     "successBody":"your account is complete, Please enjoy the best menu from us.",
@@ -15,8 +29,9 @@
     "//OnBoarding one Screen Strings//": "",
     "onboardingOneTitle": "Now reading books will be easier",
     "onboardingOneDescription": " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
+
     "//OnBoarding Two Screen Strings//": "",
-    
+
     "//Verification Screen Strings//": "",
     "verificationCodeTitle": "Verification Code",
     "verificationEmailTitle": "Verification Email",

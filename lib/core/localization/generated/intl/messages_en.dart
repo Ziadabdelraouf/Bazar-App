@@ -31,8 +31,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
     "congratulations": MessageLookupByLibrary.simpleMessage("Congratulations!"),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
+    "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account?",
+    ),
+    "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
+    "emailPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Enter your email",
+    ),
     "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number",
+    ),
+    "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
+      "Forgot Password?",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
@@ -47,6 +57,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
       "Now reading books will be easier",
+    ),
+    "orSeparator": MessageLookupByLibrary.simpleMessage("or"),
+    "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Enter your password",
     ),
     "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number, so we can more easily deliver your order",
@@ -69,6 +84,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "Select Country",
     ),
     "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
+    "signInSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Sign in to your account",
+    ),
+    "signInWithAppleButton": MessageLookupByLibrary.simpleMessage(
+      "Sign in with Apple",
+    ),
+    "signInWithGoogleButton": MessageLookupByLibrary.simpleMessage(
+      "Sign in with Google",
+    ),
+    "signUpButton": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
     "successBody": MessageLookupByLibrary.simpleMessage(
       "your account is complete, Please enjoy the best menu from us.",
@@ -88,5 +113,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
       "Please enter the code we just sent to phone number ",
     ),
+    "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("Welcome Back "),
   };
 }

@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/features/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -22,8 +23,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: Locale("ar"),
-      // locale: Locale("en"),
+      // locale: Locale("ar"),
+      locale: Locale("en"),
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

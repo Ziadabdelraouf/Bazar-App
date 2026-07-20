@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/features/onboarding/data/onboarding_data.dart';
 import 'package:bazar_group_1/features/onboarding/presentation/provider/onboarding_provider.dart';
 import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_template.dart';
@@ -23,18 +24,18 @@ class OnboardingPage extends ConsumerWidget {
       secondButton: "Sign in",
       onFirstButtonTap: () {
         if (isLastPage) {
-          // Navigator.pushReplacementNamed(context,AppRoutes.signupPage);
+          Navigator.pushNamed(context, AppRoutes.signInPage);
         } else {
           ref.read(onboardingProvider.notifier).nextPage();
         }
       },
       onSecondButtonTap: () {
         ref.read(onboardingProvider.notifier).reset();
-        //Navigator.pushReplacementNamed(context,  AppRoutes.signupPage);
+        Navigator.pushNamed(context, AppRoutes.signInPage);
       },
       onSkip: () {
         ref.read(onboardingProvider.notifier).reset();
-        //Navigator.pushReplacementNamed(context,  AppRoutes.signupPage);
+        Navigator.pushNamed(context, AppRoutes.signInPage);
       },
     );
   }
