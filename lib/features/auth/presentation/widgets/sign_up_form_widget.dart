@@ -1,7 +1,7 @@
 import 'package:bazar_group_1/core/components/inputs/app_text_form_field.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/password_requirements_widget.dart';
-import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -20,6 +20,7 @@ class SignUpFormWigdet extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final signUpState = ref.watch(signUpProvider);
+    final signUpNotifier = ref.read(signUpProvider.notifier);
     final localization = S.of(context);
 
     return Column(
@@ -74,11 +75,7 @@ class SignUpFormWigdet extends ConsumerWidget {
           controller: passwordController,
           textInputAction: TextInputAction.done,
           obscureText: signUpState.obscurePassword,
-          onChanged: (password) {
-            ref
-                .read(signUpProvider.notifier)
-                .validatePassword(password);
-          },
+          onChanged: signUpNotifier.validatePassword,
           validator: (value) {
             final password = value ?? '';
 
@@ -101,9 +98,7 @@ class SignUpFormWigdet extends ConsumerWidget {
             return null;
           },
           suffixIcon: IconButton(
-            onPressed: ref
-                .read(signUpProvider.notifier)
-                .togglePasswordVisibility,
+            onPressed: signUpNotifier.togglePasswordVisibility,
             icon: Icon(
               signUpState.obscurePassword
                   ? Icons.visibility_off_outlined

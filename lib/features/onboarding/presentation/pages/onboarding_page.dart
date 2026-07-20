@@ -4,7 +4,6 @@ import 'package:bazar_group_1/features/onboarding/presentation/provider/onboardi
 import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_template.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends ConsumerWidget {

@@ -1,5 +1,8 @@
 import 'package:bazar_group_1/core/router/app_routes.dart';
-import 'package:bazar_group_1/features/splash/splash_screen.dart';
+import 'package:bazar_group_1/features/forgot_password/presentation/pages/create_new_password_page.dart';
+import 'package:bazar_group_1/features/forgot_password/presentation/pages/forgot_password_page.dart';
+import 'package:bazar_group_1/features/forgot_password/presentation/pages/reset_password_page.dart';
+import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -10,11 +13,7 @@ import 'features/auth/presentation/pages/forgot_password_verification_email.dart
 import 'features/auth/presentation/pages/forgot_password_verification_phone.dart';
 
 void main() {
-  runApp(
-    const ProviderScope(
-      child: MyApp(),
-    ),
-  );
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -22,7 +21,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+      return MaterialApp(
+          builder: (context, child) {
+        return GestureDetector(
+          behavior: HitTestBehavior.translucent,
+          onTap: () {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: child ?? const SizedBox.shrink(),
+        );
+      },
       //locale: Locale("ar"),
       locale: Locale("en"),
       localizationsDelegates: [

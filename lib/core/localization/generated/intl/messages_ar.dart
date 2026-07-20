@@ -142,6 +142,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "سجّل الدخول باستخدام Google",
     ),
     "signUpButton": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "signUpEmailPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "بريدك الإلكتروني",
+    ),
+    "signUpPasswordPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور الخاصة بك",
+    ),
     "signUpSubtitle": MessageLookupByLibrary.simpleMessage(
       "أنشئ حسابًا واختر قائمتك المفضلة",
     ),

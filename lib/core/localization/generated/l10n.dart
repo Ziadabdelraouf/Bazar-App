@@ -348,6 +348,16 @@ class S {
     );
   }
 
+  /// `Your Email`
+  String get signUpEmailPlaceholder {
+    return Intl.message(
+      'Your Email',
+      name: 'signUpEmailPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Email is required`
   String get emailRequired {
     return Intl.message(
@@ -363,6 +373,16 @@ class S {
     return Intl.message(
       'Enter a valid email',
       name: 'invalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Password`
+  String get signUpPasswordPlaceholder {
+    return Intl.message(
+      'Your Password',
+      name: 'signUpPasswordPlaceholder',
       desc: '',
       args: [],
     );
