@@ -35,7 +35,7 @@ class SmallSecondaryButton extends StatelessWidget {
         child: Text(
           label,
           style: (textStyle ?? AppTextStyles.body14Bold).copyWith(
-            color: AppColors.white,
+            color:AppColors.primary500,
           ),
         ),
       ),

@@ -26,7 +26,8 @@
     "//OnBoarding one Screen Strings//": "",
     "onboardingOneTitle": "الان اصبحت القرأه اسهل",
     "onboardingOneDescription": "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
-    "//OnBoarding Two Screen Strings//": ""
+
+    "//OnBoarding Two Screen Strings//": "",
     "onboardingTwoTitle": "رفيقك المثالي في عالم الكتب بانتظارك",
     "onboardingTwoDescription": "دعنا نرشدك إلى الكتاب المثالي. اكتشف كتبًا تناسب ذوقك لتحصل على تجربة قراءة ممتعة ومميزة.",
 
@@ -57,5 +58,26 @@
     "registerButton": "تسجيل",
     "haveAccount": "لديك حساب؟",
     "registerAgreement": "بالنقر على تسجيل، فإنك توافق على",
-    "termsAndDataPolicy": "الشروط وسياسة البيانات."
+    "termsAndDataPolicy": "الشروط وسياسة البيانات.",
+
+    "//Verification Screen Strings//": "",
+    "verificationCodeTitle": "رمز التحقق",
+    "verificationEmailTitle": "تحقق البريد الإلكتروني",
+    "verificationPhoneTitle": "تحقق الهاتف",
+    "verificationSentToEmail": "الرجاء إدخال الكود الذي أرسلناه إلى البريد الإلكتروني ",
+    "verificationSentToPhone": "الرجاء إدخال الكود الذي أرسلناه إلى رقم الهاتف ",
+    "resendCodePrompt": "لم تستلم الكود؟ ",
+    "resendButton": "إعادة الإرسال",
+    "incorrectCodeError": "الكود غير صحيح، حاول مرة أخرى.",
+    "codeResentMessage": "تم إعادة إرسال الكود!",
+
+    "//Phone Number Screen Strings//": "",
+    "phoneNumberTitle": "رقم الهاتف",
+    "phoneNumberDescription": "الرجاء إدخال رقم هاتفك، حتى نتمكن من توصيل طلبك بسهولة أكبر",
+    "phoneNumberFieldLabel": "رقم الهاتف",
+    "phoneNumberPlaceholder": "رقم الهاتف",
+    "emptyPhoneNumberError": "الرجاء إدخال رقم هاتفك",
+    "invalidPhoneNumberError": "الرجاء إدخال رقم هاتف صحيح",
+    "selectCountryTitle": "اختر الدولة",
+    "searchCountryHint": "ابحث عن الدولة أو الكود"
 }
