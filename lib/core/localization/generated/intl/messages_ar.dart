@@ -58,5 +58,53 @@ class MessageLookup extends MessageLookupByLibrary {
             "تم اكتمال حسابك، يرجى الاستمتاع بأفضل قائمة عندنا."),
         "welcomeBackTitle":
             MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك ")
+        "onboardingTwoTitle": MessageLookupByLibrary.simpleMessage(
+            "رفيقك المثالي في عالم الكتب بانتظارك"),
+          "onboardingTwoDescription": MessageLookupByLibrary.simpleMessage(
+            "دعنا نرشدك إلى الكتاب المثالي. اكتشف كتبًا تناسب ذوقك."),
+          "onboardingThreeTitle": MessageLookupByLibrary.simpleMessage(
+            "ابدأ مغامرتك"),
+          "onboardingThreeDescription": MessageLookupByLibrary.simpleMessage(
+            "مغامرتك في القراءة تبدأ الآن. هيا بنا!"),
+            "signUpTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+          "signUpSubtitle": MessageLookupByLibrary.simpleMessage(
+            "أنشئ حسابًا واختر قائمتك المفضلة"),
+          "nameLabel":
+              MessageLookupByLibrary.simpleMessage("الاسم"),
+          "namePlaceholder":
+              MessageLookupByLibrary.simpleMessage("أدخل اسمك"),
+          "nameRequired":
+              MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
+          "nameMinimumLength": MessageLookupByLibrary.simpleMessage(
+            "يجب أن يتكون الاسم من حرفين على الأقل"),
+          "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+          "emailPlaceholder": MessageLookupByLibrary.simpleMessage(
+            "أدخل بريدك الإلكتروني"),
+          "emailRequired": MessageLookupByLibrary.simpleMessage(
+            "البريد الإلكتروني مطلوب"),
+          "invalidEmail": MessageLookupByLibrary.simpleMessage(
+            "أدخل بريدًا إلكترونيًا صحيحًا"),
+          "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+          "passwordPlaceholder": MessageLookupByLibrary.simpleMessage(
+            "أدخل كلمة المرور"),
+          "passwordRequired": MessageLookupByLibrary.simpleMessage("كلمة المرور مطلوبة"),
+          "passwordMinimumLength": MessageLookupByLibrary.simpleMessage(
+            "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل"),
+          "passwordNumberRequired": MessageLookupByLibrary.simpleMessage(
+            "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل"),
+          "passwordLetterRequired": MessageLookupByLibrary.simpleMessage(
+            "يجب أن تحتوي كلمة المرور على حرف واحد على الأقل"),
+          "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
+            "8 أحرف على الأقل"),
+          "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
+            "رقم واحد على الأقل (1-9)"),
+          "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
+            "حرف صغير أو كبير واحد على الأقل"),
+          "registerButton":MessageLookupByLibrary.simpleMessage("تسجيل"),
+          "haveAccount":MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
+          "registerAgreement": MessageLookupByLibrary.simpleMessage(
+            "بالنقر على تسجيل، فإنك توافق على"),
+          "termsAndDataPolicy": MessageLookupByLibrary.simpleMessage(
+            "الشروط وسياسة البيانات."),
       };
 }
