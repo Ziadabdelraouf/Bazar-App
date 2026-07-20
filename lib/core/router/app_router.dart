@@ -15,7 +15,6 @@ class AppRouter {
         const SuccessPage(flow: SuccessPageFlow.successfulLogin),
     AppRoutes.passwordChange: (context) =>
         const SuccessPage(flow: SuccessPageFlow.passwordChange),
-    AppRoutes.onboardingPage: (context) => const OnboardingPage(),
     AppRoutes.signInPage: (context) => const SignInPage(),
     AppRoutes.signUpPage: (context) => const SignUpPage(),
     AppRoutes.verificationPage: (context) =>
