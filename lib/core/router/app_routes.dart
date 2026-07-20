@@ -11,6 +11,7 @@ class AppRoutes {
   static const String signUpVerificationPhone = '/signup-verify-phone';
   static const String forgotPasswordVerificationEmail = '/forgot-password-verify-email';
   static const String forgotPasswordVerificationPhone = '/forgot-password-verify-phone';
+  static const String createNewPasswordPage = '/create-new-password';
 }
 
   

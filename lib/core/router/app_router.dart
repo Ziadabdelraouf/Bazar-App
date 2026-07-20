@@ -10,6 +10,7 @@ import 'package:bazar_group_1/features/auth/presentation/pages/sign_up_verificat
 import 'package:bazar_group_1/features/auth/presentation/pages/phone_number_input_screen.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/forgot_password_verification_email.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/forgot_password_verification_phone.dart';
+import 'package:bazar_group_1/features/forgot_password/presentation/pages/create_new_password_page.dart';
 import 'app_routes.dart';
 
 class AppRouter {
@@ -41,5 +42,7 @@ class AppRouter {
       final phoneNumber = ModalRoute.of(context)!.settings.arguments as String;
       return ForgotPasswordVerificationPhone(phoneNumber: phoneNumber);
     },
+    AppRoutes.createNewPasswordPage: (context) => const CreateNewPasswordPage(),
+    
   };
 }
