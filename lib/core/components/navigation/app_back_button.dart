@@ -25,7 +25,11 @@ class AppBackButton extends StatelessWidget {
           colorFilter: const ColorFilter.mode(AppColors.grey900, BlendMode.srcIn),
         ),
       ),
-      onPressed: onPressed ?? () => Navigator.pop(context),
+      onPressed: onPressed ?? () {
+        if (Navigator.canPop(context)) {
+          Navigator.pop(context);
+        }
+      },
     );
   }
 }
