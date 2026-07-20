@@ -10,10 +10,6 @@ class PhoneNumberNotifier extends StateNotifier<PhoneNumberState> {
 
   PhoneNumberNotifier(this._repository) : super(PhoneNumberState());
 
-  void reset() {
-    state = PhoneNumberState();
-  }
-
   void enterDigit(String digit) {
     if (!RegExp(r'^[0-9]$').hasMatch(digit)) return;
     state = state.copyWith(digits: state.digits + digit, errorMessage: null);

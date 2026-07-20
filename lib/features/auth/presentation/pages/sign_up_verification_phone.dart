@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/features/auth/domain/verification_type.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/verification_code_screen.dart';
 
 class SignUpVerificationPhone extends StatelessWidget {
   final String phoneNumber;
-  final VoidCallback onVerified;
 
-  const SignUpVerificationPhone({
-    super.key,
-    required this.phoneNumber,
-    required this.onVerified,
-  });
+  const SignUpVerificationPhone({super.key, required this.phoneNumber});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +14,10 @@ class SignUpVerificationPhone extends StatelessWidget {
       flow: VerificationFlow.signUp,
       contactMethod: ContactMethod.phone,
       contactValue: phoneNumber,
-      onVerified: onVerified,
+      onVerified: () {
+        // TODO: navigate to the real Congratulations route once a
+        // teammate registers it in AppRoutes/AppRouter.
+      },
     );
   }
 }

@@ -9,37 +9,6 @@ import 'package:bazar_group_1/features/auth/presentation/providers/verification_
 import 'package:bazar_group_1/features/auth/presentation/widgets/code_input_boxes.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/auth_screen_template.dart';
 
-/// The verification code entry screen — used after Sign Up (email or phone)
-/// and during Forgot Password (email or phone).
-///
-/// This is a single, reusable screen. Its appearance and behavior adapt
-/// based on [flow] and [contactMethod], rather than needing separate
-/// screen classes for each variant:
-///
-/// - [flow] controls the title wording and the keypad color
-///   (purple for Sign Up, light grey for Forgot Password).
-/// - [contactMethod] controls the description text
-///   ("sent to email" vs. "sent to phone number").
-/// - [contactValue] is the actual email or phone number to display.
-///
-/// Shares its overall layout (back button, title/description, error
-/// message, Continue button, keypad) with [PhoneNumberInputScreen] via
-/// [AuthScreenTemplate] — only the middle content (code boxes here,
-/// a single field there) differs between the two.
-///
-/// Usage:
-/// ```dart
-/// VerificationCodeScreen(
-///   flow: VerificationFlow.signUp,
-///   contactMethod: ContactMethod.email,
-///   contactValue: 'user@email.com',
-///   onVerified: () {
-///     // Navigate to whatever should happen next
-///     // (e.g. Congratulations, New Password).
-///   },
-/// )
-/// ```
-
 class VerificationCodeScreen extends ConsumerStatefulWidget {
   final VerificationFlow flow;
   final ContactMethod contactMethod;
@@ -64,11 +33,8 @@ class _VerificationCodeScreenState extends ConsumerState<VerificationCodeScreen>
   @override
   void initState() {
     super.initState();
-    // Providers can't be modified synchronously during initState (Riverpod
-    // considers the widget tree still "building" at this point). Scheduling
-    // the reset for right after the current frame finishes avoids that.
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref.read(verificationCodeNotifierProvider.notifier).reset();
+      ref.invalidate(verificationCodeNotifierProvider);
     });
   }
 

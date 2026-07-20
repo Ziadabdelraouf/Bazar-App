@@ -8,10 +8,6 @@ class VerificationCodeNotifier extends StateNotifier<VerificationCodeState> {
 
   VerificationCodeNotifier(this._repository) : super(VerificationCodeState());
 
-  void reset() {
-    state = VerificationCodeState();
-  }
-
   void enterDigitFromKeypad(String digit) {
     if (!RegExp(r'^[0-9]$').hasMatch(digit)) return;
     if (state.code.length >= 4) return;
