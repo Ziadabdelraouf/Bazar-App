@@ -1,5 +1,6 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
+import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_up_form_widget.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_up_header_widget.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_up_register_widget.dart';
@@ -48,6 +49,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
     final localization = S.of(context);
 
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Form(
@@ -56,9 +58,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.only(
-                    start: 16,
-                  ),
+                  padding: const EdgeInsetsDirectional.only(start: 16),
                   child: IconButton(
                     onPressed: () {
                       Navigator.popAndPushNamed(
@@ -66,17 +66,11 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                         AppRoutes.onboardingPage,
                       );
                     },
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      size: 24,
-                    ),
+                    icon: const Icon(Icons.arrow_back, size: 24),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.only(
-                    start: 24,
-                    top: 16,
-                  ),
+                  padding: const EdgeInsetsDirectional.only(start: 24, top: 16),
                   child: SignUpHeaderWidget(
                     title: localization.signUpTitle,
                     subtitle: localization.signUpSubtitle,
@@ -95,18 +89,12 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                   child: SignUpRegisterWidget(
                     registerButton: register,
                     onSignInPressed: () {
-                      Navigator.pushNamed(
-                        context,
-                        AppRoutes.verificationPage,
-                      );
+                      Navigator.pushNamed(context, AppRoutes.verificationPage);
                     },
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(
-                    top: 138,
-                    bottom: 56,
-                  ),
+                  padding: const EdgeInsets.only(top: 138, bottom: 56),
                   child: Align(
                     alignment: Alignment.center,
                     child: TermAndConditionWidget(),
