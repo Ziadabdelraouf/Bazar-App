@@ -4,13 +4,16 @@ import 'package:bazar_group_1/features/forgot_password/presentation/pages/forgot
 import 'package:bazar_group_1/features/forgot_password/presentation/pages/reset_password_page.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/localization/generated/l10n.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/router/app_router.dart';
+import 'features/auth/presentation/pages/sign_up_verification_email.dart';
+import 'features/auth/presentation/pages/forgot_password_verification_email.dart';
+import 'features/auth/presentation/pages/forgot_password_verification_phone.dart';
 
 void main() {
-  runApp(ProviderScope(child: const MyApp()));
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -34,6 +37,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SplashScreen(),
+      //home: SignUpVerificationEmail(email: 'Johndoe@gmail.com'),
+      //home: ForgotPasswordVerificationEmail(email: 'Johndoe@email.com'),
+      //home: ForgotPasswordVerificationPhone(phoneNumber: '(+965) 123 435 7565'),
       routes: AppRouter.routes,
     );
   }

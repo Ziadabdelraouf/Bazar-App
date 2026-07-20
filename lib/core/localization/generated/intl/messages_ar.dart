@@ -34,6 +34,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
       "رقم واحد على الأقل (1-9)",
     ),
+    "codeResentMessage": MessageLookupByLibrary.simpleMessage(
+      "تم إعادة إرسال الكود!",
+    ),
     "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
     "continueButton": MessageLookupByLibrary.simpleMessage("استمر"),
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
@@ -46,13 +49,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "emailRequired": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني مطلوب",
     ),
+    "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال رقم هاتفك",
+    ),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
+    "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
+      "الكود غير صحيح، حاول مرة أخرى.",
+    ),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "أدخل بريدًا إلكترونيًا صحيحًا",
+    ),
+    "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال رقم هاتف صحيح",
     ),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
@@ -99,10 +111,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور مطلوبة",
     ),
+    "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال رقم هاتفك، حتى نتمكن من توصيل طلبك بسهولة أكبر",
+    ),
+    "phoneNumberFieldLabel": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "phoneNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "رقم الهاتف",
+    ),
+    "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "بالنقر على تسجيل، فإنك توافق على",
     ),
     "registerButton": MessageLookupByLibrary.simpleMessage("تسجيل"),
+    "resendButton": MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
+    "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
+      "لم تستلم الكود؟ ",
+    ),
+    "searchCountryHint": MessageLookupByLibrary.simpleMessage(
+      "ابحث عن الدولة أو الكود",
+    ),
+    "selectCountryTitle": MessageLookupByLibrary.simpleMessage("اختر الدولة"),
     "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signInSubtitle": MessageLookupByLibrary.simpleMessage(
       "سجّل الدخول إلى حسابك",
@@ -130,6 +158,19 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "termsAndDataPolicy": MessageLookupByLibrary.simpleMessage(
       "الشروط وسياسة البيانات.",
+    ),
+    "verificationCodeTitle": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
+    "verificationEmailTitle": MessageLookupByLibrary.simpleMessage(
+      "تحقق البريد الإلكتروني",
+    ),
+    "verificationPhoneTitle": MessageLookupByLibrary.simpleMessage(
+      "تحقق الهاتف",
+    ),
+    "verificationSentToEmail": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال الكود الذي أرسلناه إلى البريد الإلكتروني ",
+    ),
+    "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال الكود الذي أرسلناه إلى رقم الهاتف ",
     ),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك "),
   };

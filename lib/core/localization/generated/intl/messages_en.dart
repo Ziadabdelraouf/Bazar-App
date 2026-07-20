@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
       "At least 1 number (1-9)",
     ),
+    "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
     "congratulations": MessageLookupByLibrary.simpleMessage("Congratulations!"),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
@@ -44,12 +45,21 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter your email",
     ),
     "emailRequired": MessageLookupByLibrary.simpleMessage("Email is required"),
+    "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
+      "Please enter your phone number",
+    ),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "Forgot Password?",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
+    "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
+      "Incorrect code, please try again.",
+    ),
     "invalidEmail": MessageLookupByLibrary.simpleMessage("Enter a valid email"),
+    "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid phone number",
+    ),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
     "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
       "Minimum 8 characters",
@@ -95,10 +105,30 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "Password is required",
     ),
+    "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
+      "Please enter your phone number, so we can more easily deliver your order",
+    ),
+    "phoneNumberFieldLabel": MessageLookupByLibrary.simpleMessage(
+      "Phone Number",
+    ),
+    "phoneNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Phone number",
+    ),
+    "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "By clicking Register, you agree to our",
     ),
     "registerButton": MessageLookupByLibrary.simpleMessage("Register"),
+    "resendButton": MessageLookupByLibrary.simpleMessage("Resend"),
+    "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
+      "If you didn\'t receive a code? ",
+    ),
+    "searchCountryHint": MessageLookupByLibrary.simpleMessage(
+      "Search country or code",
+    ),
+    "selectCountryTitle": MessageLookupByLibrary.simpleMessage(
+      "Select Country",
+    ),
     "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
     "signInSubtitle": MessageLookupByLibrary.simpleMessage(
       "Sign in to your account",
@@ -126,6 +156,21 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "termsAndDataPolicy": MessageLookupByLibrary.simpleMessage(
       "Terms, Data Policy.",
+    ),
+    "verificationCodeTitle": MessageLookupByLibrary.simpleMessage(
+      "Verification Code",
+    ),
+    "verificationEmailTitle": MessageLookupByLibrary.simpleMessage(
+      "Verification Email",
+    ),
+    "verificationPhoneTitle": MessageLookupByLibrary.simpleMessage(
+      "Verification Phone",
+    ),
+    "verificationSentToEmail": MessageLookupByLibrary.simpleMessage(
+      "Please enter the code we just sent to email ",
+    ),
+    "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
+      "Please enter the code we just sent to phone number ",
     ),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("Welcome Back "),
   };

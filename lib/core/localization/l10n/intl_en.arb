@@ -4,7 +4,7 @@
     "signInButton": "Sign in",
     "loginButton": "Login",
     "skipButton": "Skip",
-    "getStartedButton": "Get Started",
+    "getStartedButton":"Get Started",
     "//SignInPage Strings//": "",
     "welcomeBackTitle": "Welcome Back ",
     "signInSubtitle": "Sign in to your account",
@@ -53,5 +53,26 @@
     "registerButton": "Register",
     "haveAccount": "Have an account?",
     "registerAgreement": "By clicking Register, you agree to our",
-    "termsAndDataPolicy": "Terms, Data Policy."
+    "termsAndDataPolicy": "Terms, Data Policy.",
+
+    "//Verification Screen Strings//": "",
+    "verificationCodeTitle": "Verification Code",
+    "verificationEmailTitle": "Verification Email",
+    "verificationPhoneTitle": "Verification Phone",
+    "verificationSentToEmail": "Please enter the code we just sent to email ",
+    "verificationSentToPhone": "Please enter the code we just sent to phone number ",
+    "resendCodePrompt": "If you didn't receive a code? ",
+    "resendButton": "Resend",
+    "incorrectCodeError": "Incorrect code, please try again.",
+    "codeResentMessage": "Code resent!",
+
+    "//Phone Number Screen Strings//": "",
+    "phoneNumberTitle": "Phone Number",
+    "phoneNumberDescription": "Please enter your phone number, so we can more easily deliver your order",
+    "phoneNumberFieldLabel": "Phone Number",
+    "phoneNumberPlaceholder": "Phone number",
+    "emptyPhoneNumberError": "Please enter your phone number",
+    "invalidPhoneNumberError": "Please enter a valid phone number",
+    "selectCountryTitle": "Select Country",
+    "searchCountryHint": "Search country or code"
 }
