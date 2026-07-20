@@ -15,8 +15,7 @@ class SignUpVerificationPhone extends StatelessWidget {
       contactMethod: ContactMethod.phone,
       contactValue: phoneNumber,
       onVerified: () {
-        // TODO: navigate to the real Congratulations route once a
-        // teammate registers it in AppRoutes/AppRouter.
+        Navigator.pushNamed(context, AppRoutes.successfulLogin);
       },
     );
   }

@@ -113,10 +113,10 @@ class S {
     return Intl.message('Email', name: 'emailLabel', desc: '', args: []);
   }
 
-  /// `Your Email`
+  /// `Your email`
   String get emailPlaceholder {
     return Intl.message(
-      'Your Email',
+      'Your email',
       name: 'emailPlaceholder',
       desc: '',
       args: [],
@@ -128,10 +128,10 @@ class S {
     return Intl.message('Password', name: 'passwordLabel', desc: '', args: []);
   }
 
-  /// `Your Password`
+  /// `Your password`
   String get passwordPlaceholder {
     return Intl.message(
-      'Your Password',
+      'Your password',
       name: 'passwordPlaceholder',
       desc: '',
       args: [],

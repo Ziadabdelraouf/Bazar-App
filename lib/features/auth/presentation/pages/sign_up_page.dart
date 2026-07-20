@@ -28,7 +28,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
       return;
     }
 
-    Navigator.pushReplacementNamed(
+    Navigator.pushNamed(
       context,
       AppRoutes.signUpVerificationEmail,
       arguments: emailController.text,
