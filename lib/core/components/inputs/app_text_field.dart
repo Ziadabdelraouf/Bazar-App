@@ -124,7 +124,7 @@ class _AppTextFieldState extends State<AppTextField> {
                     color: AppColors.grey900,
                   ),
                   decoration: InputDecoration(
-                    hintText: _isFocused ? null : widget.placeholder,
+                    hintText: widget.placeholder,
                     hintStyle: AppTextStyles.body16Regular.copyWith(
                       color: AppColors.grey400,
                     ),
