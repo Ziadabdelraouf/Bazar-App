@@ -44,7 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "emailPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "بريدك الإلكتروني",
+      "أدخل بريدك الإلكتروني",
     ),
     "emailRequired": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني مطلوب",
@@ -106,7 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
     ),
     "passwordPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "كلمة المرور الخاصة بك",
+      "أدخل كلمة المرور",
     ),
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور مطلوبة",
@@ -142,6 +142,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "سجّل الدخول باستخدام Google",
     ),
     "signUpButton": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "signUpEmailPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "بريدك الإلكتروني",
+    ),
+    "signUpPasswordPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور الخاصة بك",
+    ),
     "signUpSubtitle": MessageLookupByLibrary.simpleMessage(
       "أنشئ حسابًا واختر قائمتك المفضلة",
     ),

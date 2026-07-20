@@ -1,5 +1,6 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
+import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_up_form_widget.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_up_header_widget.dart';
@@ -17,6 +18,7 @@ class SignUpPage extends ConsumerWidget {
     final signUpNotifier = ref.watch(signUpProvider.notifier);
 
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Form(
@@ -25,9 +27,7 @@ class SignUpPage extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.only(
-                    start: 16,
-                  ),
+                  padding: const EdgeInsetsDirectional.only(start: 16),
                   child: IconButton(
                     onPressed: () {
                       Navigator.popAndPushNamed(
@@ -35,17 +35,11 @@ class SignUpPage extends ConsumerWidget {
                         AppRoutes.onboardingPage,
                       );
                     },
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      size: 24,
-                    ),
+                    icon: const Icon(Icons.arrow_back, size: 24),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.only(
-                    start: 24,
-                    top: 16,
-                  ),
+                  padding: const EdgeInsetsDirectional.only(start: 24, top: 16),
                   child: SignUpHeaderWidget(
                     title: localization.signUpTitle,
                     subtitle: localization.signUpSubtitle,
