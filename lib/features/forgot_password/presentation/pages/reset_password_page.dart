@@ -8,6 +8,7 @@ import 'package:bazar_group_1/features/forgot_password/presentation/providers/co
 import 'package:bazar_group_1/features/forgot_password/presentation/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:bazar_group_1/core/router/app_routes.dart';
 
 class ResetPasswordPage extends ConsumerStatefulWidget {
   const ResetPasswordPage({super.key});
@@ -79,7 +80,24 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
                       : null,
                 ),
                 const SizedBox(height: 64),
-                PrimaryButton(text: 'Send', onPressed: () {}),
+                PrimaryButton(
+                  text: 'Send',
+                  onPressed: () {
+                    if (selectedMethod == ContactMethod.email) {
+                      Navigator.pushNamed(
+                        context,
+                        AppRoutes.forgotPasswordVerificationEmail,
+                        arguments: _contactController.text,
+                      );
+                    } else {
+                      Navigator.pushNamed(
+                        context,
+                        AppRoutes.forgotPasswordVerificationPhone,
+                        arguments: _contactController.text,
+                      );
+                    }
+                  },
+                ),
               ],
             ),
           ),

@@ -15,8 +15,7 @@ class ForgotPasswordVerificationEmail extends StatelessWidget {
       contactMethod: ContactMethod.email,
       contactValue: email,
       onVerified: () {
-        // TODO: once teammate builds real New Password screen,
-        // update this to their actual registered route name.
+        Navigator.pushNamed(context, AppRoutes.createNewPasswordPage);
       },
     );
   }

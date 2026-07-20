@@ -41,9 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Don\'t have an account?",
     ),
     "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
-    "emailPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Enter your email",
-    ),
+    "emailPlaceholder": MessageLookupByLibrary.simpleMessage("Your email"),
     "emailRequired": MessageLookupByLibrary.simpleMessage("Email is required"),
     "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number",
@@ -100,7 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Password must contain at least one number",
     ),
     "passwordPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Enter your password",
+      "Your password",
     ),
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "Password is required",

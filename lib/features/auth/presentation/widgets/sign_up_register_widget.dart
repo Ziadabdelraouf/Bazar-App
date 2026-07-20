@@ -30,9 +30,10 @@ class SignUpRegisterWidget extends ConsumerWidget {
               return;
             }
 
-            Navigator.pushReplacementNamed(
+           Navigator.pushNamed(
               context,
-              AppRoutes.verificationPage,
+              AppRoutes.signUpVerificationEmail,
+              arguments: signUpNotifier.emailController.text,
             );
           },
         ),

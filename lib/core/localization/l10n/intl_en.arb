@@ -9,9 +9,9 @@
     "welcomeBackTitle": "Welcome Back ",
     "signInSubtitle": "Sign in to your account",
     "emailLabel": "Email",
-    "emailPlaceholder": "Enter your email",
+    "emailPlaceholder": "Your email",
     "passwordLabel": "Password",
-    "passwordPlaceholder": "Enter your password",
+    "passwordPlaceholder": "Your password",
     "forgotPasswordButton": "Forgot Password?",
     "dontHaveAccountText": "Don't have an account?",
     "signUpButton": "Sign Up",
@@ -54,7 +54,6 @@
     "haveAccount": "Have an account?",
     "registerAgreement": "By clicking Register, you agree to our",
     "termsAndDataPolicy": "Terms, Data Policy.",
-
     "//Verification Screen Strings//": "",
     "verificationCodeTitle": "Verification Code",
     "verificationEmailTitle": "Verification Email",
@@ -65,7 +64,6 @@
     "resendButton": "Resend",
     "incorrectCodeError": "Incorrect code, please try again.",
     "codeResentMessage": "Code resent!",
-
     "//Phone Number Screen Strings//": "",
     "phoneNumberTitle": "Phone Number",
     "phoneNumberDescription": "Please enter your phone number, so we can more easily deliver your order",
