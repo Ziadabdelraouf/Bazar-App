@@ -1,4 +1,5 @@
 import 'package:bazar_group_1/core/constants/enums.dart';
+import 'package:bazar_group_1/features/auth/presentation/pages/sign_in_page.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/success_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,5 +13,6 @@ class AppRouter {
     AppRoutes.passwordChange: (context) =>
         const SuccessPage(flow: SuccessPageFlow.passwordChange),
     AppRoutes.onboardingPage: (context) => const OnboardingPage(),
+    AppRoutes.signInPage: (context) => const SignInPage(),
   };
 }

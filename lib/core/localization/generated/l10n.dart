@@ -102,6 +102,128 @@ class S {
     );
   }
 
+  // skipped getter for the '//SignInPage Strings//' key
+
+  /// `Welcome Back `
+  String get welcomeBackTitle {
+    return Intl.message(
+      'Welcome Back ',
+      name: 'welcomeBackTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in to your account`
+  String get signInSubtitle {
+    return Intl.message(
+      'Sign in to your account',
+      name: 'signInSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get emailLabel {
+    return Intl.message(
+      'Email',
+      name: 'emailLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email`
+  String get emailPlaceholder {
+    return Intl.message(
+      'Enter your email',
+      name: 'emailPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get passwordLabel {
+    return Intl.message(
+      'Password',
+      name: 'passwordLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get passwordPlaceholder {
+    return Intl.message(
+      'Enter your password',
+      name: 'passwordPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password?`
+  String get forgotPasswordButton {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgotPasswordButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get dontHaveAccountText {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dontHaveAccountText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get signUpButton {
+    return Intl.message(
+      'Sign Up',
+      name: 'signUpButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `or`
+  String get orSeparator {
+    return Intl.message(
+      'or',
+      name: 'orSeparator',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in with Google`
+  String get signInWithGoogleButton {
+    return Intl.message(
+      'Sign in with Google',
+      name: 'signInWithGoogleButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in with Apple`
+  String get signInWithAppleButton {
+    return Intl.message(
+      'Sign in with Apple',
+      name: 'signInWithAppleButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the '//SuccessPage//' key
 
   /// `Congratulations!`
