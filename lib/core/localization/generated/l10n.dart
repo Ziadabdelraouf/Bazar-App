@@ -116,7 +116,7 @@ class S {
   /// `Enter your email`
   String get emailPlaceholder {
     return Intl.message(
-      'Enter your email',
+      'Your email',
       name: 'emailPlaceholder',
       desc: '',
       args: [],
@@ -131,7 +131,7 @@ class S {
   /// `Enter your password`
   String get passwordPlaceholder {
     return Intl.message(
-      'Enter your password',
+      'Your password',
       name: 'passwordPlaceholder',
       desc: '',
       args: [],
@@ -348,15 +348,7 @@ class S {
     );
   }
 
-  /// `Your Email`
-  String get signUpEmailPlaceholder {
-    return Intl.message(
-      'Your Email',
-      name: 'signUpEmailPlaceholder',
-      desc: '',
-      args: [],
-    );
-  }
+ 
 
   /// `Email is required`
   String get emailRequired {
@@ -378,15 +370,7 @@ class S {
     );
   }
 
-  /// `Your Password`
-  String get signUpPasswordPlaceholder {
-    return Intl.message(
-      'Your Password',
-      name: 'signUpPasswordPlaceholder',
-      desc: '',
-      args: [],
-    );
-  }
+  
 
   /// `Password is required`
   String get passwordRequired {

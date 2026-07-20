@@ -1,10 +1,23 @@
 import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_state.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignUpNotifier extends Notifier<SignUpState> {
+class SignUpNotifier extends AutoDisposeNotifier<SignUpState> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   SignUpState build() {
-    return SignUpState();
+    ref.onDispose(() {
+      nameController.dispose();
+      emailController.dispose();
+      passwordController.dispose();
+    });
+
+    return const SignUpState();
   }
 
   void togglePasswordVisibility() {
@@ -17,17 +30,29 @@ class SignUpNotifier extends Notifier<SignUpState> {
     final hasMinimumLength = password.length >= 8;
     final hasLetter = RegExp(r'[a-zA-Z]').hasMatch(password);
     final hasNumber = RegExp(r'[0-9]').hasMatch(password);
+
     final isValid = hasMinimumLength && hasLetter && hasNumber;
 
     state = state.copyWith(
       hasMinimumLength: hasMinimumLength,
-      hasNumber: hasNumber,
       hasLetter: hasLetter,
+      hasNumber: hasNumber,
       showPasswordRules: password.isNotEmpty && !isValid,
     );
   }
+
+  bool register() {
+    final isFormValid = formKey.currentState?.validate() ?? false;
+
+    if (!isFormValid) {
+      return false;
+    }
+
+    return true;
+  }
 }
 
-final signUpProvider = NotifierProvider<SignUpNotifier, SignUpState>(
+final signUpProvider =
+    AutoDisposeNotifierProvider<SignUpNotifier, SignUpState>(
   SignUpNotifier.new,
 );
