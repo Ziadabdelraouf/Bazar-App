@@ -36,7 +36,7 @@ class OnboardingTemplate extends StatelessWidget {
     final screensize = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -50,16 +50,19 @@ class OnboardingTemplate extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(
+                        16,
+                      ),
                     ),
                     //padding: EdgeInsets.symmetric(horizontal:16,vertical: 8),
                     child: InkWell(
                       onTap: onSkip,
                       child: Text(
                         S.of(context).skipButton,
-                        style: AppTextStyles.body14Regular.copyWith(
-                          color: AppColors.primary500,
-                        ),
+                        style: AppTextStyles.body14Regular
+                            .copyWith(
+                              color: AppColors.primary500,
+                            ),
                       ),
                     ),
                   ),
@@ -96,9 +99,8 @@ class OnboardingTemplate extends StatelessWidget {
                   height: screensize.height * 0.12,
                   child: Text(
                     description,
-                    style: AppTextStyles.body16Regular.copyWith(
-                      color: AppColors.grey500,
-                    ),
+                    style: AppTextStyles.body16Regular
+                        .copyWith(color: AppColors.grey500),
                     textAlign: TextAlign.center,
                   ),
                 ),

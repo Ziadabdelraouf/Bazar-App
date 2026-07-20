@@ -1,4 +1,5 @@
 import 'package:bazar_group_1/core/router/app_routes.dart';
+import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF54408C),
+      backgroundColor: AppColors.primary500,
       body: Stack(
         // clipBehavior: Clip.none,
         children: [

@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/constants/enums.dart';
 import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
@@ -54,9 +55,17 @@ class SuccessPage extends StatelessWidget {
                     : S.of(context).loginButton,
                 onPressed: () {
                   if (isLoginFlow) {
-                    // navigate to home page
+                    // Navigate to home page but temporarily navigate to onboarding page to restart
+                    Navigator.pushReplacementNamed(
+                      context,
+                      AppRoutes.onboardingPage,
+                    );
                   } else {
-                    // navigate to login page
+                    // Navigate to login page
+                    Navigator.pushReplacementNamed(
+                      context,
+                      AppRoutes.signInPage,
+                    );
                   }
                 },
                 borderRadius: 12,
