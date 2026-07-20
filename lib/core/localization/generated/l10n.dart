@@ -18,8 +18,10 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+      _current != null,
+      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+    );
     return _current!;
   }
 
@@ -41,8 +43,10 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -54,42 +58,22 @@ class S {
 
   /// `Continue`
   String get continueButton {
-    return Intl.message(
-      'Continue',
-      name: 'continueButton',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Continue', name: 'continueButton', desc: '', args: []);
   }
 
   /// `Sign in`
   String get signInButton {
-    return Intl.message(
-      'Sign in',
-      name: 'signInButton',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Sign in', name: 'signInButton', desc: '', args: []);
   }
 
   /// `Login`
   String get loginButton {
-    return Intl.message(
-      'Login',
-      name: 'loginButton',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Login', name: 'loginButton', desc: '', args: []);
   }
 
   /// `Skip`
   String get skipButton {
-    return Intl.message(
-      'Skip',
-      name: 'skipButton',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Skip', name: 'skipButton', desc: '', args: []);
   }
 
   /// `Get Started`
@@ -126,18 +110,13 @@ class S {
 
   /// `Email`
   String get emailLabel {
-    return Intl.message(
-      'Email',
-      name: 'emailLabel',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Email', name: 'emailLabel', desc: '', args: []);
   }
 
-  /// `Enter your email`
+  /// `Your Email`
   String get emailPlaceholder {
     return Intl.message(
-      'Enter your email',
+      'Your Email',
       name: 'emailPlaceholder',
       desc: '',
       args: [],
@@ -146,18 +125,13 @@ class S {
 
   /// `Password`
   String get passwordLabel {
-    return Intl.message(
-      'Password',
-      name: 'passwordLabel',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Password', name: 'passwordLabel', desc: '', args: []);
   }
 
-  /// `Enter your password`
+  /// `Your Password`
   String get passwordPlaceholder {
     return Intl.message(
-      'Enter your password',
+      'Your Password',
       name: 'passwordPlaceholder',
       desc: '',
       args: [],
@@ -186,22 +160,12 @@ class S {
 
   /// `Sign Up`
   String get signUpButton {
-    return Intl.message(
-      'Sign Up',
-      name: 'signUpButton',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Sign Up', name: 'signUpButton', desc: '', args: []);
   }
 
   /// `or`
   String get orSeparator {
-    return Intl.message(
-      'or',
-      name: 'orSeparator',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('or', name: 'orSeparator', desc: '', args: []);
   }
 
   /// `Sign in with Google`
@@ -287,55 +251,56 @@ class S {
       args: [],
     );
   }
+
+  // skipped getter for the '//OnBoarding Two Screen Strings//' key
+
   /// `Your Bookish Soulmate Awaits`
-String get onboardingTwoTitle {
-  return Intl.message(
-    'Your Bookish Soulmate Awaits',
-    name: 'onboardingTwoTitle',
-    desc: '',
-    args: [],
-  );
-}
+  String get onboardingTwoTitle {
+    return Intl.message(
+      'Your Bookish Soulmate Awaits',
+      name: 'onboardingTwoTitle',
+      desc: '',
+      args: [],
+    );
+  }
 
-/// `Let us guide you to the perfect book. Discover books tailored to your taste.`
-String get onboardingTwoDescription {
-  return Intl.message(
-    'Let us guide you to the perfect book. Discover books tailored to your taste.',
-    name: 'onboardingTwoDescription',
-    desc: '',
-    args: [],
-  );
-}
+  /// `Let us be your guide to the perfect read. Discover books tailored to your tastes for a truly rewarding experience.`
+  String get onboardingTwoDescription {
+    return Intl.message(
+      'Let us be your guide to the perfect read. Discover books tailored to your tastes for a truly rewarding experience.',
+      name: 'onboardingTwoDescription',
+      desc: '',
+      args: [],
+    );
+  }
 
-/// `Start Your Adventure`
-String get onboardingThreeTitle {
-  return Intl.message(
-    'Start Your Adventure',
-    name: 'onboardingThreeTitle',
-    desc: '',
-    args: [],
-  );
-}
+  // skipped getter for the '//OnBoarding Three Screen Strings//' key
 
-  /// `Your reading adventure begins now. Let's go!`
+  /// `Start Your Adventure`
+  String get onboardingThreeTitle {
+    return Intl.message(
+      'Start Your Adventure',
+      name: 'onboardingThreeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let's go!`
   String get onboardingThreeDescription {
     return Intl.message(
-      'Your reading adventure begins now. Let\'s go!',
+      'Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let\'s go!',
       name: 'onboardingThreeDescription',
       desc: '',
       args: [],
     );
   }
-  // Sign Up Page Strings
+
+  // skipped getter for the '//Sign Up Page Strings//' key
 
   /// `Sign Up`
   String get signUpTitle {
-    return Intl.message(
-      'Sign Up',
-      name: 'signUpTitle',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Sign Up', name: 'signUpTitle', desc: '', args: []);
   }
 
   /// `Create account and choose favorite menu`
@@ -350,12 +315,7 @@ String get onboardingThreeTitle {
 
   /// `Name`
   String get nameLabel {
-    return Intl.message(
-      'Name',
-      name: 'nameLabel',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Name', name: 'nameLabel', desc: '', args: []);
   }
 
   /// `Your Name`
@@ -484,12 +444,7 @@ String get onboardingThreeTitle {
 
   /// `Register`
   String get registerButton {
-    return Intl.message(
-      'Register',
-      name: 'registerButton',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Register', name: 'registerButton', desc: '', args: []);
   }
 
   /// `Have an account?`
@@ -522,8 +477,174 @@ String get onboardingThreeTitle {
     );
   }
 
+  // skipped getter for the '//Verification Screen Strings//' key
 
-  // skipped getter for the '//OnBoarding Two Screen Strings//' key
+  /// `Verification Code`
+  String get verificationCodeTitle {
+    return Intl.message(
+      'Verification Code',
+      name: 'verificationCodeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verification Email`
+  String get verificationEmailTitle {
+    return Intl.message(
+      'Verification Email',
+      name: 'verificationEmailTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verification Phone`
+  String get verificationPhoneTitle {
+    return Intl.message(
+      'Verification Phone',
+      name: 'verificationPhoneTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the code we just sent to email `
+  String get verificationSentToEmail {
+    return Intl.message(
+      'Please enter the code we just sent to email ',
+      name: 'verificationSentToEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the code we just sent to phone number `
+  String get verificationSentToPhone {
+    return Intl.message(
+      'Please enter the code we just sent to phone number ',
+      name: 'verificationSentToPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you didn't receive a code? `
+  String get resendCodePrompt {
+    return Intl.message(
+      'If you didn\'t receive a code? ',
+      name: 'resendCodePrompt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend`
+  String get resendButton {
+    return Intl.message('Resend', name: 'resendButton', desc: '', args: []);
+  }
+
+  /// `Incorrect code, please try again.`
+  String get incorrectCodeError {
+    return Intl.message(
+      'Incorrect code, please try again.',
+      name: 'incorrectCodeError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Code resent!`
+  String get codeResentMessage {
+    return Intl.message(
+      'Code resent!',
+      name: 'codeResentMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  // skipped getter for the '//Phone Number Screen Strings//' key
+
+  /// `Phone Number`
+  String get phoneNumberTitle {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumberTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your phone number, so we can more easily deliver your order`
+  String get phoneNumberDescription {
+    return Intl.message(
+      'Please enter your phone number, so we can more easily deliver your order',
+      name: 'phoneNumberDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phoneNumberFieldLabel {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumberFieldLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number`
+  String get phoneNumberPlaceholder {
+    return Intl.message(
+      'Phone number',
+      name: 'phoneNumberPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your phone number`
+  String get emptyPhoneNumberError {
+    return Intl.message(
+      'Please enter your phone number',
+      name: 'emptyPhoneNumberError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid phone number`
+  String get invalidPhoneNumberError {
+    return Intl.message(
+      'Please enter a valid phone number',
+      name: 'invalidPhoneNumberError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Country`
+  String get selectCountryTitle {
+    return Intl.message(
+      'Select Country',
+      name: 'selectCountryTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search country or code`
+  String get searchCountryHint {
+    return Intl.message(
+      'Search country or code',
+      name: 'searchCountryHint',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -5,6 +5,7 @@
     "loginButton":"Login",
     "skipButton": "Skip",
     "getStartedButton":"Get Started",
+
     "//SignInPage Strings//": "",
     "welcomeBackTitle": "Welcome Back ",
     "signInSubtitle": "Sign in to your account",
@@ -18,15 +19,18 @@
     "orSeparator": "or",
     "signInWithGoogleButton": "Sign in with Google",
     "signInWithAppleButton": "Sign in with Apple",
+
     "//SuccessPage//":"",
     "congratulations":"Congratulations!",
     "successBody":"your account is complete, Please enjoy the best menu from us.",
     "PasswordChanged": "Password Changed!",
     "PasswordChangedBody": "Your password changed successfully, you can login again with a new password",
+
     "//OnBoarding one Screen Strings//": "",
     "onboardingOneTitle": "Now reading books will be easier",
     "onboardingOneDescription": " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
-    "//OnBoarding Two Screen Strings//": ""
+
+    "//OnBoarding Two Screen Strings//": "",
     "onboardingTwoTitle": "Your Bookish Soulmate Awaits",
     "onboardingTwoDescription": "Let us be your guide to the perfect read. Discover books tailored to your tastes for a truly rewarding experience.",
 
@@ -57,5 +61,26 @@
     "registerButton": "Register",
     "haveAccount": "Have an account?",
     "registerAgreement": "By clicking Register, you agree to our",
-    "termsAndDataPolicy": "Terms, Data Policy."
+    "termsAndDataPolicy": "Terms, Data Policy.",
+
+    "//Verification Screen Strings//": "",
+    "verificationCodeTitle": "Verification Code",
+    "verificationEmailTitle": "Verification Email",
+    "verificationPhoneTitle": "Verification Phone",
+    "verificationSentToEmail": "Please enter the code we just sent to email ",
+    "verificationSentToPhone": "Please enter the code we just sent to phone number ",
+    "resendCodePrompt": "If you didn't receive a code? ",
+    "resendButton": "Resend",
+    "incorrectCodeError": "Incorrect code, please try again.",
+    "codeResentMessage": "Code resent!",
+
+    "//Phone Number Screen Strings//": "",
+    "phoneNumberTitle": "Phone Number",
+    "phoneNumberDescription": "Please enter your phone number, so we can more easily deliver your order",
+    "phoneNumberFieldLabel": "Phone Number",
+    "phoneNumberPlaceholder": "Phone number",
+    "emptyPhoneNumberError": "Please enter your phone number",
+    "invalidPhoneNumberError": "Please enter a valid phone number",
+    "selectCountryTitle": "Select Country",
+    "searchCountryHint": "Search country or code"
 }

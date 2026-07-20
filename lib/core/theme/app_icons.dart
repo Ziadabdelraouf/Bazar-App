@@ -47,4 +47,5 @@ class AppIcons {
   static const String search = 'assets/icons/search.svg';
   static const String star = 'assets/icons/star.svg';
   static const String walletFill = 'assets/icons/wallet_fill.svg';
+  static const String deleteOutline = 'assets/icons/delete_outline.svg';
 }
