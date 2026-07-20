@@ -1,5 +1,6 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_up_form_widget.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_up_header_widget.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_up_register_widget.dart';
@@ -7,50 +8,19 @@ import 'package:bazar_group_1/features/auth/presentation/widgets/term_and_condit
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignUpPage extends ConsumerStatefulWidget {
+class SignUpPage extends ConsumerWidget {
   const SignUpPage({super.key});
 
   @override
-  ConsumerState<SignUpPage> createState() => _SignUpPageState();
-}
-
-class _SignUpPageState extends ConsumerState<SignUpPage> {
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-
-  void register() {
-    final isFormValid = formKey.currentState?.validate() ?? false;
-
-    if (!isFormValid) {
-      return;
-    }
-
-    Navigator.pushReplacementNamed(
-      context,
-      AppRoutes.verificationPage,
-    );
-  }
-
-  @override
-  void dispose() {
-    nameController.dispose();
-    emailController.dispose();
-    passwordController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final localization = S.of(context);
+    final signUpNotifier = ref.watch(signUpProvider.notifier);
 
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Form(
-            key: formKey,
+            key: signUpNotifier.formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -84,25 +54,17 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 Padding(
                   padding: const EdgeInsets.all(24),
                   child: SignUpFormWigdet(
-                    nameController: nameController,
-                    emailController: emailController,
-                    passwordController: passwordController,
+                    nameController: signUpNotifier.nameController,
+                    emailController: signUpNotifier.emailController,
+                    passwordController: signUpNotifier.passwordController,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: SignUpRegisterWidget(
-                    registerButton: register,
-                    onSignInPressed: () {
-                      Navigator.pushNamed(
-                        context,
-                        AppRoutes.verificationPage,
-                      );
-                    },
-                  ),
+                const Padding(
+                  padding: EdgeInsets.all(24),
+                  child: SignUpRegisterWidget(),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
+                const Padding(
+                  padding: EdgeInsets.only(
                     top: 138,
                     bottom: 56,
                   ),

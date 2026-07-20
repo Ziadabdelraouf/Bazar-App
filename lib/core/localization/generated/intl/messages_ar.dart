@@ -57,7 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "successBody": MessageLookupByLibrary.simpleMessage(
             "تم اكتمال حسابك، يرجى الاستمتاع بأفضل قائمة عندنا."),
         "welcomeBackTitle":
-            MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك ")
+            MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك "),
         "onboardingTwoTitle": MessageLookupByLibrary.simpleMessage(
             "رفيقك المثالي في عالم الكتب بانتظارك"),
           "onboardingTwoDescription": MessageLookupByLibrary.simpleMessage(
@@ -77,16 +77,10 @@ class MessageLookup extends MessageLookupByLibrary {
               MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
           "nameMinimumLength": MessageLookupByLibrary.simpleMessage(
             "يجب أن يتكون الاسم من حرفين على الأقل"),
-          "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
-          "emailPlaceholder": MessageLookupByLibrary.simpleMessage(
-            "أدخل بريدك الإلكتروني"),
           "emailRequired": MessageLookupByLibrary.simpleMessage(
             "البريد الإلكتروني مطلوب"),
           "invalidEmail": MessageLookupByLibrary.simpleMessage(
             "أدخل بريدًا إلكترونيًا صحيحًا"),
-          "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
-          "passwordPlaceholder": MessageLookupByLibrary.simpleMessage(
-            "أدخل كلمة المرور"),
           "passwordRequired": MessageLookupByLibrary.simpleMessage("كلمة المرور مطلوبة"),
           "passwordMinimumLength": MessageLookupByLibrary.simpleMessage(
             "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل"),

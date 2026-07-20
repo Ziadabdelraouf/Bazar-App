@@ -58,8 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "successBody": MessageLookupByLibrary.simpleMessage(
             "your account is complete, Please enjoy the best menu from us."),
         "welcomeBackTitle":
-            MessageLookupByLibrary.simpleMessage("Welcome Back ")
-      };
+            MessageLookupByLibrary.simpleMessage("Welcome Back "),
+      
         "onboardingTwoTitle": MessageLookupByLibrary.simpleMessage(
             "Your Bookish Soulmate Awaits"),
         "onboardingTwoDescription": MessageLookupByLibrary.simpleMessage(
@@ -79,18 +79,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Name is required"),
         "nameMinimumLength": MessageLookupByLibrary.simpleMessage(
           "Name must be at least 2 characters"),
-        "emailLabel":
-            MessageLookupByLibrary.simpleMessage("Email"),
-        "emailPlaceholder":
-            MessageLookupByLibrary.simpleMessage("Your Email"),
         "emailRequired":
             MessageLookupByLibrary.simpleMessage("Email is required"),
         "invalidEmail":
             MessageLookupByLibrary.simpleMessage("Enter a valid email"),
-        "passwordLabel":
-            MessageLookupByLibrary.simpleMessage("Password"),
-        "passwordPlaceholder":
-            MessageLookupByLibrary.simpleMessage("Your Password"),
         "passwordRequired":
             MessageLookupByLibrary.simpleMessage("Password is required"),
         "passwordMinimumLength": MessageLookupByLibrary.simpleMessage(

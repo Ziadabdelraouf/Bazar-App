@@ -388,25 +388,7 @@ String get onboardingThreeTitle {
     );
   }
 
-  /// `Email`
-  String get emailLabel {
-    return Intl.message(
-      'Email',
-      name: 'emailLabel',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Your Email`
-  String get emailPlaceholder {
-    return Intl.message(
-      'Your Email',
-      name: 'emailPlaceholder',
-      desc: '',
-      args: [],
-    );
-  }
+ 
 
   /// `Email is required`
   String get emailRequired {
@@ -428,25 +410,7 @@ String get onboardingThreeTitle {
     );
   }
 
-  /// `Password`
-  String get passwordLabel {
-    return Intl.message(
-      'Password',
-      name: 'passwordLabel',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Your Password`
-  String get passwordPlaceholder {
-    return Intl.message(
-      'Your Password',
-      name: 'passwordPlaceholder',
-      desc: '',
-      args: [],
-    );
-  }
+  
 
   /// `Password is required`
   String get passwordRequired {

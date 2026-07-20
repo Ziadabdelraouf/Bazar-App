@@ -1,28 +1,40 @@
 import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_provider.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignUpRegisterWidget extends StatelessWidget {
-  final VoidCallback registerButton;
-  final VoidCallback? onSignInPressed;
+class SignUpRegisterWidget extends ConsumerWidget {
+
 
   const SignUpRegisterWidget({
     super.key,
-    required this.registerButton,
-    this.onSignInPressed,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context ,WidgetRef ref) {
     final localization = S.of(context);
+    final signUpNotifier=ref.read(signUpProvider.notifier);
     return Column(
       spacing: 22,
       children: [
         LargePrimaryButton(
           label: localization.registerButton,
-          onPressed: registerButton,
+           onPressed: () {
+            final isValid = signUpNotifier.register();
+
+            if (!isValid) {
+              return;
+            }
+
+            Navigator.pushReplacementNamed(
+              context,
+              AppRoutes.verificationPage,
+            );
+          },
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -34,7 +46,12 @@ class SignUpRegisterWidget extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: onSignInPressed,
+             onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.signInPage,
+                );
+              },
               child: Text(
                 localization.signInButton,
                 style: AppTextStyles.body16Medium.copyWith(
