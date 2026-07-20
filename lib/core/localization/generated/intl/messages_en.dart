@@ -29,16 +29,37 @@ class MessageLookup extends MessageLookupByLibrary {
         "congratulations":
             MessageLookupByLibrary.simpleMessage("Congratulations!"),
         "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
+        "dontHaveAccountText":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailPlaceholder":
+            MessageLookupByLibrary.simpleMessage("Enter your email"),
+        "forgotPasswordButton":
+            MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
         "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
         "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
             " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us."),
         "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
             "Now reading books will be easier"),
+        "orSeparator": MessageLookupByLibrary.simpleMessage("or"),
+        "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordPlaceholder":
+            MessageLookupByLibrary.simpleMessage("Enter your password"),
         "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
+        "signInSubtitle":
+            MessageLookupByLibrary.simpleMessage("Sign in to your account"),
+        "signInWithAppleButton":
+            MessageLookupByLibrary.simpleMessage("Sign in with Apple"),
+        "signInWithGoogleButton":
+            MessageLookupByLibrary.simpleMessage("Sign in with Google"),
+        "signUpButton": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
         "successBody": MessageLookupByLibrary.simpleMessage(
             "your account is complete, Please enjoy the best menu from us."),
+        "welcomeBackTitle":
+            MessageLookupByLibrary.simpleMessage("Welcome Back ")
+      };
         "onboardingTwoTitle": MessageLookupByLibrary.simpleMessage(
             "Your Bookish Soulmate Awaits"),
         "onboardingTwoDescription": MessageLookupByLibrary.simpleMessage(

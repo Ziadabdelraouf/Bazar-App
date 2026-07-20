@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/features/onboarding/data/onboarding_data.dart';
 import 'package:bazar_group_1/features/onboarding/presentation/provider/onboarding_provider.dart';
 import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_template.dart';
