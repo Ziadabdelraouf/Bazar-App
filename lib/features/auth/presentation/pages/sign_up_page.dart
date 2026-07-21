@@ -15,7 +15,9 @@ class SignUpPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final localization = S.of(context);
-    final signUpNotifier = ref.watch(signUpProvider.notifier);
+    final signUpNotifier = ref.watch(
+      signUpProvider.notifier,
+    );
 
     return Scaffold(
       backgroundColor: AppColors.white,
@@ -23,11 +25,15 @@ class SignUpPage extends ConsumerWidget {
         child: SingleChildScrollView(
           child: Form(
             key: signUpNotifier.formKey,
+            autovalidateMode:
+                AutovalidateMode.onUserInteractionIfError,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 16),
+                  padding: const EdgeInsetsDirectional.only(
+                    start: 16,
+                  ),
                   child: IconButton(
                     onPressed: () {
                       Navigator.popAndPushNamed(
@@ -35,11 +41,17 @@ class SignUpPage extends ConsumerWidget {
                         AppRoutes.onboardingPage,
                       );
                     },
-                    icon: const Icon(Icons.arrow_back, size: 24),
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      size: 24,
+                    ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 24, top: 16),
+                  padding: const EdgeInsetsDirectional.only(
+                    start: 24,
+                    top: 16,
+                  ),
                   child: SignUpHeaderWidget(
                     title: localization.signUpTitle,
                     subtitle: localization.signUpSubtitle,
@@ -48,9 +60,12 @@ class SignUpPage extends ConsumerWidget {
                 Padding(
                   padding: const EdgeInsets.all(24),
                   child: SignUpFormWigdet(
-                    nameController: signUpNotifier.nameController,
-                    emailController: signUpNotifier.emailController,
-                    passwordController: signUpNotifier.passwordController,
+                    nameController:
+                        signUpNotifier.nameController,
+                    emailController:
+                        signUpNotifier.emailController,
+                    passwordController:
+                        signUpNotifier.passwordController,
                   ),
                 ),
                 const Padding(

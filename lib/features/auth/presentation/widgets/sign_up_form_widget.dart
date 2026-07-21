@@ -70,6 +70,8 @@ class SignUpFormWigdet extends ConsumerWidget {
           textInputAction: TextInputAction.done,
           obscureText: signUpState.obscurePassword,
           onChanged: signUpNotifier.validatePassword,
+          showErrorBorder: false,
+          showErrorText: false,
           validator: (value) {
             return validatePassword(
               value,
