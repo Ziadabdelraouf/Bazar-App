@@ -41,7 +41,7 @@ class _ResetPasswordPageState
         },
         child: Scaffold(
           appBar: const AppBackBar(),
-          backgroundColor: Colors.white,
+          backgroundColor: AppColors.white,
           body: Padding(
             padding: EdgeInsets.only(
               left:

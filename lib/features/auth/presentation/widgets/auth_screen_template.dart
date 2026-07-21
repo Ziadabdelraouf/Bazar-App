@@ -47,20 +47,23 @@ class AuthScreenTemplate extends StatelessWidget {
         systemNavigationBarColor: keypadBackgroundColor,
         systemNavigationBarIconBrightness:
             keypadBackgroundColor == AppColors.primary500
-                ? Brightness.light
-                : Brightness.dark,
+            ? Brightness.light
+            : Brightness.dark,
       ),
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.white,
         body: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                  ),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment:
+                        CrossAxisAlignment.start,
                     children: [
                       const AppBackButton(),
                       const SizedBox(height: 24),
@@ -72,7 +75,11 @@ class AuthScreenTemplate extends StatelessWidget {
                               Text(
                                 title,
                                 textAlign: TextAlign.center,
-                                style: AppTextStyles.h3.copyWith(color: AppColors.grey900),
+                                style: AppTextStyles.h3
+                                    .copyWith(
+                                      color:
+                                          AppColors.grey900,
+                                    ),
                               ),
                               const SizedBox(height: 8),
                               description,
@@ -87,7 +94,11 @@ class AuthScreenTemplate extends StatelessWidget {
                         Center(
                           child: Text(
                             errorMessage!,
-                            style: AppTextStyles.body14Regular.copyWith(color: AppColors.red),
+                            style: AppTextStyles
+                                .body14Regular
+                                .copyWith(
+                                  color: AppColors.red,
+                                ),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -98,7 +109,10 @@ class AuthScreenTemplate extends StatelessWidget {
                               child: SizedBox(
                                 width: 24,
                                 height: 24,
-                                child: CircularProgressIndicator(strokeWidth: 2),
+                                child:
+                                    CircularProgressIndicator(
+                                      strokeWidth: 2,
+                                    ),
                               ),
                             )
                           : LargePrimaryButton(

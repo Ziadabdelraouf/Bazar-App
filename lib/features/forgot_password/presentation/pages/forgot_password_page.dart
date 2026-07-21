@@ -14,38 +14,56 @@ class ForgotPasswordPage extends ConsumerStatefulWidget {
   const ForgotPasswordPage({super.key});
 
   @override
-  ConsumerState<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
+  ConsumerState<ForgotPasswordPage> createState() =>
+      _ForgotPasswordPageState();
 }
 
-class _ForgotPasswordPageState extends ConsumerState<ForgotPasswordPage> {
+class _ForgotPasswordPageState
+    extends ConsumerState<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
-    final selectedMethod = ref.watch(selectedContactMethodProvider);
+    final selectedMethod = ref.watch(
+      selectedContactMethodProvider,
+    );
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.white,
         appBar: const AppBackBar(),
         body: Padding(
           padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width * (24 / 375),
-            right: MediaQuery.of(context).size.width * (24 / 375),
+            left:
+                MediaQuery.of(context).size.width *
+                (24 / 375),
+            right:
+                MediaQuery.of(context).size.width *
+                (24 / 375),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Forgot password',
-                style: AppTextStyles.h3.copyWith(color: AppColors.grey900),
+                style: AppTextStyles.h3.copyWith(
+                  color: AppColors.grey900,
+                ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * (8 / 812)),
+              SizedBox(
+                height:
+                    MediaQuery.of(context).size.height *
+                    (8 / 812),
+              ),
               Text(
                 'Select which contact details should we use to reset your password',
                 style: AppTextStyles.body16Regular.copyWith(
                   color: AppColors.grey600,
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * (16 / 812)),
+              SizedBox(
+                height:
+                    MediaQuery.of(context).size.height *
+                    (16 / 812),
+              ),
               Row(
                 children: [
                   Expanded(
@@ -53,25 +71,41 @@ class _ForgotPasswordPageState extends ConsumerState<ForgotPasswordPage> {
                       iconPath: AppIcons.emailBulk,
                       title: 'Email',
                       subtitle: 'Send to your email',
-                      isSelected: selectedMethod == ContactMethod.email,
+                      isSelected:
+                          selectedMethod ==
+                          ContactMethod.email,
                       onTap: () {
-                        ref.read(selectedContactMethodProvider.notifier).state =
-                            ContactMethod.email;
+                        ref
+                            .read(
+                              selectedContactMethodProvider
+                                  .notifier,
+                            )
+                            .state = ContactMethod
+                            .email;
                       },
                     ),
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * (16 / 375),
+                    width:
+                        MediaQuery.of(context).size.width *
+                        (16 / 375),
                   ),
                   Expanded(
                     child: ContactMethodCard(
                       iconPath: AppIcons.phoneFill,
                       title: 'Phone Number',
                       subtitle: 'Send to your phone',
-                      isSelected: selectedMethod == ContactMethod.phone,
+                      isSelected:
+                          selectedMethod ==
+                          ContactMethod.phone,
                       onTap: () {
-                        ref.read(selectedContactMethodProvider.notifier).state =
-                            ContactMethod.phone;
+                        ref
+                            .read(
+                              selectedContactMethodProvider
+                                  .notifier,
+                            )
+                            .state = ContactMethod
+                            .phone;
                       },
                     ),
                   ),

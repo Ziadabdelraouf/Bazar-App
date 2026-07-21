@@ -32,7 +32,7 @@ class _CreateNewPasswordPageState
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.white,
         appBar: const AppBackBar(),
         body: SingleChildScrollView(
           child: Padding(
