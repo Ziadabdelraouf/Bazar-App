@@ -9,11 +9,19 @@ import 'package:bazar_group_1/features/auth/presentation/widgets/term_and_condit
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignUpPage extends ConsumerWidget {
+class SignUpPage extends ConsumerStatefulWidget {
   const SignUpPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<SignUpPage> createState() =>
+      _SignUpPageState();
+}
+
+class _SignUpPageState extends ConsumerState<SignUpPage> {
+  final _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
     final localization = S.of(context);
     final signUpNotifier = ref.watch(
       signUpProvider.notifier,
@@ -24,7 +32,7 @@ class SignUpPage extends ConsumerWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Form(
-            key: signUpNotifier.formKey,
+            key: _formKey,
             autovalidateMode:
                 AutovalidateMode.onUserInteractionIfError,
             child: Column(
@@ -68,9 +76,11 @@ class SignUpPage extends ConsumerWidget {
                         signUpNotifier.passwordController,
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(24),
-                  child: SignUpRegisterWidget(),
+                Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: SignUpRegisterWidget(
+                    formKey: _formKey,
+                  ),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(

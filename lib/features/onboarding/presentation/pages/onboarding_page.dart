@@ -26,7 +26,7 @@ class OnboardingPage extends ConsumerWidget {
       secondButton: localization.signInButton,
       onFirstButtonTap: () {
         if (isLastPage) {
-          Navigator.pushReplacementNamed(context, AppRoutes.signUpPage);
+          Navigator.pushNamed(context, AppRoutes.signUpPage);
         } else {
           ref.read(onboardingProvider.notifier).nextPage();
         }
@@ -37,7 +37,7 @@ class OnboardingPage extends ConsumerWidget {
       onSkip: () {
         ref.read(onboardingProvider.notifier).reset();
 
-        Navigator.pushReplacementNamed(context, AppRoutes.signUpPage);
+        Navigator.pushNamed(context, AppRoutes.signUpPage);
       },
     );
   }
