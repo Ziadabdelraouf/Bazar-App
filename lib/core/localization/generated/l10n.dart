@@ -661,6 +661,28 @@ class S {
       args: [],
     );
   }
+
+  // skipped getter for the '//Home Page Strings//' key
+
+  /// `Home`
+  String get homeTitle {
+    return Intl.message('Home', name: 'homeTitle', desc: '', args: []);
+  }
+
+  /// `Category`
+  String get categoryTitle {
+    return Intl.message('Category', name: 'categoryTitle', desc: '', args: []);
+  }
+
+  /// `Cart`
+  String get cartTitle {
+    return Intl.message('Cart', name: 'cartTitle', desc: '', args: []);
+  }
+
+  /// `Profile`
+  String get profileTitle {
+    return Intl.message('Profile', name: 'profileTitle', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

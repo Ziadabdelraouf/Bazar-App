@@ -72,5 +72,10 @@
     "emptyPhoneNumberError": "Please enter your phone number",
     "invalidPhoneNumberError": "Please enter a valid phone number",
     "selectCountryTitle": "Select Country",
-    "searchCountryHint": "Search country or code"
+    "searchCountryHint": "Search country or code",
+    "//Home Page Strings//": "",
+    "homeTitle": "Home",
+    "categoryTitle": "Category",
+    "cartTitle": "Cart",
+    "profileTitle": "Profile"
 }

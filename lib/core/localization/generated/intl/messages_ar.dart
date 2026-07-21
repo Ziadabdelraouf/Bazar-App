@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
       "رقم واحد على الأقل (1-9)",
     ),
+    "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
+    "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
     ),
@@ -57,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
+    "homeTitle": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
       "الكود غير صحيح، حاول مرة أخرى.",
     ),
@@ -119,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم الهاتف",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "profileTitle": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "بالنقر على تسجيل، فإنك توافق على",
     ),
