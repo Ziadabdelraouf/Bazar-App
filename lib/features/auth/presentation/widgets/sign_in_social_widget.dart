@@ -23,10 +23,16 @@ class SignInSocialWidget extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  AppRoutes.signUpPage,
-                );
+                final arguments = ModalRoute.of(context)?.settings.arguments;
+                if (arguments is Map && arguments['from'] == AppRoutes.signUpPage) {
+                  Navigator.pop(context);
+                } else {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.signUpPage,
+                    arguments: {'from': AppRoutes.signInPage},
+                  );
+                }
               },
               child: Text(
                 S.of(context).signUpButton,
