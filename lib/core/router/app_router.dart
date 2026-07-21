@@ -11,6 +11,7 @@ import 'package:bazar_group_1/features/auth/presentation/pages/phone_number_inpu
 import 'package:bazar_group_1/features/auth/presentation/pages/forgot_password_verification_email.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/forgot_password_verification_phone.dart';
 import 'package:bazar_group_1/features/forgot_password/presentation/pages/create_new_password_page.dart';
+import '../../features/forgot_password/presentation/pages/forgot_password_page.dart';
 import 'app_routes.dart';
 
 class AppRouter {
@@ -21,6 +22,8 @@ class AppRouter {
     AppRoutes.passwordChange: (context) =>
         const SuccessPage(flow: SuccessPageFlow.passwordChange),
     AppRoutes.signInPage: (context) => const SignInPage(),
+
+    AppRoutes.forgotPasswordPage: (context) => const ForgotPasswordPage(),
 
     AppRoutes.signUpPage: (context) => const SignUpPage(),
     AppRoutes.verificationPage: (context) => const VerificationPage(),
@@ -43,6 +46,5 @@ class AppRouter {
       return ForgotPasswordVerificationPhone(phoneNumber: phoneNumber);
     },
     AppRoutes.createNewPasswordPage: (context) => const CreateNewPasswordPage(),
-    
   };
 }

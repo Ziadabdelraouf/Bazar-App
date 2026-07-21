@@ -6,7 +6,6 @@ import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/oauth_signin_button.dart';
 import 'package:flutter/material.dart';
 
-
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
 
