@@ -37,10 +37,37 @@ class MessageLookup extends MessageLookupByLibrary {
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
     ),
+    "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
+    "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
+      "الرجاء تأكيد كلمة المرور",
+    ),
     "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
+    "contactMethodEmailSubtitle": MessageLookupByLibrary.simpleMessage(
+      "إرسال إلى بريدك الإلكتروني",
+    ),
+    "contactMethodEmailTitle": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني",
+    ),
+    "contactMethodPhoneSubtitle": MessageLookupByLibrary.simpleMessage(
+      "إرسال إلى هاتفك",
+    ),
+    "contactMethodPhoneTitle": MessageLookupByLibrary.simpleMessage(
+      "رقم الهاتف",
+    ),
     "continueButton": MessageLookupByLibrary.simpleMessage("استمر"),
+    "createNewPasswordDescription": MessageLookupByLibrary.simpleMessage(
+      "أنشئ كلمة مرور جديدة، حتى تتمكن من تسجيل الدخول إلى حسابك",
+    ),
+    "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "كلمة مرور جديدة",
+    ),
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟",
+    ),
+    "emailExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "example@email.com",
     ),
     "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "emailPlaceholder": MessageLookupByLibrary.simpleMessage(
@@ -54,6 +81,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
+    ),
+    "forgotPasswordDescription": MessageLookupByLibrary.simpleMessage(
+      "اختر وسيلة التواصل التي تريد استخدامها لإعادة تعيين كلمة المرور",
+    ),
+    "forgotPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "نسيت كلمة المرور",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
@@ -76,11 +109,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "namePlaceholder": MessageLookupByLibrary.simpleMessage("اسمك"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
+    "newPasswordLabel": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور الجديدة",
+    ),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
     ),
     "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
-      "الان اصبحت القرأه اسهل",
+      "الأن اصبحت القراءة اسهل",
     ),
     "onboardingThreeDescription": MessageLookupByLibrary.simpleMessage(
       "هل أنت مستعد لبدء رحلة مليئة بالإلهام والمعرفة؟ مغامرتك تبدأ الآن. هيا بنا!",
@@ -111,6 +147,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور مطلوبة",
     ),
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور غير متطابقة",
+    ),
+    "phoneExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "(+965) 123 435 7565",
+    ),
     "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتفك، حتى نتمكن من توصيل طلبك بسهولة أكبر",
     ),
@@ -127,10 +169,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "لم تستلم الكود؟ ",
     ),
+    "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال بريدك الإلكتروني، سنرسل لك رمز التحقق على بريدك الإلكتروني.",
+    ),
+    "resetPasswordPhoneDescription": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال رقم هاتفك، سنرسل لك رمز التحقق على رقم هاتفك.",
+    ),
+    "resetPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "إعادة تعيين كلمة المرور",
+    ),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",
     ),
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage("اختر الدولة"),
+    "sendButton": MessageLookupByLibrary.simpleMessage("إرسال"),
     "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signInSubtitle": MessageLookupByLibrary.simpleMessage(
       "سجّل الدخول إلى حسابك",

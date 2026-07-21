@@ -35,10 +35,35 @@ class MessageLookup extends MessageLookupByLibrary {
       "At least 1 number (1-9)",
     ),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
+    "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
+      "Confirm Password",
+    ),
+    "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
+      "Please confirm your password",
+    ),
     "congratulations": MessageLookupByLibrary.simpleMessage("Congratulations!"),
+    "contactMethodEmailSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Send to your email",
+    ),
+    "contactMethodEmailTitle": MessageLookupByLibrary.simpleMessage("Email"),
+    "contactMethodPhoneSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Send to your phone",
+    ),
+    "contactMethodPhoneTitle": MessageLookupByLibrary.simpleMessage(
+      "Phone Number",
+    ),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
+    "createNewPasswordDescription": MessageLookupByLibrary.simpleMessage(
+      "Create your new password, so you can login to your account",
+    ),
+    "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "New password",
+    ),
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
+    ),
+    "emailExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "example@email.com",
     ),
     "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
     "emailPlaceholder": MessageLookupByLibrary.simpleMessage("Your email"),
@@ -48,6 +73,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "Forgot Password?",
+    ),
+    "forgotPasswordDescription": MessageLookupByLibrary.simpleMessage(
+      "Select which contact details should we use to reset your password",
+    ),
+    "forgotPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "Forgot Password",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
@@ -68,6 +99,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "namePlaceholder": MessageLookupByLibrary.simpleMessage("Your Name"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("Name is required"),
+    "newPasswordLabel": MessageLookupByLibrary.simpleMessage("New Password"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
     ),
@@ -103,6 +135,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "Password is required",
     ),
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "Passwords do not match",
+    ),
+    "phoneExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "(+965) 123 435 7565",
+    ),
     "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number, so we can more easily deliver your order",
     ),
@@ -121,12 +159,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "If you didn\'t receive a code? ",
     ),
+    "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
+      "Please enter your email, we will send verification code to your email.",
+    ),
+    "resetPasswordPhoneDescription": MessageLookupByLibrary.simpleMessage(
+      "Please enter your phone number, we will send a verification code to your phone number.",
+    ),
+    "resetPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "Reset password",
+    ),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "Search country or code",
     ),
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage(
       "Select Country",
     ),
+    "sendButton": MessageLookupByLibrary.simpleMessage("Send"),
     "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
     "signInSubtitle": MessageLookupByLibrary.simpleMessage(
       "Sign in to your account",

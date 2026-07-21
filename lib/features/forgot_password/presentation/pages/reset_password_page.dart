@@ -1,5 +1,6 @@
 import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
 import 'package:bazar_group_1/core/components/inputs/app_text_field.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
@@ -22,6 +23,7 @@ class _ResetPasswordPageState
     extends ConsumerState<ResetPasswordPage> {
   final TextEditingController _contactController =
       TextEditingController();
+
   @override
   void dispose() {
     _contactController.dispose();
@@ -30,97 +32,98 @@ class _ResetPasswordPageState
 
   @override
   Widget build(BuildContext context) {
+    final localization = S.of(context);
     final selectedMethod = ref.watch(
       selectedContactMethodProvider,
     );
-    return Directionality(
-      textDirection: TextDirection.ltr,
-      child: GestureDetector(
-        onTap: () {
-          FocusScope.of(context).unfocus();
-        },
-        child: Scaffold(
-          appBar: const AppBackBar(),
-          backgroundColor: AppColors.white,
-          body: Padding(
-            padding: EdgeInsets.only(
-              left:
-                  MediaQuery.of(context).size.width *
-                  (24 / 375),
-              right:
-                  MediaQuery.of(context).size.width *
-                  (24 / 375),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Reset password',
-                  style: AppTextStyles.h3.copyWith(
-                    color: AppColors.grey900,
-                  ),
+
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        appBar: const AppBackBar(),
+        backgroundColor: AppColors.white,
+        body: Padding(
+          padding: EdgeInsets.only(
+            left:
+                MediaQuery.of(context).size.width *
+                (24 / 375),
+            right:
+                MediaQuery.of(context).size.width *
+                (24 / 375),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                localization.resetPasswordTitle,
+                style: AppTextStyles.h3.copyWith(
+                  color: AppColors.grey900,
                 ),
-                SizedBox(
-                  height:
-                      MediaQuery.of(context).size.height *
-                      (8 / 812),
+              ),
+              SizedBox(
+                height:
+                    MediaQuery.of(context).size.height *
+                    (8 / 812),
+              ),
+              Text(
+                selectedMethod == ContactMethod.email
+                    ? localization
+                          .resetPasswordEmailDescription
+                    : localization
+                          .resetPasswordPhoneDescription,
+                style: AppTextStyles.body16Regular.copyWith(
+                  color: AppColors.grey600,
                 ),
-                Text(
-                  selectedMethod == ContactMethod.email
-                      ? 'Please enter your email, we will send verification code to your email.'
-                      : 'Please enter your phone number, we will send a verification code to your phone number.',
-                  style: AppTextStyles.body16Regular
-                      .copyWith(color: AppColors.grey600),
-                ),
-                SizedBox(
-                  height:
-                      MediaQuery.of(context).size.height *
-                      (18 / 812),
-                ),
-                const SizedBox(height: 8),
-                AppTextField(
-                  label:
-                      selectedMethod == ContactMethod.email
-                      ? 'Email'
-                      : 'Phone Number',
-                  placeholder:
-                      selectedMethod == ContactMethod.email
-                      ? 'example@email.com'
-                      : '(+965) 123 435 7565',
-                  controller: _contactController,
-                  keyboardType:
-                      selectedMethod == ContactMethod.email
-                      ? TextInputType.emailAddress
-                      : TextInputType.phone,
-                  prefixIcon:
-                      selectedMethod == ContactMethod.phone
-                      ? AppIcons.phoneFill
-                      : null,
-                ),
-                const SizedBox(height: 64),
-                PrimaryButton(
-                  text: 'Send',
-                  onPressed: () {
-                    if (selectedMethod ==
-                        ContactMethod.email) {
-                      Navigator.pushNamed(
-                        context,
-                        AppRoutes
-                            .forgotPasswordVerificationEmail,
-                        arguments: _contactController.text,
-                      );
-                    } else {
-                      Navigator.pushNamed(
-                        context,
-                        AppRoutes
-                            .forgotPasswordVerificationPhone,
-                        arguments: _contactController.text,
-                      );
-                    }
-                  },
-                ),
-              ],
-            ),
+              ),
+              SizedBox(
+                height:
+                    MediaQuery.of(context).size.height *
+                    (18 / 812),
+              ),
+              const SizedBox(height: 8),
+              AppTextField(
+                label: selectedMethod == ContactMethod.email
+                    ? localization.emailLabel
+                    : localization.phoneNumberFieldLabel,
+                placeholder:
+                    selectedMethod == ContactMethod.email
+                    ? localization.emailExamplePlaceholder
+                    : localization.phoneExamplePlaceholder,
+                controller: _contactController,
+                keyboardType:
+                    selectedMethod == ContactMethod.email
+                    ? TextInputType.emailAddress
+                    : TextInputType.phone,
+                prefixIcon:
+                    selectedMethod == ContactMethod.phone
+                    ? AppIcons.phoneFill
+                    : null,
+              ),
+              const SizedBox(height: 64),
+              PrimaryButton(
+                text: localization.sendButton,
+                onPressed: () {
+                  if (selectedMethod ==
+                      ContactMethod.email) {
+                    Navigator.pushNamed(
+                      context,
+                      AppRoutes
+                          .forgotPasswordVerificationEmail,
+                      arguments: _contactController.text,
+                    );
+                  } else {
+                    Navigator.pushNamed(
+                      context,
+                      AppRoutes
+                          .forgotPasswordVerificationPhone,
+                      arguments: _contactController.text,
+                    );
+                  }
+                },
+              ),
+            ],
           ),
         ),
       ),
