@@ -4,9 +4,6 @@ import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_in_header_widget.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_in_form_widget.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_in_social_widget.dart';
-import 'package:bazar_group_1/core/theme/app_text_styles.dart';
-import 'package:bazar_group_1/features/auth/presentation/widgets/oauth_signin_button.dart';
-import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
