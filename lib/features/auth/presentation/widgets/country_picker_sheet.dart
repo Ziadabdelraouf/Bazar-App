@@ -8,9 +8,11 @@ Future<Country?> showCountryPicker(BuildContext context) {
   return showModalBottomSheet<Country>(
     context: context,
     isScrollControlled: true,
-    backgroundColor: Colors.white,
+    backgroundColor: AppColors.white,
     shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      borderRadius: BorderRadius.vertical(
+        top: Radius.circular(16),
+      ),
     ),
     builder: (context) => const _CountryPickerContent(),
   );
@@ -20,17 +22,21 @@ class _CountryPickerContent extends StatefulWidget {
   const _CountryPickerContent();
 
   @override
-  State<_CountryPickerContent> createState() => _CountryPickerContentState();
+  State<_CountryPickerContent> createState() =>
+      _CountryPickerContentState();
 }
 
-class _CountryPickerContentState extends State<_CountryPickerContent> {
+class _CountryPickerContentState
+    extends State<_CountryPickerContent> {
   String _query = '';
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final filtered = kCountries.where((country) {
-      return country.name.toLowerCase().contains(_query.toLowerCase()) ||
+      return country.name.toLowerCase().contains(
+            _query.toLowerCase(),
+          ) ||
           country.dialCode.contains(_query);
     }).toList();
 
@@ -41,13 +47,18 @@ class _CountryPickerContentState extends State<_CountryPickerContent> {
           const SizedBox(height: 16),
           Text(
             s.selectCountryTitle,
-            style: AppTextStyles.h6.copyWith(color: AppColors.grey900),
+            style: AppTextStyles.h6.copyWith(
+              color: AppColors.grey900,
+            ),
           ),
           const SizedBox(height: 16),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
             child: TextField(
-              onChanged: (value) => setState(() => _query = value),
+              onChanged: (value) =>
+                  setState(() => _query = value),
               decoration: InputDecoration(
                 hintText: s.searchCountryHint,
                 filled: true,
@@ -72,13 +83,16 @@ class _CountryPickerContentState extends State<_CountryPickerContent> {
                   ),
                   title: Text(
                     country.name,
-                    style: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900),
+                    style: AppTextStyles.body16Medium
+                        .copyWith(color: AppColors.grey900),
                   ),
                   trailing: Text(
                     country.dialCode,
-                    style: AppTextStyles.body16Regular.copyWith(color: AppColors.grey500),
+                    style: AppTextStyles.body16Regular
+                        .copyWith(color: AppColors.grey500),
                   ),
-                  onTap: () => Navigator.pop(context, country),
+                  onTap: () =>
+                      Navigator.pop(context, country),
                 );
               },
             ),

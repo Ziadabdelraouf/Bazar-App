@@ -12,6 +12,8 @@ class AppFormTextField extends StatelessWidget {
   final TextInputAction? textInputAction;
   final TextInputType? keyboardType;
   final ValueChanged<String>? onChanged;
+  final bool showErrorBorder;
+  final bool showErrorText;
 
   const AppFormTextField({
     super.key,
@@ -24,6 +26,8 @@ class AppFormTextField extends StatelessWidget {
     this.textInputAction,
     this.keyboardType,
     this.onChanged,
+    this.showErrorBorder = true,
+    this.showErrorText = true,
   });
 
   @override
@@ -71,16 +75,19 @@ class AppFormTextField extends StatelessWidget {
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(
-                color: Colors.red,
-              ),
+              borderSide: showErrorBorder
+                  ? const BorderSide(color: AppColors.red)
+                  : BorderSide.none,
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(
-                color: Colors.red,
-              ),
+              borderSide: showErrorBorder
+                  ? const BorderSide(color: AppColors.red)
+                  : BorderSide.none,
             ),
+            errorStyle: showErrorText
+                ? null
+                : const TextStyle(fontSize: 0, height: 0),
           ),
         ),
       ],

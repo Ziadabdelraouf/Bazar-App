@@ -14,11 +14,14 @@ class ResetPasswordPage extends ConsumerStatefulWidget {
   const ResetPasswordPage({super.key});
 
   @override
-  ConsumerState<ResetPasswordPage> createState() => _ResetPasswordPageState();
+  ConsumerState<ResetPasswordPage> createState() =>
+      _ResetPasswordPageState();
 }
 
-class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
-  final TextEditingController _contactController = TextEditingController();
+class _ResetPasswordPageState
+    extends ConsumerState<ResetPasswordPage> {
+  final TextEditingController _contactController =
+      TextEditingController();
   @override
   void dispose() {
     _contactController.dispose();
@@ -27,7 +30,9 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
 
   @override
   Widget build(BuildContext context) {
-    final selectedMethod = ref.watch(selectedContactMethodProvider);
+    final selectedMethod = ref.watch(
+      selectedContactMethodProvider,
+    );
     return Directionality(
       textDirection: TextDirection.ltr,
       child: GestureDetector(
@@ -36,46 +41,59 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
         },
         child: Scaffold(
           appBar: const AppBackBar(),
-          backgroundColor: Colors.white,
+          backgroundColor: AppColors.white,
           body: Padding(
             padding: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width * (24 / 375),
-              right: MediaQuery.of(context).size.width * (24 / 375),
+              left:
+                  MediaQuery.of(context).size.width *
+                  (24 / 375),
+              right:
+                  MediaQuery.of(context).size.width *
+                  (24 / 375),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Reset password',
-                  style: AppTextStyles.h3.copyWith(color: AppColors.grey900),
+                  style: AppTextStyles.h3.copyWith(
+                    color: AppColors.grey900,
+                  ),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * (8 / 812),
+                  height:
+                      MediaQuery.of(context).size.height *
+                      (8 / 812),
                 ),
                 Text(
                   selectedMethod == ContactMethod.email
                       ? 'Please enter your email, we will send verification code to your email.'
                       : 'Please enter your phone number, we will send a verification code to your phone number.',
-                  style: AppTextStyles.body16Regular.copyWith(
-                    color: AppColors.grey600,
-                  ),
+                  style: AppTextStyles.body16Regular
+                      .copyWith(color: AppColors.grey600),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * (18 / 812),
+                  height:
+                      MediaQuery.of(context).size.height *
+                      (18 / 812),
                 ),
                 const SizedBox(height: 8),
                 AppTextField(
-                  label: selectedMethod == ContactMethod.email
+                  label:
+                      selectedMethod == ContactMethod.email
                       ? 'Email'
                       : 'Phone Number',
-                  placeholder: selectedMethod == ContactMethod.email
+                  placeholder:
+                      selectedMethod == ContactMethod.email
                       ? 'example@email.com'
                       : '(+965) 123 435 7565',
                   controller: _contactController,
-                  keyboardType: selectedMethod == ContactMethod.email
+                  keyboardType:
+                      selectedMethod == ContactMethod.email
                       ? TextInputType.emailAddress
                       : TextInputType.phone,
-                  prefixIcon: selectedMethod == ContactMethod.phone
+                  prefixIcon:
+                      selectedMethod == ContactMethod.phone
                       ? AppIcons.phoneFill
                       : null,
                 ),
@@ -83,16 +101,19 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
                 PrimaryButton(
                   text: 'Send',
                   onPressed: () {
-                    if (selectedMethod == ContactMethod.email) {
+                    if (selectedMethod ==
+                        ContactMethod.email) {
                       Navigator.pushNamed(
                         context,
-                        AppRoutes.forgotPasswordVerificationEmail,
+                        AppRoutes
+                            .forgotPasswordVerificationEmail,
                         arguments: _contactController.text,
                       );
                     } else {
                       Navigator.pushNamed(
                         context,
-                        AppRoutes.forgotPasswordVerificationPhone,
+                        AppRoutes
+                            .forgotPasswordVerificationPhone,
                         arguments: _contactController.text,
                       );
                     }

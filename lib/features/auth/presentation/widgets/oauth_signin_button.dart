@@ -26,14 +26,20 @@ class OAuthSignInButton extends StatelessWidget {
 
           elevation: 0,
           shape: StadiumBorder(
-            side: BorderSide(color: AppColors.grey200, width: 1.0),
+            side: BorderSide(
+              color: AppColors.grey200,
+              width: 1.0,
+            ),
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 24,
+          ),
         ),
         onPressed: onPressed,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 8,
           children: [
             SvgPicture.asset(icon, height: 16, width: 16),
             Text(

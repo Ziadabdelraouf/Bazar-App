@@ -1,5 +1,7 @@
 import 'package:bazar_group_1/core/components/inputs/app_text_form_field.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/features/auth/domain/validators/email_validator.dart';
+import 'package:bazar_group_1/features/auth/domain/validators/password_validator.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/password_requirements_widget.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +22,9 @@ class SignUpFormWigdet extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final signUpState = ref.watch(signUpProvider);
-    final signUpNotifier = ref.read(signUpProvider.notifier);
+    final signUpNotifier = ref.read(
+      signUpProvider.notifier,
+    );
     final localization = S.of(context);
 
     return Column(
@@ -52,21 +56,11 @@ class SignUpFormWigdet extends ConsumerWidget {
           keyboardType: TextInputType.emailAddress,
           textInputAction: TextInputAction.next,
           validator: (value) {
-            final email = value?.trim() ?? '';
-
-            if (email.isEmpty) {
-              return localization.emailRequired;
-            }
-
-            final emailPattern = RegExp(
-              r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$',
+            return validateEmail(
+              value,
+              emptyError: localization.emailRequired,
+              invalidError: localization.invalidEmail,
             );
-
-            if (!emailPattern.hasMatch(email)) {
-              return localization.invalidEmail;
-            }
-
-            return null;
           },
         ),
         AppFormTextField(
@@ -76,29 +70,23 @@ class SignUpFormWigdet extends ConsumerWidget {
           textInputAction: TextInputAction.done,
           obscureText: signUpState.obscurePassword,
           onChanged: signUpNotifier.validatePassword,
+          showErrorBorder: false,
+          showErrorText: false,
           validator: (value) {
-            final password = value ?? '';
-
-            if (password.isEmpty) {
-              return localization.passwordRequired;
-            }
-
-            if (password.length < 8) {
-              return localization.passwordMinimumLength;
-            }
-
-            if (!RegExp(r'[0-9]').hasMatch(password)) {
-              return localization.passwordNumberRequired;
-            }
-
-            if (!RegExp(r'[a-zA-Z]').hasMatch(password)) {
-              return localization.passwordLetterRequired;
-            }
-
-            return null;
+            return validatePassword(
+              value,
+              emptyError: localization.passwordRequired,
+              minimumLengthError:
+                  localization.passwordMinimumLength,
+              numberRequiredError:
+                  localization.passwordNumberRequired,
+              letterRequiredError:
+                  localization.passwordLetterRequired,
+            );
           },
           suffixIcon: IconButton(
-            onPressed: signUpNotifier.togglePasswordVisibility,
+            onPressed:
+                signUpNotifier.togglePasswordVisibility,
             icon: Icon(
               signUpState.obscurePassword
                   ? Icons.visibility_off_outlined

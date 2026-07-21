@@ -2,12 +2,14 @@ import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_state
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignUpNotifier extends AutoDisposeNotifier<SignUpState> {
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+class SignUpNotifier
+    extends Notifier<SignUpState> {
+  final TextEditingController nameController =
+      TextEditingController();
+  final TextEditingController emailController =
+      TextEditingController();
+  final TextEditingController passwordController =
+      TextEditingController();
 
   @override
   SignUpState build() {
@@ -20,6 +22,13 @@ class SignUpNotifier extends AutoDisposeNotifier<SignUpState> {
     return const SignUpState();
   }
 
+  void reset() {
+    nameController.clear();
+    emailController.clear();
+    passwordController.clear();
+    state = const SignUpState();
+  }
+
   void togglePasswordVisibility() {
     state = state.copyWith(
       obscurePassword: !state.obscurePassword,
@@ -28,10 +37,13 @@ class SignUpNotifier extends AutoDisposeNotifier<SignUpState> {
 
   void validatePassword(String password) {
     final hasMinimumLength = password.length >= 8;
-    final hasLetter = RegExp(r'[a-zA-Z]').hasMatch(password);
+    final hasLetter = RegExp(
+      r'[a-zA-Z]',
+    ).hasMatch(password);
     final hasNumber = RegExp(r'[0-9]').hasMatch(password);
 
-    final isValid = hasMinimumLength && hasLetter && hasNumber;
+    final isValid =
+        hasMinimumLength && hasLetter && hasNumber;
 
     state = state.copyWith(
       hasMinimumLength: hasMinimumLength,
@@ -41,8 +53,9 @@ class SignUpNotifier extends AutoDisposeNotifier<SignUpState> {
     );
   }
 
-  bool register() {
-    final isFormValid = formKey.currentState?.validate() ?? false;
+  bool register(GlobalKey<FormState> formKey) {
+    final isFormValid =
+        formKey.currentState?.validate() ?? false;
 
     if (!isFormValid) {
       return false;
@@ -53,6 +66,7 @@ class SignUpNotifier extends AutoDisposeNotifier<SignUpState> {
 }
 
 final signUpProvider =
-    AutoDisposeNotifierProvider<SignUpNotifier, SignUpState>(
-  SignUpNotifier.new,
-);
+    NotifierProvider<
+      SignUpNotifier,
+      SignUpState
+    >(SignUpNotifier.new);

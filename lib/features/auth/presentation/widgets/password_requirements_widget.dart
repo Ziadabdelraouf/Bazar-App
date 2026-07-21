@@ -18,23 +18,23 @@ class PasswordRequirementsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localization = S.of(context);
-      return Column(
-        children: [
-          PasswordRequirementItem(
-            text: localization.minimumEightCharacters,
-            isValid: hasMinimumLength,
-          ),
-          const SizedBox(height: 8),
-          PasswordRequirementItem(
-            text: localization.atLeastOneNumber,
-            isValid: hasNumber,
-          ),
-          const SizedBox(height: 8),
-          PasswordRequirementItem(
-            text: localization.atLeastOneLetter,
-            isValid: hasLetter,
-          ),
-        ],
+    return Column(
+      children: [
+        PasswordRequirementItem(
+          text: localization.minimumEightCharacters,
+          isValid: hasMinimumLength,
+        ),
+        const SizedBox(height: 8),
+        PasswordRequirementItem(
+          text: localization.atLeastOneNumber,
+          isValid: hasNumber,
+        ),
+        const SizedBox(height: 8),
+        PasswordRequirementItem(
+          text: localization.atLeastOneLetter,
+          isValid: hasLetter,
+        ),
+      ],
     );
   }
 }
@@ -56,7 +56,9 @@ class PasswordRequirementItem extends StatelessWidget {
         Icon(
           isValid ? Icons.check : Icons.close,
           size: 16,
-          color: isValid ? AppColors.primary500 : Colors.red,
+          color: isValid
+              ? AppColors.primary500
+              : AppColors.red,
         ),
         const SizedBox(width: 8),
         Expanded(

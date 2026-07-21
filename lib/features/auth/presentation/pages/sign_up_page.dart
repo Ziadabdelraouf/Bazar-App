@@ -9,25 +9,39 @@ import 'package:bazar_group_1/features/auth/presentation/widgets/term_and_condit
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignUpPage extends ConsumerWidget {
+class SignUpPage extends ConsumerStatefulWidget {
   const SignUpPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<SignUpPage> createState() =>
+      _SignUpPageState();
+}
+
+class _SignUpPageState extends ConsumerState<SignUpPage> {
+  final _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
     final localization = S.of(context);
-    final signUpNotifier = ref.watch(signUpProvider.notifier);
+    final signUpNotifier = ref.watch(
+      signUpProvider.notifier,
+    );
 
     return Scaffold(
       backgroundColor: AppColors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Form(
-            key: signUpNotifier.formKey,
+            key: _formKey,
+            autovalidateMode:
+                AutovalidateMode.onUserInteractionIfError,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 16),
+                  padding: const EdgeInsetsDirectional.only(
+                    start: 16,
+                  ),
                   child: IconButton(
                     onPressed: () {
                       Navigator.popAndPushNamed(
@@ -35,11 +49,17 @@ class SignUpPage extends ConsumerWidget {
                         AppRoutes.onboardingPage,
                       );
                     },
-                    icon: const Icon(Icons.arrow_back, size: 24),
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      size: 24,
+                    ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 24, top: 16),
+                  padding: const EdgeInsetsDirectional.only(
+                    start: 24,
+                    top: 16,
+                  ),
                   child: SignUpHeaderWidget(
                     title: localization.signUpTitle,
                     subtitle: localization.signUpSubtitle,
@@ -48,14 +68,19 @@ class SignUpPage extends ConsumerWidget {
                 Padding(
                   padding: const EdgeInsets.all(24),
                   child: SignUpFormWigdet(
-                    nameController: signUpNotifier.nameController,
-                    emailController: signUpNotifier.emailController,
-                    passwordController: signUpNotifier.passwordController,
+                    nameController:
+                        signUpNotifier.nameController,
+                    emailController:
+                        signUpNotifier.emailController,
+                    passwordController:
+                        signUpNotifier.passwordController,
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(24),
-                  child: SignUpRegisterWidget(),
+                Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: SignUpRegisterWidget(
+                    formKey: _formKey,
+                  ),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(

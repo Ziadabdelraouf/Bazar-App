@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/constants/enums.dart';
 import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
@@ -12,7 +13,8 @@ class SuccessPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screensize = MediaQuery.of(context).size;
-    final isLoginFlow = flow == SuccessPageFlow.successfulLogin;
+    final isLoginFlow =
+        flow == SuccessPageFlow.successfulLogin;
 
     return Scaffold(
       body: Padding(
@@ -30,11 +32,15 @@ class SuccessPage extends StatelessWidget {
               isLoginFlow
                   ? S.of(context).congratulations
                   : S.of(context).PasswordChanged,
-              style: AppTextStyles.h2.copyWith(fontWeight: FontWeight.bold),
+              style: AppTextStyles.h2.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: 16),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 32,
+              ),
               child: Text(
                 isLoginFlow
                     ? S.of(context).successBody
@@ -54,9 +60,19 @@ class SuccessPage extends StatelessWidget {
                     : S.of(context).loginButton,
                 onPressed: () {
                   if (isLoginFlow) {
-                    // navigate to home page
+                    // Navigate to home page but temporarily navigate to onboarding page to restart
+                    Navigator.pushReplacementNamed(
+                      context,
+                      AppRoutes.onboardingPage,
+                    );
                   } else {
-                    // navigate to login page
+                    // Navigate to login page
+                    Navigator.popUntil(
+                      context,
+                      ModalRoute.withName(
+                        AppRoutes.signInPage,
+                      ),
+                    );
                   }
                 },
                 borderRadius: 12,
