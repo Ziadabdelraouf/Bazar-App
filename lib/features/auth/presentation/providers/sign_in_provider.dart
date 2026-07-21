@@ -4,7 +4,7 @@ import 'package:bazar_group_1/features/auth/presentation/providers/sign_in_state
 import 'package:bazar_group_1/features/auth/domain/validators/email_validator.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/password_validator.dart';
 
-class SignInNotifier extends AutoDisposeNotifier<SignInState> {
+class SignInNotifier extends Notifier<SignInState> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -16,6 +16,13 @@ class SignInNotifier extends AutoDisposeNotifier<SignInState> {
       passwordController.dispose();
     });
     return const SignInState();
+  }
+
+  void reset() {
+    emailController.clear();
+    passwordController.clear();
+    formKey.currentState?.reset();
+    state = const SignInState();
   }
 
   void togglePasswordVisibility() {
@@ -98,6 +105,6 @@ class SignInNotifier extends AutoDisposeNotifier<SignInState> {
   }
 }
 
-final signInProvider = AutoDisposeNotifierProvider<SignInNotifier, SignInState>(
+final signInProvider = NotifierProvider<SignInNotifier, SignInState>(
   SignInNotifier.new,
 );

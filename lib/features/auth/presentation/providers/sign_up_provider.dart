@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class SignUpNotifier
-    extends AutoDisposeNotifier<SignUpState> {
+    extends Notifier<SignUpState> {
   final TextEditingController nameController =
       TextEditingController();
   final TextEditingController emailController =
@@ -20,6 +20,13 @@ class SignUpNotifier
     });
 
     return const SignUpState();
+  }
+
+  void reset() {
+    nameController.clear();
+    emailController.clear();
+    passwordController.clear();
+    state = const SignUpState();
   }
 
   void togglePasswordVisibility() {
@@ -59,7 +66,7 @@ class SignUpNotifier
 }
 
 final signUpProvider =
-    AutoDisposeNotifierProvider<
+    NotifierProvider<
       SignUpNotifier,
       SignUpState
     >(SignUpNotifier.new);

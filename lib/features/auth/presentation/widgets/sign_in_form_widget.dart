@@ -126,6 +126,7 @@ class SignInFormWidget extends ConsumerWidget {
                                   .passwordLetterRequired,
                         );
                     if (success && context.mounted) {
+                      ref.read(signInProvider.notifier).reset();
                       Navigator.pushReplacementNamed(
                         context,
                         AppRoutes.onboardingPage,
