@@ -1,11 +1,12 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class ApiConstants {
   ApiConstants._();
 
-  static const String booksBaseUrl =
-      'https://www.googleapis.com/books/v1';
+  static const String booksBaseUrl = 'https://www.googleapis.com/books/v1';
 
-  static const String googleBooksApiKey =
-      String.fromEnvironment('GOOGLE_BOOKS_API_KEY');
+  static String get googleBooksApiKey =>
+      dotenv.env['GOOGLE_BOOKS_API_KEY'] ?? '';
 
   static const String volumesEndpoint = '/volumes';
 
