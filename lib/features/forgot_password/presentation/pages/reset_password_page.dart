@@ -1,6 +1,7 @@
 import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
-import 'package:bazar_group_1/core/components/inputs/app_text_field.dart';
+import 'package:bazar_group_1/core/components/inputs/app_text_form_field.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
@@ -9,7 +10,7 @@ import 'package:bazar_group_1/features/forgot_password/presentation/providers/co
 import 'package:bazar_group_1/features/forgot_password/presentation/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:bazar_group_1/core/router/app_routes.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ResetPasswordPage extends ConsumerStatefulWidget {
   const ResetPasswordPage({super.key});
@@ -83,7 +84,8 @@ class _ResetPasswordPageState
                     (18 / 812),
               ),
               const SizedBox(height: 8),
-              AppTextField(
+
+              AppFormTextField(
                 label: selectedMethod == ContactMethod.email
                     ? localization.emailLabel
                     : localization.phoneNumberFieldLabel,
@@ -98,10 +100,26 @@ class _ResetPasswordPageState
                     : TextInputType.phone,
                 prefixIcon:
                     selectedMethod == ContactMethod.phone
-                    ? AppIcons.phoneFill
+                    ? IconButton(
+                        onPressed: () {},
+                        icon: SizedBox(
+                          width: 19,
+                          height: 19,
+                          child: SvgPicture.asset(
+                            AppIcons.phoneOutline,
+                            colorFilter:
+                                const ColorFilter.mode(
+                                  AppColors.primary500,
+                                  BlendMode.srcIn,
+                                ),
+                          ),
+                        ),
+                      )
                     : null,
               ),
+
               const SizedBox(height: 64),
+
               PrimaryButton(
                 text: localization.sendButton,
                 onPressed: () {

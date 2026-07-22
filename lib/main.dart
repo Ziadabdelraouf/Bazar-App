@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
           seedColor: Colors.deepPurple,
         ),
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
       routes: AppRouter.routes,
     );
   }
