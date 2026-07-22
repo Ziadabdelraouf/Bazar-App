@@ -72,5 +72,10 @@
     "emptyPhoneNumberError": "الرجاء إدخال رقم هاتفك",
     "invalidPhoneNumberError": "الرجاء إدخال رقم هاتف صحيح",
     "selectCountryTitle": "اختر الدولة",
-    "searchCountryHint": "ابحث عن الدولة أو الكود"
+    "searchCountryHint": "ابحث عن الدولة أو الكود",
+    "//Home Page Strings//": "",
+    "homeTitle": "الرئيسية",
+    "categoryTitle": "التصنيفات",
+    "cartTitle": "السلة",
+    "profileTitle": "الملف الشخصي"
 }

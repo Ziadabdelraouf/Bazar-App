@@ -1,4 +1,4 @@
-import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
+import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const SplashScreen(),
+      home: const HomePage(),
       routes: AppRouter.routes,
     );
   }

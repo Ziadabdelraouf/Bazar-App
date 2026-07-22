@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/constants/enums.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/sign_in_page.dart';
@@ -46,5 +47,6 @@ class AppRouter {
       return ForgotPasswordVerificationPhone(phoneNumber: phoneNumber);
     },
     AppRoutes.createNewPasswordPage: (context) => const CreateNewPasswordPage(),
+    AppRoutes.homePage: (context) => const HomePage(),
   };
 }
