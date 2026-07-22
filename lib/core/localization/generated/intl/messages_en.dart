@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
       "At least 1 number (1-9)",
     ),
+    "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
+    "categoryTitle": MessageLookupByLibrary.simpleMessage("Category"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
     "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
+    "homeTitle": MessageLookupByLibrary.simpleMessage("Home"),
     "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
       "Incorrect code, please try again.",
     ),
@@ -151,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Phone number",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "profileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "By clicking Register, you agree to our",
     ),

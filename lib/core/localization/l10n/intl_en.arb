@@ -73,6 +73,7 @@
     "invalidPhoneNumberError": "Please enter a valid phone number",
     "selectCountryTitle": "Select Country",
     "searchCountryHint": "Search country or code",
+  "//Forgot Password Screen Strings//": "",
     "forgotPasswordTitle": "Forgot Password",
     "forgotPasswordDescription": "Select which contact details should we use to reset your password",
     "contactMethodEmailTitle": "Email",
@@ -92,5 +93,10 @@
     "newPasswordLabel": "New Password",
     "confirmPasswordLabel": "Confirm Password",
     "confirmPasswordRequired": "Please confirm your password",
-    "passwordsDoNotMatch": "Passwords do not match"
+    "passwordsDoNotMatch": "Passwords do not match",
+    "//Home Page Strings//": "",
+    "homeTitle": "Home",
+    "categoryTitle": "Category",
+    "cartTitle": "Cart",
+    "profileTitle": "Profile"
 }

@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
       "رقم واحد على الأقل (1-9)",
     ),
+    "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
+    "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
     ),
@@ -90,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
+    "homeTitle": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
       "الكود غير صحيح، حاول مرة أخرى.",
     ),
@@ -116,7 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
     ),
     "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
-      "الأن اصبحت القراءة اسهل",
+      "الأن أصبحت القراءة أسهل",
     ),
     "onboardingThreeDescription": MessageLookupByLibrary.simpleMessage(
       "هل أنت مستعد لبدء رحلة مليئة بالإلهام والمعرفة؟ مغامرتك تبدأ الآن. هيا بنا!",
@@ -161,6 +164,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم الهاتف",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "profileTitle": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "بالنقر على تسجيل، فإنك توافق على",
     ),

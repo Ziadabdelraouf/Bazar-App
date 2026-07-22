@@ -29,7 +29,7 @@ analyzer:
     - "**/*.freezed.dart"
     - "lib/generated/l10n.dart"  
 formatter:
-  page_width: 60
+  page_width: 80
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

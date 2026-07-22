@@ -73,6 +73,7 @@
     "invalidPhoneNumberError": "الرجاء إدخال رقم هاتف صحيح",
     "selectCountryTitle": "اختر الدولة",
     "searchCountryHint": "ابحث عن الدولة أو الكود",
+     "//Forgot Password Screen Strings//": "",
     "forgotPasswordTitle": "نسيت كلمة المرور",
     "forgotPasswordDescription": "اختر وسيلة التواصل التي تريد استخدامها لإعادة تعيين كلمة المرور",
     "contactMethodEmailTitle": "البريد الإلكتروني",
@@ -92,5 +93,10 @@
     "newPasswordLabel": "كلمة المرور الجديدة",
     "confirmPasswordLabel": "تأكيد كلمة المرور",
     "confirmPasswordRequired": "الرجاء تأكيد كلمة المرور",
-    "passwordsDoNotMatch": "كلمة المرور غير متطابقة"
+    "passwordsDoNotMatch": "كلمة المرور غير متطابقة",
+    "//Home Page Strings//": "",
+    "homeTitle": "الرئيسية",
+    "categoryTitle": "التصنيفات",
+    "cartTitle": "السلة",
+    "profileTitle": "الملف الشخصي"
 }
