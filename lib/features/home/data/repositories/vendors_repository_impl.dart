@@ -1,6 +1,9 @@
+/*
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/features/home/domain/entities/vendor.dart';
 import 'package:bazar_group_1/features/home/domain/repositories/vendors_repository.dart';
 import 'package:bazar_group_1/features/home/data/datasources/vendors_remote_data_source.dart';
+import 'package:bazar_group_1/features/home/data/models/vendor_model.dart';
 
 class VendorsRepositoryImpl implements VendorsRepository {
   final VendorsRemoteDataSource remoteDataSource;
@@ -10,7 +13,16 @@ class VendorsRepositoryImpl implements VendorsRepository {
   @override
   Future<List<Vendor>> getVendors() async {
     final models = await remoteDataSource.getVendors();
+    return _deduplicate(models);
+  }
 
+  @override
+  Future<List<Vendor>> getVendorsByCategory(String category) async {
+    final models = await remoteDataSource.getVendorsByCategory(category);
+    return _deduplicate(models);
+  }
+
+  List<Vendor> _deduplicate(List<VendorModel> models) {
     final Map<String, Vendor> uniqueVendors = {};
 
     for (final model in models) {
@@ -24,5 +36,9 @@ class VendorsRepositoryImpl implements VendorsRepository {
 
     return uniqueVendors.values.toList();
   }
-
 }
+
+final vendorsRepositoryProvider = Provider<VendorsRepository>(
+  (ref) => VendorsRepositoryImpl(ref.watch(vendorsRemoteDataSourceProvider)),
+);
+*/

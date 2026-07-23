@@ -1,3 +1,4 @@
+/*
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dio/dio.dart';
 import 'package:bazar_group_1/core/network/dio_provider.dart';
@@ -17,8 +18,18 @@ class VendorsRemoteDataSource {
 
     return items.map((item) => VendorModel.fromJson(item)).toList();
   }
+
+  Future<List<VendorModel>> getVendorsByCategory(String category) async {
+    final response = await dio.get(ApiConstants.volumesEndpoint,
+        queryParameters: {'q': 'subject:$category'});
+
+    final items = response.data['items'] as List? ?? [];
+
+    return items.map((item) => VendorModel.fromJson(item)).toList();
+  }
 }
 
 final vendorsRemoteDataSourceProvider = Provider<VendorsRemoteDataSource>(
   (ref) => VendorsRemoteDataSource(ref.watch(dioProvider)),
 );
+*/
