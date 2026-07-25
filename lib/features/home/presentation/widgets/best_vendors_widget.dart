@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/features/home/domain/entities/vendor.dart';
 
-// TEMPORARY mock provider — replace with vendorsNotifierProvider once
-// the real API is confirmed and connected.
 final mockVendorsProvider = Provider<List<Vendor>>((ref) {
-  return [
+  final vendors = [
     Vendor(name: 'Penguin Books', imageUrl: null, rating: 4.5),
     Vendor(name: 'HarperCollins', imageUrl: null, rating: 4.2),
     Vendor(name: 'Springer', imageUrl: null, rating: 3.8),
     Vendor(name: 'Elsevier', imageUrl: null, rating: 4.0),
   ];
+  vendors.sort((a, b) => (b.rating ?? 0).compareTo(a.rating ?? 0));
+  return vendors;
 });
 
 class BestVendorsWidget extends ConsumerWidget {
@@ -37,9 +38,15 @@ class BestVendorsWidget extends ConsumerWidget {
                 'Best Vendors',
                 style: AppTextStyles.h5.copyWith(color: AppColors.grey900),
               ),
-              Text(
-                'See all',
-                style: AppTextStyles.body14Bold.copyWith(color: AppColors.primary500),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.vendorsPage);
+                },
+                child: Text(
+                  'See all',
+                  style: AppTextStyles.body14Bold
+                      .copyWith(color: AppColors.primary500),
+                ),
               ),
             ],
           ),
@@ -66,10 +73,7 @@ class BestVendorsWidget extends ConsumerWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: vendor.imageUrl != null
-                      ? Image.network(
-                          vendor.imageUrl!,
-                          fit: BoxFit.contain,
-                        )
+                      ? Image.network(vendor.imageUrl!, fit: BoxFit.contain)
                       : Center(
                           child: Text(
                             vendor.name,
