@@ -1,7 +1,7 @@
 class Author {
   const Author({
     required this.name,
-    required this.role,
+    this.role='Author',
     required this.image,
   });
 

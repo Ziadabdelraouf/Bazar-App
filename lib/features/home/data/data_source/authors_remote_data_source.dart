@@ -3,22 +3,35 @@ import 'package:bazar_group_1/core/network/books_dio.dart';
 import 'package:bazar_group_1/features/home/data/models/author_model.dart';
 
 abstract interface class AuthorsRemoteDataSource {
-  Future <List<AuthorModel>> getAuthors();
+  Future<List<AuthorModel>> getAuthors();
 }
- class AuthorsRemoteDataSourceImpl implements AuthorsRemoteDataSource{
-  const AuthorsRemoteDataSourceImpl(this.dio);
-  final BooksDio dio;
+
+class AuthorsRemoteDataSourceImpl
+    implements AuthorsRemoteDataSource {
+  const AuthorsRemoteDataSourceImpl(this.booksDio);
+
+  final BooksDio booksDio;
+
   @override
-  Future <List<AuthorModel>> getAuthors()async
-  {
-    final response=await dio.dio.get(ApiConstants.volumesEndpoint,
-    queryParameters: {
+  Future<List<AuthorModel>> getAuthors() async {
+    final response = await booksDio.dio.get(
+      ApiConstants.volumesEndpoint,
+      queryParameters: {
         'q': 'subject:fiction',
         'maxResults': 10,
-      },);
-      print(response.data);
+      },
+    );
 
-    return [];
+    final responseData = response.data;
+
+    if (responseData is! Map) {
+      throw const FormatException(
+        'Invalid Google Books response',
+      );
+    }
+
+    final json = Map<String, dynamic>.from(responseData);
+
+    return AuthorModel.fromGoogleBooksResponse(json);
   }
-
- }
+}

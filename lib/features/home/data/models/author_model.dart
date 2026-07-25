@@ -1,15 +1,57 @@
-import 'package:bazar_group_1/features/home/domain/entities/author.dart';
-import 'package:json_annotation/json_annotation.dart';
+import '../../domain/entities/author.dart';
 
-part 'author_model.g.dart';
-
-@JsonSerializable()
-class AuthorModel extends Author{
+class AuthorModel extends Author {
   const AuthorModel({
     required super.name,
-    required super.role,
     required super.image,
+    super.role,
   });
-  factory AuthorModel.fromJson(Map<String,dynamic>Json)=>_$AuthorModelFromJson(Json);
-  Map<String, dynamic> toJson() => _$AuthorModelToJson(this);
-} 
+
+  static List<AuthorModel> fromGoogleBooksResponse(
+    Map<String, dynamic> json,
+  ) {
+    final items = json['items'];
+
+    if (items is! List) {
+      return const [];
+    }
+
+    final uniqueAuthors = <String, AuthorModel>{};
+
+    for (final item in items) {
+      if (item is! Map) {
+        continue;
+      }
+
+      final volumeInfo = item['volumeInfo'];
+
+      if (volumeInfo is! Map) {
+        continue;
+      }
+
+      final authors = volumeInfo['authors'];
+
+      if (authors is! List) {
+        continue;
+      }
+
+      for (final authorValue in authors) {
+        final name = authorValue.toString().trim();
+
+        if (name.isEmpty) {
+          continue;
+        }
+
+        uniqueAuthors.putIfAbsent(
+          name,
+          () => AuthorModel(
+            name: name,
+            image: '',
+          ),
+        );
+      }
+    }
+
+    return uniqueAuthors.values.toList(growable: false);
+  }
+}
