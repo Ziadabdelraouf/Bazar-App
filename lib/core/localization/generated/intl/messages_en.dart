@@ -20,160 +20,134 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(discount) => "Discount ${discount}%";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "PasswordChanged": MessageLookupByLibrary.simpleMessage(
-      "Password Changed!",
-    ),
-    "PasswordChangedBody": MessageLookupByLibrary.simpleMessage(
-      "Your password changed successfully, you can login again with a new password",
-    ),
-    "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
-      "At least lowercase or uppercase letters",
-    ),
-    "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
-      "At least 1 number (1-9)",
-    ),
-    "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
-    "categoryTitle": MessageLookupByLibrary.simpleMessage("Category"),
-    "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
-    "congratulations": MessageLookupByLibrary.simpleMessage("Congratulations!"),
-    "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
-    "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
-      "Don\'t have an account?",
-    ),
-    "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
-    "emailPlaceholder": MessageLookupByLibrary.simpleMessage("Your email"),
-    "emailRequired": MessageLookupByLibrary.simpleMessage("Email is required"),
-    "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
-      "Please enter your phone number",
-    ),
-    "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
-      "Forgot Password?",
-    ),
-    "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
-    "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
-    "homeTitle": MessageLookupByLibrary.simpleMessage("Home"),
-    "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
-      "Incorrect code, please try again.",
-    ),
-    "invalidEmail": MessageLookupByLibrary.simpleMessage("Enter a valid email"),
-    "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
-      "Please enter a valid phone number",
-    ),
-    "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
-    "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
-      "Minimum 8 characters",
-    ),
-    "nameLabel": MessageLookupByLibrary.simpleMessage("Name"),
-    "nameMinimumLength": MessageLookupByLibrary.simpleMessage(
-      "Name must be at least 2 characters",
-    ),
-    "namePlaceholder": MessageLookupByLibrary.simpleMessage("Your Name"),
-    "nameRequired": MessageLookupByLibrary.simpleMessage("Name is required"),
-    "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
-      " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
-    ),
-    "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
-      "Now reading books will be easier",
-    ),
-    "onboardingThreeDescription": MessageLookupByLibrary.simpleMessage(
-      "Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let\'s go!",
-    ),
-    "onboardingThreeTitle": MessageLookupByLibrary.simpleMessage(
-      "Start Your Adventure",
-    ),
-    "onboardingTwoDescription": MessageLookupByLibrary.simpleMessage(
-      "Let us be your guide to the perfect read. Discover books tailored to your tastes for a truly rewarding experience.",
-    ),
-    "onboardingTwoTitle": MessageLookupByLibrary.simpleMessage(
-      "Your Bookish Soulmate Awaits",
-    ),
-    "orSeparator": MessageLookupByLibrary.simpleMessage("or"),
-    "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
-    "passwordLetterRequired": MessageLookupByLibrary.simpleMessage(
-      "Password must contain at least one letter",
-    ),
-    "passwordMinimumLength": MessageLookupByLibrary.simpleMessage(
-      "Password must contain at least 8 characters",
-    ),
-    "passwordNumberRequired": MessageLookupByLibrary.simpleMessage(
-      "Password must contain at least one number",
-    ),
-    "passwordPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Your password",
-    ),
-    "passwordRequired": MessageLookupByLibrary.simpleMessage(
-      "Password is required",
-    ),
-    "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
-      "Please enter your phone number, so we can more easily deliver your order",
-    ),
-    "phoneNumberFieldLabel": MessageLookupByLibrary.simpleMessage(
-      "Phone Number",
-    ),
-    "phoneNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Phone number",
-    ),
-    "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
-    "profileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
-    "registerAgreement": MessageLookupByLibrary.simpleMessage(
-      "By clicking Register, you agree to our",
-    ),
-    "registerButton": MessageLookupByLibrary.simpleMessage("Register"),
-    "resendButton": MessageLookupByLibrary.simpleMessage("Resend"),
-    "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
-      "If you didn\'t receive a code? ",
-    ),
-    "searchCountryHint": MessageLookupByLibrary.simpleMessage(
-      "Search country or code",
-    ),
-    "selectCountryTitle": MessageLookupByLibrary.simpleMessage(
-      "Select Country",
-    ),
-    "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
-    "signInSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Sign in to your account",
-    ),
-    "signInWithAppleButton": MessageLookupByLibrary.simpleMessage(
-      "Sign in with Apple",
-    ),
-    "signInWithGoogleButton": MessageLookupByLibrary.simpleMessage(
-      "Sign in with Google",
-    ),
-    "signUpButton": MessageLookupByLibrary.simpleMessage("Sign Up"),
-    "signUpEmailPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Your Email",
-    ),
-    "signUpPasswordPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Your Password",
-    ),
-    "signUpSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Create account and choose favorite menu",
-    ),
-    "signUpTitle": MessageLookupByLibrary.simpleMessage("Sign Up"),
-    "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
-    "successBody": MessageLookupByLibrary.simpleMessage(
-      "your account is complete, Please enjoy the best menu from us.",
-    ),
-    "termsAndDataPolicy": MessageLookupByLibrary.simpleMessage(
-      "Terms, Data Policy.",
-    ),
-    "verificationCodeTitle": MessageLookupByLibrary.simpleMessage(
-      "Verification Code",
-    ),
-    "verificationEmailTitle": MessageLookupByLibrary.simpleMessage(
-      "Verification Email",
-    ),
-    "verificationPhoneTitle": MessageLookupByLibrary.simpleMessage(
-      "Verification Phone",
-    ),
-    "verificationSentToEmail": MessageLookupByLibrary.simpleMessage(
-      "Please enter the code we just sent to email ",
-    ),
-    "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
-      "Please enter the code we just sent to phone number ",
-    ),
-    "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("Welcome Back "),
-  };
+        "PasswordChanged":
+            MessageLookupByLibrary.simpleMessage("Password Changed!"),
+        "PasswordChangedBody": MessageLookupByLibrary.simpleMessage(
+            "Your password changed successfully, you can login again with a new password"),
+        "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
+            "At least lowercase or uppercase letters"),
+        "atLeastOneNumber":
+            MessageLookupByLibrary.simpleMessage("At least 1 number (1-9)"),
+        "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
+        "categoryTitle": MessageLookupByLibrary.simpleMessage("Category"),
+        "codeResentMessage":
+            MessageLookupByLibrary.simpleMessage("Code resent!"),
+        "congratulations":
+            MessageLookupByLibrary.simpleMessage("Congratulations!"),
+        "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
+        "discountPercent": m0,
+        "dontHaveAccountText":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailPlaceholder": MessageLookupByLibrary.simpleMessage("Your email"),
+        "emailRequired":
+            MessageLookupByLibrary.simpleMessage("Email is required"),
+        "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
+            "Please enter your phone number"),
+        "failedToLoadOffers":
+            MessageLookupByLibrary.simpleMessage("Failed to load offers"),
+        "forgotPasswordButton":
+            MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
+        "homeTitle": MessageLookupByLibrary.simpleMessage("Home"),
+        "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
+            "Incorrect code, please try again."),
+        "invalidEmail":
+            MessageLookupByLibrary.simpleMessage("Enter a valid email"),
+        "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
+            "Please enter a valid phone number"),
+        "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
+        "minimumEightCharacters":
+            MessageLookupByLibrary.simpleMessage("Minimum 8 characters"),
+        "nameLabel": MessageLookupByLibrary.simpleMessage("Name"),
+        "nameMinimumLength": MessageLookupByLibrary.simpleMessage(
+            "Name must be at least 2 characters"),
+        "namePlaceholder": MessageLookupByLibrary.simpleMessage("Your Name"),
+        "nameRequired":
+            MessageLookupByLibrary.simpleMessage("Name is required"),
+        "noOffersAvailable":
+            MessageLookupByLibrary.simpleMessage("No offers available"),
+        "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
+            " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us."),
+        "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
+            "Now reading books will be easier"),
+        "onboardingThreeDescription": MessageLookupByLibrary.simpleMessage(
+            "Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let\'s go!"),
+        "onboardingThreeTitle":
+            MessageLookupByLibrary.simpleMessage("Start Your Adventure"),
+        "onboardingTwoDescription": MessageLookupByLibrary.simpleMessage(
+            "Let us be your guide to the perfect read. Discover books tailored to your tastes for a truly rewarding experience."),
+        "onboardingTwoTitle": MessageLookupByLibrary.simpleMessage(
+            "Your Bookish Soulmate Awaits"),
+        "orSeparator": MessageLookupByLibrary.simpleMessage("or"),
+        "orderNowButton": MessageLookupByLibrary.simpleMessage("Order Now"),
+        "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordLetterRequired": MessageLookupByLibrary.simpleMessage(
+            "Password must contain at least one letter"),
+        "passwordMinimumLength": MessageLookupByLibrary.simpleMessage(
+            "Password must contain at least 8 characters"),
+        "passwordNumberRequired": MessageLookupByLibrary.simpleMessage(
+            "Password must contain at least one number"),
+        "passwordPlaceholder":
+            MessageLookupByLibrary.simpleMessage("Your password"),
+        "passwordRequired":
+            MessageLookupByLibrary.simpleMessage("Password is required"),
+        "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
+            "Please enter your phone number, so we can more easily deliver your order"),
+        "phoneNumberFieldLabel":
+            MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "phoneNumberPlaceholder":
+            MessageLookupByLibrary.simpleMessage("Phone number"),
+        "phoneNumberTitle":
+            MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "profileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
+        "registerAgreement": MessageLookupByLibrary.simpleMessage(
+            "By clicking Register, you agree to our"),
+        "registerButton": MessageLookupByLibrary.simpleMessage("Register"),
+        "resendButton": MessageLookupByLibrary.simpleMessage("Resend"),
+        "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
+            "If you didn\'t receive a code? "),
+        "retryButton": MessageLookupByLibrary.simpleMessage("Retry"),
+        "searchCountryHint":
+            MessageLookupByLibrary.simpleMessage("Search country or code"),
+        "selectCountryTitle":
+            MessageLookupByLibrary.simpleMessage("Select Country"),
+        "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
+        "signInSubtitle":
+            MessageLookupByLibrary.simpleMessage("Sign in to your account"),
+        "signInWithAppleButton":
+            MessageLookupByLibrary.simpleMessage("Sign in with Apple"),
+        "signInWithGoogleButton":
+            MessageLookupByLibrary.simpleMessage("Sign in with Google"),
+        "signUpButton": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "signUpEmailPlaceholder":
+            MessageLookupByLibrary.simpleMessage("Your Email"),
+        "signUpPasswordPlaceholder":
+            MessageLookupByLibrary.simpleMessage("Your Password"),
+        "signUpSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Create account and choose favorite menu"),
+        "signUpTitle": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
+        "successBody": MessageLookupByLibrary.simpleMessage(
+            "your account is complete, Please enjoy the best menu from us."),
+        "termsAndDataPolicy":
+            MessageLookupByLibrary.simpleMessage("Terms, Data Policy."),
+        "verificationCodeTitle":
+            MessageLookupByLibrary.simpleMessage("Verification Code"),
+        "verificationEmailTitle":
+            MessageLookupByLibrary.simpleMessage("Verification Email"),
+        "verificationPhoneTitle":
+            MessageLookupByLibrary.simpleMessage("Verification Phone"),
+        "verificationSentToEmail": MessageLookupByLibrary.simpleMessage(
+            "Please enter the code we just sent to email "),
+        "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
+            "Please enter the code we just sent to phone number "),
+        "welcomeBackTitle":
+            MessageLookupByLibrary.simpleMessage("Welcome Back ")
+      };
 }
