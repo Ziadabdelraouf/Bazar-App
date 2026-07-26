@@ -1,4 +1,4 @@
-/*
+import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/features/home/domain/entities/vendor.dart';
 import 'package:bazar_group_1/features/home/domain/repositories/vendors_repository.dart';
@@ -12,19 +12,40 @@ class VendorsRepositoryImpl implements VendorsRepository {
 
   @override
   Future<List<Vendor>> getVendors() async {
-    final models = await remoteDataSource.getVendors();
-    return _deduplicate(models);
+    try {
+      final models = await remoteDataSource.getVendors();
+      return _deduplicate(models);
+    } on DioException catch (e) {
+      if (_isServerSideIssue(e)) {
+        final mockModels = remoteDataSource.getVendorsFromMock();
+        return _deduplicate(mockModels.take(20).toList());
+      }
+      rethrow;
+    }
   }
 
   @override
   Future<List<Vendor>> getVendorsByCategory(String category) async {
-    final models = await remoteDataSource.getVendorsByCategory(category);
-    return _deduplicate(models);
+    try {
+      final models = await remoteDataSource.getVendorsByCategory(category);
+      return _deduplicate(models);
+    } on DioException catch (e) {
+      if (_isServerSideIssue(e)) {
+        final mockModels = remoteDataSource.getVendorsFromMock();
+        return _deduplicate(mockModels.take(20).toList());
+      }
+      rethrow;
+    }
+  }
+
+  bool _isServerSideIssue(DioException e) {
+    return e.type == DioExceptionType.connectionError ||
+        e.type == DioExceptionType.connectionTimeout ||
+        (e.response?.statusCode != null && e.response!.statusCode! >= 500);
   }
 
   List<Vendor> _deduplicate(List<VendorModel> models) {
     final Map<String, Vendor> uniqueVendors = {};
-
     for (final model in models) {
       if (model.name == 'Unknown Vendor') {
         continue;
@@ -33,7 +54,6 @@ class VendorsRepositoryImpl implements VendorsRepository {
         uniqueVendors[model.name] = model;
       }
     }
-
     return uniqueVendors.values.toList();
   }
 }
@@ -41,4 +61,3 @@ class VendorsRepositoryImpl implements VendorsRepository {
 final vendorsRepositoryProvider = Provider<VendorsRepository>(
   (ref) => VendorsRepositoryImpl(ref.watch(vendorsRemoteDataSourceProvider)),
 );
-*/
