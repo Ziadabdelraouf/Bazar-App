@@ -71,14 +71,14 @@ class VendorsPage extends ConsumerWidget {
               width: screenWidth * (359 / 375),
               height: screenHeight * (88 / 812),
               child: Padding(
-                padding: EdgeInsets.fromLTRB(
+                padding: EdgeInsetsDirectional.fromSTEB(
                   screenWidth * (8 / 375),
                   screenHeight * (16 / 812),
                   screenWidth * (8 / 375),
                   screenHeight * (8 / 812),
                 ),
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: AlignmentDirectional.centerStart,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -107,7 +107,7 @@ class VendorsPage extends ConsumerWidget {
             ),
             SizedBox(height: screenHeight * (10 / 812)),
             Padding(
-              padding: EdgeInsets.only(left: screenWidth * (16 / 375)),
+              padding: EdgeInsetsDirectional.only(start: screenWidth * (16 / 375)),
               child: SizedBox(
                 width: screenWidth * (351 / 375),
                 height: screenHeight * (24 / 812),
@@ -214,8 +214,8 @@ class VendorsPage extends ConsumerWidget {
                                 final isFilled = starIndex < rating.round();
 
                                 return Padding(
-                                  padding: EdgeInsets.only(
-                                      right: starIndex < 4
+                                  padding: EdgeInsetsDirectional.only(
+                                      end: starIndex < 4
                                           ? screenWidth * (4 / 375)
                                           : 0),
                                   child: SizedBox(
