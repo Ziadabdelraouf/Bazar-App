@@ -4,7 +4,7 @@ class AuthorModel extends Author {
   const AuthorModel({
     required super.name,
     required super.image,
-    super.role,
+    required super.role,
   });
 
   static List<AuthorModel> fromGoogleBooksResponse(
@@ -35,6 +35,24 @@ class AuthorModel extends Author {
         continue;
       }
 
+      final title = volumeInfo['title']?.toString().trim() ?? '';
+
+      final imageLinks = volumeInfo['imageLinks'];
+
+      String image = '';
+
+      if (imageLinks is Map) {
+        image =
+            imageLinks['thumbnail']?.toString() ??
+            imageLinks['smallThumbnail']?.toString() ??
+            '';
+
+        image = image.replaceFirst(
+          'http://',
+          'https://',
+        );
+      }
+
       for (final authorValue in authors) {
         final name = authorValue.toString().trim();
 
@@ -46,12 +64,17 @@ class AuthorModel extends Author {
           name,
           () => AuthorModel(
             name: name,
-            image: '',
+            role: title.isEmpty
+                ? 'Author'
+                : 'Author of $title',
+            image: image,
           ),
         );
       }
     }
 
-    return uniqueAuthors.values.toList(growable: false);
+    return uniqueAuthors.values.toList(
+      growable: false,
+    );
   }
 }
