@@ -1,4 +1,6 @@
 import 'package:bazar_group_1/core/theme/app_colors.dart';
+import 'package:bazar_group_1/features/home/presentation/widgets/book_card.dart';
+import 'package:bazar_group_1/features/home/presentation/widgets/top_of_week_section.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -22,13 +24,7 @@ class HomeView extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          Container(
-            height: (275 / baseHeight) * screenHeight,
-            decoration: BoxDecoration(
-              color: AppColors.grey200,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
+          const TopOfWeekSection(),
           const SizedBox(height: 16),
           Container(
             height: (120 / baseHeight) * screenHeight,
@@ -36,6 +32,7 @@ class HomeView extends StatelessWidget {
               color: AppColors.grey200,
               borderRadius: BorderRadius.circular(12),
             ),
+            child: BookCard(title: 'De7k', price: '\$12', imagePath: ''),
           ),
           const SizedBox(height: 16),
           Container(

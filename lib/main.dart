@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
           child: child ?? const SizedBox.shrink(),
         );
       },
-      locale: Locale("ar"),
-      // locale: Locale("en"),
+      // locale: Locale("ar"),
+      locale: Locale("en"),
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const HomePage(),
+      home: const SplashScreen(),
       routes: AppRouter.routes,
     );
   }
