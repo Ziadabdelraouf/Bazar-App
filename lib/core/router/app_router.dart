@@ -1,4 +1,5 @@
 import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
+import 'package:bazar_group_1/features/home/presentation/pages/vendors_search_placeholder_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/constants/enums.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/sign_in_page.dart';
@@ -50,5 +51,7 @@ class AppRouter {
     AppRoutes.createNewPasswordPage: (context) => const CreateNewPasswordPage(),
     AppRoutes.homePage: (context) => const HomePage(),
     AppRoutes.vendorsPage: (context) => const VendorsPage(),
+    AppRoutes.vendorsSearchPage: (context) => const VendorsSearchPlaceholderPage(),
   };
+  
 }
