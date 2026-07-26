@@ -98,5 +98,11 @@
     "homeTitle": "الرئيسية",
     "categoryTitle": "التصنيفات",
     "cartTitle": "السلة",
-    "profileTitle": "الملف الشخصي"
+    "profileTitle": "الملف الشخصي",
+    "//Special Offer Strings//": "",
+    "noOffersAvailable": "لا تتوفر عروض حاليًا",
+    "discountPercent": "خصم %{discount}",
+    "orderNowButton": "اطلب الآن",
+    "failedToLoadOffers": "فشل في تحميل العروض",
+    "retryButton": "إعادة المحاولة"
 }
