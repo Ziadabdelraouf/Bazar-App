@@ -83,5 +83,8 @@
     "discountPercent": "Discount {discount}%",
     "orderNowButton": "Order Now",
     "failedToLoadOffers": "Failed to load offers",
-    "retryButton": "Retry"
+    "retryButton": "Retry",
+    "//Author Detail Strings//": "",
+    "about": "About",
+    "products": "Products"
 }

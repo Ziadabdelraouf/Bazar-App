@@ -83,5 +83,8 @@
     "discountPercent": "خصم %{discount}",
     "orderNowButton": "اطلب الآن",
     "failedToLoadOffers": "فشل في تحميل العروض",
-    "retryButton": "إعادة المحاولة"
+    "retryButton": "إعادة المحاولة",
+    "//Author Detail Strings//": "",
+    "about": "عن الكاتب",
+    "products": "المنتجات"
 }

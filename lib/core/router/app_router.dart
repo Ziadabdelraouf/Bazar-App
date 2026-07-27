@@ -1,3 +1,5 @@
+import 'package:bazar_group_1/features/home/domain/entities/author.dart';
+import 'package:bazar_group_1/features/home/presentation/pages/author_detail_page.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/constants/enums.dart';
@@ -48,5 +50,9 @@ class AppRouter {
     },
     AppRoutes.createNewPasswordPage: (context) => const CreateNewPasswordPage(),
     AppRoutes.homePage: (context) => const HomePage(),
+    AppRoutes.authorDetailPage: (context) {
+      final author = ModalRoute.of(context)!.settings.arguments as Author;
+      return AuthorDetailPage(author: author);
+    },
   };
 }
