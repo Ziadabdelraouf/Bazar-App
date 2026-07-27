@@ -52,19 +52,23 @@ class AuthorDetailPage extends StatelessWidget {
               SizedBox(height: 14),
               Text(
                 S.of(context).about,
+                textAlign: TextAlign.left,
                 style: AppTextStyles.h6.copyWith(color: AppColors.grey900),
               ),
               SizedBox(height: 14),
 
-              Wrap(
-                children: [
-                  Text(
-                    author!.role,
-                    style: AppTextStyles.body14Regular.copyWith(
-                      color: AppColors.grey600,
+              Container(
+                alignment: Alignment.centerLeft,
+                child: Wrap(
+                  children: [
+                    Text(
+                      author!.role,
+                      style: AppTextStyles.body14Regular.copyWith(
+                        color: AppColors.grey600,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(height: 8),
               Text(
