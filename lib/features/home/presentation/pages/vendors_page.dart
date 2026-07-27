@@ -83,23 +83,13 @@ class VendorsPage extends ConsumerWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        width: screenWidth * (89 / 375),
-                        height: screenHeight * (24 / 812),
-                        child: Text(
-                          S.of(context).ourVendorsSubtitle,
-                          style: AppTextStyles.body16Regular
-                              .copyWith(color: AppColors.grey500),
-                        ),
+                      Text(
+                        S.of(context).ourVendorsSubtitle,
+                        style: AppTextStyles.body16Regular.copyWith(color: AppColors.grey500),
                       ),
-                      SizedBox(
-                        width: screenWidth * (91 / 375),
-                        height: screenHeight * (28 / 812),
-                        child: Text(
-                          S.of(context).vendorsPageTitle,
-                          style: AppTextStyles.h4
-                              .copyWith(color: AppColors.primary500),
-                        ),
+                      Text(
+                        S.of(context).vendorsPageTitle,
+                        style: AppTextStyles.h4.copyWith(color: AppColors.primary500),
                       ),
                     ],
                   ),
@@ -206,18 +196,15 @@ class VendorsPage extends ConsumerWidget {
                                       ),
                               ),
                             ),
-                            SizedBox(height: screenHeight * (8 / 812)),
                             Tooltip(
                               message: vendor.name,
                               child: SizedBox(
                                 width: screenWidth * (101 / 375),
-                                height: screenHeight * (24 / 812),
                                 child: Text(
                                   vendor.name,
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 1,
-                                  style: AppTextStyles.body16Medium
-                                      .copyWith(color: AppColors.grey900),
+                                  style: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900),
                                 ),
                               ),
                             ),
