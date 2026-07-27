@@ -1,14 +1,10 @@
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
 import '../../domain/entities/author.dart';
-import '../pages/author_detail_page.dart';
 
 class AuthorListItem extends StatelessWidget {
-  const AuthorListItem({
-    super.key,
-    required this.author,
-    this.onTap,
-  });
+  const AuthorListItem({super.key, required this.author, this.onTap});
 
   final Author author;
   final VoidCallback? onTap;
@@ -16,24 +12,19 @@ class AuthorListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap ??
+      onTap:
+          onTap ??
           () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => AuthorDetailPage(author: author),
-              ),
-            );
+            Navigator.of(
+              context,
+            ).pushNamed(AppRoutes.authorDetailPage, arguments: author);
           },
       borderRadius: BorderRadius.circular(12),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipOval(
-            child: SizedBox(
-              width: 56,
-              height: 56,
-              child: _buildImage(),
-            ),
+            child: SizedBox(width: 56, height: 56, child: _buildImage()),
           ),
           const SizedBox(width: 12),
           Expanded(
@@ -102,11 +93,7 @@ class AuthorListItem extends StatelessWidget {
     return Container(
       color: Colors.grey.shade300,
       alignment: Alignment.center,
-      child: const Icon(
-        Icons.person,
-        size: 30,
-        color: Colors.black87,
-      ),
+      child: const Icon(Icons.person, size: 30, color: Colors.black87),
     );
   }
 }
