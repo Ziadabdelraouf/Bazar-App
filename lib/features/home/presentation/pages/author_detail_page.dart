@@ -25,7 +25,7 @@ class AuthorDetailPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              Align(
                 alignment: Alignment.center,
                 child: Column(
                   children: [

@@ -21,7 +21,7 @@ class AuthorProducts extends ConsumerWidget {
       ),
       itemBuilder: (context, index) {
         final product = _dummyProducts[index];
-        return Container(
+        return DecoratedBox(
           decoration: BoxDecoration(
             color: AppColors.white,
             borderRadius: BorderRadius.circular(12),
