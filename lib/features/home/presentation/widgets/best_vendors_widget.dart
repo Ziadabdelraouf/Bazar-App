@@ -77,15 +77,24 @@ class BestVendorsWidget extends ConsumerWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: vendor.imageUrl != null
-                          ? Image.network(vendor.imageUrl!, fit: BoxFit.contain)
-                          : Center(
-                              child: Text(
-                                vendor.name,
-                                textAlign: TextAlign.center,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: AppTextStyles.body14Bold
-                                    .copyWith(color: AppColors.grey900),
+                          ? Tooltip(
+                              message: vendor.name,
+                              child: Image.network(
+                                vendor.imageUrl!,
+                                fit: BoxFit.contain,
+                              ),
+                            )
+                          : Tooltip(
+                              message: vendor.name,
+                              child: Center(
+                                child: Text(
+                                  vendor.name,
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: AppTextStyles.body14Bold
+                                      .copyWith(color: AppColors.grey900),
+                                ),
                               ),
                             ),
                     ),

@@ -5,9 +5,9 @@ import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/components/navigation/app_back_button.dart';
 import 'package:bazar_group_1/features/home/presentation/notifiers/vendors_notifier.dart';
-import 'package:bazar_group_1/core/router/app_routes.dart';
 
 final selectedVendorCategoryProvider = StateProvider<String>((ref) => 'All');
 
@@ -60,7 +60,8 @@ class VendorsPage extends ConsumerWidget {
                         AppIcons.search,
                         width: screenWidth * (24 / 375),
                         height: screenWidth * (24 / 375),
-                        colorFilter: const ColorFilter.mode(Color(0xFF121212), BlendMode.srcIn),
+                        colorFilter: const ColorFilter.mode(
+                            Color(0xFF121212), BlendMode.srcIn),
                       ),
                     ),
                   ],
@@ -182,29 +183,42 @@ class VendorsPage extends ConsumerWidget {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(7.03),
                                 child: vendor.imageUrl != null
-                                    ? Image.network(vendor.imageUrl!,
-                                        fit: BoxFit.contain)
-                                    : Center(
-                                        child: Text(
-                                          vendor.name,
-                                          textAlign: TextAlign.center,
-                                          maxLines: 2,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: AppTextStyles.body14Bold
-                                              .copyWith(
-                                                  color: AppColors.primary500),
+                                    ? Tooltip(
+                                        message: vendor.name,
+                                        child: Image.network(
+                                          vendor.imageUrl!,
+                                          fit: BoxFit.contain,
+                                        ),
+                                      )
+                                    : Tooltip(
+                                        message: vendor.name,
+                                        child: Center(
+                                          child: Text(
+                                            vendor.name,
+                                            textAlign: TextAlign.center,
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: AppTextStyles.body14Bold
+                                                .copyWith(
+                                                    color: AppColors.primary500),
+                                          ),
                                         ),
                                       ),
                               ),
                             ),
                             SizedBox(height: screenHeight * (8 / 812)),
-                            SizedBox(
-                              width: screenWidth * (101 / 375),
-                              height: screenHeight * (24 / 812),
-                              child: Text(
-                                vendor.name,
-                                style: AppTextStyles.body16Medium
-                                    .copyWith(color: AppColors.grey900),
+                            Tooltip(
+                              message: vendor.name,
+                              child: SizedBox(
+                                width: screenWidth * (101 / 375),
+                                height: screenHeight * (24 / 812),
+                                child: Text(
+                                  vendor.name,
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                  style: AppTextStyles.body16Medium
+                                      .copyWith(color: AppColors.grey900),
+                                ),
                               ),
                             ),
                             SizedBox(height: screenHeight * (4 / 812)),
