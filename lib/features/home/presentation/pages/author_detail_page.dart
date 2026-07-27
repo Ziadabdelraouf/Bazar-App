@@ -29,7 +29,6 @@ class AuthorDetailPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Column(
                   children: [
-                    SizedBox(height: 16),
                     AuthorCard(author: author!, showDetails: false),
                     SizedBox(height: 10),
                     Text(
