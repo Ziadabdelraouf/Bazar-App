@@ -864,6 +864,53 @@ class S {
   String get profileTitle {
     return Intl.message('Profile', name: 'profileTitle', desc: '', args: []);
   }
+
+  // skipped getter for the '//Special Offer Strings//' key
+
+  /// `No offers available`
+  String get noOffersAvailable {
+    return Intl.message(
+      'No offers available',
+      name: 'noOffersAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discount {discount}%`
+  String discountPercent(Object discount) {
+    return Intl.message(
+      'Discount $discount%',
+      name: 'discountPercent',
+      desc: '',
+      args: [discount],
+    );
+  }
+
+  /// `Order Now`
+  String get orderNowButton {
+    return Intl.message(
+      'Order Now',
+      name: 'orderNowButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load offers`
+  String get failedToLoadOffers {
+    return Intl.message(
+      'Failed to load offers',
+      name: 'failedToLoadOffers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retry`
+  String get retryButton {
+    return Intl.message('Retry', name: 'retryButton', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

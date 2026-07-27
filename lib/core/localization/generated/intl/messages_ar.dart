@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(discount) => "خصم %${discount}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "PasswordChanged": MessageLookupByLibrary.simpleMessage(
@@ -65,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "كلمة مرور جديدة",
     ),
+    "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟",
     ),
@@ -80,6 +83,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتفك",
+    ),
+    "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
+      "فشل في تحميل العروض",
     ),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
@@ -115,6 +121,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الجديدة",
     ),
+    "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
+      "لا تتوفر عروض حاليًا",
+    ),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
     ),
@@ -134,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "رفيقك المثالي في عالم الكتب بانتظارك",
     ),
     "orSeparator": MessageLookupByLibrary.simpleMessage("أو"),
+    "orderNowButton": MessageLookupByLibrary.simpleMessage("اطلب الآن"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "passwordLetterRequired": MessageLookupByLibrary.simpleMessage(
       "يجب أن تحتوي كلمة المرور على حرف واحد على الأقل",
@@ -182,6 +192,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "resetPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "إعادة تعيين كلمة المرور",
     ),
+    "retryButton": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",
     ),

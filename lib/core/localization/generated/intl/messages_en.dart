@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(discount) => "Discount ${discount}%";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "PasswordChanged": MessageLookupByLibrary.simpleMessage(
@@ -61,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "New password",
     ),
+    "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),
@@ -72,6 +75,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "emailRequired": MessageLookupByLibrary.simpleMessage("Email is required"),
     "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number",
+    ),
+    "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
+      "Failed to load offers",
     ),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "Forgot Password?",
@@ -103,6 +109,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "namePlaceholder": MessageLookupByLibrary.simpleMessage("Your Name"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("Name is required"),
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage("New Password"),
+    "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
+      "No offers available",
+    ),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
     ),
@@ -122,6 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your Bookish Soulmate Awaits",
     ),
     "orSeparator": MessageLookupByLibrary.simpleMessage("or"),
+    "orderNowButton": MessageLookupByLibrary.simpleMessage("Order Now"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordLetterRequired": MessageLookupByLibrary.simpleMessage(
       "Password must contain at least one letter",
@@ -172,6 +182,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "resetPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "Reset password",
     ),
+    "retryButton": MessageLookupByLibrary.simpleMessage("Retry"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "Search country or code",
     ),

@@ -98,5 +98,11 @@
     "homeTitle": "Home",
     "categoryTitle": "Category",
     "cartTitle": "Cart",
-    "profileTitle": "Profile"
+    "profileTitle": "Profile",
+    "//Special Offer Strings//": "",
+    "noOffersAvailable": "No offers available",
+    "discountPercent": "Discount {discount}%",
+    "orderNowButton": "Order Now",
+    "failedToLoadOffers": "Failed to load offers",
+    "retryButton": "Retry"
 }
