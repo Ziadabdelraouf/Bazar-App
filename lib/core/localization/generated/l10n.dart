@@ -922,6 +922,8 @@ class S {
   /// `Products`
   String get products {
     return Intl.message('Products', name: 'products', desc: '', args: []);
+  }
+
   // skipped getter for the '//Detail Menu Screen Strings//' key
 
   /// `Review`

@@ -186,11 +186,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم الهاتف",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
-    "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("أشعار"),
     "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
       "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدايبيسينج إيليت.",
     ),
+    "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "بالنقر على تسجيل، فإنك توافق على",

@@ -31,29 +31,18 @@ class TopOfWeekSection extends StatelessWidget {
         const SizedBox(height: 8),
         SizedBox(
           height: MediaQuery.of(context).size.height * (210 / 812),
-          child: ListView.builder(
-            itemBuilder:  ,
-            itemCount: books.length,
+          child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            children: [
-              BookCard(
-                title: 'The Kite Runner',
-                price: '\$14.99',
-                imagePath: '',
-              ),
-              const SizedBox(width: 16),
-              BookCard(
-                title: 'The Subtle Art',
-                price: '\$20.99',
-                imagePath: '',
-              ),
-              const SizedBox(width: 16),
-              BookCard(
-                title: 'The Art of War',
-                price: '\$14.99',
-                imagePath: '',
-              ),
-            ],
+            itemCount: books.length,
+            separatorBuilder: (context, index) => const SizedBox(width: 16),
+            itemBuilder: (context, index) {
+              final book = books[index];
+              return BookCard(
+                title: book.title,
+                price: book.price,
+                imagePath: book.imagePath,
+              );
+            },
           ),
         ),
       ],

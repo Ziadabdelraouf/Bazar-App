@@ -176,11 +176,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Phone number",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
-    "products": MessageLookupByLibrary.simpleMessage("Products"),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("Poems"),
     "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.",
     ),
+    "products": MessageLookupByLibrary.simpleMessage("Products"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "By clicking Register, you agree to our",
