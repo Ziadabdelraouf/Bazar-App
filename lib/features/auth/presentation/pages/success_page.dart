@@ -13,8 +13,7 @@ class SuccessPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screensize = MediaQuery.of(context).size;
-    final isLoginFlow =
-        flow == SuccessPageFlow.successfulLogin;
+    final isLoginFlow = flow == SuccessPageFlow.successfulLogin;
 
     return Scaffold(
       body: Padding(
@@ -32,15 +31,11 @@ class SuccessPage extends StatelessWidget {
               isLoginFlow
                   ? S.of(context).congratulations
                   : S.of(context).PasswordChanged,
-              style: AppTextStyles.h2.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+              style: AppTextStyles.h2.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 32,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 32),
               child: Text(
                 isLoginFlow
                     ? S.of(context).successBody
@@ -61,17 +56,12 @@ class SuccessPage extends StatelessWidget {
                 onPressed: () {
                   if (isLoginFlow) {
                     // Navigate to home page but temporarily navigate to onboarding page to restart
-                    Navigator.pushReplacementNamed(
-                      context,
-                      AppRoutes.onboardingPage,
-                    );
+                    Navigator.pushReplacementNamed(context, AppRoutes.homePage);
                   } else {
                     // Navigate to login page
                     Navigator.popUntil(
                       context,
-                      ModalRoute.withName(
-                        AppRoutes.signInPage,
-                      ),
+                      ModalRoute.withName(AppRoutes.signInPage),
                     );
                   }
                 },

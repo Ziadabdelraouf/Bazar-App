@@ -16,9 +16,7 @@ class SignInFormWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final signInState = ref.watch(signInProvider);
-    final signInNotifier = ref.read(
-      signInProvider.notifier,
-    );
+    final signInNotifier = ref.read(signInProvider.notifier);
     final localization = S.of(context);
 
     return Form(
@@ -33,8 +31,7 @@ class SignInFormWidget extends ConsumerWidget {
             controller: signInNotifier.emailController,
             keyboardType: TextInputType.emailAddress,
             textInputAction: TextInputAction.next,
-            onChanged: (value) =>
-                signInNotifier.clearEmailError(),
+            onChanged: (value) => signInNotifier.clearEmailError(),
             validator: (value) {
               return signInState.emailError ??
                   validateEmail(
@@ -52,28 +49,22 @@ class SignInFormWidget extends ConsumerWidget {
             obscureText: signInState.obscurePassword,
             textInputAction: TextInputAction.done,
             suffixIcon: IconButton(
-              onPressed:
-                  signInNotifier.togglePasswordVisibility,
+              onPressed: signInNotifier.togglePasswordVisibility,
               icon: Icon(
                 signInState.obscurePassword
                     ? Icons.visibility_off_outlined
                     : Icons.visibility_outlined,
               ),
             ),
-            onChanged: (value) =>
-                signInNotifier.clearPasswordError(),
+            onChanged: (value) => signInNotifier.clearPasswordError(),
             validator: (value) {
               return signInState.passwordError ??
                   validatePassword(
                     value,
-                    emptyError:
-                        localization.passwordRequired,
-                    minimumLengthError:
-                        localization.passwordMinimumLength,
-                    numberRequiredError:
-                        localization.passwordNumberRequired,
-                    letterRequiredError:
-                        localization.passwordLetterRequired,
+                    emptyError: localization.passwordRequired,
+                    minimumLengthError: localization.passwordMinimumLength,
+                    numberRequiredError: localization.passwordNumberRequired,
+                    letterRequiredError: localization.passwordLetterRequired,
                     isSignUp: false,
                   );
             },
@@ -81,14 +72,9 @@ class SignInFormWidget extends ConsumerWidget {
           const SizedBox(height: 8),
           TextButton(
             onPressed: () {
-              Navigator.pushNamed(
-                context,
-                AppRoutes.forgotPasswordPage,
-              );
+              Navigator.pushNamed(context, AppRoutes.forgotPasswordPage);
             },
-            style: TextButton.styleFrom(
-              alignment: Alignment.centerLeft,
-            ),
+            style: TextButton.styleFrom(alignment: Alignment.centerLeft),
             child: Text(
               localization.forgotPasswordButton,
               style: AppTextStyles.body14SemiBold.copyWith(
@@ -100,36 +86,26 @@ class SignInFormWidget extends ConsumerWidget {
           const SizedBox(height: 16),
           signInState.isLoading
               ? const Center(
-                  child: CircularProgressIndicator(
-                    color: AppColors.primary500,
-                  ),
+                  child: CircularProgressIndicator(color: AppColors.primary500),
                 )
               : LargePrimaryButton(
                   label: localization.loginButton,
                   onPressed: () async {
-                    final success = await signInNotifier
-                        .login(
-                          emailRequired:
-                              localization.emailRequired,
-                          invalidEmail:
-                              localization.invalidEmail,
-                          passwordRequired:
-                              localization.passwordRequired,
-                          passwordMinimumLength:
-                              localization
-                                  .passwordMinimumLength,
-                          passwordNumberRequired:
-                              localization
-                                  .passwordNumberRequired,
-                          passwordLetterRequired:
-                              localization
-                                  .passwordLetterRequired,
-                        );
+                    final success = await signInNotifier.login(
+                      emailRequired: localization.emailRequired,
+                      invalidEmail: localization.invalidEmail,
+                      passwordRequired: localization.passwordRequired,
+                      passwordMinimumLength: localization.passwordMinimumLength,
+                      passwordNumberRequired:
+                          localization.passwordNumberRequired,
+                      passwordLetterRequired:
+                          localization.passwordLetterRequired,
+                    );
                     if (success && context.mounted) {
                       ref.read(signInProvider.notifier).reset();
                       Navigator.pushReplacementNamed(
                         context,
-                        AppRoutes.onboardingPage,
+                        AppRoutes.homePage,
                       );
                     }
                   },
