@@ -1,5 +1,7 @@
+import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/features/home/data/models/book_model.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/book_card.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +10,7 @@ class TopOfWeekSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final books = parseBooks(mockData);
     return Column(
       children: [
         Row(
@@ -28,7 +31,9 @@ class TopOfWeekSection extends StatelessWidget {
         const SizedBox(height: 8),
         SizedBox(
           height: MediaQuery.of(context).size.height * (210 / 812),
-          child: ListView(
+          child: ListView.builder(
+            itemBuilder:  ,
+            itemCount: books.length,
             scrollDirection: Axis.horizontal,
             children: [
               BookCard(

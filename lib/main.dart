@@ -1,16 +1,13 @@
-import 'package:bazar_group_1/features/forgot_password/presentation/pages/create_new_password_page.dart';
-import 'package:bazar_group_1/features/forgot_password/presentation/pages/forgot_password_page.dart';
 import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
-import 'package:bazar_group_1/core/network/books_dio.dart';
+import 'package:bazar_group_1/core/router/app_router.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
-import 'package:bazar_group_1/features/home/presentation/pages/home_view.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'core/localization/generated/l10n.dart';
-import 'core/router/app_router.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'core/localization/generated/l10n.dart';
+//import 'package:bazar_group_1/features/home/presentation/pages/vendors_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,7 +47,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: HomePage(),
+      home: const SplashScreen(),
       routes: AppRouter.routes,
     );
   }

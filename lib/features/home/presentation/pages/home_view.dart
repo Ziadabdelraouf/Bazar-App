@@ -2,6 +2,7 @@ import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/book_card.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/top_of_week_section.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/special_offer.dart';
+import 'package:bazar_group_1/features/home/presentation/widgets/author_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -33,13 +34,7 @@ class HomeView extends StatelessWidget {
             child: BookCard(title: 'De7k', price: '\$12', imagePath: ''),
           ),
           const SizedBox(height: 16),
-          Container(
-            height: (190 / baseHeight) * screenHeight,
-            decoration: BoxDecoration(
-              color: AppColors.grey200,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
+           const AuthorWidget(),
         ],
       ),
     );

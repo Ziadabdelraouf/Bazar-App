@@ -27,6 +27,7 @@ class DetailMenuPage extends StatefulWidget {
 class _DetailMenuPageState extends State<DetailMenuPage> {
   double currentRating = 4.0;
   int quantity = 1;
+  String price = '\$39.99';
   @override
   Widget build(BuildContext context) {
     final localization = S.of(context);

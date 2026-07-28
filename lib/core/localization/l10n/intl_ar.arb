@@ -109,5 +109,18 @@
     "reviewLabel": "مراجعة",
     "productDescriptionPlaceholder": "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدايبيسينج إيليت.",
     "continueShoppingButton": "متابعة التسوق",
-    "viewCartButton": "عرض السلة"
+    "viewCartButton": "عرض السلة",
+    "//Best Vendors Widget Strings//": "",
+    "bestVendorsTitle": "أفضل الموردين",
+    "seeAllButton": "عرض الكل",
+    "couldNotLoadVendors": "تعذر تحميل الموردين",
+    "noVendorsFound": "لا يوجد موردون",
+    "//Vendors Page Strings//": "",
+    "ourVendorsSubtitle": "موردينا",
+    "vendorsPageTitle": "الموردين",
+    "allCategoryTab": "الكل",
+    "booksCategoryTab": "كتب",
+    "poemsCategoryTab": "أشعار",
+    "specialForYouCategoryTab": "خصيصاً لك",
+    "stationeryCategoryTab": "أدوات مكتبية"
 }
