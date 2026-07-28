@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PasswordChangedBody": MessageLookupByLibrary.simpleMessage(
       "تم تغيير كلمة المرور بنجاح، يمكنك تسجيل الدخول مرة أخرى باستخدام كلمة مرور جديدة.",
     ),
+    "about": MessageLookupByLibrary.simpleMessage("عن الكاتب"),
     "allCategoryTab": MessageLookupByLibrary.simpleMessage("الكل"),
     "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
       "حرف صغير أو كبير واحد على الأقل",
@@ -185,6 +186,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم الهاتف",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("أشعار"),
     "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
       "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدايبيسينج إيليت.",

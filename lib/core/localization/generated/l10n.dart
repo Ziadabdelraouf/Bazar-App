@@ -912,6 +912,16 @@ class S {
     return Intl.message('Retry', name: 'retryButton', desc: '', args: []);
   }
 
+  // skipped getter for the '//Author Detail Strings//' key
+
+  /// `About`
+  String get about {
+    return Intl.message('About', name: 'about', desc: '', args: []);
+  }
+
+  /// `Products`
+  String get products {
+    return Intl.message('Products', name: 'products', desc: '', args: []);
   // skipped getter for the '//Detail Menu Screen Strings//' key
 
   /// `Review`

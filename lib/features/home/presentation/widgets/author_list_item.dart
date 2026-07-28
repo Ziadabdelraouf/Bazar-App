@@ -1,60 +1,65 @@
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
 import '../../domain/entities/author.dart';
 
 class AuthorListItem extends StatelessWidget {
-  const AuthorListItem({
-    super.key,
-    required this.author,
-  });
+  const AuthorListItem({super.key, required this.author, this.onTap});
 
   final Author author;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ClipOval(
-          child: SizedBox(
-            width: 56,
-            height: 56,
-            child: _buildImage(),
+    return InkWell(
+      onTap:
+          onTap ??
+          () {
+            Navigator.of(
+              context,
+            ).pushNamed(AppRoutes.authorDetailPage, arguments: author);
+          },
+      borderRadius: BorderRadius.circular(12),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipOval(
+            child: SizedBox(width: 56, height: 56, child: _buildImage()),
           ),
-        ),
-        const SizedBox(width: 12),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 3),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  author.name,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF1A1A1A),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 3),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    author.name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF1A1A1A),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  author.role.isEmpty ? 'Author' : author.role,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    height: 1.35,
-                    color: Color(0xFF777777),
+                  const SizedBox(height: 4),
+                  Text(
+                    author.role.isEmpty ? 'Author' : author.role,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 13,
+                      height: 1.35,
+                      color: Color(0xFF777777),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -88,11 +93,7 @@ class AuthorListItem extends StatelessWidget {
     return Container(
       color: Colors.grey.shade300,
       alignment: Alignment.center,
-      child: const Icon(
-        Icons.person,
-        size: 30,
-        color: Colors.black87,
-      ),
+      child: const Icon(Icons.person, size: 30, color: Colors.black87),
     );
   }
 }

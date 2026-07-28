@@ -38,7 +38,10 @@ class AppBackBar extends StatelessWidget implements PreferredSizeWidget {
                   Navigator.pop(context);
                 }
               },
-              icon: SvgPicture.asset(AppIcons.arrowLeftOutline),
+              icon: SvgPicture.asset(
+                AppIcons.arrowLeftOutline,
+                matchTextDirection: true,
+              ),
             ),
       centerTitle: true,
       title: Text(

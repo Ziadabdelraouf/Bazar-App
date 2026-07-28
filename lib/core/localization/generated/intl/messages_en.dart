@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PasswordChangedBody": MessageLookupByLibrary.simpleMessage(
       "Your password changed successfully, you can login again with a new password",
     ),
+    "about": MessageLookupByLibrary.simpleMessage("About"),
     "allCategoryTab": MessageLookupByLibrary.simpleMessage("All"),
     "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
       "At least lowercase or uppercase letters",
@@ -175,6 +176,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Phone number",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "products": MessageLookupByLibrary.simpleMessage("Products"),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("Poems"),
     "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.",

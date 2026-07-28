@@ -105,6 +105,9 @@
     "orderNowButton": "اطلب الآن",
     "failedToLoadOffers": "فشل في تحميل العروض",
     "retryButton": "إعادة المحاولة",
+    "//Author Detail Strings//": "",
+    "about": "عن الكاتب",
+    "products": "المنتجات"
     "//Detail Menu Screen Strings//": "",
     "reviewLabel": "مراجعة",
     "productDescriptionPlaceholder": "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدايبيسينج إيليت.",
