@@ -1,3 +1,5 @@
+import 'package:bazar_group_1/features/forgot_password/presentation/pages/create_new_password_page.dart';
+import 'package:bazar_group_1/features/forgot_password/presentation/pages/forgot_password_page.dart';
 import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
 import 'package:bazar_group_1/core/router/app_router.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
@@ -33,7 +35,6 @@ class MyApp extends StatelessWidget {
           child: child ?? const SizedBox.shrink(),
         );
       },
-      // locale: Locale("ar"),
       locale: Locale("en"),
       localizationsDelegates: [
         S.delegate,
