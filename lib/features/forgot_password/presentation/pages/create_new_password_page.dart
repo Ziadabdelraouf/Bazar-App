@@ -1,5 +1,6 @@
 import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
 import 'package:bazar_group_1/core/components/inputs/app_text_form_field.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
@@ -22,6 +23,7 @@ class _CreateNewPasswordPageState
     extends ConsumerState<CreateNewPasswordPage> {
   @override
   Widget build(BuildContext context) {
+    final localization = S.of(context);
     final notifier = ref.read(
       createNewPasswordProvider.notifier,
     );
@@ -53,7 +55,7 @@ class _CreateNewPasswordPageState
                     CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'New password',
+                    localization.createNewPasswordTitle,
                     style: AppTextStyles.h3.copyWith(
                       color: AppColors.grey900,
                     ),
@@ -64,15 +66,17 @@ class _CreateNewPasswordPageState
                         (8 / 812),
                   ),
                   Text(
-                    'Create your new password, so you can login to your account',
+                    localization
+                        .createNewPasswordDescription,
                     style: AppTextStyles.body16Regular
                         .copyWith(color: AppColors.grey600),
                   ),
                   const SizedBox(height: 8),
 
                   AppFormTextField(
-                    label: 'New Password',
-                    placeholder: 'Your password',
+                    label: localization.newPasswordLabel,
+                    placeholder:
+                        localization.passwordPlaceholder,
                     controller:
                         notifier.newPasswordController,
                     obscureText: state.obscureNewPassword,
@@ -83,13 +87,14 @@ class _CreateNewPasswordPageState
                     validator: (value) {
                       return validatePassword(
                         value,
-                        emptyError: 'Password is required',
-                        minimumLengthError:
-                            'Password must contain at least 8 characters',
-                        numberRequiredError:
-                            'Password must contain at least one number',
-                        letterRequiredError:
-                            'Password must contain at least one letter',
+                        emptyError:
+                            localization.passwordRequired,
+                        minimumLengthError: localization
+                            .passwordMinimumLength,
+                        numberRequiredError: localization
+                            .passwordNumberRequired,
+                        letterRequiredError: localization
+                            .passwordLetterRequired,
                       );
                     },
                     suffixIcon: IconButton(
@@ -116,8 +121,10 @@ class _CreateNewPasswordPageState
                   const SizedBox(height: 16),
 
                   AppFormTextField(
-                    label: 'Confirm Password',
-                    placeholder: 'Your password',
+                    label:
+                        localization.confirmPasswordLabel,
+                    placeholder:
+                        localization.passwordPlaceholder,
                     controller:
                         notifier.confirmPasswordController,
                     obscureText:
@@ -127,14 +134,16 @@ class _CreateNewPasswordPageState
                       final confirmPassword = value ?? '';
 
                       if (confirmPassword.isEmpty) {
-                        return 'Please confirm your password';
+                        return localization
+                            .confirmPasswordRequired;
                       }
 
                       if (confirmPassword !=
                           notifier
                               .newPasswordController
                               .text) {
-                        return 'Passwords do not match';
+                        return localization
+                            .passwordsDoNotMatch;
                       }
 
                       return null;
@@ -152,7 +161,7 @@ class _CreateNewPasswordPageState
 
                   const SizedBox(height: 32),
                   PrimaryButton(
-                    text: 'Send',
+                    text: localization.sendButton,
                     onPressed: () {
                       final isValid = notifier.submit();
                       if (isValid) {

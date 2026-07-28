@@ -662,6 +662,187 @@ class S {
     );
   }
 
+  // skipped getter for the '//Forgot Password Screen Strings//' key
+
+  /// `Forgot Password`
+  String get forgotPasswordTitle {
+    return Intl.message(
+      'Forgot Password',
+      name: 'forgotPasswordTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select which contact details should we use to reset your password`
+  String get forgotPasswordDescription {
+    return Intl.message(
+      'Select which contact details should we use to reset your password',
+      name: 'forgotPasswordDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get contactMethodEmailTitle {
+    return Intl.message(
+      'Email',
+      name: 'contactMethodEmailTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send to your email`
+  String get contactMethodEmailSubtitle {
+    return Intl.message(
+      'Send to your email',
+      name: 'contactMethodEmailSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get contactMethodPhoneTitle {
+    return Intl.message(
+      'Phone Number',
+      name: 'contactMethodPhoneTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send to your phone`
+  String get contactMethodPhoneSubtitle {
+    return Intl.message(
+      'Send to your phone',
+      name: 'contactMethodPhoneSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  // skipped getter for the '//Reset Password Screen Strings//' key
+
+  /// `Reset password`
+  String get resetPasswordTitle {
+    return Intl.message(
+      'Reset password',
+      name: 'resetPasswordTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your email, we will send verification code to your email.`
+  String get resetPasswordEmailDescription {
+    return Intl.message(
+      'Please enter your email, we will send verification code to your email.',
+      name: 'resetPasswordEmailDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your phone number, we will send a verification code to your phone number.`
+  String get resetPasswordPhoneDescription {
+    return Intl.message(
+      'Please enter your phone number, we will send a verification code to your phone number.',
+      name: 'resetPasswordPhoneDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `example@email.com`
+  String get emailExamplePlaceholder {
+    return Intl.message(
+      'example@email.com',
+      name: 'emailExamplePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(+965) 123 435 7565`
+  String get phoneExamplePlaceholder {
+    return Intl.message(
+      '(+965) 123 435 7565',
+      name: 'phoneExamplePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send`
+  String get sendButton {
+    return Intl.message('Send', name: 'sendButton', desc: '', args: []);
+  }
+
+  // skipped getter for the '//Create New Password Screen Strings//' key
+
+  /// `New password`
+  String get createNewPasswordTitle {
+    return Intl.message(
+      'New password',
+      name: 'createNewPasswordTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create your new password, so you can login to your account`
+  String get createNewPasswordDescription {
+    return Intl.message(
+      'Create your new password, so you can login to your account',
+      name: 'createNewPasswordDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Password`
+  String get newPasswordLabel {
+    return Intl.message(
+      'New Password',
+      name: 'newPasswordLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPasswordLabel {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPasswordLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please confirm your password`
+  String get confirmPasswordRequired {
+    return Intl.message(
+      'Please confirm your password',
+      name: 'confirmPasswordRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords do not match`
+  String get passwordsDoNotMatch {
+    return Intl.message(
+      'Passwords do not match',
+      name: 'passwordsDoNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the '//Home Page Strings//' key
 
   /// `Home`
@@ -729,6 +910,43 @@ class S {
   /// `Retry`
   String get retryButton {
     return Intl.message('Retry', name: 'retryButton', desc: '', args: []);
+  }
+
+  // skipped getter for the '//Detail Menu Screen Strings//' key
+
+  /// `Review`
+  String get reviewLabel {
+    return Intl.message('Review', name: 'reviewLabel', desc: '', args: []);
+  }
+
+  /// `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.`
+  String get productDescriptionPlaceholder {
+    return Intl.message(
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.',
+      name: 'productDescriptionPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue shopping`
+  String get continueShoppingButton {
+    return Intl.message(
+      'Continue shopping',
+      name: 'continueShoppingButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View cart`
+  String get viewCartButton {
+    return Intl.message(
+      'View cart',
+      name: 'viewCartButton',
+      desc: '',
+      args: [],
+    );
   }
 
   // skipped getter for the '//Best Vendors Widget Strings//' key

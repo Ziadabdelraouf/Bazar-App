@@ -17,29 +17,40 @@ class PhoneNumberDisplay extends ConsumerWidget {
     final s = S.of(context);
     final state = ref.watch(phoneNumberNotifierProvider);
     final hasDigits = state.digits.isNotEmpty;
-    final textColor = hasDigits ? AppColors.grey900 : AppColors.grey400;
+    final textColor = hasDigits
+        ? AppColors.grey900
+        : AppColors.grey400;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           s.phoneNumberFieldLabel,
-          style: AppTextStyles.body14Medium.copyWith(color: AppColors.grey900),
+          style: AppTextStyles.body14Medium.copyWith(
+            color: AppColors.grey900,
+          ),
         ),
         const SizedBox(height: 6),
         GestureDetector(
           onTap: () {
-            ref.read(phoneNumberNotifierProvider.notifier).setFocused(true);
+            ref
+                .read(phoneNumberNotifierProvider.notifier)
+                .setFocused(true);
           },
           child: Container(
             width: double.infinity,
             height: 48,
-            padding: const EdgeInsets.symmetric(horizontal: 12),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 12,
+            ),
             decoration: BoxDecoration(
               color: AppColors.grey50,
               borderRadius: BorderRadius.circular(8),
               border: state.isFocused
-                  ? Border.all(color: AppColors.primary500, width: 1)
+                  ? Border.all(
+                      color: AppColors.primary500,
+                      width: 1,
+                    )
                   : null,
             ),
             child: Directionality(
@@ -52,7 +63,10 @@ class PhoneNumberDisplay extends ConsumerWidget {
                       AppIcons.phoneOutline,
                       width: 19,
                       height: 19,
-                      colorFilter: ColorFilter.mode(textColor, BlendMode.srcIn),
+                      colorFilter: ColorFilter.mode(
+                        textColor,
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ),
                   const SizedBox(width: 16),
@@ -60,21 +74,40 @@ class PhoneNumberDisplay extends ConsumerWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: '(${state.selectedCountry.dialCode})',
-                          style: AppTextStyles.body16Medium.copyWith(color: textColor),
+                          text:
+                              '(${state.selectedCountry.dialCode})',
+                          style: AppTextStyles.body16Medium
+                              .copyWith(color: textColor),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () async {
-                              ref.read(phoneNumberNotifierProvider.notifier).setFocused(true);
-                              final selected = await showCountryPicker(context);
+                              ref
+                                  .read(
+                                    phoneNumberNotifierProvider
+                                        .notifier,
+                                  )
+                                  .setFocused(true);
+                              final selected =
+                                  await showCountryPicker(
+                                    context,
+                                  );
                               if (selected != null) {
-                                ref.read(phoneNumberNotifierProvider.notifier).selectCountry(selected);
+                                ref
+                                    .read(
+                                      phoneNumberNotifierProvider
+                                          .notifier,
+                                    )
+                                    .selectCountry(
+                                      selected,
+                                    );
                               }
                             },
                         ),
                         if (hasDigits)
                           TextSpan(
                             text: ' ${state.digits}',
-                            style: AppTextStyles.body16Regular.copyWith(color: textColor),
+                            style: AppTextStyles
+                                .body16Regular
+                                .copyWith(color: textColor),
                           ),
                       ],
                     ),

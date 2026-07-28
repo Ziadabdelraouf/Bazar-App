@@ -42,14 +42,42 @@ class MessageLookup extends MessageLookupByLibrary {
     "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("Category"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
+    "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
+      "Confirm Password",
+    ),
+    "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
+      "Please confirm your password",
+    ),
     "congratulations": MessageLookupByLibrary.simpleMessage("Congratulations!"),
+    "contactMethodEmailSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Send to your email",
+    ),
+    "contactMethodEmailTitle": MessageLookupByLibrary.simpleMessage("Email"),
+    "contactMethodPhoneSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Send to your phone",
+    ),
+    "contactMethodPhoneTitle": MessageLookupByLibrary.simpleMessage(
+      "Phone Number",
+    ),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
+    "continueShoppingButton": MessageLookupByLibrary.simpleMessage(
+      "Continue shopping",
+    ),
     "couldNotLoadVendors": MessageLookupByLibrary.simpleMessage(
       "Couldn\'t load vendors",
+    ),
+    "createNewPasswordDescription": MessageLookupByLibrary.simpleMessage(
+      "Create your new password, so you can login to your account",
+    ),
+    "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "New password",
     ),
     "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
+    ),
+    "emailExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "example@email.com",
     ),
     "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
     "emailPlaceholder": MessageLookupByLibrary.simpleMessage("Your email"),
@@ -62,6 +90,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "Forgot Password?",
+    ),
+    "forgotPasswordDescription": MessageLookupByLibrary.simpleMessage(
+      "Select which contact details should we use to reset your password",
+    ),
+    "forgotPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "Forgot Password",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
@@ -83,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "namePlaceholder": MessageLookupByLibrary.simpleMessage("Your Name"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("Name is required"),
+    "newPasswordLabel": MessageLookupByLibrary.simpleMessage("New Password"),
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "No offers available",
     ),
@@ -124,6 +159,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "Password is required",
     ),
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "Passwords do not match",
+    ),
+    "phoneExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "(+965) 123 435 7565",
+    ),
     "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number, so we can more easily deliver your order",
     ),
@@ -135,6 +176,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("Poems"),
+    "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.",
+    ),
     "profileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "By clicking Register, you agree to our",
@@ -144,7 +188,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "If you didn\'t receive a code? ",
     ),
+    "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
+      "Please enter your email, we will send verification code to your email.",
+    ),
+    "resetPasswordPhoneDescription": MessageLookupByLibrary.simpleMessage(
+      "Please enter your phone number, we will send a verification code to your phone number.",
+    ),
+    "resetPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "Reset password",
+    ),
     "retryButton": MessageLookupByLibrary.simpleMessage("Retry"),
+    "reviewLabel": MessageLookupByLibrary.simpleMessage("Review"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "Search country or code",
     ),
@@ -152,6 +206,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage(
       "Select Country",
     ),
+    "sendButton": MessageLookupByLibrary.simpleMessage("Send"),
     "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
     "signInSubtitle": MessageLookupByLibrary.simpleMessage(
       "Sign in to your account",
@@ -200,6 +255,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
       "Please enter the code we just sent to phone number ",
     ),
+    "viewCartButton": MessageLookupByLibrary.simpleMessage("View cart"),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("Welcome Back "),
   };
 }

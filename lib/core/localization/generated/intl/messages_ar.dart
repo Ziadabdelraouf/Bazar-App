@@ -44,14 +44,44 @@ class MessageLookup extends MessageLookupByLibrary {
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
     ),
+    "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
+    "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
+      "الرجاء تأكيد كلمة المرور",
+    ),
     "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
+    "contactMethodEmailSubtitle": MessageLookupByLibrary.simpleMessage(
+      "إرسال إلى بريدك الإلكتروني",
+    ),
+    "contactMethodEmailTitle": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني",
+    ),
+    "contactMethodPhoneSubtitle": MessageLookupByLibrary.simpleMessage(
+      "إرسال إلى هاتفك",
+    ),
+    "contactMethodPhoneTitle": MessageLookupByLibrary.simpleMessage(
+      "رقم الهاتف",
+    ),
     "continueButton": MessageLookupByLibrary.simpleMessage("استمر"),
+    "continueShoppingButton": MessageLookupByLibrary.simpleMessage(
+      "متابعة التسوق",
+    ),
     "couldNotLoadVendors": MessageLookupByLibrary.simpleMessage(
       "تعذر تحميل الموردين",
+    ),
+    "createNewPasswordDescription": MessageLookupByLibrary.simpleMessage(
+      "أنشئ كلمة مرور جديدة، حتى تتمكن من تسجيل الدخول إلى حسابك",
+    ),
+    "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "كلمة مرور جديدة",
     ),
     "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟",
+    ),
+    "emailExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "example@email.com",
     ),
     "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "emailPlaceholder": MessageLookupByLibrary.simpleMessage(
@@ -68,6 +98,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
+    ),
+    "forgotPasswordDescription": MessageLookupByLibrary.simpleMessage(
+      "اختر وسيلة التواصل التي تريد استخدامها لإعادة تعيين كلمة المرور",
+    ),
+    "forgotPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "نسيت كلمة المرور",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
@@ -91,6 +127,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "namePlaceholder": MessageLookupByLibrary.simpleMessage("اسمك"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
+    "newPasswordLabel": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور الجديدة",
+    ),
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "لا تتوفر عروض حاليًا",
     ),
@@ -99,7 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
     ),
     "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
-      "الان اصبحت القرأه اسهل",
+      "الأن أصبحت القراءة أسهل",
     ),
     "onboardingThreeDescription": MessageLookupByLibrary.simpleMessage(
       "هل أنت مستعد لبدء رحلة مليئة بالإلهام والمعرفة؟ مغامرتك تبدأ الآن. هيا بنا!",
@@ -132,6 +171,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور مطلوبة",
     ),
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور غير متطابقة",
+    ),
+    "phoneExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "(+965) 123 435 7565",
+    ),
     "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتفك، حتى نتمكن من توصيل طلبك بسهولة أكبر",
     ),
@@ -141,6 +186,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("أشعار"),
+    "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدايبيسينج إيليت.",
+    ),
     "profileTitle": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "بالنقر على تسجيل، فإنك توافق على",
@@ -150,12 +198,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "لم تستلم الكود؟ ",
     ),
+    "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال بريدك الإلكتروني، سنرسل لك رمز التحقق على بريدك الإلكتروني.",
+    ),
+    "resetPasswordPhoneDescription": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال رقم هاتفك، سنرسل لك رمز التحقق على رقم هاتفك.",
+    ),
+    "resetPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "إعادة تعيين كلمة المرور",
+    ),
     "retryButton": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
+    "reviewLabel": MessageLookupByLibrary.simpleMessage("مراجعة"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",
     ),
     "seeAllButton": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage("اختر الدولة"),
+    "sendButton": MessageLookupByLibrary.simpleMessage("إرسال"),
     "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signInSubtitle": MessageLookupByLibrary.simpleMessage(
       "سجّل الدخول إلى حسابك",
@@ -204,6 +263,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال الكود الذي أرسلناه إلى رقم الهاتف ",
     ),
+    "viewCartButton": MessageLookupByLibrary.simpleMessage("عرض السلة"),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك "),
   };
 }
