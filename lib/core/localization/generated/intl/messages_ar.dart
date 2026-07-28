@@ -61,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم الهاتف",
     ),
     "continueButton": MessageLookupByLibrary.simpleMessage("استمر"),
+    "continueShoppingButton": MessageLookupByLibrary.simpleMessage(
+      "متابعة التسوق",
+    ),
     "createNewPasswordDescription": MessageLookupByLibrary.simpleMessage(
       "أنشئ كلمة مرور جديدة، حتى تتمكن من تسجيل الدخول إلى حسابك",
     ),
@@ -174,6 +177,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم الهاتف",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدايبيسينج إيليت.",
+    ),
     "profileTitle": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "بالنقر على تسجيل، فإنك توافق على",
@@ -193,6 +199,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "إعادة تعيين كلمة المرور",
     ),
     "retryButton": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
+    "reviewLabel": MessageLookupByLibrary.simpleMessage("مراجعة"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",
     ),
@@ -239,6 +246,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال الكود الذي أرسلناه إلى رقم الهاتف ",
     ),
+    "viewCartButton": MessageLookupByLibrary.simpleMessage("عرض السلة"),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك "),
   };
 }

@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
@@ -26,9 +27,9 @@ class DetailMenuPage extends StatefulWidget {
 class _DetailMenuPageState extends State<DetailMenuPage> {
   double currentRating = 4.0;
   int quantity = 1;
-  String price = '\$39.99';
   @override
   Widget build(BuildContext context) {
+    final localization = S.of(context);
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(24),
@@ -83,14 +84,14 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
             SvgPicture.asset(widget.brandLogo),
             const SizedBox(height: 8),
             Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.',
+              localization.productDescriptionPlaceholder,
               style: AppTextStyles.body14Regular.copyWith(
                 color: AppColors.grey500,
               ),
             ),
             const SizedBox(height: 24),
             Text(
-              'Review',
+              localization.reviewLabel,
               style: AppTextStyles.h5.copyWith(
                 color: AppColors.grey900,
                 fontSize: 24,
@@ -220,8 +221,8 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                       textStyle: const TextStyle(color: AppColors.white),
                       foregroundColor: AppColors.white,
                     ),
-                    child: const Text(
-                      'Continue shopping',
+                    child: Text(
+                      localization.continueShoppingButton,
                       style: AppTextStyles.h6,
                     ),
                   ),
@@ -236,7 +237,10 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                       textStyle: const TextStyle(color: AppColors.primary500),
                       padding: EdgeInsets.zero,
                     ),
-                    child: Text('View cart', style: AppTextStyles.h6),
+                    child: Text(
+                      localization.viewCartButton,
+                      style: AppTextStyles.h6,
+                    ),
                   ),
                 ),
               ],

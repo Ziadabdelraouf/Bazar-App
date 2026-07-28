@@ -26,9 +26,9 @@ class BookCard extends StatelessWidget {
             borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
           ),
           builder: (context) => DetailMenuPage(
-            title: 'The Kite Runner',
-            price: '',
-            imagePath: '',
+            title: title,
+            price: price,
+            imagePath: imagePath,
             brandLogo: 'assets/icons/GoodDay_Vector.svg',
           ),
         );
@@ -46,10 +46,21 @@ class BookCard extends StatelessWidget {
                 border: Border.all(color: Colors.black, width: 1),
                 borderRadius: BorderRadius.circular(8),
               ),
+              clipBehavior: Clip.antiAlias,
+              child: imagePath.isNotEmpty
+                  ? Image.network(
+                      imagePath,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) =>
+                          const Icon(Icons.broken_image),
+                    )
+                  : const Icon(Icons.book),
             ),
             const SizedBox(height: 8),
             Text(
               title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: AppTextStyles.body14Medium.copyWith(
                 color: AppColors.grey900,
               ),

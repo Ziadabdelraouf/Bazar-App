@@ -911,6 +911,43 @@ class S {
   String get retryButton {
     return Intl.message('Retry', name: 'retryButton', desc: '', args: []);
   }
+
+  // skipped getter for the '//Detail Menu Screen Strings//' key
+
+  /// `Review`
+  String get reviewLabel {
+    return Intl.message('Review', name: 'reviewLabel', desc: '', args: []);
+  }
+
+  /// `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.`
+  String get productDescriptionPlaceholder {
+    return Intl.message(
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.',
+      name: 'productDescriptionPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue shopping`
+  String get continueShoppingButton {
+    return Intl.message(
+      'Continue shopping',
+      name: 'continueShoppingButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View cart`
+  String get viewCartButton {
+    return Intl.message(
+      'View cart',
+      name: 'viewCartButton',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

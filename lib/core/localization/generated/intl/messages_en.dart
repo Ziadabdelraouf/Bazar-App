@@ -57,6 +57,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Phone Number",
     ),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
+    "continueShoppingButton": MessageLookupByLibrary.simpleMessage(
+      "Continue shopping",
+    ),
     "createNewPasswordDescription": MessageLookupByLibrary.simpleMessage(
       "Create your new password, so you can login to your account",
     ),
@@ -164,6 +167,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Phone number",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.",
+    ),
     "profileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "By clicking Register, you agree to our",
@@ -183,6 +189,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Reset password",
     ),
     "retryButton": MessageLookupByLibrary.simpleMessage("Retry"),
+    "reviewLabel": MessageLookupByLibrary.simpleMessage("Review"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "Search country or code",
     ),
@@ -233,6 +240,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
       "Please enter the code we just sent to phone number ",
     ),
+    "viewCartButton": MessageLookupByLibrary.simpleMessage("View cart"),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("Welcome Back "),
   };
 }

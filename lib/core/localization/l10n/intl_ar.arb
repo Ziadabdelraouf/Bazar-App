@@ -104,5 +104,10 @@
     "discountPercent": "خصم %{discount}",
     "orderNowButton": "اطلب الآن",
     "failedToLoadOffers": "فشل في تحميل العروض",
-    "retryButton": "إعادة المحاولة"
+    "retryButton": "إعادة المحاولة",
+    "//Detail Menu Screen Strings//": "",
+    "reviewLabel": "مراجعة",
+    "productDescriptionPlaceholder": "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدايبيسينج إيليت.",
+    "continueShoppingButton": "متابعة التسوق",
+    "viewCartButton": "عرض السلة"
 }

@@ -104,5 +104,10 @@
     "discountPercent": "Discount {discount}%",
     "orderNowButton": "Order Now",
     "failedToLoadOffers": "Failed to load offers",
-    "retryButton": "Retry"
+    "retryButton": "Retry",
+    "//Detail Menu Screen Strings//": "",
+    "reviewLabel": "Review",
+    "productDescriptionPlaceholder": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.",
+    "continueShoppingButton": "Continue shopping",
+    "viewCartButton": "View cart"
 }
