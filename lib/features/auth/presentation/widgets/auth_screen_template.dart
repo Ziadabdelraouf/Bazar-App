@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
@@ -36,11 +37,68 @@ class AuthScreenTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    // Figma's reference: keypad (357px) as a fraction of its full frame.
-    // Using a screen-relative percentage instead of a fixed pixel value
-    // keeps this same visual ratio consistent across different device sizes.
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     final screenHeight = MediaQuery.of(context).size.height;
-    final keypadHeight = screenHeight * 0.42;
+    final keypadHeight = context.responsiveValue<double>(
+      mobile: (screenHeight * 0.35).clamp(200.0, 280.0),
+      tablet: 260.0,
+      desktop: 280.0,
+    );
+
+    final formContent = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const AppBackButton(),
+        SizedBox(height: isLandscape ? 16 : 24),
+        Center(
+          child: Column(
+            children: [
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: AppTextStyles.h3.copyWith(color: AppColors.grey900),
+              ),
+              const SizedBox(height: 8),
+              description,
+            ],
+          ),
+        ),
+        SizedBox(height: isLandscape ? 24 : 40),
+        middleContent,
+        if (errorMessage != null) ...[
+          const SizedBox(height: 8),
+          Center(
+            child: Text(
+              errorMessage!,
+              style: AppTextStyles.body14Regular.copyWith(color: AppColors.red),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
+        const SizedBox(height: 24),
+        isLoading
+            ? const Center(
+                child: SizedBox(
+                  width: 24,
+                  height: 24,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                ),
+              )
+            : LargePrimaryButton(
+                label: s.continueButton,
+                onPressed: onContinuePressed,
+              ),
+        const SizedBox(height: 24),
+      ],
+    );
+
+    final keypadWidget = NumericKeypad(
+      backgroundColor: keypadBackgroundColor,
+      foregroundColor: keypadForegroundColor,
+      onDigitPressed: onDigitPressed,
+      onDeletePressed: onDeletePressed,
+    );
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
@@ -52,91 +110,75 @@ class AuthScreenTemplate extends StatelessWidget {
       ),
       child: Scaffold(
         backgroundColor: AppColors.white,
+        resizeToAvoidBottomInset: true,
         body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 24,
-                  ),
-                  child: Column(
-                    crossAxisAlignment:
-                        CrossAxisAlignment.start,
-                    children: [
-                      const AppBackButton(),
-                      const SizedBox(height: 24),
-                      Center(
-                        child: SizedBox(
-                          width: 327,
-                          child: Column(
-                            children: [
-                              Text(
-                                title,
-                                textAlign: TextAlign.center,
-                                style: AppTextStyles.h3
-                                    .copyWith(
-                                      color:
-                                          AppColors.grey900,
-                                    ),
-                              ),
-                              const SizedBox(height: 8),
-                              description,
-                            ],
+          child: isLandscape
+              ? Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(
+                      child: SingleChildScrollView(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 24,
+                          vertical: 16,
+                        ),
+                        child: Center(
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(
+                              maxWidth:
+                                  AppResponsiveBreakpoints.maxAuthCardWidth,
+                            ),
+                            child: formContent,
                           ),
                         ),
                       ),
-                      const SizedBox(height: 40),
-                      middleContent,
-                      if (errorMessage != null) ...[
-                        const SizedBox(height: 8),
-                        Center(
-                          child: Text(
-                            errorMessage!,
-                            style: AppTextStyles
-                                .body14Regular
-                                .copyWith(
-                                  color: AppColors.red,
-                                ),
-                            textAlign: TextAlign.center,
+                    ),
+                    Expanded(
+                      child: Container(
+                        color: keypadBackgroundColor,
+                        child: Center(
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(
+                              maxWidth:
+                                  AppResponsiveBreakpoints.maxAuthCardWidth,
+                            ),
+                            child: keypadWidget,
                           ),
                         ),
-                      ],
-                      const SizedBox(
-                        height: 24,
-                      ), // بدل الـ Spacer
-                      isLoading
-                          ? const Center(
-                              child: SizedBox(
-                                width: 24,
-                                height: 24,
-                                child:
-                                    CircularProgressIndicator(
-                                      strokeWidth: 2,
-                                    ),
-                              ),
-                            )
-                          : LargePrimaryButton(
-                              label: s.continueButton,
-                              onPressed: onContinuePressed,
+                      ),
+                    ),
+                  ],
+                )
+              : Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: SingleChildScrollView(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: Center(
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(
+                              maxWidth:
+                                  AppResponsiveBreakpoints.maxAuthCardWidth,
                             ),
-                      const SizedBox(height: 24),
-                    ],
-                  ),
+                            child: formContent,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(
+                          maxWidth: AppResponsiveBreakpoints.maxAuthCardWidth,
+                        ),
+                        child: SizedBox(
+                          height: keypadHeight,
+                          child: keypadWidget,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(
-                height: keypadHeight,
-                child: NumericKeypad(
-                  backgroundColor: keypadBackgroundColor,
-                  foregroundColor: keypadForegroundColor,
-                  onDigitPressed: onDigitPressed,
-                  onDeletePressed: onDeletePressed,
-                ),
-              ),
-            ],
-          ),
         ),
       ),
     );

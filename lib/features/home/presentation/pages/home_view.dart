@@ -1,9 +1,10 @@
-import 'package:bazar_group_1/core/theme/app_colors.dart';
-import 'package:bazar_group_1/features/home/presentation/widgets/book_card.dart';
+import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
+import 'package:bazar_group_1/features/home/presentation/widgets/best_vendors_widget.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/top_of_week_section.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/special_offer.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/author_widget.dart';
 import 'package:flutter/material.dart';
+
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -13,28 +14,23 @@ class HomeView extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     const double baseHeight = 820.0;
 
+    final bannerHeight = context.responsiveValue<double>(
+      mobile: ((185 / baseHeight) * screenHeight).clamp(160.0, 220.0),
+      tablet: 220.0,
+      desktop: 260.0,
+    );
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SizedBox(
-            height: (185 / baseHeight) * screenHeight,
-            child: const SpecialOffer(),
-          ),
-          const SizedBox(height: 16),
+          SizedBox(height: bannerHeight, child: const SpecialOffer()),
+          const SizedBox(height: 12),
           const TopOfWeekSection(),
-          const SizedBox(height: 16),
-          Container(
-            height: (120 / baseHeight) * screenHeight,
-            decoration: BoxDecoration(
-              color: AppColors.grey200,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: BookCard(title: 'De7k', price: '\$12', imagePath: ''),
-          ),
-          const SizedBox(height: 16),
-           const AuthorWidget(),
+          const SizedBox(height: 12),
+          const BestVendorsWidget(),
+          const SizedBox(height: 12),
+          const AuthorWidget(),
         ],
       ),
     );
