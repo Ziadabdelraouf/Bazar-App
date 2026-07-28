@@ -83,5 +83,18 @@
     "discountPercent": "Discount {discount}%",
     "orderNowButton": "Order Now",
     "failedToLoadOffers": "Failed to load offers",
-    "retryButton": "Retry"
+    "retryButton": "Retry",
+    "//Best Vendors Widget Strings//": "",
+    "bestVendorsTitle": "Best Vendors",
+    "seeAllButton": "See all",
+    "couldNotLoadVendors": "Couldn't load vendors",
+    "noVendorsFound": "No vendors found",
+    "//Vendors Page Strings//": "",
+    "ourVendorsSubtitle": "Our Vendors",
+    "vendorsPageTitle": "Vendors",
+    "allCategoryTab": "All",
+    "booksCategoryTab": "Books",
+    "poemsCategoryTab": "Poems",
+    "specialForYouCategoryTab": "Special for You",
+    "stationeryCategoryTab": "Stationery"
 }
