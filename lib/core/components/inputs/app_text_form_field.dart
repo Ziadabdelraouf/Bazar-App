@@ -8,6 +8,7 @@ class AppFormTextField extends StatelessWidget {
   final TextEditingController controller;
   final bool obscureText;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final String? Function(String?)? validator;
   final TextInputAction? textInputAction;
   final TextInputType? keyboardType;
@@ -22,6 +23,7 @@ class AppFormTextField extends StatelessWidget {
     required this.controller,
     this.obscureText = false,
     this.suffixIcon,
+    this.prefixIcon,
     this.validator,
     this.textInputAction,
     this.keyboardType,
@@ -46,6 +48,7 @@ class AppFormTextField extends StatelessWidget {
           controller: controller,
           obscureText: obscureText,
           textInputAction: textInputAction,
+          keyboardType: keyboardType, // أضف دي
           validator: validator,
           onChanged: onChanged,
           style: AppTextStyles.body16Medium.copyWith(
@@ -56,6 +59,7 @@ class AppFormTextField extends StatelessWidget {
             hintStyle: AppTextStyles.body16Regular.copyWith(
               color: AppColors.grey400,
             ),
+            prefixIcon: prefixIcon, // وأضف دي
             suffixIcon: suffixIcon,
             filled: true,
             fillColor: AppColors.grey50,

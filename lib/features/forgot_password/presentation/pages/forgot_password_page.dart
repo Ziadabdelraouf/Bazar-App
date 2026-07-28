@@ -1,4 +1,5 @@
 import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
@@ -22,110 +23,113 @@ class _ForgotPasswordPageState
     extends ConsumerState<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
+    final localization = S.of(context);
     final selectedMethod = ref.watch(
       selectedContactMethodProvider,
     );
-    return Directionality(
-      textDirection: TextDirection.ltr,
-      child: Scaffold(
-        backgroundColor: AppColors.white,
-        appBar: const AppBackBar(),
-        body: Padding(
-          padding: EdgeInsets.only(
-            left:
-                MediaQuery.of(context).size.width *
-                (24 / 375),
-            right:
-                MediaQuery.of(context).size.width *
-                (24 / 375),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Forgot password',
-                style: AppTextStyles.h3.copyWith(
-                  color: AppColors.grey900,
+
+    return Scaffold(
+      backgroundColor: AppColors.white,
+      appBar: const AppBackBar(),
+      body: Padding(
+        padding: EdgeInsets.only(
+          left:
+              MediaQuery.of(context).size.width *
+              (24 / 375),
+          right:
+              MediaQuery.of(context).size.width *
+              (24 / 375),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              localization.forgotPasswordTitle,
+              style: AppTextStyles.h3.copyWith(
+                color: AppColors.grey900,
+              ),
+            ),
+            SizedBox(
+              height:
+                  MediaQuery.of(context).size.height *
+                  (8 / 812),
+            ),
+            Text(
+              localization.forgotPasswordDescription,
+              style: AppTextStyles.body16Regular.copyWith(
+                color: AppColors.grey600,
+              ),
+            ),
+            SizedBox(
+              height:
+                  MediaQuery.of(context).size.height *
+                  (16 / 812),
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: ContactMethodCard(
+                    iconPath: AppIcons.emailBulk,
+                    title: localization
+                        .contactMethodEmailTitle,
+                    subtitle: localization
+                        .contactMethodEmailSubtitle,
+                    isSelected:
+                        selectedMethod ==
+                        ContactMethod.email,
+                    onTap: () {
+                      ref
+                          .read(
+                            selectedContactMethodProvider
+                                .notifier,
+                          )
+                          .state = ContactMethod
+                          .email;
+                    },
+                  ),
                 ),
-              ),
-              SizedBox(
-                height:
-                    MediaQuery.of(context).size.height *
-                    (8 / 812),
-              ),
-              Text(
-                'Select which contact details should we use to reset your password',
-                style: AppTextStyles.body16Regular.copyWith(
-                  color: AppColors.grey600,
+                SizedBox(
+                  width:
+                      MediaQuery.of(context).size.width *
+                      (16 / 375),
                 ),
-              ),
-              SizedBox(
-                height:
-                    MediaQuery.of(context).size.height *
-                    (16 / 812),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: ContactMethodCard(
-                      iconPath: AppIcons.emailBulk,
-                      title: 'Email',
-                      subtitle: 'Send to your email',
-                      isSelected:
-                          selectedMethod ==
-                          ContactMethod.email,
-                      onTap: () {
-                        ref
-                            .read(
-                              selectedContactMethodProvider
-                                  .notifier,
-                            )
-                            .state = ContactMethod
-                            .email;
-                      },
-                    ),
+                Expanded(
+                  child: ContactMethodCard(
+                    iconPath: AppIcons.phoneFill,
+                    title: localization
+                        .contactMethodPhoneTitle,
+                    subtitle: localization
+                        .contactMethodPhoneSubtitle,
+                    isSelected:
+                        selectedMethod ==
+                        ContactMethod.phone,
+                    onTap: () {
+                      ref
+                          .read(
+                            selectedContactMethodProvider
+                                .notifier,
+                          )
+                          .state = ContactMethod
+                          .phone;
+                    },
                   ),
-                  SizedBox(
-                    width:
-                        MediaQuery.of(context).size.width *
-                        (16 / 375),
+                ),
+              ],
+            ),
+            const SizedBox(height: 64),
+            PrimaryButton(
+              text: localization.continueButton,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const ResetPasswordPage(),
                   ),
-                  Expanded(
-                    child: ContactMethodCard(
-                      iconPath: AppIcons.phoneFill,
-                      title: 'Phone Number',
-                      subtitle: 'Send to your phone',
-                      isSelected:
-                          selectedMethod ==
-                          ContactMethod.phone,
-                      onTap: () {
-                        ref
-                            .read(
-                              selectedContactMethodProvider
-                                  .notifier,
-                            )
-                            .state = ContactMethod
-                            .phone;
-                      },
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 64),
-              PrimaryButton(
-                text: 'Continue',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) =>
-                          const ResetPasswordPage(),
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
