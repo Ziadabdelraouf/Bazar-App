@@ -31,17 +31,23 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your password changed successfully, you can login again with a new password",
     ),
     "about": MessageLookupByLibrary.simpleMessage("About"),
+    "allCategoryTab": MessageLookupByLibrary.simpleMessage("All"),
     "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
       "At least lowercase or uppercase letters",
     ),
     "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
       "At least 1 number (1-9)",
     ),
+    "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("Best Vendors"),
+    "booksCategoryTab": MessageLookupByLibrary.simpleMessage("Books"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("Category"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
     "congratulations": MessageLookupByLibrary.simpleMessage("Congratulations!"),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
+    "couldNotLoadVendors": MessageLookupByLibrary.simpleMessage(
+      "Couldn\'t load vendors",
+    ),
     "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
@@ -81,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "No offers available",
     ),
+    "noVendorsFound": MessageLookupByLibrary.simpleMessage("No vendors found"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
     ),
@@ -101,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "orSeparator": MessageLookupByLibrary.simpleMessage("or"),
     "orderNowButton": MessageLookupByLibrary.simpleMessage("Order Now"),
+    "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("Our Vendors"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordLetterRequired": MessageLookupByLibrary.simpleMessage(
       "Password must contain at least one letter",
@@ -128,6 +136,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "products": MessageLookupByLibrary.simpleMessage("Products"),
+    "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("Poems"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "By clicking Register, you agree to our",
@@ -141,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "Search country or code",
     ),
+    "seeAllButton": MessageLookupByLibrary.simpleMessage("See all"),
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage(
       "Select Country",
     ),
@@ -166,12 +176,17 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "signUpTitle": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
+    "specialForYouCategoryTab": MessageLookupByLibrary.simpleMessage(
+      "Special for You",
+    ),
+    "stationeryCategoryTab": MessageLookupByLibrary.simpleMessage("Stationery"),
     "successBody": MessageLookupByLibrary.simpleMessage(
       "your account is complete, Please enjoy the best menu from us.",
     ),
     "termsAndDataPolicy": MessageLookupByLibrary.simpleMessage(
       "Terms, Data Policy.",
     ),
+    "vendorsPageTitle": MessageLookupByLibrary.simpleMessage("Vendors"),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage(
       "Verification Code",
     ),

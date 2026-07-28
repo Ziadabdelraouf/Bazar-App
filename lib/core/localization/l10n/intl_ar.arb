@@ -87,4 +87,17 @@
     "//Author Detail Strings//": "",
     "about": "عن الكاتب",
     "products": "المنتجات"
+    "//Best Vendors Widget Strings//": "",
+    "bestVendorsTitle": "أفضل الموردين",
+    "seeAllButton": "عرض الكل",
+    "couldNotLoadVendors": "تعذر تحميل الموردين",
+    "noVendorsFound": "لا يوجد موردون",
+    "//Vendors Page Strings//": "",
+    "ourVendorsSubtitle": "موردينا",
+    "vendorsPageTitle": "الموردين",
+    "allCategoryTab": "الكل",
+    "booksCategoryTab": "كتب",
+    "poemsCategoryTab": "أشعار",
+    "specialForYouCategoryTab": "خصيصاً لك",
+    "stationeryCategoryTab": "أدوات مكتبية"
 }
