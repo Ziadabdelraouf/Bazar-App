@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  json_annotation: ^4.9.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -46,12 +47,13 @@ dependencies:
   dio: ^5.10.0
   flutter_dotenv: ^6.0.1
   freezed: ^4.0.0-dev.3
-  json_annotation: ^4.12.0
   freezed_annotation: ^3.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^2.4.0
+  json_serializable: ^6.8.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -60,8 +62,6 @@ dev_dependencies:
   # rules and activating additional ones.
   intl_utils: ^2.8.7
   flutter_lints: ^6.0.0
-  json_serializable: ^6.14.0
-  build_runner: ^2.15.1
 flutter:
 
   # The following line ensures that the Material Icons font is
@@ -93,7 +93,7 @@ flutter:
     - assets/icons/
     - assets/
     - .env
-    - assets/mock/
+    - assets/mock/books_data.json
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see

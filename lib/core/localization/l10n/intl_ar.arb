@@ -104,5 +104,18 @@
     "discountPercent": "خصم %{discount}",
     "orderNowButton": "اطلب الآن",
     "failedToLoadOffers": "فشل في تحميل العروض",
-    "retryButton": "إعادة المحاولة"
+    "retryButton": "إعادة المحاولة",
+    "//Best Vendors Widget Strings//": "",
+    "bestVendorsTitle": "أفضل الموردين",
+    "seeAllButton": "عرض الكل",
+    "couldNotLoadVendors": "تعذر تحميل الموردين",
+    "noVendorsFound": "لا يوجد موردون",
+    "//Vendors Page Strings//": "",
+    "ourVendorsSubtitle": "موردينا",
+    "vendorsPageTitle": "الموردين",
+    "allCategoryTab": "الكل",
+    "booksCategoryTab": "كتب",
+    "poemsCategoryTab": "أشعار",
+    "specialForYouCategoryTab": "خصيصاً لك",
+    "stationeryCategoryTab": "أدوات مكتبية"
 }

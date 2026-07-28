@@ -30,12 +30,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "PasswordChangedBody": MessageLookupByLibrary.simpleMessage(
       "تم تغيير كلمة المرور بنجاح، يمكنك تسجيل الدخول مرة أخرى باستخدام كلمة مرور جديدة.",
     ),
+    "allCategoryTab": MessageLookupByLibrary.simpleMessage("الكل"),
     "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
       "حرف صغير أو كبير واحد على الأقل",
     ),
     "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
       "رقم واحد على الأقل (1-9)",
     ),
+    "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("أفضل الموردين"),
+    "booksCategoryTab": MessageLookupByLibrary.simpleMessage("كتب"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
@@ -61,6 +64,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم الهاتف",
     ),
     "continueButton": MessageLookupByLibrary.simpleMessage("استمر"),
+    "couldNotLoadVendors": MessageLookupByLibrary.simpleMessage(
+      "تعذر تحميل الموردين",
+    ),
     "createNewPasswordDescription": MessageLookupByLibrary.simpleMessage(
       "أنشئ كلمة مرور جديدة، حتى تتمكن من تسجيل الدخول إلى حسابك",
     ),
@@ -124,6 +130,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "لا تتوفر عروض حاليًا",
     ),
+    "noVendorsFound": MessageLookupByLibrary.simpleMessage("لا يوجد موردون"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
     ),
@@ -144,6 +151,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "orSeparator": MessageLookupByLibrary.simpleMessage("أو"),
     "orderNowButton": MessageLookupByLibrary.simpleMessage("اطلب الآن"),
+    "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("موردينا"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "passwordLetterRequired": MessageLookupByLibrary.simpleMessage(
       "يجب أن تحتوي كلمة المرور على حرف واحد على الأقل",
@@ -174,6 +182,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم الهاتف",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("أشعار"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "بالنقر على تسجيل، فإنك توافق على",
@@ -196,6 +205,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",
     ),
+    "seeAllButton": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage("اختر الدولة"),
     "sendButton": MessageLookupByLibrary.simpleMessage("إرسال"),
     "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -220,12 +230,19 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "signUpTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "specialForYouCategoryTab": MessageLookupByLibrary.simpleMessage(
+      "خصيصاً لك",
+    ),
+    "stationeryCategoryTab": MessageLookupByLibrary.simpleMessage(
+      "أدوات مكتبية",
+    ),
     "successBody": MessageLookupByLibrary.simpleMessage(
       "تم اكتمال حسابك، يرجى الاستمتاع بأفضل قائمة عندنا.",
     ),
     "termsAndDataPolicy": MessageLookupByLibrary.simpleMessage(
       "الشروط وسياسة البيانات.",
     ),
+    "vendorsPageTitle": MessageLookupByLibrary.simpleMessage("الموردين"),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "verificationEmailTitle": MessageLookupByLibrary.simpleMessage(
       "تحقق البريد الإلكتروني",

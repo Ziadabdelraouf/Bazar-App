@@ -1,4 +1,5 @@
 import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
+import 'package:bazar_group_1/features/home/presentation/pages/vendors_search_placeholder_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/constants/enums.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/sign_in_page.dart';
@@ -13,6 +14,7 @@ import 'package:bazar_group_1/features/auth/presentation/pages/forgot_password_v
 import 'package:bazar_group_1/features/auth/presentation/pages/forgot_password_verification_phone.dart';
 import 'package:bazar_group_1/features/forgot_password/presentation/pages/create_new_password_page.dart';
 import '../../features/forgot_password/presentation/pages/forgot_password_page.dart';
+import 'package:bazar_group_1/features/home/presentation/pages/vendors_page.dart';
 import 'app_routes.dart';
 
 class AppRouter {
@@ -48,5 +50,8 @@ class AppRouter {
     },
     AppRoutes.createNewPasswordPage: (context) => const CreateNewPasswordPage(),
     AppRoutes.homePage: (context) => const HomePage(),
+    AppRoutes.vendorsPage: (context) => const VendorsPage(),
+    AppRoutes.vendorsSearchPage: (context) => const VendorsSearchPlaceholderPage(),
   };
+  
 }

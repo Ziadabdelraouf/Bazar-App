@@ -911,6 +911,100 @@ class S {
   String get retryButton {
     return Intl.message('Retry', name: 'retryButton', desc: '', args: []);
   }
+
+  // skipped getter for the '//Best Vendors Widget Strings//' key
+
+  /// `Best Vendors`
+  String get bestVendorsTitle {
+    return Intl.message(
+      'Best Vendors',
+      name: 'bestVendorsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See all`
+  String get seeAllButton {
+    return Intl.message('See all', name: 'seeAllButton', desc: '', args: []);
+  }
+
+  /// `Couldn't load vendors`
+  String get couldNotLoadVendors {
+    return Intl.message(
+      'Couldn\'t load vendors',
+      name: 'couldNotLoadVendors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No vendors found`
+  String get noVendorsFound {
+    return Intl.message(
+      'No vendors found',
+      name: 'noVendorsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  // skipped getter for the '//Vendors Page Strings//' key
+
+  /// `Our Vendors`
+  String get ourVendorsSubtitle {
+    return Intl.message(
+      'Our Vendors',
+      name: 'ourVendorsSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vendors`
+  String get vendorsPageTitle {
+    return Intl.message(
+      'Vendors',
+      name: 'vendorsPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get allCategoryTab {
+    return Intl.message('All', name: 'allCategoryTab', desc: '', args: []);
+  }
+
+  /// `Books`
+  String get booksCategoryTab {
+    return Intl.message('Books', name: 'booksCategoryTab', desc: '', args: []);
+  }
+
+  /// `Poems`
+  String get poemsCategoryTab {
+    return Intl.message('Poems', name: 'poemsCategoryTab', desc: '', args: []);
+  }
+
+  /// `Special for You`
+  String get specialForYouCategoryTab {
+    return Intl.message(
+      'Special for You',
+      name: 'specialForYouCategoryTab',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stationery`
+  String get stationeryCategoryTab {
+    return Intl.message(
+      'Stationery',
+      name: 'stationeryCategoryTab',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -16,4 +16,6 @@ class AppRoutes {
       '/forgot-password-verify-phone';
   static const String createNewPasswordPage = '/create-new-password';
   static const String homePage = '/home-page';
+  static const String vendorsPage = '/vendors-page';
+  static const String vendorsSearchPage = '/vendors-search-page';
 }
