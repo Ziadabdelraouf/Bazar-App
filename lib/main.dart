@@ -1,6 +1,7 @@
 import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/router/app_router.dart';
+import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -24,28 +25,39 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       builder: (context, child) {
         return ResponsiveBreakpoints.builder(
-          child: Builder(
-            builder: (context) {
-              return GestureDetector(
-                behavior: HitTestBehavior.translucent,
-                onTap: () {
-                  FocusManager.instance.primaryFocus?.unfocus();
-                },
-                child: MaxWidthBox(
-                  maxWidth: AppResponsiveBreakpoints.maxContentWidth,
-                  child: ResponsiveScaledBox(
-                    width: context.responsiveValue<double>(
-                      mobile: 450,
-                      tablet: 768,
-                      desktop: AppResponsiveBreakpoints.maxContentWidth,
-                    ),
-                    child: child ?? const SizedBox.shrink(),
-                  ),
-                ),
-              );
-            },
-          ),
           breakpoints: AppResponsiveBreakpoints.breakpoints,
+          child: GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: () {
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
+            child: MaxWidthBox(
+              maxWidth: AppResponsiveBreakpoints.maxContentWidth,
+              // Fills either side of the capped content column on viewports
+              // wider than maxContentWidth. Without it that area renders black.
+              backgroundColor: AppColors.grey100,
+              // `Builder` puts this below MaxWidthBox, which clamps
+              // MediaQuery.size to its maxWidth. Reading the width from above
+              // the box would over-report it on wide screens and shrink the UI.
+              child: Builder(
+                builder: (context) {
+                  // `SizedBox.expand` is load-bearing: MaxWidthBox aligns its
+                  // child (topCenter), handing down *loose* constraints.
+                  // ResponsiveScaledBox's FittedBox would then shrink-wrap to
+                  // the canvas instead of filling — letterboxing the app in
+                  // black and cancelling the zoom entirely.
+                  return SizedBox.expand(
+                    child: ResponsiveScaledBox(
+                      width: AppResponsiveBreakpoints.scaledCanvasWidth(
+                        MediaQuery.sizeOf(context).width,
+                      ),
+                      child: child ?? const SizedBox.shrink(),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
         );
       },
       locale: Locale("en"),
