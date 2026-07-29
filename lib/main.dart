@@ -24,18 +24,26 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       builder: (context, child) {
         return ResponsiveBreakpoints.builder(
-          child: GestureDetector(
-            behavior: HitTestBehavior.translucent,
-            onTap: () {
-              FocusManager.instance.primaryFocus?.unfocus();
+          child: Builder(
+            builder: (context) {
+              return GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
+                child: MaxWidthBox(
+                  maxWidth: AppResponsiveBreakpoints.maxContentWidth,
+                  child: ResponsiveScaledBox(
+                    width: context.responsiveValue<double>(
+                      mobile: 450,
+                      tablet: 768,
+                      desktop: AppResponsiveBreakpoints.maxContentWidth,
+                    ),
+                    child: child ?? const SizedBox.shrink(),
+                  ),
+                ),
+              );
             },
-            child: MaxWidthBox(
-              maxWidth: AppResponsiveBreakpoints.maxContentWidth,
-              child: ResponsiveScaledBox(
-                width: 375,
-                child: child ?? const SizedBox.shrink(),
-              ),
-            ),
           ),
           breakpoints: AppResponsiveBreakpoints.breakpoints,
         );
