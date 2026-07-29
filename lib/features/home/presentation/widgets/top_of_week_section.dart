@@ -1,4 +1,5 @@
 import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
+import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/home/data/models/book_model.dart';
@@ -11,6 +12,12 @@ class TopOfWeekSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final books = parseBooks(mockData);
+    final sectionHeight = context.responsiveValue<double>(
+      mobile: (MediaQuery.of(context).size.height * .25).clamp(180.0, 220.0),
+      tablet: 220.0,
+      desktop: 240.0,
+    );
+
     return Column(
       children: [
         Row(
@@ -28,9 +35,8 @@ class TopOfWeekSection extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 8),
         SizedBox(
-          height: MediaQuery.of(context).size.height * (210 / 812),
+          height: sectionHeight,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: books.length,

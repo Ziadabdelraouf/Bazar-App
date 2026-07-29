@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
@@ -11,39 +12,37 @@ class BestVendorsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
+    final itemSize = context.responsiveValue<double>(
+      mobile: 80.0,
+      tablet: 96.0,
+      desktop: 108.0,
+    );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-          width: screenWidth * (327 / 375),
-          height: screenHeight * (24 / 812),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                S.of(context).bestVendorsTitle,
-                style: AppTextStyles.h5.copyWith(color: AppColors.grey900),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              S.of(context).bestVendorsTitle,
+              style: AppTextStyles.h5.copyWith(color: AppColors.grey900),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.vendorsPage);
+              },
+              child: Text(
+                S.of(context).seeAllButton,
+                style: AppTextStyles.body14Bold
+                    .copyWith(color: AppColors.primary500),
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, AppRoutes.vendorsPage);
-                },
-                child: Text(
-                  S.of(context).seeAllButton,
-                  style: AppTextStyles.body14Bold
-                      .copyWith(color: AppColors.primary500),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
-        SizedBox(height: screenHeight * (16 / 812)),
+        const SizedBox(height: 16),
         SizedBox(
-          width: screenWidth * (351 / 375),
-          height: screenHeight * (80 / 812),
+          height: itemSize,
           child: Consumer(
             builder: (context, ref, child) {
               final vendorsAsync = ref.watch(vendorsNotifierProvider);
@@ -65,14 +64,13 @@ class BestVendorsWidget extends StatelessWidget {
                   return ListView.separated(
                     scrollDirection: Axis.horizontal,
                     itemCount: bestFour.length,
-                    separatorBuilder: (context, index) =>
-                        SizedBox(width: screenWidth * (8 / 375)),
+                    separatorBuilder: (context, index) => const SizedBox(width: 12),
                     itemBuilder: (context, index) {
                       final vendor = bestFour[index];
 
                       return Container(
-                        width: screenWidth * (80 / 375),
-                        height: screenHeight * (80 / 812),
+                        width: itemSize,
+                        height: itemSize,
                         decoration: BoxDecoration(
                           color: AppColors.grey100,
                           borderRadius: BorderRadius.circular(8),

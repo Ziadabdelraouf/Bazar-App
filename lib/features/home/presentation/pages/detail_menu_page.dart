@@ -1,4 +1,5 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
@@ -31,6 +32,12 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
   @override
   Widget build(BuildContext context) {
     final localization = S.of(context);
+    final imageHeight = context.responsiveValue<double>(
+      mobile: 240.0,
+      tablet: 280.0,
+      desktop: 320.0,
+    );
+
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(24),
@@ -51,8 +58,12 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
             const SizedBox(height: 16),
             Center(
               child: Container(
-                width: MediaQuery.of(context).size.width * (237 / 375),
-                height: MediaQuery.of(context).size.height * (300 / 812),
+                width: context.responsiveValue<double>(
+                  mobile: 220.0,
+                  tablet: 260.0,
+                  desktop: 300.0,
+                ),
+                height: imageHeight,
                 decoration: BoxDecoration(
                   color: AppColors.grey500,
                   border: Border.all(),
@@ -60,7 +71,7 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -107,8 +118,8 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                   allowHalfRating: true,
                   unratedColor: AppColors.grey900,
                   itemCount: 5,
-                  itemSize: MediaQuery.of(context).size.width * (30 / 375),
-                  itemPadding: EdgeInsetsGeometry.only(right: 2),
+                  itemSize: 24.0,
+                  itemPadding: const EdgeInsets.only(right: 2),
                   itemBuilder: (context, _) => SvgPicture.asset(
                     AppIcons.star,
                     colorFilter: ColorFilter.mode(
@@ -122,9 +133,10 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                     });
                   },
                 ),
+                const SizedBox(width: 8),
                 Text(
                   '(${currentRating.toStringAsFixed(1)})',
-                  style: AppTextStyles.body14SemiBold.copyWith(fontSize: 22),
+                  style: AppTextStyles.body14SemiBold.copyWith(fontSize: 18),
                 ),
               ],
             ),
@@ -202,45 +214,49 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                 ),
               ],
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: 16),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * (196 / 375),
-                  height: 50,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(48),
+                Expanded(
+                  flex: 3,
+                  child: SizedBox(
+                    height: 50,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(48),
+                        ),
+                        elevation: 0,
+                        backgroundColor: AppColors.primary500,
+                        textStyle: const TextStyle(color: AppColors.white),
+                        foregroundColor: AppColors.white,
                       ),
-                      elevation: 0,
-                      backgroundColor: AppColors.primary500,
-                      textStyle: const TextStyle(color: AppColors.white),
-                      foregroundColor: AppColors.white,
-                    ),
-                    child: Text(
-                      localization.continueShoppingButton,
-                      style: AppTextStyles.h6,
+                      child: Text(
+                        localization.continueShoppingButton,
+                        style: AppTextStyles.h6,
+                      ),
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * (116 / 375),
-                  height: 48,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primary50,
-                      textStyle: const TextStyle(color: AppColors.primary500),
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: Text(
-                      localization.viewCartButton,
-                      style: AppTextStyles.h6,
+                const SizedBox(width: 12),
+                Expanded(
+                  flex: 2,
+                  child: SizedBox(
+                    height: 48,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.primary50,
+                        textStyle: const TextStyle(color: AppColors.primary500),
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: Text(
+                        localization.viewCartButton,
+                        style: AppTextStyles.h6,
+                      ),
                     ),
                   ),
                 ),

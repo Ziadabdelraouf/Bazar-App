@@ -9,23 +9,17 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-    const double baseHeight = 820.0;
-
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SizedBox(
-            height: (185 / baseHeight) * screenHeight,
-            child: const SpecialOffer(),
-          ),
-          const SizedBox(height: 16),
+          const SpecialOffer(),
+          const SizedBox(height: 12),
           const TopOfWeekSection(),
-          const SizedBox(height: 16),
-          BestVendorsWidget(),
-          const SizedBox(height: 16),
+          const SizedBox(height: 12),
+          const BestVendorsWidget(),
+          const SizedBox(height: 12),
           const AuthorWidget(),
         ],
       ),

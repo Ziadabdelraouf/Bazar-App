@@ -1,21 +1,18 @@
-import 'package:bazar_group_1/features/forgot_password/presentation/pages/create_new_password_page.dart';
-import 'package:bazar_group_1/features/forgot_password/presentation/pages/forgot_password_page.dart';
 import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
+import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/router/app_router.dart';
-import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
+import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'core/localization/generated/l10n.dart';
-//import 'package:bazar_group_1/features/home/presentation/pages/vendors_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
-  await loadMockData();
-  WidgetsFlutterBinding.ensureInitialized();
   await loadMockData();
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -27,12 +24,40 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       builder: (context, child) {
-        return GestureDetector(
-          behavior: HitTestBehavior.translucent,
-          onTap: () {
-            FocusManager.instance.primaryFocus?.unfocus();
-          },
-          child: child ?? const SizedBox.shrink(),
+        return ResponsiveBreakpoints.builder(
+          breakpoints: AppResponsiveBreakpoints.breakpoints,
+          child: GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: () {
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
+            child: MaxWidthBox(
+              maxWidth: AppResponsiveBreakpoints.maxContentWidth,
+              // Fills either side of the capped content column on viewports
+              // wider than maxContentWidth. Without it that area renders black.
+              backgroundColor: AppColors.grey100,
+              // `Builder` puts this below MaxWidthBox, which clamps
+              // MediaQuery.size to its maxWidth. Reading the width from above
+              // the box would over-report it on wide screens and shrink the UI.
+              child: Builder(
+                builder: (context) {
+                  // `SizedBox.expand` is load-bearing: MaxWidthBox aligns its
+                  // child (topCenter), handing down *loose* constraints.
+                  // ResponsiveScaledBox's FittedBox would then shrink-wrap to
+                  // the canvas instead of filling — letterboxing the app in
+                  // black and cancelling the zoom entirely.
+                  return SizedBox.expand(
+                    child: ResponsiveScaledBox(
+                      width: AppResponsiveBreakpoints.scaledCanvasWidth(
+                        MediaQuery.sizeOf(context).width,
+                      ),
+                      child: child ?? const SizedBox.shrink(),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
         );
       },
       locale: Locale("en"),
