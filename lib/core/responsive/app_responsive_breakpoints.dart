@@ -15,7 +15,7 @@ class AppResponsiveBreakpoints {
   static const double maxAuthCardWidth = 500.0;
 }
 
-/// Helper extension on [BuildContext] to simplify responsive queries throughout the codebase.
+/// Helper extension to simplify responsive queries throughout the codebase.
 extension BuildContextResponsiveX on BuildContext {
   /// Whether the current screen is in Mobile breakpoint range (0 - 450px).
   bool get isMobile => ResponsiveBreakpoints.of(this).isMobile;
@@ -27,13 +27,10 @@ extension BuildContextResponsiveX on BuildContext {
   bool get isDesktop => ResponsiveBreakpoints.of(this).isDesktop;
 
   /// Returns a responsive value based on the current active breakpoint.
-  T responsiveValue<T>({
-    required T mobile,
-    T? tablet,
-    T? desktop,
-  }) {
-    if (isDesktop && desktop != null) return desktop;
-    if (isTablet && tablet != null) return tablet;
+  T responsiveValue<T>({required T mobile, T? tablet, T? desktop}) {
+    final data = ResponsiveBreakpoints.of(this);
+    if (desktop != null && data.largerOrEqualTo(DESKTOP)) return desktop;
+    if (tablet != null && data.largerOrEqualTo(TABLET)) return tablet;
     return mobile;
   }
 }
