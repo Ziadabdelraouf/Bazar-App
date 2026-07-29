@@ -1,7 +1,6 @@
 import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/router/app_router.dart';
-import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -32,7 +31,10 @@ class MyApp extends StatelessWidget {
             },
             child: MaxWidthBox(
               maxWidth: AppResponsiveBreakpoints.maxContentWidth,
-              child: child ?? const SizedBox.shrink(),
+              child: ResponsiveScaledBox(
+                width: 375,
+                child: child ?? const SizedBox.shrink(),
+              ),
             ),
           ),
           breakpoints: AppResponsiveBreakpoints.breakpoints,
