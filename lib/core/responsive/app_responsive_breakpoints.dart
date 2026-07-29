@@ -11,7 +11,7 @@ class AppResponsiveBreakpoints {
   ];
 
   /// Standard max content width for constraining desktop and tablet layouts.
-  static const double maxContentWidth = 1200.0;
+  static const double maxContentWidth = 1920.0;
   static const double maxAuthCardWidth = 500.0;
 }
 
