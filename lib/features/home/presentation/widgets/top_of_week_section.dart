@@ -13,10 +13,7 @@ class TopOfWeekSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final books = parseBooks(mockData);
     final sectionHeight = context.responsiveValue<double>(
-      mobile: (MediaQuery.of(context).size.height * (200 / 812)).clamp(
-        180.0,
-        220.0,
-      ),
+      mobile: (MediaQuery.of(context).size.height * .25).clamp(180.0, 220.0),
       tablet: 220.0,
       desktop: 240.0,
     );

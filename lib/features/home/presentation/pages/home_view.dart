@@ -5,17 +5,15 @@ import 'package:bazar_group_1/features/home/presentation/widgets/special_offer.d
 import 'package:bazar_group_1/features/home/presentation/widgets/author_widget.dart';
 import 'package:flutter/material.dart';
 
-
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
-    const double baseHeight = 820.0;
 
     final bannerHeight = context.responsiveValue<double>(
-      mobile: ((185 / baseHeight) * screenHeight).clamp(160.0, 220.0),
+      mobile: (0.2 * screenHeight).clamp(160.0, 220.0),
       tablet: 220.0,
       desktop: 260.0,
     );
