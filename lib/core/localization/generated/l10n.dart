@@ -18,10 +18,8 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(
-      _current != null,
-      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
-    );
+    assert(_current != null,
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
@@ -43,10 +41,8 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(
-      instance != null,
-      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
-    );
+    assert(instance != null,
+        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -58,22 +54,42 @@ class S {
 
   /// `Continue`
   String get continueButton {
-    return Intl.message('Continue', name: 'continueButton', desc: '', args: []);
+    return Intl.message(
+      'Continue',
+      name: 'continueButton',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Sign in`
   String get signInButton {
-    return Intl.message('Sign in', name: 'signInButton', desc: '', args: []);
+    return Intl.message(
+      'Sign in',
+      name: 'signInButton',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Login`
   String get loginButton {
-    return Intl.message('Login', name: 'loginButton', desc: '', args: []);
+    return Intl.message(
+      'Login',
+      name: 'loginButton',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Skip`
   String get skipButton {
-    return Intl.message('Skip', name: 'skipButton', desc: '', args: []);
+    return Intl.message(
+      'Skip',
+      name: 'skipButton',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Get Started`
@@ -110,7 +126,12 @@ class S {
 
   /// `Email`
   String get emailLabel {
-    return Intl.message('Email', name: 'emailLabel', desc: '', args: []);
+    return Intl.message(
+      'Email',
+      name: 'emailLabel',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Your email`
@@ -125,7 +146,12 @@ class S {
 
   /// `Password`
   String get passwordLabel {
-    return Intl.message('Password', name: 'passwordLabel', desc: '', args: []);
+    return Intl.message(
+      'Password',
+      name: 'passwordLabel',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Your password`
@@ -160,12 +186,22 @@ class S {
 
   /// `Sign Up`
   String get signUpButton {
-    return Intl.message('Sign Up', name: 'signUpButton', desc: '', args: []);
+    return Intl.message(
+      'Sign Up',
+      name: 'signUpButton',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `or`
   String get orSeparator {
-    return Intl.message('or', name: 'orSeparator', desc: '', args: []);
+    return Intl.message(
+      'or',
+      name: 'orSeparator',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Sign in with Google`
@@ -300,7 +336,12 @@ class S {
 
   /// `Sign Up`
   String get signUpTitle {
-    return Intl.message('Sign Up', name: 'signUpTitle', desc: '', args: []);
+    return Intl.message(
+      'Sign Up',
+      name: 'signUpTitle',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Create account and choose favorite menu`
@@ -315,7 +356,12 @@ class S {
 
   /// `Name`
   String get nameLabel {
-    return Intl.message('Name', name: 'nameLabel', desc: '', args: []);
+    return Intl.message(
+      'Name',
+      name: 'nameLabel',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Your Name`
@@ -460,7 +506,12 @@ class S {
 
   /// `Register`
   String get registerButton {
-    return Intl.message('Register', name: 'registerButton', desc: '', args: []);
+    return Intl.message(
+      'Register',
+      name: 'registerButton',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Have an account?`
@@ -557,7 +608,12 @@ class S {
 
   /// `Resend`
   String get resendButton {
-    return Intl.message('Resend', name: 'resendButton', desc: '', args: []);
+    return Intl.message(
+      'Resend',
+      name: 'resendButton',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Incorrect code, please try again.`
@@ -778,7 +834,12 @@ class S {
 
   /// `Send`
   String get sendButton {
-    return Intl.message('Send', name: 'sendButton', desc: '', args: []);
+    return Intl.message(
+      'Send',
+      name: 'sendButton',
+      desc: '',
+      args: [],
+    );
   }
 
   // skipped getter for the '//Create New Password Screen Strings//' key
@@ -847,22 +908,42 @@ class S {
 
   /// `Home`
   String get homeTitle {
-    return Intl.message('Home', name: 'homeTitle', desc: '', args: []);
+    return Intl.message(
+      'Home',
+      name: 'homeTitle',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Category`
   String get categoryTitle {
-    return Intl.message('Category', name: 'categoryTitle', desc: '', args: []);
+    return Intl.message(
+      'Category',
+      name: 'categoryTitle',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Cart`
   String get cartTitle {
-    return Intl.message('Cart', name: 'cartTitle', desc: '', args: []);
+    return Intl.message(
+      'Cart',
+      name: 'cartTitle',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Profile`
   String get profileTitle {
-    return Intl.message('Profile', name: 'profileTitle', desc: '', args: []);
+    return Intl.message(
+      'Profile',
+      name: 'profileTitle',
+      desc: '',
+      args: [],
+    );
   }
 
   // skipped getter for the '//Special Offer Strings//' key
@@ -909,26 +990,46 @@ class S {
 
   /// `Retry`
   String get retryButton {
-    return Intl.message('Retry', name: 'retryButton', desc: '', args: []);
+    return Intl.message(
+      'Retry',
+      name: 'retryButton',
+      desc: '',
+      args: [],
+    );
   }
 
   // skipped getter for the '//Author Detail Strings//' key
 
   /// `About`
   String get about {
-    return Intl.message('About', name: 'about', desc: '', args: []);
+    return Intl.message(
+      'About',
+      name: 'about',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Products`
   String get products {
-    return Intl.message('Products', name: 'products', desc: '', args: []);
+    return Intl.message(
+      'Products',
+      name: 'products',
+      desc: '',
+      args: [],
+    );
   }
 
   // skipped getter for the '//Detail Menu Screen Strings//' key
 
   /// `Review`
   String get reviewLabel {
-    return Intl.message('Review', name: 'reviewLabel', desc: '', args: []);
+    return Intl.message(
+      'Review',
+      name: 'reviewLabel',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.`
@@ -975,7 +1076,12 @@ class S {
 
   /// `See all`
   String get seeAllButton {
-    return Intl.message('See all', name: 'seeAllButton', desc: '', args: []);
+    return Intl.message(
+      'See all',
+      name: 'seeAllButton',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Couldn't load vendors`
@@ -1022,17 +1128,32 @@ class S {
 
   /// `All`
   String get allCategoryTab {
-    return Intl.message('All', name: 'allCategoryTab', desc: '', args: []);
+    return Intl.message(
+      'All',
+      name: 'allCategoryTab',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Books`
   String get booksCategoryTab {
-    return Intl.message('Books', name: 'booksCategoryTab', desc: '', args: []);
+    return Intl.message(
+      'Books',
+      name: 'booksCategoryTab',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Poems`
   String get poemsCategoryTab {
-    return Intl.message('Poems', name: 'poemsCategoryTab', desc: '', args: []);
+    return Intl.message(
+      'Poems',
+      name: 'poemsCategoryTab',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Special for You`
