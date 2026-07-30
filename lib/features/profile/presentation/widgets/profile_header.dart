@@ -3,6 +3,7 @@ import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/phone_number_notifier.dart';
+import 'package:bazar_group_1/features/profile/presentation/widgets/logout_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -45,7 +46,12 @@ class ProfileHeader extends ConsumerWidget {
               ),
             ),
             trailing: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) => LogoutBottomSheet(),
+                );
+              },
               child: Text(
                 S.of(context).logOut,
                 style: AppTextStyles.body14Bold.copyWith(color: AppColors.red),
