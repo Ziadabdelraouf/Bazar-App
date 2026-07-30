@@ -3,7 +3,6 @@ import 'package:bazar_group_1/features/onboarding/data/onboarding_data.dart';
 import 'package:bazar_group_1/features/onboarding/presentation/provider/onboarding_provider.dart';
 import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_template.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
-import 'package:bazar_group_1/features/profile/presentation/widgets/logout_bottom_sheet.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
@@ -38,11 +37,7 @@ class OnboardingPage extends ConsumerWidget {
       onSkip: () {
         ref.read(onboardingProvider.notifier).reset();
 
-        // Navigator.pushNamed(context, AppRoutes.signUpPage);
-        showModalBottomSheet(
-          context: context,
-          builder: (context) => LogoutBottomSheet(),
-        );
+        Navigator.pushNamed(context, AppRoutes.signUpPage);
       },
     );
   }
