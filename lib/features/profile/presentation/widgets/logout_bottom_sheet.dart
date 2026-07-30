@@ -3,6 +3,7 @@ import 'package:bazar_group_1/core/components/buttons/large_secondary_button.dar
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
+import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class LogoutBottomSheet extends StatelessWidget {
@@ -36,17 +37,12 @@ class LogoutBottomSheet extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(
-                localization.logoutTitle,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
-                ),
-              ),
+              Text(localization.logoutTitle, style: AppTextStyles.h5),
               Text(
                 localization.logoutConfirmationMessage,
-                style: const TextStyle(fontSize: 14, color: Colors.black54),
+                style: AppTextStyles.body16Regular.copyWith(
+                  color: AppColors.grey900,
+                ),
               ),
               const SizedBox(height: 8),
               LargePrimaryButton(
