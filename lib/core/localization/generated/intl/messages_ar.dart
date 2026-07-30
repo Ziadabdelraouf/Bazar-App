@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تغيير كلمة المرور بنجاح، يمكنك تسجيل الدخول مرة أخرى باستخدام كلمة مرور جديدة.",
     ),
     "about": MessageLookupByLibrary.simpleMessage("عن الكاتب"),
+    "address": MessageLookupByLibrary.simpleMessage("العنوان"),
     "allCategoryTab": MessageLookupByLibrary.simpleMessage("الكل"),
     "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
       "حرف صغير أو كبير واحد على الأقل",
@@ -109,6 +110,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
+    "helpCenter": MessageLookupByLibrary.simpleMessage("مركز المساعدة"),
     "homeTitle": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
       "الكود غير صحيح، حاول مرة أخرى.",
@@ -119,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتف صحيح",
     ),
+    "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "logoutButton": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "logoutConfirmationMessage": MessageLookupByLibrary.simpleMessage(
@@ -128,6 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
       "8 أحرف على الأقل",
     ),
+    "myAccount": MessageLookupByLibrary.simpleMessage("حسابي"),
     "nameLabel": MessageLookupByLibrary.simpleMessage("الاسم"),
     "nameMinimumLength": MessageLookupByLibrary.simpleMessage(
       "يجب أن يتكون الاسم من حرفين على الأقل",
@@ -141,6 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "لا تتوفر عروض حاليًا",
     ),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("لا يوجد موردون"),
+    "offersAndPromos": MessageLookupByLibrary.simpleMessage("العروض والخصومات"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
     ),
@@ -160,6 +165,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "رفيقك المثالي في عالم الكتب بانتظارك",
     ),
     "orSeparator": MessageLookupByLibrary.simpleMessage("أو"),
+    "orderHistory": MessageLookupByLibrary.simpleMessage("سجل الطلبات"),
     "orderNowButton": MessageLookupByLibrary.simpleMessage("اطلب الآن"),
     "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("موردينا"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
@@ -273,5 +279,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "viewCartButton": MessageLookupByLibrary.simpleMessage("عرض السلة"),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك "),
+    "yourFavourites": MessageLookupByLibrary.simpleMessage("المفضلة"),
   };
 }

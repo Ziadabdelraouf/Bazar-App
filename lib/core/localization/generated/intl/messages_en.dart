@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your password changed successfully, you can login again with a new password",
     ),
     "about": MessageLookupByLibrary.simpleMessage("About"),
+    "address": MessageLookupByLibrary.simpleMessage("Address"),
     "allCategoryTab": MessageLookupByLibrary.simpleMessage("All"),
     "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
       "At least lowercase or uppercase letters",
@@ -101,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
+    "helpCenter": MessageLookupByLibrary.simpleMessage("Help Center"),
     "homeTitle": MessageLookupByLibrary.simpleMessage("Home"),
     "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
       "Incorrect code, please try again.",
@@ -109,6 +111,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid phone number",
     ),
+    "logOut": MessageLookupByLibrary.simpleMessage("Log Out"),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
     "logoutButton": MessageLookupByLibrary.simpleMessage("Logout"),
     "logoutConfirmationMessage": MessageLookupByLibrary.simpleMessage(
@@ -118,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
       "Minimum 8 characters",
     ),
+    "myAccount": MessageLookupByLibrary.simpleMessage("My Account"),
     "nameLabel": MessageLookupByLibrary.simpleMessage("Name"),
     "nameMinimumLength": MessageLookupByLibrary.simpleMessage(
       "Name must be at least 2 characters",
@@ -129,6 +133,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "No offers available",
     ),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("No vendors found"),
+    "offersAndPromos": MessageLookupByLibrary.simpleMessage("Offers & Promos"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
     ),
@@ -148,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your Bookish Soulmate Awaits",
     ),
     "orSeparator": MessageLookupByLibrary.simpleMessage("or"),
+    "orderHistory": MessageLookupByLibrary.simpleMessage("Order History"),
     "orderNowButton": MessageLookupByLibrary.simpleMessage("Order Now"),
     "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("Our Vendors"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
@@ -265,5 +271,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "viewCartButton": MessageLookupByLibrary.simpleMessage("View cart"),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("Welcome Back "),
+    "yourFavourites": MessageLookupByLibrary.simpleMessage("Your Favourites"),
   };
 }

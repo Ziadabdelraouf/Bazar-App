@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/features/profile/presentation/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatelessWidget {
@@ -5,6 +6,6 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text("Profile View"));
+    return ProfilePage();
   }
 }
