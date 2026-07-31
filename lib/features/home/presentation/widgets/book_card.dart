@@ -1,5 +1,6 @@
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
+import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/detail_menu_page.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class BookCard extends StatelessWidget {
             title: title,
             price: price,
             imagePath: imagePath,
-            brandLogo: 'assets/icons/GoodDay_Vector.svg',
+            brandLogo: AppIcons.goodDayVector,
           ),
         );
       },

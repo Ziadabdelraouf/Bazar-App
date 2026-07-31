@@ -1,5 +1,6 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
+import 'package:bazar_group_1/core/theme/app_images.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/phone_number_notifier.dart';
@@ -31,7 +32,7 @@ class ProfileHeader extends ConsumerWidget {
             leading: CircleAvatar(
               radius: 40,
               child: Image.asset(
-                "assets/images/profile_placeholder.png",
+                AppImages.profilePlaceholder,
                 width: 55,
                 height: 55,
                 fit: BoxFit.cover,

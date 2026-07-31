@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
+import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/oauth_signin_button.dart';
 
@@ -69,13 +70,13 @@ class SignInSocialWidget extends StatelessWidget {
         OAuthSignInButton(
           onPressed: () {},
           text: S.of(context).signInWithGoogleButton,
-          icon: 'assets/icons/google_logo.svg',
+          icon: AppIcons.googleLogo,
         ),
         const SizedBox(height: 16),
         OAuthSignInButton(
           onPressed: () {},
           text: S.of(context).signInWithAppleButton,
-          icon: 'assets/icons/apple_logo.svg',
+          icon: AppIcons.appleLogo,
         ),
       ],
     );
