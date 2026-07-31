@@ -18,6 +18,8 @@ class ProfileTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
+
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
       onTap: onTap,
@@ -29,9 +31,12 @@ class ProfileTile extends StatelessWidget {
       trailing: IconButton(
         iconSize: 24,
         onPressed: onTap,
-        icon: SvgPicture.asset(
-          AppIcons.arrowRight2,
-          colorFilter: ColorFilter.mode(AppColors.grey500, BlendMode.srcIn),
+        icon: Transform.flip(
+          flipX: isRtl,
+          child: SvgPicture.asset(
+            AppIcons.arrowRight2,
+            colorFilter: ColorFilter.mode(AppColors.grey500, BlendMode.srcIn),
+          ),
         ),
       ),
       title: Text(

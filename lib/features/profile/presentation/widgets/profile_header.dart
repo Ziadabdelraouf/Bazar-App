@@ -20,6 +20,8 @@ class ProfileHeader extends ConsumerWidget {
         ? "$countryCode $digits"
         : "$countryCode 000000000";
 
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
+
     return Column(
       children: [
         Divider(color: AppColors.grey200, thickness: 1),
@@ -44,6 +46,8 @@ class ProfileHeader extends ConsumerWidget {
               style: AppTextStyles.body14Regular.copyWith(
                 color: AppColors.grey500,
               ),
+              textDirection: TextDirection.ltr,
+              textAlign: isRtl ? TextAlign.right : TextAlign.left,
             ),
             trailing: TextButton(
               onPressed: () {
