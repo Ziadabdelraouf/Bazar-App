@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("أفضل الموردين"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("كتب"),
+    "cancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
@@ -119,6 +120,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء إدخال رقم هاتف صحيح",
     ),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "logoutButton": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "logoutConfirmationMessage": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متاكد من رغبتك في تسجيل الخروج؟",
+    ),
+    "logoutTitle": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
       "8 أحرف على الأقل",
     ),

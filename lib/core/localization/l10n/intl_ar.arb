@@ -125,5 +125,10 @@
     "booksCategoryTab": "كتب",
     "poemsCategoryTab": "أشعار",
     "specialForYouCategoryTab": "خصيصاً لك",
-    "stationeryCategoryTab": "أدوات مكتبية"
+    "stationeryCategoryTab": "أدوات مكتبية",
+    "//Logout Bottom Sheet Strings//": "",
+    "logoutTitle": "تسجيل الخروج",
+    "logoutConfirmationMessage": "هل أنت متاكد من رغبتك في تسجيل الخروج؟",
+    "logoutButton": "تسجيل الخروج",
+    "cancelButton": "إلغاء"
 }

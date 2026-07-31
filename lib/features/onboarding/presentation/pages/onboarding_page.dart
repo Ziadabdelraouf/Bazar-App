@@ -15,8 +15,7 @@ class OnboardingPage extends ConsumerWidget {
     final onboardingItems = getOnboardingItems(context);
     final currentIndex = ref.watch(onboardingProvider);
     final currentItem = onboardingItems[currentIndex];
-    final isLastPage =
-        currentIndex == onboardingItems.length - 1;
+    final isLastPage = currentIndex == onboardingItems.length - 1;
 
     return OnboardingTemplate(
       imagePath: currentItem.imagePath,
@@ -27,10 +26,7 @@ class OnboardingPage extends ConsumerWidget {
       secondButton: localization.signInButton,
       onFirstButtonTap: () {
         if (isLastPage) {
-          Navigator.pushNamed(
-            context,
-            AppRoutes.signUpPage,
-          );
+          Navigator.pushNamed(context, AppRoutes.signUpPage);
         } else {
           ref.read(onboardingProvider.notifier).nextPage();
         }

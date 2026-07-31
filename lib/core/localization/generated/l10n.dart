@@ -1054,6 +1054,33 @@ class S {
       args: [],
     );
   }
+
+  // skipped getter for the '//Logout Bottom Sheet Strings//' key
+
+  /// `Logout`
+  String get logoutTitle {
+    return Intl.message('Logout', name: 'logoutTitle', desc: '', args: []);
+  }
+
+  /// `Are you sure you want to log out?`
+  String get logoutConfirmationMessage {
+    return Intl.message(
+      'Are you sure you want to log out?',
+      name: 'logoutConfirmationMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logoutButton {
+    return Intl.message('Logout', name: 'logoutButton', desc: '', args: []);
+  }
+
+  /// `Cancel`
+  String get cancelButton {
+    return Intl.message('Cancel', name: 'cancelButton', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
