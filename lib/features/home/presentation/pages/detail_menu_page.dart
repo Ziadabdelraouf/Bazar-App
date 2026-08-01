@@ -3,8 +3,11 @@ import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/features/profile/domain/entities/favorite_item.dart';
+import 'package:bazar_group_1/features/profile/presentation/notifiers/favorites_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DetailMenuPage extends StatefulWidget {
@@ -81,15 +84,29 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                     style: AppTextStyles.h4.copyWith(color: AppColors.grey900),
                   ),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: SvgPicture.asset(
-                    AppIcons.loveFill,
-                    colorFilter: ColorFilter.mode(
-                      AppColors.primary500,
-                      BlendMode.srcIn,
-                    ),
-                  ),
+                Consumer(
+                  builder: (context, ref, child) {
+                    return IconButton(
+                      onPressed: () {
+                        final priceValue = double.tryParse(
+                              widget.price.replaceAll('\$', ''),
+                            ) ??
+                            0.0;
+
+                        ref.read(favoritesNotifierProvider.notifier).addFavorite(
+                              FavoriteItem(
+                                title: widget.title,
+                                imageUrl: widget.imagePath,
+                                price: priceValue,
+                              ),
+                            );
+                      },
+                      icon: SvgPicture.asset(
+                        AppIcons.loveFill,
+                        colorFilter: ColorFilter.mode(AppColors.primary500, BlendMode.srcIn),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
