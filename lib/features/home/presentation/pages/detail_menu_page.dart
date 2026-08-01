@@ -99,16 +99,11 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                         if (isFavorited) {
                           notifier.removeFavorite(widget.title);
                         } else {
-                          final priceValue = double.tryParse(
-                                widget.price.replaceAll('\$', ''),
-                              ) ??
-                              0.0;
-
                           notifier.addFavorite(
-                            FavoriteItem(
+                            FavoriteItem.fromPriceText(
                               title: widget.title,
+                              priceText: widget.price,
                               imageUrl: widget.imagePath,
-                              price: priceValue,
                             ),
                           );
                         }
