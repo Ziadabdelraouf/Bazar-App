@@ -125,5 +125,14 @@
     "booksCategoryTab": "Books",
     "poemsCategoryTab": "Poems",
     "specialForYouCategoryTab": "Special for You",
-    "stationeryCategoryTab": "Stationery"
+    "stationeryCategoryTab": "Stationery",
+    "stationeryCategoryTab": "Stationery",
+    "//Favorites Page Strings//": "",
+    "yourFavoritesTitle": "Your Favorites",
+    "noFavoritesYet": "No favorites yet",
+    "removeFromFavoritesTitle": "Remove from Favorites?",
+    "removeFromFavoritesConfirmation": "Are you sure you want to remove this book from your favorites?",
+    "cancelButton": "Cancel",
+    "removeButton": "Remove"
+
 }

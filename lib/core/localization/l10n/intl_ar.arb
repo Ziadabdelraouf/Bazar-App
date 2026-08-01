@@ -125,5 +125,12 @@
     "booksCategoryTab": "كتب",
     "poemsCategoryTab": "أشعار",
     "specialForYouCategoryTab": "خصيصاً لك",
-    "stationeryCategoryTab": "أدوات مكتبية"
+    "stationeryCategoryTab": "أدوات مكتبية",
+    "//Favorites Page Strings//": "",
+    "yourFavoritesTitle": "مفضلتك",
+    "noFavoritesYet": "لا توجد مفضلات بعد",
+    "removeFromFavoritesTitle": "إزالة من المفضلة؟",
+    "removeFromFavoritesConfirmation": "هل أنت متأكد أنك تريد إزالة هذا الكتاب من مفضلتك؟",
+    "cancelButton": "إلغاء",
+    "removeButton": "إزالة"
 }
