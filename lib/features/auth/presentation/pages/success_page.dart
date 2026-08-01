@@ -4,6 +4,7 @@ import 'package:bazar_group_1/core/constants/enums.dart';
 import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
+import 'package:bazar_group_1/core/theme/app_images.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 
 class SuccessPage extends StatelessWidget {
@@ -25,7 +26,7 @@ class SuccessPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/images/success.png"),
+            Image.asset(AppImages.success),
             const SizedBox(height: 32),
             Text(
               isLoginFlow
