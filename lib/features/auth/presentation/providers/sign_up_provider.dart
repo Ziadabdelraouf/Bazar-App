@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -61,6 +62,7 @@ class SignUpNotifier
       return false;
     }
 
+    ref.read(nameNotifierProvider.notifier).updateName(nameController.text.trim());
     return true;
   }
 }

@@ -865,6 +865,58 @@ class S {
     return Intl.message('Profile', name: 'profileTitle', desc: '', args: []);
   }
 
+  // skipped getter for the '//Profile Strings//' key
+
+  /// `Log Out`
+  String get logOut {
+    return Intl.message('Log Out', name: 'logOut', desc: '', args: []);
+  }
+
+  /// `My Account`
+  String get myAccount {
+    return Intl.message('My Account', name: 'myAccount', desc: '', args: []);
+  }
+
+  /// `Address`
+  String get address {
+    return Intl.message('Address', name: 'address', desc: '', args: []);
+  }
+
+  /// `Offers & Promos`
+  String get offersAndPromos {
+    return Intl.message(
+      'Offers & Promos',
+      name: 'offersAndPromos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Favourites`
+  String get yourFavourites {
+    return Intl.message(
+      'Your Favourites',
+      name: 'yourFavourites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order History`
+  String get orderHistory {
+    return Intl.message(
+      'Order History',
+      name: 'orderHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Help Center`
+  String get helpCenter {
+    return Intl.message('Help Center', name: 'helpCenter', desc: '', args: []);
+  }
+
   // skipped getter for the '//Special Offer Strings//' key
 
   /// `No offers available`

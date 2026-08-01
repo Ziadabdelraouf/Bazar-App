@@ -1,4 +1,5 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/core/theme/app_images.dart';
 import 'package:bazar_group_1/features/onboarding/domain/models/onboarding_item.dart';
 import 'package:flutter/material.dart';
 
@@ -7,19 +8,19 @@ List<OnboardingItem> getOnboardingItems(BuildContext context) {
 
   return [
     OnboardingItem(
-      imagePath: 'assets/onboarding1.png',
+      imagePath: AppImages.onboarding1,
       title: localization.onboardingOneTitle,
       description: localization.onboardingOneDescription,
       firstButton: localization.continueButton,
     ),
     OnboardingItem(
-      imagePath: 'assets/onboarding2.png',
+      imagePath: AppImages.onboarding2,
       title: localization.onboardingTwoTitle,
       description: localization.onboardingTwoDescription,
       firstButton: localization.continueButton,
     ),
     OnboardingItem(
-      imagePath: 'assets/onboarding3.png',
+      imagePath: AppImages.onboarding3,
       title: localization.onboardingThreeTitle,
       description: localization.onboardingThreeDescription,
       firstButton: localization.getStartedButton,

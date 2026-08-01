@@ -1,19 +1,23 @@
 import 'package:bazar_group_1/core/theme/app_colors.dart';
-import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class AppBackBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
-  final Widget? trailingWidget;
   final Widget? leadingWidget;
+  final Widget? trailingWidget;
+  final VoidCallback? onLeadingPressed;
+  final VoidCallback? onTrailingPressed;
+
   const AppBackBar({
     super.key,
     this.title,
-    this.trailingWidget,
     this.leadingWidget,
+    this.trailingWidget,
+    this.onLeadingPressed,
+    this.onTrailingPressed,
   });
+
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
@@ -21,7 +25,8 @@ class AppBackBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       scrolledUnderElevation: 0,
-      actionsPadding: EdgeInsets.only(right: 20),
+      automaticallyImplyLeading: false,
+      actionsPadding: const EdgeInsets.only(right: 20),
       backgroundColor: AppColors.white,
       leading: leadingWidget != null
           ? IconButton(
@@ -30,27 +35,17 @@ class AppBackBar extends StatelessWidget implements PreferredSizeWidget {
                 width: 24,
                 child: FittedBox(fit: BoxFit.scaleDown, child: leadingWidget),
               ),
-              onPressed: () {},
+              onPressed: onLeadingPressed ?? () {},
             )
-          : IconButton(
-              onPressed: () {
-                if (Navigator.canPop(context)) {
-                  Navigator.pop(context);
-                }
-              },
-              icon: SvgPicture.asset(
-                AppIcons.arrowLeftOutline,
-                matchTextDirection: true,
-              ),
-            ),
+          : null,
       centerTitle: true,
       title: Text(
         title ?? '',
         style: AppTextStyles.h4.copyWith(color: AppColors.grey900),
       ),
-      actions: [
-        trailingWidget != null
-            ? IconButton(
+      actions: trailingWidget != null
+          ? [
+              IconButton(
                 icon: SizedBox(
                   height: 24,
                   width: 24,
@@ -59,10 +54,10 @@ class AppBackBar extends StatelessWidget implements PreferredSizeWidget {
                     child: trailingWidget,
                   ),
                 ),
-                onPressed: () {},
-              )
-            : SizedBox.shrink(),
-      ],
+                onPressed: onTrailingPressed ?? () {},
+              ),
+            ]
+          : null,
     );
   }
 }

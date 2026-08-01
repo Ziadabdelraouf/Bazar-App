@@ -48,4 +48,8 @@ class AppIcons {
   static const String star = 'assets/icons/star.svg';
   static const String walletFill = 'assets/icons/wallet_fill.svg';
   static const String deleteOutline = 'assets/icons/delete_outline.svg';
+  static const String googleLogo = 'assets/icons/google_logo.svg';
+  static const String appleLogo = 'assets/icons/apple_logo.svg';
+  static const String goodDayVector = 'assets/icons/GoodDay_Vector.svg';
+  static const String reloadIcon = 'assets/icons/reload_icon.svg';
 }

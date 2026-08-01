@@ -1,5 +1,6 @@
 import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
+import 'package:bazar_group_1/core/theme/app_images.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -32,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Transform.rotate(
               angle: -90 * 3.1415926535 / 180,
               child: Image.asset(
-                'assets/images/splash_vector_faded.png',
+                AppImages.splashVectorFaded,
                 width: MediaQuery.of(context).size.width * (316.61 / 375),
                 height: MediaQuery.of(context).size.height * (315.86 / 812),
               ),
@@ -40,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           Center(
             child: Image.asset(
-              'assets/images/splash_logo_transparent_final.png',
+              AppImages.splashLogoTransparentFinal,
               width: MediaQuery.of(context).size.width * (200 / 375),
             ),
           ),
