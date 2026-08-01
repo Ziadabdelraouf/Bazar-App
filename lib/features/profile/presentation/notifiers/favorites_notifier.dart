@@ -1,23 +1,29 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/features/profile/domain/entities/favorite_item.dart';
-import 'package:bazar_group_1/features/profile/data/repositories/favorites_repository_impl.dart';
 
-class FavoritesNotifier extends AsyncNotifier<List<FavoriteItem>> {
+class FavoritesNotifier extends Notifier<List<FavoriteItem>> {
   @override
-  Future<List<FavoriteItem>> build() async {
-    final repository = ref.watch(favoritesRepositoryProvider);
-    return repository.getFavorites();
+  List<FavoriteItem> build() {
+    return [];
   }
 
-  Future<void> removeFavorite(String id) async {
-    final repository = ref.read(favoritesRepositoryProvider);
-    await repository.removeFavorite(id);
+  void addFavorite(FavoriteItem item) {
+    final alreadyExists = state.any((existing) => existing.title == item.title);
+    if (alreadyExists) return;
 
-    state = await AsyncValue.guard(() => repository.getFavorites());
+    state = [...state, item];
+  }
+
+  void removeFavorite(String title) {
+    state = state.where((item) => item.title != title).toList();
+  }
+
+  bool isFavorite(String title) {
+    return state.any((item) => item.title == title);
   }
 }
 
 final favoritesNotifierProvider =
-    AsyncNotifierProvider<FavoritesNotifier, List<FavoriteItem>>(
+    NotifierProvider<FavoritesNotifier, List<FavoriteItem>>(
   () => FavoritesNotifier(),
 );
