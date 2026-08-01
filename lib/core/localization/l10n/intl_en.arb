@@ -133,6 +133,10 @@
     "removeFromFavoritesTitle": "Remove from Favorites?",
     "removeFromFavoritesConfirmation": "Are you sure you want to remove this book from your favorites?",
     "cancelButton": "Cancel",
-    "removeButton": "Remove"
+    "removeButton": "Remove",
+    "//Logout Bottom Sheet Strings//": "",
+    "logoutTitle": "Logout",
+    "logoutConfirmationMessage": "Are you sure you want to log out?",
+    "logoutButton": "Logout"
 
 }

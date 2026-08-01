@@ -110,6 +110,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter a valid phone number",
     ),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
+    "logoutButton": MessageLookupByLibrary.simpleMessage("Logout"),
+    "logoutConfirmationMessage": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to log out?",
+    ),
+    "logoutTitle": MessageLookupByLibrary.simpleMessage("Logout"),
     "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
       "Minimum 8 characters",
     ),

@@ -132,5 +132,9 @@
     "removeFromFavoritesTitle": "إزالة من المفضلة؟",
     "removeFromFavoritesConfirmation": "هل أنت متأكد أنك تريد إزالة هذا الكتاب من مفضلتك؟",
     "cancelButton": "إلغاء",
-    "removeButton": "إزالة"
+    "removeButton": "إزالة",
+    "//Logout Bottom Sheet Strings//": "",
+    "logoutTitle": "تسجيل الخروج",
+    "logoutConfirmationMessage": "هل أنت متاكد من رغبتك في تسجيل الخروج؟",
+    "logoutButton": "تسجيل الخروج"
 }
