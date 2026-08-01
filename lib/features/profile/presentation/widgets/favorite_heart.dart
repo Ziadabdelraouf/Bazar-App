@@ -7,9 +7,11 @@ class FavoriteHeart extends StatefulWidget {
   const FavoriteHeart({
     super.key,
     required this.onTap,
+    this.isFavorited = true,
   });
 
   final VoidCallback onTap;
+  final bool isFavorited;
 
   @override
   State<FavoriteHeart> createState() => _FavoriteHeartState();
@@ -54,8 +56,8 @@ class _FavoriteHeartState extends State<FavoriteHeart>
               AppIcons.loveFill,
               width: 20,
               height: 19,
-              colorFilter: const ColorFilter.mode(
-                AppColors.primary500,
+              colorFilter: ColorFilter.mode(
+                widget.isFavorited ? AppColors.primary500 : AppColors.grey400,
                 BlendMode.srcIn,
               ),
             ),

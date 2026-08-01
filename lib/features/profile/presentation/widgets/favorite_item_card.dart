@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/features/home/presentation/pages/detail_menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
@@ -64,10 +65,27 @@ class _FavoriteItemCardState extends ConsumerState<FavoriteItemCard> {
         opacity: _isRemoving ? 0.0 : 1.0,
         child: _isRemoving
             ? const SizedBox(width: double.infinity)
-            : Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-                child: Row(
-                  children: [
+            : GestureDetector(
+                onTap: () {
+                  showModalBottomSheet(
+                    backgroundColor: Colors.white,
+                    context: context,
+                    isScrollControlled: true,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                    ),
+                    builder: (context) => DetailMenuPage(
+                      title: widget.item.title,
+                      price: '\$${widget.item.price.toStringAsFixed(2)}',
+                      imagePath: widget.item.imageUrl ?? '',
+                      brandLogo: 'assets/icons/GoodDay_Vector.svg',
+                    ),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+                  child: Row(
+                    children: [
                     Container(
                       width: 48,
                       height: 48,
@@ -90,9 +108,8 @@ class _FavoriteItemCardState extends ConsumerState<FavoriteItemCard> {
                           Text(
                             widget.item.title,
                             overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                            style: AppTextStyles.body16Medium
-                                .copyWith(color: AppColors.grey900),
+                            maxLines: 2,
+                            style: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900),
                           ),
                           const SizedBox(height: 4),
                           Text(
@@ -107,6 +124,7 @@ class _FavoriteItemCardState extends ConsumerState<FavoriteItemCard> {
                   ],
                 ),
               ),
+            ),
       ),
     );
   }
