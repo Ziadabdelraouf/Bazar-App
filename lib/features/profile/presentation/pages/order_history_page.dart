@@ -6,6 +6,7 @@ import 'package:bazar_group_1/core/components/navigation/app_back_button.dart';
 import 'package:bazar_group_1/features/profile/domain/entities/order_history_item.dart';
 import 'package:bazar_group_1/features/profile/presentation/notifiers/order_history_notifier.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/order_history_item_card.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 
 class OrderHistoryPage extends ConsumerWidget {
   const OrderHistoryPage({super.key});
@@ -30,7 +31,7 @@ class OrderHistoryPage extends ConsumerWidget {
                   children: [
                     const AppBackButton(),
                     Text(
-                      'Order History',
+                      S.of(context).orderHistoryPageTitle,
                       style: AppTextStyles.h4.copyWith(color: AppColors.grey900),
                     ),
                     const SizedBox(width: 40),
@@ -40,7 +41,7 @@ class OrderHistoryPage extends ConsumerWidget {
             ),
             Expanded(
               child: orders.isEmpty
-                  ? const Center(child: Text('No orders yet'))
+                  ? Center(child: Text(S.of(context).noOrdersYet))
                   : ListView(
                       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                       children: groupedOrders.entries.map((entry) {
@@ -84,12 +85,22 @@ class OrderHistoryPage extends ConsumerWidget {
               borderRadius: BorderRadius.circular(8),
             ),
             child: Column(
-              children: orders.map((order) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: OrderHistoryItemCard(order: order),
-                );
-              }).toList(),
+              children: [
+                for (int i = 0; i < orders.length; i++) ...[
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    child: OrderHistoryItemCard(order: orders[i]),
+                  ),
+                  if (i < orders.length - 1)
+                    Divider(
+                      color: AppColors.grey200,
+                      thickness: 1,
+                      height: 1,
+                      indent: 16,
+                      endIndent: 16,
+                    ),
+                ],
+              ],
             ),
           ),
         ],

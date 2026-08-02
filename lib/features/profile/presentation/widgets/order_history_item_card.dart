@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/profile/domain/entities/order_history_item.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 
 class OrderHistoryItemCard extends StatelessWidget {
   const OrderHistoryItemCard({super.key, required this.order});
@@ -12,7 +13,10 @@ class OrderHistoryItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final statusColor =
         order.status == OrderStatus.delivered ? AppColors.green : AppColors.red;
-    final statusText = order.status == OrderStatus.delivered ? 'Delivered' : 'Cancelled';
+    final localization = S.of(context);
+    final statusText = order.status == OrderStatus.delivered
+        ? localization.deliveredStatus
+        : localization.cancelledStatus;
 
     return Row(
       children: [
@@ -59,7 +63,7 @@ class OrderHistoryItemCard extends StatelessWidget {
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    '${order.itemCount} item${order.itemCount == 1 ? '' : 's'}',
+                    localization.itemsCount(order.itemCount),
                     style: AppTextStyles.body14Medium.copyWith(color: AppColors.grey500),
                   ),
                 ],
