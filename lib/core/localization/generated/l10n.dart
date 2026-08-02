@@ -865,6 +865,58 @@ class S {
     return Intl.message('Profile', name: 'profileTitle', desc: '', args: []);
   }
 
+  // skipped getter for the '//Profile Strings//' key
+
+  /// `Log Out`
+  String get logOut {
+    return Intl.message('Log Out', name: 'logOut', desc: '', args: []);
+  }
+
+  /// `My Account`
+  String get myAccount {
+    return Intl.message('My Account', name: 'myAccount', desc: '', args: []);
+  }
+
+  /// `Address`
+  String get address {
+    return Intl.message('Address', name: 'address', desc: '', args: []);
+  }
+
+  /// `Offers & Promos`
+  String get offersAndPromos {
+    return Intl.message(
+      'Offers & Promos',
+      name: 'offersAndPromos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Favourites`
+  String get yourFavourites {
+    return Intl.message(
+      'Your Favourites',
+      name: 'yourFavourites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order History`
+  String get orderHistory {
+    return Intl.message(
+      'Order History',
+      name: 'orderHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Help Center`
+  String get helpCenter {
+    return Intl.message('Help Center', name: 'helpCenter', desc: '', args: []);
+  }
+
   // skipped getter for the '//Special Offer Strings//' key
 
   /// `No offers available`
@@ -1055,11 +1107,111 @@ class S {
     );
   }
 
-  // skipped getter for the '//Location Page Strings//' key
+  // skipped getter for the '//Logout Bottom Sheet Strings//' key
+
+  /// `Logout`
+  String get logoutTitle {
+    return Intl.message('Logout', name: 'logoutTitle', desc: '', args: []);
+  }
+
+  /// `Are you sure you want to log out?`
+  String get logoutConfirmationMessage {
+    return Intl.message(
+      'Are you sure you want to log out?',
+      name: 'logoutConfirmationMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logoutButton {
+    return Intl.message('Logout', name: 'logoutButton', desc: '', args: []);
+  }
+
+  /// `Cancel`
+  String get cancelButton {
+    return Intl.message('Cancel', name: 'cancelButton', desc: '', args: []);
+  }
+
+  /// `Order History`
+  String get helpCenterOrderHistory {
+    return Intl.message(
+      'Order History',
+      name: 'helpCenterOrderHistory',
+      desc: 'App bar title on the help center page',
+      args: [],
+    );
+  }
+
+  /// `Help Center`
+  String get helpCenterTitle {
+    return Intl.message(
+      'Help Center',
+      name: 'helpCenterTitle',
+      desc: 'Main heading on the help center page',
+      args: [],
+    );
+  }
+
+  /// `Tell us how we can help 👋\nChapter are standing by for service & support!`
+  String get helpCenterSubtitle {
+    return Intl.message(
+      'Tell us how we can help 👋\nChapter are standing by for service & support!',
+      name: 'helpCenterSubtitle',
+      desc: 'Subtitle text below the help center heading',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get helpCenterEmailTitle {
+    return Intl.message(
+      'Email',
+      name: 'helpCenterEmailTitle',
+      desc: 'Title of the email contact card',
+      args: [],
+    );
+  }
+
+  /// `Send to your email`
+  String get helpCenterEmailSubtitle {
+    return Intl.message(
+      'Send to your email',
+      name: 'helpCenterEmailSubtitle',
+      desc: 'Subtitle of the email contact card',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get helpCenterPhoneTitle {
+    return Intl.message(
+      'Phone',
+      name: 'helpCenterPhoneTitle',
+      desc: 'Title of the phone contact card',
+      args: [],
+    );
+  }
+
+  /// `Send to your phone`
+  String get helpCenterPhoneSubtitle {
+    return Intl.message(
+      'Send to your phone',
+      name: 'helpCenterPhoneSubtitle',
+      desc: 'Subtitle of the phone contact card',
+      args: [],
+    );
+  }
 
   /// `Location`
   String get locationTitle {
-    return Intl.message('Location', name: 'locationTitle', desc: '', args: []);
+    return Intl.message(
+      'Location',
+      name: 'locationTitle',
+      desc: 'App bar title on the location/address page',
+      args: [],
+    );
   }
 
   /// `Detail Address`
@@ -1067,47 +1219,7 @@ class S {
     return Intl.message(
       'Detail Address',
       name: 'detailAddressTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Selected address`
-  String get selectedAddressTitle {
-    return Intl.message(
-      'Selected address',
-      name: 'selectedAddressTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Tap on the map to select your address.`
-  String get selectAddressMessage {
-    return Intl.message(
-      'Tap on the map to select your address.',
-      name: 'selectAddressMessage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No address was found for this location.`
-  String get addressNotFound {
-    return Intl.message(
-      'No address was found for this location.',
-      name: 'addressNotFound',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Address details are currently unavailable.`
-  String get addressUnavailable {
-    return Intl.message(
-      'Address details are currently unavailable.',
-      name: 'addressUnavailable',
-      desc: '',
+      desc: 'Heading for the address details section',
       args: [],
     );
   }
@@ -1117,7 +1229,47 @@ class S {
     return Intl.message(
       'Current location',
       name: 'currentLocation',
-      desc: '',
+      desc: 'Tooltip for the current-location icon button',
+      args: [],
+    );
+  }
+
+  /// `Selected Address`
+  String get selectedAddressTitle {
+    return Intl.message(
+      'Selected Address',
+      name: 'selectedAddressTitle',
+      desc: 'Fallback title shown when no address title is set yet',
+      args: [],
+    );
+  }
+
+  /// `Select an address on the map`
+  String get selectAddressMessage {
+    return Intl.message(
+      'Select an address on the map',
+      name: 'selectAddressMessage',
+      desc: 'Fallback message prompting the user to pick a location',
+      args: [],
+    );
+  }
+
+  /// `Address not found`
+  String get addressNotFound {
+    return Intl.message(
+      'Address not found',
+      name: 'addressNotFound',
+      desc: 'Error shown when the selected location has no matching address',
+      args: [],
+    );
+  }
+
+  /// `Address unavailable`
+  String get addressUnavailable {
+    return Intl.message(
+      'Address unavailable',
+      name: 'addressUnavailable',
+      desc: 'Error shown when the address lookup fails or is unavailable',
       args: [],
     );
   }
@@ -1127,19 +1279,29 @@ class S {
     return Intl.message(
       'Save Address As',
       name: 'saveAddressAs',
-      desc: '',
+      desc: 'Label above the address type choice chips',
       args: [],
     );
   }
 
   /// `Home`
   String get homeAddress {
-    return Intl.message('Home', name: 'homeAddress', desc: '', args: []);
+    return Intl.message(
+      'Home',
+      name: 'homeAddress',
+      desc: 'Choice chip label for saving address as Home',
+      args: [],
+    );
   }
 
   /// `Office`
   String get officeAddress {
-    return Intl.message('Office', name: 'officeAddress', desc: '', args: []);
+    return Intl.message(
+      'Office',
+      name: 'officeAddress',
+      desc: 'Choice chip label for saving address as Office',
+      args: [],
+    );
   }
 
   /// `Confirmation`
@@ -1147,7 +1309,7 @@ class S {
     return Intl.message(
       'Confirmation',
       name: 'confirmationButton',
-      desc: '',
+      desc: 'Button to confirm the selected address',
       args: [],
     );
   }

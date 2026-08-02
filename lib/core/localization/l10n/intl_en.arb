@@ -99,6 +99,14 @@
     "categoryTitle": "Category",
     "cartTitle": "Cart",
     "profileTitle": "Profile",
+    "//Profile Strings//": "",
+    "logOut": "Log Out",
+    "myAccount": "My Account",
+    "address": "Address",
+    "offersAndPromos": "Offers & Promos",
+    "yourFavourites": "Your Favourites",
+    "orderHistory": "Order History",
+    "helpCenter": "Help Center",
     "//Special Offer Strings//": "",
     "noOffersAvailable": "No offers available",
     "discountPercent": "Discount {discount}%",
@@ -126,16 +134,82 @@
     "poemsCategoryTab": "Poems",
     "specialForYouCategoryTab": "Special for You",
     "stationeryCategoryTab": "Stationery",
-    "//Location Page Strings//": "",
+    "//Logout Bottom Sheet Strings//": "",
+    "logoutTitle": "Logout",
+    "logoutConfirmationMessage": "Are you sure you want to log out?",
+    "logoutButton": "Logout",
+    "cancelButton": "Cancel",
+    "helpCenterOrderHistory": "Order History",
+    "@helpCenterOrderHistory": {
+      "description": "App bar title on the help center page"
+    },
+    "helpCenterTitle": "Help Center",
+    "@helpCenterTitle": {
+      "description": "Main heading on the help center page"
+    },
+    "helpCenterSubtitle": "Tell us how we can help 👋\nChapter are standing by for service & support!",
+    "@helpCenterSubtitle": {
+      "description": "Subtitle text below the help center heading"
+    },
+    "helpCenterEmailTitle": "Email",
+    "@helpCenterEmailTitle": {
+      "description": "Title of the email contact card"
+    },
+    "helpCenterEmailSubtitle": "Send to your email",
+    "@helpCenterEmailSubtitle": {
+      "description": "Subtitle of the email contact card"
+    },
+    "helpCenterPhoneTitle": "Phone",
+    "@helpCenterPhoneTitle": {
+      "description": "Title of the phone contact card"
+    },
+    "helpCenterPhoneSubtitle": "Send to your phone",
+    "@helpCenterPhoneSubtitle": {
+      "description": "Subtitle of the phone contact card"
+    },
+
     "locationTitle": "Location",
-    "detailAddressTitle": "Detail Address",
-    "selectedAddressTitle": "Selected address",
-    "selectAddressMessage": "Tap on the map to select your address.",
-    "addressNotFound": "No address was found for this location.",
-    "addressUnavailable": "Address details are currently unavailable.",
-    "currentLocation": "Current location",
-    "saveAddressAs": "Save Address As",
-    "homeAddress": "Home",
-    "officeAddress": "Office",
-    "confirmationButton": "Confirmation"
+  "@locationTitle": {
+    "description": "App bar title on the location/address page"
+  },
+  "detailAddressTitle": "Detail Address",
+  "@detailAddressTitle": {
+    "description": "Heading for the address details section"
+  },
+  "currentLocation": "Current location",
+  "@currentLocation": {
+    "description": "Tooltip for the current-location icon button"
+  },
+  "selectedAddressTitle": "Selected Address",
+  "@selectedAddressTitle": {
+    "description": "Fallback title shown when no address title is set yet"
+  },
+  "selectAddressMessage": "Select an address on the map",
+  "@selectAddressMessage": {
+    "description": "Fallback message prompting the user to pick a location"
+  },
+  "addressNotFound": "Address not found",
+  "@addressNotFound": {
+    "description": "Error shown when the selected location has no matching address"
+  },
+  "addressUnavailable": "Address unavailable",
+  "@addressUnavailable": {
+    "description": "Error shown when the address lookup fails or is unavailable"
+  },
+  "saveAddressAs": "Save Address As",
+  "@saveAddressAs": {
+    "description": "Label above the address type choice chips"
+  },
+  "homeAddress": "Home",
+  "@homeAddress": {
+    "description": "Choice chip label for saving address as Home"
+  },
+  "officeAddress": "Office",
+  "@officeAddress": {
+    "description": "Choice chip label for saving address as Office"
+  },
+  "confirmationButton": "Confirmation",
+  "@confirmationButton": {
+    "description": "Button to confirm the selected address"
+  }
 }

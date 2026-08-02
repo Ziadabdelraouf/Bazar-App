@@ -31,11 +31,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your password changed successfully, you can login again with a new password",
     ),
     "about": MessageLookupByLibrary.simpleMessage("About"),
+    "address": MessageLookupByLibrary.simpleMessage("Address"),
     "addressNotFound": MessageLookupByLibrary.simpleMessage(
-      "No address was found for this location.",
+      "Address not found",
     ),
     "addressUnavailable": MessageLookupByLibrary.simpleMessage(
-      "Address details are currently unavailable.",
+      "Address unavailable",
     ),
     "allCategoryTab": MessageLookupByLibrary.simpleMessage("All"),
     "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
@@ -46,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("Best Vendors"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("Books"),
+    "cancelButton": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("Category"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
@@ -111,6 +113,22 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
+    "helpCenter": MessageLookupByLibrary.simpleMessage("Help Center"),
+    "helpCenterEmailSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Send to your email",
+    ),
+    "helpCenterEmailTitle": MessageLookupByLibrary.simpleMessage("Email"),
+    "helpCenterOrderHistory": MessageLookupByLibrary.simpleMessage(
+      "Order History",
+    ),
+    "helpCenterPhoneSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Send to your phone",
+    ),
+    "helpCenterPhoneTitle": MessageLookupByLibrary.simpleMessage("Phone"),
+    "helpCenterSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Tell us how we can help 👋\nChapter are standing by for service & support!",
+    ),
+    "helpCenterTitle": MessageLookupByLibrary.simpleMessage("Help Center"),
     "homeAddress": MessageLookupByLibrary.simpleMessage("Home"),
     "homeTitle": MessageLookupByLibrary.simpleMessage("Home"),
     "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
@@ -121,10 +139,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter a valid phone number",
     ),
     "locationTitle": MessageLookupByLibrary.simpleMessage("Location"),
+    "logOut": MessageLookupByLibrary.simpleMessage("Log Out"),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
+    "logoutButton": MessageLookupByLibrary.simpleMessage("Logout"),
+    "logoutConfirmationMessage": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to log out?",
+    ),
+    "logoutTitle": MessageLookupByLibrary.simpleMessage("Logout"),
     "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
       "Minimum 8 characters",
     ),
+    "myAccount": MessageLookupByLibrary.simpleMessage("My Account"),
     "nameLabel": MessageLookupByLibrary.simpleMessage("Name"),
     "nameMinimumLength": MessageLookupByLibrary.simpleMessage(
       "Name must be at least 2 characters",
@@ -136,6 +161,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "No offers available",
     ),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("No vendors found"),
+    "offersAndPromos": MessageLookupByLibrary.simpleMessage("Offers & Promos"),
     "officeAddress": MessageLookupByLibrary.simpleMessage("Office"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
@@ -156,6 +182,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your Bookish Soulmate Awaits",
     ),
     "orSeparator": MessageLookupByLibrary.simpleMessage("or"),
+    "orderHistory": MessageLookupByLibrary.simpleMessage("Order History"),
     "orderNowButton": MessageLookupByLibrary.simpleMessage("Order Now"),
     "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("Our Vendors"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
@@ -221,13 +248,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "seeAllButton": MessageLookupByLibrary.simpleMessage("See all"),
     "selectAddressMessage": MessageLookupByLibrary.simpleMessage(
-      "Tap on the map to select your address.",
+      "Select an address on the map",
     ),
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage(
       "Select Country",
     ),
     "selectedAddressTitle": MessageLookupByLibrary.simpleMessage(
-      "Selected address",
+      "Selected Address",
     ),
     "sendButton": MessageLookupByLibrary.simpleMessage("Send"),
     "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
@@ -280,5 +307,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "viewCartButton": MessageLookupByLibrary.simpleMessage("View cart"),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("Welcome Back "),
+    "yourFavourites": MessageLookupByLibrary.simpleMessage("Your Favourites"),
   };
 }
