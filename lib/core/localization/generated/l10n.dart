@@ -865,58 +865,6 @@ class S {
     return Intl.message('Profile', name: 'profileTitle', desc: '', args: []);
   }
 
-  // skipped getter for the '//Profile Strings//' key
-
-  /// `Log Out`
-  String get logOut {
-    return Intl.message('Log Out', name: 'logOut', desc: '', args: []);
-  }
-
-  /// `My Account`
-  String get myAccount {
-    return Intl.message('My Account', name: 'myAccount', desc: '', args: []);
-  }
-
-  /// `Address`
-  String get address {
-    return Intl.message('Address', name: 'address', desc: '', args: []);
-  }
-
-  /// `Offers & Promos`
-  String get offersAndPromos {
-    return Intl.message(
-      'Offers & Promos',
-      name: 'offersAndPromos',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Your Favourites`
-  String get yourFavourites {
-    return Intl.message(
-      'Your Favourites',
-      name: 'yourFavourites',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Order History`
-  String get orderHistory {
-    return Intl.message(
-      'Order History',
-      name: 'orderHistory',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Help Center`
-  String get helpCenter {
-    return Intl.message('Help Center', name: 'helpCenter', desc: '', args: []);
-  }
-
   // skipped getter for the '//Special Offer Strings//' key
 
   /// `No offers available`
@@ -1107,31 +1055,101 @@ class S {
     );
   }
 
-  // skipped getter for the '//Logout Bottom Sheet Strings//' key
+  // skipped getter for the '//Location Page Strings//' key
 
-  /// `Logout`
-  String get logoutTitle {
-    return Intl.message('Logout', name: 'logoutTitle', desc: '', args: []);
+  /// `Location`
+  String get locationTitle {
+    return Intl.message('Location', name: 'locationTitle', desc: '', args: []);
   }
 
-  /// `Are you sure you want to log out?`
-  String get logoutConfirmationMessage {
+  /// `Detail Address`
+  String get detailAddressTitle {
     return Intl.message(
-      'Are you sure you want to log out?',
-      name: 'logoutConfirmationMessage',
+      'Detail Address',
+      name: 'detailAddressTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Logout`
-  String get logoutButton {
-    return Intl.message('Logout', name: 'logoutButton', desc: '', args: []);
+  /// `Selected address`
+  String get selectedAddressTitle {
+    return Intl.message(
+      'Selected address',
+      name: 'selectedAddressTitle',
+      desc: '',
+      args: [],
+    );
   }
 
-  /// `Cancel`
-  String get cancelButton {
-    return Intl.message('Cancel', name: 'cancelButton', desc: '', args: []);
+  /// `Tap on the map to select your address.`
+  String get selectAddressMessage {
+    return Intl.message(
+      'Tap on the map to select your address.',
+      name: 'selectAddressMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No address was found for this location.`
+  String get addressNotFound {
+    return Intl.message(
+      'No address was found for this location.',
+      name: 'addressNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address details are currently unavailable.`
+  String get addressUnavailable {
+    return Intl.message(
+      'Address details are currently unavailable.',
+      name: 'addressUnavailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current location`
+  String get currentLocation {
+    return Intl.message(
+      'Current location',
+      name: 'currentLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Address As`
+  String get saveAddressAs {
+    return Intl.message(
+      'Save Address As',
+      name: 'saveAddressAs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get homeAddress {
+    return Intl.message('Home', name: 'homeAddress', desc: '', args: []);
+  }
+
+  /// `Office`
+  String get officeAddress {
+    return Intl.message('Office', name: 'officeAddress', desc: '', args: []);
+  }
+
+  /// `Confirmation`
+  String get confirmationButton {
+    return Intl.message(
+      'Confirmation',
+      name: 'confirmationButton',
+      desc: '',
+      args: [],
+    );
   }
 }
 

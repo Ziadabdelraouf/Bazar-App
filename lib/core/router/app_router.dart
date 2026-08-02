@@ -2,6 +2,8 @@ import 'package:bazar_group_1/features/home/domain/entities/author.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/author_detail_page.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/vendors_search_placeholder_page.dart';
+import 'package:bazar_group_1/features/profile/presentation/pages/address_page.dart';
+import 'package:bazar_group_1/features/profile/presentation/pages/help_center_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/constants/enums.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/sign_in_page.dart';
@@ -58,6 +60,9 @@ class AppRouter {
     },
     AppRoutes.vendorsPage: (context) => const VendorsPage(),
     AppRoutes.vendorsSearchPage: (context) => const VendorsSearchPlaceholderPage(),
+    AppRoutes.helpCenter: (context) => const HelpCenterPage(),
+    AppRoutes.address: (context) => const AddressPage(),
+
   };
   
 }
