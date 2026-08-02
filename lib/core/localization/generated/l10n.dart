@@ -1133,6 +1133,60 @@ class S {
   String get cancelButton {
     return Intl.message('Cancel', name: 'cancelButton', desc: '', args: []);
   }
+
+  // skipped getter for the '//Order History Page Strings//' key
+
+  /// `Order History`
+  String get orderHistoryPageTitle {
+    return Intl.message(
+      'Order History',
+      name: 'orderHistoryPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No orders yet`
+  String get noOrdersYet {
+    return Intl.message(
+      'No orders yet',
+      name: 'noOrdersYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivered`
+  String get deliveredStatus {
+    return Intl.message(
+      'Delivered',
+      name: 'deliveredStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancelled`
+  String get cancelledStatus {
+    return Intl.message(
+      'Cancelled',
+      name: 'cancelledStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =1{1 item} other{{count} items}}`
+  String itemsCount(int count) {
+    return Intl.plural(
+      count,
+      one: '1 item',
+      other: '$count items',
+      name: 'itemsCount',
+      desc: '',
+      args: [count],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

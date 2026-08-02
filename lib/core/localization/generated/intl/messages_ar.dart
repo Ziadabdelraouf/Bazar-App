@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(discount) => "خصم %${discount}";
 
+  static String m1(count) =>
+      "${Intl.plural(count, zero: 'لا توجد عناصر', one: 'عنصر واحد', two: 'عنصران', few: '${count} عناصر', many: '${count} عنصرًا', other: '${count} عنصر')}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "PasswordChanged": MessageLookupByLibrary.simpleMessage(
@@ -42,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("أفضل الموردين"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("كتب"),
     "cancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "cancelledStatus": MessageLookupByLibrary.simpleMessage("ملغى"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
@@ -79,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "كلمة مرور جديدة",
     ),
+    "deliveredStatus": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟",
@@ -121,6 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتف صحيح",
     ),
+    "itemsCount": m1,
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "logoutButton": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
@@ -144,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "لا تتوفر عروض حاليًا",
     ),
+    "noOrdersYet": MessageLookupByLibrary.simpleMessage("لا توجد طلبات بعد"),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("لا يوجد موردون"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("العروض والخصومات"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
@@ -166,6 +173,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "orSeparator": MessageLookupByLibrary.simpleMessage("أو"),
     "orderHistory": MessageLookupByLibrary.simpleMessage("سجل الطلبات"),
+    "orderHistoryPageTitle": MessageLookupByLibrary.simpleMessage(
+      "سجل الطلبات",
+    ),
     "orderNowButton": MessageLookupByLibrary.simpleMessage("اطلب الآن"),
     "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("موردينا"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),

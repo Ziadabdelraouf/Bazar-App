@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(discount) => "Discount ${discount}%";
 
+  static String m1(count) =>
+      "${Intl.plural(count, one: '1 item', other: '${count} items')}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "PasswordChanged": MessageLookupByLibrary.simpleMessage(
@@ -42,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("Best Vendors"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("Books"),
     "cancelButton": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "cancelledStatus": MessageLookupByLibrary.simpleMessage("Cancelled"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("Category"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
@@ -75,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "New password",
     ),
+    "deliveredStatus": MessageLookupByLibrary.simpleMessage("Delivered"),
     "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
@@ -111,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid phone number",
     ),
+    "itemsCount": m1,
     "logOut": MessageLookupByLibrary.simpleMessage("Log Out"),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
     "logoutButton": MessageLookupByLibrary.simpleMessage("Logout"),
@@ -132,6 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "No offers available",
     ),
+    "noOrdersYet": MessageLookupByLibrary.simpleMessage("No orders yet"),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("No vendors found"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("Offers & Promos"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
@@ -154,6 +161,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "orSeparator": MessageLookupByLibrary.simpleMessage("or"),
     "orderHistory": MessageLookupByLibrary.simpleMessage("Order History"),
+    "orderHistoryPageTitle": MessageLookupByLibrary.simpleMessage(
+      "Order History",
+    ),
     "orderNowButton": MessageLookupByLibrary.simpleMessage("Order Now"),
     "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("Our Vendors"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
