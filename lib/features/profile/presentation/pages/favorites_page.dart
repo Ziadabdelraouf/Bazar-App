@@ -56,9 +56,16 @@ class FavoritesPage extends ConsumerWidget {
     );
   }
 
-  Widget _buildFavoritesList(List<FavoriteItem> favorites) {
-    return ListView.builder(
+    Widget _buildFavoritesList(List<FavoriteItem> favorites) {
+    return ListView.separated(
       itemCount: favorites.length,
+      separatorBuilder: (context, index) => Divider(
+        color: AppColors.grey200,
+        thickness: 1,
+        height: 1,
+        indent: 16,
+        endIndent: 16,
+      ),
       itemBuilder: (context, index) {
         final item = favorites[index];
         return FavoriteItemCard(
