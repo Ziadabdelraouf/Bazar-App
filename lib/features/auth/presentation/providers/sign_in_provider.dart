@@ -1,6 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/sign_in_state.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/auth_service_provider.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/phone_number_notifier.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/email_validator.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/password_validator.dart';
 
@@ -26,9 +29,7 @@ class SignInNotifier extends Notifier<SignInState> {
   }
 
   void togglePasswordVisibility() {
-    state = state.copyWith(
-      obscurePassword: !state.obscurePassword,
-    );
+    state = state.copyWith(obscurePassword: !state.obscurePassword);
   }
 
   void clearEmailError() {
@@ -75,10 +76,7 @@ class SignInNotifier extends Notifier<SignInState> {
       invalidError: invalidEmail,
     );
     if (emailValResult != null) {
-      state = state.copyWith(
-        emailError: emailValResult,
-        isLoading: false,
-      );
+      state = state.copyWith(emailError: emailValResult, isLoading: false);
       formKey.currentState?.validate();
       return false;
     }
@@ -99,6 +97,22 @@ class SignInNotifier extends Notifier<SignInState> {
       formKey.currentState?.validate();
       return false;
     }
+
+    final authService = ref.read(authServiceProvider);
+    final currentName = ref.read(nameNotifierProvider);
+    final phoneState = ref.read(phoneNumberNotifierProvider);
+    final phoneStr = phoneState.digits.isNotEmpty
+        ? '${phoneState.selectedCountry.dialCode} ${phoneState.digits}'
+        : null;
+
+    await authService.saveSession(
+      email: email,
+      password: password,
+      name: currentName.isNotEmpty ? currentName : null,
+      mobile: phoneStr,
+    );
+
+    ref.invalidate(userProfileProvider);
 
     state = state.copyWith(isLoading: false);
     return true;
