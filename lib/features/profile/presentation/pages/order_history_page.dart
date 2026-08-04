@@ -15,7 +15,7 @@ class OrderHistoryPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final orders = ref.watch(orderHistoryProvider);
-    final groupedOrders = _groupByMonth(orders);
+    final groupedOrders = _groupByMonth(context, orders);
 
     return Scaffold(
       backgroundColor: AppColors.white,
@@ -56,13 +56,28 @@ class OrderHistoryPage extends ConsumerWidget {
     );
   }
 
-  Map<String, List<OrderHistoryItem>> _groupByMonth(List<OrderHistoryItem> orders) {
+  String _monthLabel(BuildContext context, DateTime date) {
+    final localization = S.of(context);
+    final months = [
+      localization.january, localization.february, localization.march,
+      localization.april, localization.may, localization.june,
+      localization.july, localization.august, localization.september,
+      localization.october, localization.november, localization.december,
+    ];
+    return '${months[date.month - 1]} ${date.year}';
+  }
+
+  Map<String, List<OrderHistoryItem>> _groupByMonth(
+    BuildContext context,
+    List<OrderHistoryItem> orders,
+  ) {
     final sorted = List<OrderHistoryItem>.from(orders)
       ..sort((a, b) => b.orderDate.compareTo(a.orderDate));
 
     final Map<String, List<OrderHistoryItem>> grouped = {};
     for (final order in sorted) {
-      grouped.putIfAbsent(order.monthLabel, () => []).add(order);
+      final label = _monthLabel(context, order.orderDate);
+      grouped.putIfAbsent(label, () => []).add(order);
     }
 
     return grouped;

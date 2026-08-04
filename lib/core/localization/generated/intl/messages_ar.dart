@@ -36,12 +36,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "about": MessageLookupByLibrary.simpleMessage("عن الكاتب"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان"),
     "allCategoryTab": MessageLookupByLibrary.simpleMessage("الكل"),
+    "april": MessageLookupByLibrary.simpleMessage("أبريل"),
     "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
       "حرف صغير أو كبير واحد على الأقل",
     ),
     "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
       "رقم واحد على الأقل (1-9)",
     ),
+    "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("أفضل الموردين"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("كتب"),
     "cancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
@@ -83,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "كلمة مرور جديدة",
     ),
+    "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
@@ -104,6 +107,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "فشل في تحميل العروض",
     ),
+    "february": MessageLookupByLibrary.simpleMessage("فبراير"),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
     ),
@@ -127,6 +131,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء إدخال رقم هاتف صحيح",
     ),
     "itemsCount": m1,
+    "january": MessageLookupByLibrary.simpleMessage("يناير"),
+    "july": MessageLookupByLibrary.simpleMessage("يوليو"),
+    "june": MessageLookupByLibrary.simpleMessage("يونيو"),
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "logoutButton": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
@@ -134,6 +141,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "هل أنت متاكد من رغبتك في تسجيل الخروج؟",
     ),
     "logoutTitle": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "march": MessageLookupByLibrary.simpleMessage("مارس"),
+    "may": MessageLookupByLibrary.simpleMessage("مايو"),
     "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
       "8 أحرف على الأقل",
     ),
@@ -152,6 +161,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "noOrdersYet": MessageLookupByLibrary.simpleMessage("لا توجد طلبات بعد"),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("لا يوجد موردون"),
+    "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
+    "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("العروض والخصومات"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
@@ -239,6 +250,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "seeAllButton": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage("اختر الدولة"),
     "sendButton": MessageLookupByLibrary.simpleMessage("إرسال"),
+    "september": MessageLookupByLibrary.simpleMessage("سبتمبر"),
     "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signInSubtitle": MessageLookupByLibrary.simpleMessage(
       "سجّل الدخول إلى حسابك",
