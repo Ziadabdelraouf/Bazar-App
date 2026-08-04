@@ -18,6 +18,8 @@ import 'package:bazar_group_1/features/auth/presentation/pages/forgot_password_v
 import 'package:bazar_group_1/features/forgot_password/presentation/pages/create_new_password_page.dart';
 import '../../features/forgot_password/presentation/pages/forgot_password_page.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/vendors_page.dart';
+import 'package:bazar_group_1/features/profile/presentation/pages/favorites_page.dart';
+import 'package:bazar_group_1/features/profile/presentation/pages/order_history_page.dart';
 import 'app_routes.dart';
 
 class AppRouter {
@@ -61,5 +63,9 @@ class AppRouter {
     AppRoutes.vendorsSearchPage: (context) =>
         const VendorsSearchPlaceholderPage(),
     AppRoutes.myAccount: (context) => const MyAccountPage(),
+    AppRoutes.vendorsSearchPage: (context) =>
+        const VendorsSearchPlaceholderPage(),
+    AppRoutes.favoritesPage: (context) => const FavoritesPage(),
+    AppRoutes.orderHistoryPage: (context) => const OrderHistoryPage(),
   };
 }

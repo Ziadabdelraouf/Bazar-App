@@ -134,6 +134,12 @@
     "poemsCategoryTab": "أشعار",
     "specialForYouCategoryTab": "خصيصاً لك",
     "stationeryCategoryTab": "أدوات مكتبية",
+    "//Favorites Page Strings//": "",
+    "yourFavoritesTitle": "مفضلتك",
+    "noFavoritesYet": "لا توجد مفضلات بعد",
+    "removeFromFavoritesTitle": "إزالة من المفضلة؟",
+    "removeFromFavoritesConfirmation": "هل أنت متأكد أنك تريد إزالة هذا الكتاب من مفضلتك؟",
+    "removeButton": "إزالة",
     "//Logout Bottom Sheet Strings//": "",
     "logoutTitle": "تسجيل الخروج",
     "logoutConfirmationMessage": "هل أنت متاكد من رغبتك في تسجيل الخروج؟",
@@ -143,6 +149,30 @@
     "phoneNumberLabel": "رقم هاتفك",
     "phoneNumberPlaceholder": "اكتب رقم هاتفك...",
     "saveChangesButton": "حفظ التغييرات",
-    "changePictureButton": "تغيير الصورة" 
-
+    "changePictureButton": "تغيير الصورة", 
+    "//Order History Page Strings//": "",
+    "orderHistoryPageTitle": "سجل الطلبات",
+    "noOrdersYet": "لا توجد طلبات بعد",
+    "deliveredStatus": "تم التوصيل",
+    "cancelledStatus": "ملغى",
+    "itemsCount": "{count, plural, zero{لا توجد عناصر} one{عنصر واحد} two{عنصران} few{{count} عناصر} many{{count} عنصرًا} other{{count} عنصر}}",
+    "@itemsCount": {
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "january": "يناير",
+    "february": "فبراير",
+    "march": "مارس",
+    "april": "أبريل",
+    "may": "مايو",
+    "june": "يونيو",
+    "july": "يوليو",
+    "august": "أغسطس",
+    "september": "سبتمبر",
+    "october": "أكتوبر",
+    "november": "نوفمبر",
+    "december": "ديسمبر"
 }

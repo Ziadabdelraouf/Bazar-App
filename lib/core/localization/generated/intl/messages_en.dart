@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(discount) => "Discount ${discount}%";
 
+  static String m1(count) =>
+      "${Intl.plural(count, one: '1 item', other: '${count} items')}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "PasswordChanged": MessageLookupByLibrary.simpleMessage(
@@ -33,15 +36,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "about": MessageLookupByLibrary.simpleMessage("About"),
     "address": MessageLookupByLibrary.simpleMessage("Address"),
     "allCategoryTab": MessageLookupByLibrary.simpleMessage("All"),
+    "april": MessageLookupByLibrary.simpleMessage("April"),
     "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
       "At least lowercase or uppercase letters",
     ),
     "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
       "At least 1 number (1-9)",
     ),
+    "august": MessageLookupByLibrary.simpleMessage("August"),
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("Best Vendors"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("Books"),
     "cancelButton": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "cancelledStatus": MessageLookupByLibrary.simpleMessage("Cancelled"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("Category"),
     "changePictureButton": MessageLookupByLibrary.simpleMessage(
@@ -78,6 +84,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "New password",
     ),
+    "december": MessageLookupByLibrary.simpleMessage("December"),
+    "deliveredStatus": MessageLookupByLibrary.simpleMessage("Delivered"),
     "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
@@ -94,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "Failed to load offers",
     ),
+    "february": MessageLookupByLibrary.simpleMessage("February"),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "Forgot Password?",
     ),
@@ -114,6 +123,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid phone number",
     ),
+    "itemsCount": m1,
+    "january": MessageLookupByLibrary.simpleMessage("January"),
+    "july": MessageLookupByLibrary.simpleMessage("July"),
+    "june": MessageLookupByLibrary.simpleMessage("June"),
     "logOut": MessageLookupByLibrary.simpleMessage("Log Out"),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
     "logoutButton": MessageLookupByLibrary.simpleMessage("Logout"),
@@ -121,6 +134,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Are you sure you want to log out?",
     ),
     "logoutTitle": MessageLookupByLibrary.simpleMessage("Logout"),
+    "march": MessageLookupByLibrary.simpleMessage("March"),
+    "may": MessageLookupByLibrary.simpleMessage("May"),
     "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
       "Minimum 8 characters",
     ),
@@ -133,10 +148,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "namePlaceholder": MessageLookupByLibrary.simpleMessage("Your Name"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("Name is required"),
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage("New Password"),
+    "noFavoritesYet": MessageLookupByLibrary.simpleMessage("No favorites yet"),
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "No offers available",
     ),
+    "noOrdersYet": MessageLookupByLibrary.simpleMessage("No orders yet"),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("No vendors found"),
+    "november": MessageLookupByLibrary.simpleMessage("November"),
+    "october": MessageLookupByLibrary.simpleMessage("October"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("Offers & Promos"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
@@ -158,6 +177,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "orSeparator": MessageLookupByLibrary.simpleMessage("or"),
     "orderHistory": MessageLookupByLibrary.simpleMessage("Order History"),
+    "orderHistoryPageTitle": MessageLookupByLibrary.simpleMessage(
+      "Order History",
+    ),
     "orderNowButton": MessageLookupByLibrary.simpleMessage("Order Now"),
     "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("Our Vendors"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
@@ -203,6 +225,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "By clicking Register, you agree to our",
     ),
     "registerButton": MessageLookupByLibrary.simpleMessage("Register"),
+    "removeButton": MessageLookupByLibrary.simpleMessage("Remove"),
+    "removeFromFavoritesConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to remove this book from your favorites?",
+    ),
+    "removeFromFavoritesTitle": MessageLookupByLibrary.simpleMessage(
+      "Remove from Favorites?",
+    ),
     "resendButton": MessageLookupByLibrary.simpleMessage("Resend"),
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "If you didn\'t receive a code? ",
@@ -227,6 +256,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Select Country",
     ),
     "sendButton": MessageLookupByLibrary.simpleMessage("Send"),
+    "september": MessageLookupByLibrary.simpleMessage("September"),
     "signInButton": MessageLookupByLibrary.simpleMessage("Sign in"),
     "signInSubtitle": MessageLookupByLibrary.simpleMessage(
       "Sign in to your account",
@@ -277,6 +307,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "viewCartButton": MessageLookupByLibrary.simpleMessage("View cart"),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("Welcome Back "),
+    "yourFavoritesTitle": MessageLookupByLibrary.simpleMessage(
+      "Your Favorites",
+    ),
     "yourFavourites": MessageLookupByLibrary.simpleMessage("Your Favourites"),
   };
 }

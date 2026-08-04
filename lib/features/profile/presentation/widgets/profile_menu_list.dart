@@ -44,12 +44,16 @@ class ProfileMenuList extends StatelessWidget {
       _ProfileMenuItem(
         title: l10n.yourFavourites,
         icon: AppIcons.loveFill,
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, AppRoutes.favoritesPage);
+        },
       ),
       _ProfileMenuItem(
         title: l10n.orderHistory,
         icon: AppIcons.menuFill,
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, AppRoutes.orderHistoryPage);
+        },
       ),
       _ProfileMenuItem(
         title: l10n.helpCenter,

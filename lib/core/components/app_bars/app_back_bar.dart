@@ -1,5 +1,3 @@
-import 'package:bazar_group_1/core/theme/app_colors.dart';
-import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class AppBackBar extends StatelessWidget implements PreferredSizeWidget {
@@ -23,37 +21,45 @@ class AppBackBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final iconColor = theme.colorScheme.onSurface;
+
+    Widget buildActionWidget(Widget child) {
+      return ColorFiltered(
+        colorFilter: ColorFilter.mode(iconColor, BlendMode.srcIn),
+        child: SizedBox(
+          height: 24,
+          width: 24,
+          child: FittedBox(fit: BoxFit.scaleDown, child: child),
+        ),
+      );
+    }
+
     return AppBar(
       scrolledUnderElevation: 0,
       automaticallyImplyLeading: leadingWidget == null,
       actionsPadding: const EdgeInsets.only(right: 20),
-      backgroundColor: AppColors.white,
+      backgroundColor: theme.colorScheme.surface,
+      foregroundColor: iconColor,
+      iconTheme: IconThemeData(color: iconColor),
       leading: leadingWidget != null
           ? IconButton(
-              icon: SizedBox(
-                height: 24,
-                width: 24,
-                child: FittedBox(fit: BoxFit.scaleDown, child: leadingWidget),
-              ),
+              icon: buildActionWidget(leadingWidget!),
               onPressed: onLeadingPressed ?? () {},
             )
           : null,
       centerTitle: true,
       title: Text(
         title ?? '',
-        style: AppTextStyles.h4.copyWith(color: AppColors.grey900),
+        style: theme.textTheme.titleLarge?.copyWith(
+          color: iconColor,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       actions: trailingWidget != null
           ? [
               IconButton(
-                icon: SizedBox(
-                  height: 24,
-                  width: 24,
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: trailingWidget,
-                  ),
-                ),
+                icon: buildActionWidget(trailingWidget!),
                 onPressed: onTrailingPressed ?? () {},
               ),
             ]

@@ -8,28 +8,21 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class SignUpRegisterWidget extends ConsumerWidget {
-  const SignUpRegisterWidget({
-    super.key,
-    required this.formKey,
-  });
+  const SignUpRegisterWidget({super.key, required this.formKey});
 
   final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final localization = S.of(context);
-    final signUpNotifier = ref.read(
-      signUpProvider.notifier,
-    );
+    final signUpNotifier = ref.read(signUpProvider.notifier);
     return Column(
       spacing: 22,
       children: [
         LargePrimaryButton(
           label: localization.registerButton,
           onPressed: () {
-            final isValid = signUpNotifier.register(
-              formKey,
-            );
+            final isValid = signUpNotifier.register(formKey);
 
             if (!isValid) {
               return;
@@ -38,8 +31,7 @@ class SignUpRegisterWidget extends ConsumerWidget {
             Navigator.pushNamed(
               context,
               AppRoutes.signUpVerificationEmail,
-              arguments:
-                  signUpNotifier.emailController.text,
+              arguments: signUpNotifier.emailController.text,
             );
           },
         ),
@@ -54,27 +46,22 @@ class SignUpRegisterWidget extends ConsumerWidget {
             ),
             GestureDetector(
               onTap: () {
-                final arguments = ModalRoute.of(
-                  context,
-                )?.settings.arguments;
+                final arguments = ModalRoute.of(context)?.settings.arguments;
                 if (arguments is Map &&
-                    arguments['from'] ==
-                        AppRoutes.signInPage) {
+                    arguments['from'] == AppRoutes.signInPage) {
                   Navigator.pop(context);
                 } else {
                   Navigator.pushNamed(
                     context,
                     AppRoutes.signInPage,
-                    arguments: {
-                      'from': AppRoutes.signUpPage,
-                    },
+                    arguments: {'from': AppRoutes.signUpPage},
                   );
                 }
               },
               child: Text(
                 localization.signInButton,
                 style: AppTextStyles.body16Medium.copyWith(
-                  color: AppColors.primary500,
+                  color: AppColors.primary200,
                 ),
               ),
             ),

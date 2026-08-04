@@ -1,16 +1,13 @@
+import 'package:bazar_group_1/features/auth/presentation/providers/auth_service_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignUpNotifier
-    extends Notifier<SignUpState> {
-  final TextEditingController nameController =
-      TextEditingController();
-  final TextEditingController emailController =
-      TextEditingController();
-  final TextEditingController passwordController =
-      TextEditingController();
+class SignUpNotifier extends Notifier<SignUpState> {
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   SignUpState build() {
@@ -31,20 +28,15 @@ class SignUpNotifier
   }
 
   void togglePasswordVisibility() {
-    state = state.copyWith(
-      obscurePassword: !state.obscurePassword,
-    );
+    state = state.copyWith(obscurePassword: !state.obscurePassword);
   }
 
   void validatePassword(String password) {
     final hasMinimumLength = password.length >= 8;
-    final hasLetter = RegExp(
-      r'[a-zA-Z]',
-    ).hasMatch(password);
+    final hasLetter = RegExp(r'[a-zA-Z]').hasMatch(password);
     final hasNumber = RegExp(r'[0-9]').hasMatch(password);
 
-    final isValid =
-        hasMinimumLength && hasLetter && hasNumber;
+    final isValid = hasMinimumLength && hasLetter && hasNumber;
 
     state = state.copyWith(
       hasMinimumLength: hasMinimumLength,
@@ -55,20 +47,37 @@ class SignUpNotifier
   }
 
   bool register(GlobalKey<FormState> formKey) {
-    final isFormValid =
-        formKey.currentState?.validate() ?? false;
+    final isFormValid = formKey.currentState?.validate() ?? false;
 
     if (!isFormValid) {
       return false;
     }
 
-    ref.read(nameNotifierProvider.notifier).updateName(nameController.text.trim());
+    ref
+        .read(nameNotifierProvider.notifier)
+        .updateName(nameController.text.trim());
     return true;
+  }
+
+  Future<void> saveSession({String? mobile}) async {
+    final email = emailController.text.trim();
+    final password = passwordController.text;
+    final nameText = nameController.text.trim();
+    final storedName = ref.read(nameNotifierProvider);
+    final finalName = nameText.isNotEmpty ? nameText : storedName;
+
+    final authService = ref.read(authServiceProvider);
+    await authService.saveSession(
+      email: email,
+      password: password,
+      name: finalName.isNotEmpty ? finalName : null,
+      mobile: mobile,
+    );
+
+    ref.invalidate(userProfileProvider);
   }
 }
 
-final signUpProvider =
-    NotifierProvider<
-      SignUpNotifier,
-      SignUpState
-    >(SignUpNotifier.new);
+final signUpProvider = NotifierProvider<SignUpNotifier, SignUpState>(
+  SignUpNotifier.new,
+);

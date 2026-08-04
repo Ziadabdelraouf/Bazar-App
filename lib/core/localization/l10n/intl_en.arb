@@ -134,6 +134,12 @@
     "poemsCategoryTab": "Poems",
     "specialForYouCategoryTab": "Special for You",
     "stationeryCategoryTab": "Stationery",
+    "//Favorites Page Strings//": "",
+    "yourFavoritesTitle": "Your Favorites",
+    "noFavoritesYet": "No favorites yet",
+    "removeFromFavoritesTitle": "Remove from Favorites?",
+    "removeFromFavoritesConfirmation": "Are you sure you want to remove this book from your favorites?",
+    "removeButton": "Remove",
     "//Logout Bottom Sheet Strings//": "",
     "logoutTitle": "Logout",
     "logoutConfirmationMessage": "Are you sure you want to log out?",
@@ -143,5 +149,30 @@
     "phoneNumberLabel": "Phone Number",
     "phoneNumberPlaceholder": "your phone number",
     "saveChangesButton": "Save Changes",
-    "changePictureButton": "Change Picture" 
+    "changePictureButton": "Change Picture",
+    "//Order History Page Strings//": "",
+    "orderHistoryPageTitle": "Order History",
+    "noOrdersYet": "No orders yet",
+    "deliveredStatus": "Delivered",
+    "cancelledStatus": "Cancelled",
+    "itemsCount": "{count, plural, =1{1 item} other{{count} items}}",
+    "@itemsCount": {
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
 }

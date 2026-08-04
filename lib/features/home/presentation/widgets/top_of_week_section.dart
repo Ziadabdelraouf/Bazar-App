@@ -1,6 +1,5 @@
 import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/home/data/models/book_model.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/book_card.dart';
@@ -25,12 +24,14 @@ class TopOfWeekSection extends StatelessWidget {
           children: [
             Text(
               'Top of Week',
-              style: AppTextStyles.h5.copyWith(color: AppColors.grey900),
+              style: AppTextStyles.h5.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
             ),
             Text(
               'See all',
               style: AppTextStyles.body14SemiBold.copyWith(
-                color: AppColors.primary500,
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
           ],

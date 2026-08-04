@@ -3,8 +3,12 @@ import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/features/profile/domain/entities/favorite_item.dart';
+import 'package:bazar_group_1/features/profile/presentation/notifiers/favorites_notifier.dart';
+import 'package:bazar_group_1/features/profile/presentation/widgets/favorite_heart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DetailMenuPage extends StatefulWidget {
@@ -65,7 +69,7 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                 ),
                 height: imageHeight,
                 decoration: BoxDecoration(
-                  color: AppColors.grey500,
+                  color: Theme.of(context).colorScheme.outline,
                   border: Border.all(),
                   borderRadius: BorderRadius.circular(16),
                 ),
@@ -78,18 +82,36 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                 Expanded(
                   child: Text(
                     widget.title,
-                    style: AppTextStyles.h4.copyWith(color: AppColors.grey900),
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: SvgPicture.asset(
-                    AppIcons.loveFill,
-                    colorFilter: ColorFilter.mode(
-                      AppColors.primary500,
-                      BlendMode.srcIn,
+                    style: AppTextStyles.h4.copyWith(
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
+                ),
+              Consumer(
+                  builder: (context, ref, child) {
+                    final isFavorited = ref.watch(favoritesNotifierProvider.select(
+                      (favorites) => favorites.any((item) => item.title == widget.title),
+                    ));
+
+                    return FavoriteHeart(
+                      isFavorited: isFavorited,
+                      onTap: () {
+                        final notifier = ref.read(favoritesNotifierProvider.notifier);
+
+                        if (isFavorited) {
+                          notifier.removeFavorite(widget.title);
+                        } else {
+                          notifier.addFavorite(
+                            FavoriteItem.fromPriceText(
+                              title: widget.title,
+                              priceText: widget.price,
+                              imageUrl: widget.imagePath,
+                            ),
+                          );
+                        }
+                      },
+                    );
+                  },
                 ),
               ],
             ),
@@ -105,7 +127,7 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
             Text(
               localization.reviewLabel,
               style: AppTextStyles.h5.copyWith(
-                color: AppColors.grey900,
+                color: Theme.of(context).colorScheme.onSurface,
                 fontSize: 24,
               ),
             ),
@@ -123,7 +145,7 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                   itemBuilder: (context, _) => SvgPicture.asset(
                     AppIcons.star,
                     colorFilter: ColorFilter.mode(
-                      AppColors.yellow,
+                      Theme.of(context).colorScheme.secondary,
                       BlendMode.srcIn,
                     ),
                   ),
@@ -155,7 +177,9 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                       width: 24,
                       height: 24,
                       decoration: BoxDecoration(
-                        color: AppColors.grey200,
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.surfaceContainerHighest,
                         shape: BoxShape.circle,
                       ),
                       child: Center(
@@ -163,7 +187,7 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                           AppIcons.minus,
                           width: 18,
                           colorFilter: ColorFilter.mode(
-                            AppColors.grey500,
+                            Theme.of(context).colorScheme.onSurfaceVariant,
                             BlendMode.srcIn,
                           ),
                         ),
@@ -189,7 +213,7 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                       width: 24,
                       height: 24,
                       decoration: BoxDecoration(
-                        color: AppColors.primary500,
+                        color: Theme.of(context).colorScheme.primary,
                         shape: BoxShape.circle,
                       ),
                       child: Center(
@@ -197,7 +221,7 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                           AppIcons.plus,
                           width: 17,
                           colorFilter: ColorFilter.mode(
-                            AppColors.white,
+                            Theme.of(context).colorScheme.onPrimary,
                             BlendMode.srcIn,
                           ),
                         ),
@@ -230,9 +254,13 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                           borderRadius: BorderRadius.circular(48),
                         ),
                         elevation: 0,
-                        backgroundColor: AppColors.primary500,
-                        textStyle: const TextStyle(color: AppColors.white),
-                        foregroundColor: AppColors.white,
+                        backgroundColor: Theme.of(context).colorScheme.primary,
+                        textStyle: TextStyle(
+                          color: Theme.of(context).colorScheme.onPrimary,
+                        ),
+                        foregroundColor: Theme.of(
+                          context,
+                        ).colorScheme.onPrimary,
                       ),
                       child: Text(
                         localization.continueShoppingButton,
@@ -249,8 +277,12 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.primary50,
-                        textStyle: const TextStyle(color: AppColors.primary500),
+                        backgroundColor: Theme.of(
+                          context,
+                        ).colorScheme.primaryContainer,
+                        textStyle: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
                         padding: EdgeInsets.zero,
                       ),
                       child: Text(

@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
-import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/core/theme/app_text_styles_extension.dart';
+import 'package:flutter/material.dart';
 
 class AppFormTextField extends StatelessWidget {
   final String label;
@@ -34,17 +34,15 @@ class AppFormTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textStyles = Theme.of(context).extension<AppTextStylesExtension>()!;
+
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            label,
-            style: AppTextStyles.body14Medium.copyWith(
-              color: AppColors.grey900,
-            ),
-          ),
+          Text(label, style: textStyles.body14Medium),
           const SizedBox(height: 6),
           TextFormField(
             controller: controller,
@@ -53,18 +51,16 @@ class AppFormTextField extends StatelessWidget {
             keyboardType: keyboardType,
             validator: validator,
             onChanged: onChanged,
-            style: AppTextStyles.body16Medium.copyWith(
-              color: AppColors.grey900,
-            ),
+            style: textStyles.body16Medium,
             decoration: InputDecoration(
               hintText: placeholder,
-              hintStyle: AppTextStyles.body16Regular.copyWith(
-                color: AppColors.grey400,
+              hintStyle: textStyles.body16Regular.copyWith(
+                color: colorScheme.onSurfaceVariant,
               ),
               prefixIcon: prefixIcon,
               suffixIcon: suffixIcon,
               filled: true,
-              fillColor: AppColors.grey50,
+              fillColor: colorScheme.surfaceContainerHighest,
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 16,
                 vertical: 12,

@@ -1,6 +1,5 @@
 import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/forgot_password/domain/contact_method.dart';
@@ -15,30 +14,22 @@ class ForgotPasswordPage extends ConsumerStatefulWidget {
   const ForgotPasswordPage({super.key});
 
   @override
-  ConsumerState<ForgotPasswordPage> createState() =>
-      _ForgotPasswordPageState();
+  ConsumerState<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
 }
 
-class _ForgotPasswordPageState
-    extends ConsumerState<ForgotPasswordPage> {
+class _ForgotPasswordPageState extends ConsumerState<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     final localization = S.of(context);
-    final selectedMethod = ref.watch(
-      selectedContactMethodProvider,
-    );
+    final selectedMethod = ref.watch(selectedContactMethodProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: const AppBackBar(),
       body: Padding(
         padding: EdgeInsets.only(
-          left:
-              MediaQuery.of(context).size.width *
-              (24 / 375),
-          right:
-              MediaQuery.of(context).size.width *
-              (24 / 375),
+          left: MediaQuery.of(context).size.width * (24 / 375),
+          right: MediaQuery.of(context).size.width * (24 / 375),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,71 +37,41 @@ class _ForgotPasswordPageState
             Text(
               localization.forgotPasswordTitle,
               style: AppTextStyles.h3.copyWith(
-                color: AppColors.grey900,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
-            SizedBox(
-              height:
-                  MediaQuery.of(context).size.height *
-                  (8 / 812),
-            ),
+            SizedBox(height: MediaQuery.of(context).size.height * (8 / 812)),
             Text(
               localization.forgotPasswordDescription,
               style: AppTextStyles.body16Regular.copyWith(
-                color: AppColors.grey600,
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
             ),
-            SizedBox(
-              height:
-                  MediaQuery.of(context).size.height *
-                  (16 / 812),
-            ),
+            SizedBox(height: MediaQuery.of(context).size.height * (16 / 812)),
             Row(
               children: [
                 Expanded(
                   child: ContactMethodCard(
                     iconPath: AppIcons.emailBulk,
-                    title: localization
-                        .contactMethodEmailTitle,
-                    subtitle: localization
-                        .contactMethodEmailSubtitle,
-                    isSelected:
-                        selectedMethod ==
-                        ContactMethod.email,
+                    title: localization.contactMethodEmailTitle,
+                    subtitle: localization.contactMethodEmailSubtitle,
+                    isSelected: selectedMethod == ContactMethod.email,
                     onTap: () {
-                      ref
-                          .read(
-                            selectedContactMethodProvider
-                                .notifier,
-                          )
-                          .state = ContactMethod
-                          .email;
+                      ref.read(selectedContactMethodProvider.notifier).state =
+                          ContactMethod.email;
                     },
                   ),
                 ),
-                SizedBox(
-                  width:
-                      MediaQuery.of(context).size.width *
-                      (16 / 375),
-                ),
+                SizedBox(width: MediaQuery.of(context).size.width * (16 / 375)),
                 Expanded(
                   child: ContactMethodCard(
                     iconPath: AppIcons.phoneFill,
-                    title: localization
-                        .contactMethodPhoneTitle,
-                    subtitle: localization
-                        .contactMethodPhoneSubtitle,
-                    isSelected:
-                        selectedMethod ==
-                        ContactMethod.phone,
+                    title: localization.contactMethodPhoneTitle,
+                    subtitle: localization.contactMethodPhoneSubtitle,
+                    isSelected: selectedMethod == ContactMethod.phone,
                     onTap: () {
-                      ref
-                          .read(
-                            selectedContactMethodProvider
-                                .notifier,
-                          )
-                          .state = ContactMethod
-                          .phone;
+                      ref.read(selectedContactMethodProvider.notifier).state =
+                          ContactMethod.phone;
                     },
                   ),
                 ),

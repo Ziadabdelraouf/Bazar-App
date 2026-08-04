@@ -8,10 +8,7 @@ import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_provi
 class SignUpVerificationPhone extends ConsumerWidget {
   final String phoneNumber;
 
-  const SignUpVerificationPhone({
-    super.key,
-    required this.phoneNumber,
-  });
+  const SignUpVerificationPhone({super.key, required this.phoneNumber});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,12 +16,14 @@ class SignUpVerificationPhone extends ConsumerWidget {
       flow: VerificationFlow.signUp,
       contactMethod: ContactMethod.phone,
       contactValue: phoneNumber,
-      onVerified: () {
+      onVerified: () async {
+        await ref
+            .read(signUpProvider.notifier)
+            .saveSession(mobile: phoneNumber);
         ref.read(signUpProvider.notifier).reset();
-        Navigator.pushNamed(
-          context,
-          AppRoutes.successfulLogin,
-        );
+        if (context.mounted) {
+          Navigator.pushNamed(context, AppRoutes.successfulLogin);
+        }
       },
     );
   }
