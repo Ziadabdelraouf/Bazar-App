@@ -7,6 +7,7 @@ import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/features/profile/domain/entities/favorite_item.dart';
 import 'package:bazar_group_1/features/profile/presentation/notifiers/favorites_notifier.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/favorite_heart.dart';
+import 'package:bazar_group_1/core/theme/app_icons.dart';
 
 class FavoriteItemCard extends ConsumerStatefulWidget {
   const FavoriteItemCard({super.key, required this.item});
@@ -78,7 +79,7 @@ class _FavoriteItemCardState extends ConsumerState<FavoriteItemCard> {
                       title: widget.item.title,
                       price: '\$${widget.item.price.toStringAsFixed(2)}',
                       imagePath: widget.item.imageUrl ?? '',
-                      brandLogo: 'assets/icons/GoodDay_Vector.svg',
+                      brandLogo: AppIcons.goodDayVector,
                     ),
                   );
                 },
