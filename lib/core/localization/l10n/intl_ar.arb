@@ -134,9 +134,15 @@
     "poemsCategoryTab": "أشعار",
     "specialForYouCategoryTab": "خصيصاً لك",
     "stationeryCategoryTab": "أدوات مكتبية",
+    "//Favorites Page Strings//": "",
+    "yourFavoritesTitle": "مفضلتك",
+    "noFavoritesYet": "لا توجد مفضلات بعد",
+    "removeFromFavoritesTitle": "إزالة من المفضلة؟",
+    "removeFromFavoritesConfirmation": "هل أنت متأكد أنك تريد إزالة هذا الكتاب من مفضلتك؟",
+    "cancelButton": "إلغاء",
+    "removeButton": "إزالة",
     "//Logout Bottom Sheet Strings//": "",
     "logoutTitle": "تسجيل الخروج",
     "logoutConfirmationMessage": "هل أنت متاكد من رغبتك في تسجيل الخروج؟",
-    "logoutButton": "تسجيل الخروج",
-    "cancelButton": "إلغاء"
+    "logoutButton": "تسجيل الخروج"
 }

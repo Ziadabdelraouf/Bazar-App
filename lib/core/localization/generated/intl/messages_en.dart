@@ -129,6 +129,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "namePlaceholder": MessageLookupByLibrary.simpleMessage("Your Name"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("Name is required"),
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage("New Password"),
+    "noFavoritesYet": MessageLookupByLibrary.simpleMessage("No favorites yet"),
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "No offers available",
     ),
@@ -198,6 +199,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "By clicking Register, you agree to our",
     ),
     "registerButton": MessageLookupByLibrary.simpleMessage("Register"),
+    "removeButton": MessageLookupByLibrary.simpleMessage("Remove"),
+    "removeFromFavoritesConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to remove this book from your favorites?",
+    ),
+    "removeFromFavoritesTitle": MessageLookupByLibrary.simpleMessage(
+      "Remove from Favorites?",
+    ),
     "resendButton": MessageLookupByLibrary.simpleMessage("Resend"),
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "If you didn\'t receive a code? ",
@@ -271,6 +279,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "viewCartButton": MessageLookupByLibrary.simpleMessage("View cart"),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("Welcome Back "),
+    "yourFavoritesTitle": MessageLookupByLibrary.simpleMessage(
+      "Your Favorites",
+    ),
     "yourFavourites": MessageLookupByLibrary.simpleMessage("Your Favourites"),
   };
 }
