@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primary500,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(
         // clipBehavior: Clip.none,
         children: [

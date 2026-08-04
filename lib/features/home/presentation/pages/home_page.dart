@@ -35,7 +35,7 @@ class HomePage extends ConsumerWidget {
     ];
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBackBar(
         title: titles[selectedIndex],
         trailingWidget: NotificationIcon(),

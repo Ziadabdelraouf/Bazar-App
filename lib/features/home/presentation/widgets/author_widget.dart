@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../providers/authors_provider.dart';
 import '../pages/authors_page.dart';
@@ -23,22 +22,20 @@ class AuthorWidget extends ConsumerWidget {
               child: Text(
                 'Authors',
                 style: AppTextStyles.h5.copyWith(
-                  color: AppColors.grey900,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
             ),
             InkWell(
               onTap: () {
                 Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const AuthorsPage(),
-                  ),
+                  MaterialPageRoute(builder: (context) => const AuthorsPage()),
                 );
               },
               child: Text(
                 'See all',
                 style: AppTextStyles.body14Bold.copyWith(
-                  color: AppColors.primary500,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
@@ -49,24 +46,18 @@ class AuthorWidget extends ConsumerWidget {
           loading: () {
             return const SizedBox(
               height: 170,
-              child: Center(
-                child: CircularProgressIndicator(),
-              ),
+              child: Center(child: CircularProgressIndicator()),
             );
           },
           data: (authors) {
             if (authors.isEmpty) {
               return const SizedBox(
                 height: 100,
-                child: Center(
-                  child: Text('No authors found'),
-                ),
+                child: Center(child: Text('No authors found')),
               );
             }
 
-            return AuthorListViewWidget(
-              authors: authors,
-            );
+            return AuthorListViewWidget(authors: authors);
           },
           error: (error, stackTrace) {
             return SizedBox(

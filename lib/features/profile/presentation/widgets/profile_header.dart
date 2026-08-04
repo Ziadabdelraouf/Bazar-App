@@ -1,5 +1,4 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_images.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
@@ -22,10 +21,17 @@ class ProfileHeader extends ConsumerWidget {
         : "$countryCode 000000000";
 
     final isRtl = Directionality.of(context) == TextDirection.rtl;
+    final colorScheme = Theme.of(context).colorScheme;
+    final titleColor = colorScheme.onSurface;
+    final subtitleColor = colorScheme.onSurfaceVariant;
+    final actionColor = colorScheme.primary;
 
     return Column(
       children: [
-        Divider(color: AppColors.grey200, thickness: 1),
+        Divider(
+          color: Theme.of(context).colorScheme.outlineVariant,
+          thickness: 1,
+        ),
         SizedBox(
           height: 80,
           child: ListTile(
@@ -40,13 +46,11 @@ class ProfileHeader extends ConsumerWidget {
             ),
             title: Text(
               name.isNotEmpty ? name : "John Doe",
-              style: AppTextStyles.h6.copyWith(color: AppColors.grey900),
+              style: AppTextStyles.h6.copyWith(color: titleColor),
             ),
             subtitle: Text(
               phoneText,
-              style: AppTextStyles.body14Regular.copyWith(
-                color: AppColors.grey500,
-              ),
+              style: AppTextStyles.body14Regular.copyWith(color: subtitleColor),
               textDirection: TextDirection.ltr,
               textAlign: isRtl ? TextAlign.right : TextAlign.left,
             ),
@@ -59,12 +63,15 @@ class ProfileHeader extends ConsumerWidget {
               },
               child: Text(
                 S.of(context).logOut,
-                style: AppTextStyles.body14Bold.copyWith(color: AppColors.red),
+                style: AppTextStyles.body14Bold.copyWith(color: actionColor),
               ),
             ),
           ),
         ),
-        Divider(color: AppColors.grey200, thickness: 1),
+        Divider(
+          color: Theme.of(context).colorScheme.outlineVariant,
+          thickness: 1,
+        ),
       ],
     );
   }
