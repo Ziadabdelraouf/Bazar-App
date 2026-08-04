@@ -19,7 +19,10 @@ class FavoritesPage extends ConsumerWidget {
       backgroundColor: AppColors.white,
       appBar: AppBackBar(
         title: S.of(context).yourFavoritesTitle,
-        leadingWidget: SvgPicture.asset(AppIcons.arrowLeftOutline),
+        leadingWidget: Transform.flip(
+          flipX: Directionality.of(context) == TextDirection.rtl,
+          child: SvgPicture.asset(AppIcons.arrowLeftOutline),
+        ),
         onLeadingPressed: () => Navigator.pop(context),
       ),
       body: SafeArea(
