@@ -22,6 +22,19 @@ class LocationAddressNotifier extends Notifier<LocationAddressState> {
       selectedLocation: initialLocation,
     );
   }
+  Future<void> initializeAddress({
+  required Locale locale,
+}) async {
+  // Avoid geocoding again if the address is already loaded.
+  if (state.fullAddress.isNotEmpty || state.isLoading) {
+    return;
+  }
+
+  await selectLocation(
+    state.selectedLocation,
+    locale: locale,
+  );
+}
 
   Future<void> selectLocation(
     LatLng location, {

@@ -19,8 +19,17 @@ class HelpOptionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      constraints: const BoxConstraints(
+        minHeight: 151,
+      ),
       width: 158,
-      height: 151,
+       padding: const EdgeInsetsDirectional.fromSTEB(
+            16,
+            24,
+            16,
+            16,
+          ),
+      
       decoration: BoxDecoration(
         color: AppColors.grey50,
         border: BoxBorder.all(color: AppColors.grey100),
@@ -29,6 +38,7 @@ class HelpOptionCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(left: 16),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
