@@ -19,17 +19,23 @@ class FavoriteHeart extends StatefulWidget {
 
 class _FavoriteHeartState extends State<FavoriteHeart>
     with SingleTickerProviderStateMixin {
-  late final _controller = AnimationController(
-    vsync: this,
-    duration: const Duration(milliseconds: 300),
-  );
+  late final AnimationController _controller;
+  late final Animation<double> _scale;
 
-  late final _scale = Tween<double>(begin: 1.0, end: 1.3).animate(
-    CurvedAnimation(
-      parent: _controller,
-      curve: Curves.elasticOut,
-    ),
-  );
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 300),
+    );
+    _scale = Tween<double>(begin: 1.0, end: 1.3).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.elasticOut,
+      ),
+    );
+  }
 
   void _handleTap() {
     _controller.forward(from: 0);
