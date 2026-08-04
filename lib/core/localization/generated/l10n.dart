@@ -1149,11 +1149,6 @@ class S {
     );
   }
 
-  /// `Cancel`
-  String get cancelButton {
-    return Intl.message('Cancel', name: 'cancelButton', desc: '', args: []);
-  }
-
   /// `Remove`
   String get removeButton {
     return Intl.message('Remove', name: 'removeButton', desc: '', args: []);
@@ -1179,6 +1174,125 @@ class S {
   /// `Logout`
   String get logoutButton {
     return Intl.message('Logout', name: 'logoutButton', desc: '', args: []);
+  }
+
+  /// `Cancel`
+  String get cancelButton {
+    return Intl.message('Cancel', name: 'cancelButton', desc: '', args: []);
+  }
+
+  // skipped getter for the '//Order History Page Strings//' key
+
+  /// `Order History`
+  String get orderHistoryPageTitle {
+    return Intl.message(
+      'Order History',
+      name: 'orderHistoryPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No orders yet`
+  String get noOrdersYet {
+    return Intl.message(
+      'No orders yet',
+      name: 'noOrdersYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivered`
+  String get deliveredStatus {
+    return Intl.message(
+      'Delivered',
+      name: 'deliveredStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancelled`
+  String get cancelledStatus {
+    return Intl.message(
+      'Cancelled',
+      name: 'cancelledStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =1{1 item} other{{count} items}}`
+  String itemsCount(int count) {
+    return Intl.plural(
+      count,
+      one: '1 item',
+      other: '$count items',
+      name: 'itemsCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `January`
+  String get january {
+    return Intl.message('January', name: 'january', desc: '', args: []);
+  }
+
+  /// `February`
+  String get february {
+    return Intl.message('February', name: 'february', desc: '', args: []);
+  }
+
+  /// `March`
+  String get march {
+    return Intl.message('March', name: 'march', desc: '', args: []);
+  }
+
+  /// `April`
+  String get april {
+    return Intl.message('April', name: 'april', desc: '', args: []);
+  }
+
+  /// `May`
+  String get may {
+    return Intl.message('May', name: 'may', desc: '', args: []);
+  }
+
+  /// `June`
+  String get june {
+    return Intl.message('June', name: 'june', desc: '', args: []);
+  }
+
+  /// `July`
+  String get july {
+    return Intl.message('July', name: 'july', desc: '', args: []);
+  }
+
+  /// `August`
+  String get august {
+    return Intl.message('August', name: 'august', desc: '', args: []);
+  }
+
+  /// `September`
+  String get september {
+    return Intl.message('September', name: 'september', desc: '', args: []);
+  }
+
+  /// `October`
+  String get october {
+    return Intl.message('October', name: 'october', desc: '', args: []);
+  }
+
+  /// `November`
+  String get november {
+    return Intl.message('November', name: 'november', desc: '', args: []);
+  }
+
+  /// `December`
+  String get december {
+    return Intl.message('December', name: 'december', desc: '', args: []);
   }
 
 

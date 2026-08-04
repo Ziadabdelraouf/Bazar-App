@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 
 class SignInHeaderWidget extends StatelessWidget {
@@ -20,7 +19,7 @@ class SignInHeaderWidget extends StatelessWidget {
         Text(
           S.of(context).signInSubtitle,
           style: AppTextStyles.body16Regular.copyWith(
-            color: AppColors.grey500,
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
           ),
           textAlign: TextAlign.start,
         ),

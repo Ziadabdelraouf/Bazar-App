@@ -1,5 +1,4 @@
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/detail_menu_page.dart';
@@ -27,7 +26,7 @@ class BookCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         showModalBottomSheet(
-          backgroundColor: Colors.white,
+          backgroundColor: Theme.of(context).colorScheme.surface,
           context: context,
           isScrollControlled: true,
           shape: const RoundedRectangleBorder(
@@ -50,8 +49,11 @@ class BookCard extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.grey,
-                  border: Border.all(color: Colors.black, width: 1),
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  border: Border.all(
+                    color: Theme.of(context).colorScheme.outlineVariant,
+                    width: 1,
+                  ),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 clipBehavior: Clip.antiAlias,
@@ -71,7 +73,7 @@ class BookCard extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: AppTextStyles.body14Medium.copyWith(
-                color: AppColors.grey900,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
             Text(price),

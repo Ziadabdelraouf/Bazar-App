@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/features/auth/domain/verification_type.dart';
@@ -9,8 +8,7 @@ import 'package:bazar_group_1/features/auth/presentation/providers/verification_
 import 'package:bazar_group_1/features/auth/presentation/widgets/code_input_boxes.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/auth_screen_template.dart';
 
-class VerificationCodeScreen
-    extends ConsumerStatefulWidget {
+class VerificationCodeScreen extends ConsumerStatefulWidget {
   final VerificationFlow flow;
   final ContactMethod contactMethod;
   final String contactValue;
@@ -58,26 +56,18 @@ class _VerificationCodeScreenState
 
   Future<void> _handleResend() async {
     setState(() => _isResending = true);
-    await ref
-        .read(verificationCodeNotifierProvider.notifier)
-        .resendCode();
+    await ref.read(verificationCodeNotifierProvider.notifier).resendCode();
     if (mounted) {
       setState(() => _isResending = false);
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(S.of(context).codeResentMessage),
-        ),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(S.of(context).codeResentMessage)));
     }
   }
 
   Future<void> _handleContinue() async {
-    await ref
-        .read(verificationCodeNotifierProvider.notifier)
-        .submitCode();
-    final hasError = ref
-        .read(verificationCodeNotifierProvider)
-        .hasError;
+    await ref.read(verificationCodeNotifierProvider.notifier).submitCode();
+    final hasError = ref.read(verificationCodeNotifierProvider).hasError;
     if (!hasError) {
       widget.onVerified();
     }
@@ -86,17 +76,13 @@ class _VerificationCodeScreenState
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final state = ref.watch(
-      verificationCodeNotifierProvider,
-    );
+    final state = ref.watch(verificationCodeNotifierProvider);
     final isSignUp = widget.flow == VerificationFlow.signUp;
 
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onTap: () {
-        ref
-            .read(verificationCodeNotifierProvider.notifier)
-            .setFocused(false);
+        ref.read(verificationCodeNotifierProvider.notifier).setFocused(false);
       },
       child: AuthScreenTemplate(
         title: _getTitle(s),
@@ -104,14 +90,14 @@ class _VerificationCodeScreenState
           textAlign: TextAlign.center,
           text: TextSpan(
             style: AppTextStyles.body16Regular.copyWith(
-              color: AppColors.grey500,
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
             children: [
               TextSpan(text: _getDescriptionPrefix(s)),
               TextSpan(
                 text: widget.contactValue,
-                style: const TextStyle(
-                  color: AppColors.grey900,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
             ],
@@ -124,23 +110,21 @@ class _VerificationCodeScreenState
             Center(
               child: RichText(
                 text: TextSpan(
-                  style: AppTextStyles.body14SemiBold
-                      .copyWith(color: AppColors.grey500),
+                  style: AppTextStyles.body14SemiBold.copyWith(
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
                   children: [
                     TextSpan(text: s.resendCodePrompt),
                     TextSpan(
-                      text: _isResending
-                          ? '...'
-                          : s.resendButton,
+                      text: _isResending ? '...' : s.resendButton,
                       style: TextStyle(
                         color: _isResending
-                            ? AppColors.grey400
-                            : AppColors.primary500,
+                            ? Theme.of(context).colorScheme.outline
+                            : Theme.of(context).colorScheme.primary,
                       ),
                       recognizer: _isResending
                           ? null
-                          : (TapGestureRecognizer()
-                              ..onTap = _handleResend),
+                          : (TapGestureRecognizer()..onTap = _handleResend),
                     ),
                   ],
                 ),
@@ -148,29 +132,23 @@ class _VerificationCodeScreenState
             ),
           ],
         ),
-        errorMessage: state.hasError
-            ? s.incorrectCodeError
-            : null,
+        errorMessage: state.hasError ? s.incorrectCodeError : null,
         isLoading: state.isLoading,
         onContinuePressed: _handleContinue,
         keypadBackgroundColor: isSignUp
-            ? AppColors.primary500
-            : AppColors.grey50,
+            ? Theme.of(context).colorScheme.primary
+            : Theme.of(context).colorScheme.surfaceContainerHighest,
         keypadForegroundColor: isSignUp
-            ? AppColors.grey50
-            : AppColors.grey900,
+            ? Theme.of(context).colorScheme.onPrimary
+            : Theme.of(context).colorScheme.onSurface,
         onDigitPressed: (digit) {
           ref
-              .read(
-                verificationCodeNotifierProvider.notifier,
-              )
+              .read(verificationCodeNotifierProvider.notifier)
               .enterDigitFromKeypad(digit);
         },
         onDeletePressed: () {
           ref
-              .read(
-                verificationCodeNotifierProvider.notifier,
-              )
+              .read(verificationCodeNotifierProvider.notifier)
               .deleteDigitFromKeypad();
         },
       ),

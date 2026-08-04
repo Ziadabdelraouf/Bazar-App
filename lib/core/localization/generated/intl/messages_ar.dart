@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(discount) => "خصم %${discount}";
 
+  static String m1(count) =>
+      "${Intl.plural(count, zero: 'لا توجد عناصر', one: 'عنصر واحد', two: 'عنصران', few: '${count} عناصر', many: '${count} عنصرًا', other: '${count} عنصر')}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "PasswordChanged": MessageLookupByLibrary.simpleMessage(
@@ -39,15 +42,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "العنوان غير متاح",
     ),
     "allCategoryTab": MessageLookupByLibrary.simpleMessage("الكل"),
+    "april": MessageLookupByLibrary.simpleMessage("أبريل"),
     "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
       "حرف صغير أو كبير واحد على الأقل",
     ),
     "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
       "رقم واحد على الأقل (1-9)",
     ),
+    "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("أفضل الموردين"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("كتب"),
     "cancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "cancelledStatus": MessageLookupByLibrary.simpleMessage("ملغى"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
@@ -86,6 +92,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "كلمة مرور جديدة",
     ),
+    "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
+    "deliveredStatus": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "currentLocation": MessageLookupByLibrary.simpleMessage("موقعي الحالي"),
     "detailAddressTitle": MessageLookupByLibrary.simpleMessage(
       "تفاصيل العنوان",
@@ -110,6 +118,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "فشل في تحميل العروض",
     ),
+    "february": MessageLookupByLibrary.simpleMessage("فبراير"),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
     ),
@@ -150,6 +159,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتف صحيح",
     ),
+    "itemsCount": m1,
+    "january": MessageLookupByLibrary.simpleMessage("يناير"),
+    "july": MessageLookupByLibrary.simpleMessage("يوليو"),
+    "june": MessageLookupByLibrary.simpleMessage("يونيو"),
     "locationTitle": MessageLookupByLibrary.simpleMessage("الموقع"),
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -158,6 +171,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "هل أنت متاكد من رغبتك في تسجيل الخروج؟",
     ),
     "logoutTitle": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "march": MessageLookupByLibrary.simpleMessage("مارس"),
+    "may": MessageLookupByLibrary.simpleMessage("مايو"),
     "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
       "8 أحرف على الأقل",
     ),
@@ -177,7 +192,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "لا تتوفر عروض حاليًا",
     ),
+    "noOrdersYet": MessageLookupByLibrary.simpleMessage("لا توجد طلبات بعد"),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("لا يوجد موردون"),
+    "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
+    "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("العروض والخصومات"),
     "officeAddress": MessageLookupByLibrary.simpleMessage("المكتب"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
@@ -200,6 +218,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "orSeparator": MessageLookupByLibrary.simpleMessage("أو"),
     "orderHistory": MessageLookupByLibrary.simpleMessage("سجل الطلبات"),
+    "orderHistoryPageTitle": MessageLookupByLibrary.simpleMessage(
+      "سجل الطلبات",
+    ),
     "orderNowButton": MessageLookupByLibrary.simpleMessage("اطلب الآن"),
     "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("موردينا"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
@@ -277,6 +298,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "العنوان المختار",
     ),
     "sendButton": MessageLookupByLibrary.simpleMessage("إرسال"),
+    "september": MessageLookupByLibrary.simpleMessage("سبتمبر"),
     "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signInSubtitle": MessageLookupByLibrary.simpleMessage(
       "سجّل الدخول إلى حسابك",

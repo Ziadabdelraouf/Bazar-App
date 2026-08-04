@@ -1,6 +1,5 @@
 import 'package:bazar_group_1/core/components/buttons/small_primary_button.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/home/domain/entities/offer.dart';
@@ -11,18 +10,14 @@ class SpecialOfferCard extends StatelessWidget {
   final Offer offer;
   final VoidCallback? onOrderPressed;
 
-  const SpecialOfferCard({
-    super.key,
-    required this.offer,
-    this.onOrderPressed,
-  });
+  const SpecialOfferCard({super.key, required this.offer, this.onOrderPressed});
 
   @override
   Widget build(BuildContext context) {
     final String subtitle = S.of(context).discountPercent(offer.discount);
 
     return Card(
-      color: AppColors.primary50,
+      color: Theme.of(context).colorScheme.primaryContainer,
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
@@ -79,11 +74,7 @@ class SpecialOfferCard extends StatelessWidget {
                       );
                     },
                   )
-                : SvgPicture.asset(
-                    AppIcons.reloadIcon,
-                    width: 80,
-                    height: 100,
-                  ),
+                : SvgPicture.asset(AppIcons.reloadIcon, width: 80, height: 100),
           ),
         ],
       ),
