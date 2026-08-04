@@ -4,7 +4,6 @@ import 'package:bazar_group_1/core/components/inputs/app_text_form_field.dart';
 import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/email_validator.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/password_validator.dart';
@@ -78,15 +77,17 @@ class SignInFormWidget extends ConsumerWidget {
             child: Text(
               localization.forgotPasswordButton,
               style: AppTextStyles.body14SemiBold.copyWith(
-                color: AppColors.primary600,
+                color: Theme.of(context).colorScheme.primary,
               ),
               textAlign: TextAlign.start,
             ),
           ),
           const SizedBox(height: 16),
           signInState.isLoading
-              ? const Center(
-                  child: CircularProgressIndicator(color: AppColors.primary500),
+              ? Center(
+                  child: CircularProgressIndicator(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                 )
               : LargePrimaryButton(
                   label: localization.loginButton,

@@ -14,7 +14,7 @@ class BottomNavbar extends ConsumerWidget {
     final selectedIndex = ref.watch(bottomNavIndexProvider);
     return NavigationBar(
       selectedIndex: selectedIndex,
-      backgroundColor: AppColors.grey50,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       indicatorColor: Colors.transparent,
       elevation: 0,
       onDestinationSelected: (index) {
@@ -25,13 +25,16 @@ class BottomNavbar extends ConsumerWidget {
           icon: SvgPicture.asset(
             AppIcons.homeFill,
             height: 28,
-            colorFilter: ColorFilter.mode(AppColors.grey500, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.onSurface,
+              BlendMode.srcIn,
+            ),
           ),
           selectedIcon: SvgPicture.asset(
             AppIcons.homeFill,
             height: 28,
             colorFilter: ColorFilter.mode(
-              AppColors.primary500,
+              Theme.of(context).colorScheme.primary,
               BlendMode.srcIn,
             ),
           ),
@@ -41,13 +44,16 @@ class BottomNavbar extends ConsumerWidget {
           icon: SvgPicture.asset(
             AppIcons.document,
             height: 28,
-            colorFilter: ColorFilter.mode(AppColors.grey500, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.onSurface,
+              BlendMode.srcIn,
+            ),
           ),
           selectedIcon: SvgPicture.asset(
             AppIcons.document,
             height: 28,
             colorFilter: ColorFilter.mode(
-              AppColors.primary500,
+              Theme.of(context).colorScheme.primary,
               BlendMode.srcIn,
             ),
           ),
@@ -57,13 +63,16 @@ class BottomNavbar extends ConsumerWidget {
           icon: SvgPicture.asset(
             AppIcons.cartFill,
             height: 28,
-            colorFilter: ColorFilter.mode(AppColors.grey500, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.onSurface,
+              BlendMode.srcIn,
+            ),
           ),
           selectedIcon: SvgPicture.asset(
             AppIcons.cartFill,
             height: 28,
             colorFilter: ColorFilter.mode(
-              AppColors.primary500,
+              Theme.of(context).colorScheme.primary,
               BlendMode.srcIn,
             ),
           ),
@@ -73,13 +82,16 @@ class BottomNavbar extends ConsumerWidget {
           icon: SvgPicture.asset(
             AppIcons.profileFill,
             height: 28,
-            colorFilter: ColorFilter.mode(AppColors.grey500, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.onSurface,
+              BlendMode.srcIn,
+            ),
           ),
           selectedIcon: SvgPicture.asset(
             AppIcons.profileFill,
             height: 28,
             colorFilter: ColorFilter.mode(
-              AppColors.primary500,
+              Theme.of(context).colorScheme.primary,
               BlendMode.srcIn,
             ),
           ),

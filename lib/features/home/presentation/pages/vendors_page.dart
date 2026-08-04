@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
@@ -16,7 +15,10 @@ List<Map<String, String>> _getVendorCategories(BuildContext context) {
     {'label': S.of(context).allCategoryTab, 'value': 'All'},
     {'label': S.of(context).booksCategoryTab, 'value': 'books'},
     {'label': S.of(context).poemsCategoryTab, 'value': 'poems'},
-    {'label': S.of(context).specialForYouCategoryTab, 'value': 'special for you'},
+    {
+      'label': S.of(context).specialForYouCategoryTab,
+      'value': 'special for you',
+    },
     {'label': S.of(context).stationeryCategoryTab, 'value': 'stationery'},
   ];
 }
@@ -33,7 +35,7 @@ class VendorsPage extends ConsumerWidget {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,26 +44,34 @@ class VendorsPage extends ConsumerWidget {
               width: screenWidth,
               height: screenHeight * (100 / 812),
               child: Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: screenWidth * (16 / 375)),
+                padding: EdgeInsets.symmetric(
+                  horizontal: screenWidth * (16 / 375),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const AppBackButton(),
                     Text(
                       S.of(context).vendorsPageTitle,
-                      style: AppTextStyles.h4.copyWith(color: AppColors.grey900),
+                      style: AppTextStyles.h4.copyWith(
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, AppRoutes.vendorsSearchPage);
+                        Navigator.pushNamed(
+                          context,
+                          AppRoutes.vendorsSearchPage,
+                        );
                       },
                       child: SvgPicture.asset(
                         AppIcons.search,
                         width: screenWidth * (24 / 375),
                         height: screenWidth * (24 / 375),
-                        colorFilter: const ColorFilter.mode(
-                            Color(0xFF121212), BlendMode.srcIn),
+                        colorFilter: ColorFilter.mode(
+                          Theme.of(context).colorScheme.onSurface,
+                          BlendMode.srcIn,
+                        ),
                       ),
                     ),
                   ],
@@ -85,11 +95,15 @@ class VendorsPage extends ConsumerWidget {
                     children: [
                       Text(
                         S.of(context).ourVendorsSubtitle,
-                        style: AppTextStyles.body16Regular.copyWith(color: AppColors.grey500),
+                        style: AppTextStyles.body16Regular.copyWith(
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        ),
                       ),
                       Text(
                         S.of(context).vendorsPageTitle,
-                        style: AppTextStyles.h4.copyWith(color: AppColors.primary500),
+                        style: AppTextStyles.h4.copyWith(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
                       ),
                     ],
                   ),
@@ -98,7 +112,9 @@ class VendorsPage extends ConsumerWidget {
             ),
             SizedBox(height: screenHeight * (10 / 812)),
             Padding(
-              padding: EdgeInsetsDirectional.only(start: screenWidth * (16 / 375)),
+              padding: EdgeInsetsDirectional.only(
+                start: screenWidth * (16 / 375),
+              ),
               child: SizedBox(
                 width: screenWidth * (351 / 375),
                 height: screenHeight * (24 / 812),
@@ -109,23 +125,33 @@ class VendorsPage extends ConsumerWidget {
                       SizedBox(width: screenWidth * (24 / 375)),
                   itemBuilder: (context, index) {
                     final categoryData = categories[index];
-                    final isSelected = categoryData['value'] == selectedCategory;
+                    final isSelected =
+                        categoryData['value'] == selectedCategory;
 
                     return GestureDetector(
                       onTap: () {
-                        ref.read(selectedVendorCategoryProvider.notifier).state =
+                        ref
+                                .read(selectedVendorCategoryProvider.notifier)
+                                .state =
                             categoryData['value']!;
                         final category = categoryData['value']!;
-                        ref.read(vendorsNotifierProvider.notifier).loadVendors(
+                        ref
+                            .read(vendorsNotifierProvider.notifier)
+                            .loadVendors(
                               category: category == 'All' ? null : category,
                             );
                       },
                       child: Text(
                         categoryData['label']!,
                         style: isSelected
-                            ? AppTextStyles.h5.copyWith(color: AppColors.grey900)
-                            : AppTextStyles.body16Regular
-                                .copyWith(color: AppColors.grey500),
+                            ? AppTextStyles.h5.copyWith(
+                                color: Theme.of(context).colorScheme.onSurface,
+                              )
+                            : AppTextStyles.body16Regular.copyWith(
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.onSurfaceVariant,
+                              ),
                       ),
                     );
                   },
@@ -134,16 +160,17 @@ class VendorsPage extends ConsumerWidget {
             ),
             SizedBox(height: screenHeight * (12 / 812)),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * (24 / 375)),
+              padding: EdgeInsets.symmetric(
+                horizontal: screenWidth * (24 / 375),
+              ),
               child: SizedBox(
                 width: screenWidth * (327 / 375),
                 height: screenHeight * (491 / 812),
                 child: vendorsAsync.when(
                   loading: () =>
                       const Center(child: CircularProgressIndicator()),
-                  error: (error, stackTrace) => Center(
-                    child: Text(S.of(context).couldNotLoadVendors),
-                  ),
+                  error: (error, stackTrace) =>
+                      Center(child: Text(S.of(context).couldNotLoadVendors)),
                   data: (vendors) {
                     if (vendors.isEmpty) {
                       return Center(child: Text(S.of(context).noVendorsFound));
@@ -167,7 +194,9 @@ class VendorsPage extends ConsumerWidget {
                               width: screenWidth * (101 / 375),
                               height: screenWidth * (101 / 375),
                               decoration: BoxDecoration(
-                                color: AppColors.grey50,
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.surfaceContainerHighest,
                                 borderRadius: BorderRadius.circular(7.03),
                               ),
                               child: ClipRRect(
@@ -190,7 +219,10 @@ class VendorsPage extends ConsumerWidget {
                                             overflow: TextOverflow.ellipsis,
                                             style: AppTextStyles.body14Bold
                                                 .copyWith(
-                                                    color: AppColors.primary500),
+                                                  color: Theme.of(
+                                                    context,
+                                                  ).colorScheme.primary,
+                                                ),
                                           ),
                                         ),
                                       ),
@@ -204,7 +236,11 @@ class VendorsPage extends ConsumerWidget {
                                   vendor.name,
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 1,
-                                  style: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900),
+                                  style: AppTextStyles.body16Medium.copyWith(
+                                    color: Theme.of(
+                                      context,
+                                    ).colorScheme.onSurface,
+                                  ),
                                 ),
                               ),
                             ),
@@ -216,9 +252,10 @@ class VendorsPage extends ConsumerWidget {
 
                                 return Padding(
                                   padding: EdgeInsetsDirectional.only(
-                                      end: starIndex < 4
-                                          ? screenWidth * (4 / 375)
-                                          : 0),
+                                    end: starIndex < 4
+                                        ? screenWidth * (4 / 375)
+                                        : 0,
+                                  ),
                                   child: SizedBox(
                                     width: screenWidth * (16 / 375),
                                     height: screenWidth * (16 / 375),
@@ -229,8 +266,12 @@ class VendorsPage extends ConsumerWidget {
                                         height: screenWidth * (13.33 / 375),
                                         colorFilter: ColorFilter.mode(
                                           isFilled
-                                              ? AppColors.yellow
-                                              : AppColors.grey900,
+                                              ? Theme.of(
+                                                  context,
+                                                ).colorScheme.secondary
+                                              : Theme.of(
+                                                  context,
+                                                ).colorScheme.onSurface,
                                           BlendMode.srcIn,
                                         ),
                                       ),

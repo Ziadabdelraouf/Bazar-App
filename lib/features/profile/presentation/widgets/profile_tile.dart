@@ -1,4 +1,3 @@
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -19,13 +18,14 @@ class ProfileTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isRtl = Directionality.of(context) == TextDirection.rtl;
+    final colorScheme = Theme.of(context).colorScheme;
 
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
       onTap: onTap,
       leading: CircleAvatar(
         radius: 30,
-        backgroundColor: AppColors.primary50,
+        backgroundColor: colorScheme.primaryContainer,
         child: leading,
       ),
       trailing: IconButton(
@@ -35,13 +35,18 @@ class ProfileTile extends StatelessWidget {
           flipX: isRtl,
           child: SvgPicture.asset(
             AppIcons.arrowRight2,
-            colorFilter: ColorFilter.mode(AppColors.grey500, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(
+              colorScheme.onSurfaceVariant,
+              BlendMode.srcIn,
+            ),
           ),
         ),
       ),
       title: Text(
         title,
-        style: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900),
+        style: AppTextStyles.body16Medium.copyWith(
+          color: colorScheme.onSurface,
+        ),
       ),
     );
   }

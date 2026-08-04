@@ -1,4 +1,3 @@
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -51,21 +50,21 @@ class PasswordRequirementItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Row(
       children: [
         Icon(
           isValid ? Icons.check : Icons.close,
           size: 16,
-          color: isValid
-              ? AppColors.primary500
-              : AppColors.red,
+          color: isValid ? colorScheme.primary : colorScheme.error,
         ),
         const SizedBox(width: 8),
         Expanded(
           child: Text(
             text,
             style: AppTextStyles.body14Medium.copyWith(
-              color: AppColors.grey500,
+              color: colorScheme.onSurfaceVariant,
             ),
           ),
         ),

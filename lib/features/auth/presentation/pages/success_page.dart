@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/constants/enums.dart';
 import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_images.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 
@@ -42,7 +41,7 @@ class SuccessPage extends StatelessWidget {
                     ? S.of(context).successBody
                     : S.of(context).PasswordChangedBody,
                 style: AppTextStyles.body16Regular.copyWith(
-                  color: AppColors.grey500,
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
                 textAlign: TextAlign.center,
               ),
