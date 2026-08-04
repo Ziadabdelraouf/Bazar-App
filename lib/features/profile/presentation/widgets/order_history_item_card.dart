@@ -30,8 +30,13 @@ class OrderHistoryItemCard extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: order.imageUrl != null
-                ? Image.network(order.imageUrl!, fit: BoxFit.cover)
-                : const Icon(Icons.menu_book),
+            ? Image.network(
+                order.imageUrl!,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) =>
+                    const Icon(Icons.broken_image),
+              )
+            : const Icon(Icons.menu_book),
           ),
         ),
         const SizedBox(width: 16),
