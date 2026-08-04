@@ -26,7 +26,11 @@ class BestVendorsWidget extends StatelessWidget {
           children: [
             Text(
               S.of(context).bestVendorsTitle,
-              style: AppTextStyles.h5.copyWith(color: AppColors.grey900),
+              style: AppTextStyles.h5.copyWith(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : AppColors.grey900,
+              ),
             ),
             GestureDetector(
               onTap: () {
@@ -34,8 +38,9 @@ class BestVendorsWidget extends StatelessWidget {
               },
               child: Text(
                 S.of(context).seeAllButton,
-                style: AppTextStyles.body14Bold
-                    .copyWith(color: AppColors.primary500),
+                style: AppTextStyles.body14SemiBold.copyWith(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
             ),
           ],
@@ -49,9 +54,8 @@ class BestVendorsWidget extends StatelessWidget {
 
               return vendorsAsync.when(
                 loading: () => const Center(child: CircularProgressIndicator()),
-                error: (error, stackTrace) => Center(
-                  child: Text(S.of(context).couldNotLoadVendors),
-                ),
+                error: (error, stackTrace) =>
+                    Center(child: Text(S.of(context).couldNotLoadVendors)),
                 data: (vendors) {
                   if (vendors.isEmpty) {
                     return Center(child: Text(S.of(context).noVendorsFound));
@@ -91,8 +95,9 @@ class BestVendorsWidget extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
-                                      style: AppTextStyles.body14Bold
-                                          .copyWith(color: AppColors.grey900),
+                                      style: AppTextStyles.body14Bold.copyWith(
+                                        color: AppColors.grey900,
+                                      ),
                                     ),
                                   ),
                                 ),

@@ -19,4 +19,7 @@ class AppRoutes {
   static const String authorDetailPage = '/author-detail';
   static const String vendorsPage = '/vendors-page';
   static const String vendorsSearchPage = '/vendors-search-page';
+  static const String favoritesPage = '/favorites-page';
+  static const String orderHistoryPage = '/order-history-page';
+ 
 }

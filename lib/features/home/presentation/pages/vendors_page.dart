@@ -2,7 +2,6 @@ import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
@@ -17,7 +16,10 @@ List<Map<String, String>> _getVendorCategories(BuildContext context) {
     {'label': S.of(context).allCategoryTab, 'value': 'All'},
     {'label': S.of(context).booksCategoryTab, 'value': 'books'},
     {'label': S.of(context).poemsCategoryTab, 'value': 'poems'},
-    {'label': S.of(context).specialForYouCategoryTab, 'value': 'special for you'},
+    {
+      'label': S.of(context).specialForYouCategoryTab,
+      'value': 'special for you',
+    },
     {'label': S.of(context).stationeryCategoryTab, 'value': 'stationery'},
   ];
 }
@@ -39,7 +41,7 @@ class VendorsPage extends ConsumerWidget {
     );
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBackBar(
         title: S.of(context).vendorsPageTitle,
         leadingWidget: Transform.flip(
@@ -49,7 +51,10 @@ class VendorsPage extends ConsumerWidget {
         onLeadingPressed: () => Navigator.pop(context),
         trailingWidget: SvgPicture.asset(
           AppIcons.search,
-          colorFilter: const ColorFilter.mode(Color(0xFF121212), BlendMode.srcIn),
+          colorFilter: ColorFilter.mode(
+            Theme.of(context).colorScheme.onSurface,
+            BlendMode.srcIn,
+          ),
         ),
         onTrailingPressed: () {
           Navigator.pushNamed(context, AppRoutes.vendorsSearchPage);
@@ -64,11 +69,15 @@ class VendorsPage extends ConsumerWidget {
               const SizedBox(height: 16),
               Text(
                 S.of(context).ourVendorsSubtitle,
-                style: AppTextStyles.body16Regular.copyWith(color: AppColors.grey500),
+                style: AppTextStyles.body16Regular.copyWith(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                ),
               ),
               Text(
                 S.of(context).vendorsPageTitle,
-                style: AppTextStyles.h4.copyWith(color: AppColors.primary500),
+                style: AppTextStyles.h4.copyWith(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
               const SizedBox(height: 10),
               SizedBox(
@@ -79,22 +88,31 @@ class VendorsPage extends ConsumerWidget {
                   separatorBuilder: (context, index) => const SizedBox(width: 24),
                   itemBuilder: (context, index) {
                     final categoryData = categories[index];
-                    final isSelected = categoryData['value'] == selectedCategory;
+                    final isSelected =
+                        categoryData['value'] == selectedCategory;
 
                     return GestureDetector(
                       onTap: () {
-                        ref.read(selectedVendorCategoryProvider.notifier).state =
+                        ref
+                                .read(selectedVendorCategoryProvider.notifier)
+                                .state =
                             categoryData['value']!;
                         final category = categoryData['value']!;
-                        ref.read(vendorsNotifierProvider.notifier).loadVendors(
+                        ref
+                            .read(vendorsNotifierProvider.notifier)
+                            .loadVendors(
                               category: category == 'All' ? null : category,
                             );
                       },
                       child: Text(
                         categoryData['label']!,
                         style: isSelected
-                            ? AppTextStyles.h5.copyWith(color: AppColors.grey900)
-                            : AppTextStyles.body16Regular.copyWith(color: AppColors.grey500),
+                            ? AppTextStyles.h5.copyWith(
+                                color: Theme.of(context).colorScheme.onSurface,
+                              )
+                            : AppTextStyles.body16Regular.copyWith(
+                                color: Theme.of(context).colorScheme.onSurfaceVariant,
+                              ),
                       ),
                     );
                   },
@@ -130,7 +148,9 @@ class VendorsPage extends ConsumerWidget {
                               aspectRatio: 1,
                               child: DecoratedBox(
                                 decoration: BoxDecoration(
-                                  color: AppColors.grey50,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .surfaceContainerHighest,
                                   borderRadius: BorderRadius.circular(7.03),
                                 ),
                                 child: ClipRRect(
@@ -149,7 +169,11 @@ class VendorsPage extends ConsumerWidget {
                                                 maxLines: 2,
                                                 overflow: TextOverflow.ellipsis,
                                                 style: AppTextStyles.body14Bold
-                                                    .copyWith(color: AppColors.primary500),
+                                                    .copyWith(
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .primary,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -163,7 +187,11 @@ class VendorsPage extends ConsumerWidget {
                                               maxLines: 2,
                                               overflow: TextOverflow.ellipsis,
                                               style: AppTextStyles.body14Bold
-                                                  .copyWith(color: AppColors.primary500),
+                                                  .copyWith(
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .primary,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -177,7 +205,9 @@ class VendorsPage extends ConsumerWidget {
                                 vendor.name,
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 1,
-                                style: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900),
+                                style: AppTextStyles.body16Medium.copyWith(
+                                  color: Theme.of(context).colorScheme.onSurface,
+                                ),
                               ),
                             ),
                             const SizedBox(height: 4),
@@ -199,7 +229,13 @@ class VendorsPage extends ConsumerWidget {
                                         width: 13.33,
                                         height: 13.33,
                                         colorFilter: ColorFilter.mode(
-                                          isFilled ? AppColors.yellow : AppColors.grey900,
+                                          isFilled
+                                              ? Theme.of(context)
+                                                  .colorScheme
+                                                  .secondary
+                                              : Theme.of(context)
+                                                  .colorScheme
+                                                  .onSurface,
                                           BlendMode.srcIn,
                                         ),
                                       ),

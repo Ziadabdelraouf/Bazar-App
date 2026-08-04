@@ -1,7 +1,6 @@
 import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
 import 'package:bazar_group_1/core/components/rating/rating_stars.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/author_card.dart';
@@ -19,7 +18,7 @@ class AuthorDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBackBar(
         title: author?.name ?? "",
         leadingWidget: SvgPicture.asset(AppIcons.arrowLeftOutline),
@@ -42,14 +41,14 @@ class AuthorDetailPage extends StatelessWidget {
                     Text(
                       author?.role ?? "",
                       style: AppTextStyles.body16Regular.copyWith(
-                        color: AppColors.grey900,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ),
                     SizedBox(height: 16),
                     Text(
                       author!.name,
                       style: AppTextStyles.h4.copyWith(
-                        color: AppColors.grey900,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ),
                     SizedBox(height: 16),
@@ -61,7 +60,9 @@ class AuthorDetailPage extends StatelessWidget {
               Text(
                 S.of(context).about,
                 textAlign: TextAlign.left,
-                style: AppTextStyles.h6.copyWith(color: AppColors.grey900),
+                style: AppTextStyles.h6.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
               SizedBox(height: 14),
 
@@ -72,7 +73,7 @@ class AuthorDetailPage extends StatelessWidget {
                     Text(
                       author!.role,
                       style: AppTextStyles.body14Regular.copyWith(
-                        color: AppColors.grey600,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                     ),
                   ],
@@ -81,7 +82,9 @@ class AuthorDetailPage extends StatelessWidget {
               SizedBox(height: 8),
               Text(
                 S.of(context).products,
-                style: AppTextStyles.h6.copyWith(color: AppColors.grey900),
+                style: AppTextStyles.h6.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
               SizedBox(height: 8),
               AuthorProducts(),
