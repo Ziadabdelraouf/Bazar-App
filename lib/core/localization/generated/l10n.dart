@@ -1181,10 +1181,6 @@ class S {
     return Intl.message('Logout', name: 'logoutButton', desc: '', args: []);
   }
 
-  /// `Cancel`
-  String get cancelButton {
-    return Intl.message('Cancel', name: 'cancelButton', desc: '', args: []);
-  }
 
   /// `Order History`
   String get helpCenterOrderHistory {
