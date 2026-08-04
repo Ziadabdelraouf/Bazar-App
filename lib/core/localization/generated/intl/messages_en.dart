@@ -44,6 +44,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancelButton": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("Category"),
+    "changePictureButton": MessageLookupByLibrary.simpleMessage(
+      "Change Picture",
+    ),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
     "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
@@ -122,6 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Minimum 8 characters",
     ),
     "myAccount": MessageLookupByLibrary.simpleMessage("My Account"),
+    "myAccountTitle": MessageLookupByLibrary.simpleMessage("My Account"),
     "nameLabel": MessageLookupByLibrary.simpleMessage("Name"),
     "nameMinimumLength": MessageLookupByLibrary.simpleMessage(
       "Name must be at least 2 characters",
@@ -184,8 +188,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneNumberFieldLabel": MessageLookupByLibrary.simpleMessage(
       "Phone Number",
     ),
+    "phoneNumberLabel": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "phoneNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Phone number",
+      "your phone number",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("Poems"),
@@ -213,6 +218,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "retryButton": MessageLookupByLibrary.simpleMessage("Retry"),
     "reviewLabel": MessageLookupByLibrary.simpleMessage("Review"),
+    "saveChangesButton": MessageLookupByLibrary.simpleMessage("Save Changes"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "Search country or code",
     ),

@@ -138,5 +138,10 @@
     "logoutTitle": "Logout",
     "logoutConfirmationMessage": "Are you sure you want to log out?",
     "logoutButton": "Logout",
-    "cancelButton": "Cancel"
+    "cancelButton": "Cancel",
+    "myAccountTitle": "My Account",
+    "phoneNumberLabel": "Phone Number",
+    "phoneNumberPlaceholder": "your phone number",
+    "saveChangesButton": "Save Changes",
+    "changePictureButton": "Change Picture" 
 }

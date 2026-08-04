@@ -138,5 +138,11 @@
     "logoutTitle": "تسجيل الخروج",
     "logoutConfirmationMessage": "هل أنت متاكد من رغبتك في تسجيل الخروج؟",
     "logoutButton": "تسجيل الخروج",
-    "cancelButton": "إلغاء"
+    "cancelButton": "إلغاء",
+    "myAccountTitle": "حسابي",
+    "phoneNumberLabel": "رقم هاتفك",
+    "phoneNumberPlaceholder": "اكتب رقم هاتفك...",
+    "saveChangesButton": "حفظ التغييرات",
+    "changePictureButton": "تغيير الصورة" 
+
 }

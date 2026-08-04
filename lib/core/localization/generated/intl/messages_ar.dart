@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
+    "changePictureButton": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
     ),
@@ -132,6 +133,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "8 أحرف على الأقل",
     ),
     "myAccount": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "myAccountTitle": MessageLookupByLibrary.simpleMessage("حسابي"),
     "nameLabel": MessageLookupByLibrary.simpleMessage("الاسم"),
     "nameMinimumLength": MessageLookupByLibrary.simpleMessage(
       "يجب أن يتكون الاسم من حرفين على الأقل",
@@ -194,8 +196,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء إدخال رقم هاتفك، حتى نتمكن من توصيل طلبك بسهولة أكبر",
     ),
     "phoneNumberFieldLabel": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "phoneNumberLabel": MessageLookupByLibrary.simpleMessage("رقم هاتفك"),
     "phoneNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "رقم الهاتف",
+      "اكتب رقم هاتفك...",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("أشعار"),
@@ -223,6 +226,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "retryButton": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
     "reviewLabel": MessageLookupByLibrary.simpleMessage("مراجعة"),
+    "saveChangesButton": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",
     ),

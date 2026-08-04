@@ -1,4 +1,5 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/profile_tile.dart';
@@ -26,7 +27,9 @@ class ProfileMenuList extends StatelessWidget {
       _ProfileMenuItem(
         title: l10n.myAccount,
         icon: AppIcons.profileFill,
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, AppRoutes.myAccount);
+        },
       ),
       _ProfileMenuItem(
         title: l10n.address,

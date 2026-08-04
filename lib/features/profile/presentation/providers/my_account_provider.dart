@@ -22,8 +22,6 @@ class MyAccountNotifier extends AutoDisposeNotifier<MyAccountState> {
     return const MyAccountState();
   }
 
-  /// Call once when the page first loads, to prefill the fields with the
-  /// user's existing account data.
   void loadInitialData({
     required String name,
     required String email,
@@ -46,25 +44,21 @@ class MyAccountNotifier extends AutoDisposeNotifier<MyAccountState> {
     // state = state.copyWith(profileImagePath: pickedPath);
   }
 
-  String? validateEmail(String? value) {
+  String? validatePhone(
+    String? value, {
+    required String emptyError,
+    required String invalidError,
+  }) {
     if (value == null || value.trim().isEmpty) {
-      return 'Email is required';
+      return emptyError;
     }
-    final emailRegex = RegExp(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$');
-    if (!emailRegex.hasMatch(value.trim())) {
-      return 'Enter a valid email address';
-    }
-    return null;
-  }
 
-  String? validatePhone(String? value) {
-    if (value == null || value.trim().isEmpty) {
-      return 'Phone number is required';
-    }
     final digitsOnly = value.replaceAll(RegExp(r'\D'), '');
+
     if (digitsOnly.length < 10) {
-      return 'Enter a valid phone number';
+      return invalidError;
     }
+
     return null;
   }
 

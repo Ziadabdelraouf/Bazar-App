@@ -60,7 +60,8 @@ class MyApp extends StatelessWidget {
           ),
         );
       },
-      locale: Locale("ar"),
+      // locale: Locale("ar"),
+      locale: Locale("en"),
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

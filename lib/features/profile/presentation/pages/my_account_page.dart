@@ -1,11 +1,13 @@
 import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
+import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
 import 'package:bazar_group_1/core/components/inputs/app_text_form_field.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/email_validator.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/password_validator.dart';
-import 'package:bazar_group_1/features/forgot_password/presentation/widgets/primary_button.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/phone_number_notifier.dart';
 import 'package:bazar_group_1/features/profile/presentation/providers/my_account_provider.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/profile_avatar_edit.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +23,18 @@ class MyAccountPage extends ConsumerStatefulWidget {
 
 class _MyAccountPageState extends ConsumerState<MyAccountPage> {
   @override
+  void initState() {
+    super.initState();
+
+    final notifier = ref.read(myAccountProvider.notifier);
+
+    final name = ref.read(nameNotifierProvider);
+    final phoneState = ref.read(phoneNumberNotifierProvider);
+
+    notifier.loadInitialData(name: name, email: '', phone: phoneState.digits);
+  }
+
+  @override
   Widget build(BuildContext context) {
     final notifier = ref.read(myAccountProvider.notifier);
     final state = ref.watch(myAccountProvider);
@@ -32,7 +46,7 @@ class _MyAccountPageState extends ConsumerState<MyAccountPage> {
       },
       child: Scaffold(
         backgroundColor: AppColors.white,
-        appBar: const AppBackBar(title: 'My Account'),
+        appBar: AppBackBar(title: localization.myAccountTitle),
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(
@@ -86,8 +100,8 @@ class _MyAccountPageState extends ConsumerState<MyAccountPage> {
                   const SizedBox(height: 16),
 
                   AppFormTextField(
-                    label: 'Phone Number',
-                    placeholder: 'Type your phone number...',
+                    label: localization.phoneNumberLabel,
+                    placeholder: localization.phoneNumberPlaceholder,
                     controller: notifier.phoneController,
                     keyboardType: TextInputType.phone,
                     textInputAction: TextInputAction.next,
@@ -103,7 +117,13 @@ class _MyAccountPageState extends ConsumerState<MyAccountPage> {
                         ),
                       ),
                     ),
-                    validator: notifier.validatePhone,
+                    validator: (value) {
+                      return notifier.validatePhone(
+                        value,
+                        emptyError: localization.emptyPhoneNumberError,
+                        invalidError: localization.invalidPhoneNumberError,
+                      );
+                    },
                   ),
                   const SizedBox(height: 16),
                   AppFormTextField(
@@ -137,8 +157,8 @@ class _MyAccountPageState extends ConsumerState<MyAccountPage> {
                   ),
 
                   const SizedBox(height: 32),
-                  PrimaryButton(
-                    text: 'Save Changes',
+                  LargePrimaryButton(
+                    label: localization.saveChangesButton,
                     onPressed: () async {
                       final isValid = await notifier.submit();
                       if (isValid && context.mounted) {
