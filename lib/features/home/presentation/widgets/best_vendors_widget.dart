@@ -59,14 +59,12 @@ class BestVendorsWidget extends StatelessWidget {
 
                   final sorted = List.of(vendors)
                     ..sort((a, b) => (b.rating ?? 0).compareTo(a.rating ?? 0));
-                  final bestFour = sorted.take(4).toList();
-
                   return ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    itemCount: bestFour.length,
+                    itemCount: sorted.length,
                     separatorBuilder: (context, index) => const SizedBox(width: 12),
                     itemBuilder: (context, index) {
-                      final vendor = bestFour[index];
+                      final vendor = sorted[index];
 
                       return Container(
                         width: itemSize,
