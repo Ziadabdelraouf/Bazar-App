@@ -49,7 +49,9 @@ class ProfileMenuList extends StatelessWidget {
       _ProfileMenuItem(
         title: l10n.orderHistory,
         icon: AppIcons.menuFill,
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, AppRoutes.orderHistoryPage);
+        },
       ),
       _ProfileMenuItem(
         title: l10n.helpCenter,
