@@ -45,7 +45,7 @@ class BestVendorsWidget extends StatelessWidget {
           height: itemSize,
           child: Consumer(
             builder: (context, ref, child) {
-              final vendorsAsync = ref.watch(vendorsNotifierProvider);
+              final vendorsAsync = ref.watch(bestVendorsProvider);
 
               return vendorsAsync.when(
                 loading: () => const Center(child: CircularProgressIndicator()),
