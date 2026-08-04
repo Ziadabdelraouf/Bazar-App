@@ -156,6 +156,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الجديدة",
     ),
+    "noFavoritesYet": MessageLookupByLibrary.simpleMessage(
+      "لا توجد مفضلات بعد",
+    ),
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "لا تتوفر عروض حاليًا",
     ),
@@ -229,6 +232,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "بالنقر على تسجيل، فإنك توافق على",
     ),
     "registerButton": MessageLookupByLibrary.simpleMessage("تسجيل"),
+    "removeButton": MessageLookupByLibrary.simpleMessage("إزالة"),
+    "removeFromFavoritesConfirmation": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد أنك تريد إزالة هذا الكتاب من مفضلتك؟",
+    ),
+    "removeFromFavoritesTitle": MessageLookupByLibrary.simpleMessage(
+      "إزالة من المفضلة؟",
+    ),
     "resendButton": MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "لم تستلم الكود؟ ",
@@ -301,6 +311,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "viewCartButton": MessageLookupByLibrary.simpleMessage("عرض السلة"),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك "),
+    "yourFavoritesTitle": MessageLookupByLibrary.simpleMessage("مفضلتك"),
     "yourFavourites": MessageLookupByLibrary.simpleMessage("المفضلة"),
   };
 }

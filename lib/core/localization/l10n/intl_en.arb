@@ -134,6 +134,12 @@
     "poemsCategoryTab": "Poems",
     "specialForYouCategoryTab": "Special for You",
     "stationeryCategoryTab": "Stationery",
+    "//Favorites Page Strings//": "",
+    "yourFavoritesTitle": "Your Favorites",
+    "noFavoritesYet": "No favorites yet",
+    "removeFromFavoritesTitle": "Remove from Favorites?",
+    "removeFromFavoritesConfirmation": "Are you sure you want to remove this book from your favorites?",
+    "removeButton": "Remove",
     "//Logout Bottom Sheet Strings//": "",
     "logoutTitle": "Logout",
     "logoutConfirmationMessage": "Are you sure you want to log out?",
@@ -164,4 +170,6 @@
     "october": "October",
     "november": "November",
     "december": "December"
+
+
 }

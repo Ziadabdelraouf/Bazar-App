@@ -1107,6 +1107,53 @@ class S {
     );
   }
 
+  // skipped getter for the '//Favorites Page Strings//' key
+
+  /// `Your Favorites`
+  String get yourFavoritesTitle {
+    return Intl.message(
+      'Your Favorites',
+      name: 'yourFavoritesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No favorites yet`
+  String get noFavoritesYet {
+    return Intl.message(
+      'No favorites yet',
+      name: 'noFavoritesYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove from Favorites?`
+  String get removeFromFavoritesTitle {
+    return Intl.message(
+      'Remove from Favorites?',
+      name: 'removeFromFavoritesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to remove this book from your favorites?`
+  String get removeFromFavoritesConfirmation {
+    return Intl.message(
+      'Are you sure you want to remove this book from your favorites?',
+      name: 'removeFromFavoritesConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove`
+  String get removeButton {
+    return Intl.message('Remove', name: 'removeButton', desc: '', args: []);
+  }
+
   // skipped getter for the '//Logout Bottom Sheet Strings//' key
 
   /// `Logout`

@@ -3,8 +3,12 @@ import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/features/profile/domain/entities/favorite_item.dart';
+import 'package:bazar_group_1/features/profile/presentation/notifiers/favorites_notifier.dart';
+import 'package:bazar_group_1/features/profile/presentation/widgets/favorite_heart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DetailMenuPage extends StatefulWidget {
@@ -81,15 +85,31 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                     style: AppTextStyles.h4.copyWith(color: AppColors.grey900),
                   ),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: SvgPicture.asset(
-                    AppIcons.loveFill,
-                    colorFilter: ColorFilter.mode(
-                      AppColors.primary500,
-                      BlendMode.srcIn,
-                    ),
-                  ),
+                Consumer(
+                  builder: (context, ref, child) {
+                    final isFavorited = ref.watch(favoritesNotifierProvider.select(
+                      (favorites) => favorites.any((item) => item.title == widget.title),
+                    ));
+
+                    return FavoriteHeart(
+                      isFavorited: isFavorited,
+                      onTap: () {
+                        final notifier = ref.read(favoritesNotifierProvider.notifier);
+
+                        if (isFavorited) {
+                          notifier.removeFavorite(widget.title);
+                        } else {
+                          notifier.addFavorite(
+                            FavoriteItem.fromPriceText(
+                              title: widget.title,
+                              priceText: widget.price,
+                              imageUrl: widget.imagePath,
+                            ),
+                          );
+                        }
+                      },
+                    );
+                  },
                 ),
               ],
             ),

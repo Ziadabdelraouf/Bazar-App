@@ -1,10 +1,10 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/profile_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:bazar_group_1/core/router/app_routes.dart';
 
 class _ProfileMenuItem {
   final String title;
@@ -42,7 +42,9 @@ class ProfileMenuList extends StatelessWidget {
       _ProfileMenuItem(
         title: l10n.yourFavourites,
         icon: AppIcons.loveFill,
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, AppRoutes.favoritesPage);
+        },
       ),
       _ProfileMenuItem(
         title: l10n.orderHistory,
