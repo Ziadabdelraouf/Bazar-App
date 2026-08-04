@@ -87,18 +87,20 @@ class _FavoriteItemCardState extends ConsumerState<FavoriteItemCard> {
                   padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
                   child: Row(
                     children: [
-                    Container(
+                    SizedBox(
                       width: 48,
                       height: 48,
-                      decoration: BoxDecoration(
-                        color: AppColors.grey50,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: widget.item.imageUrl != null
-                            ? Image.network(widget.item.imageUrl!, fit: BoxFit.cover)
-                            : const Icon(Icons.menu_book),
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: AppColors.grey50,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: widget.item.imageUrl != null
+                              ? Image.network(widget.item.imageUrl!, fit: BoxFit.cover)
+                              : const Icon(Icons.menu_book),
+                        ),
                       ),
                     ),
                     const SizedBox(width: 16),
