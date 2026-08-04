@@ -1,6 +1,8 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_images.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/features/auth/data/services/auth_service.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/auth_service_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/phone_number_notifier.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/logout_bottom_sheet.dart';
@@ -14,11 +16,18 @@ class ProfileHeader extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final name = ref.watch(nameNotifierProvider);
     final phoneState = ref.watch(phoneNumberNotifierProvider);
+    final profileAsync = ref.watch(userProfileProvider);
+
+    final storedProfile = profileAsync.asData?.value;
+    final displayName = name.isNotEmpty
+        ? name
+        : (storedProfile?['name'] ?? AuthService.fallbackName);
+
     final countryCode = phoneState.selectedCountry.dialCode;
     final digits = phoneState.digits;
     final phoneText = digits.isNotEmpty
         ? "$countryCode $digits"
-        : "$countryCode 000000000";
+        : (storedProfile?['mobile'] ?? AuthService.fallbackMobile);
 
     final isRtl = Directionality.of(context) == TextDirection.rtl;
     final colorScheme = Theme.of(context).colorScheme;
@@ -45,7 +54,7 @@ class ProfileHeader extends ConsumerWidget {
               ),
             ),
             title: Text(
-              name.isNotEmpty ? name : "John Doe",
+              displayName,
               style: AppTextStyles.h6.copyWith(color: titleColor),
             ),
             subtitle: Text(

@@ -3,13 +3,16 @@ import 'package:bazar_group_1/core/components/buttons/large_secondary_button.dar
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/auth_service_provider.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class LogoutBottomSheet extends StatelessWidget {
+class LogoutBottomSheet extends ConsumerWidget {
   const LogoutBottomSheet({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final localization = S.of(context);
 
     return Container(
@@ -46,14 +49,21 @@ class LogoutBottomSheet extends StatelessWidget {
               const SizedBox(height: 8),
               LargePrimaryButton(
                 label: localization.logoutButton,
-                onPressed: () {
-                  Navigator.pushNamedAndRemoveUntil(
-                    context,
-                    AppRoutes.onboardingPage,
-                    (route) => false,
-                  );
+                onPressed: () async {
+                  await ref.read(authServiceProvider).clearSession();
+                  ref.invalidate(userProfileProvider);
+                  ref.read(nameNotifierProvider.notifier).clear();
+
+                  if (context.mounted) {
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      AppRoutes.onboardingPage,
+                      (route) => false,
+                    );
+                  }
                 },
               ),
+
               LargeSecondaryButton(
                 label: localization.cancelButton,
                 onPressed: () {
