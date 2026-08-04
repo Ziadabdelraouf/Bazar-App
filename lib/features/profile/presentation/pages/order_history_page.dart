@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/components/navigation/app_back_button.dart';
 import 'package:bazar_group_1/features/profile/domain/entities/order_history_item.dart';
 import 'package:bazar_group_1/features/profile/presentation/notifiers/order_history_notifier.dart';
@@ -88,50 +89,36 @@ class OrderHistoryPage extends ConsumerWidget {
               border: Border.all(color: AppColors.grey200),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth < 500) {
-                  return _buildOrdersList(orders);
-                }
-                return _buildOrdersGrid(orders);
-              },
-            ),
+            child: (context.isTablet || context.isDesktop)
+                ? GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 4,
+                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 12,
+                    ),
+                    itemCount: orders.length,
+                    itemBuilder: (context, index) =>
+                        OrderHistoryItemCard(order: orders[index]),
+                  )
+                : Column(
+                    children: [
+                      for (int i = 0; i < orders.length; i++) ...[
+                        OrderHistoryItemCard(order: orders[i]),
+                        if (i < orders.length - 1)
+                          Divider(
+                            color: AppColors.grey200,
+                            thickness: 1,
+                            height: 1,
+                          ),
+                      ],
+                    ],
+                  ),
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildOrdersList(List<OrderHistoryItem> orders) {
-    return Column(
-      children: [
-        for (int i = 0; i < orders.length; i++) ...[
-          OrderHistoryItemCard(order: orders[i]),
-          if (i < orders.length - 1)
-            Divider(
-              color: AppColors.grey200,
-              thickness: 1,
-              height: 1,
-            ),
-        ],
-      ],
-    );
-  }
-
-  Widget _buildOrdersGrid(List<OrderHistoryItem> orders) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 4,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 12,
-      ),
-      itemCount: orders.length,
-      itemBuilder: (context, index) {
-        return OrderHistoryItemCard(order: orders[index]);
-      },
     );
   }
 }
