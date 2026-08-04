@@ -105,18 +105,21 @@ class OrderHistoryPage extends ConsumerWidget {
                         OrderHistoryItemCard(order: orders[index]),
                   )
                 : Column(
-                    children: [
-                      for (int i = 0; i < orders.length; i++) ...[
-                        OrderHistoryItemCard(order: orders[i]),
-                        if (i < orders.length - 1)
-                          Divider(
-                            color: AppColors.grey200,
-                            thickness: 1,
-                            height: 1,
-                          ),
-                      ],
+                  children: [
+                    for (int i = 0; i < orders.length; i++) ...[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        child: OrderHistoryItemCard(order: orders[i]),
+                      ),
+                      if (i < orders.length - 1)
+                        Divider(
+                          color: AppColors.grey200,
+                          thickness: 1,
+                          height: 1,
+                        ),
                     ],
-                  ),
+                  ],
+                ),
           ),
         ],
       ),
