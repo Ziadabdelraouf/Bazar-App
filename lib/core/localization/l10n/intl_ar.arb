@@ -149,7 +149,7 @@
     "phoneNumberLabel": "رقم هاتفك",
     "phoneNumberPlaceholder": "اكتب رقم هاتفك...",
     "saveChangesButton": "حفظ التغييرات",
-    "changePictureButton": "تغيير الصورة", 
+    "changePictureButton": "تغيير الصورة",
     "//Order History Page Strings//": "",
     "orderHistoryPageTitle": "سجل الطلبات",
     "noOrdersYet": "لا توجد طلبات بعد",
@@ -175,4 +175,23 @@
     "october": "أكتوبر",
     "november": "نوفمبر",
     "december": "ديسمبر"
-}
+    "logoutButton": "تسجيل الخروج",
+    "helpCenterOrderHistory": "سجل الطلبات",
+    "helpCenterTitle": "مركز المساعدة",
+    "helpCenterSubtitle": "قوللنا إزاي نقدر نساعدك 👋\nفريقنا جاهز لتقديم الخدمة والدعم!",
+    "helpCenterEmailTitle": "البريد الإلكتروني",
+    "helpCenterEmailSubtitle": "إرسال إلى بريدك الإلكتروني",
+    "helpCenterPhoneTitle": "الهاتف",
+    "helpCenterPhoneSubtitle": "إرسال إلى هاتفك",
+    "locationTitle": "الموقع",
+    "detailAddressTitle": "تفاصيل العنوان",
+    "currentLocation": "موقعي الحالي",
+    "selectedAddressTitle": "العنوان المختار",
+    "selectAddressMessage": "اختر عنوانك على الخريطة",
+    "addressNotFound": "العنوان غير موجود",
+    "addressUnavailable": "العنوان غير متاح",
+    "saveAddressAs": "احفظ العنوان كـ",
+    "homeAddress": "المنزل",
+    "officeAddress": "المكتب",
+    "confirmationButton": "تأكيد"
+    }

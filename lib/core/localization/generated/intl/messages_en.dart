@@ -35,6 +35,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "about": MessageLookupByLibrary.simpleMessage("About"),
     "address": MessageLookupByLibrary.simpleMessage("Address"),
+    "addressNotFound": MessageLookupByLibrary.simpleMessage(
+      "Address not found",
+    ),
+    "addressUnavailable": MessageLookupByLibrary.simpleMessage(
+      "Address unavailable",
+    ),
     "allCategoryTab": MessageLookupByLibrary.simpleMessage("All"),
     "april": MessageLookupByLibrary.simpleMessage("April"),
     "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
@@ -60,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
       "Please confirm your password",
     ),
+    "confirmationButton": MessageLookupByLibrary.simpleMessage("Confirmation"),
     "congratulations": MessageLookupByLibrary.simpleMessage("Congratulations!"),
     "contactMethodEmailSubtitle": MessageLookupByLibrary.simpleMessage(
       "Send to your email",
@@ -86,6 +93,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "december": MessageLookupByLibrary.simpleMessage("December"),
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("Delivered"),
+    "currentLocation": MessageLookupByLibrary.simpleMessage("Current location"),
+    "detailAddressTitle": MessageLookupByLibrary.simpleMessage(
+      "Detail Address",
+    ),
     "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
@@ -115,6 +126,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
     "helpCenter": MessageLookupByLibrary.simpleMessage("Help Center"),
+    "helpCenterEmailSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Send to your email",
+    ),
+    "helpCenterEmailTitle": MessageLookupByLibrary.simpleMessage("Email"),
+    "helpCenterOrderHistory": MessageLookupByLibrary.simpleMessage(
+      "Order History",
+    ),
+    "helpCenterPhoneSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Send to your phone",
+    ),
+    "helpCenterPhoneTitle": MessageLookupByLibrary.simpleMessage("Phone"),
+    "helpCenterSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Tell us how we can help 👋\nChapter are standing by for service & support!",
+    ),
+    "helpCenterTitle": MessageLookupByLibrary.simpleMessage("Help Center"),
+    "homeAddress": MessageLookupByLibrary.simpleMessage("Home"),
     "homeTitle": MessageLookupByLibrary.simpleMessage("Home"),
     "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
       "Incorrect code, please try again.",
@@ -127,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "january": MessageLookupByLibrary.simpleMessage("January"),
     "july": MessageLookupByLibrary.simpleMessage("July"),
     "june": MessageLookupByLibrary.simpleMessage("June"),
+    "locationTitle": MessageLookupByLibrary.simpleMessage("Location"),
     "logOut": MessageLookupByLibrary.simpleMessage("Log Out"),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
     "logoutButton": MessageLookupByLibrary.simpleMessage("Logout"),
@@ -157,6 +185,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "november": MessageLookupByLibrary.simpleMessage("November"),
     "october": MessageLookupByLibrary.simpleMessage("October"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("Offers & Promos"),
+    "officeAddress": MessageLookupByLibrary.simpleMessage("Office"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
     ),
@@ -248,12 +277,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "retryButton": MessageLookupByLibrary.simpleMessage("Retry"),
     "reviewLabel": MessageLookupByLibrary.simpleMessage("Review"),
     "saveChangesButton": MessageLookupByLibrary.simpleMessage("Save Changes"),
+    "saveAddressAs": MessageLookupByLibrary.simpleMessage("Save Address As"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "Search country or code",
     ),
     "seeAllButton": MessageLookupByLibrary.simpleMessage("See all"),
+    "selectAddressMessage": MessageLookupByLibrary.simpleMessage(
+      "Select an address on the map",
+    ),
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage(
       "Select Country",
+    ),
+    "selectedAddressTitle": MessageLookupByLibrary.simpleMessage(
+      "Selected Address",
     ),
     "sendButton": MessageLookupByLibrary.simpleMessage("Send"),
     "september": MessageLookupByLibrary.simpleMessage("September"),

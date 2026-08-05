@@ -22,4 +22,6 @@ class AppRoutes {
   static const myAccount = '/my-account';
   static const String favoritesPage = '/favorites-page';
   static const String orderHistoryPage = '/order-history-page';
+  static const String helpCenter = '/help-center';
+  static const String address = '/address';
 }

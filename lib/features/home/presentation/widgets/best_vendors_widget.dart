@@ -50,7 +50,7 @@ class BestVendorsWidget extends StatelessWidget {
           height: itemSize,
           child: Consumer(
             builder: (context, ref, child) {
-              final vendorsAsync = ref.watch(vendorsNotifierProvider);
+              final vendorsAsync = ref.watch(bestVendorsProvider);
 
               return vendorsAsync.when(
                 loading: () => const Center(child: CircularProgressIndicator()),
@@ -63,15 +63,12 @@ class BestVendorsWidget extends StatelessWidget {
 
                   final sorted = List.of(vendors)
                     ..sort((a, b) => (b.rating ?? 0).compareTo(a.rating ?? 0));
-                  final bestFour = sorted.take(4).toList();
-
                   return ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    itemCount: bestFour.length,
-                    separatorBuilder: (context, index) =>
-                        const SizedBox(width: 12),
+                    itemCount: sorted.length,
+                    separatorBuilder: (context, index) => const SizedBox(width: 12),
                     itemBuilder: (context, index) {
-                      final vendor = bestFour[index];
+                      final vendor = sorted[index];
 
                       return Container(
                         width: itemSize,
