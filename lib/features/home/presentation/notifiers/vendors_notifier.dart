@@ -24,3 +24,8 @@ class VendorsNotifier extends AsyncNotifier<List<Vendor>> {
 final vendorsNotifierProvider = AsyncNotifierProvider<VendorsNotifier, List<Vendor>>(
   () => VendorsNotifier(),
 );
+
+final bestVendorsProvider = FutureProvider<List<Vendor>>((ref) async {
+  final repository = ref.watch(vendorsRepositoryProvider);
+  return repository.getVendors();
+});
