@@ -1294,6 +1294,187 @@ class S {
   String get december {
     return Intl.message('December', name: 'december', desc: '', args: []);
   }
+
+
+  /// `Order History`
+  String get helpCenterOrderHistory {
+    return Intl.message(
+      'Order History',
+      name: 'helpCenterOrderHistory',
+      desc: 'App bar title on the help center page',
+      args: [],
+    );
+  }
+
+  /// `Help Center`
+  String get helpCenterTitle {
+    return Intl.message(
+      'Help Center',
+      name: 'helpCenterTitle',
+      desc: 'Main heading on the help center page',
+      args: [],
+    );
+  }
+
+  /// `Tell us how we can help 👋\nChapter are standing by for service & support!`
+  String get helpCenterSubtitle {
+    return Intl.message(
+      'Tell us how we can help 👋\nChapter are standing by for service & support!',
+      name: 'helpCenterSubtitle',
+      desc: 'Subtitle text below the help center heading',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get helpCenterEmailTitle {
+    return Intl.message(
+      'Email',
+      name: 'helpCenterEmailTitle',
+      desc: 'Title of the email contact card',
+      args: [],
+    );
+  }
+
+  /// `Send to your email`
+  String get helpCenterEmailSubtitle {
+    return Intl.message(
+      'Send to your email',
+      name: 'helpCenterEmailSubtitle',
+      desc: 'Subtitle of the email contact card',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get helpCenterPhoneTitle {
+    return Intl.message(
+      'Phone',
+      name: 'helpCenterPhoneTitle',
+      desc: 'Title of the phone contact card',
+      args: [],
+    );
+  }
+
+  /// `Send to your phone`
+  String get helpCenterPhoneSubtitle {
+    return Intl.message(
+      'Send to your phone',
+      name: 'helpCenterPhoneSubtitle',
+      desc: 'Subtitle of the phone contact card',
+      args: [],
+    );
+  }
+
+  /// `Location`
+  String get locationTitle {
+    return Intl.message(
+      'Location',
+      name: 'locationTitle',
+      desc: 'App bar title on the location/address page',
+      args: [],
+    );
+  }
+
+  /// `Detail Address`
+  String get detailAddressTitle {
+    return Intl.message(
+      'Detail Address',
+      name: 'detailAddressTitle',
+      desc: 'Heading for the address details section',
+      args: [],
+    );
+  }
+
+  /// `Current location`
+  String get currentLocation {
+    return Intl.message(
+      'Current location',
+      name: 'currentLocation',
+      desc: 'Tooltip for the current-location icon button',
+      args: [],
+    );
+  }
+
+  /// `Selected Address`
+  String get selectedAddressTitle {
+    return Intl.message(
+      'Selected Address',
+      name: 'selectedAddressTitle',
+      desc: 'Fallback title shown when no address title is set yet',
+      args: [],
+    );
+  }
+
+  /// `Select an address on the map`
+  String get selectAddressMessage {
+    return Intl.message(
+      'Select an address on the map',
+      name: 'selectAddressMessage',
+      desc: 'Fallback message prompting the user to pick a location',
+      args: [],
+    );
+  }
+
+  /// `Address not found`
+  String get addressNotFound {
+    return Intl.message(
+      'Address not found',
+      name: 'addressNotFound',
+      desc: 'Error shown when the selected location has no matching address',
+      args: [],
+    );
+  }
+
+  /// `Address unavailable`
+  String get addressUnavailable {
+    return Intl.message(
+      'Address unavailable',
+      name: 'addressUnavailable',
+      desc: 'Error shown when the address lookup fails or is unavailable',
+      args: [],
+    );
+  }
+
+  /// `Save Address As`
+  String get saveAddressAs {
+    return Intl.message(
+      'Save Address As',
+      name: 'saveAddressAs',
+      desc: 'Label above the address type choice chips',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get homeAddress {
+    return Intl.message(
+      'Home',
+      name: 'homeAddress',
+      desc: 'Choice chip label for saving address as Home',
+      args: [],
+    );
+  }
+
+  /// `Office`
+  String get officeAddress {
+    return Intl.message(
+      'Office',
+      name: 'officeAddress',
+      desc: 'Choice chip label for saving address as Office',
+      args: [],
+    );
+  }
+
+  /// `Confirmation`
+  String get confirmationButton {
+    return Intl.message(
+      'Confirmation',
+      name: 'confirmationButton',
+      desc: 'Button to confirm the selected address',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
