@@ -1107,6 +1107,53 @@ class S {
     );
   }
 
+  // skipped getter for the '//Favorites Page Strings//' key
+
+  /// `Your Favorites`
+  String get yourFavoritesTitle {
+    return Intl.message(
+      'Your Favorites',
+      name: 'yourFavoritesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No favorites yet`
+  String get noFavoritesYet {
+    return Intl.message(
+      'No favorites yet',
+      name: 'noFavoritesYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove from Favorites?`
+  String get removeFromFavoritesTitle {
+    return Intl.message(
+      'Remove from Favorites?',
+      name: 'removeFromFavoritesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to remove this book from your favorites?`
+  String get removeFromFavoritesConfirmation {
+    return Intl.message(
+      'Are you sure you want to remove this book from your favorites?',
+      name: 'removeFromFavoritesConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove`
+  String get removeButton {
+    return Intl.message('Remove', name: 'removeButton', desc: '', args: []);
+  }
+
   // skipped getter for the '//Logout Bottom Sheet Strings//' key
 
   /// `Logout`
@@ -1132,6 +1179,301 @@ class S {
   /// `Cancel`
   String get cancelButton {
     return Intl.message('Cancel', name: 'cancelButton', desc: '', args: []);
+  }
+
+  // skipped getter for the '//Order History Page Strings//' key
+
+  /// `Order History`
+  String get orderHistoryPageTitle {
+    return Intl.message(
+      'Order History',
+      name: 'orderHistoryPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No orders yet`
+  String get noOrdersYet {
+    return Intl.message(
+      'No orders yet',
+      name: 'noOrdersYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivered`
+  String get deliveredStatus {
+    return Intl.message(
+      'Delivered',
+      name: 'deliveredStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancelled`
+  String get cancelledStatus {
+    return Intl.message(
+      'Cancelled',
+      name: 'cancelledStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =1{1 item} other{{count} items}}`
+  String itemsCount(int count) {
+    return Intl.plural(
+      count,
+      one: '1 item',
+      other: '$count items',
+      name: 'itemsCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `January`
+  String get january {
+    return Intl.message('January', name: 'january', desc: '', args: []);
+  }
+
+  /// `February`
+  String get february {
+    return Intl.message('February', name: 'february', desc: '', args: []);
+  }
+
+  /// `March`
+  String get march {
+    return Intl.message('March', name: 'march', desc: '', args: []);
+  }
+
+  /// `April`
+  String get april {
+    return Intl.message('April', name: 'april', desc: '', args: []);
+  }
+
+  /// `May`
+  String get may {
+    return Intl.message('May', name: 'may', desc: '', args: []);
+  }
+
+  /// `June`
+  String get june {
+    return Intl.message('June', name: 'june', desc: '', args: []);
+  }
+
+  /// `July`
+  String get july {
+    return Intl.message('July', name: 'july', desc: '', args: []);
+  }
+
+  /// `August`
+  String get august {
+    return Intl.message('August', name: 'august', desc: '', args: []);
+  }
+
+  /// `September`
+  String get september {
+    return Intl.message('September', name: 'september', desc: '', args: []);
+  }
+
+  /// `October`
+  String get october {
+    return Intl.message('October', name: 'october', desc: '', args: []);
+  }
+
+  /// `November`
+  String get november {
+    return Intl.message('November', name: 'november', desc: '', args: []);
+  }
+
+  /// `December`
+  String get december {
+    return Intl.message('December', name: 'december', desc: '', args: []);
+  }
+
+
+  /// `Order History`
+  String get helpCenterOrderHistory {
+    return Intl.message(
+      'Order History',
+      name: 'helpCenterOrderHistory',
+      desc: 'App bar title on the help center page',
+      args: [],
+    );
+  }
+
+  /// `Help Center`
+  String get helpCenterTitle {
+    return Intl.message(
+      'Help Center',
+      name: 'helpCenterTitle',
+      desc: 'Main heading on the help center page',
+      args: [],
+    );
+  }
+
+  /// `Tell us how we can help 👋\nChapter are standing by for service & support!`
+  String get helpCenterSubtitle {
+    return Intl.message(
+      'Tell us how we can help 👋\nChapter are standing by for service & support!',
+      name: 'helpCenterSubtitle',
+      desc: 'Subtitle text below the help center heading',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get helpCenterEmailTitle {
+    return Intl.message(
+      'Email',
+      name: 'helpCenterEmailTitle',
+      desc: 'Title of the email contact card',
+      args: [],
+    );
+  }
+
+  /// `Send to your email`
+  String get helpCenterEmailSubtitle {
+    return Intl.message(
+      'Send to your email',
+      name: 'helpCenterEmailSubtitle',
+      desc: 'Subtitle of the email contact card',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get helpCenterPhoneTitle {
+    return Intl.message(
+      'Phone',
+      name: 'helpCenterPhoneTitle',
+      desc: 'Title of the phone contact card',
+      args: [],
+    );
+  }
+
+  /// `Send to your phone`
+  String get helpCenterPhoneSubtitle {
+    return Intl.message(
+      'Send to your phone',
+      name: 'helpCenterPhoneSubtitle',
+      desc: 'Subtitle of the phone contact card',
+      args: [],
+    );
+  }
+
+  /// `Location`
+  String get locationTitle {
+    return Intl.message(
+      'Location',
+      name: 'locationTitle',
+      desc: 'App bar title on the location/address page',
+      args: [],
+    );
+  }
+
+  /// `Detail Address`
+  String get detailAddressTitle {
+    return Intl.message(
+      'Detail Address',
+      name: 'detailAddressTitle',
+      desc: 'Heading for the address details section',
+      args: [],
+    );
+  }
+
+  /// `Current location`
+  String get currentLocation {
+    return Intl.message(
+      'Current location',
+      name: 'currentLocation',
+      desc: 'Tooltip for the current-location icon button',
+      args: [],
+    );
+  }
+
+  /// `Selected Address`
+  String get selectedAddressTitle {
+    return Intl.message(
+      'Selected Address',
+      name: 'selectedAddressTitle',
+      desc: 'Fallback title shown when no address title is set yet',
+      args: [],
+    );
+  }
+
+  /// `Select an address on the map`
+  String get selectAddressMessage {
+    return Intl.message(
+      'Select an address on the map',
+      name: 'selectAddressMessage',
+      desc: 'Fallback message prompting the user to pick a location',
+      args: [],
+    );
+  }
+
+  /// `Address not found`
+  String get addressNotFound {
+    return Intl.message(
+      'Address not found',
+      name: 'addressNotFound',
+      desc: 'Error shown when the selected location has no matching address',
+      args: [],
+    );
+  }
+
+  /// `Address unavailable`
+  String get addressUnavailable {
+    return Intl.message(
+      'Address unavailable',
+      name: 'addressUnavailable',
+      desc: 'Error shown when the address lookup fails or is unavailable',
+      args: [],
+    );
+  }
+
+  /// `Save Address As`
+  String get saveAddressAs {
+    return Intl.message(
+      'Save Address As',
+      name: 'saveAddressAs',
+      desc: 'Label above the address type choice chips',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get homeAddress {
+    return Intl.message(
+      'Home',
+      name: 'homeAddress',
+      desc: 'Choice chip label for saving address as Home',
+      args: [],
+    );
+  }
+
+  /// `Office`
+  String get officeAddress {
+    return Intl.message(
+      'Office',
+      name: 'officeAddress',
+      desc: 'Choice chip label for saving address as Office',
+      args: [],
+    );
+  }
+
+  /// `Confirmation`
+  String get confirmationButton {
+    return Intl.message(
+      'Confirmation',
+      name: 'confirmationButton',
+      desc: 'Button to confirm the selected address',
+      args: [],
+    );
   }
 }
 

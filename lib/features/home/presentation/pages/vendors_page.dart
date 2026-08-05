@@ -1,12 +1,12 @@
+import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
-import 'package:bazar_group_1/core/components/navigation/app_back_button.dart';
+import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
 import 'package:bazar_group_1/features/home/presentation/notifiers/vendors_notifier.dart';
 
 final selectedVendorCategoryProvider = StateProvider<String>((ref) => 'All');
@@ -16,7 +16,10 @@ List<Map<String, String>> _getVendorCategories(BuildContext context) {
     {'label': S.of(context).allCategoryTab, 'value': 'All'},
     {'label': S.of(context).booksCategoryTab, 'value': 'books'},
     {'label': S.of(context).poemsCategoryTab, 'value': 'poems'},
-    {'label': S.of(context).specialForYouCategoryTab, 'value': 'special for you'},
+    {
+      'label': S.of(context).specialForYouCategoryTab,
+      'value': 'special for you',
+    },
     {'label': S.of(context).stationeryCategoryTab, 'value': 'stationery'},
   ];
 }
@@ -29,118 +32,96 @@ class VendorsPage extends ConsumerWidget {
     final vendorsAsync = ref.watch(vendorsNotifierProvider);
     final selectedCategory = ref.watch(selectedVendorCategoryProvider);
     final categories = _getVendorCategories(context);
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
+
+    final crossAxisCount = context.responsiveValue<int>(
+      mobile: 3,
+      tablet: 4,
+      desktop: 6,
+    );
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      appBar: AppBackBar(
+        title: S.of(context).vendorsPageTitle,
+        leadingWidget: Transform.flip(
+          flipX: isRtl,
+          child: SvgPicture.asset(AppIcons.arrowLeftOutline),
+        ),
+        onLeadingPressed: () => Navigator.pop(context),
+        trailingWidget: SvgPicture.asset(
+          AppIcons.search,
+          colorFilter: ColorFilter.mode(
+            Theme.of(context).colorScheme.onSurface,
+            BlendMode.srcIn,
+          ),
+        ),
+        onTrailingPressed: () {
+          Navigator.pushNamed(context, AppRoutes.vendorsSearchPage);
+        },
+      ),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: screenWidth,
-              height: screenHeight * (100 / 812),
-              child: Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: screenWidth * (16 / 375)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const AppBackButton(),
-                    Text(
-                      S.of(context).vendorsPageTitle,
-                      style: AppTextStyles.h4.copyWith(color: AppColors.grey900),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, AppRoutes.vendorsSearchPage);
-                      },
-                      child: SvgPicture.asset(
-                        AppIcons.search,
-                        width: screenWidth * (24 / 375),
-                        height: screenWidth * (24 / 375),
-                        colorFilter: const ColorFilter.mode(
-                            Color(0xFF121212), BlendMode.srcIn),
-                      ),
-                    ),
-                  ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 16),
+              Text(
+                S.of(context).ourVendorsSubtitle,
+                style: AppTextStyles.body16Regular.copyWith(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
               ),
-            ),
-            SizedBox(
-              width: screenWidth * (359 / 375),
-              height: screenHeight * (88 / 812),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(
-                  screenWidth * (8 / 375),
-                  screenHeight * (16 / 812),
-                  screenWidth * (8 / 375),
-                  screenHeight * (8 / 812),
-                ),
-                child: Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        S.of(context).ourVendorsSubtitle,
-                        style: AppTextStyles.body16Regular.copyWith(color: AppColors.grey500),
-                      ),
-                      Text(
-                        S.of(context).vendorsPageTitle,
-                        style: AppTextStyles.h4.copyWith(color: AppColors.primary500),
-                      ),
-                    ],
-                  ),
+              Text(
+                S.of(context).vendorsPageTitle,
+                style: AppTextStyles.h4.copyWith(
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
-            ),
-            SizedBox(height: screenHeight * (10 / 812)),
-            Padding(
-              padding: EdgeInsetsDirectional.only(start: screenWidth * (16 / 375)),
-              child: SizedBox(
-                width: screenWidth * (351 / 375),
-                height: screenHeight * (24 / 812),
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 24,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemCount: categories.length,
-                  separatorBuilder: (context, index) =>
-                      SizedBox(width: screenWidth * (24 / 375)),
+                  separatorBuilder: (context, index) => const SizedBox(width: 24),
                   itemBuilder: (context, index) {
                     final categoryData = categories[index];
-                    final isSelected = categoryData['value'] == selectedCategory;
+                    final isSelected =
+                        categoryData['value'] == selectedCategory;
 
                     return GestureDetector(
                       onTap: () {
-                        ref.read(selectedVendorCategoryProvider.notifier).state =
+                        ref
+                                .read(selectedVendorCategoryProvider.notifier)
+                                .state =
                             categoryData['value']!;
                         final category = categoryData['value']!;
-                        ref.read(vendorsNotifierProvider.notifier).loadVendors(
+                        ref
+                            .read(vendorsNotifierProvider.notifier)
+                            .loadVendors(
                               category: category == 'All' ? null : category,
                             );
                       },
                       child: Text(
                         categoryData['label']!,
                         style: isSelected
-                            ? AppTextStyles.h5.copyWith(color: AppColors.grey900)
-                            : AppTextStyles.body16Regular
-                                .copyWith(color: AppColors.grey500),
+                            ? AppTextStyles.h5.copyWith(
+                                color: Theme.of(context).colorScheme.onSurface,
+                              )
+                            : AppTextStyles.body16Regular.copyWith(
+                                color: Theme.of(context).colorScheme.onSurfaceVariant,
+                              ),
                       ),
                     );
                   },
                 ),
               ),
-            ),
-            SizedBox(height: screenHeight * (12 / 812)),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * (24 / 375)),
-              child: SizedBox(
-                width: screenWidth * (327 / 375),
-                height: screenHeight * (491 / 812),
+              const SizedBox(height: 12),
+              Expanded(
                 child: vendorsAsync.when(
-                  loading: () =>
-                      const Center(child: CircularProgressIndicator()),
+                  loading: () => const Center(child: CircularProgressIndicator()),
                   error: (error, stackTrace) => Center(
                     child: Text(S.of(context).couldNotLoadVendors),
                   ),
@@ -151,9 +132,9 @@ class VendorsPage extends ConsumerWidget {
 
                     return GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        crossAxisSpacing: screenWidth * (12 / 375),
-                        mainAxisSpacing: screenHeight * (16 / 812),
+                        crossAxisCount: crossAxisCount,
+                        crossAxisSpacing: 12,
+                        mainAxisSpacing: 16,
                         childAspectRatio: 101 / 158,
                       ),
                       itemCount: vendors.length,
@@ -163,52 +144,73 @@ class VendorsPage extends ConsumerWidget {
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              width: screenWidth * (101 / 375),
-                              height: screenWidth * (101 / 375),
-                              decoration: BoxDecoration(
-                                color: AppColors.grey50,
-                                borderRadius: BorderRadius.circular(7.03),
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(7.03),
-                                child: vendor.imageUrl != null
-                                    ? Tooltip(
-                                        message: vendor.name,
-                                        child: Image.network(
-                                          vendor.imageUrl!,
-                                          fit: BoxFit.contain,
-                                        ),
-                                      )
-                                    : Tooltip(
-                                        message: vendor.name,
-                                        child: Center(
-                                          child: Text(
-                                            vendor.name,
-                                            textAlign: TextAlign.center,
-                                            maxLines: 2,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: AppTextStyles.body14Bold
-                                                .copyWith(
-                                                    color: AppColors.primary500),
+                            AspectRatio(
+                              aspectRatio: 1,
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .surfaceContainerHighest,
+                                  borderRadius: BorderRadius.circular(7.03),
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(7.03),
+                                  child: vendor.imageUrl != null
+                                      ? Tooltip(
+                                          message: vendor.name,
+                                          child: Image.network(
+                                            vendor.imageUrl!,
+                                            fit: BoxFit.contain,
+                                            errorBuilder: (context, error, stackTrace) =>
+                                                Center(
+                                              child: Text(
+                                                vendor.name,
+                                                textAlign: TextAlign.center,
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: AppTextStyles.body14Bold
+                                                    .copyWith(
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      : Tooltip(
+                                          message: vendor.name,
+                                          child: Center(
+                                            child: Text(
+                                              vendor.name,
+                                              textAlign: TextAlign.center,
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: AppTextStyles.body14Bold
+                                                  .copyWith(
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .primary,
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                              ),
-                            ),
-                            Tooltip(
-                              message: vendor.name,
-                              child: SizedBox(
-                                width: screenWidth * (101 / 375),
-                                child: Text(
-                                  vendor.name,
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                  style: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900),
                                 ),
                               ),
                             ),
-                            SizedBox(height: screenHeight * (4 / 812)),
+                            const SizedBox(height: 8),
+                            Tooltip(
+                              message: vendor.name,
+                              child: Text(
+                                vendor.name,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                style: AppTextStyles.body16Medium.copyWith(
+                                  color: Theme.of(context).colorScheme.onSurface,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 4),
                             Row(
                               children: List.generate(5, (starIndex) {
                                 final rating = vendor.rating ?? 0;
@@ -216,21 +218,24 @@ class VendorsPage extends ConsumerWidget {
 
                                 return Padding(
                                   padding: EdgeInsetsDirectional.only(
-                                      end: starIndex < 4
-                                          ? screenWidth * (4 / 375)
-                                          : 0),
+                                    end: starIndex < 4 ? 4 : 0,
+                                  ),
                                   child: SizedBox(
-                                    width: screenWidth * (16 / 375),
-                                    height: screenWidth * (16 / 375),
+                                    width: 16,
+                                    height: 16,
                                     child: Center(
                                       child: SvgPicture.asset(
                                         AppIcons.star,
-                                        width: screenWidth * (13.33 / 375),
-                                        height: screenWidth * (13.33 / 375),
+                                        width: 13.33,
+                                        height: 13.33,
                                         colorFilter: ColorFilter.mode(
                                           isFilled
-                                              ? AppColors.yellow
-                                              : AppColors.grey900,
+                                              ? Theme.of(context)
+                                                  .colorScheme
+                                                  .secondary
+                                              : Theme.of(context)
+                                                  .colorScheme
+                                                  .onSurface,
                                           BlendMode.srcIn,
                                         ),
                                       ),
@@ -246,8 +251,8 @@ class VendorsPage extends ConsumerWidget {
                   },
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

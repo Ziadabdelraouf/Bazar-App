@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/oauth_signin_button.dart';
@@ -19,13 +18,14 @@ class SignInSocialWidget extends StatelessWidget {
             Text(
               S.of(context).dontHaveAccountText,
               style: AppTextStyles.body16Regular.copyWith(
-                color: AppColors.grey500,
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
             ),
             TextButton(
               onPressed: () {
                 final arguments = ModalRoute.of(context)?.settings.arguments;
-                if (arguments is Map && arguments['from'] == AppRoutes.signUpPage) {
+                if (arguments is Map &&
+                    arguments['from'] == AppRoutes.signUpPage) {
                   Navigator.pop(context);
                 } else {
                   Navigator.pushNamed(
@@ -38,7 +38,7 @@ class SignInSocialWidget extends StatelessWidget {
               child: Text(
                 S.of(context).signUpButton,
                 style: AppTextStyles.body16Regular.copyWith(
-                  color: AppColors.primary600,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
@@ -47,22 +47,24 @@ class SignInSocialWidget extends StatelessWidget {
         const SizedBox(height: 16),
         Row(
           children: [
-            const Expanded(
-              child: Divider(color: AppColors.grey200),
+            Expanded(
+              child: Divider(
+                color: Theme.of(context).colorScheme.outlineVariant,
+              ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12.0,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
               child: Text(
                 S.of(context).orSeparator,
                 style: AppTextStyles.body16Regular.copyWith(
-                  color: AppColors.grey500,
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
               ),
             ),
-            const Expanded(
-              child: Divider(color: AppColors.grey200),
+            Expanded(
+              child: Divider(
+                color: Theme.of(context).colorScheme.outlineVariant,
+              ),
             ),
           ],
         ),

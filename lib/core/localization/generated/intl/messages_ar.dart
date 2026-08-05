@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(discount) => "خصم %${discount}";
 
+  static String m1(count) =>
+      "${Intl.plural(count, zero: 'لا توجد عناصر', one: 'عنصر واحد', two: 'عنصران', few: '${count} عناصر', many: '${count} عنصرًا', other: '${count} عنصر')}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "PasswordChanged": MessageLookupByLibrary.simpleMessage(
@@ -32,16 +35,25 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "about": MessageLookupByLibrary.simpleMessage("عن الكاتب"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان"),
+    "addressNotFound": MessageLookupByLibrary.simpleMessage(
+      "العنوان غير موجود",
+    ),
+    "addressUnavailable": MessageLookupByLibrary.simpleMessage(
+      "العنوان غير متاح",
+    ),
     "allCategoryTab": MessageLookupByLibrary.simpleMessage("الكل"),
+    "april": MessageLookupByLibrary.simpleMessage("أبريل"),
     "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
       "حرف صغير أو كبير واحد على الأقل",
     ),
     "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
       "رقم واحد على الأقل (1-9)",
     ),
+    "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("أفضل الموردين"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("كتب"),
     "cancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "cancelledStatus": MessageLookupByLibrary.simpleMessage("ملغى"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
@@ -53,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
       "الرجاء تأكيد كلمة المرور",
     ),
+    "confirmationButton": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
     "contactMethodEmailSubtitle": MessageLookupByLibrary.simpleMessage(
       "إرسال إلى بريدك الإلكتروني",
@@ -79,6 +92,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "كلمة مرور جديدة",
     ),
+    "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
+    "deliveredStatus": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
+    "currentLocation": MessageLookupByLibrary.simpleMessage("موقعي الحالي"),
+    "detailAddressTitle": MessageLookupByLibrary.simpleMessage(
+      "تفاصيل العنوان",
+    ),
     "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟",
@@ -99,6 +118,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "فشل في تحميل العروض",
     ),
+    "february": MessageLookupByLibrary.simpleMessage("فبراير"),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
     ),
@@ -111,6 +131,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
     "helpCenter": MessageLookupByLibrary.simpleMessage("مركز المساعدة"),
+    "helpCenterEmailSubtitle": MessageLookupByLibrary.simpleMessage(
+      "إرسال إلى بريدك الإلكتروني",
+    ),
+    "helpCenterEmailTitle": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني",
+    ),
+    "helpCenterOrderHistory": MessageLookupByLibrary.simpleMessage(
+      "سجل الطلبات",
+    ),
+    "helpCenterPhoneSubtitle": MessageLookupByLibrary.simpleMessage(
+      "إرسال إلى هاتفك",
+    ),
+    "helpCenterPhoneTitle": MessageLookupByLibrary.simpleMessage("الهاتف"),
+    "helpCenterSubtitle": MessageLookupByLibrary.simpleMessage(
+      "قوللنا إزاي نقدر نساعدك 👋\nفريقنا جاهز لتقديم الخدمة والدعم!",
+    ),
+    "helpCenterTitle": MessageLookupByLibrary.simpleMessage("مركز المساعدة"),
+    "homeAddress": MessageLookupByLibrary.simpleMessage("المنزل"),
     "homeTitle": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
       "الكود غير صحيح، حاول مرة أخرى.",
@@ -121,6 +159,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتف صحيح",
     ),
+    "itemsCount": m1,
+    "january": MessageLookupByLibrary.simpleMessage("يناير"),
+    "july": MessageLookupByLibrary.simpleMessage("يوليو"),
+    "june": MessageLookupByLibrary.simpleMessage("يونيو"),
+    "locationTitle": MessageLookupByLibrary.simpleMessage("الموقع"),
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "logoutButton": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
@@ -128,6 +171,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "هل أنت متاكد من رغبتك في تسجيل الخروج؟",
     ),
     "logoutTitle": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "march": MessageLookupByLibrary.simpleMessage("مارس"),
+    "may": MessageLookupByLibrary.simpleMessage("مايو"),
     "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
       "8 أحرف على الأقل",
     ),
@@ -141,11 +186,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الجديدة",
     ),
+    "noFavoritesYet": MessageLookupByLibrary.simpleMessage(
+      "لا توجد مفضلات بعد",
+    ),
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "لا تتوفر عروض حاليًا",
     ),
+    "noOrdersYet": MessageLookupByLibrary.simpleMessage("لا توجد طلبات بعد"),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("لا يوجد موردون"),
+    "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
+    "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("العروض والخصومات"),
+    "officeAddress": MessageLookupByLibrary.simpleMessage("المكتب"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
     ),
@@ -166,6 +218,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "orSeparator": MessageLookupByLibrary.simpleMessage("أو"),
     "orderHistory": MessageLookupByLibrary.simpleMessage("سجل الطلبات"),
+    "orderHistoryPageTitle": MessageLookupByLibrary.simpleMessage(
+      "سجل الطلبات",
+    ),
     "orderNowButton": MessageLookupByLibrary.simpleMessage("اطلب الآن"),
     "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("موردينا"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
@@ -208,6 +263,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "بالنقر على تسجيل، فإنك توافق على",
     ),
     "registerButton": MessageLookupByLibrary.simpleMessage("تسجيل"),
+    "removeButton": MessageLookupByLibrary.simpleMessage("إزالة"),
+    "removeFromFavoritesConfirmation": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد أنك تريد إزالة هذا الكتاب من مفضلتك؟",
+    ),
+    "removeFromFavoritesTitle": MessageLookupByLibrary.simpleMessage(
+      "إزالة من المفضلة؟",
+    ),
     "resendButton": MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "لم تستلم الكود؟ ",
@@ -223,12 +285,20 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "retryButton": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
     "reviewLabel": MessageLookupByLibrary.simpleMessage("مراجعة"),
+    "saveAddressAs": MessageLookupByLibrary.simpleMessage("احفظ العنوان كـ"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",
     ),
     "seeAllButton": MessageLookupByLibrary.simpleMessage("عرض الكل"),
+    "selectAddressMessage": MessageLookupByLibrary.simpleMessage(
+      "اختر عنوانك على الخريطة",
+    ),
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage("اختر الدولة"),
+    "selectedAddressTitle": MessageLookupByLibrary.simpleMessage(
+      "العنوان المختار",
+    ),
     "sendButton": MessageLookupByLibrary.simpleMessage("إرسال"),
+    "september": MessageLookupByLibrary.simpleMessage("سبتمبر"),
     "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signInSubtitle": MessageLookupByLibrary.simpleMessage(
       "سجّل الدخول إلى حسابك",
@@ -279,6 +349,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "viewCartButton": MessageLookupByLibrary.simpleMessage("عرض السلة"),
     "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك "),
+    "yourFavoritesTitle": MessageLookupByLibrary.simpleMessage("مفضلتك"),
     "yourFavourites": MessageLookupByLibrary.simpleMessage("المفضلة"),
   };
 }
