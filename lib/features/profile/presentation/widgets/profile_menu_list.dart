@@ -27,7 +27,9 @@ class ProfileMenuList extends StatelessWidget {
       _ProfileMenuItem(
         title: l10n.myAccount,
         icon: AppIcons.profileFill,
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, AppRoutes.myAccount);
+        },
       ),
       _ProfileMenuItem(
         title: l10n.address,

@@ -34,72 +34,64 @@ class AppFormTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Pulled once at the top of build() so we don't repeat this lookup
-    // for every Text/TextFormField below.
     final colorScheme = Theme.of(context).colorScheme;
     final textStyles = Theme.of(context).extension<AppTextStylesExtension>()!;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          // Before: AppTextStyles.body14Medium.copyWith(color: AppColors.grey900)
-          // After: color now comes from the extension itself (light/dark aware).
-          style: textStyles.body14Medium,
-        ),
-        const SizedBox(height: 6),
-        TextFormField(
-          controller: controller,
-          obscureText: obscureText,
-          textInputAction: textInputAction,
-          keyboardType: keyboardType,
-          validator: validator,
-          onChanged: onChanged,
-          // Before: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900)
-          style: textStyles.body16Medium,
-          decoration: InputDecoration(
-            hintText: placeholder,
-            // Before: AppTextStyles.body16Regular.copyWith(color: AppColors.grey400)
-            // Hint color still comes from AppColors directly here since it's
-            // a muted/placeholder shade, not part of the main text-color system.
-            hintStyle: textStyles.body16Regular.copyWith(
-              color: colorScheme.onSurfaceVariant,
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label, style: textStyles.body14Medium),
+          const SizedBox(height: 6),
+          TextFormField(
+            controller: controller,
+            obscureText: obscureText,
+            textInputAction: textInputAction,
+            keyboardType: keyboardType,
+            validator: validator,
+            onChanged: onChanged,
+            style: textStyles.body16Medium,
+            decoration: InputDecoration(
+              hintText: placeholder,
+              hintStyle: textStyles.body16Regular.copyWith(
+                color: colorScheme.onSurfaceVariant,
+              ),
+              prefixIcon: prefixIcon,
+              suffixIcon: suffixIcon,
+              filled: true,
+              fillColor: colorScheme.surfaceContainerHighest,
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 12,
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide.none,
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: const BorderSide(color: AppColors.primary500),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: showErrorBorder
+                    ? const BorderSide(color: AppColors.red)
+                    : BorderSide.none,
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: showErrorBorder
+                    ? const BorderSide(color: AppColors.red)
+                    : BorderSide.none,
+              ),
+              errorStyle: showErrorText
+                  ? null
+                  : const TextStyle(fontSize: 0, height: 0),
             ),
-            prefixIcon: prefixIcon,
-            suffixIcon: suffixIcon,
-            filled: true,
-            fillColor: colorScheme.surfaceContainerHighest,
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 12,
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide.none,
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(color: AppColors.primary500),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: showErrorBorder
-                  ? const BorderSide(color: AppColors.red)
-                  : BorderSide.none,
-            ),
-            focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: showErrorBorder
-                  ? const BorderSide(color: AppColors.red)
-                  : BorderSide.none,
-            ),
-            errorStyle: showErrorText
-                ? null
-                : const TextStyle(fontSize: 0, height: 0),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

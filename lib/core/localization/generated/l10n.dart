@@ -612,10 +612,10 @@ class S {
     );
   }
 
-  /// `Phone number`
+  /// `your phone number`
   String get phoneNumberPlaceholder {
     return Intl.message(
-      'Phone number',
+      'your phone number',
       name: 'phoneNumberPlaceholder',
       desc: '',
       args: [],
@@ -1179,6 +1179,46 @@ class S {
   /// `Cancel`
   String get cancelButton {
     return Intl.message('Cancel', name: 'cancelButton', desc: '', args: []);
+  }
+
+  /// `My Account`
+  String get myAccountTitle {
+    return Intl.message(
+      'My Account',
+      name: 'myAccountTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phoneNumberLabel {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumberLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Changes`
+  String get saveChangesButton {
+    return Intl.message(
+      'Save Changes',
+      name: 'saveChangesButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Picture`
+  String get changePictureButton {
+    return Intl.message(
+      'Change Picture',
+      name: 'changePictureButton',
+      desc: '',
+      args: [],
+    );
   }
 
   // skipped getter for the '//Order History Page Strings//' key

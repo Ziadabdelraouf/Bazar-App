@@ -144,6 +144,12 @@
     "logoutTitle": "Logout",
     "logoutConfirmationMessage": "Are you sure you want to log out?",
     "logoutButton": "Logout",
+    "cancelButton": "Cancel",
+    "myAccountTitle": "My Account",
+    "phoneNumberLabel": "Phone Number",
+    "phoneNumberPlaceholder": "your phone number",
+    "saveChangesButton": "Save Changes",
+    "changePictureButton": "Change Picture",
     "//Order History Page Strings//": "",
     "orderHistoryPageTitle": "Order History",
     "noOrdersYet": "No orders yet",
@@ -168,9 +174,7 @@
     "september": "September",
     "october": "October",
     "november": "November",
-    "december": "December"
-
-
+    "december": "December",
     "logoutButton": "Logout",
     "helpCenterOrderHistory": "Order History",
     "@helpCenterOrderHistory": {
