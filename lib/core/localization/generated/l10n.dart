@@ -1335,7 +1335,6 @@ class S {
     return Intl.message('December', name: 'december', desc: '', args: []);
   }
 
-
   /// `Order History`
   String get helpCenterOrderHistory {
     return Intl.message(
@@ -1514,6 +1513,11 @@ class S {
       desc: 'Button to confirm the selected address',
       args: [],
     );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message('Language', name: 'language', desc: '', args: []);
   }
 }
 

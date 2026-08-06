@@ -174,7 +174,7 @@
     "september": "سبتمبر",
     "october": "أكتوبر",
     "november": "نوفمبر",
-    "december": "ديسمبر"
+    "december": "ديسمبر",
     "logoutButton": "تسجيل الخروج",
     "helpCenterOrderHistory": "سجل الطلبات",
     "helpCenterTitle": "مركز المساعدة",
@@ -193,5 +193,6 @@
     "saveAddressAs": "احفظ العنوان كـ",
     "homeAddress": "المنزل",
     "officeAddress": "المكتب",
-    "confirmationButton": "تأكيد"
-    }
+    "confirmationButton": "تأكيد",
+    "language": "اللغة"
+}

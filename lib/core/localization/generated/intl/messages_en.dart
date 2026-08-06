@@ -91,9 +91,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "New password",
     ),
+    "currentLocation": MessageLookupByLibrary.simpleMessage("Current location"),
     "december": MessageLookupByLibrary.simpleMessage("December"),
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("Delivered"),
-    "currentLocation": MessageLookupByLibrary.simpleMessage("Current location"),
     "detailAddressTitle": MessageLookupByLibrary.simpleMessage(
       "Detail Address",
     ),
@@ -154,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "january": MessageLookupByLibrary.simpleMessage("January"),
     "july": MessageLookupByLibrary.simpleMessage("July"),
     "june": MessageLookupByLibrary.simpleMessage("June"),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
     "locationTitle": MessageLookupByLibrary.simpleMessage("Location"),
     "logOut": MessageLookupByLibrary.simpleMessage("Log Out"),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
@@ -276,8 +277,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "retryButton": MessageLookupByLibrary.simpleMessage("Retry"),
     "reviewLabel": MessageLookupByLibrary.simpleMessage("Review"),
-    "saveChangesButton": MessageLookupByLibrary.simpleMessage("Save Changes"),
     "saveAddressAs": MessageLookupByLibrary.simpleMessage("Save Address As"),
+    "saveChangesButton": MessageLookupByLibrary.simpleMessage("Save Changes"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "Search country or code",
     ),

@@ -93,9 +93,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "كلمة مرور جديدة",
     ),
+    "currentLocation": MessageLookupByLibrary.simpleMessage("موقعي الحالي"),
     "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
-    "currentLocation": MessageLookupByLibrary.simpleMessage("موقعي الحالي"),
     "detailAddressTitle": MessageLookupByLibrary.simpleMessage(
       "تفاصيل العنوان",
     ),
@@ -164,6 +164,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "january": MessageLookupByLibrary.simpleMessage("يناير"),
     "july": MessageLookupByLibrary.simpleMessage("يوليو"),
     "june": MessageLookupByLibrary.simpleMessage("يونيو"),
+    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "locationTitle": MessageLookupByLibrary.simpleMessage("الموقع"),
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -288,8 +289,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "retryButton": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
     "reviewLabel": MessageLookupByLibrary.simpleMessage("مراجعة"),
-    "saveChangesButton": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
     "saveAddressAs": MessageLookupByLibrary.simpleMessage("احفظ العنوان كـ"),
+    "saveChangesButton": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",
     ),
