@@ -44,6 +44,41 @@ class SignInNotifier extends Notifier<SignInState> {
     }
   }
 
+  Future<bool> handleSignIn() async {
+    final email = emailController.text.trim();
+    final password = passwordController.text;
+
+    if (email.isEmpty || password.isEmpty) {
+      return false;
+    }
+
+    state = state.copyWith(isLoading: true);
+
+    try {
+      final authService = ref.read(authServiceProvider);
+      await authService.signInWithEmailAndPassword(email, password);
+
+      final currentName = ref.read(nameNotifierProvider);
+      final phoneState = ref.read(phoneNumberNotifierProvider);
+      final phoneStr = phoneState.digits.isNotEmpty
+          ? '${phoneState.selectedCountry.dialCode} ${phoneState.digits}'
+          : null;
+
+      await authService.saveSession(
+        email: email,
+        name: currentName.isNotEmpty ? currentName : null,
+        mobile: phoneStr,
+      );
+
+      ref.invalidate(userProfileProvider);
+      state = state.copyWith(isLoading: false);
+      return true;
+    } catch (e) {
+      state = state.copyWith(isLoading: false);
+      rethrow;
+    }
+  }
+
   Future<bool> login({
     required String emailRequired,
     required String invalidEmail,
@@ -64,10 +99,7 @@ class SignInNotifier extends Notifier<SignInState> {
 
     state = state.copyWith(isLoading: true);
 
-    // Simulate API/auth network request (same delay as original form widget)
-    await Future.delayed(const Duration(seconds: 2));
-
-    final email = emailController.text;
+    final email = emailController.text.trim();
     final password = passwordController.text;
 
     final emailValResult = validateEmail(
@@ -99,6 +131,13 @@ class SignInNotifier extends Notifier<SignInState> {
     }
 
     final authService = ref.read(authServiceProvider);
+    try {
+      await authService.signInWithEmailAndPassword(email, password);
+    } catch (e) {
+      state = state.copyWith(isLoading: false);
+      rethrow;
+    }
+
     final currentName = ref.read(nameNotifierProvider);
     final phoneState = ref.read(phoneNumberNotifierProvider);
     final phoneStr = phoneState.digits.isNotEmpty
@@ -107,7 +146,6 @@ class SignInNotifier extends Notifier<SignInState> {
 
     await authService.saveSession(
       email: email,
-      password: password,
       name: currentName.isNotEmpty ? currentName : null,
       mobile: phoneStr,
     );

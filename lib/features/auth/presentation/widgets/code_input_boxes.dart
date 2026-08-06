@@ -25,7 +25,7 @@ class CodeInputBoxes extends ConsumerWidget {
         textDirection: TextDirection.ltr,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(4, (index) {
+          children: List.generate(6, (index) {
             final isActive =
                 index == activeIndex && state.isFocused;
             final digit = index < code.length
@@ -34,10 +34,10 @@ class CodeInputBoxes extends ConsumerWidget {
 
             return Padding(
               padding: EdgeInsets.only(
-                right: index < 3 ? 16 : 0,
+                right: index < 5 ? 8 : 0,
               ),
               child: Container(
-                width: 52,
+                width: 44,
                 height: 52,
                 decoration: BoxDecoration(
                   color: AppColors.grey100,

@@ -51,7 +51,7 @@ class LogoutBottomSheet extends ConsumerWidget {
               LargePrimaryButton(
                 label: localization.logoutButton,
                 onPressed: () async {
-                  await ref.read(authServiceProvider).clearSession();
+                  await ref.read(authServiceProvider).signout();
                   ref.invalidate(userProfileProvider);
                   ref.read(nameNotifierProvider.notifier).clear();
 

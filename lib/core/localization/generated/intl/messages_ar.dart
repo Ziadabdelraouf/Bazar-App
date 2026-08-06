@@ -22,6 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(discount) => "خصم %${discount}";
 
+  static String m1(error) => "فشل في إعادة إرسال رابط التحقق: ${error}";
+
+  static String m2(seconds) => "إعادة الإرسال خلال ${seconds} ثانية";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "PasswordChanged": MessageLookupByLibrary.simpleMessage(
@@ -44,6 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
+    "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
+      "تحقق من صندوق الوارد الخاص بك وانقر على الرابط الموجود بداخله لتأكيد عنوان بريدك الإلكتروني.",
+    ),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
     ),
@@ -52,6 +59,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
       "الرجاء تأكيد كلمة المرور",
+    ),
+    "congratsVerified": MessageLookupByLibrary.simpleMessage(
+      "تهانينا، لقد تم التحقق من حسابك!",
+    ),
+    "congratsVerifiedTapBelow": MessageLookupByLibrary.simpleMessage(
+      "تهانينا، لقد تم التحقق منك! اضغط أدناه للمتابعة لإكمال عملية التسجيل.",
     ),
     "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
     "contactMethodEmailSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -70,6 +83,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "continueShoppingButton": MessageLookupByLibrary.simpleMessage(
       "متابعة التسوق",
     ),
+    "continueSignUpButton": MessageLookupByLibrary.simpleMessage(
+      "متابعة التسجيل",
+    ),
+    "continueSignUpProcess": MessageLookupByLibrary.simpleMessage(
+      "تابع لإكمال عملية التسجيل الخاص بك",
+    ),
     "couldNotLoadVendors": MessageLookupByLibrary.simpleMessage(
       "تعذر تحميل الموردين",
     ),
@@ -78,6 +97,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "كلمة مرور جديدة",
+    ),
+    "didNotReceiveLink": MessageLookupByLibrary.simpleMessage(
+      "لم تستلم الرابط؟",
     ),
     "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
@@ -99,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "فشل في تحميل العروض",
     ),
+    "failedToResendVerificationLink": m1,
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
     ),
@@ -198,6 +221,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم الهاتف",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "pleaseVerifyAccount": MessageLookupByLibrary.simpleMessage(
+      "يرجى التحقق من حسابك",
+    ),
+    "pleaseVerifyEmail": MessageLookupByLibrary.simpleMessage(
+      "يرجى التحقق من بريدك الإلكتروني",
+    ),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("أشعار"),
     "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
       "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدايبيسينج إيليت.",
@@ -212,6 +241,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "لم تستلم الكود؟ ",
     ),
+    "resendInSeconds": m2,
+    "resendLink": MessageLookupByLibrary.simpleMessage("إعادة إرسال الرابط"),
+    "resending": MessageLookupByLibrary.simpleMessage("جاري إعادة الإرسال..."),
     "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال بريدك الإلكتروني، سنرسل لك رمز التحقق على بريدك الإلكتروني.",
     ),
@@ -265,8 +297,17 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "vendorsPageTitle": MessageLookupByLibrary.simpleMessage("الموردين"),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
+    "verificationComplete": MessageLookupByLibrary.simpleMessage(
+      "اكتمل التحقق!",
+    ),
     "verificationEmailTitle": MessageLookupByLibrary.simpleMessage(
       "تحقق البريد الإلكتروني",
+    ),
+    "verificationLinkSentAgain": MessageLookupByLibrary.simpleMessage(
+      "تم إعادة إرسال رابط التحقق. يرجى التحقق من بريدك الوارد.",
+    ),
+    "verificationLinkSentTo": MessageLookupByLibrary.simpleMessage(
+      "لقد أرسلنا رابط التحقق إلى\n",
     ),
     "verificationPhoneTitle": MessageLookupByLibrary.simpleMessage(
       "تحقق الهاتف",

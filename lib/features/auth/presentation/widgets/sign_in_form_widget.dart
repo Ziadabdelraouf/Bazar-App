@@ -8,6 +8,7 @@ import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/email_validator.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/password_validator.dart';
+import 'package:bazar_group_1/core/utils/firebase_error_utils.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/sign_in_provider.dart';
 
 class SignInFormWidget extends ConsumerWidget {
@@ -91,22 +92,19 @@ class SignInFormWidget extends ConsumerWidget {
               : LargePrimaryButton(
                   label: localization.loginButton,
                   onPressed: () async {
-                    final success = await signInNotifier.login(
-                      emailRequired: localization.emailRequired,
-                      invalidEmail: localization.invalidEmail,
-                      passwordRequired: localization.passwordRequired,
-                      passwordMinimumLength: localization.passwordMinimumLength,
-                      passwordNumberRequired:
-                          localization.passwordNumberRequired,
-                      passwordLetterRequired:
-                          localization.passwordLetterRequired,
-                    );
-                    if (success && context.mounted) {
-                      ref.read(signInProvider.notifier).reset();
-                      Navigator.pushReplacementNamed(
-                        context,
-                        AppRoutes.homePage,
-                      );
+                    try {
+                      final success = await signInNotifier.handleSignIn();
+                      if (success && context.mounted) {
+                        ref.read(signInProvider.notifier).reset();
+                        Navigator.pushReplacementNamed(
+                          context,
+                          AppRoutes.homePage,
+                        );
+                      }
+                    } catch (e) {
+                      if (context.mounted) {
+                        FirebaseErrorUtils.showErrorSnackBar(context, e);
+                      }
                     }
                   },
                 ),
