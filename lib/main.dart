@@ -2,6 +2,7 @@ import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/router/app_router.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
+import 'package:bazar_group_1/features/offers/presentation/pages/offers_page.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -60,7 +61,8 @@ class MyApp extends StatelessWidget {
           ),
         );
       },
-      locale: Locale("ar"),
+      // locale: Locale("ar"),
+      locale: Locale("en"),
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -73,7 +75,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const SplashScreen(),
+      home: const OffersPage(),
       routes: AppRouter.routes,
     );
   }
