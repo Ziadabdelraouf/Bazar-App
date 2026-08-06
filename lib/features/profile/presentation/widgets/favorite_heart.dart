@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 
 class FavoriteHeart extends StatefulWidget {
@@ -64,7 +63,7 @@ class _FavoriteHeartState extends State<FavoriteHeart>
           width: 24,
           height: 24,
           colorFilter: ColorFilter.mode(
-            widget.isFavorited ? AppColors.primary500 : AppColors.grey400,
+            widget.isFavorited ? Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.onSurfaceVariant,
             BlendMode.srcIn,
           ),
         ),
