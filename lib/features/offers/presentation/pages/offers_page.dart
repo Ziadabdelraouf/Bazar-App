@@ -1,4 +1,5 @@
 import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/offers/domain/models/coupon.dart';
@@ -43,8 +44,8 @@ class OffersPage extends StatelessWidget {
       ),
     ];
     return Scaffold(
-      backgroundColor: AppColors.white,
-      appBar: AppBackBar(title: 'Order History'),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      appBar: AppBackBar(title: S.of(context).offersAndPromos),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
@@ -52,8 +53,10 @@ class OffersPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'You Have ${couponsCard.length} Coupons to use',
-              style: AppTextStyles.h5,
+              S.of(context).availableCoupons(couponsCard.length),
+              style: AppTextStyles.h5.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
             ),
             const SizedBox(height: 32),
             Expanded(

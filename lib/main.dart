@@ -1,8 +1,12 @@
 import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/router/app_router.dart';
+import 'package:bazar_group_1/core/theme/app_theme.dart';
+import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/features/offers/presentation/pages/offers_page.dart';
+import 'package:bazar_group_1/features/profile/presentation/pages/address_page.dart';
+import 'package:bazar_group_1/features/profile/presentation/pages/help_center_page.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -10,9 +14,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'core/localization/generated/l10n.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await dotenv.load(fileName: ".env");
   await loadMockData();
   runApp(const ProviderScope(child: MyApp()));
@@ -36,7 +43,7 @@ class MyApp extends StatelessWidget {
               maxWidth: AppResponsiveBreakpoints.maxContentWidth,
               // Fills either side of the capped content column on viewports
               // wider than maxContentWidth. Without it that area renders black.
-              backgroundColor: AppColors.grey100,
+              backgroundColor: Theme.of(context).colorScheme.surface,
               // `Builder` puts this below MaxWidthBox, which clamps
               // MediaQuery.size to its maxWidth. Reading the width from above
               // the box would over-report it on wide screens and shrink the UI.
@@ -72,9 +79,9 @@ class MyApp extends StatelessWidget {
       supportedLocales: S.delegate.supportedLocales,
       title: 'Bazar App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.dark,
       home: const OffersPage(),
       routes: AppRouter.routes,
     );

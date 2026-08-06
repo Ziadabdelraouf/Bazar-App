@@ -1,7 +1,6 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_up_form_widget.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/sign_up_header_widget.dart';
@@ -26,7 +25,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
     final signUpNotifier = ref.watch(signUpProvider.notifier);
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(
