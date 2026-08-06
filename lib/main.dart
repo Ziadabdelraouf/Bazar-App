@@ -81,8 +81,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      themeMode: ThemeMode.dark,
-      home: const OffersPage(),
+      themeMode: ThemeMode.system,
+      home: const SplashScreen(),
       routes: AppRouter.routes,
     );
   }
