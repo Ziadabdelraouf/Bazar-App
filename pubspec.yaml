@@ -51,6 +51,8 @@ dependencies:
   freezed_annotation: ^3.1.0
   responsive_framework: ^1.5.1
   flutter_secure_storage: ^9.2.4
+  firebase_core: ^4.13.0
+  firebase_auth: ^6.5.7
   google_maps_flutter: ^2.18.0
   geocoding: ^4.0.0
 
