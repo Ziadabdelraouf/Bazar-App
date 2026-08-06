@@ -24,9 +24,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "فشل في إعادة إرسال رابط التحقق: ${error}";
 
-  static String m2(seconds) => "إعادة الإرسال خلال ${seconds} ثانية";
-  static String m1(count) =>
+  static String m2(count) =>
       "${Intl.plural(count, zero: 'لا توجد عناصر', one: 'عنصر واحد', two: 'عنصران', few: '${count} عناصر', many: '${count} عنصرًا', other: '${count} عنصر')}";
+
+  static String m3(seconds) => "إعادة الإرسال خلال ${seconds} ثانية";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -59,10 +60,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancelledStatus": MessageLookupByLibrary.simpleMessage("ملغى"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
+    "changePictureButton": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
     "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
       "تحقق من صندوق الوارد الخاص بك وانقر على الرابط الموجود بداخله لتأكيد عنوان بريدك الإلكتروني.",
     ),
-    "changePictureButton": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
     ),
@@ -72,13 +73,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
       "الرجاء تأكيد كلمة المرور",
     ),
+    "confirmationButton": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "congratsVerified": MessageLookupByLibrary.simpleMessage(
       "تهانينا، لقد تم التحقق من حسابك!",
     ),
     "congratsVerifiedTapBelow": MessageLookupByLibrary.simpleMessage(
       "تهانينا، لقد تم التحقق منك! اضغط أدناه للمتابعة لإكمال عملية التسجيل.",
     ),
-    "confirmationButton": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
     "contactMethodEmailSubtitle": MessageLookupByLibrary.simpleMessage(
       "إرسال إلى بريدك الإلكتروني",
@@ -111,13 +112,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "كلمة مرور جديدة",
     ),
-    "didNotReceiveLink": MessageLookupByLibrary.simpleMessage(
-      "لم تستلم الرابط؟",
+    "currentLocation": MessageLookupByLibrary.simpleMessage("موقعي الحالي"),
     "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
-    "currentLocation": MessageLookupByLibrary.simpleMessage("موقعي الحالي"),
     "detailAddressTitle": MessageLookupByLibrary.simpleMessage(
       "تفاصيل العنوان",
+    ),
+    "didNotReceiveLink": MessageLookupByLibrary.simpleMessage(
+      "لم تستلم الرابط؟",
     ),
     "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
@@ -181,7 +183,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتف صحيح",
     ),
-    "itemsCount": m1,
+    "itemsCount": m2,
     "january": MessageLookupByLibrary.simpleMessage("يناير"),
     "july": MessageLookupByLibrary.simpleMessage("يوليو"),
     "june": MessageLookupByLibrary.simpleMessage("يونيو"),
@@ -304,7 +306,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "لم تستلم الكود؟ ",
     ),
-    "resendInSeconds": m2,
+    "resendInSeconds": m3,
     "resendLink": MessageLookupByLibrary.simpleMessage("إعادة إرسال الرابط"),
     "resending": MessageLookupByLibrary.simpleMessage("جاري إعادة الإرسال..."),
     "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
@@ -318,8 +320,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "retryButton": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
     "reviewLabel": MessageLookupByLibrary.simpleMessage("مراجعة"),
-    "saveChangesButton": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
     "saveAddressAs": MessageLookupByLibrary.simpleMessage("احفظ العنوان كـ"),
+    "saveChangesButton": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",
     ),

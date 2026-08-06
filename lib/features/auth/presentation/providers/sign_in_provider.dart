@@ -155,6 +155,26 @@ class SignInNotifier extends Notifier<SignInState> {
     state = state.copyWith(isLoading: false);
     return true;
   }
+
+  Future<bool> signInWithGoogle() async {
+    state = state.copyWith(isLoading: true);
+    try {
+      final authService = ref.read(authServiceProvider);
+      final userCredential = await authService.signInWithGoogle();
+
+      if (userCredential == null) {
+        state = state.copyWith(isLoading: false);
+        return false;
+      }
+
+      ref.invalidate(userProfileProvider);
+      state = state.copyWith(isLoading: false);
+      return true;
+    } catch (e) {
+      state = state.copyWith(isLoading: false);
+      rethrow;
+    }
+  }
 }
 
 final signInProvider = NotifierProvider<SignInNotifier, SignInState>(

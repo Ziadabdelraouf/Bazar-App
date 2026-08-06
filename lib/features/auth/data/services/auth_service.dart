@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
   static const String _keyIsLoggedIn = 'is_logged_in';
@@ -17,12 +18,17 @@ class AuthService {
 
   final FlutterSecureStorage _storage;
   final FirebaseAuth _firebaseAuth;
+  final GoogleSignIn _googleSignIn;
 
   String? _verificationId;
 
-  AuthService({FlutterSecureStorage? storage, FirebaseAuth? firebaseAuth})
-    : _storage = storage ?? const FlutterSecureStorage(),
-      _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance;
+  AuthService({
+    FlutterSecureStorage? storage,
+    FirebaseAuth? firebaseAuth,
+    GoogleSignIn? googleSignIn,
+  })  : _storage = storage ?? const FlutterSecureStorage(),
+        _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
+        _googleSignIn = googleSignIn ?? GoogleSignIn();
 
   User? get currentUser => _firebaseAuth.currentUser;
 
@@ -48,9 +54,44 @@ class AuthService {
     );
   }
 
+  Future<UserCredential?> signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      if (googleUser == null) {
+        return null;
+      }
+
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      final UserCredential userCredential =
+          await _firebaseAuth.signInWithCredential(credential);
+
+      await saveSession(
+        email: userCredential.user?.email,
+        name: userCredential.user?.displayName,
+        mobile: userCredential.user?.phoneNumber,
+      );
+
+      return userCredential;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   Future<void> signout() async {
     try {
       await _firebaseAuth.signOut();
+      try {
+        await _googleSignIn.signOut();
+      } catch (e) {
+        debugPrint('Google sign out failed: $e');
+      }
     } finally {
       await clearSession();
     }

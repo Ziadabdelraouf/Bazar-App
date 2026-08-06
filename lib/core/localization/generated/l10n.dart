@@ -1475,7 +1475,6 @@ class S {
     return Intl.message('December', name: 'december', desc: '', args: []);
   }
 
-
   /// `Order History`
   String get helpCenterOrderHistory {
     return Intl.message(
