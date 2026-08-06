@@ -1,6 +1,5 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/profile_tile.dart';
 import 'package:flutter/material.dart';
@@ -72,8 +71,8 @@ class ProfileMenuList extends StatelessWidget {
           title: item.title,
           leading: SvgPicture.asset(
             item.icon,
-            colorFilter: const ColorFilter.mode(
-              AppColors.primary500,
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.primary,
               BlendMode.srcIn,
             ),
           ),
