@@ -37,10 +37,10 @@ class AuthorListItem extends StatelessWidget {
                     author.name,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xFF1A1A1A),
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -48,10 +48,10 @@ class AuthorListItem extends StatelessWidget {
                     author.role.isEmpty ? 'Author' : author.role,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 13,
                       height: 1.35,
-                      color: Color(0xFF777777),
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                     ),
                   ),
                 ],
@@ -91,9 +91,9 @@ class AuthorListItem extends StatelessWidget {
 
   Widget _placeholder() {
     return Container(
-      color: Colors.grey.shade300,
+      color: Colors.grey.shade700,
       alignment: Alignment.center,
-      child: const Icon(Icons.person, size: 30, color: Colors.black87),
+      child: const Icon(Icons.person, size: 30, color: Colors.white70),
     );
   }
 }

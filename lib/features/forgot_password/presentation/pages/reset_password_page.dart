@@ -2,7 +2,6 @@ import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
 import 'package:bazar_group_1/core/components/inputs/app_text_form_field.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/forgot_password/domain/contact_method.dart';
@@ -16,14 +15,11 @@ class ResetPasswordPage extends ConsumerStatefulWidget {
   const ResetPasswordPage({super.key});
 
   @override
-  ConsumerState<ResetPasswordPage> createState() =>
-      _ResetPasswordPageState();
+  ConsumerState<ResetPasswordPage> createState() => _ResetPasswordPageState();
 }
 
-class _ResetPasswordPageState
-    extends ConsumerState<ResetPasswordPage> {
-  final TextEditingController _contactController =
-      TextEditingController();
+class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
+  final TextEditingController _contactController = TextEditingController();
 
   @override
   void dispose() {
@@ -34,9 +30,9 @@ class _ResetPasswordPageState
   @override
   Widget build(BuildContext context) {
     final localization = S.of(context);
-    final selectedMethod = ref.watch(
-      selectedContactMethodProvider,
-    );
+    final selectedMethod = ref.watch(selectedContactMethodProvider);
+
+    final colorScheme = Theme.of(context).colorScheme;
 
     return GestureDetector(
       onTap: () {
@@ -44,62 +40,43 @@ class _ResetPasswordPageState
       },
       child: Scaffold(
         appBar: const AppBackBar(),
-        backgroundColor: AppColors.white,
+        backgroundColor: colorScheme.surface,
         body: Padding(
           padding: EdgeInsets.only(
-            left:
-                MediaQuery.of(context).size.width *
-                (24 / 375),
-            right:
-                MediaQuery.of(context).size.width *
-                (24 / 375),
+            left: MediaQuery.of(context).size.width * (24 / 375),
+            right: MediaQuery.of(context).size.width * (24 / 375),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 localization.resetPasswordTitle,
-                style: AppTextStyles.h3.copyWith(
-                  color: AppColors.grey900,
-                ),
+                style: AppTextStyles.h3.copyWith(color: colorScheme.onSurface),
               ),
-              SizedBox(
-                height:
-                    MediaQuery.of(context).size.height *
-                    (8 / 812),
-              ),
+              SizedBox(height: MediaQuery.of(context).size.height * (8 / 812)),
               Text(
                 selectedMethod == ContactMethod.email
-                    ? localization
-                          .resetPasswordEmailDescription
-                    : localization
-                          .resetPasswordPhoneDescription,
+                    ? localization.resetPasswordEmailDescription
+                    : localization.resetPasswordPhoneDescription,
                 style: AppTextStyles.body16Regular.copyWith(
-                  color: AppColors.grey600,
+                  color: colorScheme.onSurfaceVariant,
                 ),
               ),
-              SizedBox(
-                height:
-                    MediaQuery.of(context).size.height *
-                    (18 / 812),
-              ),
+              SizedBox(height: MediaQuery.of(context).size.height * (18 / 812)),
               const SizedBox(height: 8),
 
               AppFormTextField(
                 label: selectedMethod == ContactMethod.email
                     ? localization.emailLabel
                     : localization.phoneNumberFieldLabel,
-                placeholder:
-                    selectedMethod == ContactMethod.email
+                placeholder: selectedMethod == ContactMethod.email
                     ? localization.emailExamplePlaceholder
                     : localization.phoneExamplePlaceholder,
                 controller: _contactController,
-                keyboardType:
-                    selectedMethod == ContactMethod.email
+                keyboardType: selectedMethod == ContactMethod.email
                     ? TextInputType.emailAddress
                     : TextInputType.phone,
-                prefixIcon:
-                    selectedMethod == ContactMethod.phone
+                prefixIcon: selectedMethod == ContactMethod.phone
                     ? IconButton(
                         onPressed: () {},
                         icon: SizedBox(
@@ -107,11 +84,10 @@ class _ResetPasswordPageState
                           height: 19,
                           child: SvgPicture.asset(
                             AppIcons.phoneOutline,
-                            colorFilter:
-                                const ColorFilter.mode(
-                                  AppColors.primary500,
-                                  BlendMode.srcIn,
-                                ),
+                            colorFilter: ColorFilter.mode(
+                              colorScheme.primary,
+                              BlendMode.srcIn,
+                            ),
                           ),
                         ),
                       )
@@ -123,19 +99,16 @@ class _ResetPasswordPageState
               PrimaryButton(
                 text: localization.sendButton,
                 onPressed: () {
-                  if (selectedMethod ==
-                      ContactMethod.email) {
+                  if (selectedMethod == ContactMethod.email) {
                     Navigator.pushNamed(
                       context,
-                      AppRoutes
-                          .forgotPasswordVerificationEmail,
+                      AppRoutes.forgotPasswordVerificationEmail,
                       arguments: _contactController.text,
                     );
                   } else {
                     Navigator.pushNamed(
                       context,
-                      AppRoutes
-                          .forgotPasswordVerificationPhone,
+                      AppRoutes.forgotPasswordVerificationPhone,
                       arguments: _contactController.text,
                     );
                   }

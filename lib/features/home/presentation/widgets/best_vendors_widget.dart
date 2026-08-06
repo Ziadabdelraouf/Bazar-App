@@ -26,7 +26,11 @@ class BestVendorsWidget extends StatelessWidget {
           children: [
             Text(
               S.of(context).bestVendorsTitle,
-              style: AppTextStyles.h5.copyWith(color: AppColors.grey900),
+              style: AppTextStyles.h5.copyWith(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : AppColors.grey900,
+              ),
             ),
             GestureDetector(
               onTap: () {
@@ -34,8 +38,9 @@ class BestVendorsWidget extends StatelessWidget {
               },
               child: Text(
                 S.of(context).seeAllButton,
-                style: AppTextStyles.body14Bold
-                    .copyWith(color: AppColors.primary500),
+                style: AppTextStyles.body14SemiBold.copyWith(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
             ),
           ],
@@ -45,13 +50,12 @@ class BestVendorsWidget extends StatelessWidget {
           height: itemSize,
           child: Consumer(
             builder: (context, ref, child) {
-              final vendorsAsync = ref.watch(vendorsNotifierProvider);
+              final vendorsAsync = ref.watch(bestVendorsProvider);
 
               return vendorsAsync.when(
                 loading: () => const Center(child: CircularProgressIndicator()),
-                error: (error, stackTrace) => Center(
-                  child: Text(S.of(context).couldNotLoadVendors),
-                ),
+                error: (error, stackTrace) =>
+                    Center(child: Text(S.of(context).couldNotLoadVendors)),
                 data: (vendors) {
                   if (vendors.isEmpty) {
                     return Center(child: Text(S.of(context).noVendorsFound));
@@ -59,14 +63,12 @@ class BestVendorsWidget extends StatelessWidget {
 
                   final sorted = List.of(vendors)
                     ..sort((a, b) => (b.rating ?? 0).compareTo(a.rating ?? 0));
-                  final bestFour = sorted.take(4).toList();
-
                   return ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    itemCount: bestFour.length,
+                    itemCount: sorted.length,
                     separatorBuilder: (context, index) => const SizedBox(width: 12),
                     itemBuilder: (context, index) {
-                      final vendor = bestFour[index];
+                      final vendor = sorted[index];
 
                       return Container(
                         width: itemSize,
@@ -93,8 +95,9 @@ class BestVendorsWidget extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
-                                      style: AppTextStyles.body14Bold
-                                          .copyWith(color: AppColors.grey900),
+                                      style: AppTextStyles.body14Bold.copyWith(
+                                        color: AppColors.grey900,
+                                      ),
                                     ),
                                   ),
                                 ),

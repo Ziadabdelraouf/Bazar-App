@@ -1,7 +1,6 @@
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/components/navigation/app_back_button.dart';
@@ -57,7 +56,9 @@ class AuthScreenTemplate extends StatelessWidget {
               Text(
                 title,
                 textAlign: TextAlign.center,
-                style: AppTextStyles.h3.copyWith(color: AppColors.grey900),
+                style: AppTextStyles.h3.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
               const SizedBox(height: 8),
               description,
@@ -71,7 +72,9 @@ class AuthScreenTemplate extends StatelessWidget {
           Center(
             child: Text(
               errorMessage!,
-              style: AppTextStyles.body14Regular.copyWith(color: AppColors.red),
+              style: AppTextStyles.body14Regular.copyWith(
+                color: Theme.of(context).colorScheme.error,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -104,12 +107,12 @@ class AuthScreenTemplate extends StatelessWidget {
       value: SystemUiOverlayStyle(
         systemNavigationBarColor: keypadBackgroundColor,
         systemNavigationBarIconBrightness:
-            keypadBackgroundColor == AppColors.primary500
+            keypadBackgroundColor == const Color(0xFF54408C)
             ? Brightness.light
             : Brightness.dark,
       ),
       child: Scaffold(
-        backgroundColor: AppColors.white,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         resizeToAvoidBottomInset: true,
         body: SafeArea(
           child: isLandscape

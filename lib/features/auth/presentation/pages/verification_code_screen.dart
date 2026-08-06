@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/utils/firebase_error_utils.dart';
@@ -114,13 +113,15 @@ class _VerificationCodeScreenState
           textAlign: TextAlign.center,
           text: TextSpan(
             style: AppTextStyles.body16Regular.copyWith(
-              color: AppColors.grey500,
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
             children: [
               TextSpan(text: _getDescriptionPrefix(s)),
               TextSpan(
                 text: widget.contactValue,
-                style: const TextStyle(color: AppColors.grey900),
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
             ],
           ),
@@ -133,7 +134,7 @@ class _VerificationCodeScreenState
               child: RichText(
                 text: TextSpan(
                   style: AppTextStyles.body14SemiBold.copyWith(
-                    color: AppColors.grey500,
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
                   ),
                   children: [
                     TextSpan(text: s.resendCodePrompt),
@@ -141,8 +142,8 @@ class _VerificationCodeScreenState
                       text: _isResending ? '...' : s.resendButton,
                       style: TextStyle(
                         color: _isResending
-                            ? AppColors.grey400
-                            : AppColors.primary500,
+                            ? Theme.of(context).colorScheme.outline
+                            : Theme.of(context).colorScheme.primary,
                       ),
                       recognizer: _isResending
                           ? null
@@ -158,9 +159,11 @@ class _VerificationCodeScreenState
         isLoading: state.isLoading,
         onContinuePressed: _handleContinue,
         keypadBackgroundColor: isSignUp
-            ? AppColors.primary500
-            : AppColors.grey50,
-        keypadForegroundColor: isSignUp ? AppColors.grey50 : AppColors.grey900,
+            ? Theme.of(context).colorScheme.primary
+            : Theme.of(context).colorScheme.surfaceContainerHighest,
+        keypadForegroundColor: isSignUp
+            ? Theme.of(context).colorScheme.onPrimary
+            : Theme.of(context).colorScheme.onSurface,
         onDigitPressed: (digit) {
           ref
               .read(verificationCodeNotifierProvider.notifier)

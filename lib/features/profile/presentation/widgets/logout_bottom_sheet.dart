@@ -2,7 +2,6 @@ import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart'
 import 'package:bazar_group_1/core/components/buttons/large_secondary_button.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/auth_service_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
@@ -17,8 +16,8 @@ class LogoutBottomSheet extends ConsumerWidget {
     final localization = S.of(context);
 
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.white,
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
       child: SafeArea(
@@ -35,7 +34,7 @@ class LogoutBottomSheet extends ConsumerWidget {
                   height: 4,
                   margin: const EdgeInsets.only(bottom: 8),
                   decoration: BoxDecoration(
-                    color: AppColors.grey300,
+                    color: Theme.of(context).colorScheme.outlineVariant,
                     borderRadius: BorderRadius.circular(40),
                   ),
                 ),
@@ -44,7 +43,7 @@ class LogoutBottomSheet extends ConsumerWidget {
               Text(
                 localization.logoutConfirmationMessage,
                 style: AppTextStyles.body16Regular.copyWith(
-                  color: AppColors.grey900,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
               const SizedBox(height: 8),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/verification_code_notifier.dart';
 
@@ -9,17 +8,13 @@ class CodeInputBoxes extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(
-      verificationCodeNotifierProvider,
-    );
+    final state = ref.watch(verificationCodeNotifierProvider);
     final code = state.code;
     final activeIndex = state.activeIndex;
 
     return GestureDetector(
       onTap: () {
-        ref
-            .read(verificationCodeNotifierProvider.notifier)
-            .setFocused(true);
+        ref.read(verificationCodeNotifierProvider.notifier).setFocused(true);
       },
       child: Directionality(
         textDirection: TextDirection.ltr,
@@ -40,11 +35,11 @@ class CodeInputBoxes extends ConsumerWidget {
                 width: 44,
                 height: 52,
                 decoration: BoxDecoration(
-                  color: AppColors.grey100,
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
                   borderRadius: BorderRadius.circular(8),
                   border: isActive
                       ? Border.all(
-                          color: AppColors.primary500,
+                          color: Theme.of(context).colorScheme.primary,
                           width: 1,
                         )
                       : null,
@@ -54,12 +49,10 @@ class CodeInputBoxes extends ConsumerWidget {
                       ? Text(
                           digit,
                           style: AppTextStyles.h3.copyWith(
-                            color: AppColors.grey900,
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
                         )
-                      : (isActive
-                            ? const _BlinkingCursor()
-                            : null),
+                      : (isActive ? const _BlinkingCursor() : null),
                 ),
               ),
             );
@@ -74,8 +67,7 @@ class _BlinkingCursor extends StatefulWidget {
   const _BlinkingCursor();
 
   @override
-  State<_BlinkingCursor> createState() =>
-      _BlinkingCursorState();
+  State<_BlinkingCursor> createState() => _BlinkingCursorState();
 }
 
 class _BlinkingCursorState extends State<_BlinkingCursor>
@@ -104,7 +96,7 @@ class _BlinkingCursorState extends State<_BlinkingCursor>
       child: Container(
         width: 2,
         height: 28,
-        color: AppColors.primary500,
+        color: Theme.of(context).colorScheme.primary,
       ),
     );
   }

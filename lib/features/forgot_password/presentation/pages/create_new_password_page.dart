@@ -2,7 +2,6 @@ import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
 import 'package:bazar_group_1/core/components/inputs/app_text_form_field.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/password_validator.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/password_requirements_widget.dart';
@@ -19,14 +18,12 @@ class CreateNewPasswordPage extends ConsumerStatefulWidget {
       _CreateNewPasswordPageState();
 }
 
-class _CreateNewPasswordPageState
-    extends ConsumerState<CreateNewPasswordPage> {
+class _CreateNewPasswordPageState extends ConsumerState<CreateNewPasswordPage> {
   @override
   Widget build(BuildContext context) {
     final localization = S.of(context);
-    final notifier = ref.read(
-      createNewPasswordProvider.notifier,
-    );
+    final colorScheme = Theme.of(context).colorScheme;
+    final notifier = ref.read(createNewPasswordProvider.notifier);
     final state = ref.watch(createNewPasswordProvider);
 
     return GestureDetector(
@@ -34,51 +31,41 @@ class _CreateNewPasswordPageState
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        backgroundColor: AppColors.white,
+        backgroundColor: colorScheme.surface,
         appBar: const AppBackBar(),
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.only(
-              left:
-                  MediaQuery.of(context).size.width *
-                  (24 / 375),
-              right:
-                  MediaQuery.of(context).size.width *
-                  (24 / 375),
+              left: MediaQuery.of(context).size.width * (24 / 375),
+              right: MediaQuery.of(context).size.width * (24 / 375),
             ),
             child: Form(
               key: notifier.formKey,
-              autovalidateMode:
-                  AutovalidateMode.onUserInteractionIfError,
+              autovalidateMode: AutovalidateMode.onUserInteractionIfError,
               child: Column(
-                crossAxisAlignment:
-                    CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     localization.createNewPasswordTitle,
                     style: AppTextStyles.h3.copyWith(
-                      color: AppColors.grey900,
+                      color: colorScheme.onSurface,
                     ),
                   ),
                   SizedBox(
-                    height:
-                        MediaQuery.of(context).size.height *
-                        (8 / 812),
+                    height: MediaQuery.of(context).size.height * (8 / 812),
                   ),
                   Text(
-                    localization
-                        .createNewPasswordDescription,
-                    style: AppTextStyles.body16Regular
-                        .copyWith(color: AppColors.grey600),
+                    localization.createNewPasswordDescription,
+                    style: AppTextStyles.body16Regular.copyWith(
+                      color: colorScheme.onSurfaceVariant,
+                    ),
                   ),
                   const SizedBox(height: 8),
 
                   AppFormTextField(
                     label: localization.newPasswordLabel,
-                    placeholder:
-                        localization.passwordPlaceholder,
-                    controller:
-                        notifier.newPasswordController,
+                    placeholder: localization.passwordPlaceholder,
+                    controller: notifier.newPasswordController,
                     obscureText: state.obscureNewPassword,
                     textInputAction: TextInputAction.next,
                     onChanged: notifier.validatePassword,
@@ -87,19 +74,16 @@ class _CreateNewPasswordPageState
                     validator: (value) {
                       return validatePassword(
                         value,
-                        emptyError:
-                            localization.passwordRequired,
-                        minimumLengthError: localization
-                            .passwordMinimumLength,
-                        numberRequiredError: localization
-                            .passwordNumberRequired,
-                        letterRequiredError: localization
-                            .passwordLetterRequired,
+                        emptyError: localization.passwordRequired,
+                        minimumLengthError: localization.passwordMinimumLength,
+                        numberRequiredError:
+                            localization.passwordNumberRequired,
+                        letterRequiredError:
+                            localization.passwordLetterRequired,
                       );
                     },
                     suffixIcon: IconButton(
-                      onPressed: notifier
-                          .toggleNewPasswordVisibility,
+                      onPressed: notifier.toggleNewPasswordVisibility,
                       icon: Icon(
                         state.obscureNewPassword
                             ? Icons.visibility_off_outlined
@@ -111,8 +95,7 @@ class _CreateNewPasswordPageState
                   if (state.showPasswordRules) ...[
                     const SizedBox(height: 12),
                     PasswordRequirementsWidget(
-                      hasMinimumLength:
-                          state.hasMinimumLength,
+                      hasMinimumLength: state.hasMinimumLength,
                       hasNumber: state.hasNumber,
                       hasLetter: state.hasLetter,
                     ),
@@ -121,36 +104,27 @@ class _CreateNewPasswordPageState
                   const SizedBox(height: 16),
 
                   AppFormTextField(
-                    label:
-                        localization.confirmPasswordLabel,
-                    placeholder:
-                        localization.passwordPlaceholder,
-                    controller:
-                        notifier.confirmPasswordController,
-                    obscureText:
-                        state.obscureConfirmPassword,
+                    label: localization.confirmPasswordLabel,
+                    placeholder: localization.passwordPlaceholder,
+                    controller: notifier.confirmPasswordController,
+                    obscureText: state.obscureConfirmPassword,
                     textInputAction: TextInputAction.done,
                     validator: (value) {
                       final confirmPassword = value ?? '';
 
                       if (confirmPassword.isEmpty) {
-                        return localization
-                            .confirmPasswordRequired;
+                        return localization.confirmPasswordRequired;
                       }
 
                       if (confirmPassword !=
-                          notifier
-                              .newPasswordController
-                              .text) {
-                        return localization
-                            .passwordsDoNotMatch;
+                          notifier.newPasswordController.text) {
+                        return localization.passwordsDoNotMatch;
                       }
 
                       return null;
                     },
                     suffixIcon: IconButton(
-                      onPressed: notifier
-                          .toggleConfirmPasswordVisibility,
+                      onPressed: notifier.toggleConfirmPasswordVisibility,
                       icon: Icon(
                         state.obscureConfirmPassword
                             ? Icons.visibility_off_outlined
@@ -168,9 +142,7 @@ class _CreateNewPasswordPageState
                         // TODO: call the reset-password API
                         Navigator.of(
                           context,
-                        ).pushReplacementNamed(
-                          AppRoutes.passwordChange,
-                        );
+                        ).pushReplacementNamed(AppRoutes.passwordChange);
                       }
                     },
                   ),

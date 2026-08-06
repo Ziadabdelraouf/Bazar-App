@@ -29,8 +29,10 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
   Widget build(BuildContext context) {
     final authorsAsync = ref.watch(authorsProvider);
 
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
-      backgroundColor: const Color(0xFFFFF9FF),
+      backgroundColor: colorScheme.surface,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,25 +41,25 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
 
             if (_showSearch) _buildSearchField(),
 
-            const Padding(
-              padding: EdgeInsets.fromLTRB(24, 10, 24, 0),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24, 10, 24, 0),
               child: Text(
                 'Check the authors',
                 style: TextStyle(
                   fontSize: 13,
-                  color: Color(0xFFAAAAAA),
+                  color: colorScheme.onSurfaceVariant,
                 ),
               ),
             ),
 
-            const Padding(
-              padding: EdgeInsets.fromLTRB(24, 4, 24, 18),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24, 4, 24, 18),
               child: Text(
                 'Authors',
                 style: TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.w700,
-                  color: Color(0xFF5D4399),
+                  color: colorScheme.onSurface,
                 ),
               ),
             ),
@@ -69,9 +71,7 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
             Expanded(
               child: authorsAsync.when(
                 loading: () {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
+                  return const Center(child: CircularProgressIndicator());
                 },
                 error: (error, stackTrace) {
                   return _buildErrorState();
@@ -83,9 +83,7 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
                     return const Center(
                       child: Text(
                         'No authors found',
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
+                        style: TextStyle(color: Colors.grey),
                       ),
                     );
                   }
@@ -95,20 +93,13 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
                       return ref.refresh(authorsProvider.future);
                     },
                     child: ListView.separated(
-                      padding: const EdgeInsets.fromLTRB(
-                        24,
-                        0,
-                        24,
-                        24,
-                      ),
+                      padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
                       itemCount: filteredAuthors.length,
                       separatorBuilder: (context, index) {
                         return const SizedBox(height: 20);
                       },
                       itemBuilder: (context, index) {
-                        return AuthorListItem(
-                          author: filteredAuthors[index],
-                        );
+                        return AuthorListItem(author: filteredAuthors[index]);
                       },
                     ),
                   );
@@ -130,18 +121,20 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back,
               size: 22,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
-          const Expanded(
+          Expanded(
             child: Text(
               'Authors',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
           ),
@@ -158,6 +151,7 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
             icon: Icon(
               _showSearch ? Icons.close : Icons.search,
               size: 25,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
         ],
@@ -177,9 +171,15 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
         },
         decoration: InputDecoration(
           hintText: 'Search authors',
-          prefixIcon: const Icon(Icons.search),
+          hintStyle: TextStyle(
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
+          prefixIcon: Icon(
+            Icons.search,
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
           filled: true,
-          fillColor: Colors.white,
+          fillColor: Theme.of(context).colorScheme.surfaceContainerHighest,
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 16,
             vertical: 12,
@@ -219,12 +219,10 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
                   category,
                   style: TextStyle(
                     fontSize: 14,
-                    fontWeight: isSelected
-                        ? FontWeight.w700
-                        : FontWeight.w400,
+                    fontWeight: isSelected ? FontWeight.w700 : FontWeight.w400,
                     color: isSelected
-                        ? const Color(0xFF2B2435)
-                        : const Color(0xFFAAAAAA),
+                        ? Theme.of(context).colorScheme.onSurface
+                        : Theme.of(context).colorScheme.onSurfaceVariant,
                   ),
                 ),
                 const SizedBox(height: 5),
@@ -232,7 +230,7 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
                   duration: const Duration(milliseconds: 200),
                   width: isSelected ? 20 : 0,
                   height: 2,
-                  color: const Color(0xFF5D4399),
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ],
             ),
@@ -287,11 +285,7 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(
-            Icons.error_outline,
-            size: 40,
-            color: Colors.grey,
-          ),
+          const Icon(Icons.error_outline, size: 40, color: Colors.grey),
           const SizedBox(height: 12),
           const Text('Unable to load authors'),
           const SizedBox(height: 8),

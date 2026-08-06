@@ -71,7 +71,7 @@ class SignUpRegisterWidget extends ConsumerWidget {
               child: Text(
                 localization.signInButton,
                 style: AppTextStyles.body16Medium.copyWith(
-                  color: AppColors.primary500,
+                  color: AppColors.primary200,
                 ),
               ),
             ),
