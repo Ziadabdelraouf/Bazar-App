@@ -1,4 +1,3 @@
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class SpecialOfferIndicators extends StatelessWidget {
@@ -25,7 +24,9 @@ class SpecialOfferIndicators extends StatelessWidget {
               width: isActive ? 8 : 4,
               height: isActive ? 8 : 4,
               decoration: BoxDecoration(
-                color: isActive ? AppColors.primary500 : AppColors.grey100,
+                color: isActive
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.surfaceContainerHighest,
                 shape: BoxShape.circle,
               ),
             );
