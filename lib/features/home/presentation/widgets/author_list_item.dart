@@ -24,7 +24,7 @@ class AuthorListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipOval(
-            child: SizedBox(width: 56, height: 56, child: _buildImage()),
+            child: SizedBox(width: 56, height: 56, child: _buildImage(context)),
           ),
           const SizedBox(width: 12),
           Expanded(
@@ -63,11 +63,11 @@ class AuthorListItem extends StatelessWidget {
     );
   }
 
-  Widget _buildImage() {
+  Widget _buildImage(BuildContext context) {
     final image = author.image.trim();
 
     if (image.isEmpty) {
-      return _placeholder();
+      return _placeholder(context);
     }
 
     if (image.startsWith('http')) {
@@ -75,7 +75,7 @@ class AuthorListItem extends StatelessWidget {
         image,
         fit: BoxFit.cover,
         errorBuilder: (context, error, stackTrace) {
-          return _placeholder();
+          return _placeholder(context);
         },
       );
     }
@@ -84,16 +84,16 @@ class AuthorListItem extends StatelessWidget {
       image,
       fit: BoxFit.cover,
       errorBuilder: (context, error, stackTrace) {
-        return _placeholder();
+        return _placeholder(context);
       },
     );
   }
 
-  Widget _placeholder() {
+  Widget _placeholder(BuildContext context) {
     return Container(
-      color: Colors.grey.shade700,
+      color: Theme.of(context).colorScheme.surfaceContainerHighest,
       alignment: Alignment.center,
-      child: const Icon(Icons.person, size: 30, color: Colors.white70),
+      child: Icon(Icons.person, size: 30, color: Theme.of(context).colorScheme.onSurfaceVariant),
     );
   }
 }
