@@ -1,4 +1,3 @@
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +25,7 @@ class LargePrimaryButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primary500,
+          backgroundColor: Theme.of(context).colorScheme.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
           ),
@@ -35,7 +34,7 @@ class LargePrimaryButton extends StatelessWidget {
         child: Text(
           label,
           style: (textStyle ?? AppTextStyles.body16SemiBold).copyWith(
-            color: AppColors.white,
+            color: Theme.of(context).colorScheme.onPrimary,
           ),
         ),
       ),
