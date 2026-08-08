@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 
 class AppBackButton extends StatelessWidget {
@@ -22,7 +21,7 @@ class AppBackButton extends StatelessWidget {
           AppIcons.arrowLeftOutline,
           width: 24,
           height: 24,
-          colorFilter: const ColorFilter.mode(AppColors.grey900, BlendMode.srcIn),
+          colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.onSurface, BlendMode.srcIn),
         ),
       ),
       onPressed: onPressed ?? () {
