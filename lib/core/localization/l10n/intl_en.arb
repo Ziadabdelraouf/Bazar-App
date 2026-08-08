@@ -175,7 +175,6 @@
     "october": "October",
     "november": "November",
     "december": "December",
-    "logoutButton": "Logout",
     "helpCenterOrderHistory": "Order History",
     "@helpCenterOrderHistory": {
       "description": "App bar title on the help center page"
