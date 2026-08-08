@@ -34,7 +34,9 @@ class ProfileMenuList extends StatelessWidget {
       _ProfileMenuItem(
         title: l10n.address,
         icon: AppIcons.location,
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, AppRoutes.address);
+        },
       ),
       _ProfileMenuItem(
         title: l10n.offersAndPromos,
@@ -58,7 +60,9 @@ class ProfileMenuList extends StatelessWidget {
       _ProfileMenuItem(
         title: l10n.helpCenter,
         icon: AppIcons.chat,
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, AppRoutes.helpCenter);
+        },
       ),
     ];
   }
