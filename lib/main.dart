@@ -2,11 +2,13 @@ import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/router/app_router.dart';
 import 'package:bazar_group_1/core/theme/app_theme.dart';
+import 'package:bazar_group_1/core/theme/theme_notifier.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/features/offers/presentation/pages/offers_page.dart';
 import 'package:bazar_group_1/features/profile/presentation/pages/address_page.dart';
 import 'package:bazar_group_1/features/profile/presentation/pages/help_center_page.dart';
+import 'package:bazar_group_1/features/profile/presentation/pages/my_account_page.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -25,11 +27,12 @@ void main() async {
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeMode = ref.watch(themeNotifierProvider);
     return MaterialApp(
       builder: (context, child) {
         return ResponsiveBreakpoints.builder(
@@ -81,8 +84,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      themeMode: ThemeMode.system,
-      home: const SplashScreen(),
+      themeMode: themeMode,
+      home: const HomePage(),
       routes: AppRouter.routes,
     );
   }

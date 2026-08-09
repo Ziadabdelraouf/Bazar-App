@@ -2,8 +2,10 @@ import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
+import 'package:bazar_group_1/core/theme/theme_notifier.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/profile_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 
 class _ProfileMenuItem {
@@ -18,7 +20,7 @@ class _ProfileMenuItem {
   });
 }
 
-class ProfileMenuList extends StatelessWidget {
+class ProfileMenuList extends ConsumerWidget {
   const ProfileMenuList({super.key});
 
   List<_ProfileMenuItem> _getMenuItems(BuildContext context) {
@@ -64,22 +66,40 @@ class ProfileMenuList extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final menuItems = _getMenuItems(context);
+    final themeMode = ref.watch(themeNotifierProvider);
+    final isDark = themeMode == ThemeMode.dark;
     return Column(
-      children: menuItems.map((item) {
-        return ProfileTile(
-          title: item.title,
-          leading: SvgPicture.asset(
-            item.icon,
-            colorFilter: const ColorFilter.mode(
-              AppColors.primary500,
-              BlendMode.srcIn,
-            ),
+      children: [
+        ListTile(
+          leading: Icon(
+            isDark ? Icons.dark_mode : Icons.light_mode,
+            color: AppColors.primary500,
           ),
-          onTap: item.onTap,
-        );
-      }).toList(),
+          title: const Text('Dark Mode'),
+          trailing: Switch(
+            value: isDark,
+            activeColor: AppColors.primary500,
+            onChanged: (_) {
+              ref.read(themeNotifierProvider.notifier).toggleTheme();
+            },
+          ),
+        ),
+        ...menuItems.map((item) {
+          return ProfileTile(
+            title: item.title,
+            leading: SvgPicture.asset(
+              item.icon,
+              colorFilter: const ColorFilter.mode(
+                AppColors.primary500,
+                BlendMode.srcIn,
+              ),
+            ),
+            onTap: item.onTap,
+          );
+        }),
+      ],
     );
   }
 }
