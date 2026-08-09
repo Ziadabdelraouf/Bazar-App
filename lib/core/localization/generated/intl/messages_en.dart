@@ -22,8 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(discount) => "Discount ${discount}%";
 
-  static String m1(count) =>
+  static String m1(error) => "Failed to resend verification link: ${error}";
+
+  static String m2(count) =>
       "${Intl.plural(count, one: '1 item', other: '${count} items')}";
+
+  static String m3(seconds) => "Resend in ${seconds}s";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -59,6 +63,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "changePictureButton": MessageLookupByLibrary.simpleMessage(
       "Change Picture",
     ),
+    "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
+      "Check your inbox and click the link inside to confirm your email address.",
+    ),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
     "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
@@ -67,6 +74,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please confirm your password",
     ),
     "confirmationButton": MessageLookupByLibrary.simpleMessage("Confirmation"),
+    "congratsVerified": MessageLookupByLibrary.simpleMessage(
+      "Congrats, you are verified!",
+    ),
+    "congratsVerifiedTapBelow": MessageLookupByLibrary.simpleMessage(
+      "Congrats, you are verified! Tap below to continue to complete your sign up process.",
+    ),
     "congratulations": MessageLookupByLibrary.simpleMessage("Congratulations!"),
     "contactMethodEmailSubtitle": MessageLookupByLibrary.simpleMessage(
       "Send to your email",
@@ -82,6 +95,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "continueShoppingButton": MessageLookupByLibrary.simpleMessage(
       "Continue shopping",
     ),
+    "continueSignUpButton": MessageLookupByLibrary.simpleMessage(
+      "Continue Sign Up",
+    ),
+    "continueSignUpProcess": MessageLookupByLibrary.simpleMessage(
+      "Continue to complete your sign up process",
+    ),
     "couldNotLoadVendors": MessageLookupByLibrary.simpleMessage(
       "Couldn\'t load vendors",
     ),
@@ -96,6 +115,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("Delivered"),
     "detailAddressTitle": MessageLookupByLibrary.simpleMessage(
       "Detail Address",
+    ),
+    "didNotReceiveLink": MessageLookupByLibrary.simpleMessage(
+      "Didn\'t receive the link?",
     ),
     "discountPercent": m0,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
@@ -113,6 +135,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "Failed to load offers",
     ),
+    "failedToResendVerificationLink": m1,
     "february": MessageLookupByLibrary.simpleMessage("February"),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "Forgot Password?",
@@ -150,7 +173,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid phone number",
     ),
-    "itemsCount": m1,
+    "itemsCount": m2,
     "january": MessageLookupByLibrary.simpleMessage("January"),
     "july": MessageLookupByLibrary.simpleMessage("July"),
     "june": MessageLookupByLibrary.simpleMessage("June"),
@@ -245,6 +268,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "your phone number",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "pleaseVerifyAccount": MessageLookupByLibrary.simpleMessage(
+      "Please verify your account",
+    ),
+    "pleaseVerifyEmail": MessageLookupByLibrary.simpleMessage(
+      "Please verify your email",
+    ),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("Poems"),
     "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.",
@@ -266,6 +295,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "If you didn\'t receive a code? ",
     ),
+    "resendInSeconds": m3,
+    "resendLink": MessageLookupByLibrary.simpleMessage("Resend link"),
+    "resending": MessageLookupByLibrary.simpleMessage("Resending..."),
     "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
       "Please enter your email, we will send verification code to your email.",
     ),
@@ -330,8 +362,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage(
       "Verification Code",
     ),
+    "verificationComplete": MessageLookupByLibrary.simpleMessage(
+      "Verification Complete!",
+    ),
     "verificationEmailTitle": MessageLookupByLibrary.simpleMessage(
       "Verification Email",
+    ),
+    "verificationLinkSentAgain": MessageLookupByLibrary.simpleMessage(
+      "Verification link sent again. Please check your inbox.",
+    ),
+    "verificationLinkSentTo": MessageLookupByLibrary.simpleMessage(
+      "We sent a verification link to\n",
     ),
     "verificationPhoneTitle": MessageLookupByLibrary.simpleMessage(
       "Verification Phone",
