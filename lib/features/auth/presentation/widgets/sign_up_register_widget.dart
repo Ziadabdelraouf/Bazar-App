@@ -2,6 +2,7 @@ import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart'
 import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/core/utils/firebase_error_utils.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -14,24 +15,33 @@ class SignUpRegisterWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final localization = S.of(context);
+    final signUpState = ref.watch(signUpProvider);
     final signUpNotifier = ref.read(signUpProvider.notifier);
     return Column(
       spacing: 22,
       children: [
         LargePrimaryButton(
           label: localization.registerButton,
-          onPressed: () {
+          isLoading: signUpState.isLoading,
+          onPressed: () async {
             final isValid = signUpNotifier.register(formKey);
-
             if (!isValid) {
               return;
             }
-
-            Navigator.pushNamed(
-              context,
-              AppRoutes.signUpVerificationEmail,
-              arguments: signUpNotifier.emailController.text,
-            );
+            try {
+              await signUpNotifier.handleSignUp();
+              if (context.mounted) {
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.signUpVerificationEmail,
+                  arguments: signUpNotifier.emailController.text,
+                );
+              }
+            } catch (e) {
+              if (context.mounted) {
+                FirebaseErrorUtils.showErrorSnackBar(context, e);
+              }
+            }
           },
         ),
         Row(

@@ -1,21 +1,45 @@
+import 'package:bazar_group_1/core/constants/api_constants.dart';
 import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/router/app_router.dart';
 import 'package:bazar_group_1/core/theme/app_theme.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'core/localization/generated/l10n.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await dotenv.load(fileName: ".env");
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  if (kDebugMode) {
+    await FirebaseAppCheck.instance.activate(
+      providerAndroid: AndroidDebugProvider(
+        debugToken: ApiConstants.debugToken.isEmpty
+            ? null
+            : ApiConstants.debugToken,
+      ),
+      providerApple: AppleDebugProvider(
+        debugToken: ApiConstants.debugToken.isEmpty
+            ? null
+            : ApiConstants.debugToken,
+      ),
+    );
+  } else {
+    await FirebaseAppCheck.instance.activate(
+      providerAndroid: const AndroidPlayIntegrityProvider(),
+      providerApple: const AppleDeviceCheckProvider(),
+    );
+  }
+
   await loadMockData();
   runApp(const ProviderScope(child: MyApp()));
 }

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
+import 'package:bazar_group_1/core/utils/firebase_error_utils.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/phone_number_notifier.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/phone_number_display.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/auth_screen_template.dart';
@@ -49,17 +50,28 @@ class _PhoneNumberInputScreenState extends ConsumerState<PhoneNumberInputScreen>
         errorMessage: state.errorMessage,
         isLoading: state.isLoading,
         onContinuePressed: () async {
-          final success = await ref.read(phoneNumberNotifierProvider.notifier).submitPhoneNumber(
-                emptyError: s.emptyPhoneNumberError,
-                invalidError: s.invalidPhoneNumberError,
+          try {
+            final success = await ref
+                .read(phoneNumberNotifierProvider.notifier)
+                .submitPhoneNumber(
+                  emptyError: s.emptyPhoneNumberError,
+                  invalidError: s.invalidPhoneNumberError,
+                );
+            if (success && context.mounted) {
+              final cleanDialCode = state.selectedCountry.dialCode
+                  .replaceAll(RegExp(r'[^\d+]'), '');
+              final cleanDigits = state.digits.replaceAll(RegExp(r'\D'), '');
+              final fullNumber = '$cleanDialCode$cleanDigits';
+              Navigator.pushNamed(
+                context,
+                AppRoutes.signUpVerificationPhone,
+                arguments: fullNumber,
               );
-          if (success) {
-            final fullNumber = '(${state.selectedCountry.dialCode}) ${state.digits}';
-            Navigator.pushNamed(
-              context,
-              AppRoutes.signUpVerificationPhone,
-              arguments: fullNumber,
-            );
+            }
+          } catch (e) {
+            if (context.mounted) {
+              FirebaseErrorUtils.showErrorSnackBar(context, e);
+            }
           }
         },
         keypadBackgroundColor: Theme.of(context).colorScheme.primary,
