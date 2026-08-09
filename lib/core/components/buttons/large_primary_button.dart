@@ -30,7 +30,7 @@ class LargePrimaryButton extends StatelessWidget {
         onPressed: isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: colorScheme.primary,
-          disabledBackgroundColor: colorScheme.primary.withOpacity(0.5),
+          disabledBackgroundColor: colorScheme.primary.withValues(alpha: 0.5),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
           ),
