@@ -8,6 +8,9 @@ class ApiConstants {
   static String get googleBooksApiKey =>
       dotenv.env['GOOGLE_BOOKS_API_KEY'] ?? '';
 
+  static String get recaptchaSiteKey => dotenv.env['RECAPTCHA_SITE_KEY'] ?? '';
+  static String get debugToken => dotenv.env['APP_CHECK_DEBUG_TOKEN'] ?? '';
+
   static const String volumesEndpoint = '/volumes';
 
   static const Duration connectTimeout = Duration(seconds: 15);

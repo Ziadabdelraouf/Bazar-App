@@ -4,6 +4,7 @@ class SignUpState {
   final bool hasMinimumLength;
   final bool hasNumber;
   final bool hasLetter;
+  final bool isLoading;
 
   const SignUpState({
     this.obscurePassword = true,
@@ -11,10 +12,10 @@ class SignUpState {
     this.hasMinimumLength = false,
     this.hasLetter = false,
     this.hasNumber = false,
+    this.isLoading = false,
   });
 
-  bool get isPasswordValid =>
-      hasMinimumLength && hasLetter && hasNumber;
+  bool get isPasswordValid => hasMinimumLength && hasLetter && hasNumber;
 
   SignUpState copyWith({
     bool? obscurePassword,
@@ -22,6 +23,7 @@ class SignUpState {
     bool? hasMinimumLength,
     bool? hasNumber,
     bool? hasLetter,
+    bool? isLoading,
   }) {
     return SignUpState(
       obscurePassword: obscurePassword ?? this.obscurePassword,
@@ -29,6 +31,7 @@ class SignUpState {
       hasMinimumLength: hasMinimumLength ?? this.hasMinimumLength,
       hasNumber: hasNumber ?? this.hasNumber,
       hasLetter: hasLetter ?? this.hasLetter,
+      isLoading: isLoading ?? this.isLoading,
     );
   }
 }
