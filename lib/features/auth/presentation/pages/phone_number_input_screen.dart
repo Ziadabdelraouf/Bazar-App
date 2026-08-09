@@ -40,7 +40,12 @@ class _PhoneNumberInputScreenState extends ConsumerState<PhoneNumberInputScreen>
           textAlign: TextAlign.center,
           style: AppTextStyles.body16Regular.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
         ),
-        middleContent: const PhoneNumberDisplay(),
+        middleContent: Column(
+          children: [
+            const PhoneNumberDisplay(),
+            const SizedBox(height: 57),
+          ],
+        ),
         errorMessage: state.errorMessage,
         isLoading: state.isLoading,
         onContinuePressed: () async {
