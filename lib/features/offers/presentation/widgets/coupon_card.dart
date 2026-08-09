@@ -36,11 +36,7 @@ class CouponCard extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-<<<<<<< HEAD
                   backgroundColor: Theme.of(context).colorScheme.onSurface,
-=======
-                  backgroundColor: AppColors.white,
->>>>>>> 7ce0af0 (Add offer page and coupons card)
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadiusGeometry.circular(30),
                   ),
