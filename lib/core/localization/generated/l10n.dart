@@ -636,6 +636,146 @@ class S {
     );
   }
 
+  /// `Verification link sent again. Please check your inbox.`
+  String get verificationLinkSentAgain {
+    return Intl.message(
+      'Verification link sent again. Please check your inbox.',
+      name: 'verificationLinkSentAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to resend verification link: {error}`
+  String failedToResendVerificationLink(Object error) {
+    return Intl.message(
+      'Failed to resend verification link: $error',
+      name: 'failedToResendVerificationLink',
+      desc: '',
+      args: [error],
+    );
+  }
+
+  /// `Congrats, you are verified!`
+  String get congratsVerified {
+    return Intl.message(
+      'Congrats, you are verified!',
+      name: 'congratsVerified',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please verify your email`
+  String get pleaseVerifyEmail {
+    return Intl.message(
+      'Please verify your email',
+      name: 'pleaseVerifyEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue to complete your sign up process`
+  String get continueSignUpProcess {
+    return Intl.message(
+      'Continue to complete your sign up process',
+      name: 'continueSignUpProcess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We sent a verification link to\n`
+  String get verificationLinkSentTo {
+    return Intl.message(
+      'We sent a verification link to\n',
+      name: 'verificationLinkSentTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please verify your account`
+  String get pleaseVerifyAccount {
+    return Intl.message(
+      'Please verify your account',
+      name: 'pleaseVerifyAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check your inbox and click the link inside to confirm your email address.`
+  String get checkInboxVerificationPrompt {
+    return Intl.message(
+      'Check your inbox and click the link inside to confirm your email address.',
+      name: 'checkInboxVerificationPrompt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Didn't receive the link?`
+  String get didNotReceiveLink {
+    return Intl.message(
+      'Didn\'t receive the link?',
+      name: 'didNotReceiveLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resending...`
+  String get resending {
+    return Intl.message('Resending...', name: 'resending', desc: '', args: []);
+  }
+
+  /// `Resend in {seconds}s`
+  String resendInSeconds(Object seconds) {
+    return Intl.message(
+      'Resend in ${seconds}s',
+      name: 'resendInSeconds',
+      desc: '',
+      args: [seconds],
+    );
+  }
+
+  /// `Resend link`
+  String get resendLink {
+    return Intl.message('Resend link', name: 'resendLink', desc: '', args: []);
+  }
+
+  /// `Verification Complete!`
+  String get verificationComplete {
+    return Intl.message(
+      'Verification Complete!',
+      name: 'verificationComplete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Congrats, you are verified! Tap below to continue to complete your sign up process.`
+  String get congratsVerifiedTapBelow {
+    return Intl.message(
+      'Congrats, you are verified! Tap below to continue to complete your sign up process.',
+      name: 'congratsVerifiedTapBelow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue Sign Up`
+  String get continueSignUpButton {
+    return Intl.message(
+      'Continue Sign Up',
+      name: 'continueSignUpButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the '//Phone Number Screen Strings//' key
 
   /// `Phone Number`

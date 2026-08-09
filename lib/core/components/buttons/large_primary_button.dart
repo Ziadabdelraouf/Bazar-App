@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 
 class LargePrimaryButton extends StatelessWidget {
   final String label;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final double height;
   final double borderRadius;
   final TextStyle? textStyle;
+  final bool isLoading;
 
   const LargePrimaryButton({
     super.key,
@@ -16,6 +17,7 @@ class LargePrimaryButton extends StatelessWidget {
     this.height = 48,
     this.borderRadius = 48,
     this.textStyle,
+    this.isLoading = false,
   });
 
   @override
@@ -24,20 +26,30 @@ class LargePrimaryButton extends StatelessWidget {
       width: double.infinity,
       height: height,
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary500,
+          disabledBackgroundColor: AppColors.primary300,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
           ),
           elevation: 0,
         ),
-        child: Text(
-          label,
-          style: (textStyle ?? AppTextStyles.body16SemiBold).copyWith(
-            color: AppColors.white,
-          ),
-        ),
+        child: isLoading
+            ? const SizedBox(
+                width: 24,
+                height: 24,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  color: AppColors.white,
+                ),
+              )
+            : Text(
+                label,
+                style: (textStyle ?? AppTextStyles.body16SemiBold).copyWith(
+                  color: AppColors.white,
+                ),
+              ),
       ),
     );
   }

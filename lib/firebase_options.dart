@@ -52,7 +52,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAL7zS85J9qE91ohunkr_LLOouF_GWTlS4',
-    appId: '1:909131430306:android:42ad006ddc02d3be439afb',
+    appId: '1:909131430306:android:96fcf9a0ff57b0c1439afb',
     messagingSenderId: '909131430306',
     projectId: 'bazar-app-b6217',
     storageBucket: 'bazar-app-b6217.firebasestorage.app',
@@ -63,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '909131430306',
     projectId: 'bazar-app-b6217',
     storageBucket: 'bazar-app-b6217.firebasestorage.app',
+    androidClientId: '909131430306-5a54bpa306vd0b3p4belctqdo5jsa319.apps.googleusercontent.com',
+    iosClientId: '909131430306-oeljc7e8vphc5uvfopcprm473h2atb63.apps.googleusercontent.com',
     iosBundleId: 'com.example.bazarGroup1',
   );
   static const FirebaseOptions macos = FirebaseOptions(
@@ -71,6 +73,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '909131430306',
     projectId: 'bazar-app-b6217',
     storageBucket: 'bazar-app-b6217.firebasestorage.app',
+    androidClientId: '909131430306-5a54bpa306vd0b3p4belctqdo5jsa319.apps.googleusercontent.com',
+    iosClientId: '909131430306-oeljc7e8vphc5uvfopcprm473h2atb63.apps.googleusercontent.com',
     iosBundleId: 'com.example.bazarGroup1',
   );
 

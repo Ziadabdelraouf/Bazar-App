@@ -22,9 +22,7 @@ class SignUpFormWigdet extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final signUpState = ref.watch(signUpProvider);
-    final signUpNotifier = ref.read(
-      signUpProvider.notifier,
-    );
+    final signUpNotifier = ref.read(signUpProvider.notifier);
     final localization = S.of(context);
 
     return Column(
@@ -76,17 +74,13 @@ class SignUpFormWigdet extends ConsumerWidget {
             return validatePassword(
               value,
               emptyError: localization.passwordRequired,
-              minimumLengthError:
-                  localization.passwordMinimumLength,
-              numberRequiredError:
-                  localization.passwordNumberRequired,
-              letterRequiredError:
-                  localization.passwordLetterRequired,
+              minimumLengthError: localization.passwordMinimumLength,
+              numberRequiredError: localization.passwordNumberRequired,
+              letterRequiredError: localization.passwordLetterRequired,
             );
           },
           suffixIcon: IconButton(
-            onPressed:
-                signUpNotifier.togglePasswordVisibility,
+            onPressed: signUpNotifier.togglePasswordVisibility,
             icon: Icon(
               signUpState.obscurePassword
                   ? Icons.visibility_off_outlined
