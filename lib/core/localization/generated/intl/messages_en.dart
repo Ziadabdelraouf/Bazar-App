@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your password changed successfully, you can login again with a new password",
     ),
     "about": MessageLookupByLibrary.simpleMessage("About"),
+    "addToCartButton": MessageLookupByLibrary.simpleMessage("Add to Cart"),
     "address": MessageLookupByLibrary.simpleMessage("Address"),
     "addressNotFound": MessageLookupByLibrary.simpleMessage(
       "Address not found",
@@ -62,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancelButton": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cancelledStatus": MessageLookupByLibrary.simpleMessage("Cancelled"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
+    "cartTotal": MessageLookupByLibrary.simpleMessage("Total"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("Category"),
     "changePictureButton": MessageLookupByLibrary.simpleMessage(
       "Change Picture",
@@ -69,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
       "Check your inbox and click the link inside to confirm your email address.",
     ),
+    "checkoutButton": MessageLookupByLibrary.simpleMessage("Checkout"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
     "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
@@ -134,6 +137,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "emailRequired": MessageLookupByLibrary.simpleMessage("Email is required"),
     "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number",
+    ),
+    "failedToLoadCart": MessageLookupByLibrary.simpleMessage(
+      "Failed to load cart items",
     ),
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "Failed to load offers",
@@ -208,6 +214,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "No offers available",
     ),
     "noOrdersYet": MessageLookupByLibrary.simpleMessage("No orders yet"),
+    "noProductsInCart": MessageLookupByLibrary.simpleMessage(
+      "There are no products in the cart",
+    ),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("No vendors found"),
     "november": MessageLookupByLibrary.simpleMessage("November"),
     "october": MessageLookupByLibrary.simpleMessage("October"),

@@ -26,7 +26,7 @@ class CartView extends ConsumerWidget {
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (error, stackTrace) => Center(
           child: Text(
-            'Failed to load cart items',
+            S.of(context).failedToLoadCart,
             style: Theme.of(context).textTheme.bodyLarge,
           ),
         ),

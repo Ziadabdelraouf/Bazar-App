@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class CartCheckoutBottomBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Total',
+                S.of(context).cartTotal,
                 style: AppTextStyles.h5.copyWith(
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
@@ -67,7 +68,7 @@ class CartCheckoutBottomBar extends StatelessWidget {
                 elevation: 0,
               ),
               child: Text(
-                'Checkout',
+                S.of(context).checkoutButton,
                 style: AppTextStyles.h6.copyWith(
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),

@@ -86,6 +86,16 @@ class S {
     );
   }
 
+  /// `Add to Cart`
+  String get addToCartButton {
+    return Intl.message(
+      'Add to Cart',
+      name: 'addToCartButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the '//SignInPage Strings//' key
 
   /// `Welcome Back `
@@ -752,16 +762,6 @@ class S {
     );
   }
 
-  /// `your phone number`
-  String get phoneNumberPlaceholder {
-    return Intl.message(
-      'your phone number',
-      name: 'phoneNumberPlaceholder',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Please enter your phone number`
   String get emptyPhoneNumberError {
     return Intl.message(
@@ -1153,6 +1153,38 @@ class S {
     );
   }
 
+  // skipped getter for the '//Cart Screen Strings//' key
+
+  /// `Failed to load cart items`
+  String get failedToLoadCart {
+    return Intl.message(
+      'Failed to load cart items',
+      name: 'failedToLoadCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no products in the cart`
+  String get noProductsInCart {
+    return Intl.message(
+      'There are no products in the cart',
+      name: 'noProductsInCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get cartTotal {
+    return Intl.message('Total', name: 'cartTotal', desc: '', args: []);
+  }
+
+  /// `Checkout`
+  String get checkoutButton {
+    return Intl.message('Checkout', name: 'checkoutButton', desc: '', args: []);
+  }
+
   // skipped getter for the '//Best Vendors Widget Strings//' key
 
   /// `Best Vendors`
@@ -1336,6 +1368,16 @@ class S {
     return Intl.message(
       'Phone Number',
       name: 'phoneNumberLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `your phone number`
+  String get phoneNumberPlaceholder {
+    return Intl.message(
+      'your phone number',
+      name: 'phoneNumberPlaceholder',
       desc: '',
       args: [],
     );

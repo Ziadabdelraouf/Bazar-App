@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class EmptyCartWidget extends StatelessWidget {
             ),
           ),
           Text(
-            "There is no products",
+            S.of(context).noProductsInCart,
             style: Theme.of(context).textTheme.headlineSmall,
           ),
         ],

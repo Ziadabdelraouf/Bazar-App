@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تغيير كلمة المرور بنجاح، يمكنك تسجيل الدخول مرة أخرى باستخدام كلمة مرور جديدة.",
     ),
     "about": MessageLookupByLibrary.simpleMessage("عن الكاتب"),
+    "addToCartButton": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان"),
     "addressNotFound": MessageLookupByLibrary.simpleMessage(
       "العنوان غير موجود",
@@ -62,11 +63,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancelledStatus": MessageLookupByLibrary.simpleMessage("ملغى"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
+    "cartTotal": MessageLookupByLibrary.simpleMessage("الإجمالي"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "changePictureButton": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
     "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
       "تحقق من صندوق الوارد الخاص بك وانقر على الرابط الموجود بداخله لتأكيد عنوان بريدك الإلكتروني.",
     ),
+    "checkoutButton": MessageLookupByLibrary.simpleMessage("إتمام الشراء"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
     ),
@@ -140,6 +143,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتفك",
+    ),
+    "failedToLoadCart": MessageLookupByLibrary.simpleMessage(
+      "فشل في تحميل عناصر السلة",
     ),
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "فشل في تحميل العروض",
@@ -222,6 +228,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "لا تتوفر عروض حاليًا",
     ),
     "noOrdersYet": MessageLookupByLibrary.simpleMessage("لا توجد طلبات بعد"),
+    "noProductsInCart": MessageLookupByLibrary.simpleMessage(
+      "لا توجد منتجات في السلة",
+    ),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("لا يوجد موردون"),
     "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
     "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
