@@ -1655,6 +1655,16 @@ class S {
     );
   }
 
+  /// `You have {count} coupons to use`
+  String availableCoupons(int count) {
+    return Intl.message(
+      'You have $count coupons to use',
+      name: 'availableCoupons',
+      desc: '',
+      args: [count],
+    );
+  }
+
   /// `Language`
   String get language {
     return Intl.message('Language', name: 'language', desc: '', args: []);

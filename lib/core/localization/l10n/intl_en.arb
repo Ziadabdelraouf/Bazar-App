@@ -263,5 +263,13 @@
   "@confirmationButton": {
     "description": "Button to confirm the selected address"
   },
+  "availableCoupons": "You have {count} coupons to use",
+  "@availableCoupons": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "language": "Language"
 }

@@ -20,14 +20,16 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(discount) => "خصم %${discount}";
+  static String m0(count) => "لديك ${count} كوبون للاستخدام";
 
-  static String m1(error) => "فشل في إعادة إرسال رابط التحقق: ${error}";
+  static String m1(discount) => "خصم %${discount}";
 
-  static String m2(count) =>
+  static String m2(error) => "فشل في إعادة إرسال رابط التحقق: ${error}";
+
+  static String m3(count) =>
       "${Intl.plural(count, zero: 'لا توجد عناصر', one: 'عنصر واحد', two: 'عنصران', few: '${count} عناصر', many: '${count} عنصرًا', other: '${count} عنصر')}";
 
-  static String m3(seconds) => "إعادة الإرسال خلال ${seconds} ثانية";
+  static String m4(seconds) => "إعادة الإرسال خلال ${seconds} ثانية";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -54,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم واحد على الأقل (1-9)",
     ),
     "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
+    "availableCoupons": m0,
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("أفضل الموردين"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("كتب"),
     "cancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
@@ -121,7 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "didNotReceiveLink": MessageLookupByLibrary.simpleMessage(
       "لم تستلم الرابط؟",
     ),
-    "discountPercent": m0,
+    "discountPercent": m1,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟",
     ),
@@ -141,7 +144,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "فشل في تحميل العروض",
     ),
-    "failedToResendVerificationLink": m1,
+    "failedToResendVerificationLink": m2,
     "february": MessageLookupByLibrary.simpleMessage("فبراير"),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
@@ -183,7 +186,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتف صحيح",
     ),
-    "itemsCount": m2,
+    "itemsCount": m3,
     "january": MessageLookupByLibrary.simpleMessage("يناير"),
     "july": MessageLookupByLibrary.simpleMessage("يوليو"),
     "june": MessageLookupByLibrary.simpleMessage("يونيو"),
@@ -307,7 +310,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "لم تستلم الكود؟ ",
     ),
-    "resendInSeconds": m3,
+    "resendInSeconds": m4,
     "resendLink": MessageLookupByLibrary.simpleMessage("إعادة إرسال الرابط"),
     "resending": MessageLookupByLibrary.simpleMessage("جاري إعادة الإرسال..."),
     "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(

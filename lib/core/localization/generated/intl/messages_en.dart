@@ -20,14 +20,16 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(discount) => "Discount ${discount}%";
+  static String m0(count) => "You have ${count} coupons to use";
 
-  static String m1(error) => "Failed to resend verification link: ${error}";
+  static String m1(discount) => "Discount ${discount}%";
 
-  static String m2(count) =>
+  static String m2(error) => "Failed to resend verification link: ${error}";
+
+  static String m3(count) =>
       "${Intl.plural(count, one: '1 item', other: '${count} items')}";
 
-  static String m3(seconds) => "Resend in ${seconds}s";
+  static String m4(seconds) => "Resend in ${seconds}s";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -54,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "At least 1 number (1-9)",
     ),
     "august": MessageLookupByLibrary.simpleMessage("August"),
+    "availableCoupons": m0,
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("Best Vendors"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("Books"),
     "cancelButton": MessageLookupByLibrary.simpleMessage("Cancel"),
@@ -119,7 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "didNotReceiveLink": MessageLookupByLibrary.simpleMessage(
       "Didn\'t receive the link?",
     ),
-    "discountPercent": m0,
+    "discountPercent": m1,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),
@@ -135,7 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "Failed to load offers",
     ),
-    "failedToResendVerificationLink": m1,
+    "failedToResendVerificationLink": m2,
     "february": MessageLookupByLibrary.simpleMessage("February"),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "Forgot Password?",
@@ -173,7 +176,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid phone number",
     ),
-    "itemsCount": m2,
+    "itemsCount": m3,
     "january": MessageLookupByLibrary.simpleMessage("January"),
     "july": MessageLookupByLibrary.simpleMessage("July"),
     "june": MessageLookupByLibrary.simpleMessage("June"),
@@ -295,7 +298,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "If you didn\'t receive a code? ",
     ),
-    "resendInSeconds": m3,
+    "resendInSeconds": m4,
     "resendLink": MessageLookupByLibrary.simpleMessage("Resend link"),
     "resending": MessageLookupByLibrary.simpleMessage("Resending..."),
     "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
