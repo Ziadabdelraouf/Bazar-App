@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/features/categories/presentation/providers/category_providers.dart';
@@ -37,20 +38,46 @@ class CategoryView extends ConsumerWidget {
                 if (books.isEmpty) {
                   return Center(child: Text(S.of(context).noVendorsFound));
                 }
-                return GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 11,
-                    mainAxisSpacing: 20,
-                    childAspectRatio: 158 / 214,
-                  ),
-                  itemCount: books.length,
-                  itemBuilder: (context, index) {
-                    final book = books[index];
-                    return CategoryBookCard(
-                      title: book.title,
-                      price: '\$${book.price.toStringAsFixed(2)}',
-                      imagePath: book.imageUrl,
+
+                final crossAxisCount = context.responsiveValue<int>(
+                  mobile: 2,
+                  tablet: 4,
+                  desktop: 6,
+                );
+                final mainAxisSpacing = context.responsiveValue<double>(
+                  mobile: 20.0,
+                  tablet: 16.0,
+                  desktop: 14.0,
+                );
+
+                return LayoutBuilder(
+                  builder: (context, constraints) {
+                    const crossAxisSpacing = 11.0;
+                    const textBlockHeight = 56.0;
+
+                    final cellWidth = (constraints.maxWidth -
+                            crossAxisSpacing * (crossAxisCount - 1)) /
+                        crossAxisCount;
+                    final childAspectRatio =
+                        cellWidth / (cellWidth + textBlockHeight);
+
+                    return GridView.builder(
+                      gridDelegate:
+                          SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: crossAxisCount,
+                        crossAxisSpacing: crossAxisSpacing,
+                        mainAxisSpacing: mainAxisSpacing,
+                        childAspectRatio: childAspectRatio,
+                      ),
+                      itemCount: books.length,
+                      itemBuilder: (context, index) {
+                        final book = books[index];
+                        return CategoryBookCard(
+                          title: book.title,
+                          price: '\$${book.price.toStringAsFixed(2)}',
+                          imagePath: book.imageUrl,
+                        );
+                      },
                     );
                   },
                 );
