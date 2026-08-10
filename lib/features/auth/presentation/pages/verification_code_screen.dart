@@ -129,7 +129,7 @@ class _VerificationCodeScreenState
         middleContent: Column(
           children: [
             const CodeInputBoxes(),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
             Center(
               child: RichText(
                 text: TextSpan(
@@ -153,6 +153,7 @@ class _VerificationCodeScreenState
                 ),
               ),
             ),
+            const SizedBox(height: 19),
           ],
         ),
         errorMessage: state.hasError ? s.incorrectCodeError : null,

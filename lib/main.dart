@@ -15,6 +15,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'core/localization/generated/l10n.dart';
 import 'firebase_options.dart';
+import 'package:bazar_group_1/core/localization/locale_notifier.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,6 +52,8 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeNotifierProvider);
+    final localeAsync = ref.watch(localeNotifierProvider);
+    final currentLocale = localeAsync.value ?? const Locale('en');
     return MaterialApp(
       builder: (context, child) {
         return ResponsiveBreakpoints.builder(
@@ -89,8 +92,7 @@ class MyApp extends ConsumerWidget {
           ),
         );
       },
-      // locale: Locale("ar"),
-      locale: Locale("en"),
+      locale: currentLocale,
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

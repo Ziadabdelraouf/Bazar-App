@@ -1,4 +1,5 @@
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
+import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -230,9 +231,7 @@ class VendorsPage extends ConsumerWidget {
                                         height: 13.33,
                                         colorFilter: ColorFilter.mode(
                                           isFilled
-                                              ? Theme.of(context)
-                                                  .colorScheme
-                                                  .secondary
+                                              ? AppColors.yellow
                                               : Theme.of(context)
                                                   .colorScheme
                                                   .onSurface,

@@ -1,5 +1,4 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/help_option_card.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +11,7 @@ class HelpCenterPage extends StatelessWidget {
     final localization=S.of(context);
     final topInset = MediaQuery.paddingOf(context).top;
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -23,23 +23,27 @@ class HelpCenterPage extends StatelessWidget {
              
              padding:  EdgeInsets.fromLTRB(24,  topInset + 12, 24, 32),
              decoration: BoxDecoration(
-              color: AppColors.primary500,
+              color: Theme.of(context).colorScheme.primary,
              ),
              child: Column(
                children: [
                  Stack(
                    alignment: Alignment.center,
                    children :[
-                      Align(
-                       alignment: AlignmentDirectional.centerStart,
-                       child: Icon(Icons.arrow_back,size: 24,color: Colors.white,)),
-                 Text(localization.orderHistory,style:AppTextStyles.h4.copyWith(color: Colors.white)) ]),
+                      GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                        child: Align(
+                          alignment: AlignmentDirectional.centerStart,
+                          child: Icon(Icons.arrow_back, size: 24, color: Theme.of(context).colorScheme.onPrimary),
+                        ),
+                      ),
+                 Text(localization.orderHistory,style:AppTextStyles.h4.copyWith(color: Theme.of(context).colorScheme.onPrimary)) ]),
                  Padding(
                    padding: const EdgeInsets.symmetric(vertical: 45),
                    child: Column(
                      children: [
-                       Text(localization.helpCenterTitle,style: AppTextStyles.h3.copyWith(color:Colors.white),),
-                       Text(localization.helpCenterSubtitle,style: AppTextStyles.body16Regular.copyWith(color:AppColors.primary200),textAlign: TextAlign.center,),
+                       Text(localization.helpCenterTitle,style: AppTextStyles.h3.copyWith(color: Theme.of(context).colorScheme.onPrimary),),
+                       Text(localization.helpCenterSubtitle,style: AppTextStyles.body16Regular.copyWith(color: Theme.of(context).colorScheme.primaryContainer),textAlign: TextAlign.center,),
                    
                      ],
                    ),

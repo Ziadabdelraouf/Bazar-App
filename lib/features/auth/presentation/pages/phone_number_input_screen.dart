@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
@@ -40,9 +39,14 @@ class _PhoneNumberInputScreenState extends ConsumerState<PhoneNumberInputScreen>
         description: Text(
           s.phoneNumberDescription,
           textAlign: TextAlign.center,
-          style: AppTextStyles.body16Regular.copyWith(color: AppColors.grey500),
+          style: AppTextStyles.body16Regular.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
         ),
-        middleContent: const PhoneNumberDisplay(),
+        middleContent: Column(
+          children: [
+            const PhoneNumberDisplay(),
+            const SizedBox(height: 57),
+          ],
+        ),
         errorMessage: state.errorMessage,
         isLoading: state.isLoading,
         onContinuePressed: () async {
@@ -70,8 +74,8 @@ class _PhoneNumberInputScreenState extends ConsumerState<PhoneNumberInputScreen>
             }
           }
         },
-        keypadBackgroundColor: AppColors.primary500,
-        keypadForegroundColor: AppColors.grey50,
+        keypadBackgroundColor: Theme.of(context).colorScheme.primary,
+        keypadForegroundColor: Theme.of(context).colorScheme.onPrimary,
         onDigitPressed: (digit) {
           ref.read(phoneNumberNotifierProvider.notifier).enterDigit(digit);
         },

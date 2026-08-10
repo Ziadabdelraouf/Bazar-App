@@ -1,6 +1,5 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/theme_notifier.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/profile_tile.dart';
@@ -36,7 +35,9 @@ class ProfileMenuList extends ConsumerWidget {
       _ProfileMenuItem(
         title: l10n.address,
         icon: AppIcons.location,
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, AppRoutes.address);
+        },
       ),
       _ProfileMenuItem(
         title: l10n.offersAndPromos,
@@ -60,7 +61,9 @@ class ProfileMenuList extends ConsumerWidget {
       _ProfileMenuItem(
         title: l10n.helpCenter,
         icon: AppIcons.chat,
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, AppRoutes.helpCenter);
+        },
       ),
     ];
   }
@@ -70,17 +73,19 @@ class ProfileMenuList extends ConsumerWidget {
     final menuItems = _getMenuItems(context);
     final themeMode = ref.watch(themeNotifierProvider);
     final isDark = themeMode == ThemeMode.dark;
+    final primaryColor = Theme.of(context).colorScheme.primary;
+
     return Column(
       children: [
         ListTile(
           leading: Icon(
             isDark ? Icons.dark_mode : Icons.light_mode,
-            color: AppColors.primary500,
+            color: primaryColor,
           ),
           title: const Text('Dark Mode'),
           trailing: Switch(
             value: isDark,
-            activeColor: AppColors.primary500,
+            activeColor: primaryColor,
             onChanged: (_) {
               ref.read(themeNotifierProvider.notifier).toggleTheme();
             },
@@ -91,10 +96,7 @@ class ProfileMenuList extends ConsumerWidget {
             title: item.title,
             leading: SvgPicture.asset(
               item.icon,
-              colorFilter: const ColorFilter.mode(
-                AppColors.primary500,
-                BlendMode.srcIn,
-              ),
+              colorFilter: ColorFilter.mode(primaryColor, BlendMode.srcIn),
             ),
             onTap: item.onTap,
           );

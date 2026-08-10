@@ -74,16 +74,16 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
                   return const Center(child: CircularProgressIndicator());
                 },
                 error: (error, stackTrace) {
-                  return _buildErrorState();
+                  return _buildErrorState(context);
                 },
                 data: (authors) {
                   final filteredAuthors = _filterAuthors(authors);
 
                   if (filteredAuthors.isEmpty) {
-                    return const Center(
+                    return Center(
                       child: Text(
                         'No authors found',
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
                       ),
                     );
                   }
@@ -280,12 +280,12 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
     }
   }
 
-  Widget _buildErrorState() {
+  Widget _buildErrorState(BuildContext context) {
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(Icons.error_outline, size: 40, color: Colors.grey),
+          Icon(Icons.error_outline, size: 40, color: Theme.of(context).colorScheme.onSurfaceVariant),
           const SizedBox(height: 12),
           const Text('Unable to load authors'),
           const SizedBox(height: 8),

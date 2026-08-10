@@ -51,8 +51,8 @@ class _DragupDetailedAddressWidgetState
       maxChildSize: 0.90,
       builder: (context, scrollController) {
         return Container(
-          decoration: const BoxDecoration(
-            color: Colors.white,
+          decoration: BoxDecoration(
+            color: colorScheme.surface,
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(30),
             ),
@@ -74,7 +74,7 @@ class _DragupDetailedAddressWidgetState
                   width: 48,
                   height: 5,
                   decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
+                    color: colorScheme.outlineVariant,
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
@@ -88,7 +88,7 @@ class _DragupDetailedAddressWidgetState
                   Expanded(
                     child: Text(
                       localization.detailAddressTitle,
-                      style: AppTextStyles.h5,
+                      style: AppTextStyles.h5.copyWith(color: colorScheme.onSurface),
                     ),
                   ),
                   IconButton(
@@ -115,9 +115,9 @@ class _DragupDetailedAddressWidgetState
               else if (addressErrorText != null)
                 Text(
                   addressErrorText,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 14,
-                    color: Colors.red,
+                    color: colorScheme.error,
                   ),
                 )
               else
@@ -147,9 +147,10 @@ class _DragupDetailedAddressWidgetState
                             widget.addressTitle.isNotEmpty
                                 ? widget.addressTitle
                                 : localization.selectedAddressTitle,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w600,
+                              color: colorScheme.onSurface,
                             ),
                           ),
                           const SizedBox(height: 5),
@@ -160,7 +161,7 @@ class _DragupDetailedAddressWidgetState
                             style: TextStyle(
                               fontSize: 13,
                               height: 1.5,
-                              color: Colors.grey.shade500,
+                              color: colorScheme.onSurfaceVariant,
                             ),
                           ),
                         ],
@@ -176,9 +177,10 @@ class _DragupDetailedAddressWidgetState
               // Save address section
               Text(
                 localization.saveAddressAs,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
+                  color: colorScheme.onSurface,
                 ),
               ),
 
