@@ -25,9 +25,11 @@ class ProfileHeader extends ConsumerWidget {
 
     final countryCode = phoneState.selectedCountry.dialCode;
     final digits = phoneState.digits;
-    final phoneText = digits.isNotEmpty
+    final String? mobile = storedProfile?['mobile'];
+    final bool hasPhone = digits.isNotEmpty || (mobile != null && mobile.isNotEmpty);
+    final String? phoneText = digits.isNotEmpty
         ? "$countryCode $digits"
-        : (storedProfile?['mobile'] ?? AuthService.fallbackMobile);
+        : (mobile != null && mobile.isNotEmpty ? mobile : null);
 
     final isRtl = Directionality.of(context) == TextDirection.rtl;
     final colorScheme = Theme.of(context).colorScheme;
@@ -57,12 +59,14 @@ class ProfileHeader extends ConsumerWidget {
               displayName,
               style: AppTextStyles.h6.copyWith(color: titleColor),
             ),
-            subtitle: Text(
-              phoneText,
-              style: AppTextStyles.body14Regular.copyWith(color: subtitleColor),
-              textDirection: TextDirection.ltr,
-              textAlign: isRtl ? TextAlign.right : TextAlign.left,
-            ),
+            subtitle: hasPhone && phoneText != null
+                ? Text(
+                    phoneText,
+                    style: AppTextStyles.body14Regular.copyWith(color: subtitleColor),
+                    textDirection: TextDirection.ltr,
+                    textAlign: isRtl ? TextAlign.right : TextAlign.left,
+                  )
+                : null,
             trailing: TextButton(
               onPressed: () {
                 showModalBottomSheet(

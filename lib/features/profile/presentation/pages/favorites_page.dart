@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
@@ -16,7 +15,7 @@ class FavoritesPage extends ConsumerWidget {
     final favorites = ref.watch(favoritesNotifierProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBackBar(
         title: S.of(context).yourFavoritesTitle,
         leadingWidget: Transform.flip(
@@ -34,7 +33,7 @@ class FavoritesPage extends ConsumerWidget {
                     return ListView.separated(
                       itemCount: favorites.length,
                       separatorBuilder: (context, index) => Divider(
-                        color: AppColors.grey200,
+                        color: Theme.of(context).colorScheme.outlineVariant,
                         thickness: 1,
                         height: 1,
                         indent: 16,

@@ -1,4 +1,3 @@
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +14,10 @@ class HelpOptionCard extends StatelessWidget {
     this.onTap
     
     });
-
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Container(
       constraints: const BoxConstraints(
         minHeight: 151,
@@ -31,9 +31,8 @@ class HelpOptionCard extends StatelessWidget {
           ),
       
       decoration: BoxDecoration(
-        color: AppColors.grey50,
-        border: BoxBorder.all(color: AppColors.grey100),
-
+        color: colorScheme.surfaceContainerHighest,
+        border: BoxBorder.all(color: colorScheme.outlineVariant),
       ),
       child: Padding(
         padding: const EdgeInsets.only(left: 16),
@@ -43,10 +42,10 @@ class HelpOptionCard extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 16 ,top: 24),
-              child: Icon(icon,size: 24,color: AppColors.primary500,),
+              child: Icon(icon,size: 24,color: colorScheme.primary,),
             ),
-            Text(title,style:AppTextStyles.body14Medium.copyWith(color: AppColors.grey900)),
-            Text(subtitle,style:AppTextStyles.body14Regular.copyWith(color: AppColors.grey500)),
+            Text(title,style:AppTextStyles.body14Medium.copyWith(color: colorScheme.onSurface)),
+            Text(subtitle,style:AppTextStyles.body14Regular.copyWith(color: colorScheme.onSurfaceVariant)),
         
           ],
         ),

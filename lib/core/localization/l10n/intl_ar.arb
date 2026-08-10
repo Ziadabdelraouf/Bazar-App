@@ -64,6 +64,21 @@
     "resendButton": "إعادة الإرسال",
     "incorrectCodeError": "الكود غير صحيح، حاول مرة أخرى.",
     "codeResentMessage": "تم إعادة إرسال الكود!",
+    "verificationLinkSentAgain": "تم إعادة إرسال رابط التحقق. يرجى التحقق من بريدك الوارد.",
+    "failedToResendVerificationLink": "فشل في إعادة إرسال رابط التحقق: {error}",
+    "congratsVerified": "تهانينا، لقد تم التحقق من حسابك!",
+    "pleaseVerifyEmail": "يرجى التحقق من بريدك الإلكتروني",
+    "continueSignUpProcess": "تابع لإكمال عملية التسجيل الخاص بك",
+    "verificationLinkSentTo": "لقد أرسلنا رابط التحقق إلى\n",
+    "pleaseVerifyAccount": "يرجى التحقق من حسابك",
+    "checkInboxVerificationPrompt": "تحقق من صندوق الوارد الخاص بك وانقر على الرابط الموجود بداخله لتأكيد عنوان بريدك الإلكتروني.",
+    "didNotReceiveLink": "لم تستلم الرابط؟",
+    "resending": "جاري إعادة الإرسال...",
+    "resendInSeconds": "إعادة الإرسال خلال {seconds} ثانية",
+    "resendLink": "إعادة إرسال الرابط",
+    "verificationComplete": "اكتمل التحقق!",
+    "congratsVerifiedTapBelow": "تهانينا، لقد تم التحقق منك! اضغط أدناه للمتابعة لإكمال عملية التسجيل.",
+    "continueSignUpButton": "متابعة التسجيل",
     "//Phone Number Screen Strings//": "",
     "phoneNumberTitle": "رقم الهاتف",
     "phoneNumberDescription": "الرجاء إدخال رقم هاتفك، حتى نتمكن من توصيل طلبك بسهولة أكبر",
@@ -201,5 +216,6 @@
           "type": "int"
         }
       }
-    }
-    }
+    },
+    "language": "اللغة"
+}

@@ -1,7 +1,6 @@
 import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../domain/entities/author.dart';
 
@@ -36,7 +35,7 @@ class AuthorCard extends StatelessWidget {
               child: SizedBox(
                 width: 115,
                 height: 115,
-                child: _buildAuthorImage(),
+                child: _buildAuthorImage(context),
               ),
             ),
             if (showDetails) ...[
@@ -47,7 +46,7 @@ class AuthorCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: AppTextStyles.body16Medium.copyWith(
-                  color: AppColors.grey900,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
               const SizedBox(height: 2),
@@ -57,7 +56,7 @@ class AuthorCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: AppTextStyles.body14Regular.copyWith(
-                  color: AppColors.grey500,
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
               ),
             ],
@@ -67,9 +66,9 @@ class AuthorCard extends StatelessWidget {
     );
   }
 
-  Widget _buildAuthorImage() {
+  Widget _buildAuthorImage(BuildContext context) {
     if (author.image.isEmpty) {
-      return _buildPlaceholder();
+      return _buildPlaceholder(context);
     }
 
     if (author.image.startsWith('http')) {
@@ -77,7 +76,7 @@ class AuthorCard extends StatelessWidget {
         author.image,
         fit: BoxFit.cover,
         errorBuilder: (context, error, stackTrace) {
-          return _buildPlaceholder();
+          return _buildPlaceholder(context);
         },
       );
     }
@@ -86,14 +85,14 @@ class AuthorCard extends StatelessWidget {
       author.image,
       fit: BoxFit.cover,
       errorBuilder: (context, error, stackTrace) {
-        return _buildPlaceholder();
+        return _buildPlaceholder(context);
       },
     );
   }
 
-  Widget _buildPlaceholder() {
+  Widget _buildPlaceholder(BuildContext context) {
     return Container(
-      color: Colors.grey.shade300,
+      color: Theme.of(context).colorScheme.surfaceContainerHighest,
       alignment: Alignment.center,
       child: const Icon(Icons.person, size: 50),
     );

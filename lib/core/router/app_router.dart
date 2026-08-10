@@ -10,7 +10,6 @@ import 'package:bazar_group_1/core/constants/enums.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/sign_in_page.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/sign_up_page.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/success_page.dart';
-import 'package:bazar_group_1/features/auth/presentation/pages/verification_page.dart';
 import 'package:bazar_group_1/features/onboarding/presentation/pages/onboarding_page.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/sign_up_verification_email.dart';
 import 'package:bazar_group_1/features/auth/presentation/pages/sign_up_verification_phone.dart';
@@ -36,7 +35,6 @@ class AppRouter {
     AppRoutes.forgotPasswordPage: (context) => const ForgotPasswordPage(),
 
     AppRoutes.signUpPage: (context) => const SignUpPage(),
-    AppRoutes.verificationPage: (context) => const VerificationPage(),
 
     AppRoutes.signUpVerificationEmail: (context) {
       final email = ModalRoute.of(context)!.settings.arguments as String;

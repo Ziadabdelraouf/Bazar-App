@@ -1,5 +1,4 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/features/home/presentation/providers/bottom_nav_provider.dart';
 import 'package:flutter/material.dart';

@@ -24,8 +24,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(discount) => "خصم %${discount}";
 
-  static String m2(count) =>
+  static String m2(error) => "فشل في إعادة إرسال رابط التحقق: ${error}";
+
+  static String m3(count) =>
       "${Intl.plural(count, zero: 'لا توجد عناصر', one: 'عنصر واحد', two: 'عنصران', few: '${count} عناصر', many: '${count} عنصرًا', other: '${count} عنصر')}";
+
+  static String m4(seconds) => "إعادة الإرسال خلال ${seconds} ثانية";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -60,6 +64,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "changePictureButton": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
+    "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
+      "تحقق من صندوق الوارد الخاص بك وانقر على الرابط الموجود بداخله لتأكيد عنوان بريدك الإلكتروني.",
+    ),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
     ),
@@ -70,6 +77,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء تأكيد كلمة المرور",
     ),
     "confirmationButton": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "congratsVerified": MessageLookupByLibrary.simpleMessage(
+      "تهانينا، لقد تم التحقق من حسابك!",
+    ),
+    "congratsVerifiedTapBelow": MessageLookupByLibrary.simpleMessage(
+      "تهانينا، لقد تم التحقق منك! اضغط أدناه للمتابعة لإكمال عملية التسجيل.",
+    ),
     "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
     "contactMethodEmailSubtitle": MessageLookupByLibrary.simpleMessage(
       "إرسال إلى بريدك الإلكتروني",
@@ -87,6 +100,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "continueShoppingButton": MessageLookupByLibrary.simpleMessage(
       "متابعة التسوق",
     ),
+    "continueSignUpButton": MessageLookupByLibrary.simpleMessage(
+      "متابعة التسجيل",
+    ),
+    "continueSignUpProcess": MessageLookupByLibrary.simpleMessage(
+      "تابع لإكمال عملية التسجيل الخاص بك",
+    ),
     "couldNotLoadVendors": MessageLookupByLibrary.simpleMessage(
       "تعذر تحميل الموردين",
     ),
@@ -101,6 +120,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "detailAddressTitle": MessageLookupByLibrary.simpleMessage(
       "تفاصيل العنوان",
+    ),
+    "didNotReceiveLink": MessageLookupByLibrary.simpleMessage(
+      "لم تستلم الرابط؟",
     ),
     "discountPercent": m1,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
@@ -122,6 +144,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "فشل في تحميل العروض",
     ),
+    "failedToResendVerificationLink": m2,
     "february": MessageLookupByLibrary.simpleMessage("فبراير"),
     "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
@@ -163,10 +186,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتف صحيح",
     ),
-    "itemsCount": m2,
+    "itemsCount": m3,
     "january": MessageLookupByLibrary.simpleMessage("يناير"),
     "july": MessageLookupByLibrary.simpleMessage("يوليو"),
     "june": MessageLookupByLibrary.simpleMessage("يونيو"),
+    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "locationTitle": MessageLookupByLibrary.simpleMessage("الموقع"),
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -259,6 +283,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "اكتب رقم هاتفك...",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "pleaseVerifyAccount": MessageLookupByLibrary.simpleMessage(
+      "يرجى التحقق من حسابك",
+    ),
+    "pleaseVerifyEmail": MessageLookupByLibrary.simpleMessage(
+      "يرجى التحقق من بريدك الإلكتروني",
+    ),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("أشعار"),
     "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
       "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدايبيسينج إيليت.",
@@ -280,6 +310,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
       "لم تستلم الكود؟ ",
     ),
+    "resendInSeconds": m4,
+    "resendLink": MessageLookupByLibrary.simpleMessage("إعادة إرسال الرابط"),
+    "resending": MessageLookupByLibrary.simpleMessage("جاري إعادة الإرسال..."),
     "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال بريدك الإلكتروني، سنرسل لك رمز التحقق على بريدك الإلكتروني.",
     ),
@@ -342,8 +375,17 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "vendorsPageTitle": MessageLookupByLibrary.simpleMessage("الموردين"),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
+    "verificationComplete": MessageLookupByLibrary.simpleMessage(
+      "اكتمل التحقق!",
+    ),
     "verificationEmailTitle": MessageLookupByLibrary.simpleMessage(
       "تحقق البريد الإلكتروني",
+    ),
+    "verificationLinkSentAgain": MessageLookupByLibrary.simpleMessage(
+      "تم إعادة إرسال رابط التحقق. يرجى التحقق من بريدك الوارد.",
+    ),
+    "verificationLinkSentTo": MessageLookupByLibrary.simpleMessage(
+      "لقد أرسلنا رابط التحقق إلى\n",
     ),
     "verificationPhoneTitle": MessageLookupByLibrary.simpleMessage(
       "تحقق الهاتف",

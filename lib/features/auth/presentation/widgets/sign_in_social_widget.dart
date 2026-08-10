@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/oauth_signin_button.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/sign_in_provider.dart';
+import 'package:bazar_group_1/core/utils/firebase_error_utils.dart';
 
-class SignInSocialWidget extends StatelessWidget {
+class SignInSocialWidget extends ConsumerWidget {
   const SignInSocialWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final signInState = ref.watch(signInProvider);
+
     return Column(
       children: [
         Row(
@@ -70,7 +75,26 @@ class SignInSocialWidget extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         OAuthSignInButton(
-          onPressed: () {},
+          onPressed: signInState.isLoading
+              ? () {}
+              : () async {
+                  try {
+                    final success = await ref
+                        .read(signInProvider.notifier)
+                        .signInWithGoogle();
+                    if (success && context.mounted) {
+                      ref.read(signInProvider.notifier).reset();
+                      Navigator.pushReplacementNamed(
+                        context,
+                        AppRoutes.homePage,
+                      );
+                    }
+                  } catch (e) {
+                    if (context.mounted) {
+                      FirebaseErrorUtils.showErrorSnackBar(context, e);
+                    }
+                  }
+                },
           text: S.of(context).signInWithGoogleButton,
           icon: AppIcons.googleLogo,
         ),

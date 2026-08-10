@@ -59,6 +59,35 @@ class SignUpNotifier extends Notifier<SignUpState> {
     return true;
   }
 
+  Future<void> handleSignUp({String? mobile}) async {
+    state = state.copyWith(isLoading: true);
+    try {
+      final email = emailController.text.trim();
+      final password = passwordController.text;
+      final nameText = nameController.text.trim();
+      final storedName = ref.read(nameNotifierProvider);
+      final finalName = nameText.isNotEmpty ? nameText : storedName;
+
+      final authService = ref.read(authServiceProvider);
+
+      if (authService.currentUser == null &&
+          email.isNotEmpty &&
+          password.isNotEmpty) {
+        await authService.signUpWithEmailAndPassword(email, password);
+        if (finalName.isNotEmpty) {
+          await authService.currentUser?.updateDisplayName(finalName);
+        }
+        await authService.sendEmailVerification();
+      } else if (authService.currentUser != null) {
+        await authService.sendEmailVerification();
+      }
+
+      await saveSession(mobile: mobile);
+    } finally {
+      state = state.copyWith(isLoading: false);
+    }
+  }
+
   Future<void> saveSession({String? mobile}) async {
     final email = emailController.text.trim();
     final password = passwordController.text;
@@ -67,9 +96,21 @@ class SignUpNotifier extends Notifier<SignUpState> {
     final finalName = nameText.isNotEmpty ? nameText : storedName;
 
     final authService = ref.read(authServiceProvider);
+
+    if (authService.currentUser == null &&
+        email.isNotEmpty &&
+        password.isNotEmpty) {
+      try {
+        await authService.signUpWithEmailAndPassword(email, password);
+        if (finalName.isNotEmpty) {
+          await authService.currentUser?.updateDisplayName(finalName);
+        }
+        await authService.sendEmailVerification();
+      } catch (_) {}
+    }
+
     await authService.saveSession(
-      email: email,
-      password: password,
+      email: email.isNotEmpty ? email : null,
       name: finalName.isNotEmpty ? finalName : null,
       mobile: mobile,
     );

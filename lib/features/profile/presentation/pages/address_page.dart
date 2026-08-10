@@ -38,7 +38,7 @@ class _AddressPageState extends ConsumerState<AddressPage>
       appBar: AppBackBar(
          title: localization.locationTitle,
          leadingWidget: const BackButtonIcon(),
-         onLeadingPressed: () {},
+         onLeadingPressed: () => Navigator.pop(context),
       ),
       
       body: Stack(
