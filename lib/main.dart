@@ -3,6 +3,7 @@ import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/router/app_router.dart';
 import 'package:bazar_group_1/core/theme/app_theme.dart';
+import 'package:bazar_group_1/core/theme/theme_notifier.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:flutter/foundation.dart';
@@ -50,6 +51,7 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final themeMode = ref.watch(themeNotifierProvider);
     final localeAsync = ref.watch(localeNotifierProvider);
     final currentLocale = localeAsync.value ?? const Locale('en');
     return MaterialApp(
@@ -102,7 +104,7 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      themeMode: ThemeMode.system,
+      themeMode: themeMode,
       home: const SplashScreen(),
       routes: AppRouter.routes,
     );
