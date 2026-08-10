@@ -21,6 +21,7 @@ import '../../features/forgot_password/presentation/pages/forgot_password_page.d
 import 'package:bazar_group_1/features/home/presentation/pages/vendors_page.dart';
 import 'package:bazar_group_1/features/profile/presentation/pages/favorites_page.dart';
 import 'package:bazar_group_1/features/profile/presentation/pages/order_history_page.dart';
+import 'package:bazar_group_1/features/offers/presentation/pages/offers_page.dart';
 import 'app_routes.dart';
 
 class AppRouter {
@@ -67,5 +68,6 @@ class AppRouter {
     AppRoutes.orderHistoryPage: (context) => const OrderHistoryPage(),
     AppRoutes.helpCenter: (context) => const HelpCenterPage(),
     AppRoutes.address: (context) => const AddressPage(),
+    AppRoutes.offersPage: (context) => const OffersPage(),
   };
 }
