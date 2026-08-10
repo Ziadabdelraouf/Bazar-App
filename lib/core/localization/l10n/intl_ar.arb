@@ -207,5 +207,6 @@
     "saveAddressAs": "احفظ العنوان كـ",
     "homeAddress": "المنزل",
     "officeAddress": "المكتب",
-    "confirmationButton": "تأكيد"
-    }
+    "confirmationButton": "تأكيد",
+    "language": "اللغة"
+}

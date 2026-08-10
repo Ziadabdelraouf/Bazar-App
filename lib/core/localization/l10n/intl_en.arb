@@ -262,5 +262,6 @@
   "confirmationButton": "Confirmation",
   "@confirmationButton": {
     "description": "Button to confirm the selected address"
-  }
+  },
+  "language": "Language"
 }
