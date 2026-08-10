@@ -22,7 +22,7 @@ class RatingStars extends StatelessWidget {
           if (index < rating) {
             return Icon(Icons.star, color: AppColors.yellow, size: size);
           } else {
-            return Icon(Icons.star, color: AppColors.grey900, size: size);
+            return Icon(Icons.star, color: Theme.of(context).colorScheme.onSurfaceVariant, size: size);
           }
         }),
         if (showRatingNumbers) ...[
@@ -30,7 +30,7 @@ class RatingStars extends StatelessWidget {
           Text(
             "(${rating.toDouble()})",
             style: AppTextStyles.body16Medium.copyWith(
-              color: AppColors.grey900,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
         ],

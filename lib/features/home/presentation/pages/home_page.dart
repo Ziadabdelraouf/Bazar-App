@@ -1,5 +1,4 @@
 import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/pages/cart_view.dart';
 import 'package:bazar_group_1/features/categories/presentation/pages/category_view.dart';

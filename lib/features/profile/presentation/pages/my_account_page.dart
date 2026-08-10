@@ -3,7 +3,6 @@ import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart'
 import 'package:bazar_group_1/core/components/inputs/app_text_form_field.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/email_validator.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/password_validator.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
@@ -45,12 +44,12 @@ class _MyAccountPageState extends ConsumerState<MyAccountPage> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        backgroundColor: AppColors.white,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         appBar: AppBackBar(title: localization.myAccountTitle),
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * (24 / 375),
+              horizontal: 24,
             ),
             child: Form(
               key: notifier.formKey,
@@ -111,8 +110,8 @@ class _MyAccountPageState extends ConsumerState<MyAccountPage> {
                         AppIcons.phoneOutline,
                         width: 24,
                         height: 24,
-                        colorFilter: const ColorFilter.mode(
-                          AppColors.primary500,
+                        colorFilter: ColorFilter.mode(
+                          Theme.of(context).colorScheme.primary,
                           BlendMode.srcIn,
                         ),
                       ),

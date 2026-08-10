@@ -2,7 +2,6 @@ import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
@@ -20,7 +19,7 @@ class OrderHistoryPage extends ConsumerWidget {
     final groupedOrders = _groupByMonth(context, orders);
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBackBar(
         title: S.of(context).orderHistoryPageTitle,
         leadingWidget: Transform.flip(
@@ -81,13 +80,13 @@ class OrderHistoryPage extends ConsumerWidget {
         children: [
           Text(
             monthLabel,
-            style: AppTextStyles.h5.copyWith(color: AppColors.grey900),
+            style: AppTextStyles.h5.copyWith(color: Theme.of(context).colorScheme.onSurface),
           ),
           const SizedBox(height: 16),
           Container(
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.grey200),
+              border: Border.all(color: Theme.of(context).colorScheme.outlineVariant),
               borderRadius: BorderRadius.circular(8),
             ),
             child: (context.isTablet || context.isDesktop)
@@ -113,7 +112,7 @@ class OrderHistoryPage extends ConsumerWidget {
                       ),
                       if (i < orders.length - 1)
                         Divider(
-                          color: AppColors.grey200,
+                          color: Theme.of(context).colorScheme.outlineVariant,
                           thickness: 1,
                           height: 1,
                         ),

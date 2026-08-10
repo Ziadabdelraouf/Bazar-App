@@ -138,14 +138,14 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                   initialRating: 4,
                   minRating: 1,
                   allowHalfRating: true,
-                  unratedColor: AppColors.grey900,
+                  unratedColor: Theme.of(context).colorScheme.onSurfaceVariant,
                   itemCount: 5,
                   itemSize: 24.0,
                   itemPadding: const EdgeInsets.only(right: 2),
                   itemBuilder: (context, _) => SvgPicture.asset(
                     AppIcons.star,
                     colorFilter: ColorFilter.mode(
-                      Theme.of(context).colorScheme.secondary,
+                      AppColors.yellow,
                       BlendMode.srcIn,
                     ),
                   ),

@@ -1,5 +1,4 @@
 import 'package:bazar_group_1/core/router/app_routes.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_images.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/auth_service_provider.dart';
 import 'package:flutter/material.dart';
