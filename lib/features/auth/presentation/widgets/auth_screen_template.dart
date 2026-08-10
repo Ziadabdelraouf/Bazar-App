@@ -38,11 +38,10 @@ class AuthScreenTemplate extends StatelessWidget {
     final s = S.of(context);
     final isLandscape =
         MediaQuery.of(context).orientation == Orientation.landscape;
-    final screenHeight = MediaQuery.of(context).size.height;
     final keypadHeight = context.responsiveValue<double>(
-      mobile: (screenHeight * 0.35).clamp(200.0, 280.0),
-      tablet: 260.0,
-      desktop: 280.0,
+      mobile: 357.0,
+      tablet: 400.0,
+      desktop: 440.0,
     );
 
     final formContent = Column(

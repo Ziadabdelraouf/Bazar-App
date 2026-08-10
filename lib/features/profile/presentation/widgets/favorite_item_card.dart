@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
@@ -95,7 +94,7 @@ class _FavoriteItemCardState extends ConsumerState<FavoriteItemCard> {
                       height: 48,
                       child: DecoratedBox(
                         decoration: BoxDecoration(
-                          color: AppColors.grey50,
+                          color: Theme.of(context).colorScheme.surfaceContainerHighest,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: ClipRRect(
@@ -120,12 +119,12 @@ class _FavoriteItemCardState extends ConsumerState<FavoriteItemCard> {
                             widget.item.title,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 2,
-                            style: AppTextStyles.body16Medium.copyWith(color: AppColors.grey900),
+                            style: AppTextStyles.body16Medium.copyWith(color: Theme.of(context).colorScheme.onSurface),
                           ),
                           const SizedBox(height: 4),
                           Text(
                             '\$${widget.item.price.toStringAsFixed(2)}',
-                            style: AppTextStyles.body14Bold.copyWith(color: AppColors.primary500),
+                            style: AppTextStyles.body14Bold.copyWith(color: Theme.of(context).colorScheme.primary),
                           ),
                         ],
                       ),

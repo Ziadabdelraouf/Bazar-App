@@ -1,7 +1,6 @@
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
@@ -29,7 +28,7 @@ class BestVendorsWidget extends StatelessWidget {
               style: AppTextStyles.h5.copyWith(
                 color: Theme.of(context).brightness == Brightness.dark
                     ? Colors.white
-                    : AppColors.grey900,
+                    : Theme.of(context).colorScheme.onSurface,
               ),
             ),
             GestureDetector(
@@ -74,7 +73,7 @@ class BestVendorsWidget extends StatelessWidget {
                         width: itemSize,
                         height: itemSize,
                         decoration: BoxDecoration(
-                          color: AppColors.grey100,
+                          color: Theme.of(context).colorScheme.surfaceContainerHighest,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: ClipRRect(
@@ -96,7 +95,7 @@ class BestVendorsWidget extends StatelessWidget {
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
                                       style: AppTextStyles.body14Bold.copyWith(
-                                        color: AppColors.grey900,
+                                        color: Theme.of(context).colorScheme.onSurface,
                                       ),
                                     ),
                                   ),

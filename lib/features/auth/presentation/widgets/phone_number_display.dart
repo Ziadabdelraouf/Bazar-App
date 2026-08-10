@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
@@ -17,9 +16,10 @@ class PhoneNumberDisplay extends ConsumerWidget {
     final s = S.of(context);
     final state = ref.watch(phoneNumberNotifierProvider);
     final hasDigits = state.digits.isNotEmpty;
+    final colorScheme = Theme.of(context).colorScheme;
     final textColor = hasDigits
-        ? AppColors.grey900
-        : AppColors.grey400;
+        ? colorScheme.onSurface
+        : colorScheme.onSurfaceVariant;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +27,7 @@ class PhoneNumberDisplay extends ConsumerWidget {
         Text(
           s.phoneNumberFieldLabel,
           style: AppTextStyles.body14Medium.copyWith(
-            color: AppColors.grey900,
+            color: colorScheme.onSurface,
           ),
         ),
         const SizedBox(height: 6),
@@ -44,11 +44,11 @@ class PhoneNumberDisplay extends ConsumerWidget {
               horizontal: 12,
             ),
             decoration: BoxDecoration(
-              color: AppColors.grey50,
+              color: colorScheme.surfaceContainerHighest,
               borderRadius: BorderRadius.circular(8),
               border: state.isFocused
                   ? Border.all(
-                      color: AppColors.primary500,
+                      color: colorScheme.primary,
                       width: 1,
                     )
                   : null,

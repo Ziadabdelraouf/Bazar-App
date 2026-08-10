@@ -1,4 +1,3 @@
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingDot extends StatelessWidget {
@@ -23,7 +22,9 @@ class OnboardingDot extends StatelessWidget {
           width: isActive ? 8 : 4,
           height: isActive ? 8 : 4,
           decoration: BoxDecoration(
-            color: isActive ? AppColors.primary500 : AppColors.grey200,
+            color: isActive
+              ? Theme.of(context).colorScheme.primary
+              : Theme.of(context).colorScheme.outlineVariant,
             shape: BoxShape.circle,
           ),
         );

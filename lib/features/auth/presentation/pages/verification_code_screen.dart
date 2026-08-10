@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/core/utils/firebase_error_utils.dart';
 import 'package:bazar_group_1/features/auth/domain/verification_type.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/verification_code_notifier.dart';
 import 'package:bazar_group_1/features/auth/presentation/widgets/code_input_boxes.dart';
@@ -56,20 +57,42 @@ class _VerificationCodeScreenState
 
   Future<void> _handleResend() async {
     setState(() => _isResending = true);
-    await ref.read(verificationCodeNotifierProvider.notifier).resendCode();
-    if (mounted) {
-      setState(() => _isResending = false);
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text(S.of(context).codeResentMessage)));
+    try {
+      await ref
+          .read(verificationCodeNotifierProvider.notifier)
+          .resendCode(
+            phoneNumber: widget.contactMethod == ContactMethod.phone
+                ? widget.contactValue
+                : null,
+          );
+      if (mounted) {
+        FirebaseErrorUtils.showSuccessSnackBar(
+          context,
+          S.of(context).codeResentMessage,
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        FirebaseErrorUtils.showErrorSnackBar(context, e);
+      }
+    } finally {
+      if (mounted) {
+        setState(() => _isResending = false);
+      }
     }
   }
 
   Future<void> _handleContinue() async {
-    await ref.read(verificationCodeNotifierProvider.notifier).submitCode();
-    final hasError = ref.read(verificationCodeNotifierProvider).hasError;
-    if (!hasError) {
-      widget.onVerified();
+    try {
+      await ref.read(verificationCodeNotifierProvider.notifier).submitCode();
+      final hasError = ref.read(verificationCodeNotifierProvider).hasError;
+      if (!hasError) {
+        widget.onVerified();
+      }
+    } catch (e) {
+      if (mounted) {
+        FirebaseErrorUtils.showErrorSnackBar(context, e);
+      }
     }
   }
 
@@ -106,7 +129,7 @@ class _VerificationCodeScreenState
         middleContent: Column(
           children: [
             const CodeInputBoxes(),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
             Center(
               child: RichText(
                 text: TextSpan(
@@ -130,6 +153,7 @@ class _VerificationCodeScreenState
                 ),
               ),
             ),
+            const SizedBox(height: 19),
           ],
         ),
         errorMessage: state.hasError ? s.incorrectCodeError : null,

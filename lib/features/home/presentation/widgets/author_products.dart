@@ -1,4 +1,3 @@
-import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/home/domain/entities/author_product.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +22,7 @@ class AuthorProducts extends ConsumerWidget {
         final product = _dummyProducts[index];
         return DecoratedBox(
           decoration: BoxDecoration(
-            color: AppColors.white,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Column(
@@ -45,12 +44,12 @@ class AuthorProducts extends ConsumerWidget {
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
                       return Container(
-                        color: AppColors.primary50,
-                        child: const Center(
+                        color: Theme.of(context).colorScheme.primaryContainer,
+                        child: Center(
                           child: Icon(
                             Icons.book,
                             size: 40,
-                            color: AppColors.primary300,
+                            color: Theme.of(context).colorScheme.primary,
                           ),
                         ),
                       );
@@ -68,14 +67,14 @@ class AuthorProducts extends ConsumerWidget {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: AppTextStyles.body14Bold.copyWith(
-                        color: AppColors.grey900,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ),
                     const SizedBox(height: 6),
                     Text(
                       product.price,
                       style: AppTextStyles.body14Bold.copyWith(
-                        color: AppColors.primary500,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                   ],

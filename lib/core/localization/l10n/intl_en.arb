@@ -64,6 +64,21 @@
     "resendButton": "Resend",
     "incorrectCodeError": "Incorrect code, please try again.",
     "codeResentMessage": "Code resent!",
+    "verificationLinkSentAgain": "Verification link sent again. Please check your inbox.",
+    "failedToResendVerificationLink": "Failed to resend verification link: {error}",
+    "congratsVerified": "Congrats, you are verified!",
+    "pleaseVerifyEmail": "Please verify your email",
+    "continueSignUpProcess": "Continue to complete your sign up process",
+    "verificationLinkSentTo": "We sent a verification link to\n",
+    "pleaseVerifyAccount": "Please verify your account",
+    "checkInboxVerificationPrompt": "Check your inbox and click the link inside to confirm your email address.",
+    "didNotReceiveLink": "Didn't receive the link?",
+    "resending": "Resending...",
+    "resendInSeconds": "Resend in {seconds}s",
+    "resendLink": "Resend link",
+    "verificationComplete": "Verification Complete!",
+    "congratsVerifiedTapBelow": "Congrats, you are verified! Tap below to continue to complete your sign up process.",
+    "continueSignUpButton": "Continue Sign Up",
     "//Phone Number Screen Strings//": "",
     "phoneNumberTitle": "Phone Number",
     "phoneNumberDescription": "Please enter your phone number, so we can more easily deliver your order",
@@ -175,7 +190,6 @@
     "october": "October",
     "november": "November",
     "december": "December",
-    "logoutButton": "Logout",
     "helpCenterOrderHistory": "Order History",
     "@helpCenterOrderHistory": {
       "description": "App bar title on the help center page"
@@ -256,5 +270,6 @@
         "type": "int"
       }
     }
-  }
+  },
+  "language": "Language"
 }

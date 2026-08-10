@@ -12,7 +12,7 @@ class OrderHistoryItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final statusColor =
-        order.status == OrderStatus.delivered ? AppColors.green : AppColors.red;
+        order.status == OrderStatus.delivered ? AppColors.green : Theme.of(context).colorScheme.error;
     final localization = S.of(context);
     final statusText = order.status == OrderStatus.delivered
         ? localization.deliveredStatus
@@ -24,7 +24,7 @@ class OrderHistoryItemCard extends StatelessWidget {
           width: 48,
           height: 48,
           decoration: BoxDecoration(
-            color: AppColors.grey50,
+            color: Theme.of(context).colorScheme.surfaceContainerHighest,
             borderRadius: BorderRadius.circular(8),
           ),
           child: ClipRRect(
@@ -48,7 +48,7 @@ class OrderHistoryItemCard extends StatelessWidget {
                 order.title,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
-                style: AppTextStyles.body16SemiBold.copyWith(color: AppColors.grey900),
+                style: AppTextStyles.body16SemiBold.copyWith(color: Theme.of(context).colorScheme.onSurface),
               ),
               const SizedBox(height: 4),
               Row(
@@ -61,15 +61,15 @@ class OrderHistoryItemCard extends StatelessWidget {
                   Container(
                     width: 4,
                     height: 4,
-                    decoration: const BoxDecoration(
-                      color: AppColors.grey200,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.outlineVariant,
                       shape: BoxShape.circle,
                     ),
                   ),
                   const SizedBox(width: 8),
                   Text(
                     localization.itemsCount(order.itemCount),
-                    style: AppTextStyles.body14Medium.copyWith(color: AppColors.grey500),
+                    style: AppTextStyles.body14Medium.copyWith(color: Theme.of(context).colorScheme.onSurface),
                   ),
                 ],
               ),
