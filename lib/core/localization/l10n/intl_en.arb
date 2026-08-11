@@ -271,5 +271,8 @@
       }
     }
   },
-  "language": "Language"
+  "language": "Language",
+  "searchPageTitle": "Search",
+  "searchHint": "Search",
+  "recentSearchesTitle": "Recent Searches"
 }

@@ -283,6 +283,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "products": MessageLookupByLibrary.simpleMessage("Products"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
+    "recentSearchesTitle": MessageLookupByLibrary.simpleMessage(
+      "Recent Searches",
+    ),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "By clicking Register, you agree to our",
     ),
@@ -317,6 +320,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "Search country or code",
     ),
+    "searchHint": MessageLookupByLibrary.simpleMessage("Search"),
+    "searchPageTitle": MessageLookupByLibrary.simpleMessage("Search"),
     "seeAllButton": MessageLookupByLibrary.simpleMessage("See all"),
     "selectAddressMessage": MessageLookupByLibrary.simpleMessage(
       "Select an address on the map",

@@ -1669,6 +1669,26 @@ class S {
   String get language {
     return Intl.message('Language', name: 'language', desc: '', args: []);
   }
+
+  /// `Search`
+  String get searchPageTitle {
+    return Intl.message('Search', name: 'searchPageTitle', desc: '', args: []);
+  }
+
+  /// `Search`
+  String get searchHint {
+    return Intl.message('Search', name: 'searchHint', desc: '', args: []);
+  }
+
+  /// `Recent Searches`
+  String get recentSearchesTitle {
+    return Intl.message(
+      'Recent Searches',
+      name: 'recentSearchesTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
