@@ -2,7 +2,7 @@ import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart'
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
-import 'package:bazar_group_1/features/cart_checkout/presentation/notifiers/delivery_date_time_notifier.dart';
+import 'package:bazar_group_1/features/cart_checkout/presentation/providers/cart_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';

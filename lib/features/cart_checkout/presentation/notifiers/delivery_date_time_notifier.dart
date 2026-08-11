@@ -80,8 +80,3 @@ class DeliveryDateTimeNotifier extends Notifier<DeliveryDateTimeState> {
     );
   }
 }
-
-final deliveryDateTimeNotifierProvider =
-    NotifierProvider<DeliveryDateTimeNotifier, DeliveryDateTimeState>(
-      DeliveryDateTimeNotifier.new,
-    );

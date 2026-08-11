@@ -1,14 +1,10 @@
-// ignore_for_file: deprecated_member_use
-
-import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
-import 'package:bazar_group_1/core/components/inputs/app_text_form_field.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
-import 'package:bazar_group_1/features/cart_checkout/presentation/notifiers/payment_notifier.dart';
+import 'package:bazar_group_1/features/cart_checkout/presentation/providers/cart_providers.dart';
+import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/confirm_order/credit_card_form_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -142,7 +138,6 @@ class __PaymentMethodBottomSheetContentState
             ),
             const SizedBox(height: 16),
 
-            // Cash Tile
             _PaymentTile(
               title: S.of(context).cashOnDelivery,
               subtitle: S.of(context).payWithCashWhenOrderArrives,
@@ -153,7 +148,6 @@ class __PaymentMethodBottomSheetContentState
             ),
             const SizedBox(height: 12),
 
-            // Card Tile
             _PaymentTile(
               title: S.of(context).creditDebitCard,
               subtitle: S.of(context).paySecurelyWithCard,
@@ -165,114 +159,19 @@ class __PaymentMethodBottomSheetContentState
               onTap: _onToggleCard,
             ),
 
-            // Expanded Card Form
             AnimatedCrossFade(
               duration: const Duration(milliseconds: 200),
               crossFadeState:
                   (_selectedType == PaymentType.card && _isCardExpanded)
                   ? CrossFadeState.showFirst
                   : CrossFadeState.showSecond,
-              firstChild: Padding(
-                padding: const EdgeInsets.only(top: 16),
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      AppFormTextField(
-                        label: S.of(context).cardholderNameLabel,
-                        placeholder: S.of(context).cardholderNamePlaceholder,
-                        controller: _cardHolderController,
-                        textInputAction: TextInputAction.next,
-                        validator: (value) {
-                          if (value == null || value.trim().isEmpty) {
-                            return S.of(context).cardholderNameRequired;
-                          }
-                          return null;
-                        },
-                      ),
-                      AppFormTextField(
-                        label: S.of(context).cardNumberLabel,
-                        placeholder: S.of(context).cardNumberPlaceholder,
-                        controller: _cardNumberController,
-                        keyboardType: TextInputType.number,
-                        textInputAction: TextInputAction.next,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly,
-                          LengthLimitingTextInputFormatter(16),
-                        ],
-                        validator: (value) {
-                          if (value == null || value.length != 16) {
-                            return S.of(context).cardNumberInvalid;
-                          }
-                          return null;
-                        },
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: AppFormTextField(
-                              label: S.of(context).expiryDateLabel,
-                              placeholder: S.of(context).expiryDatePlaceholder,
-                              controller: _expiryDateController,
-                              keyboardType: TextInputType.datetime,
-                              inputFormatters: [
-                                _ExpiryDateTextInputFormatter(),
-                              ],
-                              validator: (value) {
-                                if (value == null || value.trim().isEmpty) {
-                                  return S.of(context).expiryDateRequired;
-                                }
-                                final trimmed = value.trim();
-                                final regex = RegExp(
-                                  r'^(0[1-9]|1[0-2])\/(\d{2})$',
-                                );
-                                if (!regex.hasMatch(trimmed)) {
-                                  return S.of(context).expiryDateFormatInvalid;
-                                }
-                                final match = regex.firstMatch(trimmed)!;
-                                final month = int.parse(match.group(1)!);
-                                final year = int.parse('20${match.group(2)}');
-                                final now = DateTime.now();
-                                final cardExpiry = DateTime(year, month + 1, 0);
-                                if (cardExpiry.isBefore(
-                                  DateTime(now.year, now.month, 1),
-                                )) {
-                                  return S.of(context).cardHasExpired;
-                                }
-                                return null;
-                              },
-                            ),
-                          ),
-                          Expanded(
-                            child: AppFormTextField(
-                              label: S.of(context).cvvLabel,
-                              placeholder: S.of(context).cvvPlaceholder,
-                              controller: _cvvController,
-                              keyboardType: TextInputType.number,
-                              obscureText: true,
-                              textInputAction: TextInputAction.done,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly,
-                                LengthLimitingTextInputFormatter(3),
-                              ],
-                              validator: (value) {
-                                if (value == null || value.length != 3) {
-                                  return S.of(context).cvvInvalid;
-                                }
-                                return null;
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 16),
-                      LargePrimaryButton(
-                        label: S.of(context).confirmPaymentMethodButton,
-                        onPressed: _onConfirmCard,
-                      ),
-                    ],
-                  ),
-                ),
+              firstChild: CreditCardFormWidget(
+                formKey: _formKey,
+                cardHolderController: _cardHolderController,
+                cardNumberController: _cardNumberController,
+                expiryDateController: _expiryDateController,
+                cvvController: _cvvController,
+                onConfirm: _onConfirmCard,
               ),
               secondChild: const SizedBox.shrink(),
             ),
@@ -387,58 +286,3 @@ class _PaymentTile extends StatelessWidget {
   }
 }
 
-///class to automatically add the "/" in expiry date
-class _ExpiryDateTextInputFormatter extends TextInputFormatter {
-  @override
-  TextEditingValue formatEditUpdate(
-    TextEditingValue oldValue,
-    TextEditingValue newValue,
-  ) {
-    final oldText = oldValue.text;
-    final newText = newValue.text;
-
-    if (newText.length < oldText.length) {
-      return newValue;
-    }
-
-    var clean = newText.replaceAll(RegExp(r'\D'), '');
-    if (clean.isEmpty) {
-      return const TextEditingValue(text: '');
-    }
-
-    if (clean.length == 1 && int.parse(clean) > 1) {
-      clean = '0$clean';
-    }
-
-    if (clean.length >= 2) {
-      final month = int.tryParse(clean.substring(0, 2)) ?? 0;
-      if (month > 12) {
-        clean = '12${clean.substring(2)}';
-      } else if (month == 0) {
-        clean = '01${clean.substring(2)}';
-      }
-    }
-
-    if (clean.length > 4) {
-      clean = clean.substring(0, 4);
-    }
-
-    final buffer = StringBuffer();
-    for (int i = 0; i < clean.length; i++) {
-      if (i == 2) {
-        buffer.write('/');
-      }
-      buffer.write(clean[i]);
-    }
-
-    if (clean.length == 2 && !buffer.toString().endsWith('/')) {
-      buffer.write('/');
-    }
-
-    final string = buffer.toString();
-    return TextEditingValue(
-      text: string,
-      selection: TextSelection.collapsed(offset: string.length),
-    );
-  }
-}

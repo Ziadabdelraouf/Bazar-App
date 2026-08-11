@@ -2,7 +2,7 @@ import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
-import 'package:bazar_group_1/features/cart_checkout/presentation/notifiers/cart_notifier.dart';
+import 'package:bazar_group_1/features/cart_checkout/presentation/providers/cart_providers.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/cart_checkout_bottom_bar.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/cart_items_list.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/empty_cart_widget.dart';

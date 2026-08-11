@@ -1,5 +1,5 @@
 import 'package:bazar_group_1/features/cart_checkout/domain/entities/cart_item.dart';
-import 'package:bazar_group_1/features/cart_checkout/presentation/notifiers/cart_notifier.dart';
+import 'package:bazar_group_1/features/cart_checkout/presentation/providers/cart_providers.dart';
 import 'package:bazar_group_1/features/home/presentation/providers/bottom_nav_provider.dart';
 import 'package:bazar_group_1/features/home/presentation/providers/offers_provider.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/special_offer_card.dart';

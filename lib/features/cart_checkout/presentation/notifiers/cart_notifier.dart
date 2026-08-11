@@ -61,6 +61,3 @@ class CartNotifier extends AsyncNotifier<List<CartItem>> {
     });
   }
 }
-
-final cartNotifierProvider =
-    AsyncNotifierProvider<CartNotifier, List<CartItem>>(CartNotifier.new);

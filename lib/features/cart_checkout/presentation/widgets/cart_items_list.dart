@@ -1,5 +1,5 @@
 import 'package:bazar_group_1/features/cart_checkout/domain/entities/cart_item.dart';
-import 'package:bazar_group_1/features/cart_checkout/presentation/notifiers/cart_notifier.dart';
+import 'package:bazar_group_1/features/cart_checkout/presentation/providers/cart_providers.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/cart_item_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

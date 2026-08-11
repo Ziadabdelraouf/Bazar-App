@@ -29,7 +29,3 @@ class PaymentNotifier extends Notifier<PaymentMethodState> {
   }
 }
 
-final paymentNotifierProvider =
-    NotifierProvider<PaymentNotifier, PaymentMethodState>(
-  PaymentNotifier.new,
-);
