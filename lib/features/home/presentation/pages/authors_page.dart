@@ -1,6 +1,10 @@
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import 'package:bazar_group_1/features/search/presentation/widgets/inline_search_field.dart';
+import 'package:bazar_group_1/features/search/presentation/widgets/recent_searches_list.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../domain/entities/author.dart';
 import '../providers/authors_provider.dart';
 import '../widgets/author_list_item.dart';
@@ -39,73 +43,99 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
           children: [
             _buildAppBar(context),
 
-            if (_showSearch) _buildSearchField(),
-
-            Padding(
-              padding: const EdgeInsets.fromLTRB(24, 10, 24, 0),
-              child: Text(
-                'Check the authors',
-                style: TextStyle(
-                  fontSize: 13,
-                  color: colorScheme.onSurfaceVariant,
+            if (_showSearch)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(24, 4, 24, 12),
+                child: InlineSearchField(
+                  hintText: S.of(context).searchHint,
+                  onChanged: (value) {
+                    setState(() {
+                      _searchQuery = value.trim();
+                    });
+                  },
                 ),
               ),
-            ),
 
-            Padding(
-              padding: const EdgeInsets.fromLTRB(24, 4, 24, 18),
-              child: Text(
-                'Authors',
-                style: TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w700,
-                  color: colorScheme.onSurface,
+            if (_showSearch && _searchQuery.isEmpty)
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: RecentSearchesList(
+                    onTapRecent: (value) {
+                      setState(() {
+                        _searchQuery = value;
+                      });
+                    },
+                  ),
+                ),
+              )
+            else ...[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(24, 10, 24, 0),
+                child: Text(
+                  'Check the authors',
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: colorScheme.onSurfaceVariant,
+                  ),
                 ),
               ),
-            ),
 
-            _buildCategories(),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(24, 4, 24, 18),
+                child: Text(
+                  'Authors',
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w700,
+                    color: colorScheme.onSurface,
+                  ),
+                ),
+              ),
 
-            const SizedBox(height: 18),
+              _buildCategories(),
 
-            Expanded(
-              child: authorsAsync.when(
-                loading: () {
-                  return const Center(child: CircularProgressIndicator());
-                },
-                error: (error, stackTrace) {
-                  return _buildErrorState(context);
-                },
-                data: (authors) {
-                  final filteredAuthors = _filterAuthors(authors);
+              const SizedBox(height: 18),
 
-                  if (filteredAuthors.isEmpty) {
-                    return Center(
-                      child: Text(
-                        'No authors found',
-                        style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
+              Expanded(
+                child: authorsAsync.when(
+                  loading: () {
+                    return const Center(child: CircularProgressIndicator());
+                  },
+                  error: (error, stackTrace) {
+                    return _buildErrorState(context);
+                  },
+                  data: (authors) {
+                    final filteredAuthors = _filterAuthors(authors);
+
+                    if (filteredAuthors.isEmpty) {
+                      return Center(
+                        child: Text(
+                          'No authors found',
+                          style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
+                        ),
+                      );
+                    }
+
+                    return RefreshIndicator(
+                      onRefresh: () {
+                        return ref.refresh(authorsProvider.future);
+                      },
+                      child: ListView.separated(
+                        padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+                        itemCount: filteredAuthors.length,
+                        separatorBuilder: (context, index) {
+                          return const SizedBox(height: 20);
+                        },
+                        itemBuilder: (context, index) {
+                          return AuthorListItem(author: filteredAuthors[index]);
+                        },
                       ),
                     );
-                  }
-
-                  return RefreshIndicator(
-                    onRefresh: () {
-                      return ref.refresh(authorsProvider.future);
-                    },
-                    child: ListView.separated(
-                      padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
-                      itemCount: filteredAuthors.length,
-                      separatorBuilder: (context, index) {
-                        return const SizedBox(height: 20);
-                      },
-                      itemBuilder: (context, index) {
-                        return AuthorListItem(author: filteredAuthors[index]);
-                      },
-                    ),
-                  );
-                },
+                  },
+                ),
               ),
-            ),
+            ],
           ],
         ),
       ),
@@ -148,47 +178,19 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
                 }
               });
             },
-            icon: Icon(
-              _showSearch ? Icons.close : Icons.search,
-              size: 25,
-              color: Theme.of(context).colorScheme.onSurface,
-            ),
+            icon: _showSearch
+                ? Icon(Icons.close, size: 25, color: Theme.of(context).colorScheme.onSurface)
+                : SvgPicture.asset(
+                    AppIcons.search,
+                    width: 25,
+                    height: 25,
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).colorScheme.onSurface,
+                      BlendMode.srcIn,
+                    ),
+                  ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildSearchField() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 4, 24, 12),
-      child: TextField(
-        autofocus: true,
-        onChanged: (value) {
-          setState(() {
-            _searchQuery = value.trim();
-          });
-        },
-        decoration: InputDecoration(
-          hintText: 'Search authors',
-          hintStyle: TextStyle(
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
-          ),
-          prefixIcon: Icon(
-            Icons.search,
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
-          ),
-          filled: true,
-          fillColor: Theme.of(context).colorScheme.surfaceContainerHighest,
-          contentPadding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 12,
-          ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide.none,
-          ),
-        ),
       ),
     );
   }

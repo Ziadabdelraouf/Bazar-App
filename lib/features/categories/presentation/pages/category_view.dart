@@ -1,9 +1,12 @@
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
+import 'package:bazar_group_1/features/search/presentation/providers/search_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_group_1/features/categories/presentation/providers/category_providers.dart';
 import 'package:bazar_group_1/features/categories/presentation/widgets/category_tabs_bar.dart';
 import 'package:bazar_group_1/features/categories/presentation/widgets/category_book_card.dart';
+import 'package:bazar_group_1/features/search/presentation/widgets/inline_search_field.dart';
+import 'package:bazar_group_1/features/search/presentation/widgets/recent_searches_list.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 
 class CategoryView extends ConsumerWidget {
@@ -13,6 +16,8 @@ class CategoryView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final categoriesAsync = ref.watch(categoriesProvider);
     final booksAsync = ref.watch(categoryBooksProvider);
+    final showSearch = ref.watch(bookSearchShowProvider);
+    final searchQuery = ref.watch(bookSearchQueryProvider);
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -20,70 +25,109 @@ class CategoryView extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 16),
-          categoriesAsync.when(
-            loading: () => const SizedBox(
-              height: 28,
-              child: Center(child: CircularProgressIndicator(strokeWidth: 2)),
-            ),
-            error: (error, stackTrace) => const SizedBox(height: 28),
-            data: (categories) => CategoryTabsBar(categories: categories),
-          ),
-          const SizedBox(height: 38),
-          Expanded(
-            child: booksAsync.when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (error, stackTrace) =>
-                  Center(child: Text(S.of(context).couldNotLoadVendors)),
-              data: (books) {
-                if (books.isEmpty) {
-                  return Center(child: Text(S.of(context).noVendorsFound));
-                }
-
-                final crossAxisCount = context.responsiveValue<int>(
-                  mobile: 2,
-                  tablet: 4,
-                  desktop: 6,
-                );
-                final mainAxisSpacing = context.responsiveValue<double>(
-                  mobile: 20.0,
-                  tablet: 16.0,
-                  desktop: 14.0,
-                );
-
-                return LayoutBuilder(
-                  builder: (context, constraints) {
-                    const crossAxisSpacing = 11.0;
-                    const textBlockHeight = 56.0;
-
-                    final cellWidth = (constraints.maxWidth -
-                            crossAxisSpacing * (crossAxisCount - 1)) /
-                        crossAxisCount;
-                    final childAspectRatio =
-                        cellWidth / (cellWidth + textBlockHeight);
-
-                    return GridView.builder(
-                      gridDelegate:
-                          SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: crossAxisCount,
-                        crossAxisSpacing: crossAxisSpacing,
-                        mainAxisSpacing: mainAxisSpacing,
-                        childAspectRatio: childAspectRatio,
-                      ),
-                      itemCount: books.length,
-                      itemBuilder: (context, index) {
-                        final book = books[index];
-                        return CategoryBookCard(
-                          title: book.title,
-                          price: '\$${book.price.toStringAsFixed(2)}',
-                          imagePath: book.imageUrl,
-                        );
-                      },
-                    );
-                  },
-                );
+          if (showSearch) ...[
+            InlineSearchField(
+              hintText: S.of(context).searchHint,
+              onChanged: (value) {
+                ref.read(bookSearchQueryProvider.notifier).state =
+                    value.trim();
               },
             ),
-          ),
+            const SizedBox(height: 12),
+          ],
+          if (showSearch && searchQuery.isEmpty)
+            Expanded(
+              child: RecentSearchesList(
+                onTapRecent: (value) {
+                  ref.read(bookSearchQueryProvider.notifier).state = value;
+                },
+              ),
+            )
+          else ...[
+            if (!showSearch) ...[
+              categoriesAsync.when(
+                loading: () => const SizedBox(
+                  height: 28,
+                  child: Center(
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  ),
+                ),
+                error: (error, stackTrace) => const SizedBox(height: 28),
+                data: (categories) => CategoryTabsBar(categories: categories),
+              ),
+              const SizedBox(height: 38),
+            ],
+            Expanded(
+              child: booksAsync.when(
+                loading: () =>
+                    const Center(child: CircularProgressIndicator()),
+                error: (error, stackTrace) =>
+                    Center(child: Text(S.of(context).couldNotLoadVendors)),
+                data: (books) {
+                  final filteredBooks = searchQuery.isEmpty
+                      ? books
+                      : books
+                          .where((b) => b.title
+                              .toLowerCase()
+                              .contains(searchQuery.toLowerCase()))
+                          .toList();
+
+                  if (filteredBooks.isEmpty) {
+                    return Center(
+                      child: Text(S.of(context).noVendorsFound),
+                    );
+                  }
+
+                  final crossAxisCount = context.responsiveValue<int>(
+                    mobile: 2,
+                    tablet: 4,
+                    desktop: 6,
+                  );
+                  final mainAxisSpacing = context.responsiveValue<double>(
+                    mobile: 20.0,
+                    tablet: 16.0,
+                    desktop: 14.0,
+                  );
+
+                  return LayoutBuilder(
+                    builder: (context, constraints) {
+                      const crossAxisSpacing = 11.0;
+                      const textBlockHeight = 56.0;
+
+                      final cellWidth = (constraints.maxWidth -
+                              crossAxisSpacing * (crossAxisCount - 1)) /
+                          crossAxisCount;
+                      final childAspectRatio =
+                          cellWidth / (cellWidth + textBlockHeight);
+
+                      return GridView.builder(
+                        gridDelegate:
+                            SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: crossAxisCount,
+                          crossAxisSpacing: crossAxisSpacing,
+                          mainAxisSpacing: mainAxisSpacing,
+                          childAspectRatio: childAspectRatio,
+                        ),
+                        itemCount: filteredBooks.length,
+                        itemBuilder: (context, index) {
+                          final book = filteredBooks[index];
+                          return CategoryBookCard(
+                            book: book,
+                            onBeforeOpen: showSearch
+                                ? () {
+                                    ref.read(searchRepositoryProvider).addRecentSearch(searchQuery);
+                                    ref.invalidate(recentSearchesProvider);
+                                  }
+                                : null,
+                          );
+                        },
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
+          ],
         ],
       ),
     );

@@ -1,26 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/features/categories/domain/entities/book.dart';
+import 'package:bazar_group_1/features/home/presentation/pages/detail_menu_page.dart';
 
 class CategoryBookCard extends StatelessWidget {
-  final String title;
-  final String price;
-  final String imagePath;
-  final VoidCallback? onTap;
+  final Book book;
+  final VoidCallback? onBeforeOpen;
 
-  const CategoryBookCard({
-    super.key,
-    required this.title,
-    required this.price,
-    required this.imagePath,
-    this.onTap,
-  });
+  const CategoryBookCard({super.key, required this.book, this.onBeforeOpen});
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final priceText = '\$${book.price.toStringAsFixed(2)}';
 
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        onBeforeOpen?.call();
+        showModalBottomSheet(
+          backgroundColor: colorScheme.surface,
+          context: context,
+          isScrollControlled: true,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+          ),
+          builder: (context) => DetailMenuPage(
+            title: book.title,
+            price: priceText,
+            imagePath: book.imageUrl,
+            brandLogo: AppIcons.goodDayVector,
+          ),
+        );
+      },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -33,9 +45,9 @@ class CategoryBookCard extends StatelessWidget {
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: imagePath.isNotEmpty
+                child: book.imageUrl.isNotEmpty
                     ? Image.network(
-                        imagePath,
+                        book.imageUrl,
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) =>
                             const Icon(Icons.broken_image),
@@ -46,7 +58,7 @@ class CategoryBookCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            title,
+            book.title,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: AppTextStyles.body14Medium.copyWith(
@@ -55,7 +67,7 @@ class CategoryBookCard extends StatelessWidget {
           ),
           const SizedBox(height: 2),
           Text(
-            price,
+            priceText,
             style: AppTextStyles.body14Bold.copyWith(
               color: colorScheme.primary,
             ),

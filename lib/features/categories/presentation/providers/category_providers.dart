@@ -20,3 +20,6 @@ final categoryBooksProvider = FutureProvider<List<Book>>((ref) async {
   final selectedCategoryId = ref.watch(selectedCategoryIdProvider);
   return repository.getBooks(categoryId: selectedCategoryId);
 });
+
+final bookSearchShowProvider = StateProvider<bool>((ref) => false);
+final bookSearchQueryProvider = StateProvider<String>((ref) => '');
