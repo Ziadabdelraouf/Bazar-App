@@ -100,7 +100,10 @@ class _DeliveryDateTimeBottomSheetState
 
     final now = DateTime.now();
     final todayStr = DateFormat('d MMM', locale).format(now);
-    final tomorrowStr = DateFormat('d MMM', locale).format(now.add(const Duration(days: 1)));
+    final tomorrowStr = DateFormat(
+      'd MMM',
+      locale,
+    ).format(now.add(const Duration(days: 1)));
 
     String customTitle = S.of(context).pickDateTitle;
     String customSubtitle = S.of(context).pickDateSubtitle;
@@ -109,8 +112,10 @@ class _DeliveryDateTimeBottomSheetState
       customSubtitle = DateFormat('yyyy', locale).format(_customPickedDate!);
     }
 
-    final slot1 = '${S.of(context).betweenTimeSlot} ${S.of(context).timeSlot10AM1PM}';
-    final slot2 = '${S.of(context).betweenTimeSlot} ${S.of(context).timeSlot1PM4PM}';
+    final slot1 =
+        '${S.of(context).betweenTimeSlot} ${S.of(context).timeSlot10AM1PM}';
+    final slot2 =
+        '${S.of(context).betweenTimeSlot} ${S.of(context).timeSlot1PM4PM}';
 
     return SingleChildScrollView(
       child: Padding(
@@ -187,8 +192,10 @@ class _DeliveryDateTimeBottomSheetState
                     title: S.of(context).betweenTimeSlot,
                     subtitle: S.of(context).timeSlot10AM1PM,
                     isSelected:
+                        _selectedTimeSlot == slot1 ||
                         _selectedTimeSlot.contains('10AM') ||
-                        _selectedTimeSlot == slot1,
+                        _selectedTimeSlot.contains('10') ||
+                        _selectedTimeSlot.contains('١٠'),
                     onTap: () {
                       setState(() {
                         _selectedTimeSlot = slot1;
@@ -202,8 +209,10 @@ class _DeliveryDateTimeBottomSheetState
                     title: S.of(context).betweenTimeSlot,
                     subtitle: S.of(context).timeSlot1PM4PM,
                     isSelected:
-                        _selectedTimeSlot.contains('1PM') ||
-                        _selectedTimeSlot == slot2,
+                        _selectedTimeSlot == slot2 ||
+                        _selectedTimeSlot.contains('4PM') ||
+                        _selectedTimeSlot.contains('4') ||
+                        _selectedTimeSlot.contains('٤'),
                     onTap: () {
                       setState(() {
                         _selectedTimeSlot = slot2;
