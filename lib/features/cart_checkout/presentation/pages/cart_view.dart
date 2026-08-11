@@ -1,6 +1,7 @@
 import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/notifiers/cart_notifier.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/cart_checkout_bottom_bar.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/cart_items_list.dart';
@@ -15,6 +16,10 @@ class CartView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cartAsync = ref.watch(cartNotifierProvider);
+
+    void navigateToConfirmOrder() {
+      Navigator.pushNamed(context, AppRoutes.confirmOrder);
+    }
 
     return Scaffold(
       appBar: AppBackBar(
@@ -74,7 +79,7 @@ class CartView extends ConsumerWidget {
                         ),
                         child: CartCheckoutBottomBar(
                           subtotal: subtotal,
-                          onCheckout: () {},
+                          onCheckout: navigateToConfirmOrder,
                         ),
                       ),
                     ),
@@ -87,7 +92,10 @@ class CartView extends ConsumerWidget {
           return Column(
             children: [
               Expanded(child: CartItemsList(items: items)),
-              CartCheckoutBottomBar(subtotal: subtotal, onCheckout: () {}),
+              CartCheckoutBottomBar(
+                subtotal: subtotal,
+                onCheckout: navigateToConfirmOrder,
+              ),
             ],
           );
         },
