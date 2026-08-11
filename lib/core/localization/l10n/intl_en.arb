@@ -271,5 +271,16 @@
       }
     }
   },
-  "language": "Language"
-}
+
+
+  "language": "Language",
+  "addressTitlePlaceholder": "e.g. My Home",
+  "addressTitleRequired": "Please enter an address title",
+  "fullAddressPlaceholder": "Enter your full address",
+  "fullAddressRequired": "Please enter your full address",
+  "addressTypeLabel": "Address Type",
+  "homeAddress": "Home",
+  "officeAddress": "Office",
+
+  "saveAddressButton": "Save Address"
+  }

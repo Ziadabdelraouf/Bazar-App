@@ -73,10 +73,10 @@ class SignUpNotifier extends Notifier<SignUpState> {
       if (authService.currentUser == null &&
           email.isNotEmpty &&
           password.isNotEmpty) {
-        await authService.signUpWithEmailAndPassword(email, password);
-        if (finalName.isNotEmpty) {
+        await authService.signUpWithEmailAndPassword(email, password,finalName);
+        /*if (finalName.isNotEmpty) {
           await authService.currentUser?.updateDisplayName(finalName);
-        }
+        }*/
         await authService.sendEmailVerification();
       } else if (authService.currentUser != null) {
         await authService.sendEmailVerification();
@@ -90,24 +90,14 @@ class SignUpNotifier extends Notifier<SignUpState> {
 
   Future<void> saveSession({String? mobile}) async {
     final email = emailController.text.trim();
-    final password = passwordController.text;
+    //final password = passwordController.text;
     final nameText = nameController.text.trim();
     final storedName = ref.read(nameNotifierProvider);
     final finalName = nameText.isNotEmpty ? nameText : storedName;
 
     final authService = ref.read(authServiceProvider);
 
-    if (authService.currentUser == null &&
-        email.isNotEmpty &&
-        password.isNotEmpty) {
-      try {
-        await authService.signUpWithEmailAndPassword(email, password);
-        if (finalName.isNotEmpty) {
-          await authService.currentUser?.updateDisplayName(finalName);
-        }
-        await authService.sendEmailVerification();
-      } catch (_) {}
-    }
+    
 
     await authService.saveSession(
       email: email.isNotEmpty ? email : null,
