@@ -73,6 +73,39 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "checkoutButton": MessageLookupByLibrary.simpleMessage("Checkout"),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
+    "confirmOrderAddressHeader": MessageLookupByLibrary.simpleMessage(
+      "Address",
+    ),
+    "confirmOrderButton": MessageLookupByLibrary.simpleMessage("Order"),
+    "confirmOrderChangeButton": MessageLookupByLibrary.simpleMessage("Change"),
+    "confirmOrderChooseDateTime": MessageLookupByLibrary.simpleMessage(
+      "Choose date and time",
+    ),
+    "confirmOrderChoosePayment": MessageLookupByLibrary.simpleMessage(
+      "Choose your payment",
+    ),
+    "confirmOrderDateTimeHeader": MessageLookupByLibrary.simpleMessage(
+      "Date and time",
+    ),
+    "confirmOrderDateTimeTitle": MessageLookupByLibrary.simpleMessage(
+      "Date & time",
+    ),
+    "confirmOrderPaymentHeader": MessageLookupByLibrary.simpleMessage(
+      "Payment",
+    ),
+    "confirmOrderPaymentTitle": MessageLookupByLibrary.simpleMessage("Payment"),
+    "confirmOrderPrice": MessageLookupByLibrary.simpleMessage("Price"),
+    "confirmOrderSeeDetails": MessageLookupByLibrary.simpleMessage(
+      "See details",
+    ),
+    "confirmOrderShipping": MessageLookupByLibrary.simpleMessage("Shipping"),
+    "confirmOrderSummaryHeader": MessageLookupByLibrary.simpleMessage(
+      "Summary",
+    ),
+    "confirmOrderTitle": MessageLookupByLibrary.simpleMessage("Confirm Order"),
+    "confirmOrderTotalPayment": MessageLookupByLibrary.simpleMessage(
+      "Total Payment",
+    ),
     "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
     ),

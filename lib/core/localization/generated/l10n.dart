@@ -1711,6 +1711,151 @@ class S {
   String get language {
     return Intl.message('Language', name: 'language', desc: '', args: []);
   }
+
+  /// `Confirm Order`
+  String get confirmOrderTitle {
+    return Intl.message(
+      'Confirm Order',
+      name: 'confirmOrderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get confirmOrderAddressHeader {
+    return Intl.message(
+      'Address',
+      name: 'confirmOrderAddressHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change`
+  String get confirmOrderChangeButton {
+    return Intl.message(
+      'Change',
+      name: 'confirmOrderChangeButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Summary`
+  String get confirmOrderSummaryHeader {
+    return Intl.message(
+      'Summary',
+      name: 'confirmOrderSummaryHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price`
+  String get confirmOrderPrice {
+    return Intl.message('Price', name: 'confirmOrderPrice', desc: '', args: []);
+  }
+
+  /// `Shipping`
+  String get confirmOrderShipping {
+    return Intl.message(
+      'Shipping',
+      name: 'confirmOrderShipping',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Payment`
+  String get confirmOrderTotalPayment {
+    return Intl.message(
+      'Total Payment',
+      name: 'confirmOrderTotalPayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See details`
+  String get confirmOrderSeeDetails {
+    return Intl.message(
+      'See details',
+      name: 'confirmOrderSeeDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date and time`
+  String get confirmOrderDateTimeHeader {
+    return Intl.message(
+      'Date and time',
+      name: 'confirmOrderDateTimeHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date & time`
+  String get confirmOrderDateTimeTitle {
+    return Intl.message(
+      'Date & time',
+      name: 'confirmOrderDateTimeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose date and time`
+  String get confirmOrderChooseDateTime {
+    return Intl.message(
+      'Choose date and time',
+      name: 'confirmOrderChooseDateTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment`
+  String get confirmOrderPaymentHeader {
+    return Intl.message(
+      'Payment',
+      name: 'confirmOrderPaymentHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment`
+  String get confirmOrderPaymentTitle {
+    return Intl.message(
+      'Payment',
+      name: 'confirmOrderPaymentTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose your payment`
+  String get confirmOrderChoosePayment {
+    return Intl.message(
+      'Choose your payment',
+      name: 'confirmOrderChoosePayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order`
+  String get confirmOrderButton {
+    return Intl.message(
+      'Order',
+      name: 'confirmOrderButton',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

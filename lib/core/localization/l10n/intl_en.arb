@@ -275,5 +275,20 @@
       }
     }
   },
-  "language": "Language"
+  "language": "Language",
+  "confirmOrderTitle": "Confirm Order",
+  "confirmOrderAddressHeader": "Address",
+  "confirmOrderChangeButton": "Change",
+  "confirmOrderSummaryHeader": "Summary",
+  "confirmOrderPrice": "Price",
+  "confirmOrderShipping": "Shipping",
+  "confirmOrderTotalPayment": "Total Payment",
+  "confirmOrderSeeDetails": "See details",
+  "confirmOrderDateTimeHeader": "Date and time",
+  "confirmOrderDateTimeTitle": "Date & time",
+  "confirmOrderChooseDateTime": "Choose date and time",
+  "confirmOrderPaymentHeader": "Payment",
+  "confirmOrderPaymentTitle": "Payment",
+  "confirmOrderChoosePayment": "Choose your payment",
+  "confirmOrderButton": "Order"
 }

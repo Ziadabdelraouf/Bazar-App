@@ -221,5 +221,20 @@
       }
     }
   },
-  "language": "اللغة"
+  "language": "اللغة",
+  "confirmOrderTitle": "تأكيد الطلب",
+  "confirmOrderAddressHeader": "العنوان",
+  "confirmOrderChangeButton": "تغيير",
+  "confirmOrderSummaryHeader": "الملخص",
+  "confirmOrderPrice": "السعر",
+  "confirmOrderShipping": "الشحن",
+  "confirmOrderTotalPayment": "إجمالي الدفع",
+  "confirmOrderSeeDetails": "عرض التفاصيل",
+  "confirmOrderDateTimeHeader": "التاريخ والوقت",
+  "confirmOrderDateTimeTitle": "التاريخ والوقت",
+  "confirmOrderChooseDateTime": "اختر التاريخ والوقت",
+  "confirmOrderPaymentHeader": "الدفع",
+  "confirmOrderPaymentTitle": "الدفع",
+  "confirmOrderChoosePayment": "اختر وسيلة الدفع",
+  "confirmOrderButton": "اطلب الآن"
 }

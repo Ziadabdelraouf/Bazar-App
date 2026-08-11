@@ -73,6 +73,35 @@ class MessageLookup extends MessageLookupByLibrary {
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
     ),
+    "confirmOrderAddressHeader": MessageLookupByLibrary.simpleMessage(
+      "العنوان",
+    ),
+    "confirmOrderButton": MessageLookupByLibrary.simpleMessage("اطلب الآن"),
+    "confirmOrderChangeButton": MessageLookupByLibrary.simpleMessage("تغيير"),
+    "confirmOrderChooseDateTime": MessageLookupByLibrary.simpleMessage(
+      "اختر التاريخ والوقت",
+    ),
+    "confirmOrderChoosePayment": MessageLookupByLibrary.simpleMessage(
+      "اختر وسيلة الدفع",
+    ),
+    "confirmOrderDateTimeHeader": MessageLookupByLibrary.simpleMessage(
+      "التاريخ والوقت",
+    ),
+    "confirmOrderDateTimeTitle": MessageLookupByLibrary.simpleMessage(
+      "التاريخ والوقت",
+    ),
+    "confirmOrderPaymentHeader": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "confirmOrderPaymentTitle": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "confirmOrderPrice": MessageLookupByLibrary.simpleMessage("السعر"),
+    "confirmOrderSeeDetails": MessageLookupByLibrary.simpleMessage(
+      "عرض التفاصيل",
+    ),
+    "confirmOrderShipping": MessageLookupByLibrary.simpleMessage("الشحن"),
+    "confirmOrderSummaryHeader": MessageLookupByLibrary.simpleMessage("الملخص"),
+    "confirmOrderTitle": MessageLookupByLibrary.simpleMessage("تأكيد الطلب"),
+    "confirmOrderTotalPayment": MessageLookupByLibrary.simpleMessage(
+      "إجمالي الدفع",
+    ),
     "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
