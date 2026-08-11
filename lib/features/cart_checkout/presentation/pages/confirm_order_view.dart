@@ -1,9 +1,10 @@
 import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
-
+import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/notifiers/cart_notifier.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/notifiers/delivery_date_time_notifier.dart';
+import 'package:bazar_group_1/features/cart_checkout/presentation/notifiers/payment_notifier.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/confirm_order/confirm_order_address_card.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/confirm_order/confirm_order_bottom_bar.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/confirm_order/confirm_order_date_time_card.dart';
@@ -12,11 +13,68 @@ import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/confir
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/confirm_order/delivery_date_time_bottom_sheet.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/confirm_order/payment_details_bottom_sheet.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/notification_icon.dart';
+import 'package:bazar_group_1/features/profile/presentation/providers/location_address_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ConfirmOrderView extends ConsumerWidget {
   const ConfirmOrderView({super.key});
+
+  Future<void> _onOrderPressed(BuildContext context, WidgetRef ref) async {
+    final addressState = ref.read(locationAddressProvider);
+    final isAddressSelected =
+        addressState.addressTitle.isNotEmpty ||
+        addressState.fullAddress.isNotEmpty;
+    if (!isAddressSelected) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please select a delivery address.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
+
+    final dateTimeState = ref.read(deliveryDateTimeNotifierProvider);
+    final isDateTimeSelected = dateTimeState.selectedTimeSlot.isNotEmpty;
+    if (!isDateTimeSelected) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please select a delivery date and time.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
+
+    final paymentState = ref.read(paymentNotifierProvider);
+    final isPaymentSelected =
+        paymentState.type == PaymentType.cash ||
+        (paymentState.type == PaymentType.card &&
+            paymentState.cardNumber.isNotEmpty);
+    if (!isPaymentSelected) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please select and complete a payment method.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
+
+    await ref.read(cartNotifierProvider.notifier).clearCart();
+
+    if (!context.mounted) return;
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Order placed successfully!'),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+
+    Navigator.of(context).pop();
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -52,7 +110,9 @@ class ConfirmOrderView extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   ConfirmOrderAddressCard(
-                    onChangePressed: () {},
+                    onChangePressed: () {
+                      Navigator.of(context).pushNamed(AppRoutes.address);
+                    },
                   ),
                   const SizedBox(height: 16),
                   ConfirmOrderSummaryCard(
@@ -77,7 +137,7 @@ class ConfirmOrderView extends ConsumerWidget {
         ),
       ),
       bottomNavigationBar: ConfirmOrderBottomBar(
-        onOrderPressed: () {},
+        onOrderPressed: () => _onOrderPressed(context, ref),
       ),
     );
   }
