@@ -1,4 +1,5 @@
 import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/notifiers/delivery_date_time_notifier.dart';
@@ -32,11 +33,6 @@ class _DeliveryDateTimeBottomSheetState
   late DateTime _selectedDate;
   late String _selectedTimeSlot;
   DateTime? _customPickedDate;
-
-  final List<String> _timeSlots = const [
-    'Between\n10AM : 1PM',
-    'Between\n1PM : 4PM',
-  ];
 
   @override
   void initState() {
@@ -100,17 +96,21 @@ class _DeliveryDateTimeBottomSheetState
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
     final bottomInset = MediaQuery.of(context).viewInsets.bottom;
+    final locale = Localizations.localeOf(context).languageCode;
 
     final now = DateTime.now();
-    final todayStr = DateFormat('d MMM').format(now);
-    final tomorrowStr = DateFormat('d MMM').format(now.add(const Duration(days: 1)));
+    final todayStr = DateFormat('d MMM', locale).format(now);
+    final tomorrowStr = DateFormat('d MMM', locale).format(now.add(const Duration(days: 1)));
 
-    String customTitle = 'Pick';
-    String customSubtitle = 'a date';
+    String customTitle = S.of(context).pickDateTitle;
+    String customSubtitle = S.of(context).pickDateSubtitle;
     if (_customPickedDate != null) {
-      customTitle = DateFormat('d MMM').format(_customPickedDate!);
-      customSubtitle = DateFormat('yyyy').format(_customPickedDate!);
+      customTitle = DateFormat('d MMM', locale).format(_customPickedDate!);
+      customSubtitle = DateFormat('yyyy', locale).format(_customPickedDate!);
     }
+
+    final slot1 = '${S.of(context).betweenTimeSlot} ${S.of(context).timeSlot10AM1PM}';
+    final slot2 = '${S.of(context).betweenTimeSlot} ${S.of(context).timeSlot1PM4PM}';
 
     return SingleChildScrollView(
       child: Padding(
@@ -136,7 +136,7 @@ class _DeliveryDateTimeBottomSheetState
             ),
             const SizedBox(height: 20),
             Text(
-              'Delivery date',
+              S.of(context).deliveryDateTitle,
               style: AppTextStyles.h5.copyWith(
                 color: theme.colorScheme.onSurface,
               ),
@@ -146,7 +146,7 @@ class _DeliveryDateTimeBottomSheetState
               children: [
                 Expanded(
                   child: _PickerCard(
-                    title: 'Today',
+                    title: S.of(context).today,
                     subtitle: todayStr,
                     isSelected: _selectedDateType == DeliveryDateType.today,
                     onTap: _onSelectToday,
@@ -155,7 +155,7 @@ class _DeliveryDateTimeBottomSheetState
                 const SizedBox(width: 12),
                 Expanded(
                   child: _PickerCard(
-                    title: 'Tomorrow',
+                    title: S.of(context).tomorrow,
                     subtitle: tomorrowStr,
                     isSelected: _selectedDateType == DeliveryDateType.tomorrow,
                     onTap: _onSelectTomorrow,
@@ -174,7 +174,7 @@ class _DeliveryDateTimeBottomSheetState
             ),
             const SizedBox(height: 24),
             Text(
-              'Delivery time',
+              S.of(context).deliveryTimeTitle,
               style: AppTextStyles.h5.copyWith(
                 color: theme.colorScheme.onSurface,
               ),
@@ -184,14 +184,14 @@ class _DeliveryDateTimeBottomSheetState
               children: [
                 Expanded(
                   child: _PickerCard(
-                    title: 'Between',
-                    subtitle: '10AM : 1PM',
+                    title: S.of(context).betweenTimeSlot,
+                    subtitle: S.of(context).timeSlot10AM1PM,
                     isSelected:
-                        _selectedTimeSlot.contains('10AM : 1PM') ||
-                        _selectedTimeSlot == _timeSlots[0],
+                        _selectedTimeSlot.contains('10AM') ||
+                        _selectedTimeSlot == slot1,
                     onTap: () {
                       setState(() {
-                        _selectedTimeSlot = _timeSlots[0];
+                        _selectedTimeSlot = slot1;
                       });
                     },
                   ),
@@ -199,14 +199,14 @@ class _DeliveryDateTimeBottomSheetState
                 const SizedBox(width: 12),
                 Expanded(
                   child: _PickerCard(
-                    title: 'Between',
-                    subtitle: '1PM : 4PM',
+                    title: S.of(context).betweenTimeSlot,
+                    subtitle: S.of(context).timeSlot1PM4PM,
                     isSelected:
-                        _selectedTimeSlot.contains('1PM : 4PM') ||
-                        _selectedTimeSlot == _timeSlots[1],
+                        _selectedTimeSlot.contains('1PM') ||
+                        _selectedTimeSlot == slot2,
                     onTap: () {
                       setState(() {
-                        _selectedTimeSlot = _timeSlots[1];
+                        _selectedTimeSlot = slot2;
                       });
                     },
                   ),
@@ -215,7 +215,7 @@ class _DeliveryDateTimeBottomSheetState
             ),
             const SizedBox(height: 32),
             LargePrimaryButton(
-              label: 'Confirm',
+              label: S.of(context).confirmButton,
               onPressed: () {
                 ref
                     .read(deliveryDateTimeNotifierProvider.notifier)

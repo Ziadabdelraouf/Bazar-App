@@ -1856,6 +1856,346 @@ class S {
       args: [],
     );
   }
+
+  /// `Please select a delivery address.`
+  String get pleaseSelectDeliveryAddress {
+    return Intl.message(
+      'Please select a delivery address.',
+      name: 'pleaseSelectDeliveryAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a delivery date and time.`
+  String get pleaseSelectDeliveryDateTime {
+    return Intl.message(
+      'Please select a delivery date and time.',
+      name: 'pleaseSelectDeliveryDateTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select and complete a payment method.`
+  String get pleaseSelectPaymentMethod {
+    return Intl.message(
+      'Please select and complete a payment method.',
+      name: 'pleaseSelectPaymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order placed successfully!`
+  String get orderPlacedSuccessfully {
+    return Intl.message(
+      'Order placed successfully!',
+      name: 'orderPlacedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select an Address`
+  String get selectAnAddress {
+    return Intl.message(
+      'Select an Address',
+      name: 'selectAnAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose your address to complete the order`
+  String get chooseAddressToCompleteOrder {
+    return Intl.message(
+      'Choose your address to complete the order',
+      name: 'chooseAddressToCompleteOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash on Delivery`
+  String get cashOnDelivery {
+    return Intl.message(
+      'Cash on Delivery',
+      name: 'cashOnDelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay with cash upon delivery`
+  String get payWithCashUponDelivery {
+    return Intl.message(
+      'Pay with cash upon delivery',
+      name: 'payWithCashUponDelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Credit / Debit Card`
+  String get creditDebitCard {
+    return Intl.message(
+      'Credit / Debit Card',
+      name: 'creditDebitCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery date`
+  String get deliveryDateTitle {
+    return Intl.message(
+      'Delivery date',
+      name: 'deliveryDateTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message('Today', name: 'today', desc: '', args: []);
+  }
+
+  /// `Tomorrow`
+  String get tomorrow {
+    return Intl.message('Tomorrow', name: 'tomorrow', desc: '', args: []);
+  }
+
+  /// `Pick`
+  String get pickDateTitle {
+    return Intl.message('Pick', name: 'pickDateTitle', desc: '', args: []);
+  }
+
+  /// `a date`
+  String get pickDateSubtitle {
+    return Intl.message('a date', name: 'pickDateSubtitle', desc: '', args: []);
+  }
+
+  /// `Delivery time`
+  String get deliveryTimeTitle {
+    return Intl.message(
+      'Delivery time',
+      name: 'deliveryTimeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Between`
+  String get betweenTimeSlot {
+    return Intl.message('Between', name: 'betweenTimeSlot', desc: '', args: []);
+  }
+
+  /// `10AM : 1PM`
+  String get timeSlot10AM1PM {
+    return Intl.message(
+      '10AM : 1PM',
+      name: 'timeSlot10AM1PM',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1PM : 4PM`
+  String get timeSlot1PM4PM {
+    return Intl.message(
+      '1PM : 4PM',
+      name: 'timeSlot1PM4PM',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirmButton {
+    return Intl.message('Confirm', name: 'confirmButton', desc: '', args: []);
+  }
+
+  /// `Payment Details`
+  String get paymentDetailsTitle {
+    return Intl.message(
+      'Payment Details',
+      name: 'paymentDetailsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Payment Method`
+  String get selectPaymentMethodTitle {
+    return Intl.message(
+      'Select Payment Method',
+      name: 'selectPaymentMethodTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay with cash when your order arrives`
+  String get payWithCashWhenOrderArrives {
+    return Intl.message(
+      'Pay with cash when your order arrives',
+      name: 'payWithCashWhenOrderArrives',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay securely with your card`
+  String get paySecurelyWithCard {
+    return Intl.message(
+      'Pay securely with your card',
+      name: 'paySecurelyWithCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cardholder Name`
+  String get cardholderNameLabel {
+    return Intl.message(
+      'Cardholder Name',
+      name: 'cardholderNameLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `e.g. Ahmed Mohamed`
+  String get cardholderNamePlaceholder {
+    return Intl.message(
+      'e.g. Ahmed Mohamed',
+      name: 'cardholderNamePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter cardholder name`
+  String get cardholderNameRequired {
+    return Intl.message(
+      'Please enter cardholder name',
+      name: 'cardholderNameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Card Number`
+  String get cardNumberLabel {
+    return Intl.message(
+      'Card Number',
+      name: 'cardNumberLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1234567890123456`
+  String get cardNumberPlaceholder {
+    return Intl.message(
+      '1234567890123456',
+      name: 'cardNumberPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Card number must be 16 digits`
+  String get cardNumberInvalid {
+    return Intl.message(
+      'Card number must be 16 digits',
+      name: 'cardNumberInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expiry Date`
+  String get expiryDateLabel {
+    return Intl.message(
+      'Expiry Date',
+      name: 'expiryDateLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MM/YY`
+  String get expiryDatePlaceholder {
+    return Intl.message(
+      'MM/YY',
+      name: 'expiryDatePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter expiry`
+  String get expiryDateRequired {
+    return Intl.message(
+      'Enter expiry',
+      name: 'expiryDateRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Use MM/YY format`
+  String get expiryDateFormatInvalid {
+    return Intl.message(
+      'Use MM/YY format',
+      name: 'expiryDateFormatInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Card has expired`
+  String get cardHasExpired {
+    return Intl.message(
+      'Card has expired',
+      name: 'cardHasExpired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CVV`
+  String get cvvLabel {
+    return Intl.message('CVV', name: 'cvvLabel', desc: '', args: []);
+  }
+
+  /// `123`
+  String get cvvPlaceholder {
+    return Intl.message('123', name: 'cvvPlaceholder', desc: '', args: []);
+  }
+
+  /// `Enter 3 digits`
+  String get cvvInvalid {
+    return Intl.message(
+      'Enter 3 digits',
+      name: 'cvvInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Payment Method`
+  String get confirmPaymentMethodButton {
+    return Intl.message(
+      'Confirm Payment Method',
+      name: 'confirmPaymentMethodButton',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

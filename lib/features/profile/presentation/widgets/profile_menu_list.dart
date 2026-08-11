@@ -85,7 +85,7 @@ class ProfileMenuList extends ConsumerWidget {
           title: const Text('Dark Mode'),
           trailing: Switch(
             value: isDark,
-            activeColor: primaryColor,
+            activeThumbColor: primaryColor,
             onChanged: (_) {
               ref.read(themeNotifierProvider.notifier).toggleTheme();
             },

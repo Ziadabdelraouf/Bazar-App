@@ -27,8 +27,8 @@ class ConfirmOrderView extends ConsumerWidget {
         addressState.fullAddress.isNotEmpty;
     if (!isAddressSelected) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Please select a delivery address.'),
+        SnackBar(
+          content: Text(S.of(context).pleaseSelectDeliveryAddress),
           behavior: SnackBarBehavior.floating,
         ),
       );
@@ -39,8 +39,8 @@ class ConfirmOrderView extends ConsumerWidget {
     final isDateTimeSelected = dateTimeState.selectedTimeSlot.isNotEmpty;
     if (!isDateTimeSelected) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Please select a delivery date and time.'),
+        SnackBar(
+          content: Text(S.of(context).pleaseSelectDeliveryDateTime),
           behavior: SnackBarBehavior.floating,
         ),
       );
@@ -54,8 +54,8 @@ class ConfirmOrderView extends ConsumerWidget {
             paymentState.cardNumber.isNotEmpty);
     if (!isPaymentSelected) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Please select and complete a payment method.'),
+        SnackBar(
+          content: Text(S.of(context).pleaseSelectPaymentMethod),
           behavior: SnackBarBehavior.floating,
         ),
       );
@@ -67,8 +67,8 @@ class ConfirmOrderView extends ConsumerWidget {
     if (!context.mounted) return;
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Order placed successfully!'),
+      SnackBar(
+        content: Text(S.of(context).orderPlacedSuccessfully),
         behavior: SnackBarBehavior.floating,
       ),
     );
@@ -123,7 +123,7 @@ class ConfirmOrderView extends ConsumerWidget {
                   ),
                   const SizedBox(height: 16),
                   ConfirmOrderDateTimeCard(
-                    title: dateTimeState.formattedDate,
+                    title: dateTimeState.getFormattedDate(context),
                     subtitle: dateTimeState.selectedTimeSlot,
                     onTap: () => showDeliveryDateTimeBottomSheet(context),
                   ),

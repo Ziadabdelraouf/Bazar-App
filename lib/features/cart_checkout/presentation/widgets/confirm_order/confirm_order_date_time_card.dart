@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ConfirmOrderDateTimeCard extends StatelessWidget {
-  final String title;
-  final String subtitle;
+  final String? title;
+  final String? subtitle;
   final VoidCallback? onTap;
 
   const ConfirmOrderDateTimeCard({
     super.key,
-    this.title = 'Date & time',
-    this.subtitle = 'Choose date and time',
+    this.title,
+    this.subtitle,
     this.onTap,
   });
 
@@ -21,6 +21,14 @@ class ConfirmOrderDateTimeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+
+    final displayTitle = (title != null && title!.isNotEmpty)
+        ? title!
+        : S.of(context).confirmOrderDateTimeTitle;
+
+    final displaySubtitle = (subtitle != null && subtitle!.isNotEmpty)
+        ? subtitle!
+        : S.of(context).confirmOrderChooseDateTime;
 
     return Container(
       decoration: BoxDecoration(
@@ -71,14 +79,14 @@ class ConfirmOrderDateTimeCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        title.isNotEmpty ? title : S.of(context).confirmOrderDateTimeTitle,
+                        displayTitle,
                         style: AppTextStyles.body16SemiBold.copyWith(
                           color: theme.colorScheme.onSurface,
                         ),
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        subtitle.isNotEmpty ? subtitle : S.of(context).confirmOrderChooseDateTime,
+                        displaySubtitle,
                         style: AppTextStyles.body14Regular.copyWith(
                           color: isDark ? AppColors.grey400 : AppColors.grey600,
                         ),

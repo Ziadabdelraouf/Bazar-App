@@ -1,3 +1,5 @@
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
@@ -20,6 +22,19 @@ class DeliveryDateTimeState {
       selectedDate: DateTime.now(),
       selectedTimeSlot: 'Between 10AM : 1PM',
     );
+  }
+
+  String getFormattedDate(BuildContext context) {
+    final locale = Localizations.localeOf(context).languageCode;
+    final dateStr = DateFormat('d MMM', locale).format(selectedDate);
+    switch (dateType) {
+      case DeliveryDateType.today:
+        return '${S.of(context).today}, $dateStr';
+      case DeliveryDateType.tomorrow:
+        return '${S.of(context).tomorrow}, $dateStr';
+      case DeliveryDateType.custom:
+        return DateFormat('d MMM yyyy', locale).format(selectedDate);
+    }
   }
 
   String get formattedDate {

@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/cart_checkout/domain/entities/cart_item.dart';
@@ -90,7 +91,7 @@ class PaymentDetailsBottomSheet extends ConsumerWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              'Payment Details',
+              S.of(context).paymentDetailsTitle,
               style: AppTextStyles.h5.copyWith(
                 color: theme.colorScheme.onSurface,
               ),
@@ -114,7 +115,7 @@ class PaymentDetailsBottomSheet extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Price',
+                        S.of(context).confirmOrderPrice,
                         style: AppTextStyles.body16SemiBold.copyWith(
                           color: theme.colorScheme.onSurface,
                           fontWeight: FontWeight.bold,
@@ -172,7 +173,7 @@ class PaymentDetailsBottomSheet extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Shipping',
+                        S.of(context).confirmOrderShipping,
                         style: AppTextStyles.body16SemiBold.copyWith(
                           color: theme.colorScheme.onSurface,
                           fontWeight: FontWeight.bold,
@@ -198,7 +199,7 @@ class PaymentDetailsBottomSheet extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Total Payment',
+                        S.of(context).confirmOrderTotalPayment,
                         style: AppTextStyles.body16SemiBold.copyWith(
                           color: theme.colorScheme.onSurface,
                           fontWeight: FontWeight.bold,

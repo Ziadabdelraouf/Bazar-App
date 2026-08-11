@@ -33,14 +33,14 @@ class ConfirmOrderAddressCard extends ConsumerWidget {
         ? addressTitle!
         : (addressState.addressTitle.isNotEmpty
               ? addressState.addressTitle
-              : 'Select an Address');
+              : S.of(context).selectAnAddress);
 
     final displaySubtitle =
         (addressSubtitle != null && addressSubtitle!.isNotEmpty)
         ? addressSubtitle!
         : (addressState.fullAddress.isNotEmpty
               ? addressState.fullAddress
-              : 'Choose your address to complete the order');
+              : S.of(context).chooseAddressToCompleteOrder);
 
     void handleAddressTap() {
       if (onTap != null) {

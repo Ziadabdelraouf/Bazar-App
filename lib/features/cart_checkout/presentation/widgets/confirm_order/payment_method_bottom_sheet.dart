@@ -2,6 +2,7 @@
 
 import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
 import 'package:bazar_group_1/core/components/inputs/app_text_form_field.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
@@ -128,7 +129,7 @@ class __PaymentMethodBottomSheetContentState
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Select Payment Method',
+                  S.of(context).selectPaymentMethodTitle,
                   style: AppTextStyles.h5.copyWith(
                     color: theme.colorScheme.onSurface,
                   ),
@@ -143,8 +144,8 @@ class __PaymentMethodBottomSheetContentState
 
             // Cash Tile
             _PaymentTile(
-              title: 'Cash on Delivery',
-              subtitle: 'Pay with cash when your order arrives',
+              title: S.of(context).cashOnDelivery,
+              subtitle: S.of(context).payWithCashWhenOrderArrives,
               iconPath: AppIcons.walletFill,
               isSelected: _selectedType == PaymentType.cash,
               trailingIcon: AppIcons.chevronRight,
@@ -154,8 +155,8 @@ class __PaymentMethodBottomSheetContentState
 
             // Card Tile
             _PaymentTile(
-              title: 'Credit / Debit Card',
-              subtitle: 'Pay securely with your card',
+              title: S.of(context).creditDebitCard,
+              subtitle: S.of(context).paySecurelyWithCard,
               iconPath: AppIcons.cardOutline,
               isSelected: _selectedType == PaymentType.card,
               trailingIcon: _isCardExpanded
@@ -178,20 +179,20 @@ class __PaymentMethodBottomSheetContentState
                   child: Column(
                     children: [
                       AppFormTextField(
-                        label: 'Cardholder Name',
-                        placeholder: 'e.g. Ahmed Mohamed',
+                        label: S.of(context).cardholderNameLabel,
+                        placeholder: S.of(context).cardholderNamePlaceholder,
                         controller: _cardHolderController,
                         textInputAction: TextInputAction.next,
                         validator: (value) {
                           if (value == null || value.trim().isEmpty) {
-                            return 'Please enter cardholder name';
+                            return S.of(context).cardholderNameRequired;
                           }
                           return null;
                         },
                       ),
                       AppFormTextField(
-                        label: 'Card Number',
-                        placeholder: '1234567890123456',
+                        label: S.of(context).cardNumberLabel,
+                        placeholder: S.of(context).cardNumberPlaceholder,
                         controller: _cardNumberController,
                         keyboardType: TextInputType.number,
                         textInputAction: TextInputAction.next,
@@ -201,7 +202,7 @@ class __PaymentMethodBottomSheetContentState
                         ],
                         validator: (value) {
                           if (value == null || value.length != 16) {
-                            return 'Card number must be 16 digits';
+                            return S.of(context).cardNumberInvalid;
                           }
                           return null;
                         },
@@ -210,8 +211,8 @@ class __PaymentMethodBottomSheetContentState
                         children: [
                           Expanded(
                             child: AppFormTextField(
-                              label: 'Expiry Date',
-                              placeholder: 'MM/YY',
+                              label: S.of(context).expiryDateLabel,
+                              placeholder: S.of(context).expiryDatePlaceholder,
                               controller: _expiryDateController,
                               keyboardType: TextInputType.datetime,
                               inputFormatters: [
@@ -219,14 +220,14 @@ class __PaymentMethodBottomSheetContentState
                               ],
                               validator: (value) {
                                 if (value == null || value.trim().isEmpty) {
-                                  return 'Enter expiry';
+                                  return S.of(context).expiryDateRequired;
                                 }
                                 final trimmed = value.trim();
                                 final regex = RegExp(
                                   r'^(0[1-9]|1[0-2])\/(\d{2})$',
                                 );
                                 if (!regex.hasMatch(trimmed)) {
-                                  return 'Use MM/YY format';
+                                  return S.of(context).expiryDateFormatInvalid;
                                 }
                                 final match = regex.firstMatch(trimmed)!;
                                 final month = int.parse(match.group(1)!);
@@ -236,7 +237,7 @@ class __PaymentMethodBottomSheetContentState
                                 if (cardExpiry.isBefore(
                                   DateTime(now.year, now.month, 1),
                                 )) {
-                                  return 'Card has expired';
+                                  return S.of(context).cardHasExpired;
                                 }
                                 return null;
                               },
@@ -244,8 +245,8 @@ class __PaymentMethodBottomSheetContentState
                           ),
                           Expanded(
                             child: AppFormTextField(
-                              label: 'CVV',
-                              placeholder: '123',
+                              label: S.of(context).cvvLabel,
+                              placeholder: S.of(context).cvvPlaceholder,
                               controller: _cvvController,
                               keyboardType: TextInputType.number,
                               obscureText: true,
@@ -256,7 +257,7 @@ class __PaymentMethodBottomSheetContentState
                               ],
                               validator: (value) {
                                 if (value == null || value.length != 3) {
-                                  return 'Enter 3 digits';
+                                  return S.of(context).cvvInvalid;
                                 }
                                 return null;
                               },
@@ -266,7 +267,7 @@ class __PaymentMethodBottomSheetContentState
                       ),
                       const SizedBox(height: 16),
                       LargePrimaryButton(
-                        label: 'Confirm Payment Method',
+                        label: S.of(context).confirmPaymentMethodButton,
                         onPressed: _onConfirmCard,
                       ),
                     ],

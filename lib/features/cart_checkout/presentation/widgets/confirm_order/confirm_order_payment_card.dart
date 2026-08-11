@@ -28,12 +28,12 @@ class ConfirmOrderPaymentCard extends ConsumerWidget {
 
     final displayTitle = title ??
         (paymentState.type == PaymentType.cash
-            ? 'Cash on Delivery'
-            : 'Credit / Debit Card');
+            ? S.of(context).cashOnDelivery
+            : S.of(context).creditDebitCard);
 
     final displaySubtitle = subtitle ??
         (paymentState.type == PaymentType.cash
-            ? 'Pay with cash upon delivery'
+            ? S.of(context).payWithCashUponDelivery
             : paymentState.maskedCardNumber);
 
     final iconPath = paymentState.type == PaymentType.cash
