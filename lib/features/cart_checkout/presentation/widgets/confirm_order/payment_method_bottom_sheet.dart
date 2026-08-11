@@ -15,9 +15,9 @@ Future<void> showPaymentMethodBottomSheet(BuildContext context) {
   return showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
-    backgroundColor: Theme.of(context).colorScheme.surface,
+    backgroundColor: Theme.of(context).colorScheme.onSecondary,
     shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
     ),
     builder: (context) => const _PaymentMethodBottomSheetContent(),
   );
@@ -36,6 +36,7 @@ class __PaymentMethodBottomSheetContentState
   final _formKey = GlobalKey<FormState>();
 
   late PaymentType _selectedType;
+  late bool _isCardExpanded;
   late TextEditingController _cardNumberController;
   late TextEditingController _cardHolderController;
   late TextEditingController _expiryDateController;
@@ -46,6 +47,7 @@ class __PaymentMethodBottomSheetContentState
     super.initState();
     final currentState = ref.read(paymentNotifierProvider);
     _selectedType = currentState.type;
+    _isCardExpanded = currentState.type == PaymentType.card;
     _cardNumberController = TextEditingController(
       text: currentState.cardNumber,
     );
@@ -67,22 +69,29 @@ class __PaymentMethodBottomSheetContentState
     super.dispose();
   }
 
-  void _onConfirm() {
-    if (_selectedType == PaymentType.cash) {
-      ref.read(paymentNotifierProvider.notifier).selectCash();
+  void _onSelectCash() {
+    ref.read(paymentNotifierProvider.notifier).selectCash();
+    Navigator.pop(context);
+  }
+
+  void _onToggleCard() {
+    setState(() {
+      _selectedType = PaymentType.card;
+      _isCardExpanded = !_isCardExpanded;
+    });
+  }
+
+  void _onConfirmCard() {
+    if (_formKey.currentState?.validate() ?? false) {
+      ref
+          .read(paymentNotifierProvider.notifier)
+          .selectCard(
+            cardNumber: _cardNumberController.text.trim(),
+            cardHolderName: _cardHolderController.text.trim(),
+            expiryDate: _expiryDateController.text.trim(),
+            cvv: _cvvController.text.trim(),
+          );
       Navigator.pop(context);
-    } else {
-      if (_formKey.currentState?.validate() ?? false) {
-        ref
-            .read(paymentNotifierProvider.notifier)
-            .selectCard(
-              cardNumber: _cardNumberController.text.trim(),
-              cardHolderName: _cardHolderController.text.trim(),
-              expiryDate: _expiryDateController.text.trim(),
-              cvv: _cvvController.text.trim(),
-            );
-        Navigator.pop(context);
-      }
     }
   }
 
@@ -98,7 +107,7 @@ class __PaymentMethodBottomSheetContentState
           left: 16,
           right: 16,
           top: 12,
-          bottom: bottomInset + 16,
+          bottom: bottomInset + 24,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -114,8 +123,7 @@ class __PaymentMethodBottomSheetContentState
                 ),
               ),
             ),
-            const SizedBox(height: 16),
-
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -133,230 +141,245 @@ class __PaymentMethodBottomSheetContentState
             ),
             const SizedBox(height: 16),
 
-            Container(
-              decoration: BoxDecoration(
-                color: _selectedType == PaymentType.cash
-                    ? (isDark
-                          ? AppColors.primary900.withValues(alpha: 0.3)
-                          : AppColors.primary50)
-                    : (isDark
-                          ? theme.colorScheme.surfaceContainerHighest
-                          : AppColors.grey50),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: _selectedType == PaymentType.cash
-                      ? theme.colorScheme.primary
-                      : (isDark ? AppColors.grey700 : AppColors.grey200),
-                  width: _selectedType == PaymentType.cash ? 1.5 : 1.0,
-                ),
-              ),
-              child: RadioListTile<PaymentType>(
-                value: PaymentType.cash,
-                groupValue: _selectedType,
-                onChanged: (value) {
-                  if (value != null) {
-                    setState(() {
-                      _selectedType = value;
-                    });
-                  }
-                },
-                activeColor: theme.colorScheme.primary,
-                title: Text(
-                  'Cash on Delivery',
-                  style: AppTextStyles.body16SemiBold.copyWith(
-                    color: theme.colorScheme.onSurface,
-                  ),
-                ),
-                subtitle: Text(
-                  'Pay with cash when your order arrives',
-                  style: AppTextStyles.body14Regular.copyWith(
-                    color: isDark ? AppColors.grey400 : AppColors.grey600,
-                  ),
-                ),
-                secondary: Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: isDark ? AppColors.primary900 : AppColors.primary50,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Center(
-                    child: SvgPicture.asset(
-                      AppIcons.walletFill,
-                      width: 20,
-                      height: 20,
-                      colorFilter: ColorFilter.mode(
-                        theme.colorScheme.primary,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+            // Cash Tile
+            _PaymentTile(
+              title: 'Cash on Delivery',
+              subtitle: 'Pay with cash when your order arrives',
+              iconPath: AppIcons.walletFill,
+              isSelected: _selectedType == PaymentType.cash,
+              trailingIcon: AppIcons.chevronRight,
+              onTap: _onSelectCash,
             ),
             const SizedBox(height: 12),
-            Container(
-              decoration: BoxDecoration(
-                color: _selectedType == PaymentType.card
-                    ? (isDark
-                          ? AppColors.primary900.withValues(alpha: 0.3)
-                          : AppColors.primary50)
-                    : (isDark
-                          ? theme.colorScheme.surfaceContainerHighest
-                          : AppColors.grey50),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: _selectedType == PaymentType.card
-                      ? theme.colorScheme.primary
-                      : (isDark ? AppColors.grey700 : AppColors.grey200),
-                  width: _selectedType == PaymentType.card ? 1.5 : 1.0,
-                ),
-              ),
-              child: RadioListTile<PaymentType>(
-                value: PaymentType.card,
-                groupValue: _selectedType,
-                onChanged: (value) {
-                  if (value != null) {
-                    setState(() {
-                      _selectedType = value;
-                    });
-                  }
-                },
-                activeColor: theme.colorScheme.primary,
-                title: Text(
-                  'Credit / Debit Card',
-                  style: AppTextStyles.body16SemiBold.copyWith(
-                    color: theme.colorScheme.onSurface,
-                  ),
-                ),
-                subtitle: Text(
-                  'Pay securely with your card',
-                  style: AppTextStyles.body14Regular.copyWith(
-                    color: isDark ? AppColors.grey400 : AppColors.grey600,
-                  ),
-                ),
-                secondary: Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: isDark ? AppColors.primary900 : AppColors.primary50,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Center(
-                    child: SvgPicture.asset(
-                      AppIcons.cardOutline,
-                      width: 20,
-                      height: 20,
-                      colorFilter: ColorFilter.mode(
-                        theme.colorScheme.primary,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+
+            // Card Tile
+            _PaymentTile(
+              title: 'Credit / Debit Card',
+              subtitle: 'Pay securely with your card',
+              iconPath: AppIcons.cardOutline,
+              isSelected: _selectedType == PaymentType.card,
+              trailingIcon: _isCardExpanded
+                  ? AppIcons.chevronDown
+                  : AppIcons.chevronRight,
+              onTap: _onToggleCard,
             ),
 
-            if (_selectedType == PaymentType.card) ...[
-              const SizedBox(height: 16),
-              Form(
-                key: _formKey,
+            // Expanded Card Form
+            AnimatedCrossFade(
+              duration: const Duration(milliseconds: 200),
+              crossFadeState:
+                  (_selectedType == PaymentType.card && _isCardExpanded)
+                  ? CrossFadeState.showFirst
+                  : CrossFadeState.showSecond,
+              firstChild: Padding(
+                padding: const EdgeInsets.only(top: 16),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      AppFormTextField(
+                        label: 'Cardholder Name',
+                        placeholder: 'e.g. Ahmed Mohamed',
+                        controller: _cardHolderController,
+                        textInputAction: TextInputAction.next,
+                        validator: (value) {
+                          if (value == null || value.trim().isEmpty) {
+                            return 'Please enter cardholder name';
+                          }
+                          return null;
+                        },
+                      ),
+                      AppFormTextField(
+                        label: 'Card Number',
+                        placeholder: '1234567890123456',
+                        controller: _cardNumberController,
+                        keyboardType: TextInputType.number,
+                        textInputAction: TextInputAction.next,
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly,
+                          LengthLimitingTextInputFormatter(16),
+                        ],
+                        validator: (value) {
+                          if (value == null || value.length != 16) {
+                            return 'Card number must be 16 digits';
+                          }
+                          return null;
+                        },
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: AppFormTextField(
+                              label: 'Expiry Date',
+                              placeholder: 'MM/YY',
+                              controller: _expiryDateController,
+                              keyboardType: TextInputType.datetime,
+                              inputFormatters: [
+                                _ExpiryDateTextInputFormatter(),
+                              ],
+                              validator: (value) {
+                                if (value == null || value.trim().isEmpty) {
+                                  return 'Enter expiry';
+                                }
+                                final trimmed = value.trim();
+                                final regex = RegExp(
+                                  r'^(0[1-9]|1[0-2])\/(\d{2})$',
+                                );
+                                if (!regex.hasMatch(trimmed)) {
+                                  return 'Use MM/YY format';
+                                }
+                                final match = regex.firstMatch(trimmed)!;
+                                final month = int.parse(match.group(1)!);
+                                final year = int.parse('20${match.group(2)}');
+                                final now = DateTime.now();
+                                final cardExpiry = DateTime(year, month + 1, 0);
+                                if (cardExpiry.isBefore(
+                                  DateTime(now.year, now.month, 1),
+                                )) {
+                                  return 'Card has expired';
+                                }
+                                return null;
+                              },
+                            ),
+                          ),
+                          Expanded(
+                            child: AppFormTextField(
+                              label: 'CVV',
+                              placeholder: '123',
+                              controller: _cvvController,
+                              keyboardType: TextInputType.number,
+                              obscureText: true,
+                              textInputAction: TextInputAction.done,
+                              inputFormatters: [
+                                FilteringTextInputFormatter.digitsOnly,
+                                LengthLimitingTextInputFormatter(3),
+                              ],
+                              validator: (value) {
+                                if (value == null || value.length != 3) {
+                                  return 'Enter 3 digits';
+                                }
+                                return null;
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 16),
+                      LargePrimaryButton(
+                        label: 'Confirm Payment Method',
+                        onPressed: _onConfirmCard,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              secondChild: const SizedBox.shrink(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _PaymentTile extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String iconPath;
+  final String trailingIcon;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  const _PaymentTile({
+    required this.title,
+    required this.subtitle,
+    required this.iconPath,
+    required this.trailingIcon,
+    required this.isSelected,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
+    return Container(
+      decoration: BoxDecoration(
+        color: isSelected
+            ? (isDark
+                  ? AppColors.primary900.withValues(alpha: 0.3)
+                  : AppColors.primary50)
+            : (isDark
+                  ? theme.colorScheme.surfaceContainerHighest
+                  : AppColors.grey50),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: isSelected
+              ? theme.colorScheme.primary
+              : (isDark ? AppColors.grey700 : AppColors.grey200),
+          width: isSelected ? 1.5 : 1.0,
+        ),
+      ),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: isDark ? AppColors.primary900 : AppColors.primary50,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: SvgPicture.asset(
+                    iconPath,
+                    width: 20,
+                    height: 20,
+                    colorFilter: ColorFilter.mode(
+                      theme.colorScheme.primary,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    AppFormTextField(
-                      label: 'Cardholder Name',
-                      placeholder: 'e.g. Ahmed Mohamed',
-                      controller: _cardHolderController,
-                      textInputAction: TextInputAction.next,
-                      validator: (value) {
-                        if (value == null || value.trim().isEmpty) {
-                          return 'Please enter cardholder name';
-                        }
-                        return null;
-                      },
+                    Text(
+                      title,
+                      style: AppTextStyles.body16SemiBold.copyWith(
+                        color: theme.colorScheme.onSurface,
+                      ),
                     ),
-                    AppFormTextField(
-                      label: 'Card Number',
-                      placeholder: '1234567890123456',
-                      controller: _cardNumberController,
-                      keyboardType: TextInputType.number,
-                      textInputAction: TextInputAction.next,
-                      inputFormatters: [
-                        FilteringTextInputFormatter.digitsOnly,
-                        LengthLimitingTextInputFormatter(16),
-                      ],
-                      validator: (value) {
-                        if (value == null || value.length != 16) {
-                          return 'Card number must be 16 digits';
-                        }
-                        return null;
-                      },
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: AppFormTextField(
-                            label: 'Expiry Date',
-                            placeholder: 'MM/YY',
-                            controller: _expiryDateController,
-                            keyboardType: TextInputType.datetime,
-                            inputFormatters: [_ExpiryDateTextInputFormatter()],
-                            validator: (value) {
-                              if (value == null || value.trim().isEmpty) {
-                                return 'Enter expiry';
-                              }
-                              final trimmed = value.trim();
-                              final regex = RegExp(r'^(0[1-9]|1[0-2])\/\d{2}$');
-                              if (!regex.hasMatch(trimmed)) {
-                                return 'Use MM/YY format';
-                              }
-                              final match = regex.firstMatch(trimmed)!;
-                              final month = int.parse(match.group(1)!);
-                              final year = int.parse('20${match.group(2)}');
-                              final now = DateTime.now();
-                              final cardExpiry = DateTime(year, month + 1, 0);
-                              if (cardExpiry.isBefore(
-                                DateTime(now.year, now.month, 1),
-                              )) {
-                                return 'Card has expired';
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                        Expanded(
-                          child: AppFormTextField(
-                            label: 'CVV',
-                            placeholder: '123',
-                            controller: _cvvController,
-                            keyboardType: TextInputType.number,
-                            obscureText: true,
-                            textInputAction: TextInputAction.done,
-                            inputFormatters: [
-                              FilteringTextInputFormatter.digitsOnly,
-                              LengthLimitingTextInputFormatter(3),
-                            ],
-                            validator: (value) {
-                              if (value == null || value.length != 3) {
-                                return 'Enter 3 digits';
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                      ],
+                    const SizedBox(height: 2),
+                    Text(
+                      subtitle,
+                      style: AppTextStyles.body14Regular.copyWith(
+                        color: isDark ? AppColors.grey400 : AppColors.grey600,
+                      ),
                     ),
                   ],
                 ),
               ),
+              const SizedBox(width: 8),
+              SvgPicture.asset(
+                trailingIcon,
+                width: 20,
+                height: 20,
+                colorFilter: ColorFilter.mode(
+                  isDark ? AppColors.grey400 : AppColors.grey600,
+                  BlendMode.srcIn,
+                ),
+              ),
             ],
-
-            const SizedBox(height: 24),
-            LargePrimaryButton(
-              label: 'Confirm Payment Method',
-              onPressed: _onConfirm,
-            ),
-          ],
+          ),
         ),
       ),
     );
