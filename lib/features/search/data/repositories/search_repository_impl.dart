@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:bazar_group_1/features/categories/domain/repositories/category_repository.dart';
 import 'package:bazar_group_1/features/home/domain/repositories/authors_repository.dart';
 import 'package:bazar_group_1/features/home/domain/repositories/vendors_repository.dart';
@@ -9,14 +11,25 @@ class SearchRepositoryImpl implements SearchRepository {
   final CategoryRepository categoryRepository;
   final VendorsRepository vendorsRepository;
   final AuthorsRepository authorsRepository;
-
-  static final List<RecentSearch> _recentSearches = [];
+  final FirebaseFirestore _firestore;
+  final FirebaseAuth _auth;
 
   SearchRepositoryImpl({
     required this.categoryRepository,
     required this.vendorsRepository,
     required this.authorsRepository,
-  });
+    FirebaseFirestore? firestore,
+    FirebaseAuth? auth,
+  })  : _firestore = firestore ?? FirebaseFirestore.instance,
+        _auth = auth ?? FirebaseAuth.instance;
+
+  String? get _userId => _auth.currentUser?.uid;
+
+  CollectionReference<Map<String, dynamic>>? get _recentSearchesCollection {
+    final userId = _userId;
+    if (userId == null) return null;
+    return _firestore.collection('users').doc(userId).collection('recentSearches');
+  }
 
   @override
   Future<List<SearchResult>> search({
@@ -93,17 +106,46 @@ class SearchRepositoryImpl implements SearchRepository {
 
   @override
   Future<List<RecentSearch>> getRecentSearches() async {
-    return _recentSearches.reversed.toList();
+    final collection = _recentSearchesCollection;
+    if (collection == null) return [];
+
+    final snapshot = await collection
+        .orderBy('searchedAt', descending: true)
+        .limit(20)
+        .get();
+
+    return snapshot.docs.map((doc) {
+      final data = doc.data();
+      final timestamp = data['searchedAt'] as Timestamp?;
+      return RecentSearch(
+        query: data['query'] as String? ?? '',
+        searchedAt: timestamp?.toDate() ?? DateTime.now(),
+      );
+    }).toList();
   }
 
   @override
   Future<void> addRecentSearch(String query) async {
-    _recentSearches.removeWhere((r) => r.query == query);
-    _recentSearches.add(RecentSearch(query: query, searchedAt: DateTime.now()));
+    final collection = _recentSearchesCollection;
+    if (collection == null) return;
+
+    final trimmedQuery = query.trim();
+    if (trimmedQuery.isEmpty) return;
+
+    await collection.doc(trimmedQuery.toLowerCase()).set({
+      'query': trimmedQuery,
+      'searchedAt': FieldValue.serverTimestamp(),
+    });
   }
 
   @override
   Future<void> clearRecentSearches() async {
-    _recentSearches.clear();
+    final collection = _recentSearchesCollection;
+    if (collection == null) return;
+
+    final snapshot = await collection.get();
+    for (final doc in snapshot.docs) {
+      await doc.reference.delete();
+    }
   }
 }
