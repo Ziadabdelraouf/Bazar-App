@@ -2,6 +2,7 @@ import 'package:bazar_group_1/features/home/domain/entities/author.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/author_detail_page.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/vendors_search_placeholder_page.dart';
+import 'package:bazar_group_1/features/offers/presentation/pages/offers_page.dart';
 import 'package:bazar_group_1/features/profile/presentation/pages/my_account_page.dart';
 import 'package:bazar_group_1/features/profile/presentation/pages/address_page.dart';
 import 'package:bazar_group_1/features/profile/presentation/pages/help_center_page.dart';
@@ -67,5 +68,7 @@ class AppRouter {
     AppRoutes.orderHistoryPage: (context) => const OrderHistoryPage(),
     AppRoutes.helpCenter: (context) => const HelpCenterPage(),
     AppRoutes.address: (context) => const AddressPage(),
+    AppRoutes.offersPage: (context) => const OffersPage(),
+    
   };
 }
