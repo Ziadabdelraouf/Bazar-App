@@ -1669,6 +1669,16 @@ class S {
   String get language {
     return Intl.message('Language', name: 'language', desc: '', args: []);
   }
+
+  /// `Top of Week`
+  String get topOfWeekTitle {
+    return Intl.message(
+      'Top of Week',
+      name: 'topOfWeekTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

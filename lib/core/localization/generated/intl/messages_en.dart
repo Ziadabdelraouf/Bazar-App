@@ -361,6 +361,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAndDataPolicy": MessageLookupByLibrary.simpleMessage(
       "Terms, Data Policy.",
     ),
+    "topOfWeekTitle": MessageLookupByLibrary.simpleMessage("Top of Week"),
     "vendorsPageTitle": MessageLookupByLibrary.simpleMessage("Vendors"),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage(
       "Verification Code",

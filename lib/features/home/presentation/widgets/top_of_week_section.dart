@@ -1,7 +1,9 @@
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/home/data/models/book_model.dart';
+import 'package:bazar_group_1/features/home/presentation/pages/top_of_week_all_page.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/book_card.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +18,7 @@ class TopOfWeekSection extends StatelessWidget {
       tablet: 220.0,
       desktop: 240.0,
     );
+    final l10n = S.of(context);
 
     return Column(
       children: [
@@ -23,19 +26,30 @@ class TopOfWeekSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Top of Week',
+              l10n.topOfWeekTitle,
               style: AppTextStyles.h5.copyWith(
                 color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
-            Text(
-              'See all',
-              style: AppTextStyles.body14SemiBold.copyWith(
-                color: Theme.of(context).colorScheme.primary,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TopOfWeekAllPage(),
+                  ),
+                );
+              },
+              child: Text(
+                l10n.seeAllButton,
+                style: AppTextStyles.body14SemiBold.copyWith(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
             ),
           ],
         ),
+        const SizedBox(height: 12),
         SizedBox(
           height: sectionHeight,
           child: ListView.separated(
