@@ -71,10 +71,26 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                 ),
                 height: imageHeight,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.outline,
-                  border: Border.all(),
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  border: Border.all(color: Theme.of(context).colorScheme.outline),
                   borderRadius: BorderRadius.circular(16),
                 ),
+                clipBehavior: Clip.antiAlias,
+                child: widget.imagePath.isNotEmpty
+                    ? Image.network(
+                        widget.imagePath,
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) => Icon(
+                          Icons.broken_image,
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
+                          size: 48,
+                        ),
+                      )
+                    : Icon(
+                        Icons.book,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        size: 48,
+                      ),
               ),
             ),
             const SizedBox(height: 16),
