@@ -220,5 +220,13 @@
     "language": "اللغة",
     "searchPageTitle": "بحث",
     "searchHint": "بحث",
-    "recentSearchesTitle": "عمليات البحث الأخيرة"
+    "recentSearchesTitle": "عمليات البحث الأخيرة",
+    "addressTitlePlaceholder": "مثال: منزلي",
+    "addressTitleRequired": "من فضلك أدخل اسم العنوان",
+    "fullAddressPlaceholder": "أدخل عنوانك بالكامل",
+    "fullAddressRequired": "من فضلك أدخل العنوان بالكامل",
+    "addressTypeLabel": "نوع العنوان",
+    "homeAddress": "المنزل",
+    "officeAddress": "العمل",
+    "saveAddressButton": "حفظ العنوان"
 }

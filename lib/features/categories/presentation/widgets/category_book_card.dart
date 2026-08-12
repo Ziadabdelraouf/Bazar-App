@@ -26,6 +26,7 @@ class CategoryBookCard extends StatelessWidget {
             borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
           ),
           builder: (context) => DetailMenuPage(
+            bookId: book.id,
             title: book.title,
             price: priceText,
             imagePath: book.imageUrl,

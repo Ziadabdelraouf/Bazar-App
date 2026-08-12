@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -19,6 +20,7 @@ class AuthService {
   final FlutterSecureStorage _storage;
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
+  final FirebaseFirestore _firestore;
 
   String? _verificationId;
 
@@ -26,9 +28,11 @@ class AuthService {
     FlutterSecureStorage? storage,
     FirebaseAuth? firebaseAuth,
     GoogleSignIn? googleSignIn,
+    FirebaseFirestore? firestore,
   })  : _storage = storage ?? const FlutterSecureStorage(),
         _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
-        _googleSignIn = googleSignIn ?? GoogleSignIn();
+        _googleSignIn = googleSignIn ?? GoogleSignIn(),
+        _firestore=firestore??FirebaseFirestore.instance;
 
   User? get currentUser => _firebaseAuth.currentUser;
 
@@ -47,11 +51,37 @@ class AuthService {
   Future<UserCredential> signUpWithEmailAndPassword(
     String email,
     String password,
+     String? name,
+    
   ) async {
-    return await _firebaseAuth.createUserWithEmailAndPassword(
+     final userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
       email: email,
       password: password,
     );
+    final user = userCredential.user;
+
+    if (user == null) {
+      throw Exception('User was created but Firebase returned no user.');
+    }
+
+    // Save display name in Firebase Authentication
+    if (name != null && name.trim().isNotEmpty) {
+      await user.updateDisplayName(name.trim());
+    }
+
+    // Create the Firestore user profile
+    await _firestore
+        .collection('users')
+        .doc(user.uid)
+        .set({
+      'name': name?.trim() ?? '',
+      'email': email.trim(),
+      'createdAt': FieldValue.serverTimestamp(),
+      'updatedAt': FieldValue.serverTimestamp(),
+    });
+
+    return userCredential;
+    
   }
 
   Future<UserCredential?> signInWithGoogle() async {

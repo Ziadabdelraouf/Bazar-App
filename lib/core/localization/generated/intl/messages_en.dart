@@ -44,6 +44,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "addressNotFound": MessageLookupByLibrary.simpleMessage(
       "Address not found",
     ),
+    "addressTitlePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "e.g. My Home",
+    ),
+    "addressTitleRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter an address title",
+    ),
+    "addressTypeLabel": MessageLookupByLibrary.simpleMessage("Address Type"),
     "addressUnavailable": MessageLookupByLibrary.simpleMessage(
       "Address unavailable",
     ),
@@ -148,6 +155,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "forgotPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "Forgot Password",
+    ),
+    "fullAddressPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Enter your full address",
+    ),
+    "fullAddressRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your full address",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
@@ -316,6 +329,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "retryButton": MessageLookupByLibrary.simpleMessage("Retry"),
     "reviewLabel": MessageLookupByLibrary.simpleMessage("Review"),
     "saveAddressAs": MessageLookupByLibrary.simpleMessage("Save Address As"),
+    "saveAddressButton": MessageLookupByLibrary.simpleMessage("Save Address"),
     "saveChangesButton": MessageLookupByLibrary.simpleMessage("Save Changes"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "Search country or code",

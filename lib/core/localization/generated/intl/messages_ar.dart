@@ -44,6 +44,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "addressNotFound": MessageLookupByLibrary.simpleMessage(
       "العنوان غير موجود",
     ),
+    "addressTitlePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "مثال: منزلي",
+    ),
+    "addressTitleRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل اسم العنوان",
+    ),
+    "addressTypeLabel": MessageLookupByLibrary.simpleMessage("نوع العنوان"),
     "addressUnavailable": MessageLookupByLibrary.simpleMessage(
       "العنوان غير متاح",
     ),
@@ -155,6 +162,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgotPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "نسيت كلمة المرور",
     ),
+    "fullAddressPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "أدخل عنوانك بالكامل",
+    ),
+    "fullAddressRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل العنوان بالكامل",
+    ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
     "helpCenter": MessageLookupByLibrary.simpleMessage("مركز المساعدة"),
@@ -226,7 +239,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
     "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("العروض والخصومات"),
-    "officeAddress": MessageLookupByLibrary.simpleMessage("المكتب"),
+    "officeAddress": MessageLookupByLibrary.simpleMessage("العمل"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
     ),
@@ -328,6 +341,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "retryButton": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
     "reviewLabel": MessageLookupByLibrary.simpleMessage("مراجعة"),
     "saveAddressAs": MessageLookupByLibrary.simpleMessage("احفظ العنوان كـ"),
+    "saveAddressButton": MessageLookupByLibrary.simpleMessage("حفظ العنوان"),
     "saveChangesButton": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",
