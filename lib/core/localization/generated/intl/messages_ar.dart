@@ -228,6 +228,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الجديدة",
     ),
+    "noBooksFound": MessageLookupByLibrary.simpleMessage("لا توجد كتب"),
     "noFavoritesYet": MessageLookupByLibrary.simpleMessage(
       "لا توجد مفضلات بعد",
     ),

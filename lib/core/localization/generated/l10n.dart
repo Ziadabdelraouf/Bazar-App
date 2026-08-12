@@ -1690,6 +1690,16 @@ class S {
     );
   }
 
+  /// `No books found`
+  String get noBooksFound {
+    return Intl.message(
+      'No books found',
+      name: 'noBooksFound',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `e.g. My Home`
   String get addressTitlePlaceholder {
     return Intl.message(

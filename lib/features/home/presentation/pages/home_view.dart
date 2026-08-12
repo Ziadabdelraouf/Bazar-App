@@ -59,7 +59,7 @@ class HomeView extends ConsumerWidget {
 
                             if (filteredBooks.isEmpty) {
                               return Center(
-                                  child: Text(S.of(context).noVendorsFound));
+                                  child: Text(S.of(context).noBooksFound));
                             }
 
                             return GridView.builder(

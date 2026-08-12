@@ -221,6 +221,7 @@
     "searchPageTitle": "بحث",
     "searchHint": "بحث",
     "recentSearchesTitle": "عمليات البحث الأخيرة",
+    "noBooksFound": "لا توجد كتب",
     "addressTitlePlaceholder": "مثال: منزلي",
     "addressTitleRequired": "من فضلك أدخل اسم العنوان",
     "fullAddressPlaceholder": "أدخل عنوانك بالكامل",

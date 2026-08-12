@@ -216,6 +216,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "namePlaceholder": MessageLookupByLibrary.simpleMessage("Your Name"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("Name is required"),
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage("New Password"),
+    "noBooksFound": MessageLookupByLibrary.simpleMessage("No books found"),
     "noFavoritesYet": MessageLookupByLibrary.simpleMessage("No favorites yet"),
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "No offers available",
