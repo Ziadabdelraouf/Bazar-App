@@ -272,6 +272,7 @@
     }
   },
   "language": "Language",
+  "darkMode": "Dark Mode",
   "searchPageTitle": "Search",
   "searchHint": "Search",
   "recentSearchesTitle": "Recent Searches",

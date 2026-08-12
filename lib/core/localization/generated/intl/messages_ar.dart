@@ -123,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "كلمة مرور جديدة",
     ),
     "currentLocation": MessageLookupByLibrary.simpleMessage("موقعي الحالي"),
+    "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
     "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "detailAddressTitle": MessageLookupByLibrary.simpleMessage(

@@ -121,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "New password",
     ),
     "currentLocation": MessageLookupByLibrary.simpleMessage("Current location"),
+    "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "december": MessageLookupByLibrary.simpleMessage("December"),
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("Delivered"),
     "detailAddressTitle": MessageLookupByLibrary.simpleMessage(

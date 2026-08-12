@@ -1670,6 +1670,11 @@ class S {
     return Intl.message('Language', name: 'language', desc: '', args: []);
   }
 
+  /// `Dark Mode`
+  String get darkMode {
+    return Intl.message('Dark Mode', name: 'darkMode', desc: '', args: []);
+  }
+
   /// `Search`
   String get searchPageTitle {
     return Intl.message('Search', name: 'searchPageTitle', desc: '', args: []);

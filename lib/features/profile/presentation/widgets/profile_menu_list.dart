@@ -1,6 +1,7 @@
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
+import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/core/theme/theme_notifier.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/profile_tile.dart';
 import 'package:flutter/material.dart';
@@ -75,19 +76,27 @@ class ProfileMenuList extends ConsumerWidget {
     final menuItems = _getMenuItems(context);
     final themeMode = ref.watch(themeNotifierProvider);
     final isDark = themeMode == ThemeMode.dark;
-    final primaryColor = Theme.of(context).colorScheme.primary;
+    final colorScheme = Theme.of(context).colorScheme;
 
     return Column(
       children: [
         ListTile(
-          leading: Icon(
-            isDark ? Icons.dark_mode : Icons.light_mode,
-            color: primaryColor,
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+          leading: CircleAvatar(
+            radius: 30,
+            backgroundColor: colorScheme.primaryContainer,
+            child: Icon(
+              isDark ? Icons.dark_mode : Icons.light_mode,
+              color: colorScheme.primary,
+            ),
           ),
-          title: const Text('Dark Mode'),
+          title: Text(
+            S.of(context).darkMode,
+            style: AppTextStyles.body16Medium.copyWith(color: colorScheme.onSurface),
+          ),
           trailing: Switch(
             value: isDark,
-            activeThumbColor: primaryColor,
+            activeThumbColor: colorScheme.primary,
             onChanged: (_) {
               ref.read(themeNotifierProvider.notifier).toggleTheme();
             },
@@ -98,7 +107,7 @@ class ProfileMenuList extends ConsumerWidget {
             title: item.title,
             leading: SvgPicture.asset(
               item.icon,
-              colorFilter: ColorFilter.mode(primaryColor, BlendMode.srcIn),
+              colorFilter: ColorFilter.mode(colorScheme.primary, BlendMode.srcIn),
             ),
             onTap: item.onTap,
           );
