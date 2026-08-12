@@ -73,10 +73,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "changePictureButton": MessageLookupByLibrary.simpleMessage(
       "Change Picture",
     ),
+    "changesSavedSuccess": MessageLookupByLibrary.simpleMessage(
+      "Your changes have been saved successfully",
+    ),
     "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
       "Check your inbox and click the link inside to confirm your email address.",
     ),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
+    "confirmChangesMessage": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to save these changes?",
+    ),
+    "confirmChangesTitle": MessageLookupByLibrary.simpleMessage(
+      "Confirm Changes",
+    ),
     "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
     ),

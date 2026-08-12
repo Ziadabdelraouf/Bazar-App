@@ -282,5 +282,9 @@
   "homeAddress": "Home",
   "officeAddress": "Office",
 
-  "saveAddressButton": "Save Address"
+  "saveAddressButton": "Save Address",
+  "confirmChangesTitle": "Confirm Changes",
+
+  "confirmChangesMessage": "Are you sure you want to save these changes?",
+  "changesSavedSuccess": "Your changes have been saved successfully"
   }

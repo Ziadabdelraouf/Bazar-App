@@ -227,5 +227,8 @@
     "homeAddress": "المنزل",
     "officeAddress": "العمل",
 
-    "saveAddressButton": "حفظ العنوان"
+    "saveAddressButton": "حفظ العنوان",
+    "confirmChangesTitle": "تأكيد التغييرات",
+    "confirmChangesMessage": "هل أنت متأكد أنك تريد حفظ هذه التغييرات؟",
+    "changesSavedSuccess": "تم حفظ التغييرات بنجاح"
 }
