@@ -53,7 +53,9 @@ class _FavoriteItemCardState extends ConsumerState<FavoriteItemCard> {
     await Future.delayed(_removeDuration);
 
     if (mounted) {
-      ref.read(favoritesNotifierProvider.notifier).removeFavorite(widget.item.title);
+      await ref
+      .read(favoritesNotifierProvider.notifier)
+      .removeFavorite(widget.item.bookId);
     }
   }
 
@@ -78,6 +80,7 @@ class _FavoriteItemCardState extends ConsumerState<FavoriteItemCard> {
                     borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
                   ),
                   builder: (context) => DetailMenuPage(
+                    bookId: widget.item.bookId,
                     title: widget.item.title,
                     price: '\$${widget.item.price.toStringAsFixed(2)}',
                     imagePath: widget.item.imageUrl ?? '',

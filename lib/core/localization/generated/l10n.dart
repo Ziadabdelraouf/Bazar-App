@@ -1669,6 +1669,66 @@ class S {
   String get language {
     return Intl.message('Language', name: 'language', desc: '', args: []);
   }
+
+  /// `e.g. My Home`
+  String get addressTitlePlaceholder {
+    return Intl.message(
+      'e.g. My Home',
+      name: 'addressTitlePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter an address title`
+  String get addressTitleRequired {
+    return Intl.message(
+      'Please enter an address title',
+      name: 'addressTitleRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your full address`
+  String get fullAddressPlaceholder {
+    return Intl.message(
+      'Enter your full address',
+      name: 'fullAddressPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your full address`
+  String get fullAddressRequired {
+    return Intl.message(
+      'Please enter your full address',
+      name: 'fullAddressRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address Type`
+  String get addressTypeLabel {
+    return Intl.message(
+      'Address Type',
+      name: 'addressTypeLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Address`
+  String get saveAddressButton {
+    return Intl.message(
+      'Save Address',
+      name: 'saveAddressButton',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

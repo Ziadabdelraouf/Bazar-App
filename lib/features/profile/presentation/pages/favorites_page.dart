@@ -42,7 +42,7 @@ class FavoritesPage extends ConsumerWidget {
                       itemBuilder: (context, index) {
                         final item = favorites[index];
                         return FavoriteItemCard(
-                          key: ValueKey(item.title),
+                          key: ValueKey(item.bookId),
                           item: item,
                         );
                       },

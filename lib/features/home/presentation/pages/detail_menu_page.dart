@@ -12,6 +12,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DetailMenuPage extends StatefulWidget {
+  final String bookId;
   final String title;
   final String price;
   final String imagePath;
@@ -19,6 +20,7 @@ class DetailMenuPage extends StatefulWidget {
 
   const DetailMenuPage({
     super.key,
+    required this.bookId,
     required this.title,
     required this.price,
     required this.imagePath,
@@ -88,31 +90,45 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                   ),
                 ),
               Consumer(
-                  builder: (context, ref, child) {
-                    final isFavorited = ref.watch(favoritesNotifierProvider.select(
-                      (favorites) => favorites.any((item) => item.title == widget.title),
-                    ));
+                builder: (context, ref, child) {
+                  final favorites = ref.watch(favoritesNotifierProvider);
 
-                    return FavoriteHeart(
-                      isFavorited: isFavorited,
-                      onTap: () {
-                        final notifier = ref.read(favoritesNotifierProvider.notifier);
+                  final isFavorite = favorites.any(
+                    (item) => item.bookId == widget.bookId,
+                  );
 
-                        if (isFavorited) {
-                          notifier.removeFavorite(widget.title);
-                        } else {
-                          notifier.addFavorite(
-                            FavoriteItem.fromPriceText(
-                              title: widget.title,
-                              priceText: widget.price,
-                              imageUrl: widget.imagePath,
-                            ),
-                          );
-                        }
-                      },
-                    );
-                  },
-                ),
+                  return IconButton(
+                    onPressed: () async {
+                      final notifier =
+                          ref.read(favoritesNotifierProvider.notifier);
+
+                      if (isFavorite) {
+                        await notifier.removeFavorite(widget.bookId);
+                      } else {
+                        await notifier.addFavorite(
+                          FavoriteItem(
+                            bookId: widget.bookId,
+                            title: widget.title,
+                            imageUrl: widget.imagePath,
+                            price: double.tryParse(
+                                  price.replaceAll(RegExp(r'[^0-9.]'), ''),
+                                ) ??
+                                0.0,
+                          ),
+                        );
+                      }
+                    },
+                    icon: Icon(
+                      isFavorite
+                          ? Icons.favorite
+                          : Icons.favorite_border,
+                      color: isFavorite
+                          ? Colors.red
+                          : Theme.of(context).colorScheme.primary,
+                    ),
+                  );
+                },
+              )
               ],
             ),
             SvgPicture.asset(widget.brandLogo),
