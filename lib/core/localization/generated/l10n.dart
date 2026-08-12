@@ -1669,6 +1669,46 @@ class S {
   String get language {
     return Intl.message('Language', name: 'language', desc: '', args: []);
   }
+
+  /// `Notification`
+  String get notificationsTitle {
+    return Intl.message(
+      'Notification',
+      name: 'notificationsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There is no notifications`
+  String get noNotificationsMessage {
+    return Intl.message(
+      'There is no notifications',
+      name: 'noNotificationsMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Notification`
+  String get newNotificationTitle {
+    return Intl.message(
+      'New Notification',
+      name: 'newNotificationTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have a new notification`
+  String get newNotificationBody {
+    return Intl.message(
+      'You have a new notification',
+      name: 'newNotificationBody',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

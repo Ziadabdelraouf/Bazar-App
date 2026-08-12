@@ -217,5 +217,9 @@
         }
       }
     },
-    "language": "اللغة"
+    "language": "اللغة",
+    "notificationsTitle": "الإشعارات",
+    "noNotificationsMessage": "لا توجد إشعارات",
+    "newNotificationTitle": "إشعار جديد",
+    "newNotificationBody": "لديك إشعار جديد"
 }

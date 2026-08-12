@@ -212,17 +212,25 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "namePlaceholder": MessageLookupByLibrary.simpleMessage("اسمك"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
+    "newNotificationBody": MessageLookupByLibrary.simpleMessage(
+      "لديك إشعار جديد",
+    ),
+    "newNotificationTitle": MessageLookupByLibrary.simpleMessage("إشعار جديد"),
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الجديدة",
     ),
     "noFavoritesYet": MessageLookupByLibrary.simpleMessage(
       "لا توجد مفضلات بعد",
     ),
+    "noNotificationsMessage": MessageLookupByLibrary.simpleMessage(
+      "لا توجد إشعارات",
+    ),
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "لا تتوفر عروض حاليًا",
     ),
     "noOrdersYet": MessageLookupByLibrary.simpleMessage("لا توجد طلبات بعد"),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("لا يوجد موردون"),
+    "notificationsTitle": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
     "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("العروض والخصومات"),

@@ -271,5 +271,9 @@
       }
     }
   },
-  "language": "Language"
+  "language": "Language",
+  "notificationsTitle": "Notification",
+  "noNotificationsMessage": "There is no notifications",
+  "newNotificationTitle": "New Notification",
+  "newNotificationBody": "You have a new notification"
 }

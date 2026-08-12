@@ -202,13 +202,23 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "namePlaceholder": MessageLookupByLibrary.simpleMessage("Your Name"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("Name is required"),
+    "newNotificationBody": MessageLookupByLibrary.simpleMessage(
+      "You have a new notification",
+    ),
+    "newNotificationTitle": MessageLookupByLibrary.simpleMessage(
+      "New Notification",
+    ),
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage("New Password"),
     "noFavoritesYet": MessageLookupByLibrary.simpleMessage("No favorites yet"),
+    "noNotificationsMessage": MessageLookupByLibrary.simpleMessage(
+      "There is no notifications",
+    ),
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "No offers available",
     ),
     "noOrdersYet": MessageLookupByLibrary.simpleMessage("No orders yet"),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("No vendors found"),
+    "notificationsTitle": MessageLookupByLibrary.simpleMessage("Notification"),
     "november": MessageLookupByLibrary.simpleMessage("November"),
     "october": MessageLookupByLibrary.simpleMessage("October"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("Offers & Promos"),
