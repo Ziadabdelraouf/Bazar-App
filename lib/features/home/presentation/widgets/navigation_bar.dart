@@ -13,7 +13,7 @@ class BottomNavbar extends ConsumerWidget {
     final selectedIndex = ref.watch(bottomNavIndexProvider);
     return NavigationBar(
       selectedIndex: selectedIndex,
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: Theme.of(context).colorScheme.onSecondary,
       indicatorColor: Colors.transparent,
       elevation: 0,
       onDestinationSelected: (index) {

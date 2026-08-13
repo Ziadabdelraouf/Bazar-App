@@ -2,21 +2,25 @@ import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/detail_menu_page.dart';
+import 'package:bazar_group_1/features/profile/presentation/notifiers/favorites_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BookCard extends StatelessWidget {
+class BookCard extends ConsumerWidget {
+  final String bookId;
   final String title;
   final String price;
   final String imagePath;
   const BookCard({
     super.key,
+    required this.bookId,
     required this.title,
     required this.price,
     required this.imagePath,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context , WidgetRef ref) {
     final cardWidth = context.responsiveValue<double>(
       mobile: 127.0,
       tablet: 140.0,
@@ -33,6 +37,7 @@ class BookCard extends StatelessWidget {
             borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
           ),
           builder: (context) => DetailMenuPage(
+            bookId: bookId,
             title: title,
             price: price,
             imagePath: imagePath,

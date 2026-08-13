@@ -42,7 +42,9 @@ class ProfileMenuList extends ConsumerWidget {
       _ProfileMenuItem(
         title: l10n.offersAndPromos,
         icon: AppIcons.fire,
-        onTap: () {},
+        onTap: () {
+           Navigator.pushNamed(context, AppRoutes.offersPage);
+        },
       ),
       _ProfileMenuItem(
         title: l10n.yourFavourites,
@@ -85,7 +87,7 @@ class ProfileMenuList extends ConsumerWidget {
           title: const Text('Dark Mode'),
           trailing: Switch(
             value: isDark,
-            activeColor: primaryColor,
+            activeThumbColor: primaryColor,
             onChanged: (_) {
               ref.read(themeNotifierProvider.notifier).toggleTheme();
             },

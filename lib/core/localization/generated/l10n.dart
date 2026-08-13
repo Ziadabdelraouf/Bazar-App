@@ -86,6 +86,16 @@ class S {
     );
   }
 
+  /// `Add to Cart`
+  String get addToCartButton {
+    return Intl.message(
+      'Add to Cart',
+      name: 'addToCartButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the '//SignInPage Strings//' key
 
   /// `Welcome Back `
@@ -752,16 +762,6 @@ class S {
     );
   }
 
-  /// `your phone number`
-  String get phoneNumberPlaceholder {
-    return Intl.message(
-      'your phone number',
-      name: 'phoneNumberPlaceholder',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Please enter your phone number`
   String get emptyPhoneNumberError {
     return Intl.message(
@@ -919,6 +919,36 @@ class S {
   /// `Send`
   String get sendButton {
     return Intl.message('Send', name: 'sendButton', desc: '', args: []);
+  }
+
+  /// `Password Reset Link Sent`
+  String get resetLinkSentTitle {
+    return Intl.message(
+      'Password Reset Link Sent',
+      name: 'resetLinkSentTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A password reset link has been sent to your account. Please check your email inbox and spam folder.`
+  String get resetLinkSentDescription {
+    return Intl.message(
+      'A password reset link has been sent to your account. Please check your email inbox and spam folder.',
+      name: 'resetLinkSentDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back to Sign In`
+  String get backToSignInButton {
+    return Intl.message(
+      'Back to Sign In',
+      name: 'backToSignInButton',
+      desc: '',
+      args: [],
+    );
   }
 
   // skipped getter for the '//Create New Password Screen Strings//' key
@@ -1153,6 +1183,38 @@ class S {
     );
   }
 
+  // skipped getter for the '//Cart Screen Strings//' key
+
+  /// `Failed to load cart items`
+  String get failedToLoadCart {
+    return Intl.message(
+      'Failed to load cart items',
+      name: 'failedToLoadCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no products in the cart`
+  String get noProductsInCart {
+    return Intl.message(
+      'There are no products in the cart',
+      name: 'noProductsInCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get cartTotal {
+    return Intl.message('Total', name: 'cartTotal', desc: '', args: []);
+  }
+
+  /// `Checkout`
+  String get checkoutButton {
+    return Intl.message('Checkout', name: 'checkoutButton', desc: '', args: []);
+  }
+
   // skipped getter for the '//Best Vendors Widget Strings//' key
 
   /// `Best Vendors`
@@ -1336,6 +1398,16 @@ class S {
     return Intl.message(
       'Phone Number',
       name: 'phoneNumberLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `your phone number`
+  String get phoneNumberPlaceholder {
+    return Intl.message(
+      'your phone number',
+      name: 'phoneNumberPlaceholder',
       desc: '',
       args: [],
     );
@@ -1675,6 +1747,581 @@ class S {
     return Intl.message(
       'Top of Week',
       name: 'topOfWeekTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Order`
+  String get confirmOrderTitle {
+    return Intl.message(
+      'Confirm Order',
+      name: 'confirmOrderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get confirmOrderAddressHeader {
+    return Intl.message(
+      'Address',
+      name: 'confirmOrderAddressHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change`
+  String get confirmOrderChangeButton {
+    return Intl.message(
+      'Change',
+      name: 'confirmOrderChangeButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Summary`
+  String get confirmOrderSummaryHeader {
+    return Intl.message(
+      'Summary',
+      name: 'confirmOrderSummaryHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price`
+  String get confirmOrderPrice {
+    return Intl.message('Price', name: 'confirmOrderPrice', desc: '', args: []);
+  }
+
+  /// `Shipping`
+  String get confirmOrderShipping {
+    return Intl.message(
+      'Shipping',
+      name: 'confirmOrderShipping',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Payment`
+  String get confirmOrderTotalPayment {
+    return Intl.message(
+      'Total Payment',
+      name: 'confirmOrderTotalPayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See details`
+  String get confirmOrderSeeDetails {
+    return Intl.message(
+      'See details',
+      name: 'confirmOrderSeeDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date and time`
+  String get confirmOrderDateTimeHeader {
+    return Intl.message(
+      'Date and time',
+      name: 'confirmOrderDateTimeHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date & time`
+  String get confirmOrderDateTimeTitle {
+    return Intl.message(
+      'Date & time',
+      name: 'confirmOrderDateTimeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose date and time`
+  String get confirmOrderChooseDateTime {
+    return Intl.message(
+      'Choose date and time',
+      name: 'confirmOrderChooseDateTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment`
+  String get confirmOrderPaymentHeader {
+    return Intl.message(
+      'Payment',
+      name: 'confirmOrderPaymentHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment`
+  String get confirmOrderPaymentTitle {
+    return Intl.message(
+      'Payment',
+      name: 'confirmOrderPaymentTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose your payment`
+  String get confirmOrderChoosePayment {
+    return Intl.message(
+      'Choose your payment',
+      name: 'confirmOrderChoosePayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order`
+  String get confirmOrderButton {
+    return Intl.message(
+      'Order',
+      name: 'confirmOrderButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a delivery address.`
+  String get pleaseSelectDeliveryAddress {
+    return Intl.message(
+      'Please select a delivery address.',
+      name: 'pleaseSelectDeliveryAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a delivery date and time.`
+  String get pleaseSelectDeliveryDateTime {
+    return Intl.message(
+      'Please select a delivery date and time.',
+      name: 'pleaseSelectDeliveryDateTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select and complete a payment method.`
+  String get pleaseSelectPaymentMethod {
+    return Intl.message(
+      'Please select and complete a payment method.',
+      name: 'pleaseSelectPaymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order placed successfully!`
+  String get orderPlacedSuccessfully {
+    return Intl.message(
+      'Order placed successfully!',
+      name: 'orderPlacedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select an Address`
+  String get selectAnAddress {
+    return Intl.message(
+      'Select an Address',
+      name: 'selectAnAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose your address to complete the order`
+  String get chooseAddressToCompleteOrder {
+    return Intl.message(
+      'Choose your address to complete the order',
+      name: 'chooseAddressToCompleteOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash on Delivery`
+  String get cashOnDelivery {
+    return Intl.message(
+      'Cash on Delivery',
+      name: 'cashOnDelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay with cash upon delivery`
+  String get payWithCashUponDelivery {
+    return Intl.message(
+      'Pay with cash upon delivery',
+      name: 'payWithCashUponDelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Credit / Debit Card`
+  String get creditDebitCard {
+    return Intl.message(
+      'Credit / Debit Card',
+      name: 'creditDebitCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery date`
+  String get deliveryDateTitle {
+    return Intl.message(
+      'Delivery date',
+      name: 'deliveryDateTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message('Today', name: 'today', desc: '', args: []);
+  }
+
+  /// `Tomorrow`
+  String get tomorrow {
+    return Intl.message('Tomorrow', name: 'tomorrow', desc: '', args: []);
+  }
+
+  /// `Pick`
+  String get pickDateTitle {
+    return Intl.message('Pick', name: 'pickDateTitle', desc: '', args: []);
+  }
+
+  /// `a date`
+  String get pickDateSubtitle {
+    return Intl.message('a date', name: 'pickDateSubtitle', desc: '', args: []);
+  }
+
+  /// `Delivery time`
+  String get deliveryTimeTitle {
+    return Intl.message(
+      'Delivery time',
+      name: 'deliveryTimeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Between`
+  String get betweenTimeSlot {
+    return Intl.message('Between', name: 'betweenTimeSlot', desc: '', args: []);
+  }
+
+  /// `10AM : 1PM`
+  String get timeSlot10AM1PM {
+    return Intl.message(
+      '10AM : 1PM',
+      name: 'timeSlot10AM1PM',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1PM : 4PM`
+  String get timeSlot1PM4PM {
+    return Intl.message(
+      '1PM : 4PM',
+      name: 'timeSlot1PM4PM',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirmButton {
+    return Intl.message('Confirm', name: 'confirmButton', desc: '', args: []);
+  }
+
+  /// `Payment Details`
+  String get paymentDetailsTitle {
+    return Intl.message(
+      'Payment Details',
+      name: 'paymentDetailsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Payment Method`
+  String get selectPaymentMethodTitle {
+    return Intl.message(
+      'Select Payment Method',
+      name: 'selectPaymentMethodTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay with cash when your order arrives`
+  String get payWithCashWhenOrderArrives {
+    return Intl.message(
+      'Pay with cash when your order arrives',
+      name: 'payWithCashWhenOrderArrives',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay securely with your card`
+  String get paySecurelyWithCard {
+    return Intl.message(
+      'Pay securely with your card',
+      name: 'paySecurelyWithCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cardholder Name`
+  String get cardholderNameLabel {
+    return Intl.message(
+      'Cardholder Name',
+      name: 'cardholderNameLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `e.g. Ahmed Mohamed`
+  String get cardholderNamePlaceholder {
+    return Intl.message(
+      'e.g. Ahmed Mohamed',
+      name: 'cardholderNamePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter cardholder name`
+  String get cardholderNameRequired {
+    return Intl.message(
+      'Please enter cardholder name',
+      name: 'cardholderNameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Card Number`
+  String get cardNumberLabel {
+    return Intl.message(
+      'Card Number',
+      name: 'cardNumberLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1234567890123456`
+  String get cardNumberPlaceholder {
+    return Intl.message(
+      '1234567890123456',
+      name: 'cardNumberPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Card number must be 16 digits`
+  String get cardNumberInvalid {
+    return Intl.message(
+      'Card number must be 16 digits',
+      name: 'cardNumberInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expiry Date`
+  String get expiryDateLabel {
+    return Intl.message(
+      'Expiry Date',
+      name: 'expiryDateLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MM/YY`
+  String get expiryDatePlaceholder {
+    return Intl.message(
+      'MM/YY',
+      name: 'expiryDatePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter expiry`
+  String get expiryDateRequired {
+    return Intl.message(
+      'Enter expiry',
+      name: 'expiryDateRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Use MM/YY format`
+  String get expiryDateFormatInvalid {
+    return Intl.message(
+      'Use MM/YY format',
+      name: 'expiryDateFormatInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Card has expired`
+  String get cardHasExpired {
+    return Intl.message(
+      'Card has expired',
+      name: 'cardHasExpired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CVV`
+  String get cvvLabel {
+    return Intl.message('CVV', name: 'cvvLabel', desc: '', args: []);
+  }
+
+  /// `123`
+  String get cvvPlaceholder {
+    return Intl.message('123', name: 'cvvPlaceholder', desc: '', args: []);
+  }
+
+  /// `Enter 3 digits`
+  String get cvvInvalid {
+    return Intl.message(
+      'Enter 3 digits',
+      name: 'cvvInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Payment Method`
+  String get confirmPaymentMethodButton {
+    return Intl.message(
+      'Confirm Payment Method',
+      name: 'confirmPaymentMethodButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `e.g. My Home`
+  String get addressTitlePlaceholder {
+    return Intl.message(
+      'e.g. My Home',
+      name: 'addressTitlePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter an address title`
+  String get addressTitleRequired {
+    return Intl.message(
+      'Please enter an address title',
+      name: 'addressTitleRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your full address`
+  String get fullAddressPlaceholder {
+    return Intl.message(
+      'Enter your full address',
+      name: 'fullAddressPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your full address`
+  String get fullAddressRequired {
+    return Intl.message(
+      'Please enter your full address',
+      name: 'fullAddressRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address Type`
+  String get addressTypeLabel {
+    return Intl.message(
+      'Address Type',
+      name: 'addressTypeLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Address`
+  String get saveAddressButton {
+    return Intl.message(
+      'Save Address',
+      name: 'saveAddressButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Changes`
+  String get confirmChangesTitle {
+    return Intl.message(
+      'Confirm Changes',
+      name: 'confirmChangesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to save these changes?`
+  String get confirmChangesMessage {
+    return Intl.message(
+      'Are you sure you want to save these changes?',
+      name: 'confirmChangesMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your changes have been saved successfully`
+  String get changesSavedSuccess {
+    return Intl.message(
+      'Your changes have been saved successfully',
+      name: 'changesSavedSuccess',
       desc: '',
       args: [],
     );
