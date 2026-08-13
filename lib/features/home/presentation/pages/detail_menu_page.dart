@@ -91,26 +91,36 @@ class _DetailMenuPageState extends ConsumerState<DetailMenuPage> {
                 ),
                 height: imageHeight,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.outline,
-                  border: Border.all(),
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  border: Border.all(color: Theme.of(context).colorScheme.outline),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 clipBehavior: Clip.antiAlias,
                 child: widget.imagePath.isNotEmpty
-                    ? widget.imagePath.startsWith('http')
+                        ? widget.imagePath.startsWith('http')
                         ? Image.network(
                             widget.imagePath,
                             fit: BoxFit.cover,
-                            errorBuilder: (context, error, stackTrace) =>
-                                const Icon(Icons.book, size: 60),
+                            errorBuilder: (context, error, stackTrace) => Icon(
+                              Icons.broken_image,
+                              color: Theme.of(context).colorScheme.onSurfaceVariant,
+                              size: 48,
+                            ),
                           )
                         : Image.asset(
                             widget.imagePath,
                             fit: BoxFit.cover,
-                            errorBuilder: (context, error, stackTrace) =>
-                                const Icon(Icons.book, size: 60),
+                            errorBuilder: (context, error, stackTrace) => Icon(
+                              Icons.broken_image,
+                              color: Theme.of(context).colorScheme.onSurfaceVariant,
+                              size: 48,
+                            ),
                           )
-                    : const Icon(Icons.book, size: 60),
+                    : Icon(
+                        Icons.book,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        size: 48,
+                      ),
               ),
             ),
             const SizedBox(height: 16),

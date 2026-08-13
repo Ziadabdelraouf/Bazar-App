@@ -203,6 +203,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cvvInvalid": MessageLookupByLibrary.simpleMessage("أدخل 3 أرقام"),
     "cvvLabel": MessageLookupByLibrary.simpleMessage("رمز الأمان (CVV)"),
     "cvvPlaceholder": MessageLookupByLibrary.simpleMessage("123"),
+    "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
     "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "deliveryDateTitle": MessageLookupByLibrary.simpleMessage("تاريخ التوصيل"),
@@ -318,11 +319,19 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "namePlaceholder": MessageLookupByLibrary.simpleMessage("اسمك"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
+    "newNotificationBody": MessageLookupByLibrary.simpleMessage(
+      "لديك إشعار جديد",
+    ),
+    "newNotificationTitle": MessageLookupByLibrary.simpleMessage("إشعار جديد"),
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الجديدة",
     ),
+    "noBooksFound": MessageLookupByLibrary.simpleMessage("لا توجد كتب"),
     "noFavoritesYet": MessageLookupByLibrary.simpleMessage(
       "لا توجد مفضلات بعد",
+    ),
+    "noNotificationsMessage": MessageLookupByLibrary.simpleMessage(
+      "لا توجد إشعارات",
     ),
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "لا تتوفر عروض حاليًا",
@@ -332,6 +341,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "لا توجد منتجات في السلة",
     ),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("لا يوجد موردون"),
+    "notificationsTitle": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
     "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("العروض والخصومات"),
@@ -428,6 +438,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "recentSearchesTitle": MessageLookupByLibrary.simpleMessage(
+      "عمليات البحث الأخيرة",
+    ),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "بالنقر على تسجيل، فإنك توافق على",
     ),
@@ -469,6 +482,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",
     ),
+    "searchHint": MessageLookupByLibrary.simpleMessage("بحث"),
+    "searchPageTitle": MessageLookupByLibrary.simpleMessage("بحث"),
     "seeAllButton": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "selectAddressMessage": MessageLookupByLibrary.simpleMessage(
       "اختر عنوانك على الخريطة",
