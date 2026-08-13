@@ -1,6 +1,7 @@
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AppFormTextField extends StatelessWidget {
   final String label;
@@ -12,6 +13,7 @@ class AppFormTextField extends StatelessWidget {
   final String? Function(String?)? validator;
   final TextInputAction? textInputAction;
   final TextInputType? keyboardType;
+  final List<TextInputFormatter>? inputFormatters;
   final ValueChanged<String>? onChanged;
   final bool showErrorBorder;
   final bool showErrorText;
@@ -27,6 +29,7 @@ class AppFormTextField extends StatelessWidget {
     this.validator,
     this.textInputAction,
     this.keyboardType,
+    this.inputFormatters,
     this.onChanged,
     this.showErrorBorder = true,
     this.showErrorText = true,
@@ -49,6 +52,7 @@ class AppFormTextField extends StatelessWidget {
             obscureText: obscureText,
             textInputAction: textInputAction,
             keyboardType: keyboardType,
+            inputFormatters: inputFormatters,
             validator: validator,
             onChanged: onChanged,
             style: textStyles.body16Medium,

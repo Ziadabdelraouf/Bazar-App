@@ -10,16 +10,24 @@ enum AddressType {
 
 class AddressState {
   final AddressType type;
+  final String addressTitle;
+  final String fullAddress;
 
   const AddressState({
     this.type = AddressType.home,
+    this.addressTitle = '',
+    this.fullAddress = '',
   });
 
   AddressState copyWith({
     AddressType? type,
+    String? addressTitle,
+    String? fullAddress,
   }) {
     return AddressState(
       type: type ?? this.type,
+      addressTitle: addressTitle ?? this.addressTitle,
+      fullAddress: fullAddress ?? this.fullAddress,
     );
   }
 }
@@ -35,12 +43,24 @@ class AddressNotifier extends Notifier<AddressState> {
 
   @override
   AddressState build() {
+    titleController.addListener(_onTextChanged);
+    fullAddressController.addListener(_onTextChanged);
+
     ref.onDispose(() {
+      titleController.removeListener(_onTextChanged);
+      fullAddressController.removeListener(_onTextChanged);
       titleController.dispose();
       fullAddressController.dispose();
     });
 
     return const AddressState();
+  }
+
+  void _onTextChanged() {
+    state = state.copyWith(
+      addressTitle: titleController.text,
+      fullAddress: fullAddressController.text,
+    );
   }
 
   void selectType(AddressType type) {

@@ -32,12 +32,26 @@ abstract class OfferModel with _$OfferModel {
     return 0;
   }
 
+  double get effectivePrice {
+    final retail = retailPrice;
+    final selling = sellingPrice;
+
+    if (retail != null && retail > 0) {
+      return retail.toDouble();
+    }
+    if (selling != null && selling > 0) {
+      return selling.toDouble();
+    }
+    return 29.99;
+  }
+
   Offer toEntity() {
     return Offer(
       title: title,
       discount: calculatedDiscount,
       image: image ?? '',
       url: url ?? '',
+      price: effectivePrice,
     );
   }
 }

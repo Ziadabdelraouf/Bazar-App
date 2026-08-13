@@ -39,7 +39,7 @@ class AppBackBar extends StatelessWidget implements PreferredSizeWidget {
       scrolledUnderElevation: 0,
       automaticallyImplyLeading: leadingWidget == null,
       actionsPadding: const EdgeInsets.only(right: 20),
-      backgroundColor: theme.colorScheme.surface,
+      backgroundColor: theme.colorScheme.onSecondary,
       foregroundColor: iconColor,
       iconTheme: IconThemeData(color: iconColor),
       leading: leadingWidget != null
