@@ -65,6 +65,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
     "availableCoupons": m0,
+    "backToSignInButton": MessageLookupByLibrary.simpleMessage(
+      "العودة لتسجيل الدخول",
+    ),
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("أفضل الموردين"),
     "betweenTimeSlot": MessageLookupByLibrary.simpleMessage("بين"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("كتب"),
@@ -448,6 +451,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "resendInSeconds": m4,
     "resendLink": MessageLookupByLibrary.simpleMessage("إعادة إرسال الرابط"),
     "resending": MessageLookupByLibrary.simpleMessage("جاري إعادة الإرسال..."),
+    "resetLinkSentDescription": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال رابط إعادة تعيين كلمة المرور إلى حسابك. يرجى التحقق من البريد الوارد ورسائل البريد العشوائي (Spam).",
+    ),
+    "resetLinkSentTitle": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال رابط إعادة التعيين",
+    ),
     "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال بريدك الإلكتروني، سنرسل لك رمز التحقق على بريدك الإلكتروني.",
     ),

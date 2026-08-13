@@ -65,6 +65,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "august": MessageLookupByLibrary.simpleMessage("August"),
     "availableCoupons": m0,
+    "backToSignInButton": MessageLookupByLibrary.simpleMessage(
+      "Back to Sign In",
+    ),
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("Best Vendors"),
     "betweenTimeSlot": MessageLookupByLibrary.simpleMessage("Between"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("Books"),
@@ -436,6 +439,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "resendInSeconds": m4,
     "resendLink": MessageLookupByLibrary.simpleMessage("Resend link"),
     "resending": MessageLookupByLibrary.simpleMessage("Resending..."),
+    "resetLinkSentDescription": MessageLookupByLibrary.simpleMessage(
+      "A password reset link has been sent to your account. Please check your email inbox and spam folder.",
+    ),
+    "resetLinkSentTitle": MessageLookupByLibrary.simpleMessage(
+      "Password Reset Link Sent",
+    ),
     "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
       "Please enter your email, we will send verification code to your email.",
     ),

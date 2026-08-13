@@ -921,6 +921,36 @@ class S {
     return Intl.message('Send', name: 'sendButton', desc: '', args: []);
   }
 
+  /// `Password Reset Link Sent`
+  String get resetLinkSentTitle {
+    return Intl.message(
+      'Password Reset Link Sent',
+      name: 'resetLinkSentTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A password reset link has been sent to your account. Please check your email inbox and spam folder.`
+  String get resetLinkSentDescription {
+    return Intl.message(
+      'A password reset link has been sent to your account. Please check your email inbox and spam folder.',
+      name: 'resetLinkSentDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back to Sign In`
+  String get backToSignInButton {
+    return Intl.message(
+      'Back to Sign In',
+      name: 'backToSignInButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the '//Create New Password Screen Strings//' key
 
   /// `New password`
