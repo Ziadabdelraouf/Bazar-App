@@ -20,7 +20,7 @@ class BookCard extends ConsumerWidget {
   });
 
   @override
-  Widget build(BuildContext context , WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final cardWidth = context.responsiveValue<double>(
       mobile: 127.0,
       tablet: 140.0,
