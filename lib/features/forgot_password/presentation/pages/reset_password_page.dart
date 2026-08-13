@@ -71,7 +71,7 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
       },
       child: Scaffold(
         appBar: const AppBackBar(),
-        backgroundColor: colorScheme.surface,
+        backgroundColor: colorScheme.onSecondary,
         body: Padding(
           padding: EdgeInsets.only(
             left: MediaQuery.of(context).size.width * (24 / 375),
@@ -84,16 +84,22 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
               children: [
                 Text(
                   localization.resetPasswordTitle,
-                  style: AppTextStyles.h3.copyWith(color: colorScheme.onSurface),
+                  style: AppTextStyles.h3.copyWith(
+                    color: colorScheme.onSurface,
+                  ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * (8 / 812)),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * (8 / 812),
+                ),
                 Text(
                   localization.resetPasswordEmailDescription,
                   style: AppTextStyles.body16Regular.copyWith(
                     color: colorScheme.onSurfaceVariant,
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * (18 / 812)),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * (18 / 812),
+                ),
                 const SizedBox(height: 8),
 
                 AppFormTextField(
