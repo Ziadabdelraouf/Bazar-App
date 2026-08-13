@@ -3,7 +3,7 @@ import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
-import 'package:bazar_group_1/features/profile/presentation/providers/location_address_provider.dart';
+import 'package:bazar_group_1/features/profile/presentation/providers/address_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -27,7 +27,7 @@ class ConfirmOrderAddressCard extends ConsumerWidget {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    final addressState = ref.watch(locationAddressProvider);
+    final addressState = ref.watch(addressProvider);
 
     final displayTitle = (addressTitle != null && addressTitle!.isNotEmpty)
         ? addressTitle!
