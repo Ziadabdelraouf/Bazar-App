@@ -1782,6 +1782,41 @@ class S {
     );
   }
 
+  /// `Dark Mode`
+  String get darkMode {
+    return Intl.message('Dark Mode', name: 'darkMode', desc: '', args: []);
+  }
+
+  /// `Search`
+  String get searchPageTitle {
+    return Intl.message('Search', name: 'searchPageTitle', desc: '', args: []);
+  }
+
+  /// `Search`
+  String get searchHint {
+    return Intl.message('Search', name: 'searchHint', desc: '', args: []);
+  }
+
+  /// `Recent Searches`
+  String get recentSearchesTitle {
+    return Intl.message(
+      'Recent Searches',
+      name: 'recentSearchesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No books found`
+  String get noBooksFound {
+    return Intl.message(
+      'No books found',
+      name: 'noBooksFound',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Confirm Order`
   String get confirmOrderTitle {
     return Intl.message(

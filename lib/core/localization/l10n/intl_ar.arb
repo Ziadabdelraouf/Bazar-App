@@ -223,13 +223,18 @@
       "count": {
         "type": "int"
       }
-    }
+}
   },
   "language": "اللغة",
   "notificationsTitle": "الإشعارات",
   "noNotificationsMessage": "لا توجد إشعارات",
   "newNotificationTitle": "إشعار جديد",
   "newNotificationBody": "لديك إشعار جديد",
+  "darkMode": "الوضع الداكن",
+  "searchPageTitle": "بحث",
+  "searchHint": "بحث",
+  "recentSearchesTitle": "عمليات البحث الأخيرة",
+  "noBooksFound": "لا توجد كتب",
   "confirmOrderTitle": "تأكيد الطلب",
   "confirmOrderAddressHeader": "العنوان",
   "confirmOrderChangeButton": "تغيير",

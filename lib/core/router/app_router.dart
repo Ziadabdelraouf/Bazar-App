@@ -1,8 +1,6 @@
 import 'package:bazar_group_1/features/home/domain/entities/author.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/author_detail_page.dart';
 import 'package:bazar_group_1/features/home/presentation/pages/home_page.dart';
-import 'package:bazar_group_1/features/home/presentation/pages/vendors_search_placeholder_page.dart';
-import 'package:bazar_group_1/features/offers/presentation/pages/offers_page.dart';
 import 'package:bazar_group_1/features/profile/presentation/pages/my_account_page.dart';
 import 'package:bazar_group_1/features/profile/presentation/pages/address_page.dart';
 import 'package:bazar_group_1/features/profile/presentation/pages/help_center_page.dart';
@@ -22,6 +20,7 @@ import 'package:bazar_group_1/features/forgot_password/presentation/pages/reset_
 import 'package:bazar_group_1/features/home/presentation/pages/vendors_page.dart';
 import 'package:bazar_group_1/features/profile/presentation/pages/favorites_page.dart';
 import 'package:bazar_group_1/features/profile/presentation/pages/order_history_page.dart';
+import 'package:bazar_group_1/features/offers/presentation/pages/offers_page.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/pages/confirm_order_view.dart';
 import 'app_routes.dart';
 
@@ -62,8 +61,6 @@ class AppRouter {
       return AuthorDetailPage(author: author);
     },
     AppRoutes.vendorsPage: (context) => const VendorsPage(),
-    AppRoutes.vendorsSearchPage: (context) =>
-        const VendorsSearchPlaceholderPage(),
     AppRoutes.myAccount: (context) => const MyAccountPage(),
     AppRoutes.favoritesPage: (context) => const FavoritesPage(),
     AppRoutes.orderHistoryPage: (context) => const OrderHistoryPage(),
@@ -71,6 +68,5 @@ class AppRouter {
     AppRoutes.address: (context) => const AddressPage(),
     AppRoutes.confirmOrder: (context) => const ConfirmOrderView(),
     AppRoutes.offersPage: (context) => const OffersPage(),
-    
   };
 }
