@@ -3,6 +3,10 @@ import 'package:bazar_group_1/features/home/presentation/widgets/best_vendors_wi
 import 'package:bazar_group_1/features/home/presentation/widgets/top_of_week_section.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/special_offer.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/author_widget.dart';
+import 'package:bazar_group_1/features/home/presentation/providers/offers_provider.dart';
+import 'package:bazar_group_1/features/home/presentation/providers/books_provider.dart';
+import 'package:bazar_group_1/features/home/presentation/notifiers/vendors_notifier.dart';
+import 'package:bazar_group_1/features/home/presentation/providers/authors_provider.dart';
 import 'package:bazar_group_1/features/categories/presentation/providers/category_providers.dart';
 import 'package:bazar_group_1/features/search/presentation/providers/search_providers.dart';
 import 'package:bazar_group_1/features/search/presentation/widgets/inline_search_field.dart';
@@ -28,8 +32,7 @@ class HomeView extends ConsumerWidget {
             InlineSearchField(
               hintText: S.of(context).searchHint,
               onChanged: (value) {
-                ref.read(bookSearchQueryProvider.notifier).state =
-                    value.trim();
+                ref.read(bookSearchQueryProvider.notifier).state = value.trim();
               },
             ),
             const SizedBox(height: 12),
@@ -52,31 +55,36 @@ class HomeView extends ConsumerWidget {
                           ),
                           data: (books) {
                             final filteredBooks = books
-                                .where((b) => b.title
-                                    .toLowerCase()
-                                    .contains(searchQuery.toLowerCase()))
+                                .where(
+                                  (b) => b.title.toLowerCase().contains(
+                                    searchQuery.toLowerCase(),
+                                  ),
+                                )
                                 .toList();
 
                             if (filteredBooks.isEmpty) {
                               return Center(
-                                  child: Text(S.of(context).noBooksFound));
+                                child: Text(S.of(context).noBooksFound),
+                              );
                             }
 
                             return GridView.builder(
                               gridDelegate:
                                   const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 11,
-                                mainAxisSpacing: 20,
-                                childAspectRatio: 0.72,
-                              ),
+                                    crossAxisCount: 2,
+                                    crossAxisSpacing: 11,
+                                    mainAxisSpacing: 20,
+                                    childAspectRatio: 0.72,
+                                  ),
                               itemCount: filteredBooks.length,
                               itemBuilder: (context, index) {
                                 final book = filteredBooks[index];
                                 return CategoryBookCard(
                                   book: book,
                                   onBeforeOpen: () {
-                                    ref.read(searchRepositoryProvider).addRecentSearch(searchQuery);
+                                    ref
+                                        .read(searchRepositoryProvider)
+                                        .addRecentSearch(searchQuery);
                                     ref.invalidate(recentSearchesProvider);
                                   },
                                 );
@@ -92,20 +100,35 @@ class HomeView extends ConsumerWidget {
       );
     }
 
-    // 🔥 من غير Scaffold و من غير AppBar — زي ما كان شغال قبل الميرج
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const SpecialOffer(),
-          const SizedBox(height: 12),
-          const TopOfWeekSection(),
-          const SizedBox(height: 12),
-          const BestVendorsWidget(),
-          const SizedBox(height: 12),
-          const AuthorWidget(),
-        ],
+    return RefreshIndicator(
+      color: Theme.of(context).colorScheme.primary,
+      onRefresh: () async {
+        try {
+          await Future.wait([
+            ref.refresh(offersProvider.future),
+            ref.refresh(booksProvider.future),
+            ref.refresh(bestVendorsProvider.future),
+            ref.refresh(authorsProvider.future),
+          ]);
+        } catch (_) {
+          // Ignore errors during pull-to-refresh to allow the indicator to complete
+        }
+      },
+      child: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const SpecialOffer(),
+            const SizedBox(height: 12),
+            const TopOfWeekSection(),
+            const SizedBox(height: 12),
+            const BestVendorsWidget(),
+            const SizedBox(height: 12),
+            const AuthorWidget(),
+          ],
+        ),
       ),
     );
   }

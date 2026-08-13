@@ -5,10 +5,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class OfferNotifier extends AsyncNotifier<List<Offer>> {
-  final ValueNotifier<int> pageNotifier = ValueNotifier<int>(0);
+  late ValueNotifier<int> pageNotifier;
 
   @override
   Future<List<Offer>> build() async {
+    pageNotifier = ValueNotifier<int>(0);
     ref.onDispose(() {
       pageNotifier.dispose();
     });
@@ -28,4 +29,5 @@ class OfferNotifier extends AsyncNotifier<List<Offer>> {
     });
   }
 }
+
 
