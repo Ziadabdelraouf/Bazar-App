@@ -1764,6 +1764,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Confirm Changes`
+  String get confirmChangesTitle {
+    return Intl.message(
+      'Confirm Changes',
+      name: 'confirmChangesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to save these changes?`
+  String get confirmChangesMessage {
+    return Intl.message(
+      'Are you sure you want to save these changes?',
+      name: 'confirmChangesMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your changes have been saved successfully`
+  String get changesSavedSuccess {
+    return Intl.message(
+      'Your changes have been saved successfully',
+      name: 'changesSavedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

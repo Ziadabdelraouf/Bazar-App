@@ -71,11 +71,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "changePictureButton": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
+    "changesSavedSuccess": MessageLookupByLibrary.simpleMessage(
+      "تم حفظ التغييرات بنجاح",
+    ),
     "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
       "تحقق من صندوق الوارد الخاص بك وانقر على الرابط الموجود بداخله لتأكيد عنوان بريدك الإلكتروني.",
     ),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
+    ),
+    "confirmChangesMessage": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد أنك تريد حفظ هذه التغييرات؟",
+    ),
+    "confirmChangesTitle": MessageLookupByLibrary.simpleMessage(
+      "تأكيد التغييرات",
     ),
     "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",

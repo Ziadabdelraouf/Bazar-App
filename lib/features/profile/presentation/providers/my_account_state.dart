@@ -1,6 +1,7 @@
 class MyAccountState {
   final bool obscurePassword;
   final bool isLoading;
+  final bool isFetching;
   final String? profileImagePath;
   final bool hasMinimumLength;
   final bool hasNumber;
@@ -10,6 +11,7 @@ class MyAccountState {
   const MyAccountState({
     this.obscurePassword = true,
     this.isLoading = false,
+    this.isFetching=false,
     this.profileImagePath,
     this.hasMinimumLength = false,
     this.hasNumber = false,
@@ -20,6 +22,7 @@ class MyAccountState {
   MyAccountState copyWith({
     bool? obscurePassword,
     bool? isLoading,
+    bool? isFetching,
     String? profileImagePath,
     bool? hasMinimumLength,
     bool? hasNumber,
@@ -29,6 +32,7 @@ class MyAccountState {
     return MyAccountState(
       obscurePassword: obscurePassword ?? this.obscurePassword,
       isLoading: isLoading ?? this.isLoading,
+      isFetching: isFetching ?? this.isFetching,
       profileImagePath: profileImagePath ?? this.profileImagePath,
       hasMinimumLength: hasMinimumLength ?? this.hasMinimumLength,
       hasNumber: hasNumber ?? this.hasNumber,

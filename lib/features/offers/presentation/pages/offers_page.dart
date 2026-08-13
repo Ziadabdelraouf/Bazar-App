@@ -1,3 +1,5 @@
+import 'package:bazar_group_1/core/components/app_bars/app_back_bar.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -9,17 +11,16 @@ class OffersPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final localization=S.of(context);
     final offersAsync = ref.watch(offersProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Offers'),
-      ),
+      appBar:  AppBackBar(title: localization.offersAndPromos),
       body: offersAsync.when(
         loading: () => const Center(
           child: CircularProgressIndicator(),
         ),
-        error: (error, stackTrace) => Center(
+        error: (error, stackTrace) => const Center(
           child: Text(
             'Failed to load offers',
           ),
