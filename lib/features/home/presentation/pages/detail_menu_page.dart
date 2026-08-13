@@ -1,8 +1,12 @@
+import 'package:bazar_group_1/core/components/buttons/small_primary_button.dart';
 import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_icons.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/features/cart_checkout/domain/entities/cart_item.dart';
+import 'package:bazar_group_1/features/cart_checkout/presentation/providers/cart_providers.dart';
+import 'package:bazar_group_1/features/home/presentation/providers/bottom_nav_provider.dart';
 import 'package:bazar_group_1/features/profile/domain/entities/favorite_item.dart';
 import 'package:bazar_group_1/features/profile/presentation/notifiers/favorites_notifier.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/favorite_heart.dart';
@@ -11,7 +15,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 
-class DetailMenuPage extends StatefulWidget {
+class DetailMenuPage extends ConsumerStatefulWidget {
+  final String bookId;
   final String title;
   final String price;
   final String imagePath;
@@ -19,6 +24,7 @@ class DetailMenuPage extends StatefulWidget {
 
   const DetailMenuPage({
     super.key,
+    required this.bookId,
     required this.title,
     required this.price,
     required this.imagePath,
@@ -26,13 +32,18 @@ class DetailMenuPage extends StatefulWidget {
   });
 
   @override
-  State<DetailMenuPage> createState() => _DetailMenuPageState();
+  ConsumerState<DetailMenuPage> createState() => _DetailMenuPageState();
 }
 
-class _DetailMenuPageState extends State<DetailMenuPage> {
+class _DetailMenuPageState extends ConsumerState<DetailMenuPage> {
   double currentRating = 4.0;
-  int quantity = 1;
-  String price = '\$39.99';
+  int quantity = 0;
+
+  double _parsePrice(String priceStr) {
+    final clean = priceStr.replaceAll(RegExp(r'[^\d.]'), '');
+    return double.tryParse(clean) ?? 39.99;
+  }
+
   @override
   Widget build(BuildContext context) {
     final localization = S.of(context);
@@ -41,6 +52,17 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
       tablet: 280.0,
       desktop: 320.0,
     );
+
+    final cartItems = ref.watch(cartNotifierProvider).value ?? [];
+    final existingCartItem = cartItems.cast<CartItem?>().firstWhere(
+      (item) => item?.title == widget.title,
+      orElse: () => null,
+    );
+
+    final displayQuantity = existingCartItem != null
+        ? existingCartItem.quantity
+        : quantity;
+    final itemPrice = _parsePrice(widget.price);
 
     return SingleChildScrollView(
       child: Padding(
@@ -73,6 +95,22 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                   border: Border.all(),
                   borderRadius: BorderRadius.circular(16),
                 ),
+                clipBehavior: Clip.antiAlias,
+                child: widget.imagePath.isNotEmpty
+                    ? widget.imagePath.startsWith('http')
+                        ? Image.network(
+                            widget.imagePath,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.book, size: 60),
+                          )
+                        : Image.asset(
+                            widget.imagePath,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.book, size: 60),
+                          )
+                    : const Icon(Icons.book, size: 60),
               ),
             ),
             const SizedBox(height: 16),
@@ -87,25 +125,29 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                     ),
                   ),
                 ),
-              Consumer(
+                Consumer(
                   builder: (context, ref, child) {
-                    final isFavorited = ref.watch(favoritesNotifierProvider.select(
-                      (favorites) => favorites.any((item) => item.title == widget.title),
-                    ));
+                    final favorites = ref.watch(favoritesNotifierProvider);
+                    final isFavorite = favorites.any(
+                      (item) => item.bookId == widget.bookId,
+                    );
 
                     return FavoriteHeart(
-                      isFavorited: isFavorited,
-                      onTap: () {
-                        final notifier = ref.read(favoritesNotifierProvider.notifier);
+                      isFavorited: isFavorite,
+                      onTap: () async {
+                        final notifier = ref.read(
+                          favoritesNotifierProvider.notifier,
+                        );
 
-                        if (isFavorited) {
-                          notifier.removeFavorite(widget.title);
+                        if (isFavorite) {
+                          await notifier.removeFavorite(widget.bookId);
                         } else {
-                          notifier.addFavorite(
-                            FavoriteItem.fromPriceText(
+                          await notifier.addFavorite(
+                            FavoriteItem(
+                              bookId: widget.bookId,
                               title: widget.title,
-                              priceText: widget.price,
                               imageUrl: widget.imagePath,
+                              price: itemPrice,
                             ),
                           );
                         }
@@ -165,73 +207,120 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
             const SizedBox(height: 20),
             Row(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      if (quantity > 1) quantity--;
-                    });
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: 24,
-                      height: 24,
-                      decoration: BoxDecoration(
-                        color: Theme.of(
-                          context,
-                        ).colorScheme.surfaceContainerHighest,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                        child: SvgPicture.asset(
-                          AppIcons.minus,
-                          width: 18,
-                          colorFilter: ColorFilter.mode(
-                            Theme.of(context).colorScheme.onSurfaceVariant,
-                            BlendMode.srcIn,
+                if (displayQuantity == 0)
+                  SmallPrimaryButton(
+                    label: localization.addToCartButton,
+                    onPressed: () {
+                      setState(() {
+                        quantity = 1;
+                      });
+                      ref
+                          .read(cartNotifierProvider.notifier)
+                          .addToCart(
+                            CartItem(
+                              id: widget.title,
+                              title: widget.title,
+                              price: itemPrice,
+                              imagePath: widget.imagePath,
+                              quantity: 1,
+                            ),
+                          );
+                    },
+                  )
+                else ...[
+                  GestureDetector(
+                    onTap: () {
+                      if (displayQuantity > 1) {
+                        setState(() {
+                          quantity = displayQuantity - 1;
+                        });
+                        ref
+                            .read(cartNotifierProvider.notifier)
+                            .decrementQuantity(widget.title);
+                      } else if (displayQuantity == 1) {
+                        if (existingCartItem != null) {
+                          ref
+                              .read(cartNotifierProvider.notifier)
+                              .removeItem(widget.title);
+                        }
+                        setState(() {
+                          quantity = 0;
+                        });
+                      }
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: 24,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          color: Theme.of(
+                            context,
+                          ).colorScheme.surfaceContainerHighest,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: SvgPicture.asset(
+                            AppIcons.minus,
+                            width: 18,
+                            colorFilter: ColorFilter.mode(
+                              Theme.of(context).colorScheme.onSurfaceVariant,
+                              BlendMode.srcIn,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(width: 8),
-                Text(
-                  '$quantity',
-                  style: AppTextStyles.body16Medium.copyWith(fontSize: 20),
-                ),
-                const SizedBox(width: 8),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      quantity++;
-                    });
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: 24,
-                      height: 24,
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                        child: SvgPicture.asset(
-                          AppIcons.plus,
-                          width: 17,
-                          colorFilter: ColorFilter.mode(
-                            Theme.of(context).colorScheme.onPrimary,
-                            BlendMode.srcIn,
+                  const SizedBox(width: 8),
+                  Text(
+                    '$displayQuantity',
+                    style: AppTextStyles.body16Medium.copyWith(fontSize: 20),
+                  ),
+                  const SizedBox(width: 8),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        quantity = displayQuantity + 1;
+                      });
+                      ref
+                          .read(cartNotifierProvider.notifier)
+                          .addToCart(
+                            CartItem(
+                              id: widget.title,
+                              title: widget.title,
+                              price: itemPrice,
+                              imagePath: widget.imagePath,
+                              quantity: 1,
+                            ),
+                          );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: 24,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.primary,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: SvgPicture.asset(
+                            AppIcons.plus,
+                            width: 17,
+                            colorFilter: ColorFilter.mode(
+                              Theme.of(context).colorScheme.onPrimary,
+                              BlendMode.srcIn,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(width: 8),
+                ],
+                const SizedBox(width: 12),
                 Text(
-                  price,
+                  '\$${itemPrice.toStringAsFixed(2)}',
                   style: AppTextStyles.body16Medium.copyWith(
                     color: AppColors.primary500,
                   ),
@@ -275,7 +364,10 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                   child: SizedBox(
                     height: 48,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                        ref.read(bottomNavIndexProvider.notifier).state = 2;
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Theme.of(
                           context,

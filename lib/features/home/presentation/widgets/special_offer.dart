@@ -1,3 +1,6 @@
+import 'package:bazar_group_1/features/cart_checkout/domain/entities/cart_item.dart';
+import 'package:bazar_group_1/features/cart_checkout/presentation/providers/cart_providers.dart';
+import 'package:bazar_group_1/features/home/presentation/providers/bottom_nav_provider.dart';
 import 'package:bazar_group_1/features/home/presentation/providers/offers_provider.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/special_offer_card.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/special_offer_empty.dart';
@@ -63,7 +66,18 @@ class _SpecialOfferState extends ConsumerState<SpecialOffer> {
                   final currentItem = discountedOffers[actualIndex];
                   return SpecialOfferCard(
                     offer: currentItem,
-                    onOrderPressed: () {},
+                    onOrderPressed: () {
+                      ref.read(cartNotifierProvider.notifier).addToCart(
+                            CartItem(
+                              id: currentItem.title,
+                              title: currentItem.title,
+                              price: currentItem.price,
+                              imagePath: currentItem.image,
+                              quantity: 1,
+                            ),
+                          );
+                      ref.read(bottomNavIndexProvider.notifier).state = 2;
+                    },
                   );
                 },
               ),
