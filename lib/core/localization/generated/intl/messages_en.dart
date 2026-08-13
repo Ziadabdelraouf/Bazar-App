@@ -201,6 +201,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cvvInvalid": MessageLookupByLibrary.simpleMessage("Enter 3 digits"),
     "cvvLabel": MessageLookupByLibrary.simpleMessage("CVV"),
     "cvvPlaceholder": MessageLookupByLibrary.simpleMessage("123"),
+    "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "december": MessageLookupByLibrary.simpleMessage("December"),
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("Delivered"),
     "deliveryDateTitle": MessageLookupByLibrary.simpleMessage("Delivery date"),
@@ -307,6 +308,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "namePlaceholder": MessageLookupByLibrary.simpleMessage("Your Name"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("Name is required"),
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage("New Password"),
+    "noBooksFound": MessageLookupByLibrary.simpleMessage("No books found"),
     "noFavoritesYet": MessageLookupByLibrary.simpleMessage("No favorites yet"),
     "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
       "No offers available",
@@ -416,6 +418,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "products": MessageLookupByLibrary.simpleMessage("Products"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
+    "recentSearchesTitle": MessageLookupByLibrary.simpleMessage(
+      "Recent Searches",
+    ),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "By clicking Register, you agree to our",
     ),
@@ -457,6 +462,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "Search country or code",
     ),
+    "searchHint": MessageLookupByLibrary.simpleMessage("Search"),
+    "searchPageTitle": MessageLookupByLibrary.simpleMessage("Search"),
     "seeAllButton": MessageLookupByLibrary.simpleMessage("See all"),
     "selectAddressMessage": MessageLookupByLibrary.simpleMessage(
       "Select an address on the map",

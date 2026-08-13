@@ -203,6 +203,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cvvInvalid": MessageLookupByLibrary.simpleMessage("أدخل 3 أرقام"),
     "cvvLabel": MessageLookupByLibrary.simpleMessage("رمز الأمان (CVV)"),
     "cvvPlaceholder": MessageLookupByLibrary.simpleMessage("123"),
+    "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
     "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "deliveryDateTitle": MessageLookupByLibrary.simpleMessage("تاريخ التوصيل"),
@@ -321,6 +322,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الجديدة",
     ),
+    "noBooksFound": MessageLookupByLibrary.simpleMessage("لا توجد كتب"),
     "noFavoritesYet": MessageLookupByLibrary.simpleMessage(
       "لا توجد مفضلات بعد",
     ),
@@ -428,6 +430,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "recentSearchesTitle": MessageLookupByLibrary.simpleMessage(
+      "عمليات البحث الأخيرة",
+    ),
     "registerAgreement": MessageLookupByLibrary.simpleMessage(
       "بالنقر على تسجيل، فإنك توافق على",
     ),
@@ -469,6 +474,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",
     ),
+    "searchHint": MessageLookupByLibrary.simpleMessage("بحث"),
+    "searchPageTitle": MessageLookupByLibrary.simpleMessage("بحث"),
     "seeAllButton": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "selectAddressMessage": MessageLookupByLibrary.simpleMessage(
       "اختر عنوانك على الخريطة",

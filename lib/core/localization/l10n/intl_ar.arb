@@ -222,9 +222,14 @@
       "count": {
         "type": "int"
       }
-    }
+}
   },
   "language": "اللغة",
+  "darkMode": "الوضع الداكن",
+  "searchPageTitle": "بحث",
+  "searchHint": "بحث",
+  "recentSearchesTitle": "عمليات البحث الأخيرة",
+  "noBooksFound": "لا توجد كتب",
   "confirmOrderTitle": "تأكيد الطلب",
   "confirmOrderAddressHeader": "العنوان",
   "confirmOrderChangeButton": "تغيير",
