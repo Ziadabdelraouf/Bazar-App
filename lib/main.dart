@@ -1,5 +1,7 @@
 import 'package:bazar_group_1/core/constants/api_constants.dart';
 import 'package:bazar_group_1/core/mock/mock_data_reader.dart';
+import 'package:bazar_group_1/core/notifications/notification_service.dart';
+import 'package:bazar_group_1/core/notifications/notifications_provider.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/router/app_router.dart';
 import 'package:bazar_group_1/core/theme/app_theme.dart';
@@ -19,10 +21,17 @@ import 'core/localization/generated/l10n.dart';
 import 'firebase_options.dart';
 import 'package:bazar_group_1/core/localization/locale_notifier.dart';
 
+final navigatorKey = GlobalKey<NavigatorState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  final notificationService = NotificationService();
+  await notificationService.requestPermission();
+  final token = await notificationService.getToken();
+  debugPrint('FCM Token: $token');
+  await notificationService.saveTokenToFirestore();
+  notificationService.listenToTokenRefresh();
 
   if (kDebugMode) {
     await FirebaseAppCheck.instance.activate(
@@ -56,7 +65,19 @@ class MyApp extends ConsumerWidget {
     final themeMode = ref.watch(themeNotifierProvider);
     final localeAsync = ref.watch(localeNotifierProvider);
     final currentLocale = localeAsync.value ?? const Locale('en');
+
+    ref.listen(notificationsProvider, (previous, next) {});
+    NotificationService().listenToForegroundMessages(
+      ref,
+      defaultTitle: currentLocale.languageCode == 'ar'
+          ? 'إشعار جديد'
+          : 'New Notification',
+      defaultBody: currentLocale.languageCode == 'ar'
+          ? 'لديك إشعار جديد'
+          : 'You have a new notification',
+    );
     return MaterialApp(
+      navigatorKey: navigatorKey,
       builder: (context, child) {
         return ResponsiveBreakpoints.builder(
           breakpoints: AppResponsiveBreakpoints.breakpoints,

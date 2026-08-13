@@ -279,7 +279,11 @@
     }
   },
   "language": "Language",
-"darkMode": "Dark Mode",
+  "notificationsTitle": "Notification",
+  "noNotificationsMessage": "There is no notifications",
+  "newNotificationTitle": "New Notification",
+  "newNotificationBody": "You have a new notification",
+  "darkMode": "Dark Mode",
   "searchPageTitle": "Search",
   "searchHint": "Search",
   "recentSearchesTitle": "Recent Searches",
