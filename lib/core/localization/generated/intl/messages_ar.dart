@@ -45,6 +45,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "addressNotFound": MessageLookupByLibrary.simpleMessage(
       "العنوان غير موجود",
     ),
+    "addressTitlePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "مثال: منزلي",
+    ),
+    "addressTitleRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل اسم العنوان",
+    ),
+    "addressTypeLabel": MessageLookupByLibrary.simpleMessage("نوع العنوان"),
     "addressUnavailable": MessageLookupByLibrary.simpleMessage(
       "العنوان غير متاح",
     ),
@@ -89,6 +96,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "changePictureButton": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
+    "changesSavedSuccess": MessageLookupByLibrary.simpleMessage(
+      "تم حفظ التغييرات بنجاح",
+    ),
     "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
       "تحقق من صندوق الوارد الخاص بك وانقر على الرابط الموجود بداخله لتأكيد عنوان بريدك الإلكتروني.",
     ),
@@ -100,6 +110,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم إعادة إرسال الكود!",
     ),
     "confirmButton": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "confirmChangesMessage": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد أنك تريد حفظ هذه التغييرات؟",
+    ),
+    "confirmChangesTitle": MessageLookupByLibrary.simpleMessage(
+      "تأكيد التغييرات",
+    ),
     "confirmOrderAddressHeader": MessageLookupByLibrary.simpleMessage(
       "العنوان",
     ),
@@ -236,6 +252,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgotPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "نسيت كلمة المرور",
     ),
+    "fullAddressPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "أدخل عنوانك بالكامل",
+    ),
+    "fullAddressRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل العنوان بالكامل",
+    ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
     "helpCenter": MessageLookupByLibrary.simpleMessage("مركز المساعدة"),
@@ -310,7 +332,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
     "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("العروض والخصومات"),
-    "officeAddress": MessageLookupByLibrary.simpleMessage("المكتب"),
+    "officeAddress": MessageLookupByLibrary.simpleMessage("العمل"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
       "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
     ),
@@ -433,6 +455,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "retryButton": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
     "reviewLabel": MessageLookupByLibrary.simpleMessage("مراجعة"),
     "saveAddressAs": MessageLookupByLibrary.simpleMessage("احفظ العنوان كـ"),
+    "saveAddressButton": MessageLookupByLibrary.simpleMessage("حفظ العنوان"),
     "saveChangesButton": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "ابحث عن الدولة أو الكود",

@@ -58,6 +58,7 @@ dependencies:
   google_sign_in: ^6.2.1
   google_maps_flutter: ^2.18.0
   geocoding: ^4.0.0
+  cloud_firestore: ^6.8.0
 
 dev_dependencies:
   flutter_test:

@@ -211,7 +211,7 @@
   "addressUnavailable": "العنوان غير متاح",
   "saveAddressAs": "احفظ العنوان كـ",
   "homeAddress": "المنزل",
-  "officeAddress": "المكتب",
+  "officeAddress": "العمل",
   "confirmationButton": "تأكيد",
   "availableCoupons": "لديك {count} كوبون للاستخدام",
   "@availableCoupons": {
@@ -274,5 +274,14 @@
   "cvvLabel": "رمز الأمان (CVV)",
   "cvvPlaceholder": "123",
   "cvvInvalid": "أدخل 3 أرقام",
-  "confirmPaymentMethodButton": "تأكيد طريقة الدفع"
+  "confirmPaymentMethodButton": "تأكيد طريقة الدفع",
+  "addressTitlePlaceholder": "مثال: منزلي",
+  "addressTitleRequired": "من فضلك أدخل اسم العنوان",
+  "fullAddressPlaceholder": "أدخل عنوانك بالكامل",
+  "fullAddressRequired": "من فضلك أدخل العنوان بالكامل",
+  "addressTypeLabel": "نوع العنوان",
+  "saveAddressButton": "حفظ العنوان",
+  "confirmChangesTitle": "تأكيد التغييرات",
+  "confirmChangesMessage": "هل أنت متأكد أنك تريد حفظ هذه التغييرات؟",
+  "changesSavedSuccess": "تم حفظ التغييرات بنجاح"
 }

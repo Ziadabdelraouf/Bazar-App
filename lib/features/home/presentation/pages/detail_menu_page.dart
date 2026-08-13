@@ -16,6 +16,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DetailMenuPage extends ConsumerStatefulWidget {
+  final String bookId;
   final String title;
   final String price;
   final String imagePath;
@@ -23,6 +24,7 @@ class DetailMenuPage extends ConsumerStatefulWidget {
 
   const DetailMenuPage({
     super.key,
+    required this.bookId,
     required this.title,
     required this.price,
     required this.imagePath,
@@ -96,18 +98,18 @@ class _DetailMenuPageState extends ConsumerState<DetailMenuPage> {
                 clipBehavior: Clip.antiAlias,
                 child: widget.imagePath.isNotEmpty
                     ? widget.imagePath.startsWith('http')
-                          ? Image.network(
-                              widget.imagePath,
-                              fit: BoxFit.cover,
-                              errorBuilder: (context, error, stackTrace) =>
-                                  const Icon(Icons.book, size: 60),
-                            )
-                          : Image.asset(
-                              widget.imagePath,
-                              fit: BoxFit.cover,
-                              errorBuilder: (context, error, stackTrace) =>
-                                  const Icon(Icons.book, size: 60),
-                            )
+                        ? Image.network(
+                            widget.imagePath,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.book, size: 60),
+                          )
+                        : Image.asset(
+                            widget.imagePath,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.book, size: 60),
+                          )
                     : const Icon(Icons.book, size: 60),
               ),
             ),
@@ -125,28 +127,27 @@ class _DetailMenuPageState extends ConsumerState<DetailMenuPage> {
                 ),
                 Consumer(
                   builder: (context, ref, child) {
-                    final isFavorited = ref.watch(
-                      favoritesNotifierProvider.select(
-                        (favorites) =>
-                            favorites.any((item) => item.title == widget.title),
-                      ),
+                    final favorites = ref.watch(favoritesNotifierProvider);
+                    final isFavorite = favorites.any(
+                      (item) => item.bookId == widget.bookId,
                     );
 
                     return FavoriteHeart(
-                      isFavorited: isFavorited,
-                      onTap: () {
+                      isFavorited: isFavorite,
+                      onTap: () async {
                         final notifier = ref.read(
                           favoritesNotifierProvider.notifier,
                         );
 
-                        if (isFavorited) {
-                          notifier.removeFavorite(widget.title);
+                        if (isFavorite) {
+                          await notifier.removeFavorite(widget.bookId);
                         } else {
-                          notifier.addFavorite(
-                            FavoriteItem.fromPriceText(
+                          await notifier.addFavorite(
+                            FavoriteItem(
+                              bookId: widget.bookId,
                               title: widget.title,
-                              priceText: widget.price,
                               imageUrl: widget.imagePath,
+                              price: itemPrice,
                             ),
                           );
                         }

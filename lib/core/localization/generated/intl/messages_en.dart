@@ -45,6 +45,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "addressNotFound": MessageLookupByLibrary.simpleMessage(
       "Address not found",
     ),
+    "addressTitlePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "e.g. My Home",
+    ),
+    "addressTitleRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter an address title",
+    ),
+    "addressTypeLabel": MessageLookupByLibrary.simpleMessage("Address Type"),
     "addressUnavailable": MessageLookupByLibrary.simpleMessage(
       "Address unavailable",
     ),
@@ -87,6 +94,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "changePictureButton": MessageLookupByLibrary.simpleMessage(
       "Change Picture",
     ),
+    "changesSavedSuccess": MessageLookupByLibrary.simpleMessage(
+      "Your changes have been saved successfully",
+    ),
     "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
       "Check your inbox and click the link inside to confirm your email address.",
     ),
@@ -96,6 +106,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
     "confirmButton": MessageLookupByLibrary.simpleMessage("Confirm"),
+    "confirmChangesMessage": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to save these changes?",
+    ),
+    "confirmChangesTitle": MessageLookupByLibrary.simpleMessage(
+      "Confirm Changes",
+    ),
     "confirmOrderAddressHeader": MessageLookupByLibrary.simpleMessage(
       "Address",
     ),
@@ -167,7 +183,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Continue to complete your sign up process",
     ),
     "couldNotLoadVendors": MessageLookupByLibrary.simpleMessage(
-      "Couldn\'t load vendors",
+      "Couldn't load vendors",
     ),
     "createNewPasswordDescription": MessageLookupByLibrary.simpleMessage(
       "Create your new password, so you can login to your account",
@@ -190,11 +206,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Detail Address",
     ),
     "didNotReceiveLink": MessageLookupByLibrary.simpleMessage(
-      "Didn\'t receive the link?",
+      "Didn't receive the link?",
     ),
     "discountPercent": m1,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
-      "Don\'t have an account?",
+      "Don't have an account?",
     ),
     "emailExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
       "example@email.com",
@@ -227,6 +243,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "forgotPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "Forgot Password",
+    ),
+    "fullAddressPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Enter your full address",
+    ),
+    "fullAddressRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your full address",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
@@ -302,7 +324,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Now reading books will be easier",
     ),
     "onboardingThreeDescription": MessageLookupByLibrary.simpleMessage(
-      "Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let\'s go!",
+      "Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let's go!",
     ),
     "onboardingThreeTitle": MessageLookupByLibrary.simpleMessage(
       "Start Your Adventure",
@@ -404,7 +426,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "resendButton": MessageLookupByLibrary.simpleMessage("Resend"),
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
-      "If you didn\'t receive a code? ",
+      "If you didn't receive a code? ",
     ),
     "resendInSeconds": m4,
     "resendLink": MessageLookupByLibrary.simpleMessage("Resend link"),
@@ -421,6 +443,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "retryButton": MessageLookupByLibrary.simpleMessage("Retry"),
     "reviewLabel": MessageLookupByLibrary.simpleMessage("Review"),
     "saveAddressAs": MessageLookupByLibrary.simpleMessage("Save Address As"),
+    "saveAddressButton": MessageLookupByLibrary.simpleMessage("Save Address"),
     "saveChangesButton": MessageLookupByLibrary.simpleMessage("Save Changes"),
     "searchCountryHint": MessageLookupByLibrary.simpleMessage(
       "Search country or code",

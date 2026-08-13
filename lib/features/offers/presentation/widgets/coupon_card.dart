@@ -1,12 +1,13 @@
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
-import 'package:bazar_group_1/features/offers/domain/models/coupon.dart';
+import 'package:bazar_group_1/features/offers/data/models/offer_model.dart';
+//import 'package:bazar_group_1/features/offers/domain/models/coupon.dart';
 import 'package:flutter/material.dart';
 
 class CouponCard extends StatelessWidget {
-  final Coupon coupon;
+  final OfferModel offer;
 
-  const CouponCard({super.key, required this.coupon});
+  const CouponCard({super.key, required this.offer,});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class CouponCard extends StatelessWidget {
       width: MediaQuery.of(context).size.width * (155 / 375),
       height: 161,
       decoration: BoxDecoration(
-        color: coupon.backgroundColor,
+        color: AppColors.primary500,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Padding(
@@ -23,7 +24,7 @@ class CouponCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '${coupon.discountPercent}%',
+              '${offer.discountPercent}%',
               style: AppTextStyles.h2.copyWith(color: AppColors.white),
             ),
             const SizedBox(height: 4),
@@ -43,9 +44,10 @@ class CouponCard extends StatelessWidget {
                   elevation: 0,
                 ),
                 child: Text(
-                  'Copy',
+                  offer.code,
                   style: AppTextStyles.body14Bold.copyWith(
-                    color: coupon.backgroundColor,
+                    color: AppColors.primary500,
+
                   ),
                 ),
               ),

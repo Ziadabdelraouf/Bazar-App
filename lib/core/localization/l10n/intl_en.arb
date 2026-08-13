@@ -328,5 +328,14 @@
   "cvvLabel": "CVV",
   "cvvPlaceholder": "123",
   "cvvInvalid": "Enter 3 digits",
-  "confirmPaymentMethodButton": "Confirm Payment Method"
+  "confirmPaymentMethodButton": "Confirm Payment Method",
+  "addressTitlePlaceholder": "e.g. My Home",
+  "addressTitleRequired": "Please enter an address title",
+  "fullAddressPlaceholder": "Enter your full address",
+  "fullAddressRequired": "Please enter your full address",
+  "addressTypeLabel": "Address Type",
+  "saveAddressButton": "Save Address",
+  "confirmChangesTitle": "Confirm Changes",
+  "confirmChangesMessage": "Are you sure you want to save these changes?",
+  "changesSavedSuccess": "Your changes have been saved successfully"
 }

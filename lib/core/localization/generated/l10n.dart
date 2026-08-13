@@ -1722,11 +1722,31 @@ class S {
     );
   }
 
+  /// `e.g. My Home`
+  String get addressTitlePlaceholder {
+    return Intl.message(
+      'e.g. My Home',
+      name: 'addressTitlePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Address`
   String get confirmOrderAddressHeader {
     return Intl.message(
       'Address',
       name: 'confirmOrderAddressHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter an address title`
+  String get addressTitleRequired {
+    return Intl.message(
+      'Please enter an address title',
+      name: 'addressTitleRequired',
       desc: '',
       args: [],
     );
@@ -1742,11 +1762,31 @@ class S {
     );
   }
 
+  /// `Enter your full address`
+  String get fullAddressPlaceholder {
+    return Intl.message(
+      'Enter your full address',
+      name: 'fullAddressPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Summary`
   String get confirmOrderSummaryHeader {
     return Intl.message(
       'Summary',
       name: 'confirmOrderSummaryHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your full address`
+  String get fullAddressRequired {
+    return Intl.message(
+      'Please enter your full address',
+      name: 'fullAddressRequired',
       desc: '',
       args: [],
     );
@@ -2107,6 +2147,16 @@ class S {
     );
   }
 
+  /// `Address Type`
+  String get addressTypeLabel {
+    return Intl.message(
+      'Address Type',
+      name: 'addressTypeLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Card number must be 16 digits`
   String get cardNumberInvalid {
     return Intl.message(
@@ -2117,11 +2167,31 @@ class S {
     );
   }
 
+  /// `Save Address`
+  String get saveAddressButton {
+    return Intl.message(
+      'Save Address',
+      name: 'saveAddressButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Expiry Date`
   String get expiryDateLabel {
     return Intl.message(
       'Expiry Date',
       name: 'expiryDateLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Changes`
+  String get confirmChangesTitle {
+    return Intl.message(
+      'Confirm Changes',
+      name: 'confirmChangesTitle',
       desc: '',
       args: [],
     );
@@ -2187,11 +2257,31 @@ class S {
     );
   }
 
+  /// `Are you sure you want to save these changes?`
+  String get confirmChangesMessage {
+    return Intl.message(
+      'Are you sure you want to save these changes?',
+      name: 'confirmChangesMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Confirm Payment Method`
   String get confirmPaymentMethodButton {
     return Intl.message(
       'Confirm Payment Method',
       name: 'confirmPaymentMethodButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your changes have been saved successfully`
+  String get changesSavedSuccess {
+    return Intl.message(
+      'Your changes have been saved successfully',
+      name: 'changesSavedSuccess',
       desc: '',
       args: [],
     );

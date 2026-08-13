@@ -42,7 +42,9 @@ class ProfileMenuList extends ConsumerWidget {
       _ProfileMenuItem(
         title: l10n.offersAndPromos,
         icon: AppIcons.fire,
-        onTap: () {},
+        onTap: () {
+           Navigator.pushNamed(context, AppRoutes.offersPage);
+        },
       ),
       _ProfileMenuItem(
         title: l10n.yourFavourites,
