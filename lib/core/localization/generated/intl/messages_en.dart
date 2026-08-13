@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your password changed successfully, you can login again with a new password",
     ),
     "about": MessageLookupByLibrary.simpleMessage("About"),
+    "addToCartButton": MessageLookupByLibrary.simpleMessage("Add to Cart"),
     "address": MessageLookupByLibrary.simpleMessage("Address"),
     "addressNotFound": MessageLookupByLibrary.simpleMessage(
       "Address not found",
@@ -65,10 +66,30 @@ class MessageLookup extends MessageLookupByLibrary {
     "august": MessageLookupByLibrary.simpleMessage("August"),
     "availableCoupons": m0,
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("Best Vendors"),
+    "betweenTimeSlot": MessageLookupByLibrary.simpleMessage("Between"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("Books"),
     "cancelButton": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cancelledStatus": MessageLookupByLibrary.simpleMessage("Cancelled"),
+    "cardHasExpired": MessageLookupByLibrary.simpleMessage("Card has expired"),
+    "cardNumberInvalid": MessageLookupByLibrary.simpleMessage(
+      "Card number must be 16 digits",
+    ),
+    "cardNumberLabel": MessageLookupByLibrary.simpleMessage("Card Number"),
+    "cardNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "1234567890123456",
+    ),
+    "cardholderNameLabel": MessageLookupByLibrary.simpleMessage(
+      "Cardholder Name",
+    ),
+    "cardholderNamePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "e.g. Ahmed Mohamed",
+    ),
+    "cardholderNameRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter cardholder name",
+    ),
     "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
+    "cartTotal": MessageLookupByLibrary.simpleMessage("Total"),
+    "cashOnDelivery": MessageLookupByLibrary.simpleMessage("Cash on Delivery"),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("Category"),
     "changePictureButton": MessageLookupByLibrary.simpleMessage(
       "Change Picture",
@@ -79,18 +100,59 @@ class MessageLookup extends MessageLookupByLibrary {
     "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
       "Check your inbox and click the link inside to confirm your email address.",
     ),
+    "checkoutButton": MessageLookupByLibrary.simpleMessage("Checkout"),
+    "chooseAddressToCompleteOrder": MessageLookupByLibrary.simpleMessage(
+      "Choose your address to complete the order",
+    ),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage("Code resent!"),
+    "confirmButton": MessageLookupByLibrary.simpleMessage("Confirm"),
     "confirmChangesMessage": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to save these changes?",
     ),
     "confirmChangesTitle": MessageLookupByLibrary.simpleMessage(
       "Confirm Changes",
     ),
+    "confirmOrderAddressHeader": MessageLookupByLibrary.simpleMessage(
+      "Address",
+    ),
+    "confirmOrderButton": MessageLookupByLibrary.simpleMessage("Order"),
+    "confirmOrderChangeButton": MessageLookupByLibrary.simpleMessage("Change"),
+    "confirmOrderChooseDateTime": MessageLookupByLibrary.simpleMessage(
+      "Choose date and time",
+    ),
+    "confirmOrderChoosePayment": MessageLookupByLibrary.simpleMessage(
+      "Choose your payment",
+    ),
+    "confirmOrderDateTimeHeader": MessageLookupByLibrary.simpleMessage(
+      "Date and time",
+    ),
+    "confirmOrderDateTimeTitle": MessageLookupByLibrary.simpleMessage(
+      "Date & time",
+    ),
+    "confirmOrderPaymentHeader": MessageLookupByLibrary.simpleMessage(
+      "Payment",
+    ),
+    "confirmOrderPaymentTitle": MessageLookupByLibrary.simpleMessage("Payment"),
+    "confirmOrderPrice": MessageLookupByLibrary.simpleMessage("Price"),
+    "confirmOrderSeeDetails": MessageLookupByLibrary.simpleMessage(
+      "See details",
+    ),
+    "confirmOrderShipping": MessageLookupByLibrary.simpleMessage("Shipping"),
+    "confirmOrderSummaryHeader": MessageLookupByLibrary.simpleMessage(
+      "Summary",
+    ),
+    "confirmOrderTitle": MessageLookupByLibrary.simpleMessage("Confirm Order"),
+    "confirmOrderTotalPayment": MessageLookupByLibrary.simpleMessage(
+      "Total Payment",
+    ),
     "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
     ),
     "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
       "Please confirm your password",
+    ),
+    "confirmPaymentMethodButton": MessageLookupByLibrary.simpleMessage(
+      "Confirm Payment Method",
     ),
     "confirmationButton": MessageLookupByLibrary.simpleMessage("Confirmation"),
     "congratsVerified": MessageLookupByLibrary.simpleMessage(
@@ -121,7 +183,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Continue to complete your sign up process",
     ),
     "couldNotLoadVendors": MessageLookupByLibrary.simpleMessage(
-      "Couldn\'t load vendors",
+      "Couldn't load vendors",
     ),
     "createNewPasswordDescription": MessageLookupByLibrary.simpleMessage(
       "Create your new password, so you can login to your account",
@@ -129,18 +191,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "New password",
     ),
+    "creditDebitCard": MessageLookupByLibrary.simpleMessage(
+      "Credit / Debit Card",
+    ),
     "currentLocation": MessageLookupByLibrary.simpleMessage("Current location"),
+    "cvvInvalid": MessageLookupByLibrary.simpleMessage("Enter 3 digits"),
+    "cvvLabel": MessageLookupByLibrary.simpleMessage("CVV"),
+    "cvvPlaceholder": MessageLookupByLibrary.simpleMessage("123"),
     "december": MessageLookupByLibrary.simpleMessage("December"),
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("Delivered"),
+    "deliveryDateTitle": MessageLookupByLibrary.simpleMessage("Delivery date"),
+    "deliveryTimeTitle": MessageLookupByLibrary.simpleMessage("Delivery time"),
     "detailAddressTitle": MessageLookupByLibrary.simpleMessage(
       "Detail Address",
     ),
     "didNotReceiveLink": MessageLookupByLibrary.simpleMessage(
-      "Didn\'t receive the link?",
+      "Didn't receive the link?",
     ),
     "discountPercent": m1,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
-      "Don\'t have an account?",
+      "Don't have an account?",
     ),
     "emailExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
       "example@email.com",
@@ -150,6 +220,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "emailRequired": MessageLookupByLibrary.simpleMessage("Email is required"),
     "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number",
+    ),
+    "expiryDateFormatInvalid": MessageLookupByLibrary.simpleMessage(
+      "Use MM/YY format",
+    ),
+    "expiryDateLabel": MessageLookupByLibrary.simpleMessage("Expiry Date"),
+    "expiryDatePlaceholder": MessageLookupByLibrary.simpleMessage("MM/YY"),
+    "expiryDateRequired": MessageLookupByLibrary.simpleMessage("Enter expiry"),
+    "failedToLoadCart": MessageLookupByLibrary.simpleMessage(
+      "Failed to load cart items",
     ),
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "Failed to load offers",
@@ -230,6 +309,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "No offers available",
     ),
     "noOrdersYet": MessageLookupByLibrary.simpleMessage("No orders yet"),
+    "noProductsInCart": MessageLookupByLibrary.simpleMessage(
+      "There are no products in the cart",
+    ),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("No vendors found"),
     "november": MessageLookupByLibrary.simpleMessage("November"),
     "october": MessageLookupByLibrary.simpleMessage("October"),
@@ -242,7 +324,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Now reading books will be easier",
     ),
     "onboardingThreeDescription": MessageLookupByLibrary.simpleMessage(
-      "Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let\'s go!",
+      "Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let's go!",
     ),
     "onboardingThreeTitle": MessageLookupByLibrary.simpleMessage(
       "Start Your Adventure",
@@ -259,6 +341,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Order History",
     ),
     "orderNowButton": MessageLookupByLibrary.simpleMessage("Order Now"),
+    "orderPlacedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Order placed successfully!",
+    ),
     "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("Our Vendors"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordLetterRequired": MessageLookupByLibrary.simpleMessage(
@@ -279,6 +364,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
       "Passwords do not match",
     ),
+    "paySecurelyWithCard": MessageLookupByLibrary.simpleMessage(
+      "Pay securely with your card",
+    ),
+    "payWithCashUponDelivery": MessageLookupByLibrary.simpleMessage(
+      "Pay with cash upon delivery",
+    ),
+    "payWithCashWhenOrderArrives": MessageLookupByLibrary.simpleMessage(
+      "Pay with cash when your order arrives",
+    ),
+    "paymentDetailsTitle": MessageLookupByLibrary.simpleMessage(
+      "Payment Details",
+    ),
     "phoneExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
       "(+965) 123 435 7565",
     ),
@@ -293,6 +390,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "your phone number",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "pickDateSubtitle": MessageLookupByLibrary.simpleMessage("a date"),
+    "pickDateTitle": MessageLookupByLibrary.simpleMessage("Pick"),
+    "pleaseSelectDeliveryAddress": MessageLookupByLibrary.simpleMessage(
+      "Please select a delivery address.",
+    ),
+    "pleaseSelectDeliveryDateTime": MessageLookupByLibrary.simpleMessage(
+      "Please select a delivery date and time.",
+    ),
+    "pleaseSelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Please select and complete a payment method.",
+    ),
     "pleaseVerifyAccount": MessageLookupByLibrary.simpleMessage(
       "Please verify your account",
     ),
@@ -318,7 +426,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "resendButton": MessageLookupByLibrary.simpleMessage("Resend"),
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
-      "If you didn\'t receive a code? ",
+      "If you didn't receive a code? ",
     ),
     "resendInSeconds": m4,
     "resendLink": MessageLookupByLibrary.simpleMessage("Resend link"),
@@ -344,8 +452,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectAddressMessage": MessageLookupByLibrary.simpleMessage(
       "Select an address on the map",
     ),
+    "selectAnAddress": MessageLookupByLibrary.simpleMessage(
+      "Select an Address",
+    ),
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage(
       "Select Country",
+    ),
+    "selectPaymentMethodTitle": MessageLookupByLibrary.simpleMessage(
+      "Select Payment Method",
     ),
     "selectedAddressTitle": MessageLookupByLibrary.simpleMessage(
       "Selected Address",
@@ -384,6 +498,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAndDataPolicy": MessageLookupByLibrary.simpleMessage(
       "Terms, Data Policy.",
     ),
+    "timeSlot10AM1PM": MessageLookupByLibrary.simpleMessage("10AM : 1PM"),
+    "timeSlot1PM4PM": MessageLookupByLibrary.simpleMessage("1PM : 4PM"),
+    "today": MessageLookupByLibrary.simpleMessage("Today"),
+    "tomorrow": MessageLookupByLibrary.simpleMessage("Tomorrow"),
     "vendorsPageTitle": MessageLookupByLibrary.simpleMessage("Vendors"),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage(
       "Verification Code",

@@ -23,6 +23,7 @@ class AppRoutes {
   static const String orderHistoryPage = '/order-history-page';
   static const String helpCenter = '/help-center';
   static const String address = '/address';
+  static const String confirmOrder = '/confirm-order';
   static const String offersPage = '/offersPage';
   
 }

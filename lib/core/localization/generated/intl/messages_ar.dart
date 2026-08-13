@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تغيير كلمة المرور بنجاح، يمكنك تسجيل الدخول مرة أخرى باستخدام كلمة مرور جديدة.",
     ),
     "about": MessageLookupByLibrary.simpleMessage("عن الكاتب"),
+    "addToCartButton": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان"),
     "addressNotFound": MessageLookupByLibrary.simpleMessage(
       "العنوان غير موجود",
@@ -65,10 +66,34 @@ class MessageLookup extends MessageLookupByLibrary {
     "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
     "availableCoupons": m0,
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("أفضل الموردين"),
+    "betweenTimeSlot": MessageLookupByLibrary.simpleMessage("بين"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("كتب"),
     "cancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancelledStatus": MessageLookupByLibrary.simpleMessage("ملغى"),
+    "cardHasExpired": MessageLookupByLibrary.simpleMessage(
+      "البطاقة منتهية الصلاحية",
+    ),
+    "cardNumberInvalid": MessageLookupByLibrary.simpleMessage(
+      "يجب أن يتكون رقم البطاقة من 16 رقمًا",
+    ),
+    "cardNumberLabel": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
+    "cardNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "1234567890123456",
+    ),
+    "cardholderNameLabel": MessageLookupByLibrary.simpleMessage(
+      "اسم حامل البطاقة",
+    ),
+    "cardholderNamePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "مثال: أحمد محمد",
+    ),
+    "cardholderNameRequired": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال اسم حامل البطاقة",
+    ),
     "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
+    "cartTotal": MessageLookupByLibrary.simpleMessage("الإجمالي"),
+    "cashOnDelivery": MessageLookupByLibrary.simpleMessage(
+      "الدفع عند الاستلام",
+    ),
     "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "changePictureButton": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
     "changesSavedSuccess": MessageLookupByLibrary.simpleMessage(
@@ -77,20 +102,57 @@ class MessageLookup extends MessageLookupByLibrary {
     "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
       "تحقق من صندوق الوارد الخاص بك وانقر على الرابط الموجود بداخله لتأكيد عنوان بريدك الإلكتروني.",
     ),
+    "checkoutButton": MessageLookupByLibrary.simpleMessage("إتمام الشراء"),
+    "chooseAddressToCompleteOrder": MessageLookupByLibrary.simpleMessage(
+      "اختر عنوانك لإكمال الطلب",
+    ),
     "codeResentMessage": MessageLookupByLibrary.simpleMessage(
       "تم إعادة إرسال الكود!",
     ),
+    "confirmButton": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "confirmChangesMessage": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد أنك تريد حفظ هذه التغييرات؟",
     ),
     "confirmChangesTitle": MessageLookupByLibrary.simpleMessage(
       "تأكيد التغييرات",
     ),
+    "confirmOrderAddressHeader": MessageLookupByLibrary.simpleMessage(
+      "العنوان",
+    ),
+    "confirmOrderButton": MessageLookupByLibrary.simpleMessage("اطلب الآن"),
+    "confirmOrderChangeButton": MessageLookupByLibrary.simpleMessage("تغيير"),
+    "confirmOrderChooseDateTime": MessageLookupByLibrary.simpleMessage(
+      "اختر التاريخ والوقت",
+    ),
+    "confirmOrderChoosePayment": MessageLookupByLibrary.simpleMessage(
+      "اختر وسيلة الدفع",
+    ),
+    "confirmOrderDateTimeHeader": MessageLookupByLibrary.simpleMessage(
+      "التاريخ والوقت",
+    ),
+    "confirmOrderDateTimeTitle": MessageLookupByLibrary.simpleMessage(
+      "التاريخ والوقت",
+    ),
+    "confirmOrderPaymentHeader": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "confirmOrderPaymentTitle": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "confirmOrderPrice": MessageLookupByLibrary.simpleMessage("السعر"),
+    "confirmOrderSeeDetails": MessageLookupByLibrary.simpleMessage(
+      "عرض التفاصيل",
+    ),
+    "confirmOrderShipping": MessageLookupByLibrary.simpleMessage("الشحن"),
+    "confirmOrderSummaryHeader": MessageLookupByLibrary.simpleMessage("الملخص"),
+    "confirmOrderTitle": MessageLookupByLibrary.simpleMessage("تأكيد الطلب"),
+    "confirmOrderTotalPayment": MessageLookupByLibrary.simpleMessage(
+      "إجمالي الدفع",
+    ),
     "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
     "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
       "الرجاء تأكيد كلمة المرور",
+    ),
+    "confirmPaymentMethodButton": MessageLookupByLibrary.simpleMessage(
+      "تأكيد طريقة الدفع",
     ),
     "confirmationButton": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "congratsVerified": MessageLookupByLibrary.simpleMessage(
@@ -131,9 +193,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "كلمة مرور جديدة",
     ),
+    "creditDebitCard": MessageLookupByLibrary.simpleMessage(
+      "بطاقة ائتمان / خصم",
+    ),
     "currentLocation": MessageLookupByLibrary.simpleMessage("موقعي الحالي"),
+    "cvvInvalid": MessageLookupByLibrary.simpleMessage("أدخل 3 أرقام"),
+    "cvvLabel": MessageLookupByLibrary.simpleMessage("رمز الأمان (CVV)"),
+    "cvvPlaceholder": MessageLookupByLibrary.simpleMessage("123"),
     "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
     "deliveredStatus": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
+    "deliveryDateTitle": MessageLookupByLibrary.simpleMessage("تاريخ التوصيل"),
+    "deliveryTimeTitle": MessageLookupByLibrary.simpleMessage("وقت التوصيل"),
     "detailAddressTitle": MessageLookupByLibrary.simpleMessage(
       "تفاصيل العنوان",
     ),
@@ -156,6 +226,17 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم هاتفك",
+    ),
+    "expiryDateFormatInvalid": MessageLookupByLibrary.simpleMessage(
+      "استخدم صيغة شهر/سنة",
+    ),
+    "expiryDateLabel": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
+    "expiryDatePlaceholder": MessageLookupByLibrary.simpleMessage("شهر/سنة"),
+    "expiryDateRequired": MessageLookupByLibrary.simpleMessage(
+      "أدخل تاريخ الانتهاء",
+    ),
+    "failedToLoadCart": MessageLookupByLibrary.simpleMessage(
+      "فشل في تحميل عناصر السلة",
     ),
     "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
       "فشل في تحميل العروض",
@@ -244,6 +325,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "لا تتوفر عروض حاليًا",
     ),
     "noOrdersYet": MessageLookupByLibrary.simpleMessage("لا توجد طلبات بعد"),
+    "noProductsInCart": MessageLookupByLibrary.simpleMessage(
+      "لا توجد منتجات في السلة",
+    ),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("لا يوجد موردون"),
     "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
     "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
@@ -273,6 +357,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "سجل الطلبات",
     ),
     "orderNowButton": MessageLookupByLibrary.simpleMessage("اطلب الآن"),
+    "orderPlacedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم تقديم الطلب بنجاح!",
+    ),
     "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("موردينا"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "passwordLetterRequired": MessageLookupByLibrary.simpleMessage(
@@ -293,6 +380,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور غير متطابقة",
     ),
+    "paySecurelyWithCard": MessageLookupByLibrary.simpleMessage(
+      "ادفع بأمان باستخدام بطاقتك",
+    ),
+    "payWithCashUponDelivery": MessageLookupByLibrary.simpleMessage(
+      "الدفع نقدًا عند وصول الطلب",
+    ),
+    "payWithCashWhenOrderArrives": MessageLookupByLibrary.simpleMessage(
+      "الدفع نقدًا عند وصول طلبك",
+    ),
+    "paymentDetailsTitle": MessageLookupByLibrary.simpleMessage("تفاصيل الدفع"),
     "phoneExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
       "(+965) 123 435 7565",
     ),
@@ -305,6 +402,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "اكتب رقم هاتفك...",
     ),
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "pickDateSubtitle": MessageLookupByLibrary.simpleMessage("تاريخاً"),
+    "pickDateTitle": MessageLookupByLibrary.simpleMessage("اختر"),
+    "pleaseSelectDeliveryAddress": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار عنوان التوصيل.",
+    ),
+    "pleaseSelectDeliveryDateTime": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار تاريخ ووقت التوصيل.",
+    ),
+    "pleaseSelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار وإكمال طريقة الدفع.",
+    ),
     "pleaseVerifyAccount": MessageLookupByLibrary.simpleMessage(
       "يرجى التحقق من حسابك",
     ),
@@ -356,7 +464,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectAddressMessage": MessageLookupByLibrary.simpleMessage(
       "اختر عنوانك على الخريطة",
     ),
+    "selectAnAddress": MessageLookupByLibrary.simpleMessage("اختر عنوانًا"),
     "selectCountryTitle": MessageLookupByLibrary.simpleMessage("اختر الدولة"),
+    "selectPaymentMethodTitle": MessageLookupByLibrary.simpleMessage(
+      "اختر طريقة الدفع",
+    ),
     "selectedAddressTitle": MessageLookupByLibrary.simpleMessage(
       "العنوان المختار",
     ),
@@ -396,6 +508,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAndDataPolicy": MessageLookupByLibrary.simpleMessage(
       "الشروط وسياسة البيانات.",
     ),
+    "timeSlot10AM1PM": MessageLookupByLibrary.simpleMessage(
+      "10 صباحاً : 1 ظهراً",
+    ),
+    "timeSlot1PM4PM": MessageLookupByLibrary.simpleMessage("1 ظهراً : 4 عصراً"),
+    "today": MessageLookupByLibrary.simpleMessage("اليوم"),
+    "tomorrow": MessageLookupByLibrary.simpleMessage("غداً"),
     "vendorsPageTitle": MessageLookupByLibrary.simpleMessage("الموردين"),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "verificationComplete": MessageLookupByLibrary.simpleMessage(
