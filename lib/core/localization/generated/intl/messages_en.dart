@@ -528,6 +528,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "timeSlot1PM4PM": MessageLookupByLibrary.simpleMessage("1PM : 4PM"),
     "today": MessageLookupByLibrary.simpleMessage("Today"),
     "tomorrow": MessageLookupByLibrary.simpleMessage("Tomorrow"),
+    "topOfWeekTitle": MessageLookupByLibrary.simpleMessage("Top of Week"),
     "vendorsPageTitle": MessageLookupByLibrary.simpleMessage("Vendors"),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage(
       "Verification Code",

@@ -226,6 +226,7 @@
 }
   },
   "language": "اللغة",
+  "topOfWeekTitle": "الأكثر مبيعاً هذا الأسبوع",
   "notificationsTitle": "الإشعارات",
   "noNotificationsMessage": "لا توجد إشعارات",
   "newNotificationTitle": "إشعار جديد",

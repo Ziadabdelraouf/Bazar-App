@@ -538,6 +538,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "timeSlot1PM4PM": MessageLookupByLibrary.simpleMessage("1 ظهراً : 4 عصراً"),
     "today": MessageLookupByLibrary.simpleMessage("اليوم"),
     "tomorrow": MessageLookupByLibrary.simpleMessage("غداً"),
+    "topOfWeekTitle": MessageLookupByLibrary.simpleMessage(
+      "الأكثر مبيعاً هذا الأسبوع",
+    ),
     "vendorsPageTitle": MessageLookupByLibrary.simpleMessage("الموردين"),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "verificationComplete": MessageLookupByLibrary.simpleMessage(

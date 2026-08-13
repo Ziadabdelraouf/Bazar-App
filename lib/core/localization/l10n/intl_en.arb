@@ -279,6 +279,7 @@
     }
   },
   "language": "Language",
+  "topOfWeekTitle": "Top of Week",
   "notificationsTitle": "Notification",
   "noNotificationsMessage": "There is no notifications",
   "newNotificationTitle": "New Notification",

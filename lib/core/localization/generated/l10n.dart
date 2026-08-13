@@ -1742,6 +1742,16 @@ class S {
     return Intl.message('Language', name: 'language', desc: '', args: []);
   }
 
+  /// `Top of Week`
+  String get topOfWeekTitle {
+    return Intl.message(
+      'Top of Week',
+      name: 'topOfWeekTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Notification`
   String get notificationsTitle {
     return Intl.message(
