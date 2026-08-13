@@ -48,6 +48,10 @@ class AuthService {
     );
   }
 
+  Future<void> sendPasswordResetEmail(String email) async {
+    await _firebaseAuth.sendPasswordResetEmail(email: email.trim());
+  }
+
   Future<UserCredential> signUpWithEmailAndPassword(
     String email,
     String password,

@@ -65,6 +65,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "august": MessageLookupByLibrary.simpleMessage("August"),
     "availableCoupons": m0,
+    "backToSignInButton": MessageLookupByLibrary.simpleMessage(
+      "Back to Sign In",
+    ),
     "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("Best Vendors"),
     "betweenTimeSlot": MessageLookupByLibrary.simpleMessage("Between"),
     "booksCategoryTab": MessageLookupByLibrary.simpleMessage("Books"),
@@ -183,7 +186,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Continue to complete your sign up process",
     ),
     "couldNotLoadVendors": MessageLookupByLibrary.simpleMessage(
-      "Couldn't load vendors",
+      "Couldn\'t load vendors",
     ),
     "createNewPasswordDescription": MessageLookupByLibrary.simpleMessage(
       "Create your new password, so you can login to your account",
@@ -206,11 +209,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Detail Address",
     ),
     "didNotReceiveLink": MessageLookupByLibrary.simpleMessage(
-      "Didn't receive the link?",
+      "Didn\'t receive the link?",
     ),
     "discountPercent": m1,
     "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
-      "Don't have an account?",
+      "Don\'t have an account?",
     ),
     "emailExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
       "example@email.com",
@@ -324,7 +327,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Now reading books will be easier",
     ),
     "onboardingThreeDescription": MessageLookupByLibrary.simpleMessage(
-      "Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let's go!",
+      "Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let\'s go!",
     ),
     "onboardingThreeTitle": MessageLookupByLibrary.simpleMessage(
       "Start Your Adventure",
@@ -426,11 +429,17 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "resendButton": MessageLookupByLibrary.simpleMessage("Resend"),
     "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
-      "If you didn't receive a code? ",
+      "If you didn\'t receive a code? ",
     ),
     "resendInSeconds": m4,
     "resendLink": MessageLookupByLibrary.simpleMessage("Resend link"),
     "resending": MessageLookupByLibrary.simpleMessage("Resending..."),
+    "resetLinkSentDescription": MessageLookupByLibrary.simpleMessage(
+      "A password reset link has been sent to your account. Please check your email inbox and spam folder.",
+    ),
+    "resetLinkSentTitle": MessageLookupByLibrary.simpleMessage(
+      "Password Reset Link Sent",
+    ),
     "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
       "Please enter your email, we will send verification code to your email.",
     ),
