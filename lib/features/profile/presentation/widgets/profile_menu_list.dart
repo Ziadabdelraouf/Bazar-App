@@ -77,20 +77,6 @@ class ProfileMenuList extends ConsumerWidget {
 
     return Column(
       children: [
-        ListTile(
-          leading: Icon(
-            isDark ? Icons.dark_mode : Icons.light_mode,
-            color: primaryColor,
-          ),
-          title: const Text('Dark Mode'),
-          trailing: Switch(
-            value: isDark,
-            activeColor: primaryColor,
-            onChanged: (_) {
-              ref.read(themeNotifierProvider.notifier).toggleTheme();
-            },
-          ),
-        ),
         ...menuItems.map((item) {
           return ProfileTile(
             title: item.title,

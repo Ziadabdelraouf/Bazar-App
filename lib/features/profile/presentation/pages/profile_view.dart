@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/features/profile/presentation/widgets/dark_mode_toggle_tile.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/language_toggle_tile.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/profile_header.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/profile_menu_list.dart';
@@ -8,10 +9,21 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: [ProfileHeader(), SizedBox(height: 12),LanguageToggleTile(), ProfileMenuList()],
+        children: [
+          const ProfileHeader(),
+          const SizedBox(height: 12),
+          const LanguageToggleTile(),
+          const DarkModeToggleTile(),
+          Divider(
+            height: 32,
+            thickness: 1,
+            color: Theme.of(context).dividerColor,
+          ),
+          const ProfileMenuList(),
+        ],
       ),
     );
   }
