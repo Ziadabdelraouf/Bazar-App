@@ -11,7 +11,7 @@ class HelpCenterPage extends StatelessWidget {
     final localization=S.of(context);
     final topInset = MediaQuery.paddingOf(context).top;
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -52,15 +52,30 @@ class HelpCenterPage extends StatelessWidget {
                          
                           ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              
-              spacing: 16,
-              children: [
-                HelpOptionCard(icon: Icons.email_rounded, title: localization.helpCenterEmailTitle, subtitle: localization.helpCenterEmailSubtitle),
-                HelpOptionCard(icon: Icons.phone, title: localization.helpCenterPhoneTitle, subtitle: localization.helpCenterPhoneSubtitle),
-        
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              child: IntrinsicHeight(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(
+                      child: HelpOptionCard(
+                        icon: Icons.email_rounded,
+                        title: localization.helpCenterEmailTitle,
+                        subtitle: localization.helpCenterEmailSubtitle,
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: HelpOptionCard(
+                        icon: Icons.phone,
+                        title: localization.helpCenterPhoneTitle,
+                        subtitle: localization.helpCenterPhoneSubtitle,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             )
           ],
         ),
