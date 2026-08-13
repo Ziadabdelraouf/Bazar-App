@@ -11,7 +11,7 @@ import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/confir
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/confirm_order/delivery_date_time_bottom_sheet.dart';
 import 'package:bazar_group_1/features/cart_checkout/presentation/widgets/confirm_order/payment_details_bottom_sheet.dart';
 import 'package:bazar_group_1/features/home/presentation/widgets/notification_icon.dart';
-import 'package:bazar_group_1/features/profile/presentation/providers/location_address_provider.dart';
+import 'package:bazar_group_1/features/profile/presentation/providers/address_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -19,7 +19,7 @@ class ConfirmOrderView extends ConsumerWidget {
   const ConfirmOrderView({super.key});
 
   Future<void> _onOrderPressed(BuildContext context, WidgetRef ref) async {
-    final addressState = ref.read(locationAddressProvider);
+    final addressState = ref.read(addressProvider);
     final isAddressSelected =
         addressState.addressTitle.isNotEmpty ||
         addressState.fullAddress.isNotEmpty;
