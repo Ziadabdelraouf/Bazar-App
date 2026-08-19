@@ -12,18 +12,3 @@ flutter_launcher_icons:
   image_path_ios: "assets/icon/Bazar_App_Icon.jpg"
   remove_alpha_ios: true
   background_color_ios: "#54408C"
-
-  web:
-    generate: true
-    image_path: "assets/icon/Bazar_App_Icon.jpg"
-    background_color: "#54408C"
-    theme_color: "#hexcode"
-
-  windows:
-    generate: true
-    image_path: "assets/icon/Bazar_App_Icon.jpg"
-    icon_size: 48 # min:48, max:256, default: 48
-
-  macos:
-    generate: true
-    image_path: "assets/icon/Bazar_App_Icon.jpg"
