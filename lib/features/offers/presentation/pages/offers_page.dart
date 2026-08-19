@@ -20,15 +20,15 @@ class OffersPage extends ConsumerWidget {
         loading: () => const Center(
           child: CircularProgressIndicator(),
         ),
-        error: (error, stackTrace) => const Center(
+        error: (error, stackTrace) => Center(
           child: Text(
-            'Failed to load offers',
+            localization.failedToLoadOffers,
           ),
         ),
         data: (offers) {
           if (offers.isEmpty) {
-            return const Center(
-              child: Text('No offers available'),
+            return Center(
+              child: Text(localization.noOffersAvailable),
             );
           }
 

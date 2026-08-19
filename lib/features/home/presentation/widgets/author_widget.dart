@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -12,6 +13,7 @@ class AuthorWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authorsState = ref.watch(authorsProvider);
+    final l10n = S.of(context);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -20,7 +22,7 @@ class AuthorWidget extends ConsumerWidget {
           children: [
             Expanded(
               child: Text(
-                'Authors',
+                l10n.authorsTitle,
                 style: AppTextStyles.h5.copyWith(
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
@@ -33,7 +35,7 @@ class AuthorWidget extends ConsumerWidget {
                 );
               },
               child: Text(
-                'See all',
+                l10n.seeAllButton,
                 style: AppTextStyles.body14Bold.copyWith(
                   color: Theme.of(context).colorScheme.primary,
                 ),
@@ -51,9 +53,9 @@ class AuthorWidget extends ConsumerWidget {
           },
           data: (authors) {
             if (authors.isEmpty) {
-              return const SizedBox(
+              return SizedBox(
                 height: 100,
-                child: Center(child: Text('No authors found')),
+                child: Center(child: Text(l10n.noAuthorsFound)),
               );
             }
 
@@ -67,7 +69,7 @@ class AuthorWidget extends ConsumerWidget {
                   onPressed: () {
                     ref.invalidate(authorsProvider);
                   },
-                  child: const Text('Retry'),
+                  child: Text(l10n.retryButton),
                 ),
               ),
             );

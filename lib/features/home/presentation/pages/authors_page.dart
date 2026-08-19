@@ -73,7 +73,7 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 10, 24, 0),
                 child: Text(
-                  'Check the authors',
+                  S.of(context).checkTheAuthors,
                   style: TextStyle(
                     fontSize: 13,
                     color: colorScheme.onSurfaceVariant,
@@ -84,7 +84,7 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 4, 24, 18),
                 child: Text(
-                  'Authors',
+                  S.of(context).authorsTitle,
                   style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w700,
@@ -111,7 +111,7 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
                     if (filteredAuthors.isEmpty) {
                       return Center(
                         child: Text(
-                          'No authors found',
+                          S.of(context).noAuthorsFound,
                           style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
                         ),
                       );
@@ -218,7 +218,7 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
             child: Column(
               children: [
                 Text(
-                  category,
+                  _getCategoryLabel(context, category),
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: isSelected ? FontWeight.w700 : FontWeight.w400,
@@ -282,6 +282,24 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
     }
   }
 
+  String _getCategoryLabel(BuildContext context, String key) {
+    final l10n = S.of(context);
+    switch (key) {
+      case 'All':
+        return l10n.allCategoryTab;
+      case 'Poets':
+        return l10n.poetsCategoryTab;
+      case 'Playwrights':
+        return l10n.playwrightsCategoryTab;
+      case 'Novelists':
+        return l10n.novelistsCategoryTab;
+      case 'Journalists':
+        return l10n.journalistsCategoryTab;
+      default:
+        return key;
+    }
+  }
+
   Widget _buildErrorState(BuildContext context) {
     return Center(
       child: Column(
@@ -289,13 +307,13 @@ class _AuthorsPageState extends ConsumerState<AuthorsPage> {
         children: [
           Icon(Icons.error_outline, size: 40, color: Theme.of(context).colorScheme.onSurfaceVariant),
           const SizedBox(height: 12),
-          const Text('Unable to load authors'),
+          Text(S.of(context).unableToLoadAuthors),
           const SizedBox(height: 8),
           TextButton(
             onPressed: () {
               ref.invalidate(authorsProvider);
             },
-            child: const Text('Retry'),
+            child: Text(S.of(context).retryButton),
           ),
         ],
       ),

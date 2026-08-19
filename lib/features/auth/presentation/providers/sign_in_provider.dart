@@ -6,6 +6,7 @@ import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier
 import 'package:bazar_group_1/features/auth/presentation/providers/phone_number_notifier.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/email_validator.dart';
 import 'package:bazar_group_1/features/auth/domain/validators/password_validator.dart';
+import 'package:bazar_group_1/features/home/presentation/providers/bottom_nav_provider.dart';
 
 class SignInNotifier extends Notifier<SignInState> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -71,6 +72,7 @@ class SignInNotifier extends Notifier<SignInState> {
       );
 
       ref.invalidate(userProfileProvider);
+      ref.invalidate(bottomNavIndexProvider);
       state = state.copyWith(isLoading: false);
       return true;
     } catch (e) {
@@ -151,6 +153,7 @@ class SignInNotifier extends Notifier<SignInState> {
     );
 
     ref.invalidate(userProfileProvider);
+    ref.invalidate(bottomNavIndexProvider);
 
     state = state.copyWith(isLoading: false);
     return true;
@@ -168,6 +171,7 @@ class SignInNotifier extends Notifier<SignInState> {
       }
 
       ref.invalidate(userProfileProvider);
+      ref.invalidate(bottomNavIndexProvider);
       state = state.copyWith(isLoading: false);
       return true;
     } catch (e) {

@@ -54,8 +54,6 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  // skipped getter for the '//Buttons Strings//' key
-
   /// `Continue`
   String get continueButton {
     return Intl.message('Continue', name: 'continueButton', desc: '', args: []);
@@ -95,8 +93,6 @@ class S {
       args: [],
     );
   }
-
-  // skipped getter for the '//SignInPage Strings//' key
 
   /// `Welcome Back `
   String get welcomeBackTitle {
@@ -198,8 +194,6 @@ class S {
     );
   }
 
-  // skipped getter for the '//SuccessPage//' key
-
   /// `Congratulations!`
   String get congratulations {
     return Intl.message(
@@ -240,8 +234,6 @@ class S {
     );
   }
 
-  // skipped getter for the '//OnBoarding one Screen Strings//' key
-
   /// `Now reading books will be easier`
   String get onboardingOneTitle {
     return Intl.message(
@@ -261,8 +253,6 @@ class S {
       args: [],
     );
   }
-
-  // skipped getter for the '//OnBoarding Two Screen Strings//' key
 
   /// `Your Bookish Soulmate Awaits`
   String get onboardingTwoTitle {
@@ -284,8 +274,6 @@ class S {
     );
   }
 
-  // skipped getter for the '//OnBoarding Three Screen Strings//' key
-
   /// `Start Your Adventure`
   String get onboardingThreeTitle {
     return Intl.message(
@@ -305,8 +293,6 @@ class S {
       args: [],
     );
   }
-
-  // skipped getter for the '//Sign Up Page Strings//' key
 
   /// `Sign Up`
   String get signUpTitle {
@@ -502,8 +488,6 @@ class S {
       args: [],
     );
   }
-
-  // skipped getter for the '//Verification Screen Strings//' key
 
   /// `Verification Code`
   String get verificationCodeTitle {
@@ -730,8 +714,6 @@ class S {
     );
   }
 
-  // skipped getter for the '//Phone Number Screen Strings//' key
-
   /// `Phone Number`
   String get phoneNumberTitle {
     return Intl.message(
@@ -802,8 +784,6 @@ class S {
     );
   }
 
-  // skipped getter for the '//Forgot Password Screen Strings//' key
-
   /// `Forgot Password`
   String get forgotPasswordTitle {
     return Intl.message(
@@ -863,8 +843,6 @@ class S {
       args: [],
     );
   }
-
-  // skipped getter for the '//Reset Password Screen Strings//' key
 
   /// `Reset password`
   String get resetPasswordTitle {
@@ -951,8 +929,6 @@ class S {
     );
   }
 
-  // skipped getter for the '//Create New Password Screen Strings//' key
-
   /// `New password`
   String get createNewPasswordTitle {
     return Intl.message(
@@ -1013,8 +989,6 @@ class S {
     );
   }
 
-  // skipped getter for the '//Home Page Strings//' key
-
   /// `Home`
   String get homeTitle {
     return Intl.message('Home', name: 'homeTitle', desc: '', args: []);
@@ -1034,8 +1008,6 @@ class S {
   String get profileTitle {
     return Intl.message('Profile', name: 'profileTitle', desc: '', args: []);
   }
-
-  // skipped getter for the '//Profile Strings//' key
 
   /// `Log Out`
   String get logOut {
@@ -1087,8 +1059,6 @@ class S {
     return Intl.message('Help Center', name: 'helpCenter', desc: '', args: []);
   }
 
-  // skipped getter for the '//Special Offer Strings//' key
-
   /// `No offers available`
   String get noOffersAvailable {
     return Intl.message(
@@ -1134,8 +1104,6 @@ class S {
     return Intl.message('Retry', name: 'retryButton', desc: '', args: []);
   }
 
-  // skipped getter for the '//Author Detail Strings//' key
-
   /// `About`
   String get about {
     return Intl.message('About', name: 'about', desc: '', args: []);
@@ -1145,8 +1113,6 @@ class S {
   String get products {
     return Intl.message('Products', name: 'products', desc: '', args: []);
   }
-
-  // skipped getter for the '//Detail Menu Screen Strings//' key
 
   /// `Review`
   String get reviewLabel {
@@ -1183,8 +1149,6 @@ class S {
     );
   }
 
-  // skipped getter for the '//Cart Screen Strings//' key
-
   /// `Failed to load cart items`
   String get failedToLoadCart {
     return Intl.message(
@@ -1214,8 +1178,6 @@ class S {
   String get checkoutButton {
     return Intl.message('Checkout', name: 'checkoutButton', desc: '', args: []);
   }
-
-  // skipped getter for the '//Best Vendors Widget Strings//' key
 
   /// `Best Vendors`
   String get bestVendorsTitle {
@@ -1251,8 +1213,6 @@ class S {
       args: [],
     );
   }
-
-  // skipped getter for the '//Vendors Page Strings//' key
 
   /// `Our Vendors`
   String get ourVendorsSubtitle {
@@ -1309,8 +1269,6 @@ class S {
     );
   }
 
-  // skipped getter for the '//Favorites Page Strings//' key
-
   /// `Your Favorites`
   String get yourFavoritesTitle {
     return Intl.message(
@@ -1355,8 +1313,6 @@ class S {
   String get removeButton {
     return Intl.message('Remove', name: 'removeButton', desc: '', args: []);
   }
-
-  // skipped getter for the '//Logout Bottom Sheet Strings//' key
 
   /// `Logout`
   String get logoutTitle {
@@ -1432,8 +1388,6 @@ class S {
       args: [],
     );
   }
-
-  // skipped getter for the '//Order History Page Strings//' key
 
   /// `Order History`
   String get orderHistoryPageTitle {
@@ -2400,6 +2354,101 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Authors`
+  String get authorsTitle {
+    return Intl.message('Authors', name: 'authorsTitle', desc: '', args: []);
+  }
+
+  /// `Check the authors`
+  String get checkTheAuthors {
+    return Intl.message(
+      'Check the authors',
+      name: 'checkTheAuthors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No authors found`
+  String get noAuthorsFound {
+    return Intl.message(
+      'No authors found',
+      name: 'noAuthorsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to load authors`
+  String get unableToLoadAuthors {
+    return Intl.message(
+      'Unable to load authors',
+      name: 'unableToLoadAuthors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Author`
+  String get authorRoleFallback {
+    return Intl.message(
+      'Author',
+      name: 'authorRoleFallback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Poets`
+  String get poetsCategoryTab {
+    return Intl.message('Poets', name: 'poetsCategoryTab', desc: '', args: []);
+  }
+
+  /// `Playwrights`
+  String get playwrightsCategoryTab {
+    return Intl.message(
+      'Playwrights',
+      name: 'playwrightsCategoryTab',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Novelists`
+  String get novelistsCategoryTab {
+    return Intl.message(
+      'Novelists',
+      name: 'novelistsCategoryTab',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Journalists`
+  String get journalistsCategoryTab {
+    return Intl.message(
+      'Journalists',
+      name: 'journalistsCategoryTab',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load books`
+  String get failedToLoadBooks {
+    return Intl.message(
+      'Failed to load books',
+      name: 'failedToLoadBooks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OFF`
+  String get offText {
+    return Intl.message('OFF', name: 'offText', desc: '', args: []);
   }
 }
 

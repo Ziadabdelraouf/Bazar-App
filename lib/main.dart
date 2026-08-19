@@ -5,8 +5,6 @@ import 'package:bazar_group_1/core/notifications/notifications_provider.dart';
 import 'package:bazar_group_1/core/responsive/app_responsive_breakpoints.dart';
 import 'package:bazar_group_1/core/router/app_router.dart';
 import 'package:bazar_group_1/core/theme/app_theme.dart';
-import 'package:bazar_group_1/features/profile/presentation/pages/address_page.dart';
-import 'package:bazar_group_1/features/profile/presentation/pages/mapTest.dart';
 import 'package:bazar_group_1/core/theme/theme_notifier.dart';
 import 'package:bazar_group_1/features/splash_screen/splash_screen.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';

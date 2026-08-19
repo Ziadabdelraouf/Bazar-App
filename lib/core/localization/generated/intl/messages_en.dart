@@ -64,6 +64,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "At least 1 number (1-9)",
     ),
     "august": MessageLookupByLibrary.simpleMessage("August"),
+    "authorRoleFallback": MessageLookupByLibrary.simpleMessage("Author"),
+    "authorsTitle": MessageLookupByLibrary.simpleMessage("Authors"),
     "availableCoupons": m0,
     "backToSignInButton": MessageLookupByLibrary.simpleMessage(
       "Back to Sign In",
@@ -102,6 +104,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
       "Check your inbox and click the link inside to confirm your email address.",
+    ),
+    "checkTheAuthors": MessageLookupByLibrary.simpleMessage(
+      "Check the authors",
     ),
     "checkoutButton": MessageLookupByLibrary.simpleMessage("Checkout"),
     "chooseAddressToCompleteOrder": MessageLookupByLibrary.simpleMessage(
@@ -231,6 +236,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "expiryDateLabel": MessageLookupByLibrary.simpleMessage("Expiry Date"),
     "expiryDatePlaceholder": MessageLookupByLibrary.simpleMessage("MM/YY"),
     "expiryDateRequired": MessageLookupByLibrary.simpleMessage("Enter expiry"),
+    "failedToLoadBooks": MessageLookupByLibrary.simpleMessage(
+      "Failed to load books",
+    ),
     "failedToLoadCart": MessageLookupByLibrary.simpleMessage(
       "Failed to load cart items",
     ),
@@ -283,6 +291,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "itemsCount": m3,
     "january": MessageLookupByLibrary.simpleMessage("January"),
+    "journalistsCategoryTab": MessageLookupByLibrary.simpleMessage(
+      "Journalists",
+    ),
     "july": MessageLookupByLibrary.simpleMessage("July"),
     "june": MessageLookupByLibrary.simpleMessage("June"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
@@ -314,6 +325,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "New Notification",
     ),
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage("New Password"),
+    "noAuthorsFound": MessageLookupByLibrary.simpleMessage("No authors found"),
     "noBooksFound": MessageLookupByLibrary.simpleMessage("No books found"),
     "noFavoritesYet": MessageLookupByLibrary.simpleMessage("No favorites yet"),
     "noNotificationsMessage": MessageLookupByLibrary.simpleMessage(
@@ -328,8 +340,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("No vendors found"),
     "notificationsTitle": MessageLookupByLibrary.simpleMessage("Notification"),
+    "novelistsCategoryTab": MessageLookupByLibrary.simpleMessage("Novelists"),
     "november": MessageLookupByLibrary.simpleMessage("November"),
     "october": MessageLookupByLibrary.simpleMessage("October"),
+    "offText": MessageLookupByLibrary.simpleMessage("OFF"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("Offers & Promos"),
     "officeAddress": MessageLookupByLibrary.simpleMessage("Office"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
@@ -407,6 +421,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "pickDateSubtitle": MessageLookupByLibrary.simpleMessage("a date"),
     "pickDateTitle": MessageLookupByLibrary.simpleMessage("Pick"),
+    "playwrightsCategoryTab": MessageLookupByLibrary.simpleMessage(
+      "Playwrights",
+    ),
     "pleaseSelectDeliveryAddress": MessageLookupByLibrary.simpleMessage(
       "Please select a delivery address.",
     ),
@@ -423,6 +440,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please verify your email",
     ),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("Poems"),
+    "poetsCategoryTab": MessageLookupByLibrary.simpleMessage("Poets"),
     "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra dignissim ac ac ac. Nibh et sed ac, eget malesuada.",
     ),
@@ -529,6 +547,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "today": MessageLookupByLibrary.simpleMessage("Today"),
     "tomorrow": MessageLookupByLibrary.simpleMessage("Tomorrow"),
     "topOfWeekTitle": MessageLookupByLibrary.simpleMessage("Top of Week"),
+    "unableToLoadAuthors": MessageLookupByLibrary.simpleMessage(
+      "Unable to load authors",
+    ),
     "vendorsPageTitle": MessageLookupByLibrary.simpleMessage("Vendors"),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage(
       "Verification Code",

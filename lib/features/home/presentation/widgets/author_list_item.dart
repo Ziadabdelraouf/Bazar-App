@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -45,7 +46,7 @@ class AuthorListItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    author.role.isEmpty ? 'Author' : author.role,
+                    author.role.isEmpty ? S.of(context).authorRoleFallback : author.role,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
