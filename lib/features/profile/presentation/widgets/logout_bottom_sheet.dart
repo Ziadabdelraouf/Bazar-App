@@ -5,6 +5,7 @@ import 'package:bazar_group_1/core/router/app_routes.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/auth_service_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
+import 'package:bazar_group_1/features/home/presentation/providers/bottom_nav_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -53,6 +54,7 @@ class LogoutBottomSheet extends ConsumerWidget {
                   await ref.read(authServiceProvider).signout();
                   ref.invalidate(userProfileProvider);
                   ref.read(nameNotifierProvider.notifier).clear();
+                  ref.invalidate(bottomNavIndexProvider);
 
                   if (context.mounted) {
                     Navigator.pushNamedAndRemoveUntil(

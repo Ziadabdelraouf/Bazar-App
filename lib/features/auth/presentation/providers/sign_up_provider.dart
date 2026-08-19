@@ -1,6 +1,7 @@
 import 'package:bazar_group_1/features/auth/presentation/providers/auth_service_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/name_notifier_provider.dart';
 import 'package:bazar_group_1/features/auth/presentation/providers/sign_up_state.dart';
+import 'package:bazar_group_1/features/home/presentation/providers/bottom_nav_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -73,7 +74,11 @@ class SignUpNotifier extends Notifier<SignUpState> {
       if (authService.currentUser == null &&
           email.isNotEmpty &&
           password.isNotEmpty) {
-        await authService.signUpWithEmailAndPassword(email, password,finalName);
+        await authService.signUpWithEmailAndPassword(
+          email,
+          password,
+          finalName,
+        );
         /*if (finalName.isNotEmpty) {
           await authService.currentUser?.updateDisplayName(finalName);
         }*/
@@ -97,8 +102,6 @@ class SignUpNotifier extends Notifier<SignUpState> {
 
     final authService = ref.read(authServiceProvider);
 
-    
-
     await authService.saveSession(
       email: email.isNotEmpty ? email : null,
       name: finalName.isNotEmpty ? finalName : null,
@@ -106,6 +109,7 @@ class SignUpNotifier extends Notifier<SignUpState> {
     );
 
     ref.invalidate(userProfileProvider);
+    ref.invalidate(bottomNavIndexProvider);
   }
 }
 
