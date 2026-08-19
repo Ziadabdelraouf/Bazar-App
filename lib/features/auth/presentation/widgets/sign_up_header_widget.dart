@@ -1,6 +1,5 @@
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SignUpHeaderWidget extends StatelessWidget {
   final String title;

@@ -37,7 +37,7 @@ class HelpCenterPage extends StatelessWidget {
                           child: Icon(Icons.arrow_back, size: 24, color: Theme.of(context).colorScheme.onPrimary),
                         ),
                       ),
-                 Text(localization.orderHistory,style:AppTextStyles.h4.copyWith(color: Theme.of(context).colorScheme.onPrimary)) ]),
+                 Text(localization.helpCenterTitle,style:AppTextStyles.h4.copyWith(color: Theme.of(context).colorScheme.onPrimary)) ]),
                  Padding(
                    padding: const EdgeInsets.symmetric(vertical: 45),
                    child: Column(

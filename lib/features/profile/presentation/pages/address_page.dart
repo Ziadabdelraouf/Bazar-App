@@ -4,11 +4,8 @@ import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/profile/presentation/providers/address_provider.dart';
 import 'package:bazar_group_1/features/profile/presentation/widgets/address_bar_widget.dart';
-import 'package:bazar_group_1/features/profile/presentation/widgets/address_type_option.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:geocoding/geocoding.dart';
 
 class AddressPage extends ConsumerStatefulWidget {
   const AddressPage({super.key});

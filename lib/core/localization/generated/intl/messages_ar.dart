@@ -64,6 +64,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم واحد على الأقل (1-9)",
     ),
     "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
+    "authorRoleFallback": MessageLookupByLibrary.simpleMessage("مؤلف"),
+    "authorsTitle": MessageLookupByLibrary.simpleMessage("المؤلفون"),
     "availableCoupons": m0,
     "backToSignInButton": MessageLookupByLibrary.simpleMessage(
       "العودة لتسجيل الدخول",
@@ -105,6 +107,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
       "تحقق من صندوق الوارد الخاص بك وانقر على الرابط الموجود بداخله لتأكيد عنوان بريدك الإلكتروني.",
     ),
+    "checkTheAuthors": MessageLookupByLibrary.simpleMessage("تفقد المؤلفين"),
     "checkoutButton": MessageLookupByLibrary.simpleMessage("إتمام الشراء"),
     "chooseAddressToCompleteOrder": MessageLookupByLibrary.simpleMessage(
       "اختر عنوانك لإكمال الطلب",
@@ -239,6 +242,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "expiryDateRequired": MessageLookupByLibrary.simpleMessage(
       "أدخل تاريخ الانتهاء",
     ),
+    "failedToLoadBooks": MessageLookupByLibrary.simpleMessage(
+      "فشل تحميل الكتب",
+    ),
     "failedToLoadCart": MessageLookupByLibrary.simpleMessage(
       "فشل في تحميل عناصر السلة",
     ),
@@ -295,6 +301,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "itemsCount": m3,
     "january": MessageLookupByLibrary.simpleMessage("يناير"),
+    "journalistsCategoryTab": MessageLookupByLibrary.simpleMessage("صحفيون"),
     "july": MessageLookupByLibrary.simpleMessage("يوليو"),
     "june": MessageLookupByLibrary.simpleMessage("يونيو"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
@@ -326,6 +333,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الجديدة",
     ),
+    "noAuthorsFound": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على مؤلفين",
+    ),
     "noBooksFound": MessageLookupByLibrary.simpleMessage("لا توجد كتب"),
     "noFavoritesYet": MessageLookupByLibrary.simpleMessage(
       "لا توجد مفضلات بعد",
@@ -342,8 +352,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "noVendorsFound": MessageLookupByLibrary.simpleMessage("لا يوجد موردون"),
     "notificationsTitle": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+    "novelistsCategoryTab": MessageLookupByLibrary.simpleMessage("روائيون"),
     "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
     "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
+    "offText": MessageLookupByLibrary.simpleMessage("خصم"),
     "offersAndPromos": MessageLookupByLibrary.simpleMessage("العروض والخصومات"),
     "officeAddress": MessageLookupByLibrary.simpleMessage("العمل"),
     "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
@@ -417,6 +429,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "pickDateSubtitle": MessageLookupByLibrary.simpleMessage("تاريخاً"),
     "pickDateTitle": MessageLookupByLibrary.simpleMessage("اختر"),
+    "playwrightsCategoryTab": MessageLookupByLibrary.simpleMessage(
+      "كتاب مسرحيون",
+    ),
     "pleaseSelectDeliveryAddress": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار عنوان التوصيل.",
     ),
@@ -433,6 +448,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى التحقق من بريدك الإلكتروني",
     ),
     "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("أشعار"),
+    "poetsCategoryTab": MessageLookupByLibrary.simpleMessage("شعراء"),
     "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
       "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدايبيسينج إيليت.",
     ),
@@ -540,6 +556,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "tomorrow": MessageLookupByLibrary.simpleMessage("غداً"),
     "topOfWeekTitle": MessageLookupByLibrary.simpleMessage(
       "الأكثر مبيعاً هذا الأسبوع",
+    ),
+    "unableToLoadAuthors": MessageLookupByLibrary.simpleMessage(
+      "تعذر تحميل المؤلفين",
     ),
     "vendorsPageTitle": MessageLookupByLibrary.simpleMessage("الموردين"),
     "verificationCodeTitle": MessageLookupByLibrary.simpleMessage("رمز التحقق"),

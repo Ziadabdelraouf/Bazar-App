@@ -1,3 +1,4 @@
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
 import 'package:bazar_group_1/core/theme/app_colors.dart';
 import 'package:bazar_group_1/core/theme/app_text_styles.dart';
 import 'package:bazar_group_1/features/offers/data/models/offer_model.dart';
@@ -29,7 +30,7 @@ class CouponCard extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             Text(
-              'OFF',
+              S.of(context).offText,
               style: AppTextStyles.h2.copyWith(color: AppColors.white),
             ),
             const SizedBox(height: 8),

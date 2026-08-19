@@ -61,14 +61,14 @@ class TopOfWeekSection extends ConsumerWidget {
 
             error: (error, stackTrace) => Center(
               child: Text(
-                'Failed to load books',
+                l10n.failedToLoadBooks,
                 style: AppTextStyles.body14Medium,
               ),
             ),
 
             data: (books) {
               if (books.isEmpty) {
-                return const Center(child: Text('No books found'));
+                return Center(child: Text(l10n.noBooksFound));
               }
 
               return ListView.separated(
