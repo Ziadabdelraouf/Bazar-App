@@ -1,0 +1,110 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/core/router/app_routes.dart';
+import 'package:bazar_group_1/core/theme/app_icons.dart';
+import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+import 'package:bazar_group_1/features/auth/presentation/widgets/oauth_signin_button.dart';
+import 'package:bazar_group_1/features/auth/presentation/providers/sign_in_provider.dart';
+import 'package:bazar_group_1/core/utils/firebase_error_utils.dart';
+
+class SignInSocialWidget extends ConsumerWidget {
+  const SignInSocialWidget({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final signInState = ref.watch(signInProvider);
+
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              S.of(context).dontHaveAccountText,
+              style: AppTextStyles.body16Regular.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                final arguments = ModalRoute.of(context)?.settings.arguments;
+                if (arguments is Map &&
+                    arguments['from'] == AppRoutes.signUpPage) {
+                  Navigator.pop(context);
+                } else {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.signUpPage,
+                    arguments: {'from': AppRoutes.signInPage},
+                  );
+                }
+              },
+              child: Text(
+                S.of(context).signUpButton,
+                style: AppTextStyles.body16Regular.copyWith(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 16),
+        Row(
+          children: [
+            Expanded(
+              child: Divider(
+                color: Theme.of(context).colorScheme.outlineVariant,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              child: Text(
+                S.of(context).orSeparator,
+                style: AppTextStyles.body16Regular.copyWith(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                ),
+              ),
+            ),
+            Expanded(
+              child: Divider(
+                color: Theme.of(context).colorScheme.outlineVariant,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 24),
+        OAuthSignInButton(
+          onPressed: signInState.isLoading
+              ? () {}
+              : () async {
+                  try {
+                    final success = await ref
+                        .read(signInProvider.notifier)
+                        .signInWithGoogle();
+                    if (success && context.mounted) {
+                      ref.read(signInProvider.notifier).reset();
+                      Navigator.pushReplacementNamed(
+                        context,
+                        AppRoutes.homePage,
+                      );
+                    }
+                  } catch (e) {
+                    if (context.mounted) {
+                      FirebaseErrorUtils.showErrorSnackBar(context, e);
+                    }
+                  }
+                },
+          text: S.of(context).signInWithGoogleButton,
+          icon: AppIcons.googleLogo,
+        ),
+        const SizedBox(height: 16),
+        OAuthSignInButton(
+          onPressed: () {},
+          text: S.of(context).signInWithAppleButton,
+          icon: AppIcons.appleLogo,
+        ),
+      ],
+    );
+  }
+}

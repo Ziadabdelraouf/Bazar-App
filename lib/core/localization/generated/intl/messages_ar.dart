@@ -1,0 +1,591 @@
+// DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
+// This is a library that provides messages for a ar locale. All the
+// messages from the main program should be duplicated here with the same
+// function name.
+
+// Ignore issues from commonly used lints in this file.
+// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
+// ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
+// ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
+// ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
+
+import 'package:intl/intl.dart';
+import 'package:intl/message_lookup_by_library.dart';
+
+final messages = new MessageLookup();
+
+typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
+
+class MessageLookup extends MessageLookupByLibrary {
+  String get localeName => 'ar';
+
+  static String m0(count) => "لديك ${count} كوبون للاستخدام";
+
+  static String m1(discount) => "خصم %${discount}";
+
+  static String m2(error) => "فشل في إعادة إرسال رابط التحقق: ${error}";
+
+  static String m3(count) =>
+      "${Intl.plural(count, zero: 'لا توجد عناصر', one: 'عنصر واحد', two: 'عنصران', few: '${count} عناصر', many: '${count} عنصرًا', other: '${count} عنصر')}";
+
+  static String m4(seconds) => "إعادة الإرسال خلال ${seconds} ثانية";
+
+  final messages = _notInlinedMessages(_notInlinedMessages);
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "PasswordChanged": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير كلمة المرور!",
+    ),
+    "PasswordChangedBody": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير كلمة المرور بنجاح، يمكنك تسجيل الدخول مرة أخرى باستخدام كلمة مرور جديدة.",
+    ),
+    "about": MessageLookupByLibrary.simpleMessage("عن الكاتب"),
+    "addToCartButton": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
+    "address": MessageLookupByLibrary.simpleMessage("العنوان"),
+    "addressNotFound": MessageLookupByLibrary.simpleMessage(
+      "العنوان غير موجود",
+    ),
+    "addressTitlePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "مثال: منزلي",
+    ),
+    "addressTitleRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل اسم العنوان",
+    ),
+    "addressTypeLabel": MessageLookupByLibrary.simpleMessage("نوع العنوان"),
+    "addressUnavailable": MessageLookupByLibrary.simpleMessage(
+      "العنوان غير متاح",
+    ),
+    "allCategoryTab": MessageLookupByLibrary.simpleMessage("الكل"),
+    "april": MessageLookupByLibrary.simpleMessage("أبريل"),
+    "atLeastOneLetter": MessageLookupByLibrary.simpleMessage(
+      "حرف صغير أو كبير واحد على الأقل",
+    ),
+    "atLeastOneNumber": MessageLookupByLibrary.simpleMessage(
+      "رقم واحد على الأقل (1-9)",
+    ),
+    "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
+    "authorRoleFallback": MessageLookupByLibrary.simpleMessage("مؤلف"),
+    "authorsTitle": MessageLookupByLibrary.simpleMessage("المؤلفون"),
+    "availableCoupons": m0,
+    "backToSignInButton": MessageLookupByLibrary.simpleMessage(
+      "العودة لتسجيل الدخول",
+    ),
+    "bestVendorsTitle": MessageLookupByLibrary.simpleMessage("أفضل الموردين"),
+    "betweenTimeSlot": MessageLookupByLibrary.simpleMessage("بين"),
+    "booksCategoryTab": MessageLookupByLibrary.simpleMessage("كتب"),
+    "cancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "cancelledStatus": MessageLookupByLibrary.simpleMessage("ملغى"),
+    "cardHasExpired": MessageLookupByLibrary.simpleMessage(
+      "البطاقة منتهية الصلاحية",
+    ),
+    "cardNumberInvalid": MessageLookupByLibrary.simpleMessage(
+      "يجب أن يتكون رقم البطاقة من 16 رقمًا",
+    ),
+    "cardNumberLabel": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
+    "cardNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "1234567890123456",
+    ),
+    "cardholderNameLabel": MessageLookupByLibrary.simpleMessage(
+      "اسم حامل البطاقة",
+    ),
+    "cardholderNamePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "مثال: أحمد محمد",
+    ),
+    "cardholderNameRequired": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال اسم حامل البطاقة",
+    ),
+    "cartTitle": MessageLookupByLibrary.simpleMessage("السلة"),
+    "cartTotal": MessageLookupByLibrary.simpleMessage("الإجمالي"),
+    "cashOnDelivery": MessageLookupByLibrary.simpleMessage(
+      "الدفع عند الاستلام",
+    ),
+    "categoryTitle": MessageLookupByLibrary.simpleMessage("التصنيفات"),
+    "changePictureButton": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
+    "changesSavedSuccess": MessageLookupByLibrary.simpleMessage(
+      "تم حفظ التغييرات بنجاح",
+    ),
+    "checkInboxVerificationPrompt": MessageLookupByLibrary.simpleMessage(
+      "تحقق من صندوق الوارد الخاص بك وانقر على الرابط الموجود بداخله لتأكيد عنوان بريدك الإلكتروني.",
+    ),
+    "checkTheAuthors": MessageLookupByLibrary.simpleMessage("تفقد المؤلفين"),
+    "checkoutButton": MessageLookupByLibrary.simpleMessage("إتمام الشراء"),
+    "chooseAddressToCompleteOrder": MessageLookupByLibrary.simpleMessage(
+      "اختر عنوانك لإكمال الطلب",
+    ),
+    "codeResentMessage": MessageLookupByLibrary.simpleMessage(
+      "تم إعادة إرسال الكود!",
+    ),
+    "confirmButton": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "confirmChangesMessage": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد أنك تريد حفظ هذه التغييرات؟",
+    ),
+    "confirmChangesTitle": MessageLookupByLibrary.simpleMessage(
+      "تأكيد التغييرات",
+    ),
+    "confirmOrderAddressHeader": MessageLookupByLibrary.simpleMessage(
+      "العنوان",
+    ),
+    "confirmOrderButton": MessageLookupByLibrary.simpleMessage("اطلب الآن"),
+    "confirmOrderChangeButton": MessageLookupByLibrary.simpleMessage("تغيير"),
+    "confirmOrderChooseDateTime": MessageLookupByLibrary.simpleMessage(
+      "اختر التاريخ والوقت",
+    ),
+    "confirmOrderChoosePayment": MessageLookupByLibrary.simpleMessage(
+      "اختر وسيلة الدفع",
+    ),
+    "confirmOrderDateTimeHeader": MessageLookupByLibrary.simpleMessage(
+      "التاريخ والوقت",
+    ),
+    "confirmOrderDateTimeTitle": MessageLookupByLibrary.simpleMessage(
+      "التاريخ والوقت",
+    ),
+    "confirmOrderPaymentHeader": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "confirmOrderPaymentTitle": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "confirmOrderPrice": MessageLookupByLibrary.simpleMessage("السعر"),
+    "confirmOrderSeeDetails": MessageLookupByLibrary.simpleMessage(
+      "عرض التفاصيل",
+    ),
+    "confirmOrderShipping": MessageLookupByLibrary.simpleMessage("الشحن"),
+    "confirmOrderSummaryHeader": MessageLookupByLibrary.simpleMessage("الملخص"),
+    "confirmOrderTitle": MessageLookupByLibrary.simpleMessage("تأكيد الطلب"),
+    "confirmOrderTotalPayment": MessageLookupByLibrary.simpleMessage(
+      "إجمالي الدفع",
+    ),
+    "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
+    "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
+      "الرجاء تأكيد كلمة المرور",
+    ),
+    "confirmPaymentMethodButton": MessageLookupByLibrary.simpleMessage(
+      "تأكيد طريقة الدفع",
+    ),
+    "confirmationButton": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "congratsVerified": MessageLookupByLibrary.simpleMessage(
+      "تهانينا، لقد تم التحقق من حسابك!",
+    ),
+    "congratsVerifiedTapBelow": MessageLookupByLibrary.simpleMessage(
+      "تهانينا، لقد تم التحقق منك! اضغط أدناه للمتابعة لإكمال عملية التسجيل.",
+    ),
+    "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
+    "contactMethodEmailSubtitle": MessageLookupByLibrary.simpleMessage(
+      "إرسال إلى بريدك الإلكتروني",
+    ),
+    "contactMethodEmailTitle": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني",
+    ),
+    "contactMethodPhoneSubtitle": MessageLookupByLibrary.simpleMessage(
+      "إرسال إلى هاتفك",
+    ),
+    "contactMethodPhoneTitle": MessageLookupByLibrary.simpleMessage(
+      "رقم الهاتف",
+    ),
+    "continueButton": MessageLookupByLibrary.simpleMessage("استمر"),
+    "continueShoppingButton": MessageLookupByLibrary.simpleMessage(
+      "متابعة التسوق",
+    ),
+    "continueSignUpButton": MessageLookupByLibrary.simpleMessage(
+      "متابعة التسجيل",
+    ),
+    "continueSignUpProcess": MessageLookupByLibrary.simpleMessage(
+      "تابع لإكمال عملية التسجيل الخاص بك",
+    ),
+    "couldNotLoadVendors": MessageLookupByLibrary.simpleMessage(
+      "تعذر تحميل الموردين",
+    ),
+    "createNewPasswordDescription": MessageLookupByLibrary.simpleMessage(
+      "أنشئ كلمة مرور جديدة، حتى تتمكن من تسجيل الدخول إلى حسابك",
+    ),
+    "createNewPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "كلمة مرور جديدة",
+    ),
+    "creditDebitCard": MessageLookupByLibrary.simpleMessage(
+      "بطاقة ائتمان / خصم",
+    ),
+    "currentLocation": MessageLookupByLibrary.simpleMessage("موقعي الحالي"),
+    "cvvInvalid": MessageLookupByLibrary.simpleMessage("أدخل 3 أرقام"),
+    "cvvLabel": MessageLookupByLibrary.simpleMessage("رمز الأمان (CVV)"),
+    "cvvPlaceholder": MessageLookupByLibrary.simpleMessage("123"),
+    "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
+    "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
+    "deliveredStatus": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
+    "deliveryDateTitle": MessageLookupByLibrary.simpleMessage("تاريخ التوصيل"),
+    "deliveryTimeTitle": MessageLookupByLibrary.simpleMessage("وقت التوصيل"),
+    "detailAddressTitle": MessageLookupByLibrary.simpleMessage(
+      "تفاصيل العنوان",
+    ),
+    "didNotReceiveLink": MessageLookupByLibrary.simpleMessage(
+      "لم تستلم الرابط؟",
+    ),
+    "discountPercent": m1,
+    "dontHaveAccountText": MessageLookupByLibrary.simpleMessage(
+      "ليس لديك حساب؟",
+    ),
+    "emailExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "example@email.com",
+    ),
+    "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "emailPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "أدخل بريدك الإلكتروني",
+    ),
+    "emailRequired": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني مطلوب",
+    ),
+    "emptyPhoneNumberError": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال رقم هاتفك",
+    ),
+    "expiryDateFormatInvalid": MessageLookupByLibrary.simpleMessage(
+      "استخدم صيغة شهر/سنة",
+    ),
+    "expiryDateLabel": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
+    "expiryDatePlaceholder": MessageLookupByLibrary.simpleMessage("شهر/سنة"),
+    "expiryDateRequired": MessageLookupByLibrary.simpleMessage(
+      "أدخل تاريخ الانتهاء",
+    ),
+    "failedToLoadBooks": MessageLookupByLibrary.simpleMessage(
+      "فشل تحميل الكتب",
+    ),
+    "failedToLoadCart": MessageLookupByLibrary.simpleMessage(
+      "فشل في تحميل عناصر السلة",
+    ),
+    "failedToLoadOffers": MessageLookupByLibrary.simpleMessage(
+      "فشل في تحميل العروض",
+    ),
+    "failedToResendVerificationLink": m2,
+    "february": MessageLookupByLibrary.simpleMessage("فبراير"),
+    "forgotPasswordButton": MessageLookupByLibrary.simpleMessage(
+      "هل نسيت كلمة المرور؟",
+    ),
+    "forgotPasswordDescription": MessageLookupByLibrary.simpleMessage(
+      "اختر وسيلة التواصل التي تريد استخدامها لإعادة تعيين كلمة المرور",
+    ),
+    "forgotPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "نسيت كلمة المرور",
+    ),
+    "fullAddressPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "أدخل عنوانك بالكامل",
+    ),
+    "fullAddressRequired": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل العنوان بالكامل",
+    ),
+    "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
+    "helpCenter": MessageLookupByLibrary.simpleMessage("مركز المساعدة"),
+    "helpCenterEmailSubtitle": MessageLookupByLibrary.simpleMessage(
+      "إرسال إلى بريدك الإلكتروني",
+    ),
+    "helpCenterEmailTitle": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني",
+    ),
+    "helpCenterOrderHistory": MessageLookupByLibrary.simpleMessage(
+      "سجل الطلبات",
+    ),
+    "helpCenterPhoneSubtitle": MessageLookupByLibrary.simpleMessage(
+      "إرسال إلى هاتفك",
+    ),
+    "helpCenterPhoneTitle": MessageLookupByLibrary.simpleMessage("الهاتف"),
+    "helpCenterSubtitle": MessageLookupByLibrary.simpleMessage(
+      "قوللنا إزاي نقدر نساعدك 👋\nفريقنا جاهز لتقديم الخدمة والدعم!",
+    ),
+    "helpCenterTitle": MessageLookupByLibrary.simpleMessage("مركز المساعدة"),
+    "homeAddress": MessageLookupByLibrary.simpleMessage("المنزل"),
+    "homeTitle": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "incorrectCodeError": MessageLookupByLibrary.simpleMessage(
+      "الكود غير صحيح، حاول مرة أخرى.",
+    ),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "أدخل بريدًا إلكترونيًا صحيحًا",
+    ),
+    "invalidPhoneNumberError": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال رقم هاتف صحيح",
+    ),
+    "itemsCount": m3,
+    "january": MessageLookupByLibrary.simpleMessage("يناير"),
+    "journalistsCategoryTab": MessageLookupByLibrary.simpleMessage("صحفيون"),
+    "july": MessageLookupByLibrary.simpleMessage("يوليو"),
+    "june": MessageLookupByLibrary.simpleMessage("يونيو"),
+    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
+    "locationTitle": MessageLookupByLibrary.simpleMessage("الموقع"),
+    "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "logoutButton": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "logoutConfirmationMessage": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متاكد من رغبتك في تسجيل الخروج؟",
+    ),
+    "logoutTitle": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "march": MessageLookupByLibrary.simpleMessage("مارس"),
+    "may": MessageLookupByLibrary.simpleMessage("مايو"),
+    "minimumEightCharacters": MessageLookupByLibrary.simpleMessage(
+      "8 أحرف على الأقل",
+    ),
+    "myAccount": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "myAccountTitle": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "nameLabel": MessageLookupByLibrary.simpleMessage("الاسم"),
+    "nameMinimumLength": MessageLookupByLibrary.simpleMessage(
+      "يجب أن يتكون الاسم من حرفين على الأقل",
+    ),
+    "namePlaceholder": MessageLookupByLibrary.simpleMessage("اسمك"),
+    "nameRequired": MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
+    "newNotificationBody": MessageLookupByLibrary.simpleMessage(
+      "لديك إشعار جديد",
+    ),
+    "newNotificationTitle": MessageLookupByLibrary.simpleMessage("إشعار جديد"),
+    "newPasswordLabel": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور الجديدة",
+    ),
+    "noAuthorsFound": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على مؤلفين",
+    ),
+    "noBooksFound": MessageLookupByLibrary.simpleMessage("لا توجد كتب"),
+    "noFavoritesYet": MessageLookupByLibrary.simpleMessage(
+      "لا توجد مفضلات بعد",
+    ),
+    "noNotificationsMessage": MessageLookupByLibrary.simpleMessage(
+      "لا توجد إشعارات",
+    ),
+    "noOffersAvailable": MessageLookupByLibrary.simpleMessage(
+      "لا تتوفر عروض حاليًا",
+    ),
+    "noOrdersYet": MessageLookupByLibrary.simpleMessage("لا توجد طلبات بعد"),
+    "noProductsInCart": MessageLookupByLibrary.simpleMessage(
+      "لا توجد منتجات في السلة",
+    ),
+    "noVendorsFound": MessageLookupByLibrary.simpleMessage("لا يوجد موردون"),
+    "notificationsTitle": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+    "novelistsCategoryTab": MessageLookupByLibrary.simpleMessage("روائيون"),
+    "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
+    "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
+    "offText": MessageLookupByLibrary.simpleMessage("خصم"),
+    "offersAndPromos": MessageLookupByLibrary.simpleMessage("العروض والخصومات"),
+    "officeAddress": MessageLookupByLibrary.simpleMessage("العمل"),
+    "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
+      "اكتشف عوالم جديدة، انضم إلى مجتمع قراءة نابض بالحياة. ابدأ مغامرتك في القراءة بسهولة معنا.",
+    ),
+    "onboardingOneTitle": MessageLookupByLibrary.simpleMessage(
+      "الأن أصبحت القراءة أسهل",
+    ),
+    "onboardingThreeDescription": MessageLookupByLibrary.simpleMessage(
+      "هل أنت مستعد لبدء رحلة مليئة بالإلهام والمعرفة؟ مغامرتك تبدأ الآن. هيا بنا!",
+    ),
+    "onboardingThreeTitle": MessageLookupByLibrary.simpleMessage(
+      "ابدأ مغامرتك",
+    ),
+    "onboardingTwoDescription": MessageLookupByLibrary.simpleMessage(
+      "دعنا نرشدك إلى الكتاب المثالي. اكتشف كتبًا تناسب ذوقك لتحصل على تجربة قراءة ممتعة ومميزة.",
+    ),
+    "onboardingTwoTitle": MessageLookupByLibrary.simpleMessage(
+      "رفيقك المثالي في عالم الكتب بانتظارك",
+    ),
+    "orSeparator": MessageLookupByLibrary.simpleMessage("أو"),
+    "orderHistory": MessageLookupByLibrary.simpleMessage("سجل الطلبات"),
+    "orderHistoryPageTitle": MessageLookupByLibrary.simpleMessage(
+      "سجل الطلبات",
+    ),
+    "orderNowButton": MessageLookupByLibrary.simpleMessage("اطلب الآن"),
+    "orderPlacedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم تقديم الطلب بنجاح!",
+    ),
+    "ourVendorsSubtitle": MessageLookupByLibrary.simpleMessage("موردينا"),
+    "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "passwordLetterRequired": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي كلمة المرور على حرف واحد على الأقل",
+    ),
+    "passwordMinimumLength": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل",
+    ),
+    "passwordNumberRequired": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+    ),
+    "passwordPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "أدخل كلمة المرور",
+    ),
+    "passwordRequired": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور مطلوبة",
+    ),
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور غير متطابقة",
+    ),
+    "paySecurelyWithCard": MessageLookupByLibrary.simpleMessage(
+      "ادفع بأمان باستخدام بطاقتك",
+    ),
+    "payWithCashUponDelivery": MessageLookupByLibrary.simpleMessage(
+      "الدفع نقدًا عند وصول الطلب",
+    ),
+    "payWithCashWhenOrderArrives": MessageLookupByLibrary.simpleMessage(
+      "الدفع نقدًا عند وصول طلبك",
+    ),
+    "paymentDetailsTitle": MessageLookupByLibrary.simpleMessage("تفاصيل الدفع"),
+    "phoneExamplePlaceholder": MessageLookupByLibrary.simpleMessage(
+      "(+965) 123 435 7565",
+    ),
+    "phoneNumberDescription": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال رقم هاتفك، حتى نتمكن من توصيل طلبك بسهولة أكبر",
+    ),
+    "phoneNumberFieldLabel": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "phoneNumberLabel": MessageLookupByLibrary.simpleMessage("رقم هاتفك"),
+    "phoneNumberPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "اكتب رقم هاتفك...",
+    ),
+    "phoneNumberTitle": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "pickDateSubtitle": MessageLookupByLibrary.simpleMessage("تاريخاً"),
+    "pickDateTitle": MessageLookupByLibrary.simpleMessage("اختر"),
+    "playwrightsCategoryTab": MessageLookupByLibrary.simpleMessage(
+      "كتاب مسرحيون",
+    ),
+    "pleaseSelectDeliveryAddress": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار عنوان التوصيل.",
+    ),
+    "pleaseSelectDeliveryDateTime": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار تاريخ ووقت التوصيل.",
+    ),
+    "pleaseSelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار وإكمال طريقة الدفع.",
+    ),
+    "pleaseVerifyAccount": MessageLookupByLibrary.simpleMessage(
+      "يرجى التحقق من حسابك",
+    ),
+    "pleaseVerifyEmail": MessageLookupByLibrary.simpleMessage(
+      "يرجى التحقق من بريدك الإلكتروني",
+    ),
+    "poemsCategoryTab": MessageLookupByLibrary.simpleMessage("أشعار"),
+    "poetsCategoryTab": MessageLookupByLibrary.simpleMessage("شعراء"),
+    "productDescriptionPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدايبيسينج إيليت.",
+    ),
+    "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
+    "profileTitle": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "recentSearchesTitle": MessageLookupByLibrary.simpleMessage(
+      "عمليات البحث الأخيرة",
+    ),
+    "registerAgreement": MessageLookupByLibrary.simpleMessage(
+      "بالنقر على تسجيل، فإنك توافق على",
+    ),
+    "registerButton": MessageLookupByLibrary.simpleMessage("تسجيل"),
+    "removeButton": MessageLookupByLibrary.simpleMessage("إزالة"),
+    "removeFromFavoritesConfirmation": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد أنك تريد إزالة هذا الكتاب من مفضلتك؟",
+    ),
+    "removeFromFavoritesTitle": MessageLookupByLibrary.simpleMessage(
+      "إزالة من المفضلة؟",
+    ),
+    "resendButton": MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
+    "resendCodePrompt": MessageLookupByLibrary.simpleMessage(
+      "لم تستلم الكود؟ ",
+    ),
+    "resendInSeconds": m4,
+    "resendLink": MessageLookupByLibrary.simpleMessage("إعادة إرسال الرابط"),
+    "resending": MessageLookupByLibrary.simpleMessage("جاري إعادة الإرسال..."),
+    "resetLinkSentDescription": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال رابط إعادة تعيين كلمة المرور إلى حسابك. يرجى التحقق من البريد الوارد ورسائل البريد العشوائي (Spam).",
+    ),
+    "resetLinkSentTitle": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال رابط إعادة التعيين",
+    ),
+    "resetPasswordEmailDescription": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال بريدك الإلكتروني، سنرسل لك رمز التحقق على بريدك الإلكتروني.",
+    ),
+    "resetPasswordPhoneDescription": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال رقم هاتفك، سنرسل لك رمز التحقق على رقم هاتفك.",
+    ),
+    "resetPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "إعادة تعيين كلمة المرور",
+    ),
+    "retryButton": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
+    "reviewLabel": MessageLookupByLibrary.simpleMessage("مراجعة"),
+    "saveAddressAs": MessageLookupByLibrary.simpleMessage("احفظ العنوان كـ"),
+    "saveAddressButton": MessageLookupByLibrary.simpleMessage("حفظ العنوان"),
+    "saveChangesButton": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
+    "searchCountryHint": MessageLookupByLibrary.simpleMessage(
+      "ابحث عن الدولة أو الكود",
+    ),
+    "searchHint": MessageLookupByLibrary.simpleMessage("بحث"),
+    "searchPageTitle": MessageLookupByLibrary.simpleMessage("بحث"),
+    "seeAllButton": MessageLookupByLibrary.simpleMessage("عرض الكل"),
+    "selectAddressMessage": MessageLookupByLibrary.simpleMessage(
+      "اختر عنوانك على الخريطة",
+    ),
+    "selectAnAddress": MessageLookupByLibrary.simpleMessage("اختر عنوانًا"),
+    "selectCountryTitle": MessageLookupByLibrary.simpleMessage("اختر الدولة"),
+    "selectPaymentMethodTitle": MessageLookupByLibrary.simpleMessage(
+      "اختر طريقة الدفع",
+    ),
+    "selectedAddressTitle": MessageLookupByLibrary.simpleMessage(
+      "العنوان المختار",
+    ),
+    "sendButton": MessageLookupByLibrary.simpleMessage("إرسال"),
+    "september": MessageLookupByLibrary.simpleMessage("سبتمبر"),
+    "signInButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "signInSubtitle": MessageLookupByLibrary.simpleMessage(
+      "سجّل الدخول إلى حسابك",
+    ),
+    "signInWithAppleButton": MessageLookupByLibrary.simpleMessage(
+      "سجّل الدخول باستخدام Apple",
+    ),
+    "signInWithGoogleButton": MessageLookupByLibrary.simpleMessage(
+      "سجّل الدخول باستخدام Google",
+    ),
+    "signUpButton": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "signUpEmailPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "بريدك الإلكتروني",
+    ),
+    "signUpPasswordPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور الخاصة بك",
+    ),
+    "signUpSubtitle": MessageLookupByLibrary.simpleMessage(
+      "أنشئ حسابًا واختر قائمتك المفضلة",
+    ),
+    "signUpTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "specialForYouCategoryTab": MessageLookupByLibrary.simpleMessage(
+      "خصيصاً لك",
+    ),
+    "stationeryCategoryTab": MessageLookupByLibrary.simpleMessage(
+      "أدوات مكتبية",
+    ),
+    "successBody": MessageLookupByLibrary.simpleMessage(
+      "تم اكتمال حسابك، يرجى الاستمتاع بأفضل قائمة عندنا.",
+    ),
+    "termsAndDataPolicy": MessageLookupByLibrary.simpleMessage(
+      "الشروط وسياسة البيانات.",
+    ),
+    "timeSlot10AM1PM": MessageLookupByLibrary.simpleMessage(
+      "10 صباحاً : 1 ظهراً",
+    ),
+    "timeSlot1PM4PM": MessageLookupByLibrary.simpleMessage("1 ظهراً : 4 عصراً"),
+    "today": MessageLookupByLibrary.simpleMessage("اليوم"),
+    "tomorrow": MessageLookupByLibrary.simpleMessage("غداً"),
+    "topOfWeekTitle": MessageLookupByLibrary.simpleMessage(
+      "الأكثر مبيعاً هذا الأسبوع",
+    ),
+    "unableToLoadAuthors": MessageLookupByLibrary.simpleMessage(
+      "تعذر تحميل المؤلفين",
+    ),
+    "vendorsPageTitle": MessageLookupByLibrary.simpleMessage("الموردين"),
+    "verificationCodeTitle": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
+    "verificationComplete": MessageLookupByLibrary.simpleMessage(
+      "اكتمل التحقق!",
+    ),
+    "verificationEmailTitle": MessageLookupByLibrary.simpleMessage(
+      "تحقق البريد الإلكتروني",
+    ),
+    "verificationLinkSentAgain": MessageLookupByLibrary.simpleMessage(
+      "تم إعادة إرسال رابط التحقق. يرجى التحقق من بريدك الوارد.",
+    ),
+    "verificationLinkSentTo": MessageLookupByLibrary.simpleMessage(
+      "لقد أرسلنا رابط التحقق إلى\n",
+    ),
+    "verificationPhoneTitle": MessageLookupByLibrary.simpleMessage(
+      "تحقق الهاتف",
+    ),
+    "verificationSentToEmail": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال الكود الذي أرسلناه إلى البريد الإلكتروني ",
+    ),
+    "verificationSentToPhone": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال الكود الذي أرسلناه إلى رقم الهاتف ",
+    ),
+    "viewCartButton": MessageLookupByLibrary.simpleMessage("عرض السلة"),
+    "welcomeBackTitle": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك "),
+    "yourFavoritesTitle": MessageLookupByLibrary.simpleMessage("مفضلتك"),
+    "yourFavourites": MessageLookupByLibrary.simpleMessage("المفضلة"),
+  };
+}

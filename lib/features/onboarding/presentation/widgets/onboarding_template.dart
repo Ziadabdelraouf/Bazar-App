@@ -1,0 +1,137 @@
+import 'package:bazar_group_1/core/localization/generated/l10n.dart';
+import 'package:bazar_group_1/core/components/buttons/large_primary_button.dart';
+import 'package:bazar_group_1/core/components/buttons/large_secondary_button.dart';
+import 'package:bazar_group_1/core/theme/app_text_styles.dart';
+//import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_buttons.dart';
+import 'package:bazar_group_1/features/onboarding/presentation/widgets/onboarding_dot.dart';
+import 'package:flutter/material.dart';
+
+class OnboardingTemplate extends StatelessWidget {
+  const OnboardingTemplate({
+    super.key,
+    required this.imagePath,
+    required this.title,
+    required this.description,
+    required this.activeDotIndex,
+    required this.firstButton,
+    required this.secondButton,
+    required this.onFirstButtonTap,
+    required this.onSecondButtonTap,
+    this.onSkip,
+  });
+
+  final String imagePath;
+  final String title;
+  final String description;
+  final int activeDotIndex;
+  final String firstButton;
+  final String secondButton;
+  final VoidCallback onFirstButtonTap;
+  final VoidCallback onSecondButtonTap;
+  final VoidCallback? onSkip;
+
+  @override
+  Widget build(BuildContext context) {
+    final screensize = MediaQuery.of(context).size;
+
+    return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                  left: screensize.width * 0.074,
+                  top: screensize.height * 0.019,
+                ),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    //padding: EdgeInsets.symmetric(horizontal:16,vertical: 8),
+                    child: InkWell(
+                      onTap: onSkip,
+                      child: Text(
+                        S.of(context).skipButton,
+                        style: AppTextStyles.body14Regular.copyWith(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Image.asset(
+                imagePath,
+                width: screensize.width * 0.853,
+                height: screensize.height * 0.394,
+                fit: BoxFit.contain,
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: screensize.height * 0.017),
+                child: SizedBox(
+                  width: screensize.width * 0.64,
+                  height: screensize.height * 0.1,
+                  child: Text(
+                    title,
+                    style: AppTextStyles.h3.copyWith(
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: screensize.height * 0.037),
+                child: SizedBox(
+                  width: screensize.width * 0.77,
+                  height: screensize.height * 0.12,
+                  child: Text(
+                    description,
+                    style: AppTextStyles.body16Regular.copyWith(
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              //const SizedBox(height: 32),
+              Padding(
+                padding: EdgeInsets.only(top: screensize.height * 0.0344),
+                child: OnboardingDot(activeIndex: activeDotIndex),
+              ),
+              //OnboardingButtons(firstButtonLabel: firstButton, firstButtonOnPressed: onFirstButtonTap, secondButtonLabel: secondButton, secondButtonOnPressed: onSecondButtonTap)
+              Padding(
+                padding: EdgeInsets.only(
+                  top: screensize.height * 0.039,
+                  right: screensize.width * 0.064,
+                  left: screensize.width * 0.064,
+                ),
+                child: Column(
+                  children: [
+                    LargePrimaryButton(
+                      label: firstButton,
+                      onPressed: onFirstButtonTap,
+                      borderRadius: 12,
+                      height: screensize.height * 0.068,
+                    ),
+                    const SizedBox(height: 8),
+                    LargeSecondaryButton(
+                      label: secondButton,
+                      onPressed: onSecondButtonTap,
+                      borderRadius: 12,
+                      height: screensize.height * 0.068,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
